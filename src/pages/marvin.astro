@@ -67,11 +67,12 @@ const umbrellas: { label: string; tags: string[] }[] = [
   },
 ];
 
-const bullets = await Promise.all(
+const allBullets = await Promise.all(
   raw.map(async (entry) => {
     const { Content } = await render(entry);
     return {
       id: entry.id,
+      body: entry.body?.trim().slice(0, 80) || "",
       company: entry.data.company || "",
       role: entry.data.role || "",
       category: entry.data.category || "experience",
@@ -81,6 +82,16 @@ const bullets = await Promise.all(
     };
   }),
 );
+
+// Deduplicate: when two bullets share the same body text, keep the one with more tags.
+const seen = new Map<string, (typeof allBullets)[number]>();
+for (const b of allBullets) {
+  const existing = seen.get(b.body);
+  if (!existing || b.tags.length > existing.tags.length) {
+    seen.set(b.body, b);
+  }
+}
+const bullets = [...seen.values()];
 
 type Bullet = (typeof bullets)[number];
 const knownOrder = ["experience", "education", "exhibition", "publication", "talks", "skill"];
