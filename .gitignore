@@ -9,8 +9,8 @@ dist/
 # Images (hosted on Vercel Blob, not in git)
 public/images/
 
-# Bullets junction (local only, links to Jullie-Resume)
-src/content/bullets/*.md
+# Bullets template
+src/content/bullets/_template.md
 
 # Generated manifest archive
 src/data/manifest.archive.json
