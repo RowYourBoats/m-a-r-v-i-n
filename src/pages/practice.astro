@@ -1,0 +1,122 @@
+---
+import Base from "@/layouts/Base.astro";
+import manifest from "@/data/manifest.json";
+import { getCollection, render } from "astro:content";
+
+const { items } = manifest;
+const personalItems = items.filter((item) => item.personal);
+
+const writingEntries = await getCollection("writing");
+const writingRendered = await Promise.all(
+  writingEntries.map(async (entry) => {
+    const { Content } = await render(entry);
+    return { entry, Content };
+  }),
+);
+
+// Light tag set for Practice — union of tags actually present on essays
+// and personal items. Dedupe and drop noisy ones.
+const tagSet = new Set<string>();
+for (const item of personalItems) {
+  for (const t of item.tags || []) tagSet.add(t);
+}
+for (const { entry } of writingRendered) {
+  for (const t of entry.data.tags || []) tagSet.add(t);
+}
+tagSet.delete("snapshot"); // implicit — all loose personal images have it
+const practiceTags = [...tagSet].sort();
+---
+
+<Base title="Practice — Marvin de Jong">
+  <p class="page-intro">In Marvin's practice he's exploring parameter-driven graphic design, color, form, composition as controlled instability. A person moves, a knob turns, a button is pressed, it's getting darker, and the design changes.</p>
+
+  <div class="filter-bar" id="filters">
+    <button data-filter="all" aria-pressed="true">All</button>
+    {practiceTags.map((tag) => (
+      <button data-tag={tag} aria-pressed="false">{tag}</button>
+    ))}
+  </div>
+
+  <div class="grid" id="grid">
+    {writingRendered.map(({ entry, Content }) => (
+      <div
+        class="grid-item grid-item--writing"
+        data-id={`writing-${entry.id}`}
+        data-tags={(entry.data.tags || []).join(",")}
+        data-type="writing"
+      >
+        <div class="writing-card">
+          <p class="writing-card-title">{entry.data.title}</p>
+        </div>
+        <template class="writing-body" data-title={entry.data.title} data-date={entry.data.date}>
+          <Content />
+        </template>
+      </div>
+    ))}
+
+    {personalItems.filter((item) => item.type === "image").map((item) => (
+      <div
+        class="grid-item"
+        data-id={item.id}
+        data-tags={(item.tags || []).join(",")}
+        data-type={item.type}
+      >
+        <img
+          src={item.src}
+          alt={item.description || item.title}
+          loading="lazy"
+          class="thumb thumb--portrait"
+        />
+        <p class="label">{item.title}</p>
+      </div>
+    ))}
+  </div>
+
+  <div class="detail" id="detail" style="display: none;">
+    <button class="detail-close" id="detail-close">&times;</button>
+    <div class="detail-content" id="detail-content"></div>
+  </div>
+</Base>
+
+<script is:inline>
+  (function () {
+    var filters = document.getElementById("filters");
+    var grid = document.getElementById("grid");
+    var detail = document.getElementById("detail");
+    var detailContent = document.getElementById("detail-content");
+    var detailClose = document.getElementById("detail-close");
+
+    var activeFilter = null;
+
+    filters?.addEventListener("click", function (e) {
+      var btn = e.target;
+      if (btn.tagName !== "BUTTON") return;
+      filters.querySelectorAll("button").forEach(function (b) {
+        b.setAttribute("aria-pressed", "false");
+      });
+      btn.setAttribute("aria-pressed", "true");
+      activeFilter = btn.dataset.filter === "all" ? null : btn.dataset.tag;
+      grid.querySelectorAll(".grid-item").forEach(function (el) {
+        var tags = (el.dataset.tags || "").split(",");
+        el.style.display = !activeFilter || tags.includes(activeFilter) ? "" : "none";
+      });
+    });
+
+    grid?.addEventListener("click", function (e) {
+      if (e.target.closest(".detail")) return;
+      var el = e.target.closest(".grid-item");
+      if (!el || el.dataset.type !== "writing") return;
+
+      var tpl = el.querySelector(".writing-body");
+      var bodyHtml = tpl ? tpl.innerHTML : "";
+      detailContent.innerHTML = '<div class="prose">' + bodyHtml + '</div>';
+      el.appendChild(detail);
+      detail.style.display = "";
+      el.scrollIntoView({ behavior: "smooth", block: "nearest" });
+    });
+
+    detailClose?.addEventListener("click", function () {
+      detail.style.display = "none";
+    });
+  })();
+</script>

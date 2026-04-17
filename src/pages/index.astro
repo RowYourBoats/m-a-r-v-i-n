@@ -1,0 +1,293 @@
+---
+import Base from "@/layouts/Base.astro";
+import manifest from "@/data/manifest.json";
+import schema from "@/data/schema.json";
+
+const { items, projects } = manifest;
+
+// Only show non-personal items on Work page, newest first.
+const workItems = items.filter((item) => !item.personal)
+  .sort((a, b) => (b.year || 0) - (a.year || 0));
+
+const pinnedTags = schema.pinned.filter((t) => t !== "essay");
+const extraTags = schema.tags.filter((t) => !pinnedTags.includes(t) && t !== "essay");
+
+const allClients = [...new Set(workItems.map((m) => {
+  if (m.project && projects[m.project]) return projects[m.project].client;
+  return null;
+}).filter(Boolean))].sort();
+---
+
+<Base title="Work — Marvin de Jong">
+  <div class="filter-bar" id="filters">
+    <button class="filter-trigger" id="filter-trigger">Filter</button>
+    <button data-filter="all" aria-pressed="true">All</button>
+    {pinnedTags.map((tag) => (
+      <button data-tag={tag} aria-pressed="false">{tag}</button>
+    ))}
+    {extraTags.map((tag) => (
+      <button data-tag={tag} aria-pressed="false" class="filter-extra">{tag}</button>
+    ))}
+    {extraTags.length > 0 && (
+      <button class="filter-more" id="filter-more">+</button>
+    )}
+  </div>
+
+  <!-- search disabled for now
+  <div class="search-bar" id="search-bar">
+    <input type="text" id="search-input" placeholder="search" autocomplete="off" />
+  </div>
+  -->
+
+  <div class="grid" id="grid">
+    {workItems.map((item) => (
+      <div
+        class={`grid-item ${item.featured ? "grid-item--full" : ""}`}
+        data-id={item.id}
+        data-tags={(item.tags || []).join(",")}
+        data-project={item.project || ""}
+        data-medium={item.medium || ""}
+        data-type={item.type}
+      >
+        {item.type === "video" ? (
+          <div class="thumb-video">
+            <iframe
+              src={item.video}
+              allow="autoplay; fullscreen; picture-in-picture"
+              allowfullscreen
+            ></iframe>
+          </div>
+        ) : (
+          <img
+            src={item.src}
+            alt={item.description || item.title}
+            loading="lazy"
+            class={`thumb ${item.featured ? "thumb--landscape" : "thumb--portrait"}`}
+          />
+        )}
+        <p class="label">{item.title}</p>
+      </div>
+    ))}
+
+  </div>
+
+  <div class="detail" id="detail" style="display: none;">
+    <button class="detail-close" id="detail-close">&times;</button>
+    <div class="detail-content" id="detail-content"></div>
+  </div>
+</Base>
+
+<script is:inline define:vars={{ manifest: JSON.stringify(manifest) }}>
+  (function () {
+    const data = JSON.parse(manifest);
+    const filters = document.getElementById("filters");
+    const trigger = document.getElementById("filter-trigger");
+    const more = document.getElementById("filter-more");
+    const grid = document.getElementById("grid");
+    const detail = document.getElementById("detail");
+    const detailContent = document.getElementById("detail-content");
+    const detailClose = document.getElementById("detail-close");
+    const searchInput = document.getElementById("search-input");
+
+    // --- Filter trigger (mobile) ---
+    trigger?.addEventListener("click", function () {
+      filters.classList.toggle("filter-open");
+    });
+
+    // --- More/Less toggle ---
+    more?.addEventListener("click", function () {
+      filters.classList.toggle("filter-expanded");
+      more.textContent = filters.classList.contains("filter-expanded") ? "\u2212" : "+";
+    });
+
+    // --- Tag/type filtering ---
+    var activeFilter = null;
+
+    filters?.addEventListener("click", function (e) {
+      var btn = e.target;
+      if (btn.tagName !== "BUTTON" || btn === trigger || btn === more) return;
+
+      filters.querySelectorAll("button").forEach(function (b) {
+        b.setAttribute("aria-pressed", "false");
+      });
+      btn.setAttribute("aria-pressed", "true");
+
+      var filterTag = btn.dataset.tag;
+      var filterAll = btn.dataset.filter === "all";
+
+      if (filterAll) {
+        activeFilter = null;
+        trigger.textContent = "Filter";
+      } else {
+        activeFilter = filterTag;
+        trigger.textContent = btn.textContent;
+      }
+
+      filters.classList.remove("filter-open");
+      applyFilter();
+    });
+
+    function applyFilter() {
+      var query = (searchInput?.value || "").toLowerCase().trim();
+      var items = grid.querySelectorAll(".grid-item");
+
+      items.forEach(function (el) {
+        var tags = (el.dataset.tags || "").split(",");
+        var id = el.dataset.id || "";
+        var matchItem = data.items.find(function (i) { return i.id === id; });
+
+        var show = true;
+
+        // Tag filter
+        if (activeFilter) {
+          show = tags.includes(activeFilter);
+        }
+
+        // Search filter
+        if (show && query) {
+          var searchText = [
+            matchItem?.title || "",
+            (matchItem?.tags || []).join(" "),
+            matchItem?.medium || "",
+            matchItem?.project || "",
+            matchItem?.description || "",
+          ].join(" ").toLowerCase();
+          show = searchText.indexOf(query) !== -1;
+        }
+
+        el.style.display = show ? "" : "none";
+      });
+    }
+
+    // --- Search ---
+    var searchTimeout;
+    searchInput?.addEventListener("input", function () {
+      clearTimeout(searchTimeout);
+      searchTimeout = setTimeout(applyFilter, 150);
+    });
+
+    // --- Semantic search via API ---
+    var semanticTimeout;
+    searchInput?.addEventListener("input", function () {
+      clearTimeout(semanticTimeout);
+      var q = searchInput.value.trim();
+      if (q.length < 3) return;
+      semanticTimeout = setTimeout(function () {
+        fetch("/api/search?q=" + encodeURIComponent(q))
+          .then(function (r) { return r.ok ? r.json() : null; })
+          .then(function (results) {
+            if (!results || !results.ids) return;
+            // Boost items returned by semantic search
+            var items = grid.querySelectorAll(".grid-item");
+            items.forEach(function (el) {
+              if (results.ids.includes(el.dataset.id)) {
+                el.style.display = "";
+              }
+            });
+          })
+          .catch(function () {});
+      }, 400);
+    });
+
+    // --- Detail view ---
+    grid?.addEventListener("click", function (e) {
+      // Ignore clicks inside the detail panel itself (e.g. close button,
+      // project link). Those have their own handlers.
+      if (e.target.closest(".detail")) return;
+
+      var el = e.target.closest(".grid-item");
+      if (!el) return;
+
+      var id = el.dataset.id;
+      var item = data.items.find(function (i) { return i.id === id; });
+      if (!item) return;
+
+      var projectData = item.project ? data.projects[item.project] : null;
+
+      // Build detail HTML
+      var html = "";
+
+      if (item.type === "video" && item.video) {
+        html += '<div class="detail-media"><iframe src="' + item.video + '" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe></div>';
+      }
+
+      html += '<p class="detail-title">' + (item.title || "") + '</p>';
+
+      if (item.description) {
+        html += '<div class="prose detail-meta"><p>' + item.description + '</p></div>';
+      }
+
+      // Metadata line
+      var meta = [];
+      if (item.medium) meta.push(item.medium);
+      if (item.tags) meta.push(item.tags.join(", "));
+      if (meta.length) html += '<p class="detail-meta">' + meta.join(" — ") + '</p>';
+
+      // Project link
+      if (projectData) {
+        html += '<a class="detail-project-link" href="/projects/' + item.project + '">View all ' + projectData.title + '</a>';
+      }
+
+      // Credits from project
+      if (projectData && projectData.credits) {
+        html += '<div class="detail-credits">';
+        projectData.credits.forEach(function (c) {
+          html += '<div><span class="detail-credit-role">' + c.role + '</span> ' + c.name + '</div>';
+        });
+        html += '</div>';
+      }
+
+      detailContent.innerHTML = html;
+
+      // Unfold inside the clicked item so it appears directly beneath
+      // its thumbnail within the same masonry column.
+      el.appendChild(detail);
+      detail.style.display = "";
+      el.scrollIntoView({ behavior: "smooth", block: "nearest" });
+    });
+
+    // --- Detail: project link filter ---
+    detail?.addEventListener("click", function (e) {
+      var projectBtn = e.target.closest(".detail-project-link");
+      if (projectBtn) {
+        var proj = projectBtn.dataset.project;
+        detail.style.display = "none";
+
+        // Filter grid to this project
+        activeFilter = null;
+        filters.querySelectorAll("button").forEach(function (b) {
+          b.setAttribute("aria-pressed", "false");
+        });
+
+        var items = grid.querySelectorAll(".grid-item");
+        items.forEach(function (el) {
+          el.style.display = el.dataset.project === proj ? "" : "none";
+        });
+        grid.scrollIntoView({ behavior: "smooth" });
+        return;
+      }
+
+      // Click related thumb to switch detail
+      var thumb = e.target.closest(".detail-related-thumb");
+      if (thumb) {
+        var targetId = thumb.dataset.id;
+        var targetEl = grid.querySelector('[data-id="' + targetId + '"]');
+        if (targetEl) targetEl.click();
+        return;
+      }
+
+    });
+
+    // --- Close detail ---
+    detailClose?.addEventListener("click", function () {
+      detail.style.display = "none";
+    });
+
+    // --- Activate filter from ?tag=X on load ---
+    var urlTag = new URLSearchParams(window.location.search).get("tag");
+    if (urlTag) {
+      var initBtn = filters?.querySelector('button[data-tag="' + urlTag + '"]');
+      if (initBtn) initBtn.click();
+    }
+  })();
+</script>

@@ -1,0 +1,305 @@
+---
+import Base from "@/layouts/Base.astro";
+import { getCollection, render } from "astro:content";
+
+const raw = await getCollection("bullets", ({ id }) => !id.startsWith("_template"));
+
+const cleanTag = (t: string) => t.replace(/^~/, "");
+
+const umbrellas: { label: string; tags: string[] }[] = [
+  {
+    label: "Creative Direction",
+    tags: [
+      "design-leadership", "creative-direction", "cross-functional-collaboration",
+      "cross-functional-leadership", "art-direction", "team-leadership",
+      "creative-leadership", "project-management", "process-development",
+      "concept-development", "agency-management", "team-management",
+      "freelancer-management",
+    ],
+  },
+  {
+    label: "Brand & Identity Systems",
+    tags: [
+      "brand-strategy", "brand-consistency", "brand-positioning", "brand-narrative",
+      "brand-storytelling", "design-systems", "design-system", "brand-system",
+      "communication-design", "narrative-design", "graphic-design", "typography",
+      "print-design", "brand-guidelines", "brand-portfolio", "content-strategy",
+      "print-collateral", "identity-systems", "visual-systems",
+    ],
+  },
+  {
+    label: "Spatial & Exhibition",
+    tags: [
+      "experiential-design", "exhibition-design", "exhibition-graphics",
+      "retail-design", "retail-strategy", "retail-experience", "retail-innovation",
+      "flagship-store", "spatial-design", "spatial-interactions", "showroom-design",
+      "environmental-graphics", "architecture", "architecture-collaboration",
+      "in-store-displays", "booth-design", "stage-design", "event-design",
+      "event-production", "event-leadership", "customer-experience",
+      "customer-journey-mapping", "motion-led-environments", "wayfinding",
+      "exhibition", "poster-exhibition", "experiential-activations", "experiential",
+    ],
+  },
+  {
+    label: "Digital & Interactive",
+    tags: [
+      "interactive-experiences", "interactive-design", "experience-design",
+      "digital-interfaces", "digital-design", "digital-content", "digital-assets",
+      "digital-product-experience", "digital-transformation", "interaction-design",
+      "motion-design", "animation", "video", "video-production", "data-visualization",
+      "digital-storytelling", "app-design", "ui-design", "web-design",
+      "keynote-design", "keynote-storytelling", "presentation-assets",
+      "digital-marketing-assets", "digital-marketing",
+    ],
+  },
+  {
+    label: "Real-Time & Emerging Tech",
+    tags: [
+      "real-time-systems", "real-time-graphics", "real-time-data-reactive",
+      "real-time-technologies", "real-time-response", "real-time-prototyping",
+      "responsive-environments", "graphics-reactive-to-human-presence",
+      "gesture-recognition", "touchdesigner", "unreal-engine", "unreal-engine-5",
+      "frontier-tech", "ai-driven-visuals", "ai-interface", "quantum-computing",
+      "creative-code", "controlled-instability", "vector-embeddings",
+      "semantic-engine", "local-first", "locally-run-llms", "prototyping",
+      "spatial-prototyping", "camera-interaction",
+    ],
+  },
+];
+
+const bullets = await Promise.all(
+  raw.map(async (entry) => {
+    const { Content } = await render(entry);
+    return {
+      id: entry.id,
+      company: entry.data.company || "",
+      role: entry.data.role || "",
+      category: entry.data.category || "experience",
+      date: entry.data.date || "",
+      tags: (entry.data.tags || []).map(cleanTag),
+      Content,
+    };
+  }),
+);
+
+type Bullet = (typeof bullets)[number];
+const knownOrder = ["experience", "education", "exhibition", "publication", "talks", "skill"];
+
+const byCategory: Record<string, Bullet[]> = {};
+for (const b of bullets) {
+  (byCategory[b.category] ??= []).push(b);
+}
+
+const presentCategories = Object.keys(byCategory);
+const categoryOrder = [
+  ...knownOrder.filter((c) => byCategory[c]?.length),
+  ...presentCategories.filter((c) => !knownOrder.includes(c)).sort(),
+];
+
+const bulletUmbrellas = new Map<string, string[]>();
+for (const b of bullets) {
+  const tagSet = new Set(b.tags);
+  const hits = umbrellas
+    .filter((u) => u.tags.some((t) => tagSet.has(t)))
+    .map((u) => u.label);
+  bulletUmbrellas.set(b.id, hits);
+}
+
+const categoryLabel: Record<string, string> = {
+  experience: "Experience",
+  education: "Education",
+  exhibition: "Exhibitions",
+  publication: "Publications",
+  talks: "Talks",
+  skill: "Skills",
+};
+const labelFor = (c: string) =>
+  categoryLabel[c] || c.charAt(0).toUpperCase() + c.slice(1);
+---
+
+<Base title="Marvin de Jong">
+  <div class="profile profile--spread">
+    <div class="profile-text">
+    <div class="prose">
+      <p>
+        Marvin de Jong is a Dutch graphic designer working across traditional,
+        interactive, and emerging media, currently based in San Francisco.
+      </p>
+      <p>
+        His work spans brand systems, experiential projects, and real-time graphic
+        design. Working across print, motion, and built environments he has
+        developed identities, exhibitions, campaigns, keynotes, merch, and
+        challenge coins for clients including IonQ, Verizon, Herman Miller, and
+        MoMA.
+      </p>
+      <p>
+        Currently he is exploring how real-time engines can help form stay open to
+        change through inputs like movement tracking, MIDI keyboards, sound, and
+        other data.
+      </p>
+    </div>
+
+    <h2>Education</h2>
+    <p>
+      Yale School of Art, MFA<br />
+      Royal Academy of Art (KABK), BFA
+    </p>
+
+    <h2>Contact</h2>
+    <p>
+      <a href="mailto:marvin@m-a-r-v-i-n.com">marvin@m-a-r-v-i-n.com</a>
+    </p>
+
+    <h2>Instagram</h2>
+    <p>
+      <a href="https://www.instagram.com/specifically_marvin/" target="_blank" rel="noopener">
+        @specifically_marvin
+      </a>
+    </p>
+
+    <h2>LinkedIn</h2>
+    <p>
+      <a href="https://www.linkedin.com/in/marvin-de-jong/" target="_blank" rel="noopener">
+        marvin-de-jong
+      </a>
+    </p>
+    </div>
+
+    <div class="profile-media">
+      <figure>
+        <img src="https://ws6i2dfuggcaavs2.public.blob.vercel-storage.com/images/WikipediaImage.jpeg" alt="" loading="lazy" />
+      </figure>
+      <figure>
+        <img src="https://ws6i2dfuggcaavs2.public.blob.vercel-storage.com/images/Screenshot%202026-04-13%20232526.png" alt="" loading="lazy" />
+      </figure>
+    </div>
+  </div>
+
+  <h2 class="cv-category-title">Resume</h2>
+
+  <div class="filter-bar" id="cv-filters">
+    <button data-filter="all" aria-pressed="true">All</button>
+    {umbrellas.map((u) => (
+      <button data-umbrella={u.label} aria-pressed="false">{u.label}</button>
+    ))}
+  </div>
+
+  <div class="cv" id="cv">
+    {categoryOrder.map((cat) => (
+      <section class="cv-category" data-category={cat}>
+        <h2 class="cv-category-title">{labelFor(cat)}</h2>
+        <div class="cv-table" role="table">
+          <div class="cv-row cv-row--head" role="row">
+            <div role="columnheader">experience</div>
+            <div role="columnheader">tags</div>
+            <div role="columnheader">bullet</div>
+          </div>
+          {byCategory[cat].map((b) => (
+            <div
+              class="cv-row cv-bullet"
+              role="row"
+              data-tags={b.tags.join(",")}
+              data-umbrellas={(bulletUmbrellas.get(b.id) || []).join("|")}
+            >
+              <div class="cv-cell cv-cell--experience" role="cell">
+                {b.company && <span class="cv-company">{b.company}</span>}
+                {b.role && <span class="cv-role">{b.role}</span>}
+                {b.date && <span class="cv-date">{b.date}</span>}
+              </div>
+              <div class="cv-cell cv-cell--tags" role="cell">
+                {b.tags.slice(0, 4).map((t, i) => (
+                  <>{i > 0 && ", "}<span class="cv-tag-chip" role="button" tabindex="0" data-cv-tag={t}>{t}</span></>
+                ))}
+              </div>
+              <div class="cv-cell cv-cell--body" role="cell">
+                <b.Content />
+              </div>
+            </div>
+          ))}
+        </div>
+      </section>
+    ))}
+  </div>
+
+  <script is:inline>
+    (function () {
+      // Profile media sizing
+      document.querySelectorAll(".profile-media figure img").forEach(function (img) {
+        function cap() {
+          if (img.naturalWidth) {
+            img.style.maxWidth = (img.naturalWidth * 1.5) + "px";
+          }
+        }
+        if (img.complete) cap();
+        else img.addEventListener("load", cap);
+      });
+
+      // CV filtering
+      var filters = document.getElementById("cv-filters");
+      var root = document.getElementById("cv");
+      var active = null;
+
+      function apply() {
+        root.querySelectorAll(".cv-bullet").forEach(function (row) {
+          var show = true;
+          if (active && active.kind === "umbrella") {
+            var us = (row.dataset.umbrellas || "").split("|");
+            show = us.indexOf(active.value) !== -1;
+          } else if (active && active.kind === "tag") {
+            var tags = (row.dataset.tags || "").split(",");
+            show = tags.indexOf(active.value) !== -1;
+          }
+          row.style.display = show ? "" : "none";
+        });
+        root.querySelectorAll(".cv-category").forEach(function (cat) {
+          var visible = cat.querySelectorAll('.cv-bullet:not([style*="display: none"])').length;
+          cat.style.display = visible ? "" : "none";
+        });
+      }
+
+      function setPressed(btn) {
+        filters.querySelectorAll("button").forEach(function (b) {
+          b.setAttribute("aria-pressed", b === btn ? "true" : "false");
+        });
+      }
+
+      filters?.addEventListener("click", function (e) {
+        var btn = e.target;
+        if (btn.tagName !== "BUTTON") return;
+        setPressed(btn);
+        clearTagHighlight();
+        active = btn.dataset.filter === "all"
+          ? null
+          : { kind: "umbrella", value: btn.dataset.umbrella };
+        apply();
+      });
+
+      function clearTagHighlight() {
+        root.querySelectorAll(".cv-tag-chip[aria-pressed]").forEach(function (b) {
+          b.removeAttribute("aria-pressed");
+        });
+      }
+
+      root?.addEventListener("click", function (e) {
+        var chip = e.target.closest("[data-cv-tag]");
+        if (!chip) return;
+        var tag = chip.dataset.cvTag;
+        if (active && active.kind === "tag" && active.value === tag) {
+          active = null;
+          clearTagHighlight();
+          var allBtn = filters.querySelector('[data-filter="all"]');
+          setPressed(allBtn);
+        } else {
+          active = { kind: "tag", value: tag };
+          setPressed(null);
+          clearTagHighlight();
+          root.querySelectorAll('[data-cv-tag="' + tag + '"]').forEach(function (b) {
+            b.setAttribute("aria-pressed", "true");
+          });
+        }
+        apply();
+      });
+
+    })();
+  </script>
+</Base>

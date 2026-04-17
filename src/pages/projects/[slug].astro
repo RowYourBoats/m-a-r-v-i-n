@@ -1,0 +1,91 @@
+---
+import Base from "@/layouts/Base.astro";
+import manifest from "@/data/manifest.json";
+
+export function getStaticPaths() {
+  const { projects, items } = manifest as any;
+  return Object.entries(projects).map(([slug, project]: [string, any]) => ({
+    params: { slug },
+    props: {
+      project,
+      items: items.filter((i: any) => i.project === slug),
+    },
+  }));
+}
+
+const { project, items } = Astro.props as { project: any; items: any[] };
+const { slug } = Astro.params;
+
+// Tag frequency across items in this project → main tag + other tags
+const tagCounts = new Map<string, number>();
+for (const it of items) {
+  for (const t of (it.tags || [])) tagCounts.set(t, (tagCounts.get(t) || 0) + 1);
+}
+const sortedTags = [...tagCounts.entries()].sort((a, b) => b[1] - a[1]).map(([t]) => t);
+const mainTag = sortedTags[0] || null;
+const otherTags = sortedTags.slice(1);
+
+// 2 related items from OTHER projects sharing the main tag
+const allItems = (manifest as any).items as any[];
+let related: any[] = [];
+if (mainTag) {
+  related = allItems
+    .filter((i) => i.project !== slug && i.type === "image" && i.src && (i.tags || []).includes(mainTag))
+    .sort(() => Math.random() - 0.5)
+    .slice(0, 2);
+}
+---
+
+<Base title={`${project.title} — Marvin de Jong`}>
+  <a href="/" class="detail-project-link" style="display:inline-block;">&larr; Back to work</a>
+
+  <header class="project-header">
+    <h1>{project.title}</h1>
+    {project.description && <p class="description">{project.description}</p>}
+    {project.client && <p class="detail-meta">{project.client}{project.year ? ` — ${project.year}` : ""}</p>}
+  </header>
+
+  <div class="grid">
+    {items.map((item) => (
+      <div class="grid-item" data-id={item.id}>
+        {item.type === "video" ? (
+          <div class="thumb-video">
+            <iframe src={item.video} allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
+          </div>
+        ) : (
+          <img src={item.src} alt={item.description || item.title} loading="lazy" class="thumb" />
+        )}
+        {item.title && <p class="label">{item.title}</p>}
+      </div>
+    ))}
+  </div>
+
+  {project.credits && project.credits.length > 0 && (
+    <div class="detail-credits">
+      {project.credits.map((c: any) => (
+        <div><span class="detail-credit-role">{c.role}</span> {c.name}</div>
+      ))}
+    </div>
+  )}
+
+  {mainTag && related.length > 0 && (
+    <section>
+      <p class="detail-meta">More {mainTag}</p>
+      <div class="detail-related">
+        {related.map((s) => (
+          <a href={`/projects/${s.project}`}>
+            <img src={s.src} alt={s.description || s.title} class="detail-related-thumb" loading="lazy" />
+          </a>
+        ))}
+      </div>
+    </section>
+  )}
+
+  {otherTags.length > 0 && (
+    <div class="detail-tags">
+      {otherTags.map((t) => (
+        <a class="detail-tag-chip" href={`/?tag=${encodeURIComponent(t)}`}>{t}</a>
+      ))}
+    </div>
+  )}
+</Base>

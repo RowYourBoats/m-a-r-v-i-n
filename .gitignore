@@ -1,0 +1,36 @@
+# Dependencies
+node_modules/
+
+# Build output
+dist/
+.vercel/
+.astro/
+
+# Images (hosted on Vercel Blob, not in git)
+public/images/
+
+# Bullets junction (local only, links to Jullie-Resume)
+src/content/bullets/*.md
+
+# Generated manifest archive
+src/data/manifest.archive.json
+
+# Large media / excluded assets
+_exclude/
+
+# Chroma database
+chroma/
+
+# Personal evaluations
+public/evaluations/
+
+# Environment variables
+.env
+.env.*
+
+# Local settings
+.claude/
+
+# OS
+.DS_Store
+Thumbs.db

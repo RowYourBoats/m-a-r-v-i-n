@@ -1,0 +1,19 @@
+{
+  "name": "m-a-r-v-i-n",
+  "type": "module",
+  "version": "1.0.0",
+  "scripts": {
+    "dev": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "post": "node scripts/post.mjs",
+    "sync": "node scripts/sync-chroma.mjs"
+  },
+  "dependencies": {
+    "@astrojs/vercel": "^10.0.4",
+    "@vercel/blob": "^2.3.3",
+    "astro": "^6.1.5",
+    "chromadb": "^3.4.3",
+    "ollama": "^0.6.3"
+  }
+}
