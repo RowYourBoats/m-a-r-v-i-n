@@ -40,7 +40,7 @@ const allClients = [...new Set(workItems.map((m) => {
   -->
 
   <div class="grid" id="grid">
-    {workItems.map((item) => (
+    {workItems.map((item, i) => (
       <div
         class={`grid-item ${item.featured ? "grid-item--full" : ""}`}
         data-id={item.id}
@@ -61,7 +61,7 @@ const allClients = [...new Set(workItems.map((m) => {
           <img
             src={item.src}
             alt={item.description || item.title}
-            loading="lazy"
+            loading={i < 8 ? "eager" : "lazy"}
             class={`thumb ${item.featured ? "thumb--landscape" : "thumb--portrait"}`}
           />
         )}
