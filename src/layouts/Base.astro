@@ -1,4 +1,6 @@
 ---
+import Analytics from '@vercel/analytics/astro';
+
 interface Props {
   title?: string;
 }
@@ -32,6 +34,7 @@ function isCurrent(href: string) {
     <main class="page">
       <slot />
     </main>
+    <Analytics />
   </body>
 </html>
 

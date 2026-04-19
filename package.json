@@ -12,6 +12,7 @@
   },
   "dependencies": {
     "@astrojs/vercel": "^10.0.4",
+    "@vercel/analytics": "^2.0.1",
     "@vercel/blob": "^2.3.3",
     "astro": "^6.1.5",
     "chromadb": "^3.4.3",
