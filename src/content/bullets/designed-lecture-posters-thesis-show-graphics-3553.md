@@ -1,6 +1,7 @@
 ---
 category: experience
 company: Pratt Institute
+project_key: pratt
 date: 2015 – 2016
 role: Freelance Designer
 tags:

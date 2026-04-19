@@ -6,6 +6,7 @@
     "dev": "astro dev",
     "build": "astro build",
     "preview": "astro preview",
+    "build-data": "node scripts/build-projects.mjs && node scripts/mine-dates.mjs && node scripts/build-manifest.mjs",
     "post": "node scripts/post.mjs",
     "sync": "node scripts/sync-chroma.mjs"
   },

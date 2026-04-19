@@ -1,6 +1,7 @@
 ---
 category: experience
 company: IonQ
+project_key: ionq
 date: May 2023 – Present
 project: IonQ Brand Rebuild
 role: Creative Director (Remote)

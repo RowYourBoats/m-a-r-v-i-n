@@ -1,6 +1,7 @@
 ---
 category: experience
 company: IonQ
+project_key: ionq
 date: May 2023 – Present
 project: Competitive Positioning vs. IBM
 role: Creative Director (Remote)

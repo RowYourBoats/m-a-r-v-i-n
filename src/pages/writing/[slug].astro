@@ -1,0 +1,23 @@
+---
+import Base from "@/layouts/Base.astro";
+import { getEntry, render } from "astro:content";
+
+const { slug } = Astro.params;
+const entry = await getEntry("writing", slug!);
+
+if (!entry) return Astro.redirect("/practice");
+
+const { Content } = await render(entry);
+---
+
+<Base title={`${entry.data.title} — Marvin de Jong`}>
+  <article class="essay">
+    <header class="essay-header">
+      <h1 class="essay-title">{entry.data.title}</h1>
+      {entry.data.date && <p class="essay-date">{entry.data.date}</p>}
+    </header>
+    <div class="prose">
+      <Content />
+    </div>
+  </article>
+</Base>

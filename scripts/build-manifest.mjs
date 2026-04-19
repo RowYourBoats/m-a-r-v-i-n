@@ -1,7 +1,6 @@
 #!/usr/bin/env node
-// Rebuild src/data/manifest.json from public/images/image_catalogue.json.
-// Groups items by their top-level folder (source of truth), not by the
-// catalogue's messy `client` field. Archives the previous manifest.
+// Rebuild src/data/manifest.json from image_catalogue.json + projects.json.
+// Archives the previous manifest.
 
 import fs from "node:fs";
 import path from "node:path";
@@ -10,29 +9,27 @@ import { fileURLToPath } from "node:url";
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const root = path.resolve(__dirname, "..");
 const catalogPath = path.join(root, "public/images/image_catalogue.json");
+const projectsPath = path.join(root, "src/data/projects.json");
 const manifestPath = path.join(root, "src/data/manifest.json");
 const archivePath = path.join(root, "src/data/manifest.archive.json");
 
-// Folder (first path segment) → { key, title, client, personal }
-const FOLDER_MAP = {
-  "DFFPM": { key: "dffpm", title: "DFFPM", client: "DFFPM" },
-  "DS+R": { key: "dsr", title: "DS+R", client: "DS+R" },
-  "Gahi": { key: "gahi", title: "Gahi", client: "Gahi" },
-  "HermanMiller": { key: "herman-miller", title: "Herman Miller", client: "Herman Miller" },
-  "IonQ": { key: "ionq", title: "IonQ", client: "IonQ" },
-  "Verizon Decks-JPG": { key: "verizon", title: "Verizon", client: "Verizon" },
-  "Verizon_Selection": { key: "verizon", title: "Verizon", client: "Verizon" },
-  "Yale": { key: "yale", title: "Yale", client: "Yale", personal: true },
-  "IndependentProjects": { key: "snapshot", title: "Snapshots", client: "personal", personal: true },
-};
-const FALLBACK = { key: "snapshot", title: "Snapshots", client: "personal", personal: true };
-
 const catalogue = JSON.parse(fs.readFileSync(catalogPath, "utf8"));
+const registry = JSON.parse(fs.readFileSync(projectsPath, "utf8"));
 
 if (fs.existsSync(manifestPath)) {
   fs.copyFileSync(manifestPath, archivePath);
   console.log("archived →", path.relative(root, archivePath));
 }
+
+// Build folder → project slug lookup from registry's image_folders.
+const folderToSlug = {};
+for (const [slug, proj] of Object.entries(registry)) {
+  for (const folder of proj.image_folders || []) {
+    folderToSlug[folder] = slug;
+  }
+}
+
+const FALLBACK_SLUG = "snapshot";
 
 const slugify = (s) =>
   s
@@ -44,13 +41,10 @@ const slugify = (s) =>
 
 const projectFromFile = (file_path) => {
   const top = (file_path || "").split("/")[0];
-  return FOLDER_MAP[top] || FALLBACK;
+  return folderToSlug[top] || FALLBACK_SLUG;
 };
 
-// Build projects: only include keys actually used by items.
-const projectYears = new Map(); // key -> max year seen
-const projects = {};
-
+const projectYears = new Map();
 const usedIds = new Set();
 const mkId = (base) => {
   let id = base || "item";
@@ -61,13 +55,14 @@ const mkId = (base) => {
   return final;
 };
 
+// Build image items from catalogue.
 const items = catalogue.map((raw) => {
-  const proj = projectFromFile(raw.file_path);
+  const slug = projectFromFile(raw.file_path);
+  const proj = registry[slug] || registry[FALLBACK_SLUG];
   const id = mkId(slugify(raw.file_path || raw.title || "item"));
   const src = "/images/" + (raw.file_path || "").replace(/^\/+/, "");
 
-  // Derive year and best date.
-  // Priority: exif > filesystem-within-range > project_date_range > filesystem fallback.
+  // Derive year: exif > filesystem-within-range > project_date_range > filesystem.
   let year = null;
   let bestDate = null;
   const createdDate = raw.created_date || null;
@@ -76,17 +71,14 @@ const items = catalogue.map((raw) => {
   const fsYear = fsDate ? new Date(fsDate).getUTCFullYear() : null;
 
   if (isExif && createdDate) {
-    // EXIF dates survive cloud sync — always trustworthy.
     year = new Date(createdDate).getUTCFullYear();
     bestDate = createdDate;
   } else if (raw.project_date_range && fsYear) {
     const [rangeStart, rangeEnd] = raw.project_date_range.split("-").map(Number);
     if (fsYear >= rangeStart && fsYear <= rangeEnd) {
-      // Filesystem date falls within project range — it's real, keep full precision.
       year = fsYear;
       bestDate = fsDate;
     } else {
-      // Filesystem date was scrubbed by cloud sync — fall back to range start.
       year = rangeStart > 2000 ? rangeStart : null;
       bestDate = raw.project_date_range;
     }
@@ -95,15 +87,11 @@ const items = catalogue.map((raw) => {
     year = rangeStart > 2000 ? rangeStart : null;
     bestDate = raw.project_date_range;
   } else if (fsDate) {
-    // No range (e.g. IndependentProjects) — trust filesystem as-is.
     year = fsYear;
     bestDate = fsDate;
   }
   if (year) {
-    projectYears.set(proj.key, Math.max(projectYears.get(proj.key) || 0, year));
-  }
-  if (year) {
-    projectYears.set(proj.key, Math.max(projectYears.get(proj.key) || 0, year));
+    projectYears.set(slug, Math.max(projectYears.get(slug) || 0, year));
   }
 
   const item = {
@@ -113,33 +101,51 @@ const items = catalogue.map((raw) => {
     title: raw.title || "",
     tags: Array.isArray(raw.tags) ? [...raw.tags] : [],
     medium: raw.medium || "",
-    project: proj.key,
+    project: slug,
     description: raw.description || "",
   };
   if (raw.style) item.style = raw.style;
   if (bestDate) item.created = bestDate;
   if (raw.project_date_range) item.date_range = raw.project_date_range;
   if (year) item.year = year;
-  if (proj.personal) {
+  if (proj?.personal) {
     item.personal = true;
-    if (proj.key === "snapshot" && !item.tags.includes("snapshot")) {
+    if (slug === "snapshot" && !item.tags.includes("snapshot")) {
       item.tags.push("snapshot");
     }
   }
   return item;
 });
 
-// Instantiate project records for keys that items actually use
-for (const item of items) {
-  const key = item.project;
-  if (projects[key]) continue;
-  const meta = Object.values(FOLDER_MAP).find((m) => m.key === key) || FALLBACK;
-  projects[key] = {
-    title: meta.title,
-    description: "",
-    client: meta.client,
-    year: projectYears.get(key) || null,
-    credits: [{ role: "Design", name: "Marvin de Jong" }],
+// Generate video items from projects that have videos defined.
+for (const [slug, proj] of Object.entries(registry)) {
+  for (const vid of proj.videos || []) {
+    if (!vid.url) continue;
+    const id = mkId(slugify(vid.title || `${slug}-video`));
+    items.push({
+      id,
+      type: "video",
+      video: vid.url,
+      title: vid.title || "",
+      tags: proj.portfolio_tags || [],
+      medium: "video",
+      project: slug,
+      ...(proj.personal ? { personal: true } : {}),
+    });
+  }
+}
+
+// Build manifest project records from registry.
+const projects = {};
+for (const [slug, proj] of Object.entries(registry)) {
+  const hasItems = items.some((i) => i.project === slug);
+  if (!hasItems) continue;
+  projects[slug] = {
+    title: proj.name,
+    description: proj.description || "",
+    client: proj.client,
+    year: projectYears.get(slug) || null,
+    credits: proj.credits || [],
   };
 }
 

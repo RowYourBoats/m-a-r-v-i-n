@@ -1,6 +1,7 @@
 ---
 category: experience
 company: IonQ
+project_key: ionq
 date: May 2023 – Present
 project: Data Visualization — Quantum Metrics, Roadmap, Benchmarks
 role: Creative Director (Remote)

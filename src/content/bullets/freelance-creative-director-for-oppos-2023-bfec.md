@@ -1,6 +1,7 @@
 ---
 category: experience
 company: m-a-r-v-i-n studio
+project_key: marvin-studio
 date: June 2015 – Present
 project: OPPO Mobile World Congress 2023 — Keynote
 role: Creative Director / Owner

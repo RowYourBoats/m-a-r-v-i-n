@@ -27,6 +27,9 @@ const bullets = defineCollection({
     category: z.string().optional(),
     date: z.string().optional(),
     tags: z.array(z.string()).optional(),
+    project_key: z.string().optional(),
+    project: z.string().optional(),
+    size: z.string().optional(),
   }),
 });
 

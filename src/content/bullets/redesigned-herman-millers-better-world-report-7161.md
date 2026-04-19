@@ -1,6 +1,7 @@
 ---
 category: experience
 company: Herman Miller
+project_key: herman-miller
 date: May 2017 – June 2019
 project: Better World Report
 role: Global Brand Designer

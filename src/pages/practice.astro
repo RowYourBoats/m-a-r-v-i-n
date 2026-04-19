@@ -1,18 +1,12 @@
 ---
 import Base from "@/layouts/Base.astro";
 import manifest from "@/data/manifest.json";
-import { getCollection, render } from "astro:content";
+import { getCollection } from "astro:content";
 
 const { items } = manifest;
 const personalItems = items.filter((item) => item.personal);
 
 const writingEntries = await getCollection("writing");
-const writingRendered = await Promise.all(
-  writingEntries.map(async (entry) => {
-    const { Content } = await render(entry);
-    return { entry, Content };
-  }),
-);
 
 // Light tag set for Practice — union of tags actually present on essays
 // and personal items. Dedupe and drop noisy ones.
@@ -20,7 +14,7 @@ const tagSet = new Set<string>();
 for (const item of personalItems) {
   for (const t of item.tags || []) tagSet.add(t);
 }
-for (const { entry } of writingRendered) {
+for (const entry of writingEntries) {
   for (const t of entry.data.tags || []) tagSet.add(t);
 }
 tagSet.delete("snapshot"); // implicit — all loose personal images have it
@@ -38,19 +32,18 @@ const practiceTags = [...tagSet].sort();
   </div>
 
   <div class="grid" id="grid">
-    {writingRendered.map(({ entry, Content }) => (
+    {writingEntries.map((entry) => (
       <div
         class="grid-item grid-item--writing"
         data-id={`writing-${entry.id}`}
         data-tags={(entry.data.tags || []).join(",")}
         data-type="writing"
+        data-excerpt={entry.data.excerpt || ""}
+        data-slug={entry.id}
       >
         <div class="writing-card">
           <p class="writing-card-title">{entry.data.title}</p>
         </div>
-        <template class="writing-body" data-title={entry.data.title} data-date={entry.data.date}>
-          <Content />
-        </template>
       </div>
     ))}
 
@@ -107,9 +100,12 @@ const practiceTags = [...tagSet].sort();
       var el = e.target.closest(".grid-item");
       if (!el || el.dataset.type !== "writing") return;
 
-      var tpl = el.querySelector(".writing-body");
-      var bodyHtml = tpl ? tpl.innerHTML : "";
-      detailContent.innerHTML = '<div class="prose">' + bodyHtml + '</div>';
+      var excerpt = el.dataset.excerpt || "";
+      var slug = el.dataset.slug || "";
+      var html = "";
+      if (excerpt) html += '<p class="detail-meta">' + excerpt + '</p>';
+      html += '<a class="detail-project-link" href="/writing/' + slug + '">Read essay</a>';
+      detailContent.innerHTML = html;
       el.appendChild(detail);
       detail.style.display = "";
       el.scrollIntoView({ behavior: "smooth", block: "nearest" });

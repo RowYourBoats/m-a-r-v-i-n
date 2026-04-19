@@ -1,0 +1,402 @@
+{
+  "dffpm": {
+    "name": "DFFPM",
+    "slug": "dffpm",
+    "client": "DFFPM",
+    "aliases": [
+      "DFFPM"
+    ],
+    "date_range": "",
+    "roles": [],
+    "category": "experience",
+    "image_folders": [
+      "DFFPM"
+    ],
+    "portfolio_tags": [
+      "brand",
+      "typography"
+    ],
+    "personal": false,
+    "description": "",
+    "credits": [
+      {
+        "role": "Design",
+        "name": "Marvin de Jong"
+      }
+    ],
+    "videos": []
+  },
+  "dsr": {
+    "name": "Diller Scofidio + Renfro",
+    "slug": "dsr",
+    "client": "DS+R",
+    "aliases": [
+      "Diller Scofidio + Renfro",
+      "DS+R",
+      "DSR"
+    ],
+    "date_range": "2016-2017",
+    "roles": [
+      "Designer"
+    ],
+    "category": "experience",
+    "image_folders": [
+      "DS+R"
+    ],
+    "portfolio_tags": [
+      "architecture",
+      "spatial",
+      "print"
+    ],
+    "personal": false,
+    "description": "",
+    "credits": [
+      {
+        "role": "Design",
+        "name": "Marvin de Jong"
+      }
+    ],
+    "videos": []
+  },
+  "gahi": {
+    "name": "Gahi",
+    "slug": "gahi",
+    "client": "Gahi",
+    "aliases": [
+      "Gahi",
+      "Hagahi"
+    ],
+    "date_range": "",
+    "roles": [],
+    "category": "experience",
+    "image_folders": [
+      "Gahi"
+    ],
+    "portfolio_tags": [
+      "brand",
+      "typography",
+      "print"
+    ],
+    "personal": false,
+    "description": "",
+    "credits": [
+      {
+        "role": "Design",
+        "name": "Marvin de Jong"
+      }
+    ],
+    "videos": []
+  },
+  "herman-miller": {
+    "name": "Herman Miller",
+    "slug": "herman-miller",
+    "client": "Herman Miller",
+    "aliases": [
+      "Herman Miller",
+      "HermanMiller"
+    ],
+    "date_range": "2017-2019",
+    "roles": [
+      "Global Brand Designer"
+    ],
+    "category": "experience",
+    "image_folders": [
+      "HermanMiller"
+    ],
+    "portfolio_tags": [
+      "brand",
+      "spatial",
+      "print",
+      "merch",
+      "product"
+    ],
+    "personal": false,
+    "description": "",
+    "credits": [
+      {
+        "role": "Design",
+        "name": "Marvin de Jong"
+      }
+    ],
+    "videos": []
+  },
+  "snapshot": {
+    "name": "Snapshots",
+    "slug": "snapshot",
+    "client": "personal",
+    "aliases": [
+      "personal",
+      "IndependentProjects"
+    ],
+    "date_range": "",
+    "roles": [],
+    "category": "experience",
+    "image_folders": [
+      "IndependentProjects"
+    ],
+    "portfolio_tags": [
+      "form",
+      "typography",
+      "concept",
+      "real-time"
+    ],
+    "personal": true,
+    "description": "",
+    "credits": [
+      {
+        "role": "Design",
+        "name": "Marvin de Jong"
+      }
+    ],
+    "videos": []
+  },
+  "ionq": {
+    "name": "IonQ",
+    "slug": "ionq",
+    "client": "IonQ",
+    "aliases": [
+      "IonQ"
+    ],
+    "date_range": "2023-present",
+    "roles": [
+      "Creative Director (Remote)"
+    ],
+    "category": "experience",
+    "image_folders": [
+      "IonQ"
+    ],
+    "portfolio_tags": [
+      "brand",
+      "keynote",
+      "merch",
+      "data-visualization"
+    ],
+    "personal": false,
+    "description": "",
+    "credits": [
+      {
+        "role": "Creative Direction",
+        "name": "Marvin de Jong"
+      }
+    ],
+    "videos": []
+  },
+  "moma": {
+    "name": "MoMA",
+    "slug": "moma",
+    "client": "MoMA",
+    "aliases": [
+      "MoMA"
+    ],
+    "date_range": "2015-2016",
+    "roles": [
+      "Freelance Designer"
+    ],
+    "category": "experience",
+    "image_folders": [
+      "MoMA"
+    ],
+    "portfolio_tags": [
+      "spatial",
+      "print"
+    ],
+    "personal": false,
+    "description": "",
+    "credits": [
+      {
+        "role": "Design",
+        "name": "Marvin de Jong"
+      }
+    ],
+    "videos": []
+  },
+  "nyu": {
+    "name": "New York University",
+    "slug": "nyu",
+    "client": "NYU",
+    "aliases": [
+      "New York University",
+      "NYU"
+    ],
+    "date_range": 2016,
+    "roles": [
+      "Substitute Instructor, Typography"
+    ],
+    "category": "teaching",
+    "image_folders": [
+      "NYU"
+    ],
+    "portfolio_tags": [
+      "typography"
+    ],
+    "personal": false,
+    "description": "",
+    "credits": [
+      {
+        "role": "Instructor",
+        "name": "Marvin de Jong"
+      }
+    ],
+    "videos": []
+  },
+  "parsons": {
+    "name": "Parsons School of Design",
+    "slug": "parsons",
+    "client": "Parsons",
+    "aliases": [
+      "Parsons School of Design",
+      "Parsons"
+    ],
+    "date_range": 2018,
+    "roles": [
+      "Part-Time Faculty, Core Studio Interaction"
+    ],
+    "category": "teaching",
+    "image_folders": [
+      "Parsons"
+    ],
+    "portfolio_tags": [
+      "interactive",
+      "concept"
+    ],
+    "personal": false,
+    "description": "",
+    "credits": [
+      {
+        "role": "Faculty",
+        "name": "Marvin de Jong"
+      }
+    ],
+    "videos": []
+  },
+  "pratt": {
+    "name": "Pratt Institute",
+    "slug": "pratt",
+    "client": "Pratt",
+    "aliases": [
+      "Pratt Institute",
+      "Pratt"
+    ],
+    "date_range": "2015-2016",
+    "roles": [
+      "Freelance Designer"
+    ],
+    "category": "experience",
+    "image_folders": [
+      "Pratt"
+    ],
+    "portfolio_tags": [
+      "spatial",
+      "print"
+    ],
+    "personal": false,
+    "description": "",
+    "credits": [
+      {
+        "role": "Design",
+        "name": "Marvin de Jong"
+      }
+    ],
+    "videos": []
+  },
+  "marvin-studio": {
+    "name": "m‑a‑r‑v‑i‑n studio",
+    "slug": "marvin-studio",
+    "client": "personal",
+    "aliases": [
+      "m‑a‑r‑v‑i‑n studio",
+      "m‑a‑r‑v‑i‑n (studio)"
+    ],
+    "date_range": "2015-present",
+    "roles": [
+      "Creative Director / Owner"
+    ],
+    "category": "experience",
+    "image_folders": [
+      "Studio"
+    ],
+    "portfolio_tags": [
+      "brand",
+      "real-time",
+      "spatial"
+    ],
+    "personal": false,
+    "description": "",
+    "credits": [
+      {
+        "role": "Creative Direction",
+        "name": "Marvin de Jong"
+      }
+    ],
+    "videos": []
+  },
+  "verizon": {
+    "name": "Verizon",
+    "slug": "verizon",
+    "client": "Verizon",
+    "aliases": [
+      "Verizon",
+      "Verizon_Selection",
+      "Verizon Decks-JPG"
+    ],
+    "date_range": "2019-2022",
+    "roles": [
+      "Senior Designer → Associate Creative Director, 2D Retail and Experiential"
+    ],
+    "category": "experience",
+    "image_folders": [
+      "Verizon Decks-JPG",
+      "Verizon_Selection"
+    ],
+    "portfolio_tags": [
+      "retail",
+      "brand",
+      "keynote",
+      "concept",
+      "spatial",
+      "interactive",
+      "experience"
+    ],
+    "personal": false,
+    "description": "",
+    "credits": [
+      {
+        "role": "Design",
+        "name": "Marvin de Jong"
+      }
+    ],
+    "videos": []
+  },
+  "yale": {
+    "name": "Yale School of Art",
+    "slug": "yale",
+    "client": "Yale",
+    "aliases": [
+      "Yale University",
+      "Yale"
+    ],
+    "date_range": "2013-2015",
+    "roles": [
+      "MFA, Graphic Design"
+    ],
+    "category": "education",
+    "image_folders": [
+      "Yale"
+    ],
+    "portfolio_tags": [
+      "print",
+      "typography",
+      "concept",
+      "form"
+    ],
+    "personal": true,
+    "description": "",
+    "credits": [
+      {
+        "role": "Student",
+        "name": "Marvin de Jong"
+      }
+    ],
+    "videos": []
+  }
+}

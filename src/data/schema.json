@@ -1,14 +1,47 @@
 {
-  "pinned": ["retail", "spatial", "brand", "real-time", "essay"],
+  "pinned": [
+    "retail",
+    "spatial",
+    "brand",
+    "real-time",
+    "essay"
+  ],
   "tags": [
-    "retail", "spatial", "brand", "real-time", "essay",
-    "merch", "print", "motion", "concept", "experience",
-    "sketch", "process", "architecture", "form", "other-intelligences"
+    "architecture",
+    "brand",
+    "concept",
+    "data-visualization",
+    "experience",
+    "form",
+    "interactive",
+    "keynote",
+    "merch",
+    "print",
+    "product",
+    "real-time",
+    "retail",
+    "spatial",
+    "typography"
   ],
   "mediums": [
-    "built environment", "print", "product", "video", "digital", "identity"
+    "built environment",
+    "print",
+    "product",
+    "video",
+    "digital",
+    "identity"
   ],
   "clients": [
-    "Verizon", "IonQ", "Herman Miller", "MoMA"
+    "DFFPM",
+    "DS+R",
+    "Gahi",
+    "Herman Miller",
+    "IonQ",
+    "MoMA",
+    "NYU",
+    "Parsons",
+    "Pratt",
+    "Verizon",
+    "Yale"
   ]
 }

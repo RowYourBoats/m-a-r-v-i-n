@@ -1,6 +1,7 @@
 ---
 category: experience
 company: Herman Miller
+project_key: herman-miller
 date: May 2017 – June 2019
 project: Hot Prospect — WHY Magazine
 role: Global Brand Designer

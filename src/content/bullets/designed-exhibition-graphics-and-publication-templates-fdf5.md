@@ -1,6 +1,7 @@
 ---
 category: experience
 company: MoMA
+project_key: moma
 date: 2015 – 2016
 role: Freelance Designer
 size: small

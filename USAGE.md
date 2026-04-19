@@ -20,31 +20,76 @@ Without quotes, YAML interprets the colon as a key-value separator and the build
 
 ## Content model
 
-There are **three** sources of content:
+Four sources of content, unified by a project registry:
 
-1. **Images** — files in `public/images/<FolderName>/`, described in `public/images/image_catalogue.json`
-2. **Essays** — markdown in `src/content/writing/*.md`, served via an Astro content collection
-3. **Project/item manifest** — `src/data/manifest.json`, **generated** from the catalogue by `scripts/build-manifest.mjs`. Do not hand-edit.
+1. **Project registry** — `_project.md` files in each `public/images/<Folder>/`, compiled to `src/data/projects.json`
+2. **Images** — files in `public/images/<Folder>/`, described in `public/images/image_catalogue.json`, hosted on Vercel Blob
+3. **Essays** — markdown in `src/content/writing/*.md` (Astro content collection)
+4. **CV bullets** — markdown in `src/content/bullets/*.md` (junction to Jullie-Resume)
 
-Taxonomy (tag/medium/client vocabulary) lives in `src/data/schema.json`.
+Generated files (do not hand-edit):
+- `src/data/manifest.json` — generated from catalogue + projects.json
+- `src/data/schema.json` — generated from projects.json
+- `src/data/projects.json` — generated from `_project.md` files
 
-### Images — folder-as-project
+### Project registry (`_project.md`)
 
-Images live in `public/images/<FolderName>/…`. The top-level folder is the source of truth for which project an image belongs to. The mapping from folder → project is defined in `scripts/build-manifest.mjs` under `FOLDER_MAP`:
+Each image folder has a `_project.md` that defines the project. This is the **source of truth** for project identity.
 
-```js
-"HermanMiller":      { key: "herman-miller", title: "Herman Miller", client: "Herman Miller" },
-"Verizon_Selection": { key: "verizon",       title: "Verizon",       client: "Verizon" },
-"Verizon Decks-JPG": { key: "verizon",       title: "Verizon",       client: "Verizon" },
-"Yale":              { key: "yale",          title: "Yale",          client: "Yale", personal: true },
-"IndependentProjects": { key: "snapshot",    title: "Snapshots",     personal: true },
-// …
+```yaml
+---
+slug: herman-miller
+name: Herman Miller
+client: Herman Miller
+aliases:
+  - Herman Miller
+  - HermanMiller
+date_range: 2017-2019
+roles:
+  - Global Brand Designer
+category: experience
+portfolio_tags:
+  - brand
+  - spatial
+  - print
+  - merch
+personal: false
+description: ""
+credits:
+  - role: Design
+    name: Marvin de Jong
+videos:
+  - title: Walkthrough
+    url: https://player.vimeo.com/video/...
+---
+
+Optional prose description (rendered on project page).
 ```
 
-- Multiple folders can collapse into one project (e.g. both `Verizon_*` folders → `verizon`).
-- A folder marked `personal: true` is shown on the Practice page, not Work.
-- Unmapped folders fall back to the `snapshot` project.
-- To add a new client, drop the folder under `public/images/`, add an entry to `FOLDER_MAP`, then rebuild.
+Key fields:
+- `slug` — canonical project key, used in URLs and manifest
+- `aliases` — all name variants (resolves naming mismatches between systems)
+- `image_folders` — derived from which folder the `_project.md` lives in
+- `portfolio_tags` — display tags for the Work page filter bar
+- `videos` — Vimeo embed URLs, generated as video items in the manifest
+- `personal` — `true` → shows on Practice; `false` → shows on Work
+
+**To add a new project:** create a folder in `public/images/`, add a `_project.md`, drop images in, then run `npm run build-data`.
+
+**Bidirectional sync:**
+- Edit `_project.md` files → run `node scripts/build-projects.mjs` → generates `projects.json`
+- Edit `projects.json` → run `node scripts/scatter-projects.mjs` → updates `_project.md` files
+
+### Images and Vercel Blob
+
+Images live locally in `public/images/<Folder>/` but are **hosted on Vercel Blob** (CDN). The manifest references Blob URLs (`https://ws6i2dfuggcaavs2.public.blob.vercel-storage.com/...`), not local paths.
+
+To upload new/changed images to Blob:
+```
+node --env-file=.env scripts/upload-blob.mjs
+```
+
+Requires `BLOB_READ_WRITE_TOKEN` in `.env`.
 
 ### `image_catalogue.json`
 
@@ -59,33 +104,46 @@ Each entry describes one image:
   "client": "DFFPM",
   "style": "minimalist geometric typography",
   "file_path": "DFFPM/Screenshot 2026-04-13 231222.png",
-  "created": "2026-04-13T23:12:22.000Z"
+  "created": "2026-04-13T23:12:22.000Z",
+  "created_date": "2026-04-13",
+  "date_source": "estimated",
+  "project_date_range": "2019-2022"
 }
 ```
 
-`file_path` is the image's path relative to `public/images/`. The `client` field is informational — the actual grouping is done by the folder name via `FOLDER_MAP`. `created` is stamped by `scripts/mine-dates.mjs`.
+Date priority: `exif` > filesystem date within `project_date_range` > range start year > filesystem fallback.
 
-### Rebuilding the manifest
+### CV bullets (content collection)
 
-Run after adding or moving images, or after editing the catalogue:
+Sourced from Jullie-Resume via a directory junction (`src/content/bullets/` → `Jullie-Resume/input/bullets/`). Each bullet has:
 
+```yaml
+---
+company: Herman Miller
+project_key: herman-miller
+role: Global Brand Designer
+category: experience
+date: May 2017 – June 2019
+tags:
+  - brand-pillar
+  - design-system-consolidation
+---
+
+Bullet text here.
 ```
-node scripts/mine-dates.mjs      # stamps file birthtime onto each catalogue entry
-node scripts/build-manifest.mjs  # regenerates src/data/manifest.json (archives the old one)
+
+- `project_key` links bullets to the project registry (stamped by `scripts/stamp-project-keys.mjs`)
+- `company` is the display name used by Jullie-Resume
+- Bullet tags are granular skills; `src/data/tag-map.json` maps them to portfolio display tags
+
+**Junction setup** (needed after fresh clone on Windows):
 ```
-
-`build-manifest.mjs` does the following:
-
-- Archives the current manifest to `src/data/manifest.archive.json`
-- Groups items by folder → project via `FOLDER_MAP`
-- Auto-generates item `id`s from file paths
-- Carries over `title`, `description`, `tags`, `medium`, `style`, `created`, and derives `year` from `created`
-- Marks items in `personal` folders with `personal: true` (plus the `snapshot` tag for the `snapshot` project)
-- Only creates project records for keys that actually have items
+cmd /c "mklink /J src\content\bullets D:\ClaudeCoding\Jullie-Resume\input\bullets"
+```
 
 ### Essays (content collection)
 
-Essays live in `src/content/writing/*.md` with this frontmatter:
+Essays live in `src/content/writing/*.md`:
 
 ```yaml
 ---
@@ -93,34 +151,69 @@ title: "Essay Title"
 date: "2024-04-20"
 tags: [essay, real-time]
 excerpt: "One-line summary shown on the grid."
-personal: true   # optional; currently all essays are shown on Practice
 ---
 
 Essay body in markdown.
 ```
 
-The collection schema is defined in `src/content.config.ts`. Essays render into the Practice page as oversized cards; clicking a card expands the full body inline via a hidden `<template>` — no runtime fetch.
+Essays appear on the Practice page as oversized title cards. Clicking expands the full body inline.
 
-To add an essay: drop a new `.md` file in `src/content/writing/` and restart `npm run dev` (Astro picks up new collection entries on restart).
+### Tag mapping
+
+`src/data/tag-map.json` maps granular bullet tags (137 unique) to portfolio display tags (15). Used for cross-system filtering. Example: `"5g-campaigns" → "retail"`, `"unreal-engine-5" → "real-time"`.
+
+## Build pipeline
+
+```
+npm run build-data
+```
+
+Runs three scripts in sequence:
+1. `build-projects.mjs` — `_project.md` files → `projects.json` + `schema.json`
+2. `mine-dates.mjs` — stamps file birthtimes onto catalogue entries
+3. `build-manifest.mjs` — catalogue + `projects.json` → `manifest.json`
+
+Run this after adding/moving images, editing `_project.md`, or updating the catalogue.
+
+### Individual scripts
+
+| Script | Purpose |
+|---|---|
+| `scripts/build-projects.mjs` | `_project.md` → `projects.json` + `schema.json` |
+| `scripts/scatter-projects.mjs` | `projects.json` → `_project.md` (reverse sync) |
+| `scripts/mine-dates.mjs` | Stamp file dates on catalogue entries |
+| `scripts/build-manifest.mjs` | Catalogue + projects → manifest |
+| `scripts/upload-blob.mjs` | Upload images to Vercel Blob, rewrite manifest URLs |
+| `scripts/stamp-project-keys.mjs` | One-time: add `project_key` to bullet frontmatter |
 
 ## Pages
 
-- `/` (Work) — non-personal items only, grouped into a masonry grid with tag filters. `essay` is excluded from Work's filter bar.
-- `/practice` — personal images + essays, with a light tag filter bar.
-- `/marvin` — bio + profile images.
-- `/projects/[slug]` — auto-generated per project from the manifest.
+- `/` (Work) — non-personal items, masonry grid, tag filters, sorted newest first
+- `/practice` — personal images + essays, light tag filter
+- `/marvin` — bio, contact, resume (CV bullets in a 3-column table with umbrella filters + clickable tags)
+- `/projects/[slug]` — auto-generated per project from the manifest
+
+## Password gate (under construction)
+
+The site is gated behind a password via Astro middleware (`src/middleware.ts`).
+
+- `SITE_PASSWORD` env var — the shared password (set in `.env` locally, in Vercel env vars for production)
+- `SITE_LIVE=true` — disables the gate entirely (kill switch)
+- Cookie-based session: 7-day `HttpOnly` cookie, SHA-256 hash of password
+
+The gate page is at `src/pages/under-construction.astro`. Auth endpoint at `src/pages/api/auth.ts`.
 
 ## Deploying
 
-Push to main. Vercel rebuilds automatically.
+Push to master. Vercel rebuilds automatically from GitHub (RowYourBoats/m-a-r-v-i-n).
 
 ```
 git add .
-git commit -m "add project"
-git push
+git commit -m "update"
+git push origin master
 ```
 
-If you updated images or the catalogue, remember to rebuild the manifest locally first and commit the new `src/data/manifest.json`.
+Images are on Vercel Blob — pushing code doesn't re-upload images. To upload new images, run `upload-blob.mjs` locally.
 
 ## Design tokens
 
@@ -131,8 +224,8 @@ All spacing and typography is controlled by two CSS variables in `src/styles/glo
 
 One font (PP Neue Montreal Regular), one weight (400), one line-height (1.2). Font file goes in `public/fonts/PPNeueMontreal-Regular.woff2`.
 
-Multi-paragraph body copy should be wrapped in `<div class="prose">` — that class applies a tight `p + p` margin so paragraphs don't inherit the site-wide flex gap.
+Multi-paragraph body copy: wrap in `<div class="prose">` for tight `p + p` spacing.
 
 ## Known-stale tooling
 
-`scripts/post.mjs` (the old `npm run post` CLI) pre-dates the catalogue-based flow. It appends directly to `manifest.json`, which gets overwritten on the next `build-manifest.mjs` run. It should either be rewritten to append to `image_catalogue.json` instead, or removed. Don't use it until that decision is made.
+`scripts/post.mjs` — pre-dates the registry-based flow. Appends directly to `manifest.json`, which gets overwritten by `build-manifest.mjs`. Should be rewritten or removed.

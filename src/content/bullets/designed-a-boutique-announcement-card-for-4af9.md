@@ -1,6 +1,7 @@
 ---
 category: experience
 company: m-a-r-v-i-n studio
+project_key: marvin-studio
 date: June 2015 – Present
 project: Tillotson Design Associates — Announcement Card
 role: Creative Director / Owner

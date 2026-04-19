@@ -52,6 +52,7 @@
 
 /* ---- Base ---- */
 html {
+  overflow-y: scroll;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -407,6 +408,30 @@ video {
 /* ---- Prose (multi-paragraph body copy) ---- */
 .prose p + p {
   margin-top: 1em;
+}
+
+/* ---- Essay page ---- */
+.essay {
+  display: flex;
+  flex-direction: column;
+  gap: var(--pad);
+  width: 50%;
+}
+
+@media (max-width: 760px) {
+  .essay {
+    width: 100%;
+  }
+}
+
+.essay-title {
+  font-size: 2em;
+  line-height: 1.05;
+  font-weight: 400;
+}
+
+.essay-date {
+  opacity: 0.5;
 }
 
 /* ---- CV ---- */
