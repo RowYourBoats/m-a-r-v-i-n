@@ -6,7 +6,9 @@ import { getCollection } from "astro:content";
 const { items } = manifest;
 const personalItems = items.filter((item) => item.personal);
 
-const writingEntries = await getCollection("writing");
+// Only show essays from practice/ projects on this page
+const allWriting = await getCollection("writing");
+const writingEntries = allWriting.filter((e) => e.id.startsWith("practice/"));
 
 // Light tag set for Practice — union of tags actually present on essays
 // and personal items. Dedupe and drop noisy ones.

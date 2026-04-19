@@ -51,8 +51,14 @@ const slugify = (s) =>
     .slice(0, 60);
 
 const projectFromFile = (file_path) => {
-  const top = (file_path || "").split("/")[0];
-  return folderToSlug[top] || FALLBACK_SLUG;
+  // 3-level structure: tier/client/project/file
+  const parts = (file_path || "").split("/");
+  // Try 3 segments (work/verizon/selection), then 2, then 1
+  for (let n = 3; n >= 1; n--) {
+    const key = parts.slice(0, n).join("/");
+    if (folderToSlug[key]) return folderToSlug[key];
+  }
+  return FALLBACK_SLUG;
 };
 
 const projectYears = new Map();
@@ -72,7 +78,13 @@ const items = catalogue.map((raw) => {
   const proj = registry[slug] || registry[FALLBACK_SLUG];
   const id = mkId(slugify(raw.file_path || raw.title || "item"));
   const localSrc = "/images/" + (raw.file_path || "").replace(/^\/+/, "");
-  const src = blobUrls.get(localSrc) || localSrc;
+  // Check Blob URLs: try new path first, fall back to old_file_path
+  let src = blobUrls.get(localSrc);
+  if (!src && raw.old_file_path) {
+    const oldSrc = "/images/" + raw.old_file_path.replace(/^\/+/, "");
+    src = blobUrls.get(decodeURIComponent(oldSrc)) || blobUrls.get(oldSrc);
+  }
+  src = src || localSrc;
 
   // Derive year: exif > filesystem-within-range > project_date_range > filesystem.
   let year = null;

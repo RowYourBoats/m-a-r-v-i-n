@@ -2,13 +2,12 @@ import { defineCollection, z } from "astro:content";
 import { glob } from "astro/loaders";
 
 const writing = defineCollection({
-  loader: glob({ pattern: "**/*.md", base: "./src/content/writing" }),
+  loader: glob({ pattern: "**/[!_]*.md", base: "./public/images" }),
   schema: z.object({
     title: z.string(),
     date: z.string(),
     tags: z.array(z.string()).optional(),
     excerpt: z.string().optional(),
-    personal: z.boolean().optional(),
   }),
 });
 

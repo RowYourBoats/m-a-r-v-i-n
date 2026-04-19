@@ -1,6 +1,7 @@
 #!/usr/bin/env node
-// Reads _project.md from each folder in public/images/,
+// Reads _project.md from each project folder under work/ and practice/,
 // generates src/data/projects.json and src/data/schema.json.
+// Structure: public/images/{work|practice}/{client}/{project}/_project.md
 
 import fs from "node:fs";
 import path from "node:path";
@@ -24,55 +25,71 @@ function parseFrontmatter(text) {
   return { data, body };
 }
 
+function slugify(s) {
+  return s.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-+|-+$/g, "");
+}
+
 const projects = {};
-const folders = fs.readdirSync(imagesDir, { withFileTypes: true });
+const tiers = ["work", "practice"];
 
-for (const entry of folders) {
-  if (!entry.isDirectory()) continue;
-  const projectFile = path.join(imagesDir, entry.name, "_project.md");
-  if (!fs.existsSync(projectFile)) continue;
+for (const tier of tiers) {
+  const tierDir = path.join(imagesDir, tier);
+  if (!fs.existsSync(tierDir)) continue;
 
-  const { data, body } = parseFrontmatter(
-    fs.readFileSync(projectFile, "utf8"),
-  );
-  const slug = data.slug;
-  if (!slug) {
-    console.warn(`skipping ${entry.name}/_project.md — no slug`);
-    continue;
-  }
+  for (const clientEntry of fs.readdirSync(tierDir, { withFileTypes: true })) {
+    if (!clientEntry.isDirectory()) continue;
+    const clientDir = path.join(tierDir, clientEntry.name);
 
-  if (projects[slug]) {
-    // Merge: same project, multiple folders
-    projects[slug].image_folders.push(entry.name);
-    // Merge aliases
-    for (const a of data.aliases || []) {
-      if (!projects[slug].aliases.includes(a)) projects[slug].aliases.push(a);
+    for (const projectEntry of fs.readdirSync(clientDir, { withFileTypes: true })) {
+      if (!projectEntry.isDirectory()) continue;
+      const projectDir = path.join(clientDir, projectEntry.name);
+      const projectFile = path.join(projectDir, "_project.md");
+      const folderPath = `${tier}/${clientEntry.name}/${projectEntry.name}`;
+
+      let data = {};
+      let body = "";
+
+      if (fs.existsSync(projectFile)) {
+        ({ data, body } = parseFrontmatter(
+          fs.readFileSync(projectFile, "utf8"),
+        ));
+      }
+
+      // Auto-generate slug if missing
+      const slug = data.slug || `${clientEntry.name}-${projectEntry.name}`;
+      const personal = tier === "practice";
+
+      if (projects[slug]) {
+        // Merge: same slug across multiple folders
+        projects[slug].image_folders.push(folderPath);
+        for (const a of data.aliases || []) {
+          if (!projects[slug].aliases.includes(a)) projects[slug].aliases.push(a);
+        }
+        for (const t of data.portfolio_tags || []) {
+          if (!projects[slug].portfolio_tags.includes(t))
+            projects[slug].portfolio_tags.push(t);
+        }
+        for (const v of data.videos || []) {
+          projects[slug].videos.push(v);
+        }
+      } else {
+        projects[slug] = {
+          name: data.name || projectEntry.name.replace(/-/g, " "),
+          slug,
+          client: data.client || clientEntry.name.replace(/-/g, " "),
+          aliases: data.aliases || [],
+          date_range: data.date_range || "",
+          roles: data.roles || [],
+          category: data.category || "experience",
+          image_folders: [folderPath],
+          portfolio_tags: data.portfolio_tags || [],
+          personal,
+          description: data.description || body || "",
+          credits: data.credits || [],
+          videos: data.videos || [],
+        };
+      }
     }
-    // Merge portfolio_tags
-    for (const t of data.portfolio_tags || []) {
-      if (!projects[slug].portfolio_tags.includes(t))
-        projects[slug].portfolio_tags.push(t);
-    }
-    // Merge videos
-    for (const v of data.videos || []) {
-      projects[slug].videos.push(v);
-    }
-  } else {
-    projects[slug] = {
-      name: data.name || slug,
-      slug,
-      client: data.client || data.name || slug,
-      aliases: data.aliases || [],
-      date_range: data.date_range || "",
-      roles: data.roles || [],
-      category: data.category || "experience",
-      image_folders: [entry.name],
-      portfolio_tags: data.portfolio_tags || [],
-      personal: data.personal || false,
-      description: data.description || body || "",
-      credits: data.credits || [],
-      videos: data.videos || [],
-    };
   }
 }
 
@@ -90,7 +107,13 @@ for (const p of Object.values(projects)) {
   if (p.client && p.client !== "personal") allClients.add(p.client);
 }
 
-const existingSchema = JSON.parse(fs.readFileSync(schemaPath, "utf8"));
+let existingSchema = { pinned: [], mediums: [] };
+if (fs.existsSync(schemaPath)) {
+  try {
+    existingSchema = JSON.parse(fs.readFileSync(schemaPath, "utf8"));
+  } catch {}
+}
+
 const schema = {
   pinned: existingSchema.pinned || [],
   tags: [...allTags].sort(),

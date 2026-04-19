@@ -10,7 +10,7 @@
     "roles": [],
     "category": "experience",
     "image_folders": [
-      "DFFPM"
+      "work/dffpm/identity"
     ],
     "portfolio_tags": [
       "brand",
@@ -41,7 +41,7 @@
     ],
     "category": "experience",
     "image_folders": [
-      "DS+R"
+      "work/dsr/competition-materials"
     ],
     "portfolio_tags": [
       "architecture",
@@ -70,7 +70,7 @@
     "roles": [],
     "category": "experience",
     "image_folders": [
-      "Gahi"
+      "work/gahi/identity"
     ],
     "portfolio_tags": [
       "brand",
@@ -101,7 +101,7 @@
     ],
     "category": "experience",
     "image_folders": [
-      "HermanMiller"
+      "work/herman-miller/brand-system"
     ],
     "portfolio_tags": [
       "brand",
@@ -111,36 +111,6 @@
       "product"
     ],
     "personal": false,
-    "description": "",
-    "credits": [
-      {
-        "role": "Design",
-        "name": "Marvin de Jong"
-      }
-    ],
-    "videos": []
-  },
-  "snapshot": {
-    "name": "Snapshots",
-    "slug": "snapshot",
-    "client": "personal",
-    "aliases": [
-      "personal",
-      "IndependentProjects"
-    ],
-    "date_range": "",
-    "roles": [],
-    "category": "experience",
-    "image_folders": [
-      "IndependentProjects"
-    ],
-    "portfolio_tags": [
-      "form",
-      "typography",
-      "concept",
-      "real-time"
-    ],
-    "personal": true,
     "description": "",
     "credits": [
       {
@@ -163,7 +133,7 @@
     ],
     "category": "experience",
     "image_folders": [
-      "IonQ"
+      "work/ionq/brand"
     ],
     "portfolio_tags": [
       "brand",
@@ -176,6 +146,28 @@
     "credits": [
       {
         "role": "Creative Direction",
+        "name": "Marvin de Jong"
+      }
+    ],
+    "videos": []
+  },
+  "miller-atre-identity": {
+    "name": "identity",
+    "slug": "miller-atre-identity",
+    "client": "miller atre",
+    "aliases": [],
+    "date_range": "",
+    "roles": [],
+    "category": "experience",
+    "image_folders": [
+      "work/miller-atre/identity"
+    ],
+    "portfolio_tags": [],
+    "personal": false,
+    "description": "",
+    "credits": [
+      {
+        "role": "Design",
         "name": "Marvin de Jong"
       }
     ],
@@ -194,7 +186,7 @@
     ],
     "category": "experience",
     "image_folders": [
-      "MoMA"
+      "work/moma/teens-program"
     ],
     "portfolio_tags": [
       "spatial",
@@ -224,7 +216,7 @@
     ],
     "category": "teaching",
     "image_folders": [
-      "NYU"
+      "work/nyu/typography-course"
     ],
     "portfolio_tags": [
       "typography"
@@ -234,6 +226,28 @@
     "credits": [
       {
         "role": "Instructor",
+        "name": "Marvin de Jong"
+      }
+    ],
+    "videos": []
+  },
+  "paprika-identity": {
+    "name": "identity",
+    "slug": "paprika-identity",
+    "client": "paprika",
+    "aliases": [],
+    "date_range": "",
+    "roles": [],
+    "category": "experience",
+    "image_folders": [
+      "work/paprika/identity"
+    ],
+    "portfolio_tags": [],
+    "personal": false,
+    "description": "",
+    "credits": [
+      {
+        "role": "Design",
         "name": "Marvin de Jong"
       }
     ],
@@ -253,7 +267,7 @@
     ],
     "category": "teaching",
     "image_folders": [
-      "Parsons"
+      "work/parsons/interaction-studio"
     ],
     "portfolio_tags": [
       "interactive",
@@ -283,13 +297,193 @@
     ],
     "category": "experience",
     "image_folders": [
-      "Pratt"
+      "work/pratt/design-system"
     ],
     "portfolio_tags": [
       "spatial",
       "print"
     ],
     "personal": false,
+    "description": "",
+    "credits": [
+      {
+        "role": "Design",
+        "name": "Marvin de Jong"
+      }
+    ],
+    "videos": []
+  },
+  "verizon-digital-3": {
+    "name": "digital 3",
+    "slug": "verizon-digital-3",
+    "client": "verizon",
+    "aliases": [],
+    "date_range": "",
+    "roles": [],
+    "category": "experience",
+    "image_folders": [
+      "work/verizon/digital-3"
+    ],
+    "portfolio_tags": [],
+    "personal": false,
+    "description": "",
+    "credits": [
+      {
+        "role": "Design",
+        "name": "Marvin de Jong"
+      }
+    ],
+    "videos": []
+  },
+  "verizon-future-of-retail": {
+    "name": "future of retail",
+    "slug": "verizon-future-of-retail",
+    "client": "verizon",
+    "aliases": [],
+    "date_range": "",
+    "roles": [],
+    "category": "experience",
+    "image_folders": [
+      "work/verizon/future-of-retail"
+    ],
+    "portfolio_tags": [],
+    "personal": false,
+    "description": "",
+    "credits": [
+      {
+        "role": "Design",
+        "name": "Marvin de Jong"
+      }
+    ],
+    "videos": []
+  },
+  "verizon-retail-3-sem": {
+    "name": "retail 3 sem",
+    "slug": "verizon-retail-3-sem",
+    "client": "verizon",
+    "aliases": [],
+    "date_range": "",
+    "roles": [],
+    "category": "experience",
+    "image_folders": [
+      "work/verizon/retail-3-sem"
+    ],
+    "portfolio_tags": [],
+    "personal": false,
+    "description": "",
+    "credits": [
+      {
+        "role": "Design",
+        "name": "Marvin de Jong"
+      }
+    ],
+    "videos": []
+  },
+  "verizon-retail-walkthrough": {
+    "name": "retail walkthrough",
+    "slug": "verizon-retail-walkthrough",
+    "client": "verizon",
+    "aliases": [],
+    "date_range": "",
+    "roles": [],
+    "category": "experience",
+    "image_folders": [
+      "work/verizon/retail-walkthrough"
+    ],
+    "portfolio_tags": [],
+    "personal": false,
+    "description": "",
+    "credits": [
+      {
+        "role": "Design",
+        "name": "Marvin de Jong"
+      }
+    ],
+    "videos": []
+  },
+  "verizon": {
+    "name": "Verizon",
+    "slug": "verizon",
+    "client": "Verizon",
+    "aliases": [
+      "Verizon",
+      "Verizon_Selection",
+      "Verizon Decks-JPG"
+    ],
+    "date_range": "2019-2022",
+    "roles": [
+      "Senior Designer → Associate Creative Director, 2D Retail and Experiential"
+    ],
+    "category": "experience",
+    "image_folders": [
+      "work/verizon/selection"
+    ],
+    "portfolio_tags": [
+      "retail",
+      "brand",
+      "keynote",
+      "concept",
+      "spatial",
+      "interactive",
+      "experience"
+    ],
+    "personal": false,
+    "description": "",
+    "credits": [
+      {
+        "role": "Design",
+        "name": "Marvin de Jong"
+      }
+    ],
+    "videos": []
+  },
+  "wonmin-park-statements": {
+    "name": "Artist & Project Statements",
+    "slug": "wonmin-park-statements",
+    "client": "Wonmin Park",
+    "aliases": [
+      "Wonmin Park"
+    ],
+    "date_range": "",
+    "roles": [],
+    "category": "experience",
+    "image_folders": [
+      "work/wonmin-park/statements"
+    ],
+    "portfolio_tags": [
+      "concept"
+    ],
+    "personal": false,
+    "description": "",
+    "credits": [
+      {
+        "role": "Writing",
+        "name": "Marvin de Jong"
+      }
+    ],
+    "videos": []
+  },
+  "snapshot": {
+    "name": "Snapshots",
+    "slug": "snapshot",
+    "client": "personal",
+    "aliases": [
+      "personal",
+      "IndependentProjects"
+    ],
+    "date_range": "",
+    "roles": [],
+    "category": "experience",
+    "image_folders": [
+      "practice/controlled-instability/explorations"
+    ],
+    "portfolio_tags": [
+      "form",
+      "typography",
+      "concept",
+      "real-time"
+    ],
+    "personal": true,
     "description": "",
     "credits": [
       {
@@ -313,55 +507,18 @@
     ],
     "category": "experience",
     "image_folders": [
-      "Studio"
+      "practice/snapshots/studio"
     ],
     "portfolio_tags": [
       "brand",
       "real-time",
       "spatial"
     ],
-    "personal": false,
+    "personal": true,
     "description": "",
     "credits": [
       {
         "role": "Creative Direction",
-        "name": "Marvin de Jong"
-      }
-    ],
-    "videos": []
-  },
-  "verizon": {
-    "name": "Verizon",
-    "slug": "verizon",
-    "client": "Verizon",
-    "aliases": [
-      "Verizon",
-      "Verizon_Selection",
-      "Verizon Decks-JPG"
-    ],
-    "date_range": "2019-2022",
-    "roles": [
-      "Senior Designer → Associate Creative Director, 2D Retail and Experiential"
-    ],
-    "category": "experience",
-    "image_folders": [
-      "Verizon Decks-JPG",
-      "Verizon_Selection"
-    ],
-    "portfolio_tags": [
-      "retail",
-      "brand",
-      "keynote",
-      "concept",
-      "spatial",
-      "interactive",
-      "experience"
-    ],
-    "personal": false,
-    "description": "",
-    "credits": [
-      {
-        "role": "Design",
         "name": "Marvin de Jong"
       }
     ],
@@ -381,7 +538,7 @@
     ],
     "category": "education",
     "image_folders": [
-      "Yale"
+      "practice/yale/thesis"
     ],
     "portfolio_tags": [
       "print",
