@@ -2,19 +2,13 @@
 import Base from "@/layouts/Base.astro";
 import manifest from "@/data/manifest.json";
 
-export function getStaticPaths() {
-  const { projects, items } = manifest as any;
-  return Object.entries(projects).map(([slug, project]: [string, any]) => ({
-    params: { slug },
-    props: {
-      project,
-      items: items.filter((i: any) => i.project === slug),
-    },
-  }));
-}
-
-const { project, items } = Astro.props as { project: any; items: any[] };
 const { slug } = Astro.params;
+const { projects, items: allManifestItems } = manifest as any;
+const project = projects[slug!];
+
+if (!project) return Astro.redirect("/");
+
+const items = allManifestItems.filter((i: any) => i.project === slug);
 
 // Tag frequency across items in this project → main tag + other tags
 const tagCounts = new Map<string, number>();
