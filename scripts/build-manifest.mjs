@@ -16,9 +16,20 @@ const archivePath = path.join(root, "src/data/manifest.archive.json");
 const catalogue = JSON.parse(fs.readFileSync(catalogPath, "utf8"));
 const registry = JSON.parse(fs.readFileSync(projectsPath, "utf8"));
 
+// Preserve existing Blob URLs from the current manifest so rebuilds
+// don't revert CDN links back to local /images/ paths.
+const blobUrls = new Map();
 if (fs.existsSync(manifestPath)) {
+  const prev = JSON.parse(fs.readFileSync(manifestPath, "utf8"));
+  for (const item of prev.items || []) {
+    if (item.src && item.src.startsWith("https://")) {
+      const localPath = "/images/" + (item.src.split("/images/")[1] || "");
+      blobUrls.set(decodeURIComponent(localPath), item.src);
+    }
+  }
   fs.copyFileSync(manifestPath, archivePath);
   console.log("archived →", path.relative(root, archivePath));
+  console.log(`preserved ${blobUrls.size} blob URLs`);
 }
 
 // Build folder → project slug lookup from registry's image_folders.
@@ -60,7 +71,8 @@ const items = catalogue.map((raw) => {
   const slug = projectFromFile(raw.file_path);
   const proj = registry[slug] || registry[FALLBACK_SLUG];
   const id = mkId(slugify(raw.file_path || raw.title || "item"));
-  const src = "/images/" + (raw.file_path || "").replace(/^\/+/, "");
+  const localSrc = "/images/" + (raw.file_path || "").replace(/^\/+/, "");
+  const src = blobUrls.get(localSrc) || localSrc;
 
   // Derive year: exif > filesystem-within-range > project_date_range > filesystem.
   let year = null;
