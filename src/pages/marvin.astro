@@ -34,10 +34,16 @@ const dateKey = (d: string) => {
 const bullets = raw.map((entry) => {
   const cat = entry.data.category || "experience";
   const hasProject = !!entry.data.project;
-  let section: "Roles" | "Projects" | "Exhibitions" | "Other" = "Other";
-  if (cat === "exhibition" || cat === "publication" || cat === "talks") section = "Exhibitions";
-  else if (hasProject) section = "Projects";
-  else if (cat === "experience") section = "Roles";
+  const size = (entry.data.size || "").toLowerCase();
+  const isWorkish = cat === "experience" || cat === "teaching";
+  let section: "Roles" | "Projects" | "Exhibitions" | null = null;
+  if (cat === "exhibition" || cat === "publication" || cat === "talks" || cat === "writing") {
+    section = "Exhibitions";
+  } else if (isWorkish && size === "large" && !hasProject) {
+    section = "Roles";
+  } else if (isWorkish) {
+    section = "Projects";
+  }
   return {
     id: entry.id,
     how: firstParagraph(entry.body || ""),
@@ -47,10 +53,10 @@ const bullets = raw.map((entry) => {
     date: entry.data.date || "",
     dateSort: dateKey(entry.data.date || ""),
     tags: (entry.data.tags || []).map(cleanTag),
-    size: (entry.data.size || "").toLowerCase(),
+    size,
     section,
   };
-});
+}).filter((b) => b.section);
 
 const dedupMap = new Map<string, (typeof bullets)[number]>();
 for (const b of bullets) {
@@ -65,8 +71,6 @@ const sections = [
   { key: "projects", label: "Projects", rows: deduped.filter((b) => b.section === "Projects"), hasSizer: true },
   { key: "exhibitions", label: "Exhibitions & Publications", rows: deduped.filter((b) => b.section === "Exhibitions"), hasSizer: false },
 ];
-const otherRows = deduped.filter((b) => b.section === "Other");
-if (otherRows.length) sections.push({ key: "other", label: "Other", rows: otherRows, hasSizer: false });
 
 const companies = [...new Set(deduped.map((b) => b.company).filter(Boolean))].sort();
 ---
@@ -142,6 +146,13 @@ const companies = [...new Set(deduped.map((b) => b.company).filter(Boolean))].so
   </div>
 
   <table class="cv-table" id="cv-table">
+    <colgroup>
+      <col class="cv-col-where" />
+      <col class="cv-col-when" />
+      <col class="cv-col-what" />
+      <col class="cv-col-how" />
+      <col class="cv-col-tags" />
+    </colgroup>
     <thead>
       <tr>
         <th data-col="0">where<span class="cv-sort-arrow"></span></th>

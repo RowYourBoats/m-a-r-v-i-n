@@ -481,7 +481,13 @@ video {
   border-collapse: collapse;
   font-size: 0.75em;
   line-height: 1.3;
+  table-layout: fixed;
 }
+.cv-col-where { width: 14%; }
+.cv-col-when  { width: 14%; }
+.cv-col-what  { width: 22%; }
+.cv-col-how   { width: 30%; }
+.cv-col-tags  { width: 20%; }
 .cv-table thead th {
   padding: 0.6em 0.8em 0.6em 0;
   text-align: left;
