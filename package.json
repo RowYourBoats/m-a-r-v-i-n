@@ -15,6 +15,7 @@
     "@vercel/blob": "^2.3.3",
     "astro": "^6.1.5",
     "chromadb": "^3.4.3",
+    "image-size": "^2.0.2",
     "ollama": "^0.6.3"
   }
 }

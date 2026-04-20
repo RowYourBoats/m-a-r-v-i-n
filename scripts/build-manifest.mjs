@@ -5,6 +5,7 @@
 import fs from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
+import { imageSize } from "image-size";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const root = path.resolve(__dirname, "..");
@@ -12,13 +13,15 @@ const catalogPath = path.join(root, "public/images/image_catalogue.json");
 const projectsPath = path.join(root, "src/data/projects.json");
 const manifestPath = path.join(root, "src/data/manifest.json");
 const archivePath = path.join(root, "src/data/manifest.archive.json");
+const imagesDir = path.join(root, "public/images");
 
 const catalogue = JSON.parse(fs.readFileSync(catalogPath, "utf8"));
 const registry = JSON.parse(fs.readFileSync(projectsPath, "utf8"));
 
-// Preserve existing Blob URLs from the current manifest so rebuilds
-// don't revert CDN links back to local /images/ paths.
+// Preserve existing Blob URLs + dimensions from the current manifest so
+// rebuilds don't revert CDN links or re-probe every image on disk.
 const blobUrls = new Map();
+const prevDims = new Map();
 if (fs.existsSync(manifestPath)) {
   const prev = JSON.parse(fs.readFileSync(manifestPath, "utf8"));
   for (const item of prev.items || []) {
@@ -26,11 +29,31 @@ if (fs.existsSync(manifestPath)) {
       const localPath = "/images/" + (item.src.split("/images/")[1] || "");
       blobUrls.set(decodeURIComponent(localPath), item.src);
     }
+    if (item.width && item.height) {
+      const localPath = item.src?.startsWith("https://")
+        ? "/images/" + decodeURIComponent(item.src.split("/images/")[1] || "")
+        : item.src;
+      if (localPath) prevDims.set(localPath, { width: item.width, height: item.height });
+    }
   }
   fs.copyFileSync(manifestPath, archivePath);
   console.log("archived →", path.relative(root, archivePath));
-  console.log(`preserved ${blobUrls.size} blob URLs`);
+  console.log(`preserved ${blobUrls.size} blob URLs, ${prevDims.size} dims`);
 }
+
+// Probe image dimensions from the local file, falling back to previous
+// manifest values if the file isn't present (e.g. on CI without images).
+const probeDims = (localSrc) => {
+  const rel = localSrc.replace(/^\/images\//, "");
+  const abs = path.join(imagesDir, decodeURIComponent(rel));
+  if (fs.existsSync(abs)) {
+    try {
+      const { width, height } = imageSize(fs.readFileSync(abs));
+      if (width && height) return { width, height };
+    } catch {}
+  }
+  return prevDims.get(localSrc) || null;
+};
 
 // Build folder → project slug lookup from registry's image_folders.
 const folderToSlug = {};
@@ -128,6 +151,11 @@ const items = catalogue.map((raw) => {
     project: slug,
     description: raw.description || "",
   };
+  const dims = probeDims(localSrc);
+  if (dims) {
+    item.width = dims.width;
+    item.height = dims.height;
+  }
   if (raw.style) item.style = raw.style;
   if (bestDate) item.created = bestDate;
   if (raw.project_date_range) item.date_range = raw.project_date_range;
