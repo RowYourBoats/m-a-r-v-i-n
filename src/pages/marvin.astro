@@ -1,179 +1,120 @@
 ---
 import Base from "@/layouts/Base.astro";
-import { getCollection, render } from "astro:content";
+import { getCollection } from "astro:content";
 
 const raw = await getCollection("bullets", ({ id }) => !id.startsWith("_template"));
 
 const cleanTag = (t: string) => t.replace(/^~/, "");
 
-const umbrellas: { label: string; tags: string[] }[] = [
-  {
-    label: "Creative Direction",
-    tags: [
-      "design-leadership", "creative-direction", "cross-functional-collaboration",
-      "cross-functional-leadership", "art-direction", "team-leadership",
-      "creative-leadership", "project-management", "process-development",
-      "concept-development", "agency-management", "team-management",
-      "freelancer-management",
-    ],
-  },
-  {
-    label: "Brand & Identity Systems",
-    tags: [
-      "brand-strategy", "brand-consistency", "brand-positioning", "brand-narrative",
-      "brand-storytelling", "design-systems", "design-system", "brand-system",
-      "communication-design", "narrative-design", "graphic-design", "typography",
-      "print-design", "brand-guidelines", "brand-portfolio", "content-strategy",
-      "print-collateral", "identity-systems", "visual-systems",
-    ],
-  },
-  {
-    label: "Spatial & Exhibition",
-    tags: [
-      "experiential-design", "exhibition-design", "exhibition-graphics",
-      "retail-design", "retail-strategy", "retail-experience", "retail-innovation",
-      "flagship-store", "spatial-design", "spatial-interactions", "showroom-design",
-      "environmental-graphics", "architecture", "architecture-collaboration",
-      "in-store-displays", "booth-design", "stage-design", "event-design",
-      "event-production", "event-leadership", "customer-experience",
-      "customer-journey-mapping", "motion-led-environments", "wayfinding",
-      "exhibition", "poster-exhibition", "experiential-activations", "experiential",
-    ],
-  },
-  {
-    label: "Digital & Interactive",
-    tags: [
-      "interactive-experiences", "interactive-design", "experience-design",
-      "digital-interfaces", "digital-design", "digital-content", "digital-assets",
-      "digital-product-experience", "digital-transformation", "interaction-design",
-      "motion-design", "animation", "video", "video-production", "data-visualization",
-      "digital-storytelling", "app-design", "ui-design", "web-design",
-      "keynote-design", "keynote-storytelling", "presentation-assets",
-      "digital-marketing-assets", "digital-marketing",
-    ],
-  },
-  {
-    label: "Real-Time & Emerging Tech",
-    tags: [
-      "real-time-systems", "real-time-graphics", "real-time-data-reactive",
-      "real-time-technologies", "real-time-response", "real-time-prototyping",
-      "responsive-environments", "graphics-reactive-to-human-presence",
-      "gesture-recognition", "touchdesigner", "unreal-engine", "unreal-engine-5",
-      "frontier-tech", "ai-driven-visuals", "ai-interface", "quantum-computing",
-      "creative-code", "controlled-instability", "vector-embeddings",
-      "semantic-engine", "local-first", "locally-run-llms", "prototyping",
-      "spatial-prototyping", "camera-interaction",
-    ],
-  },
-];
-
-const allBullets = await Promise.all(
-  raw.map(async (entry) => {
-    const { Content } = await render(entry);
-    return {
-      id: entry.id,
-      body: entry.body?.trim().slice(0, 80) || "",
-      company: entry.data.company || "",
-      role: entry.data.role || "",
-      category: entry.data.category || "experience",
-      date: entry.data.date || "",
-      tags: (entry.data.tags || []).map(cleanTag),
-      Content,
-    };
-  }),
-);
-
-// Deduplicate: when two bullets share the same body text, keep the one with more tags.
-const seen = new Map<string, (typeof allBullets)[number]>();
-for (const b of allBullets) {
-  const existing = seen.get(b.body);
-  if (!existing || b.tags.length > existing.tags.length) {
-    seen.set(b.body, b);
-  }
-}
-const bullets = [...seen.values()];
-
-type Bullet = (typeof bullets)[number];
-const knownOrder = ["experience", "education", "exhibition", "publication", "talks", "skill"];
-
-const byCategory: Record<string, Bullet[]> = {};
-for (const b of bullets) {
-  (byCategory[b.category] ??= []).push(b);
-}
-
-const presentCategories = Object.keys(byCategory);
-const categoryOrder = [
-  ...knownOrder.filter((c) => byCategory[c]?.length),
-  ...presentCategories.filter((c) => !knownOrder.includes(c)).sort(),
-];
-
-const bulletUmbrellas = new Map<string, string[]>();
-for (const b of bullets) {
-  const tagSet = new Set(b.tags);
-  const hits = umbrellas
-    .filter((u) => u.tags.some((t) => tagSet.has(t)))
-    .map((u) => u.label);
-  bulletUmbrellas.set(b.id, hits);
-}
-
-const categoryLabel: Record<string, string> = {
-  experience: "Experience",
-  education: "Education",
-  exhibition: "Exhibitions",
-  publication: "Publications",
-  talks: "Talks",
-  skill: "Skills",
+const firstParagraph = (body: string) => {
+  const para = (body || "").trim().split(/\n\s*\n/)[0] || "";
+  return para.replace(/\s+/g, " ").trim();
 };
-const labelFor = (c: string) =>
-  categoryLabel[c] || c.charAt(0).toUpperCase() + c.slice(1);
+
+const dateKey = (d: string) => {
+  if (!d) return "0000-00";
+  const s = d.trim();
+  if (/present/i.test(s)) return "9999-99";
+  const first = s.split(/[–-]/)[0].trim();
+  const ym = first.match(/(\d{4})[-/](\d{1,2})/);
+  if (ym) return `${ym[1]}-${ym[2].padStart(2, "0")}`;
+  const my = first.match(/([A-Za-z]+)\s+(\d{4})/);
+  if (my) {
+    const months: Record<string, string> = {
+      january: "01", february: "02", march: "03", april: "04",
+      may: "05", june: "06", july: "07", august: "08",
+      september: "09", october: "10", november: "11", december: "12",
+    };
+    return `${my[2]}-${months[my[1].toLowerCase()] || "01"}`;
+  }
+  const y = first.match(/\d{4}/);
+  return y ? `${y[0]}-01` : "0000-00";
+};
+
+const bullets = raw.map((entry) => {
+  const cat = entry.data.category || "experience";
+  const hasProject = !!entry.data.project;
+  let section: "Roles" | "Projects" | "Exhibitions" | "Other" = "Other";
+  if (cat === "exhibition" || cat === "publication" || cat === "talks") section = "Exhibitions";
+  else if (hasProject) section = "Projects";
+  else if (cat === "experience") section = "Roles";
+  return {
+    id: entry.id,
+    how: firstParagraph(entry.body || ""),
+    company: entry.data.company || "",
+    role: entry.data.role || "",
+    project: entry.data.project || "",
+    date: entry.data.date || "",
+    dateSort: dateKey(entry.data.date || ""),
+    tags: (entry.data.tags || []).map(cleanTag),
+    size: (entry.data.size || "").toLowerCase(),
+    section,
+  };
+});
+
+const dedupMap = new Map<string, (typeof bullets)[number]>();
+for (const b of bullets) {
+  const key = `${b.how || b.id}|${b.size}|${b.section}`;
+  const prev = dedupMap.get(key);
+  if (!prev || b.tags.length > prev.tags.length) dedupMap.set(key, b);
+}
+const deduped = [...dedupMap.values()];
+
+const sections = [
+  { key: "roles", label: "Roles", rows: deduped.filter((b) => b.section === "Roles"), hasSizer: false },
+  { key: "projects", label: "Projects", rows: deduped.filter((b) => b.section === "Projects"), hasSizer: true },
+  { key: "exhibitions", label: "Exhibitions & Publications", rows: deduped.filter((b) => b.section === "Exhibitions"), hasSizer: false },
+];
+const otherRows = deduped.filter((b) => b.section === "Other");
+if (otherRows.length) sections.push({ key: "other", label: "Other", rows: otherRows, hasSizer: false });
+
+const companies = [...new Set(deduped.map((b) => b.company).filter(Boolean))].sort();
 ---
 
 <Base title="Marvin de Jong">
   <div class="profile profile--spread">
     <div class="profile-text">
-    <div class="prose">
+      <div class="prose">
+        <p>
+          Marvin de Jong is a Dutch graphic designer working across traditional,
+          interactive, and emerging media, currently based in San Francisco.
+        </p>
+        <p>
+          His work spans brand systems, experiential projects, and real-time graphic
+          design. Working across print, motion, and built environments he has
+          developed identities, exhibitions, campaigns, keynotes, merch, and
+          challenge coins for clients including IonQ, Verizon, Herman Miller, and
+          MoMA.
+        </p>
+        <p>
+          Currently he is exploring how real-time engines can help form stay open to
+          change through inputs like movement tracking, MIDI keyboards, sound, and
+          other data.
+        </p>
+      </div>
+
+      <h2>Education</h2>
       <p>
-        Marvin de Jong is a Dutch graphic designer working across traditional,
-        interactive, and emerging media, currently based in San Francisco.
+        Yale School of Art, MFA<br />
+        Royal Academy of Art (KABK), BFA
       </p>
+
+      <h2>Contact</h2>
+      <p><a href="mailto:marvin@m-a-r-v-i-n.com">marvin@m-a-r-v-i-n.com</a></p>
+
+      <h2>Instagram</h2>
       <p>
-        His work spans brand systems, experiential projects, and real-time graphic
-        design. Working across print, motion, and built environments he has
-        developed identities, exhibitions, campaigns, keynotes, merch, and
-        challenge coins for clients including IonQ, Verizon, Herman Miller, and
-        MoMA.
+        <a href="https://www.instagram.com/specifically_marvin/" target="_blank" rel="noopener">
+          @specifically_marvin
+        </a>
       </p>
+
+      <h2>LinkedIn</h2>
       <p>
-        Currently he is exploring how real-time engines can help form stay open to
-        change through inputs like movement tracking, MIDI keyboards, sound, and
-        other data.
+        <a href="https://www.linkedin.com/in/marvin-de-jong/" target="_blank" rel="noopener">
+          marvin-de-jong
+        </a>
       </p>
-    </div>
-
-    <h2>Education</h2>
-    <p>
-      Yale School of Art, MFA<br />
-      Royal Academy of Art (KABK), BFA
-    </p>
-
-    <h2>Contact</h2>
-    <p>
-      <a href="mailto:marvin@m-a-r-v-i-n.com">marvin@m-a-r-v-i-n.com</a>
-    </p>
-
-    <h2>Instagram</h2>
-    <p>
-      <a href="https://www.instagram.com/specifically_marvin/" target="_blank" rel="noopener">
-        @specifically_marvin
-      </a>
-    </p>
-
-    <h2>LinkedIn</h2>
-    <p>
-      <a href="https://www.linkedin.com/in/marvin-de-jong/" target="_blank" rel="noopener">
-        marvin-de-jong
-      </a>
-    </p>
     </div>
 
     <div class="profile-media">
@@ -188,129 +129,212 @@ const labelFor = (c: string) =>
 
   <h2 class="cv-category-title">Resume</h2>
 
-  <div class="filter-bar" id="cv-filters">
-    <button data-filter="all" aria-pressed="true">All</button>
-    {umbrellas.map((u) => (
-      <button data-umbrella={u.label} aria-pressed="false">{u.label}</button>
-    ))}
+  <div class="cv-filters">
+    <input type="text" id="cv-search" placeholder="search" autocomplete="off" />
+    <select id="cv-company">
+      <option value="">all companies</option>
+      {companies.map((c) => <option value={c}>{c}</option>)}
+    </select>
+    <select id="cv-section">
+      <option value="">all sections</option>
+      {sections.map((s) => <option value={s.key}>{s.label}</option>)}
+    </select>
   </div>
 
-  <div class="cv" id="cv">
-    {categoryOrder.map((cat) => (
-      <section class="cv-category" data-category={cat}>
-        <h2 class="cv-category-title">{labelFor(cat)}</h2>
-        <div class="cv-table" role="table">
-          <div class="cv-row cv-row--head" role="row">
-            <div role="columnheader">experience</div>
-            <div role="columnheader">tags</div>
-            <div role="columnheader">bullet</div>
-          </div>
-          {byCategory[cat].map((b) => (
-            <div
-              class="cv-row cv-bullet"
-              role="row"
-              data-tags={b.tags.join(",")}
-              data-umbrellas={(bulletUmbrellas.get(b.id) || []).join("|")}
-            >
-              <div class="cv-cell cv-cell--experience" role="cell">
-                {b.company && <span class="cv-company">{b.company}</span>}
-                {b.role && <span class="cv-role">{b.role}</span>}
-                {b.date && <span class="cv-date">{b.date}</span>}
-              </div>
-              <div class="cv-cell cv-cell--tags" role="cell">
-                {b.tags.slice(0, 4).map((t, i) => (
-                  <>{i > 0 && ", "}<span class="cv-tag-chip" role="button" tabindex="0" data-cv-tag={t}>{t}</span></>
-                ))}
-              </div>
-              <div class="cv-cell cv-cell--body" role="cell">
-                <b.Content />
-              </div>
-            </div>
-          ))}
-        </div>
-      </section>
-    ))}
-  </div>
+  <table class="cv-table" id="cv-table">
+    <thead>
+      <tr>
+        <th data-col="0">where<span class="cv-sort-arrow"></span></th>
+        <th data-col="1">when<span class="cv-sort-arrow"></span></th>
+        <th data-col="2">what<span class="cv-sort-arrow"></span></th>
+        <th data-col="3">how<span class="cv-sort-arrow"></span></th>
+        <th>tags</th>
+      </tr>
+    </thead>
+    <tbody>
+      {sections.map((sec) => (
+        <>
+          <tr class="cv-section-row" data-section={sec.key}>
+            <td colspan="5">
+              <h2>{sec.label}</h2>
+              <span class="cv-section-count">{sec.rows.length}</span>
+              <span class="cv-toggle-arrow">&#9660;</span>
+              {sec.hasSizer && (
+                <span class="cv-sizer-wrap" onclick="event.stopPropagation()">
+                  <span class="cv-sizer-label" data-level="0">small</span>
+                  <input type="range" min="0" max="2" value="0" step="1" class="cv-sizer" id="cv-sizer" />
+                  <span class="cv-sizer-label" data-level="2">large</span>
+                </span>
+              )}
+            </td>
+          </tr>
+          {sec.rows.map((r) => {
+            const what = sec.key === "projects" ? r.project : r.role || r.project;
+            const group = sec.key === "projects" ? `${r.company}|${r.project}` : "";
+            return (
+              <tr
+                class="cv-row"
+                data-section={sec.key}
+                data-size={r.size}
+                data-group={group}
+                data-company={r.company}
+              >
+                <td>{r.company}</td>
+                <td class="cv-nowrap" data-sort={r.dateSort}>{r.date}</td>
+                <td>{what}</td>
+                <td>{r.how}</td>
+                <td>
+                  {r.tags.slice(0, 6).map((t) => (
+                    <span class="cv-tag">{t}</span>
+                  ))}
+                </td>
+              </tr>
+            );
+          })}
+        </>
+      ))}
+    </tbody>
+  </table>
 
   <script is:inline>
     (function () {
-      // Profile media sizing
+      // Profile media sizing (retained from previous /marvin layout).
       document.querySelectorAll(".profile-media figure img").forEach(function (img) {
         function cap() {
-          if (img.naturalWidth) {
-            img.style.maxWidth = (img.naturalWidth * 1.5) + "px";
-          }
+          if (img.naturalWidth) img.style.maxWidth = (img.naturalWidth * 1.5) + "px";
         }
-        if (img.complete) cap();
-        else img.addEventListener("load", cap);
+        if (img.complete) cap(); else img.addEventListener("load", cap);
       });
 
-      // CV filtering
-      var filters = document.getElementById("cv-filters");
-      var root = document.getElementById("cv");
-      var active = null;
+      var table = document.getElementById("cv-table");
+      if (!table) return;
+      var tbody = table.querySelector("tbody");
 
-      function apply() {
-        root.querySelectorAll(".cv-bullet").forEach(function (row) {
-          var show = true;
-          if (active && active.kind === "umbrella") {
-            var us = (row.dataset.umbrellas || "").split("|");
-            show = us.indexOf(active.value) !== -1;
-          } else if (active && active.kind === "tag") {
-            var tags = (row.dataset.tags || "").split(",");
-            show = tags.indexOf(active.value) !== -1;
+      // ---- Collapse section ----
+      table.addEventListener("click", function (e) {
+        var secRow = e.target.closest("tr.cv-section-row");
+        if (!secRow) return;
+        if (e.target.closest(".cv-sizer-wrap")) return;
+        var sec = secRow.dataset.section;
+        var rows = tbody.querySelectorAll('tr.cv-row[data-section="' + sec + '"]');
+        var arrow = secRow.querySelector(".cv-toggle-arrow");
+        var isHidden = rows.length > 0 && rows[0].classList.contains("cv-section-hidden");
+        rows.forEach(function (r) { r.classList.toggle("cv-section-hidden", !isHidden); });
+        arrow.innerHTML = isHidden ? "\u25BC" : "\u25B6";
+        if (isHidden) applySize();
+        applyFilters();
+      });
+
+      // ---- Sort ----
+      var sortCol = -1, sortAsc = true;
+      table.querySelectorAll("thead th[data-col]").forEach(function (th) {
+        th.addEventListener("click", function () {
+          var col = parseInt(th.dataset.col);
+          if (sortCol === col) sortAsc = !sortAsc;
+          else { sortCol = col; sortAsc = true; }
+
+          var blocks = [];
+          var current = null;
+          Array.from(tbody.rows).forEach(function (row) {
+            if (row.classList.contains("cv-section-row")) {
+              current = { header: row, rows: [] };
+              blocks.push(current);
+            } else if (current) current.rows.push(row);
+          });
+
+          blocks.forEach(function (sec) {
+            sec.rows.sort(function (a, b) {
+              var aV = (a.cells[col].dataset.sort || a.cells[col].textContent).trim().toLowerCase();
+              var bV = (b.cells[col].dataset.sort || b.cells[col].textContent).trim().toLowerCase();
+              if (aV < bV) return sortAsc ? -1 : 1;
+              if (aV > bV) return sortAsc ? 1 : -1;
+              return 0;
+            });
+          });
+
+          blocks.forEach(function (sec) {
+            tbody.appendChild(sec.header);
+            sec.rows.forEach(function (r) { tbody.appendChild(r); });
+          });
+
+          table.querySelectorAll(".cv-sort-arrow").forEach(function (s) { s.textContent = ""; });
+          var arrow = th.querySelector(".cv-sort-arrow");
+          if (arrow) arrow.textContent = sortAsc ? " \u25B2" : " \u25BC";
+        });
+      });
+
+      // ---- Size slider (Projects) ----
+      var SIZES = ["small", "medium", "large"];
+      var sizer = document.getElementById("cv-sizer");
+      function applySize() {
+        if (!sizer) return;
+        var level = SIZES[parseInt(sizer.value)];
+        var priority = level === "large" ? ["large", "medium", "small"]
+                     : level === "medium" ? ["medium", "small", "large"]
+                                          : ["small", "medium", "large"];
+        var rows = tbody.querySelectorAll('tr.cv-row[data-section="projects"]');
+        var groups = {};
+        rows.forEach(function (row) {
+          var g = row.dataset.group || "";
+          if (!g) return;
+          var s = row.dataset.size || "";
+          if (!groups[g]) groups[g] = {};
+          if (!groups[g][s]) groups[g][s] = [];
+          groups[g][s].push(row);
+        });
+        Object.keys(groups).forEach(function (g) {
+          var sizeMap = groups[g];
+          Object.values(sizeMap).forEach(function (arr) {
+            arr.forEach(function (r) { r.dataset.sizeHidden = "1"; });
+          });
+          for (var i = 0; i < priority.length; i++) {
+            if (sizeMap[priority[i]]) {
+              sizeMap[priority[i]].forEach(function (r) { r.dataset.sizeHidden = ""; });
+              break;
+            }
           }
+        });
+      }
+      sizer?.addEventListener("input", function () { applySize(); applyFilters(); });
+
+      // ---- Search + selects ----
+      var searchBox = document.getElementById("cv-search");
+      var companySel = document.getElementById("cv-company");
+      var sectionSel = document.getElementById("cv-section");
+
+      function applyFilters() {
+        var q = (searchBox.value || "").toLowerCase().trim();
+        var company = companySel.value;
+        var section = sectionSel.value;
+
+        tbody.querySelectorAll("tr.cv-row").forEach(function (row) {
+          if (row.dataset.sizeHidden === "1") { row.style.display = "none"; return; }
+          if (row.classList.contains("cv-section-hidden")) { row.style.display = "none"; return; }
+          var show = true;
+          if (company && row.dataset.company !== company) show = false;
+          if (section && row.dataset.section !== section) show = false;
+          if (show && q) show = row.textContent.toLowerCase().indexOf(q) !== -1;
           row.style.display = show ? "" : "none";
         });
-        root.querySelectorAll(".cv-category").forEach(function (cat) {
-          var visible = cat.querySelectorAll('.cv-bullet:not([style*="display: none"])').length;
-          cat.style.display = visible ? "" : "none";
-        });
-      }
 
-      function setPressed(btn) {
-        filters.querySelectorAll("button").forEach(function (b) {
-          b.setAttribute("aria-pressed", b === btn ? "true" : "false");
-        });
-      }
-
-      filters?.addEventListener("click", function (e) {
-        var btn = e.target;
-        if (btn.tagName !== "BUTTON") return;
-        setPressed(btn);
-        clearTagHighlight();
-        active = btn.dataset.filter === "all"
-          ? null
-          : { kind: "umbrella", value: btn.dataset.umbrella };
-        apply();
-      });
-
-      function clearTagHighlight() {
-        root.querySelectorAll(".cv-tag-chip[aria-pressed]").forEach(function (b) {
-          b.removeAttribute("aria-pressed");
-        });
-      }
-
-      root?.addEventListener("click", function (e) {
-        var chip = e.target.closest("[data-cv-tag]");
-        if (!chip) return;
-        var tag = chip.dataset.cvTag;
-        if (active && active.kind === "tag" && active.value === tag) {
-          active = null;
-          clearTagHighlight();
-          var allBtn = filters.querySelector('[data-filter="all"]');
-          setPressed(allBtn);
-        } else {
-          active = { kind: "tag", value: tag };
-          setPressed(null);
-          clearTagHighlight();
-          root.querySelectorAll('[data-cv-tag="' + tag + '"]').forEach(function (b) {
-            b.setAttribute("aria-pressed", "true");
+        var hasFilter = q || company || section;
+        tbody.querySelectorAll("tr.cv-section-row").forEach(function (secRow) {
+          var sec = secRow.dataset.section;
+          if (!hasFilter) { secRow.style.display = ""; return; }
+          var visibleAny = false;
+          tbody.querySelectorAll('tr.cv-row[data-section="' + sec + '"]').forEach(function (r) {
+            if (r.style.display !== "none") visibleAny = true;
           });
-        }
-        apply();
-      });
+          secRow.style.display = visibleAny ? "" : "none";
+        });
+      }
 
+      searchBox?.addEventListener("input", applyFilters);
+      companySel?.addEventListener("change", applyFilters);
+      sectionSel?.addEventListener("change", applyFilters);
+
+      applySize();
+      applyFilters();
     })();
   </script>
 </Base>
