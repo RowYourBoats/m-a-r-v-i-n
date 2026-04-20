@@ -1,0 +1,320 @@
+---
+import Base from "@/layouts/Base.astro";
+import { getCollection } from "astro:content";
+
+const raw = await getCollection("bullets", ({ id }) => !id.startsWith("_template"));
+
+const cleanTag = (t: string) => t.replace(/^~/, "");
+
+// Extract a "how" summary: first paragraph of body, trimmed.
+const firstParagraph = (body: string) => {
+  const para = (body || "").trim().split(/\n\s*\n/)[0] || "";
+  return para.replace(/\s+/g, " ").trim();
+};
+
+// Normalize date strings to a sortable key. "Present" sorts to top.
+const dateKey = (d: string) => {
+  if (!d) return "0000-00";
+  const s = d.trim();
+  if (/present/i.test(s)) return "9999-99";
+  // "May 2023 – Present" or "May 2023 – June 2019" — take first end if range
+  const parts = s.split(/[–-]/).map((p) => p.trim());
+  const first = parts[0];
+  // Try "YYYY-MM"
+  const ym = first.match(/(\d{4})[-/](\d{1,2})/);
+  if (ym) return `${ym[1]}-${ym[2].padStart(2, "0")}`;
+  // Try "Month YYYY"
+  const my = first.match(/([A-Za-z]+)\s+(\d{4})/);
+  if (my) {
+    const months: Record<string, string> = {
+      january: "01", february: "02", march: "03", april: "04",
+      may: "05", june: "06", july: "07", august: "08",
+      september: "09", october: "10", november: "11", december: "12",
+    };
+    const m = months[my[1].toLowerCase()] || "01";
+    return `${my[2]}-${m}`;
+  }
+  const y = first.match(/\d{4}/);
+  if (y) return `${y[0]}-01`;
+  return "0000-00";
+};
+
+const bullets = raw.map((entry) => {
+  const cat = entry.data.category || "experience";
+  const hasProject = !!entry.data.project;
+  let section: "Roles" | "Projects" | "Exhibitions" | "Other" = "Other";
+  if (cat === "exhibition" || cat === "publication" || cat === "talks") {
+    section = "Exhibitions";
+  } else if (hasProject) {
+    section = "Projects";
+  } else if (cat === "experience") {
+    section = "Roles";
+  }
+  return {
+    id: entry.id,
+    body: entry.body || "",
+    how: firstParagraph(entry.body || ""),
+    company: entry.data.company || "",
+    role: entry.data.role || "",
+    project: entry.data.project || "",
+    category: cat,
+    date: entry.data.date || "",
+    dateSort: dateKey(entry.data.date || ""),
+    tags: (entry.data.tags || []).map(cleanTag),
+    size: (entry.data.size || "").toLowerCase(),
+    section,
+  };
+});
+
+// Deduplicate: preserve all size variants (needed for the Projects sizer)
+// by including size in the key; keep the bullet with most tags per key.
+const dedupMap = new Map<string, (typeof bullets)[number]>();
+for (const b of bullets) {
+  const key = `${b.how || b.id}|${b.size}|${b.section}`;
+  const prev = dedupMap.get(key);
+  if (!prev || b.tags.length > prev.tags.length) dedupMap.set(key, b);
+}
+const deduped = [...dedupMap.values()];
+
+const rolesRows = deduped.filter((b) => b.section === "Roles");
+const projectRows = deduped.filter((b) => b.section === "Projects");
+const exhibitionRows = deduped.filter((b) => b.section === "Exhibitions");
+const otherRows = deduped.filter((b) => b.section === "Other");
+
+const companies = [...new Set(deduped.map((b) => b.company).filter(Boolean))].sort();
+
+const sections = [
+  { key: "roles", label: "Roles", rows: rolesRows, hasSizer: false },
+  { key: "projects", label: "Projects", rows: projectRows, hasSizer: true },
+  { key: "exhibitions", label: "Exhibitions & Publications", rows: exhibitionRows, hasSizer: false },
+  ...(otherRows.length ? [{ key: "other", label: "Other", rows: otherRows, hasSizer: false }] : []),
+];
+---
+
+<Base title="About — Marvin de Jong">
+  <div class="cv2-filters">
+    <input type="text" id="cv2-search" placeholder="search" autocomplete="off" />
+    <select id="cv2-company">
+      <option value="">all companies</option>
+      {companies.map((c) => <option value={c}>{c}</option>)}
+    </select>
+    <select id="cv2-section">
+      <option value="">all sections</option>
+      {sections.map((s) => <option value={s.key}>{s.label}</option>)}
+    </select>
+  </div>
+
+  <div class="cv2-table-wrap">
+    <table class="cv2-table" id="cv2-table">
+      <colgroup>
+        <col class="cv2-col-where" />
+        <col class="cv2-col-when" />
+        <col class="cv2-col-what" />
+        <col class="cv2-col-how" />
+        <col class="cv2-col-tags" />
+      </colgroup>
+      <thead>
+        <tr>
+          <th data-col="0" data-sort-kind="text">where<span class="cv2-sort-arrow"></span></th>
+          <th data-col="1" data-sort-kind="sort-attr">when<span class="cv2-sort-arrow"></span></th>
+          <th data-col="2" data-sort-kind="text">what<span class="cv2-sort-arrow"></span></th>
+          <th data-col="3" data-sort-kind="text">how<span class="cv2-sort-arrow"></span></th>
+          <th>tags</th>
+        </tr>
+      </thead>
+      <tbody>
+        {sections.map((sec) => (
+          <>
+            <tr class="cv2-section-row" data-section={sec.key}>
+              <td colspan="5">
+                <h2>{sec.label}</h2>
+                <span class="cv2-section-count">{sec.rows.length}</span>
+                <span class="cv2-toggle-arrow">&#9660;</span>
+                {sec.hasSizer && (
+                  <span class="cv2-sizer-wrap" onclick="event.stopPropagation()">
+                    <input type="range" min="0" max="2" value="0" step="1" class="cv2-sizer" id="cv2-sizer" />
+                    <span class="cv2-sizer-ticks">
+                      <span class="cv2-sizer-tick" data-level="0">small</span>
+                      <span class="cv2-sizer-tick" data-level="1">medium</span>
+                      <span class="cv2-sizer-tick" data-level="2">large</span>
+                    </span>
+                  </span>
+                )}
+              </td>
+            </tr>
+            {sec.rows.map((r) => {
+              const what = sec.key === "projects" ? r.project : r.role || r.project;
+              const group = sec.key === "projects" ? `${r.company}|${r.project}` : "";
+              return (
+                <tr
+                  class="cv2-row"
+                  data-section={sec.key}
+                  data-size={r.size}
+                  data-group={group}
+                  data-company={r.company}
+                >
+                  <td>{r.company}</td>
+                  <td class="cv2-nowrap" data-sort={r.dateSort}>{r.date}</td>
+                  <td>{what}</td>
+                  <td class="cv2-how">{r.how}</td>
+                  <td>
+                    {r.tags.slice(0, 6).map((t) => (
+                      <span class="cv2-tag">{t}</span>
+                    ))}
+                  </td>
+                </tr>
+              );
+            })}
+          </>
+        ))}
+      </tbody>
+    </table>
+  </div>
+
+  <script is:inline>
+    (function () {
+      var table = document.getElementById("cv2-table");
+      if (!table) return;
+      var tbody = table.querySelector("tbody");
+
+      // ---- Collapse section ----
+      table.addEventListener("click", function (e) {
+        var sectionRow = e.target.closest("tr.cv2-section-row");
+        if (!sectionRow) return;
+        if (e.target.closest(".cv2-sizer-wrap")) return;
+        var sec = sectionRow.dataset.section;
+        var rows = tbody.querySelectorAll('tr.cv2-row[data-section="' + sec + '"]');
+        var arrow = sectionRow.querySelector(".cv2-toggle-arrow");
+        var isHidden = rows.length > 0 && rows[0].classList.contains("cv2-section-hidden");
+        rows.forEach(function (r) { r.classList.toggle("cv2-section-hidden", !isHidden); });
+        arrow.innerHTML = isHidden ? "\u25BC" : "\u25B6";
+        if (isHidden) applySize();
+        applyFilters();
+      });
+
+      // ---- Sort ----
+      var sortCol = -1, sortAsc = true;
+      table.querySelectorAll("thead th[data-col]").forEach(function (th) {
+        th.addEventListener("click", function () {
+          var col = parseInt(th.dataset.col);
+          if (sortCol === col) sortAsc = !sortAsc;
+          else { sortCol = col; sortAsc = true; }
+
+          var sections = [];
+          var current = null;
+          Array.from(tbody.rows).forEach(function (row) {
+            if (row.classList.contains("cv2-section-row")) {
+              current = { header: row, rows: [] };
+              sections.push(current);
+            } else if (current) current.rows.push(row);
+          });
+
+          sections.forEach(function (sec) {
+            sec.rows.sort(function (a, b) {
+              var aC = a.cells[col], bC = b.cells[col];
+              var aV = (aC.dataset.sort || aC.textContent).trim().toLowerCase();
+              var bV = (bC.dataset.sort || bC.textContent).trim().toLowerCase();
+              if (aV < bV) return sortAsc ? -1 : 1;
+              if (aV > bV) return sortAsc ? 1 : -1;
+              return 0;
+            });
+          });
+
+          sections.forEach(function (sec) {
+            tbody.appendChild(sec.header);
+            sec.rows.forEach(function (r) { tbody.appendChild(r); });
+          });
+
+          table.querySelectorAll(".cv2-sort-arrow").forEach(function (s) { s.textContent = ""; });
+          var arrow = th.querySelector(".cv2-sort-arrow");
+          if (arrow) arrow.textContent = sortAsc ? " \u25B2" : " \u25BC";
+        });
+      });
+
+      // ---- Size slider (Projects) ----
+      var SIZES = ["small", "medium", "large"];
+      var sizer = document.getElementById("cv2-sizer");
+
+      function applySize() {
+        if (!sizer) return;
+        var idx = parseInt(sizer.value);
+        var level = SIZES[idx];
+        document.querySelectorAll(".cv2-sizer-tick").forEach(function (t) {
+          t.classList.toggle("cv2-sizer-tick--active", parseInt(t.dataset.level) === idx);
+        });
+
+        var priority = level === "large" ? ["large", "medium", "small"]
+                     : level === "medium" ? ["medium", "small", "large"]
+                                          : ["small", "medium", "large"];
+
+        var rows = tbody.querySelectorAll('tr.cv2-row[data-section="projects"]');
+        var groups = {};
+        rows.forEach(function (row) {
+          var g = row.dataset.group || "";
+          if (!g) return;
+          var s = row.dataset.size || "";
+          if (!groups[g]) groups[g] = {};
+          if (!groups[g][s]) groups[g][s] = [];
+          groups[g][s].push(row);
+        });
+
+        Object.keys(groups).forEach(function (g) {
+          var sizeMap = groups[g];
+          Object.values(sizeMap).forEach(function (arr) {
+            arr.forEach(function (r) { r.dataset.sizeHidden = "1"; });
+          });
+          for (var i = 0; i < priority.length; i++) {
+            if (sizeMap[priority[i]]) {
+              sizeMap[priority[i]].forEach(function (r) { r.dataset.sizeHidden = ""; });
+              break;
+            }
+          }
+        });
+
+        applyFilters();
+      }
+      sizer?.addEventListener("input", applySize);
+
+      // ---- Search + selects ----
+      var searchBox = document.getElementById("cv2-search");
+      var companySel = document.getElementById("cv2-company");
+      var sectionSel = document.getElementById("cv2-section");
+
+      function applyFilters() {
+        var q = (searchBox.value || "").toLowerCase().trim();
+        var company = companySel.value;
+        var section = sectionSel.value;
+
+        tbody.querySelectorAll("tr.cv2-row").forEach(function (row) {
+          if (row.dataset.sizeHidden === "1") { row.style.display = "none"; return; }
+          if (row.classList.contains("cv2-section-hidden")) { row.style.display = "none"; return; }
+          var show = true;
+          if (company && row.dataset.company !== company) show = false;
+          if (section && row.dataset.section !== section) show = false;
+          if (show && q) show = row.textContent.toLowerCase().indexOf(q) !== -1;
+          row.style.display = show ? "" : "none";
+        });
+
+        // Hide section headers with zero visible rows if a filter is active.
+        var hasFilter = q || company || section;
+        tbody.querySelectorAll("tr.cv2-section-row").forEach(function (secRow) {
+          var sec = secRow.dataset.section;
+          if (!hasFilter) { secRow.style.display = ""; return; }
+          var visible = tbody.querySelectorAll(
+            'tr.cv2-row[data-section="' + sec + '"]'
+          );
+          var anyVisible = false;
+          visible.forEach(function (r) { if (r.style.display !== "none") anyVisible = true; });
+          secRow.style.display = anyVisible ? "" : "none";
+        });
+      }
+
+      searchBox?.addEventListener("input", applyFilters);
+      companySel?.addEventListener("change", applyFilters);
+      sectionSel?.addEventListener("change", applyFilters);
+
+      // Init
+      applySize();
+    })();
+  </script>
+</Base>
