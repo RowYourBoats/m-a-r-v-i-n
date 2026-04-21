@@ -1,78 +1,260 @@
 ---
 import Base from "@/layouts/Base.astro";
 import { getCollection } from "astro:content";
+import manifest from "@/data/manifest.json";
 
 const raw = await getCollection("bullets", ({ id }) => !id.startsWith("_template"));
 
+const profileImages = (manifest.items as any[])
+  .filter((i) => i.project === "m-a-r-v-i-n")
+  .sort((a, b) => (a.id || "").localeCompare(b.id || ""));
+
 const cleanTag = (t: string) => t.replace(/^~/, "");
 
-const firstParagraph = (body: string) => {
-  const para = (body || "").trim().split(/\n\s*\n/)[0] || "";
-  return para.replace(/\s+/g, " ").trim();
+const stripBold = (s: string) => (s || "").replace(/\*\*/g, "");
+
+const MONTH: Record<string, string> = {
+  january: "01", february: "02", march: "03", april: "04",
+  may: "05", june: "06", july: "07", august: "08",
+  september: "09", october: "10", november: "11", december: "12",
+  spring: "03", summer: "06", fall: "09", winter: "12",
 };
 
-const dateKey = (d: string) => {
-  if (!d) return "0000-00";
-  const s = d.trim();
-  if (/present/i.test(s)) return "9999-99";
-  const first = s.split(/[–-]/)[0].trim();
-  const ym = first.match(/(\d{4})[-/](\d{1,2})/);
-  if (ym) return `${ym[1]}-${ym[2].padStart(2, "0")}`;
-  const my = first.match(/([A-Za-z]+)\s+(\d{4})/);
-  if (my) {
-    const months: Record<string, string> = {
-      january: "01", february: "02", march: "03", april: "04",
-      may: "05", june: "06", july: "07", august: "08",
-      september: "09", october: "10", november: "11", december: "12",
-    };
-    return `${my[2]}-${months[my[1].toLowerCase()] || "01"}`;
+const dateSortKey = (d: string) => {
+  if (!d) return "";
+  const s = d.trim().toLowerCase();
+  if (/\b(present|current|ongoing)\b/.test(s)) return "9999-99";
+  const ym = s.match(/\d{4}/);
+  if (!ym) return s;
+  const year = ym[0];
+  const start = Math.max(0, ym.index! - 15);
+  const end = ym.index! + 4 + 15;
+  const window = s.slice(start, ym.index!) + " " + s.slice(ym.index! + 4, end);
+  for (const [m, n] of Object.entries(MONTH)) {
+    if (window.includes(m)) return `${year}-${n}`;
   }
-  const y = first.match(/\d{4}/);
-  return y ? `${y[0]}-01` : "0000-00";
+  return `${year}-00`;
 };
 
-const bullets = raw.map((entry) => {
-  const cat = entry.data.category || "experience";
-  const hasProject = !!entry.data.project;
-  const size = (entry.data.size || "").toLowerCase();
-  const isWorkish = cat === "experience" || cat === "teaching";
-  let section: "Roles" | "Projects" | "Exhibitions" | null = null;
-  if (cat === "exhibition" || cat === "publication" || cat === "talks" || cat === "writing") {
-    section = "Exhibitions";
-  } else if (isWorkish && size === "large" && !hasProject) {
-    section = "Roles";
-  } else if (isWorkish) {
-    section = "Projects";
+type Bullet = {
+  id: string;
+  bulletId: string;
+  category: string;
+  company: string;
+  role: string;
+  project: string;
+  date: string;
+  size: string;
+  tags: string[];
+  text: string;
+};
+
+type ParsedBody = { sized: { small: string[]; medium: string[]; large: string[] }; flat: string };
+
+const parseBody = (body: string): ParsedBody => {
+  const src = (body || "").trim();
+  const sized = { small: [] as string[], medium: [] as string[], large: [] as string[] };
+  const re = /^##\s+(Small|Medium|Large)\s*$/gim;
+  const markers: { size: keyof typeof sized; index: number; length: number }[] = [];
+  let m: RegExpExecArray | null;
+  while ((m = re.exec(src)) !== null) {
+    markers.push({ size: m[1].toLowerCase() as keyof typeof sized, index: m.index, length: m[0].length });
   }
-  return {
-    id: entry.id,
-    how: firstParagraph(entry.body || ""),
+  if (markers.length === 0) return { sized, flat: src };
+  for (let i = 0; i < markers.length; i++) {
+    const start = markers[i].index + markers[i].length;
+    const end = i + 1 < markers.length ? markers[i + 1].index : src.length;
+    const content = src.slice(start, end).trim();
+    if (!content) continue;
+    if (markers[i].size === "large") {
+      sized.large = [content];
+    } else {
+      const items = content
+        .split(/\n\s*-\s+/)
+        .map((s) => s.replace(/^-\s+/, "").trim())
+        .filter(Boolean);
+      sized[markers[i].size] = items;
+    }
+  }
+  return { sized, flat: "" };
+};
+
+const bullets: Bullet[] = raw.flatMap((entry) => {
+  const base = {
+    bulletId: entry.data.id || entry.id,
+    category: (entry.data.category || "").toLowerCase(),
     company: entry.data.company || "",
     role: entry.data.role || "",
     project: entry.data.project || "",
     date: entry.data.date || "",
-    dateSort: dateKey(entry.data.date || ""),
     tags: (entry.data.tags || []).map(cleanTag),
-    size,
-    section,
   };
-}).filter((b) => b.section);
+  const parsed = parseBody(entry.body || "");
+  const hasSized = parsed.sized.small.length || parsed.sized.medium.length || parsed.sized.large.length;
+  if (!hasSized) {
+    return [{ ...base, id: entry.id, size: "", text: parsed.flat }];
+  }
+  const out: Bullet[] = [];
+  (["small", "medium", "large"] as const).forEach((size) => {
+    parsed.sized[size].forEach((text, i) => {
+      out.push({ ...base, id: `${entry.id}#${size}-${i}`, size, text });
+    });
+  });
+  return out;
+});
 
-const dedupMap = new Map<string, (typeof bullets)[number]>();
-for (const b of bullets) {
-  const key = `${b.how || b.id}|${b.size}|${b.section}`;
-  const prev = dedupMap.get(key);
-  if (!prev || b.tags.length > prev.tags.length) dedupMap.set(key, b);
-}
-const deduped = [...dedupMap.values()];
+const EXP_CATS = new Set(["experience"]);
+const allExp = bullets.filter((b) => EXP_CATS.has(b.category));
+const roles = allExp.filter((b) => b.size === "large" && !b.project);
+const projects = allExp.filter((b) => !(b.size === "large" && !b.project));
 
-const sections = [
-  { key: "roles", label: "Roles", rows: deduped.filter((b) => b.section === "Roles"), hasSizer: false },
-  { key: "projects", label: "Projects", rows: deduped.filter((b) => b.section === "Projects"), hasSizer: true },
-  { key: "exhibitions", label: "Exhibitions & Publications", rows: deduped.filter((b) => b.section === "Exhibitions"), hasSizer: false },
+type Row = {
+  id: string;
+  bulletId: string;
+  size: string;
+  group: string;
+  where: string;
+  when: string;
+  whenSort: string;
+  what: string;
+  how: string;
+  tags: string[];
+};
+
+const normalizeWork = (b: Bullet): Row => ({
+  id: b.id,
+  bulletId: b.bulletId,
+  size: b.size,
+  group: b.company ? `${b.company}|${b.project || "__none__"}` : "",
+  where: b.company,
+  when: b.date,
+  whenSort: dateSortKey(b.date),
+  what: b.project || b.role,
+  how: b.text,
+  tags: b.tags,
+});
+
+const DATE_PAT = /(?:January|February|March|April|May|June|July|August|September|October|November|December|Spring|Fall|Summer|Winter)\s+\d{4}|\b\d{4}\b/;
+
+const normalizeExhibition = (b: Bullet): Row => {
+  const text = b.text;
+  const parts = text.split(/\s+[—–-]\s+/);
+  let where = "", when = "", what = "", how = "";
+  if (parts.length >= 2) {
+    what = parts[0].trim().replace(/^["""]|["""]$/g, "");
+    const rest = parts.slice(1).join(" — ").trim();
+    const dm = rest.match(DATE_PAT);
+    if (dm) {
+      where = rest.slice(0, dm.index!).replace(/[,\s]+$/, "");
+      when = dm[0];
+      how = rest.slice(dm.index! + dm[0].length).replace(/^[.,\s]+/, "");
+    } else {
+      where = rest;
+    }
+  } else {
+    const dm = text.match(DATE_PAT);
+    if (dm) {
+      what = text.slice(0, dm.index!).replace(/[,\s]+$/, "");
+      when = dm[0];
+      how = text.slice(dm.index! + dm[0].length).replace(/^[.,\s]+/, "");
+    } else {
+      what = text;
+    }
+  }
+  return {
+    id: b.id, bulletId: b.bulletId, size: b.size, group: "",
+    where, when, whenSort: dateSortKey(when), what, how, tags: b.tags,
+  };
+};
+
+const normalizeEducation = (b: Bullet): Row => {
+  const parts = b.text.split(/\s+[—–-]\s+/);
+  const main = parts[0].trim();
+  const when = parts[1]?.trim() || "";
+  const boldMatch = main.match(/^\*\*(.+?)\*\*(?:\s*,)?\s*(.*)$/);
+  let where = "", what = "";
+  if (boldMatch) {
+    where = boldMatch[1];
+    what = boldMatch[2].trim();
+  } else {
+    const [a, b2] = main.split(/,(.+)/);
+    where = a?.trim() || "";
+    what = b2?.trim() || "";
+  }
+  return { id: b.id, bulletId: b.bulletId, size: b.size, group: "", where, when, whenSort: dateSortKey(when), what, how: "", tags: b.tags };
+};
+
+const normalizeSkill = (b: Bullet): Row => {
+  const [cat, tools] = b.text.split(/:(.+)/);
+  return {
+    id: b.id, bulletId: b.bulletId, size: b.size, group: "",
+    where: "", when: "", whenSort: "",
+    what: (tools ? cat : "").trim(),
+    how: (tools ?? cat ?? "").trim(),
+    tags: b.tags,
+  };
+};
+
+const normalizeAward = (b: Bullet): Row => {
+  const parts = b.text.split(/\s+[—–-]\s+/);
+  const what = (parts[0] || "").trim();
+  const rest = parts.slice(1).join(" — ").trim();
+  const dm = rest.match(DATE_PAT);
+  let when = "", how = rest;
+  if (dm) {
+    when = dm[0];
+    how = (rest.slice(0, dm.index!) + rest.slice(dm.index! + dm[0].length)).replace(/^[.,\s]+|[.,\s]+$/g, "");
+  }
+  return {
+    id: b.id, bulletId: b.bulletId, size: b.size, group: "",
+    where: "", when, whenSort: dateSortKey(when), what, how, tags: b.tags,
+  };
+};
+
+const normalizeTeaching = (b: Bullet): Row => ({
+  id: b.id, bulletId: b.bulletId, size: b.size, group: "",
+  where: b.company,
+  when: b.date,
+  whenSort: dateSortKey(b.date),
+  what: b.role,
+  how: b.text,
+  tags: b.tags,
+});
+
+type Section = { label: string; rows: Row[]; hasSizer: boolean };
+
+const sections: Section[] = [];
+if (roles.length) sections.push({ label: "Roles", rows: roles.map(normalizeWork), hasSizer: false });
+if (projects.length) sections.push({ label: "Projects", rows: projects.map(normalizeWork), hasSizer: true });
+
+const EXTRA: { label: string; cats: string[]; normalize: (b: Bullet) => Row }[] = [
+  { label: "Teaching", cats: ["teaching"], normalize: normalizeTeaching },
+  { label: "Exhibitions & Publications", cats: ["exhibition", "writing", "publication", "talks"], normalize: normalizeExhibition },
+  { label: "Education", cats: ["education"], normalize: normalizeEducation },
+  { label: "Awards", cats: ["award"], normalize: normalizeAward },
+  { label: "Skills", cats: ["skill"], normalize: normalizeSkill },
 ];
 
-const companies = [...new Set(deduped.map((b) => b.company).filter(Boolean))].sort();
+const usedIds = new Set(allExp.map((b) => b.id));
+for (const { label, cats, normalize } of EXTRA) {
+  const group = bullets.filter((b) => cats.includes(b.category));
+  if (group.length) {
+    sections.push({ label, rows: group.map(normalize), hasSizer: false });
+    group.forEach((b) => usedIds.add(b.id));
+  }
+}
+
+const DATED = new Set(["Roles", "Projects", "Teaching", "Exhibitions & Publications", "Education"]);
+for (const sec of sections) {
+  if (DATED.has(sec.label)) {
+    sec.rows.sort((a, b) => (b.whenSort || "").localeCompare(a.whenSort || ""));
+  }
+}
+
+const companies = [...new Set(bullets.map((b) => b.company).filter(Boolean))].sort();
+const categories = [...new Set(bullets.map((b) => b.category).filter(Boolean))].sort();
+const total = sections.reduce((n, s) => n + s.rows.length, 0);
+const hasSizes = bullets.some((b) => b.size);
 ---
 
 <Base title="Marvin de Jong">
@@ -122,16 +304,19 @@ const companies = [...new Set(deduped.map((b) => b.company).filter(Boolean))].so
     </div>
 
     <div class="profile-media">
-      <figure>
-        <img src="https://ws6i2dfuggcaavs2.public.blob.vercel-storage.com/images/WikipediaImage.jpeg" alt="" loading="lazy" />
-      </figure>
-      <figure>
-        <img src="https://ws6i2dfuggcaavs2.public.blob.vercel-storage.com/images/Screenshot%202026-04-13%20232526.png" alt="" loading="lazy" />
-      </figure>
+      {profileImages.map((img) => (
+        <figure>
+          <img src={img.src} alt={img.title || ""} loading="lazy" />
+          {img.title && <figcaption>{img.title}</figcaption>}
+        </figure>
+      ))}
     </div>
   </div>
 
-  <h2 class="cv-category-title">Resume</h2>
+  <div class="cv-head">
+    <h1 class="cv-title">table</h1>
+    <p class="cv-sub">{total} bullets</p>
+  </div>
 
   <div class="cv-filters">
     <input type="text" id="cv-search" placeholder="search" autocomplete="off" />
@@ -139,93 +324,83 @@ const companies = [...new Set(deduped.map((b) => b.company).filter(Boolean))].so
       <option value="">all companies</option>
       {companies.map((c) => <option value={c}>{c}</option>)}
     </select>
-    <select id="cv-section">
-      <option value="">all sections</option>
-      {sections.map((s) => <option value={s.key}>{s.label}</option>)}
+    <select id="cv-category">
+      <option value="">all categories</option>
+      {categories.map((c) => <option value={c}>{c}</option>)}
     </select>
   </div>
 
-  <table class="cv-table" id="cv-table">
-    <colgroup>
-      <col class="cv-col-where" />
-      <col class="cv-col-when" />
-      <col class="cv-col-what" />
-      <col class="cv-col-how" />
-      <col class="cv-col-tags" />
-    </colgroup>
-    <thead>
-      <tr>
-        <th data-col="0">where<span class="cv-sort-arrow"></span></th>
-        <th data-col="1">when<span class="cv-sort-arrow"></span></th>
-        <th data-col="2">what<span class="cv-sort-arrow"></span></th>
-        <th data-col="3">how<span class="cv-sort-arrow"></span></th>
-        <th>tags</th>
-      </tr>
-    </thead>
-    <tbody>
-      {sections.map((sec) => (
-        <>
-          <tr class="cv-section-row" data-section={sec.key}>
-            <td colspan="5">
-              <h2>{sec.label}</h2>
-              <span class="cv-section-count">{sec.rows.length}</span>
-              <span class="cv-toggle-arrow">&#9660;</span>
-              {sec.hasSizer && (
-                <span class="cv-sizer-wrap" onclick="event.stopPropagation()">
-                  <span class="cv-sizer-label" data-level="0">small</span>
-                  <input type="range" min="0" max="2" value="0" step="1" class="cv-sizer" id="cv-sizer" />
-                  <span class="cv-sizer-label" data-level="2">large</span>
-                </span>
-              )}
-            </td>
-          </tr>
-          {sec.rows.map((r) => {
-            const what = sec.key === "projects" ? r.project : r.role || r.project;
-            const group = sec.key === "projects" ? `${r.company}|${r.project}` : "";
-            return (
+  <div class="cv-table-wrap">
+    <table class="cv-table" id="cv-table">
+      <colgroup>
+        <col class="cv-col-where" />
+        <col class="cv-col-when" />
+        <col class="cv-col-what" />
+        <col class="cv-col-how" />
+        <col class="cv-col-tags" />
+      </colgroup>
+      <thead>
+        <tr>
+          <th data-col="0">where<span class="cv-sort-arrow"></span></th>
+          <th data-col="1">when<span class="cv-sort-arrow"></span></th>
+          <th data-col="2">what<span class="cv-sort-arrow"></span></th>
+          <th data-col="3">how<span class="cv-sort-arrow"></span></th>
+          <th>tags</th>
+        </tr>
+      </thead>
+      <tbody>
+        {sections.map((sec) => (
+          <>
+            <tr class="cv-section-row" data-section={sec.label}>
+              <td colspan="5">
+                <h2>{sec.label}</h2>
+                <span class="cv-section-count">{sec.rows.length}</span>
+                <span class="cv-toggle-arrow">&#9660;</span>
+                {sec.hasSizer && hasSizes && (
+                  <span class="cv-sizer-wrap" onclick="event.stopPropagation()">
+                    <input type="range" min="0" max="2" value="0" step="1" class="cv-sizer" id="cv-sizer" />
+                    <span class="cv-sizer-ticks">
+                      <span class="cv-sizer-tick" data-level="0">small</span>
+                      <span class="cv-sizer-tick" data-level="1">medium</span>
+                      <span class="cv-sizer-tick" data-level="2">large</span>
+                    </span>
+                  </span>
+                )}
+              </td>
+            </tr>
+            {sec.rows.map((r) => (
               <tr
                 class="cv-row"
-                data-section={sec.key}
+                data-section={sec.label}
                 data-size={r.size}
-                data-group={group}
-                data-company={r.company}
+                data-group={r.group}
+                data-bullet-id={r.bulletId}
               >
-                <td>{r.company}</td>
-                <td class="cv-nowrap" data-sort={r.dateSort}>{r.date}</td>
-                <td>{what}</td>
-                <td>{r.how}</td>
+                <td>{stripBold(r.where)}</td>
+                <td class="cv-nowrap" data-sort={r.whenSort}>{r.when}</td>
+                <td>{stripBold(r.what)}</td>
+                <td>{stripBold(r.how)}</td>
                 <td>
-                  {r.tags.slice(0, 6).map((t) => (
+                  {r.tags.map((t) => (
                     <span class="cv-tag">{t}</span>
                   ))}
                 </td>
               </tr>
-            );
-          })}
-        </>
-      ))}
-    </tbody>
-  </table>
+            ))}
+          </>
+        ))}
+      </tbody>
+    </table>
+  </div>
 
   <script is:inline>
     (function () {
-      // Profile media sizing (retained from previous /marvin layout).
-      document.querySelectorAll(".profile-media figure img").forEach(function (img) {
-        function cap() {
-          if (img.naturalWidth) img.style.maxWidth = (img.naturalWidth * 1.5) + "px";
-        }
-        if (img.complete) cap(); else img.addEventListener("load", cap);
-      });
-
       var table = document.getElementById("cv-table");
       if (!table) return;
       var tbody = table.querySelector("tbody");
 
-      // ---- Collapse section ----
-      table.addEventListener("click", function (e) {
-        var secRow = e.target.closest("tr.cv-section-row");
-        if (!secRow) return;
-        if (e.target.closest(".cv-sizer-wrap")) return;
+      // ---- Collapse ----
+      function toggleSection(secRow) {
         var sec = secRow.dataset.section;
         var rows = tbody.querySelectorAll('tr.cv-row[data-section="' + sec + '"]');
         var arrow = secRow.querySelector(".cv-toggle-arrow");
@@ -234,6 +409,12 @@ const companies = [...new Set(deduped.map((b) => b.company).filter(Boolean))].so
         arrow.innerHTML = isHidden ? "\u25BC" : "\u25B6";
         if (isHidden) applySize();
         applyFilters();
+      }
+      table.addEventListener("click", function (e) {
+        var secRow = e.target.closest("tr.cv-section-row");
+        if (!secRow) return;
+        if (e.target.closest(".cv-sizer-wrap")) return;
+        toggleSection(secRow);
       });
 
       // ---- Sort ----
@@ -262,7 +443,6 @@ const companies = [...new Set(deduped.map((b) => b.company).filter(Boolean))].so
               return 0;
             });
           });
-
           blocks.forEach(function (sec) {
             tbody.appendChild(sec.header);
             sec.rows.forEach(function (r) { tbody.appendChild(r); });
@@ -274,20 +454,24 @@ const companies = [...new Set(deduped.map((b) => b.company).filter(Boolean))].so
         });
       });
 
-      // ---- Size slider (Projects) ----
+      // ---- Size slider ----
       var SIZES = ["small", "medium", "large"];
       var sizer = document.getElementById("cv-sizer");
       function applySize() {
         if (!sizer) return;
-        var level = SIZES[parseInt(sizer.value)];
+        var idx = parseInt(sizer.value);
+        var level = SIZES[idx];
+        document.querySelectorAll(".cv-sizer-tick").forEach(function (t) {
+          t.classList.toggle("cv-sizer-tick-active", parseInt(t.dataset.level) === idx);
+        });
         var priority = level === "large" ? ["large", "medium", "small"]
                      : level === "medium" ? ["medium", "small", "large"]
                                           : ["small", "medium", "large"];
-        var rows = tbody.querySelectorAll('tr.cv-row[data-section="projects"]');
+        var rows = tbody.querySelectorAll('tr.cv-row[data-section="Projects"]');
         var groups = {};
         rows.forEach(function (row) {
           var g = row.dataset.group || "";
-          if (!g) return;
+          if (!g) { row.dataset.sizeHidden = ""; return; }
           var s = row.dataset.size || "";
           if (!groups[g]) groups[g] = {};
           if (!groups[g][s]) groups[g][s] = [];
@@ -308,27 +492,36 @@ const companies = [...new Set(deduped.map((b) => b.company).filter(Boolean))].so
       }
       sizer?.addEventListener("input", function () { applySize(); applyFilters(); });
 
-      // ---- Search + selects ----
+      // ---- Filters ----
       var searchBox = document.getElementById("cv-search");
       var companySel = document.getElementById("cv-company");
-      var sectionSel = document.getElementById("cv-section");
+      var categorySel = document.getElementById("cv-category");
 
       function applyFilters() {
         var q = (searchBox.value || "").toLowerCase().trim();
         var company = companySel.value;
-        var section = sectionSel.value;
+        var category = categorySel.value;
 
         tbody.querySelectorAll("tr.cv-row").forEach(function (row) {
           if (row.dataset.sizeHidden === "1") { row.style.display = "none"; return; }
           if (row.classList.contains("cv-section-hidden")) { row.style.display = "none"; return; }
           var show = true;
-          if (company && row.dataset.company !== company) show = false;
-          if (section && row.dataset.section !== section) show = false;
+          if (company && row.cells[0].textContent.trim() !== company) show = false;
+          if (category) {
+            var sec = row.dataset.section;
+            var matchesCat =
+              (category === "experience" || category === "teaching") && (sec === "Roles" || sec === "Projects") ||
+              (category === "exhibition" || category === "writing" || category === "publication" || category === "talks") && sec === "Exhibitions & Publications" ||
+              category === "education" && sec === "Education" ||
+              category === "award" && sec === "Awards" ||
+              category === "skill" && sec === "Skills";
+            if (!matchesCat) show = false;
+          }
           if (show && q) show = row.textContent.toLowerCase().indexOf(q) !== -1;
           row.style.display = show ? "" : "none";
         });
 
-        var hasFilter = q || company || section;
+        var hasFilter = q || company || category;
         tbody.querySelectorAll("tr.cv-section-row").forEach(function (secRow) {
           var sec = secRow.dataset.section;
           if (!hasFilter) { secRow.style.display = ""; return; }
@@ -342,7 +535,7 @@ const companies = [...new Set(deduped.map((b) => b.company).filter(Boolean))].so
 
       searchBox?.addEventListener("input", applyFilters);
       companySel?.addEventListener("change", applyFilters);
-      sectionSel?.addEventListener("change", applyFilters);
+      categorySel?.addEventListener("change", applyFilters);
 
       applySize();
       applyFilters();

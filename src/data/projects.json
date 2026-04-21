@@ -555,5 +555,22 @@
       }
     ],
     "videos": []
+  },
+  "m-a-r-v-i-n": {
+    "name": "Marvin de Jong",
+    "slug": "m-a-r-v-i-n",
+    "client": "personal",
+    "aliases": [],
+    "date_range": "",
+    "roles": [],
+    "category": "personal",
+    "image_folders": [
+      "m-a-r-v-i-n"
+    ],
+    "portfolio_tags": [],
+    "personal": true,
+    "description": "",
+    "credits": [],
+    "videos": []
   }
 }

@@ -143,6 +143,13 @@
           "name": "Marvin de Jong"
         }
       ]
+    },
+    "m-a-r-v-i-n": {
+      "title": "Marvin de Jong",
+      "description": "",
+      "client": "personal",
+      "year": null,
+      "credits": []
     }
   },
   "items": [
@@ -11634,6 +11641,19 @@
       "created": "2016-2016",
       "date_range": "2016-2016",
       "year": 2016,
+      "personal": true
+    },
+    {
+      "id": "m-a-r-v-i-n-01-wikipediaimage",
+      "src": "https://ws6i2dfuggcaavs2.public.blob.vercel-storage.com/images/m-a-r-v-i-n/01_WikipediaImage.jpeg",
+      "type": "image",
+      "title": "Wikipedia diagram defining a positive and negative feedback loop.",
+      "tags": [],
+      "medium": "photograph",
+      "project": "m-a-r-v-i-n",
+      "description": "",
+      "width": 393,
+      "height": 385,
       "personal": true
     }
   ]
