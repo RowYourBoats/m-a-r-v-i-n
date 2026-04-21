@@ -1,0 +1,35 @@
+---
+category: experience
+company: m-a-r-v-i-n studio
+date: June 2015 – Present
+id: 0fd19e
+project: OPPO Mobile World Congress 2023 — Keynote
+role: Creative Director / Owner
+tags:
+- keynote-design
+- motion-graphics
+- after-effects
+- flagship-device-presentation
+- connectivity-tech
+- iot-technology
+- chip-technology-breakthroughs
+- ar-technologies
+- fast-charging-technologies
+- ~project-management
+- ~real-time-design
+- ~creative-collaboration
+- ~design-systems
+- ~visual-storytelling
+---
+
+## Small
+
+- Creative Director for OPPO's 2023 Mobile World Congress keynote presentation.
+
+## Medium
+
+- Freelance Creative Director for OPPO's 2023 Mobile World Congress keynote — owning the deck, designing presentation moments, and producing motion graphics in Keynote and After Effects.
+
+## Large
+
+Freelance Creative Director for OPPO's 2023 Mobile World Congress keynote in Barcelona, where OPPO presented under the theme "Inspire to Believe." I was the keeper of the deck — designing all the moments, with some visuals drawn from existing product campaigns. I handled motion graphics in both Keynote and After Effects. The presentation covered flagship devices including the Find N2 Flip, connectivity and IoT technology, and R&D breakthroughs in chip technology, AR, and fast charging, presented by Billy Zhang, Associate Vice President and President of Overseas Sales and Service.
