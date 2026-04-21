@@ -113,33 +113,84 @@ Each entry describes one image:
 
 Date priority: `exif` > filesystem date within `project_date_range` > range start year > filesystem fallback.
 
+**Profile images on `/marvin`** go through the same pipeline:
+- Folder: `public/images/m-a-r-v-i-n/` with `01_`, `02_` numeric prefix for order.
+- Catalogue entry per file; `title` field becomes the `<figcaption>` on the rendered page.
+- `projects.json` has an `m-a-r-v-i-n` entry with `personal: true` and `image_folders: ["m-a-r-v-i-n"]` so the manifest groups them under `project: "m-a-r-v-i-n"`.
+- `src/pages/marvin.astro` filters `manifest.items` by `project === "m-a-r-v-i-n"`, sorts by id (filename-derived, so `01_` < `02_`).
+
+Swap workflow: drop new file → add/edit catalogue entry with `title` → `node scripts/build-manifest.mjs` → `node --env-file=.env scripts/upload-blob.mjs` → commit.
+
 ### CV bullets (content collection)
 
-Sourced from Jullie-Resume via a directory junction (`src/content/bullets/` → `Jullie-Resume/input/bullets/`). Each bullet has:
+Sourced from Jullie-Resume via a directory junction (`src/content/bullets/` → `Jullie-Resume/input/bullets/`). Post-refactor (2026-04-20), each bullet is a single file with sizes as body sections. Filename pattern is `{slug}-{id}.md` where `{id}` is a 6-char hex.
 
 ```yaml
 ---
+category: experience       # experience | teaching | exhibition | education | award | skill | writing
 company: Herman Miller
-project_key: herman-miller
 role: Global Brand Designer
-category: experience
+project: Picnic — the Herman Miller Design System (brand pillar)
 date: May 2017 – June 2019
+id: d91fb7                  # 6-char hex — matches filename suffix
 tags:
-  - brand-pillar
-  - design-system-consolidation
+  - brand-standards
+  - design-documentation
+  - ~cross-functional-collaboration   # ~prefix = secondary tag
 ---
 
-Bullet text here.
+## Small
+
+- One-line version of the bullet, for tight resume layouts.
+
+## Medium
+
+- First list item, used in a standard resume.
+- Second list item.
+
+## Large
+
+Prose narrative. May be multiple paragraphs. Used for long-form resume or portfolio detail views.
 ```
 
-- `project_key` links bullets to the project registry (stamped by `scripts/stamp-project-keys.mjs`)
-- `company` is the display name used by Jullie-Resume
-- Bullet tags are granular skills; `src/data/tag-map.json` maps them to portfolio display tags
+**Section classification** in `/marvin`:
+- `experience`/`teaching` with a Large body and no `project` → **Roles** (e.g. `role-scope-*` files)
+- `experience` (any other shape) → **Projects** (grouped by `company|project`, size slider picks variant)
+- `teaching` (non-role) → **Teaching** (its own section, no size slider)
+- `exhibition`/`writing` → **Exhibitions & Publications**
+- `education`/`award`/`skill` → their own sections
+
+**Size slider behavior:** for the Projects section, rows are grouped by `company|project`. The slider picks one size (small/medium/large) to show per group; falls back to the nearest available if the exact size isn't present.
 
 **Junction setup** (needed after fresh clone on Windows):
 ```
 cmd /c "mklink /J src\content\bullets D:\ClaudeCoding\Jullie-Resume\input\bullets"
 ```
+
+### Bullet ↔ image-folder linking (via `id`)
+
+The 6-char `id` in bullet frontmatter is the stable handle for linking bullets to image folders. Every row rendered on `/marvin` carries `data-bullet-id="<id>"` so downstream JS or project pages can query by it.
+
+**Recommended integration pattern** (not yet wired):
+
+1. Add `bullet_ids: ["d91fb7", "a8cafe"]` to each entry in `src/data/projects.json`. List all bullet ids whose work is represented by the project's image folder.
+2. Manifest stays as-is (keyed by project slug, not bullet id).
+3. A project page can resolve bullets → images by looking up `projects[slug].bullet_ids`, and the /marvin table can resolve rows → project images by reverse-indexing (`bulletId → project slug`) from projects.json.
+
+**Why this shape:**
+- Bullets are authored in Jullie and synced via junction. Adding a reverse field on the bullet (like `project_key:`) requires Jullie-side schema changes — we control `projects.json` locally, so putting the link there keeps authoring surfaces separated.
+- One project typically owns multiple bullets (role-scope + individual project bullets). Array on the project side is natural.
+- The 6-char id is filename-derived (content hash), so it survives edits/moves without breaking links as long as the body doesn't hash-collide.
+
+**To prepare image folders with this in mind:**
+- Group images under `public/images/<tier>/<client>/<project>/` as you do today.
+- When adding a new project to `projects.json`, populate `bullet_ids` with any bullet whose content lives under that folder.
+- If a bullet represents a cross-project role scope (no specific deliverables), leave it out of every project — it'll still show in Roles via the /marvin logic, just without a folder link.
+
+**Where the id flows in the code:**
+- `src/pages/marvin.astro` → `parseBody()` extracts sizes from body; each emitted row carries `bulletId: entry.data.id`.
+- Rendered as `data-bullet-id` on each `<tr>` — inspectable in DOM, usable for JS lookup.
+- `stripBold()` strips `**` markers from `where`/`what`/`how` at render time.
 
 ### Essays (content collection)
 
@@ -190,7 +241,7 @@ Run this after adding/moving images, editing `_project.md`, or updating the cata
 
 - `/` (Work) — non-personal items, masonry grid, tag filters, sorted newest first
 - `/practice` — personal images + essays, light tag filter
-- `/marvin` — bio, contact, resume (CV bullets in a 3-column table with umbrella filters + clickable tags)
+- `/marvin` — bio, contact, profile images with captions (from manifest, project `m-a-r-v-i-n`), resume (5-column CV table: where/when/what/how/tags with size slider on Projects, section collapse, sort, search, company/category filters)
 - `/projects/[slug]` — auto-generated per project from the manifest
 
 ## Password gate (under construction)
