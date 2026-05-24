@@ -1,0 +1,55 @@
+node_modules/
+dist/
+.vercel/
+.astro/
+
+# Image binaries live on Vercel Blob — don't bundle them in the deployment.
+# Essay .md files stay included so Astro's content collection can read them.
+public/images/**/*.jpg
+public/images/**/*.jpeg
+public/images/**/*.png
+public/images/**/*.gif
+public/images/**/*.webp
+public/images/**/*.heic
+public/images/**/*.heif
+public/images/**/*.tif
+public/images/**/*.tiff
+public/images/**/*.mp4
+public/images/**/*.mov
+public/images/**/*.webm
+public/images/**/*.pdf
+public/images/**/*.psd
+public/images/**/*.ai
+public/images/**/*.sketch
+public/images/**/*.fig
+
+# Local-only build/mining artifacts inside public/images/
+public/images/image_catalogue*.json
+public/images/schema.json
+public/images/manifest.json
+public/images/miner.cjs
+public/images/enrich.cjs
+
+# Dev-only admin tooling (image tagging portal — runs under `astro dev`)
+src/pages/admin/
+src/pages/api/admin/
+
+# Excluded / personal assets
+_exclude/
+public/evaluations/
+
+# Chroma database
+chroma/
+
+# Local settings
+.claude/
+
+# Bullets template
+src/content/bullets/_template.md
+
+# Manifest archive
+src/data/manifest.archive.json
+
+# Environment files
+.env
+.env.*

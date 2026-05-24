@@ -1,0 +1,851 @@
+/* ---- Font ---- */
+@font-face {
+  font-family: "PP Neue Montreal";
+  src: url("/fonts/PPNeueMontreal-Regular.woff2") format("woff2");
+  font-weight: 400;
+  font-display: swap;
+}
+
+/* ---- Reset ---- */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* ---- Tokens ---- */
+:root {
+  --color-bg: #ffffff;
+  --color-fg: #000000;
+  --color-accent: #ed0f0a;
+
+  /* Semantic tag palette (Dick Bruna) */
+  --color-green: #319f1a;
+  --color-blue: #293c64;
+  --color-red: #ed0f0a;
+  --color-yellow: #d3bd43;
+  --color-orange: #d26a37;
+  --color-purple: #7B2D5F;
+  --color-brown: #5D4037;
+
+  --font: "PP Neue Montreal", sans-serif;
+  /* Mobile floor (today's --fs) and desktop ceilings (3em body, 2em secondary).
+     Mobile flatten via @media (max-width: 760px) below collapses both back to --fs-base. */
+  --fs-base: clamp(14px, 1.5625vw, 1.3rem);
+  --fs-body: clamp(14px, 2.5vw, 48px);
+  --fs-secondary: clamp(14px, 1.667vw, 32px);
+  --fs: var(--fs-base);
+  --pad: clamp(32px, 2.5vw, 64px);
+  --pad-sm: clamp(8px, 0.625vw, 16px);
+  /* Bottom of caption-bearing cells: pad minus (gap above caption + caption line height)
+     so the total visual whitespace below the image equals --pad. Caption uses --fs-secondary. */
+  --pad-bottom: calc(var(--pad) - var(--pad-sm) - (var(--fs-secondary) * 1.2));
+
+  /* Diagram tokens — used by src/components/diagrams/*. Animated edges/nodes
+     pick up theme changes automatically since SVG attributes reference vars. */
+  --diagram-edge: #d8d8d8;
+  --diagram-node: #c0c0c0;
+  --diagram-node-mid: #707070;
+  --diagram-node-active: #000000;
+  --diagram-edge-active: var(--color-accent);
+}
+
+[data-theme="dark"] {
+  --color-bg: #151b27;
+  --color-fg: #ffffff;
+  --color-accent: #ed0f0a;
+
+  --color-green: #4dca34;
+  --color-blue: #8aa8d4;
+  --color-red: #f24a46;
+  --color-yellow: #eddb1f;
+  --color-orange: #e8864a;
+  --color-purple: #d4a0c8;
+  --color-brown: #c4a98f;
+
+  --diagram-edge: #404043;
+  --diagram-node: #404043;
+  --diagram-node-mid: #BCBCBE;
+  --diagram-node-active: #ffffff;
+  --diagram-edge-active: var(--color-accent);
+}
+
+/* ---- Base ---- */
+html {
+  overflow-y: scroll;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 400;
+  font-size: inherit;
+}
+
+button {
+  font: inherit;
+  color: inherit;
+}
+
+body {
+  font-family: var(--font);
+  font-size: var(--fs-body);
+  font-weight: 400;
+  line-height: 1.2;
+  color: var(--color-fg);
+  background: var(--color-bg);
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+a:hover {
+  color: var(--color-accent);
+  transition: color 0.15s;
+}
+
+img,
+video {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+/* ---- Nav ---- */
+.nav {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: var(--pad) var(--pad) 0;
+  background: var(--color-bg);
+  transition: background 0.3s ease;
+}
+
+.nav a[aria-current="page"] {
+  color: var(--color-accent);
+}
+
+.theme-toggle {
+  font-family: var(--font);
+  background: none;
+  border: none;
+  padding: 0;
+  display: inline-block;
+  width: 1.5em;
+  text-align: center;
+  cursor: pointer;
+  color: var(--color-fg);
+}
+
+[data-theme="light"] .theme-toggle::before { content: "☽︎"; }
+[data-theme="dark"]  .theme-toggle::before { content: "☀︎"; }
+
+.theme-toggle:hover {
+  color: var(--color-accent);
+  transition: color 0.15s;
+}
+
+/* ---- Page shell ---- */
+.page {
+  display: flex;
+  flex-direction: column;
+  gap: var(--pad);
+  padding: var(--pad);
+}
+
+/* ---- Page intro ---- */
+.page-intro {
+  max-width: 66.6667%;
+}
+
+@media (max-width: 760px) {
+  .page-intro { max-width: none; }
+}
+
+/* ---- Filter bar ---- */
+.filter-bar {
+  display: flex;
+  flex-wrap: wrap;
+  row-gap: 0.2em;
+  column-gap: var(--pad);
+  position: sticky;
+  /* Nav is var(--pad) + one line. Nav and filter bar share --fs-body with
+     line-height 1.2, so 1.2em matches the nav's text height exactly; the -2px
+     tucks the bar under the nav (z 90 < 100) so no grid bleeds through between. */
+  top: calc(var(--pad) + 1.2em - 2px);
+  z-index: 90;                          /* below nav (100), above grid items */
+  background: var(--color-bg);          /* opaque so the grid scrolls cleanly underneath */
+}
+
+.filter-bar button {
+  font-family: var(--font);
+  text-transform: lowercase;
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  color: var(--color-fg);
+  transition: color 0.15s;
+}
+
+.filter-bar button:hover {
+  color: var(--color-accent);
+}
+
+.filter-bar button[aria-pressed="true"] {
+  color: var(--color-accent);
+}
+
+.filter-trigger {
+  display: none;
+}
+
+.filter-bar .filter-extra {
+  display: none;
+}
+
+.filter-bar .filter-more {
+  order: 999;
+}
+
+.filter-bar.filter-expanded .filter-extra {
+  display: flex;
+}
+
+/* ---- Grid (masonry via CSS columns) ---- */
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-auto-rows: 8px;
+  column-gap: var(--pad);
+  row-gap: 0;
+  align-items: start;
+}
+
+.grid-item {
+  display: flex;
+  flex-direction: column;
+  gap: var(--pad-sm);
+  margin-bottom: var(--pad-bottom);
+  /* Prevent grid blowout: without this, a child wider than its 1fr column
+     (e.g. an unbroken writing-card title) expands the cell past the track
+     and pushes the grid past the page's right padding. */
+  min-width: 0;
+}
+
+.grid-item--full {
+  grid-column: 1 / -1;
+}
+
+.grid-item a {
+  display: flex;
+  flex-direction: column;
+  gap: var(--pad-sm);
+}
+
+.grid-item .label {
+  color: var(--color-fg);
+  font-size: var(--fs-secondary);
+}
+
+.grid-item .thumb {
+  width: 100%;
+  height: auto;
+}
+
+/* ---- Project detail ---- */
+.project-header {
+  display: flex;
+  flex-direction: column;
+  gap: var(--pad);
+  max-width: 40ch;
+}
+
+.project-header .description p + p {
+  padding-top: 1em;
+}
+
+/* ---- Hero feed (homepage) ---- */
+.hero-feed {
+  display: flex;
+  flex-direction: column;
+  gap: var(--pad);
+}
+
+.hero-item {
+  display: flex;
+  flex-direction: column;
+  gap: var(--pad-sm);
+  color: var(--color-fg);
+}
+
+.hero-media {
+  width: 100%;
+  display: block;
+}
+
+.hero-item iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+  /* Background-mode Vimeo iframes swallow clicks. Disabling pointer events on
+     the iframe lets the parent <a> catch the click and navigate to the
+     project page (where the video re-renders with playback controls). */
+  pointer-events: none;
+}
+
+.hero-item .label {
+  font-size: var(--fs-secondary);
+}
+
+/* ---- Project media (full-width single column, within page padding) ---- */
+.project-media {
+  display: flex;
+  flex-direction: column;
+  gap: var(--pad);
+}
+
+.project-media-item {
+  display: flex;
+  flex-direction: column;
+  gap: var(--pad-sm);
+}
+
+.project-media img,
+.project-media iframe {
+  width: 100%;
+  display: block;
+}
+
+.project-media-frame {
+  width: 100%;
+}
+
+.project-media-frame iframe {
+  width: 100%;
+  height: 100%;
+  aspect-ratio: 16 / 9;
+  border: none;
+}
+
+.project-media .label {
+  font-size: var(--fs-secondary);
+}
+
+/* ---- Search bar ---- */
+.search-bar {
+  display: flex;
+}
+
+.search-bar input {
+  font: inherit;
+  color: var(--color-fg);
+  background: none;
+  border: none;
+  border-bottom: 1px solid var(--color-fg);
+  padding: 0 0 4px;
+  width: 100%;
+  outline: none;
+}
+
+.search-bar input::placeholder {
+  color: var(--color-fg);
+  opacity: 0.3;
+}
+
+/* ---- Video thumb ---- */
+.thumb-video {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+}
+
+.thumb-video iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+  /* Let clicks fall through to the parent <a> instead of being captured by
+     the Vimeo player. Project-page iframes (.project-media-frame) keep their
+     default pointer-events so visitors can play/mute there. */
+  pointer-events: none;
+}
+
+/* ---- Project detail page shared styles ---- */
+.detail-meta {
+  opacity: 0.5;
+}
+
+.detail-project-link {
+  font: inherit;
+  color: var(--color-accent);
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  text-align: left;
+}
+
+.detail-project-link:hover {
+  opacity: 0.5;
+}
+
+.detail-credits {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--pad);
+  border-top: 1px solid var(--color-fg);
+  padding-top: var(--pad);
+}
+
+.detail-credit-role {
+  opacity: 0.5;
+}
+
+.detail-related {
+  column-count: 2;
+  column-gap: var(--pad);
+}
+
+.detail-related-thumb {
+  width: 100%;
+  height: auto;
+  display: block;
+  margin-bottom: var(--pad);
+  break-inside: avoid;
+  cursor: pointer;
+}
+
+.detail-related-thumb:hover {
+  opacity: 0.7;
+  transition: opacity 0.15s;
+}
+
+/* ---- Prose (multi-paragraph body copy) ---- */
+.prose p + p {
+  margin-top: 1em;
+}
+.prose h2 {
+  margin-top: var(--pad);
+}
+.prose h2:first-child {
+  margin-top: 0;
+}
+.prose h2 + p {
+  margin-top: 0.25em;
+}
+
+/* ---- Essay page ---- */
+/* Default: single-column essay. .essay--with-figures (set in the page when
+   the essay has companion images via essay_of) flips to a 2-col grid. The
+   inner .essay-text keeps the text column's vertical rhythm in both modes. */
+.essay {
+  width: 50%;
+}
+.essay-text {
+  display: flex;
+  flex-direction: column;
+  gap: var(--pad);
+  min-width: 0;
+}
+.essay--with-figures {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  gap: var(--pad);
+  width: 100%;
+}
+.essay--with-figures > .essay-text {
+  flex: 2;
+  min-width: 0;
+}
+.essay--with-figures > .essay-figures {
+  flex: 1;
+  min-width: 0;
+}
+.essay-figures {
+  display: flex;
+  flex-direction: column;
+  gap: var(--pad);
+  min-width: 0;
+}
+.essay-figure { margin: 0; min-width: 0; }
+.essay-figure :where(img, picture) {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+.essay-figure figcaption {
+  font-size: var(--fs-secondary);
+  margin-top: var(--pad-sm);
+  opacity: 0.7;
+}
+
+@media (max-width: 760px) {
+  /* Flatten the type hierarchy on mobile — both tokens collapse to the base size. */
+  :root {
+    --fs-body: var(--fs-base);
+    --fs-secondary: var(--fs-base);
+  }
+
+  .essay {
+    width: 100%;
+  }
+}
+
+/* Essay 2-col text|images collapses to a single column on narrow windows,
+   matching the .profile--spread breakpoint (the site's other 2-col layout). */
+@media (max-width: 680px) {
+  .essay--with-figures {
+    flex-direction: column;
+  }
+  .essay--with-figures > .essay-text,
+  .essay--with-figures > .essay-figures {
+    flex: 1 1 auto;
+    width: 100%;
+  }
+}
+
+.essay-title {
+  font-size: clamp(28px, 5vw, 96px);
+  line-height: 1.05;
+  font-weight: 400;
+}
+
+.essay-date {
+  opacity: 0.5;
+}
+
+/* ---- CV ---- */
+.cv {
+  display: flex;
+  flex-direction: column;
+  gap: var(--pad);
+  font-size: var(--fs-secondary);
+}
+
+.cv-category-title {
+  font-size: clamp(28px, 5vw, 96px);
+  line-height: 1.05;
+}
+
+.cv-filters {
+  display: flex;
+  gap: var(--pad);
+  margin-bottom: var(--pad-sm);
+  align-items: baseline;
+  flex-wrap: wrap;
+}
+.cv-filters input,
+.cv-filters select {
+  font: inherit;
+  color: var(--color-fg);
+  background: none;
+  border: none;
+  border-bottom: 1px solid var(--color-fg);
+  border-radius: 0;
+  padding: 0.2em 0;
+}
+.cv-filters input { min-width: 20ch; }
+.cv-filters input:focus,
+.cv-filters select:focus { outline: none; }
+.cv-filters input::placeholder {
+  color: var(--color-fg);
+  opacity: 0.3;
+}
+.cv-filters select {
+  cursor: pointer;
+  -webkit-appearance: none;
+  appearance: none;
+}
+
+/* ---- CV table (ported from Jullie's table.html) ---- */
+.cv-head {
+  margin-top: var(--pad);
+  margin-bottom: var(--pad-sm);
+}
+.cv-title {
+  font-size: 1em;
+  font-weight: 400;
+  margin-bottom: 0.25em;
+}
+.cv-sub {
+  font-size: 0.75em;
+  opacity: 0.4;
+  margin-bottom: var(--pad);
+}
+
+.cv-filters {
+  display: flex;
+  gap: 1.5em;
+  align-items: baseline;
+  flex-wrap: wrap;
+  position: sticky;
+  top: calc(var(--pad) + 1.5em - 2px);
+  z-index: 11;
+  background: var(--color-bg);
+  padding: var(--pad-sm) 0;
+}
+.cv-filters input,
+.cv-filters select {
+  font: inherit;
+  color: var(--color-fg);
+  background: none;
+  border: none;
+  border-bottom: 1px solid var(--color-fg);
+  border-radius: 0;
+  padding: 0.25em 0;
+}
+.cv-filters input { min-width: 12em; }
+.cv-filters input:focus,
+.cv-filters select:focus { outline: none; }
+.cv-filters input::placeholder {
+  color: var(--color-fg);
+  opacity: 0.3;
+  font-style: italic;
+}
+.cv-filters select {
+  cursor: pointer;
+  -webkit-appearance: none;
+  appearance: none;
+}
+
+.cv-head,
+.cv-filters,
+.cv-table-wrap { font-size: var(--fs-secondary); }
+.cv-table-wrap { margin-top: 0; }
+
+.cv-table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+  line-height: 1.3;
+  table-layout: fixed;
+}
+.cv-col-where { width: 12.5%; }
+.cv-col-when  { width: 12.5%; }
+.cv-col-what  { width: 25%; }
+.cv-col-how   { width: 25%; }
+.cv-col-tags  { width: 25%; }
+
+.cv-table thead th {
+  background: var(--color-bg);
+  box-shadow: 0 -4px 0 var(--color-bg);
+  position: sticky;
+  top: calc(var(--pad) + 1.5em + var(--pad-sm) * 2 + 2.5rem - 7px);
+  z-index: 10;
+  padding: 0.5em 0.6em 0.5em 0;
+  text-align: left;
+  font-weight: 400;
+  border-bottom: 1px solid var(--color-fg);
+  cursor: pointer;
+  user-select: none;
+  white-space: nowrap;
+}
+.cv-table thead th:hover { color: var(--color-accent); }
+.cv-sort-arrow { margin-left: 0.25em; color: var(--color-accent); }
+
+.cv-table td {
+  padding: 0.5em 0.6em 0.5em 0;
+  vertical-align: top;
+  border-bottom: 1px solid var(--color-fg);
+  overflow-wrap: anywhere;
+}
+.cv-nowrap { white-space: nowrap; }
+
+.cv-section-row td {
+  padding: var(--pad) 0 var(--pad-sm);
+  border-bottom: none;
+  cursor: pointer;
+  user-select: none;
+}
+.cv-section-row h2 {
+  display: inline;
+  font-size: clamp(32px, 5.5vw, 108px);
+  line-height: 1.05;
+  font-weight: 400;
+}
+.cv-toggle-arrow,
+.cv-section-count {
+  font-size: 0.6em;
+  opacity: 0.3;
+  margin-left: 0.6em;
+  transition: opacity 0.15s;
+}
+.cv-section-row:hover .cv-toggle-arrow { opacity: 1; }
+.cv-section-hidden { display: none; }
+
+.cv-tag {
+  display: inline-block;
+  color: var(--color-fg);
+  opacity: 0.4;
+  margin-right: 0.4em;
+  white-space: nowrap;
+  transition: opacity 0.15s;
+}
+.cv-tag::before { content: "#"; }
+.cv-tag:hover { opacity: 1; }
+
+@media (max-width: 760px) {
+  .cv-table,
+  .cv-table thead,
+  .cv-table tbody,
+  .cv-table tr,
+  .cv-table td { display: block; width: auto; }
+
+  .cv-table colgroup,
+  .cv-table thead { display: none; }
+
+  .cv-table td { padding: 0; border-bottom: none; }
+  .cv-nowrap { white-space: normal; }
+
+  .cv-row {
+    border-bottom: 1px solid var(--color-fg);
+    padding: var(--pad-sm) 0;
+  }
+  .cv-row > td { padding: 0.15em 0; }
+
+  /* Tags hidden on mobile; everything else stacks in source order */
+  .cv-row > td:nth-child(5) { display: none; }
+
+  .cv-section-row td { padding: var(--pad) 0 var(--pad-sm); }
+}
+
+/* ---- Writing card (essay thumbs on Practice) ---- */
+.writing-card {
+  padding: var(--pad);
+  cursor: pointer;
+  /* Container context so the title scales to its column, not the viewport.
+     A 1fr column is ~half the viewport, so vw-based sizing ran ~2x too big
+     across the whole two-column zone. cqi tracks the actual column at every
+     width — no separate mobile rule needed. */
+  container-type: inline-size;
+}
+
+.writing-card-title {
+  /* Sized so the longest essay-title word ("Architectural", ~6.6em wide)
+     fits its column at every width. The cqi slope is the real constraint:
+     keep it ≲14 or long words break near the 680px breakpoint. min/max are
+     free within that. overflow-wrap stays as a backstop for future titles. */
+  font-size: clamp(30px, 13cqi, 120px);
+  line-height: 1.05;
+  overflow-wrap: anywhere;
+  color: var(--color-fg);
+}
+
+/* Companion image under an essay title on the Practice feed. */
+.writing-card-cover {
+  display: block;
+  width: 100%;
+  height: auto;
+  margin-top: var(--pad-sm);
+}
+
+/* ---- Profile (Marvin) ---- */
+.profile {
+  display: flex;
+  flex-direction: column;
+  gap: var(--pad);
+}
+
+.profile--spread {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: var(--pad);
+  align-items: start;
+}
+.profile--spread .profile-text { grid-column: 1 / span 8; }
+.profile--spread .profile-media { grid-column: 9 / span 4; }
+
+.profile-text {
+  display: flex;
+  flex-direction: column;
+  gap: var(--pad);
+}
+
+.profile-media {
+  display: flex;
+  flex-direction: column;
+  gap: var(--pad);
+}
+
+.profile-media figure {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--pad-sm);
+}
+
+.profile-media img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.profile-media figcaption {
+  opacity: 0.5;
+  text-align: center;
+}
+
+/* ---- Responsive ---- */
+@media (max-width: 680px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+
+  .writing-card {
+    padding: 0;
+  }
+
+  .detail-related {
+    column-count: 1;
+  }
+
+  .profile--spread {
+    grid-template-columns: 1fr;
+  }
+
+  .filter-trigger {
+    display: block;
+  }
+
+  .filter-bar:not(.filter-open) button:not(.filter-trigger) {
+    display: none;
+  }
+
+  .filter-bar.filter-open {
+    position: fixed;
+    inset: 0;
+    z-index: 200;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    padding: var(--pad);
+    background: var(--color-bg);
+    text-align: left;
+  }
+
+  .filter-bar.filter-open button {
+    text-align: left;
+  }
+
+  .filter-bar.filter-open .filter-trigger::after {
+    content: " \00d7";
+  }
+
+  /* In the mobile overlay, show every chip at once — the "more" toggle is
+     redundant when there's a full-height column to scroll. */
+  .filter-bar.filter-open .filter-extra {
+    display: block;
+  }
+
+  .filter-bar.filter-open .filter-more {
+    display: none;
+  }
+}
+

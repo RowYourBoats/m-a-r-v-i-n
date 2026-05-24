@@ -1,0 +1,466 @@
+# Usage
+
+## Running locally
+
+```
+npm run dev
+```
+
+Astro watches all files and hot-reloads on save. No restart needed when editing markdown, images, or styles.
+
+## Frontmatter gotcha
+
+If a title or description contains `:` or other special YAML characters (`#`, `[`, `]`, `{`, `}`), wrap it in quotes:
+
+```yaml
+title: "Perdido Street Station: Architectural Crevices"
+```
+
+Without quotes, YAML interprets the colon as a key-value separator and the build fails.
+
+**Always quote `date_range`, even a single year** — `date_range: "2026"`, not `date_range: 2026`. Unquoted, YAML parses a bare year as a *number*, and the build needs a string (it splits on `-` for ranges). `build-projects.mjs` validates this and fails loudly with the offending project named, but quoting up front avoids the round-trip. Ranges like `2021-2022` and `2015-present` already parse as strings, so they're fine either way — but quote for consistency.
+
+## Image filename gotcha
+
+Avoid these characters in image filenames — the build pipeline doesn't URL-encode paths when generating blob URLs, so any character that's special in a URL will silently break the image:
+
+- `#` — browser treats as a fragment delimiter, strips everything after
+- `?` — browser treats as the start of a query string
+- `%` — would need to be encoded as `%25`, which the pipeline doesn't do
+
+Safe to use: letters, digits, spaces, `-`, `_`, `.`, `+`, `()`. Spaces work but produce verbose URLs (`%20`); hyphens are cleaner.
+
+If you spot a broken image whose blob URL clearly *should* exist, check for one of the above characters in the filename. Rename the file, run `node scripts/reconcile-catalogue-paths.mjs --apply` to heal the catalogue's `file_path`, then `node --env-file=.env scripts/upload-blob.mjs` to re-upload under the clean name.
+
+## Project visibility
+
+Four mechanisms to control where a project appears. Authored on the project's `_project.md` unless noted.
+
+| What you want | How |
+|---|---|
+| Shown on `/archive` (Work) | default for anything under `public/images/work/` |
+| Shown on `/practice` instead | `personal: true` (or place under `practice/`) |
+| Off both indexes, direct link gated by `SITE_PASSWORD` | `unlisted: true` on `_project.md` |
+| Off both indexes, no project page either | `snapshot_only: true` (`/projects/<slug>` redirects home) |
+| Off both indexes, project page may resolve | place the folder under any tier other than `work/` / `practice/` (sets `item.staging` automatically — useful as a holding pen) |
+
+`hidden_from_feed` on individual manifest items is derived, not authored: set for every item in an `unlisted` project, and for any image that sits in an essay-companion folder (a folder containing a non-underscore `.md` file alongside the images).
+
+### Chronological projects
+
+By default, every item in a project takes its `year` from the project's `date_range` and clusters together in the grid feeds (Work / Practice) — that's the right behavior for a deck, a book, a campaign, anywhere the project is one coherent thing. Set `chronological: true` on a project's `_project.md` when the folder is instead a *timeline*: a snapshots collection, a journal, anything where each item has its own moment and should sort by capture date among other items in the feed. Pair it with `node scripts/mine-shot-dates.mjs <folder> --apply` to populate per-item dates from EXIF / filename patterns; `build-manifest` only honors those dates when the flag is set.
+
+## Content model
+
+Four sources of content, unified by a project registry:
+
+1. **Project registry** — `_project.md` files in each `public/images/<Folder>/`, compiled to `src/data/projects.json`
+2. **Images** — files in `public/images/<Folder>/`, described in `public/images/image_catalogue.json`, hosted on Vercel Blob
+3. **Essays** — non-underscore markdown under `public/images/` (the `writing` collection; one folder per essay, co-located with its images — see [Essays](#essays-content-collection))
+4. **CV bullets** — markdown in `src/content/bullets/*.md` (junction to Jullie-Resume)
+
+Generated files (do not hand-edit):
+- `src/data/manifest.json` — generated from catalogue + projects.json
+- `src/data/schema.json` — generated from projects.json
+- `src/data/projects.json` — generated from `_project.md` files
+
+### Project registry (`_project.md`)
+
+Each image folder has a `_project.md` that defines the project. This is the **source of truth** for project identity.
+
+```yaml
+---
+slug: herman-miller
+name: Herman Miller
+client: Herman Miller
+aliases:
+  - Herman Miller
+  - HermanMiller
+date_range: 2017-2019
+roles:
+  - Global Brand Designer
+category: experience
+market: b2b2c              # one of: b2b, b2c, b2b2c, internal, personal
+project_type:              # zero or more (defines what kind of work the project is)
+  - retail                 # vocabulary: retail, exhibition, event, campaign, internal-tools,
+  - exhibition             # editorial, keynote, installation, publication-design, teaching, writing
+sector: furniture          # tech, telecom, furniture, fashion, cultural-institution,
+                           # education, architecture, design-studio, quantum-computing, personal
+characteristic: []         # zero or more: interactive, real-time, generative
+role: Lead                 # optional — Marvin's role on the project (Lead, Design, Art Direction, ...)
+scale: enterprise          # optional — enterprise, sme, individual
+personal: false
+description: ""
+credits:
+  - role: Design
+    name: Marvin de Jong
+videos:
+  - title: Walkthrough
+    url: https://player.vimeo.com/video/...
+    video_mode: background    # "background" (default) or "ui" — see Video modes below
+    featured: true            # optional — surface this video on the homepage hero feed
+lead_images:
+  - hero-shot.jpg             # filenames in this folder; matched items get featured: true
+---
+
+Optional prose description (rendered on project page).
+```
+
+Key fields:
+- `slug` — canonical project key, used in URLs and manifest
+- `aliases` — all name variants (resolves naming mismatches between systems)
+- `image_folders` — derived from which folder the `_project.md` lives in
+- `market` / `project_type` / `sector` / `characteristic` — the four project-level facets used for filtering and recruiter-context. Replaced the older `portfolio_tags:` field — see "Filter architecture" below for vocabularies and how the `/archive` filter buttons translate to these values.
+- `role` / `scale` — optional. Plumbed for the future art-direction cross-logic (subject = photography/illustration AND project.role contains "Art Direction") and recruiter-mode filtering.
+- `videos` — Vimeo embed URLs, generated as video items in the manifest. Each entry may set `video_mode` and `featured` (see below)
+- `lead_images` — list of image filenames in this folder that should be flagged `featured` in the manifest (the homepage hero feed reads from here)
+- `personal` — `true` → shows on Practice; `false` → shows on Work
+
+Sub-projects (a `projects:` map nested in the umbrella `_project.md`) inherit the four facets from the umbrella unless they explicitly override.
+
+**To add a new project:** create a folder in `public/images/`, add a `_project.md`, drop images in, then run `npm run build-data`.
+
+**Bidirectional sync:**
+- Edit `_project.md` files → run `node scripts/build-projects.mjs` → generates `projects.json`
+- Edit `projects.json` → run `node scripts/scatter-projects.mjs` → updates `_project.md` files
+
+### Images and Vercel Blob
+
+Images live locally in `public/images/<Folder>/` but are **hosted on Vercel Blob** (CDN). The manifest references Blob URLs (`https://ws6i2dfuggcaavs2.public.blob.vercel-storage.com/...`), not local paths.
+
+To upload new/changed images to Blob:
+```
+node --env-file=.env scripts/upload-blob.mjs
+```
+
+Requires `BLOB_READ_WRITE_TOKEN` in `.env`.
+
+### `image_catalogue.json`
+
+Each entry describes one image. Per-image tagging is stratified along four axes:
+
+```json
+{
+  "title": "DFFPM Logo Design",
+  "description": "A minimalist logo…",
+  "medium": "print",                 // substrate (one): digital, print, environments, product, video
+  "format": [],                      // artifact shape: deck, poster, editorial, publication-design,
+                                     //   campaign, event, installation, exhibition, web, stationery,
+                                     //   merch, booth, product-marking
+  "characteristics": [],             // qualities the image embodies: interactive, motion, 3d, real-time, making
+  "subject": ["logo"],               // what it's about: proposal, photography, illustration, typography,
+                                     //   identity, data-visualization, letter-design, logo, study,
+                                     //   product-render, diagram, iconography
+  "client": "DFFPM",
+  "style": "minimalist geometric typography",
+  "file_path": "work/studio/dffpm/Screenshot 2026-04-13 231222.png",
+  "created": "2026-04-13T23:12:22.000Z",
+  "created_date": "2026-04-13",
+  "date_source": "estimated",
+  "project_date_range": "2019-2022"
+}
+```
+
+The axes are authored independently — each array can be empty. The miner (`public/images/miner.cjs`) uses the "fail rather than reach" rule: when nothing in an axis clearly applies, the array stays empty rather than reaching for a weak match.
+
+**`docs/tag-taxonomy.md` is the canonical reference** — closed vocabularies, per-tag definitions, migration log, and the recurring audit process. Update it whenever a tag decision is made. `public/images/schema.json` carries the auto-derived `tags` union for tooling but the editorial source of truth is the taxonomy doc.
+
+Project-level concepts (retail, brand, exhibition, etc.) are NOT image tags — they live on the project's `_project.md` as the four facets. The build pipeline joins them in via `item.project_tags` at manifest time.
+
+**Editing tags:** the dev-only admin portal (see "Admin media-tagging portal" below) is the normal way to edit catalogue + video tags. It writes `image_catalogue.json` and `_project.md` directly. For bulk vocabulary changes, write a dated one-shot migration script (see `scripts/migrate-tags-2026-05-13.mjs`) and audit before/after with `node scripts/audit-tags.mjs`.
+
+Date priority: `exif` > filesystem date within `project_date_range` > range start year > filesystem fallback.
+
+**Profile images on `/marvin`** go through the same pipeline:
+- Folder: `public/images/m-a-r-v-i-n/` with `01_`, `02_` numeric prefix for order.
+- Catalogue entry per file; `title` field becomes the `<figcaption>` on the rendered page.
+- `projects.json` has an `m-a-r-v-i-n` entry with `personal: true` and `image_folders: ["m-a-r-v-i-n"]` so the manifest groups them under `project: "m-a-r-v-i-n"`.
+- `src/pages/marvin.astro` filters `manifest.items` by `project === "m-a-r-v-i-n"`, sorts by id (filename-derived, so `01_` < `02_`).
+
+Swap workflow: drop new file → add/edit catalogue entry with `title` → `node scripts/build-manifest.mjs` → `node --env-file=.env scripts/upload-blob.mjs` → commit.
+
+### CV bullets (content collection)
+
+Sourced from Jullie-Resume via a directory junction (`src/content/bullets/` → `Jullie-Resume/input/bullets/`). Post-refactor (2026-04-20), each bullet is a single file with sizes as body sections. Filename pattern is `{slug}-{id}.md` where `{id}` is a 6-char hex.
+
+```yaml
+---
+category: experience       # experience | teaching | exhibition | education | award | skill | writing
+company: Herman Miller
+role: Global Brand Designer
+project: Picnic — the Herman Miller Design System (brand pillar)
+date: May 2017 – June 2019
+id: d91fb7                  # 6-char hex — matches filename suffix
+tags:
+  - brand-standards
+  - design-documentation
+  - ~cross-functional-collaboration   # ~prefix = secondary tag
+---
+
+## Small
+
+- One-line version of the bullet, for tight resume layouts.
+
+## Medium
+
+- First list item, used in a standard resume.
+- Second list item.
+
+## Large
+
+Prose narrative. May be multiple paragraphs. Used for long-form resume or portfolio detail views.
+```
+
+**Section classification** in `/marvin`:
+- `experience`/`teaching` with a Large body and no `project` → **Roles** (e.g. `role-scope-*` files)
+- `experience` (any other shape) → **Projects** (grouped by `company|project`, size slider picks variant)
+- `teaching` (non-role) → **Teaching** (its own section, no size slider)
+- `exhibition`/`writing` → **Exhibitions & Publications**
+- `education`/`award`/`skill` → their own sections
+
+**Size slider behavior:** for the Projects section, rows are grouped by `company|project`. The slider picks one size (small/medium/large) to show per group; falls back to the nearest available if the exact size isn't present.
+
+**Junction setup** (needed after fresh clone on Windows):
+```
+cmd /c "mklink /J src\content\bullets D:\ClaudeCoding\Jullie-Resume\input\bullets"
+```
+
+### Bullet ↔ image-folder linking (via `id`)
+
+The 6-char `id` in bullet frontmatter is the stable handle for linking bullets to image folders. Every row rendered on `/marvin` carries `data-bullet-id="<id>"` so downstream JS or project pages can query by it.
+
+**Recommended integration pattern** (not yet wired):
+
+1. Add `bullet_ids: ["d91fb7", "a8cafe"]` to each entry in `src/data/projects.json`. List all bullet ids whose work is represented by the project's image folder.
+2. Manifest stays as-is (keyed by project slug, not bullet id).
+3. A project page can resolve bullets → images by looking up `projects[slug].bullet_ids`, and the /marvin table can resolve rows → project images by reverse-indexing (`bulletId → project slug`) from projects.json.
+
+**Why this shape:**
+- Bullets are authored in Jullie and synced via junction. Adding a reverse field on the bullet (like `project_key:`) requires Jullie-side schema changes — we control `projects.json` locally, so putting the link there keeps authoring surfaces separated.
+- One project typically owns multiple bullets (role-scope + individual project bullets). Array on the project side is natural.
+- The 6-char id is filename-derived (content hash), so it survives edits/moves without breaking links as long as the body doesn't hash-collide.
+
+**To prepare image folders with this in mind:**
+- Group images under `public/images/<tier>/<client>/<project>/` as you do today.
+- When adding a new project to `projects.json`, populate `bullet_ids` with any bullet whose content lives under that folder.
+- If a bullet represents a cross-project role scope (no specific deliverables), leave it out of every project — it'll still show in Roles via the /marvin logic, just without a folder link.
+
+**Where the id flows in the code:**
+- `src/pages/marvin.astro` → `parseBody()` extracts sizes from body; each emitted row carries `bulletId: entry.data.id`.
+- Rendered as `data-bullet-id` on each `<tr>` — inspectable in DOM, usable for JS lookup.
+- `stripBold()` strips `**` markers from `where`/`what`/`how` at render time.
+
+### Essays (content collection)
+
+Essays are markdown files under `public/images/` — the `writing` collection globs
+`**/[!_]*.md` (any non-underscore `.md`; `_project.md` is excluded). The entry
+`id`/slug is the path relative to `public/images` without the extension.
+
+**Convention: one folder per essay.** Put the essay `.md` and its images together
+in their own folder, with **no `_project.md`**:
+
+```
+public/images/practice/<essay>/
+  <essay>.md          ← the essay
+  some-image.jpg      ← companion image(s)
+```
+
+build-manifest flags every image sharing an essay's folder with
+`essay_of: <essay-id>` and `hidden_from_feed: true`, so the images don't appear
+as standalone grid cards — they belong to the essay. (A folder with a
+`_project.md` is a *project* instead; don't mix the two in one folder.)
+
+```yaml
+---
+title: "Essay Title"
+date: "2024-04-20"
+tags: [essay, real-time]
+excerpt: "One-line summary shown on the grid."
+cover: "some-image.jpg"   # optional: which companion image to show on the card
+---
+
+Essay body in markdown.
+```
+
+Essays appear on the Practice page as oversized title cards. When the essay has
+companion images, the card shows **title + cover image** (`cover` picks the
+file; otherwise the first uploaded companion image is used). Clicking expands the
+full body inline; the standalone essay page is at `/writing/<slug>`. New images
+in an essay folder still need a catalogue pass (`stub-catalogue.mjs` or the
+miner) before they resolve — same as any image.
+
+### Tag mapping
+
+`src/data/tag-map.json` maps granular bullet tags (137 unique) to portfolio display tags. Currently **not consumed by any code** — file exists but no script or page reads it. Listed under Known-stale tooling. Values still reference the pre-2026-05 vocabulary (`brand`, `spatial`, `typography`) and would need a remap to the current filter architecture (`identity`, `retail`, `exhibition`, etc.) before resurrecting.
+
+## Filter architecture
+
+The `/archive` (Work) and `/practice` filter bars are **curated**, not derived from a tag union. The two filter sets live in `src/data/schema.json` under `work_filters` and `practice_filters`, each with `pinned` and `expanded` arrays.
+
+Each filter entry is a `{ label, matches[] }` pair:
+
+```json
+{ "label": "spatial", "matches": ["exhibition", "installation", "retail"] }
+```
+
+`label` is the button text. `matches` is the list of underlying values that count as a hit — they're checked against each item's `data-tags` (the flat union of `item.tags`, the per-image axes, and `item.project_tags`). This separation lets one button cover several underlying values: `spatial` matches `exhibition` OR `installation` OR `retail`; `editorial` matches both `editorial` and `publication-design`. A `label` need not be a real tag value — it's just a display label over its `matches` set.
+
+Current sets (see `src/data/schema.json` for live values):
+
+- **Work pinned**: spatial, identity, keynote, interactive, editorial
+- **Work expanded**: poster, event, web, campaign, deck, merch, motion, video, data-visualization, photography, illustration, 3d
+- **Practice pinned**: real-time, letter-design, video
+- **Practice expanded**: essay, installation, exhibition
+
+`build-projects.mjs` preserves both filter sets across rebuilds (same pattern as `schema.pinned` and `schema.mediums`). To add or rename a filter, edit `schema.json` directly — it round-trips cleanly.
+
+On mobile (≤680px), tapping "Filter" opens a fullscreen overlay; all chips (pinned + expanded) show at once — there's no "more" step there.
+
+`?tag=X` deep-links continue to work: if `X` matches a filter button label, that button is clicked; otherwise a synthetic single-value filter on `X` is applied.
+
+Project-level facet vocabularies (also drawn from `schema.json` via the projects' authored values):
+
+- `market`: b2b, b2c, b2b2c, internal, personal
+- `project_type`: retail, exhibition, event, campaign, internal-tools, editorial, keynote, installation, publication-design, teaching, writing
+- `sector`: tech, telecom, furniture, fashion, cultural-institution, education, architecture, design-studio, quantum-computing, personal
+- `characteristic`: interactive, real-time, generative
+
+`identity-system` and `design-system` were removed from `project_type` (2026-05-13) — those concepts are claimed in Marvin's bio rather than surfaced as project categories. See `docs/tag-taxonomy.md` for the full rationale.
+
+These appear in `schema.tags` (auto-unioned with image-axis vocabularies) and back the curated filter `matches` arrays.
+
+## Build pipeline
+
+```
+npm run build-data
+```
+
+Runs three scripts in sequence:
+1. `build-projects.mjs` — `_project.md` files → `projects.json` + `schema.json`
+2. `mine-dates.mjs` — stamps file birthtimes onto catalogue entries
+3. `build-manifest.mjs` — catalogue + `projects.json` → `manifest.json`
+
+Run this after adding/moving images, editing `_project.md`, or updating the catalogue.
+
+```
+npm run refresh-images
+```
+
+Runs the heavier image-reconciliation cycle:
+1. `reconcile-catalogue-paths.mjs --apply` — fixes catalogue `file_path` entries after folder moves/renames
+2. `sync-image-tags.mjs` — writes per-project `image_tags:` caches back into each `_project.md` (a human-readable index, not consumed by the site)
+3. `npm run build-data` chain (above)
+
+### Individual scripts
+
+| Script | Purpose |
+|---|---|
+| `scripts/build-projects.mjs` | `_project.md` → `projects.json` + `schema.json` |
+| `scripts/scatter-projects.mjs` | `projects.json` → `_project.md` (reverse sync) |
+| `scripts/mine-dates.mjs` | Stamp file dates on catalogue entries |
+| `scripts/mine-shot-dates.mjs` | Mine real capture dates (EXIF + filename patterns) for entries in a folder. `node scripts/mine-shot-dates.mjs <folder> [--apply]`. Writes `date_source` + `created_date` to the catalogue. `build-manifest` only honors these for projects flagged `chronological: true` — so the project must opt in (typical workflow: create `_project.md` with `chronological: true`, then mine, then build-data). Idempotent. Requires `exifr`. |
+| `scripts/build-manifest.mjs` | Catalogue + projects → manifest |
+| `scripts/sync-image-tags.mjs` | Catalogue → per-project `image_tags:` cache in `_project.md` |
+| `scripts/reconcile-catalogue-paths.mjs` | Heal stale `file_path` entries after folder moves |
+| `scripts/stub-catalogue.mjs` | Register a folder's new images into the catalogue as stub entries (empty tag axes). `node scripts/stub-catalogue.mjs <folder> [--apply]`. Lightweight stand-in for the miner — gets images into the pipeline + `/admin/images` for hand-tagging |
+| `scripts/upload-blob.mjs` | Upload images to Vercel Blob, rewrite manifest URLs |
+| `scripts/sync-chroma.mjs` | Sync catalogue to Chroma vector store (powers `/api/search`) |
+| `scripts/audit-tags.mjs` | Read-only tag audit: per-value counts across all image + project axes, cross-axis duplicate flags, singletons. Writes `docs/tag-audit.json`. Run after every tagging pass. |
+| `public/images/miner.cjs` | Ollama-based vision tagger; run from `public/images/` to populate catalogue entries (format/characteristics/subject) for newly-added images |
+
+### Adding new images
+
+Images only reach the site once they have a row in `image_catalogue.json` — `build-manifest` builds the manifest *from the catalogue*, and `upload-blob` only pushes what's in the manifest. Dropping files in a folder (and wiring the project) is not enough; they must be **ingested** first. Sequence:
+
+1. Add the image files under `public/images/<tier>/<client>/<folder>/`
+2. Make sure the project is wired (a `_project.md` or a `projects:` entry whose `image_folders` includes the folder)
+3. **Ingest** — either `node scripts/stub-catalogue.mjs <folder> --apply` (fast, blank tags) or run `public/images/miner.cjs` from `public/images/` (Ollama auto-tags)
+4. `npm run build-data`
+5. `node --env-file=.env scripts/upload-blob.mjs`
+6. (optional) tag/title them in `/admin/images`
+
+Skipping step 3 is the classic "I added images but `upload-blob` only pushed some" symptom — the un-ingested ones never enter the manifest. `node scripts/reconcile-catalogue-paths.mjs` (dry run) lists every on-disk image missing from the catalogue.
+
+One-shot migrations (already run) now live in the gitignored `_DEPRECATED/` archive — `_DEPRECATED/scripts/`. They are kept as reference only, not part of any pipeline. See `_DEPRECATED/README.md` for the full inventory.
+
+## Admin media-tagging portal
+
+A dev-only portal for tagging images and videos visually. **Not in version control** — `src/pages/admin/` and `src/pages/api/admin/` are gitignored and 404 outside `import.meta.env.DEV`, so they only exist locally and only run under `astro dev`. If you `git clone` fresh, they won't be there.
+
+- **`/admin/images`** — grid of all media (601 images + 46 videos). Side panel edits title, description, and tag chips. Filters: type (image/video), tier, client, missing-tags, text search. Multi-select (⌘/Ctrl-click, Shift-range, ⌘A, Esc) with tri-state tag chips for bulk editing. ← / → keyboard nav.
+- **`/api/admin/image-tags`** — GET returns merged image + video rows + tag vocabularies; POST writes back. Image patches → `image_catalogue.json` + re-synced `_project.md image_tags`. Video patches → the matching `_project.md videos:` block (adds `description` / `characteristics` / `subject` fields inline).
+- **`/api/admin/thumb`** — Sharp-resized thumbnails (120/280/600px webp), in-memory LRU cache.
+- **`/api/admin/vimeo-poster`** — resolves a Vimeo ID to its CDN poster via oEmbed, caches to `_exclude/vimeo-thumbs.json`, 302-redirects.
+
+Saves are immediate but downstream JSON is not — run `npm run build-data` after a tagging session to propagate to `projects.json` / `manifest.json` / `schema.json`.
+
+## Pages
+
+- `/` (Work) — hero feed: items flagged `featured: true` (via `lead_images` for images and per-video `featured: true`), single column full-width within page padding
+- `/archive` — full Work archive: non-personal items, masonry grid, tag filters, sorted newest first
+- `/practice` — personal images + essays, light tag filter
+- `/marvin` — bio, contact, profile images with captions (from manifest, project `m-a-r-v-i-n`), resume (5-column CV table: where/when/what/how/tags with size slider on Projects, section collapse, sort, search, company/category filters)
+- `/projects/[slug]` — auto-generated per project from the manifest. Media renders single-column full-bleed.
+
+## Video modes
+
+Vimeo videos in `_project.md` can be configured per-entry:
+
+- `video_mode: background` (default) — autoplay, muted, looped, no controls UI. Treats the video as ambient motion. URL params: `?background=1`.
+- `video_mode: ui` — autoplay muted, looped, controls visible (play/pause/scrub/unmute). URL params: `?autoplay=1&muted=1&loop=1`.
+
+The flag is consumed at build time. URL params are stripped from `vid.url` and rebuilt from the flag, so the flag is the single source of truth on every rebuild.
+
+## Password gate (under construction)
+
+The site is gated behind a password via Astro middleware (`src/middleware.ts`).
+
+- `SITE_PASSWORD` env var — the shared password (set in `.env` locally, in Vercel env vars for production)
+- `SITE_LIVE=true` — disables the gate entirely (kill switch)
+- Cookie-based session: 7-day `HttpOnly` cookie, SHA-256 hash of password
+
+The gate page is at `src/pages/under-construction.astro`. Auth endpoint at `src/pages/api/auth.ts`.
+
+## Deploying
+
+Push to `main`. Vercel rebuilds automatically from GitHub (RowYourBoats/m-a-r-v-i-n). Solo site — direct push to `main`, no PR route.
+
+```
+git add .
+git commit -m "update"
+git push origin main
+```
+
+Run `npm run build-data` before committing if you changed the catalogue, `_project.md` files, or anything upstream of the generated JSON — Vercel runs `astro build` only, not `build-data`.
+
+Images are on Vercel Blob — pushing code doesn't re-upload images. To upload new images, run `upload-blob.mjs` locally.
+
+## Design tokens
+
+Tokens in `src/styles/global.css`:
+
+- `--fs-base: clamp(14px, 1.5625vw, 1.3rem)` — mobile floor (~14–21px). Used as the legacy `--fs` alias and as the mobile-flatten target.
+- `--fs-body: clamp(14px, 2.5vw, 48px)` — desktop ceiling 3em. Body copy, page intros, prose, essays, nav, filter bar.
+- `--fs-secondary: clamp(14px, 1.667vw, 32px)` — desktop ceiling 2em. Resume table on `/marvin`, grid item captions (`.label`), detail foldout, project tags, hero feed captions.
+- `--pad: clamp(32px, 2.5vw, 64px)` — all padding/gaps.
+- `--pad-sm: clamp(8px, 0.625vw, 16px)` — caption-to-image gap.
+- `--pad-bottom` — derived; bottom margin under captioned grid cells so total whitespace below the image equals `--pad`.
+
+Mobile (≤760px) flattens both `--fs-body` and `--fs-secondary` back to `--fs-base` so the type hierarchy disappears at small sizes.
+
+One font (PP Neue Montreal Regular), one weight (400), one line-height (1.2). Font file goes in `public/fonts/PPNeueMontreal-Regular.woff2`.
+
+Multi-paragraph body copy: wrap in `<div class="prose">` for tight `p + p` spacing.
+
+## Layout
+
+- `.page-intro` — page-intro copy on `/archive` and `/practice`. `max-width: 66.6667%` on desktop (8 of 12 cols), full-width below 760px.
+- `.profile--spread` — Marvin two-column intro layout. Real 12-col CSS grid: `.profile-text` spans cols 1–8, `.profile-media` spans 9–12. Collapses to single column at ≤680px.
+- `.hero-feed` — homepage feed. Items render full width within the page padding (no edge bleed).
+- `.project-media` — project page media stack. Same: full width within the page padding.
+
+The resume on `/marvin` (`.cv-head`, `.cv-filters`, `.cv-table-wrap`) is explicitly sized at `--fs-secondary` so it stays at 2em while the rest of the page uses `--fs-body` (3em on desktop).
+
+## Known-stale tooling
+
+Cleared out 2026-05-21 — spent migrations and stale artifacts moved to the gitignored `_DEPRECATED/` archive (see `_DEPRECATED/README.md`). This included `src/data/tag-map.json`, the two dead studio sub-folder `_project.md` stubs (`dffpm`, `tillotson-associates` — their images stay in place), `public/images/image_catalogue - Copy.json`, and the one-off migration scripts. `scripts/post.mjs` and `public/images/work/aws/_project.md` were already gone before the sweep.

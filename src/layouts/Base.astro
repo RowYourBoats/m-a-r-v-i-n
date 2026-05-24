@@ -1,0 +1,189 @@
+---
+interface Props {
+  title?: string;
+  // Optional override for the active nav item. `/projects/[slug]` uses this
+  // because a project's path can't tell you whether it's work or practice.
+  section?: "work" | "archive" | "practice" | "marvin";
+}
+
+const { title = "Marvin de Jong", section } = Astro.props;
+const path = Astro.url.pathname;
+
+const SECTION_BY_HREF: Record<string, string> = {
+  "/": "work",
+  "/archive": "archive",
+  "/practice": "practice",
+  "/marvin": "marvin",
+};
+
+function isCurrent(href: string) {
+  if (section) return SECTION_BY_HREF[href] === section;
+  if (href === "/") return path === "/";
+  if (href === "/archive") return path.startsWith("/archive") || path.startsWith("/projects");
+  return path.startsWith(href);
+}
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{title}</title>
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="preload" href="/fonts/PPNeueMontreal-Regular.woff2" as="font" type="font/woff2" crossorigin />
+    <style>button{font:inherit;color:inherit}</style>
+    <script is:inline>
+      // Set theme before first paint so the page never flashes the wrong mode.
+      (function () {
+        var theme = localStorage.getItem("theme") || "light";
+        document.documentElement.setAttribute("data-theme", theme);
+      })();
+    </script>
+  </head>
+  <body>
+    <nav class="nav">
+      <a href="/" aria-current={isCurrent("/") ? "page" : undefined}>Work</a>
+      <a href="/archive" aria-current={isCurrent("/archive") ? "page" : undefined}>Archive</a>
+      <a href="/practice" aria-current={isCurrent("/practice") ? "page" : undefined}>Practice</a>
+      <a href="/marvin" aria-current={isCurrent("/marvin") ? "page" : undefined}>Marvin</a>
+      <button class="theme-toggle" id="theme-toggle" aria-label="Toggle theme"></button>
+    </nav>
+    <main class="page">
+      <slot />
+    </main>
+
+    <script is:inline>
+      // Vimeo iframe scroll-aware suspend.
+      //
+      // Each Vimeo iframe runs a full Player SPA — 46 of them on /archive
+      // burn ~2.5 GB of memory and pin a CPU core. `loading="lazy"` already
+      // defers iframes that are far from the viewport on first paint; this
+      // observer handles the rest of the lifecycle: once an iframe is loaded
+      // and scrolled off-screen, we send a Vimeo Player API `pause` message
+      // so it stops decoding frames in the background, then `play` when it
+      // comes back into view.
+      //
+      // postMessage is fire-and-forget; messages sent before the player is
+      // ready are silently dropped, which is fine — autoplay handles initial
+      // playback and the next viewport entry/exit will queue another message.
+      (function () {
+        if (typeof IntersectionObserver === "undefined") return;
+        var observer = new IntersectionObserver(function (entries) {
+          for (var i = 0; i < entries.length; i++) {
+            var e = entries[i];
+            var iframe = e.target;
+            var cmd = e.isIntersecting ? "play" : "pause";
+            try {
+              iframe.contentWindow.postMessage({ method: cmd }, "*");
+            } catch (err) {
+              /* iframe may not be loaded yet — harmless */
+            }
+          }
+        }, { rootMargin: "100px 0px", threshold: 0 });
+
+        function attachAll() {
+          var iframes = document.querySelectorAll('iframe[src*="player.vimeo.com"]');
+          for (var i = 0; i < iframes.length; i++) {
+            var iframe = iframes[i];
+            if (iframe.dataset.vimeoObserverAttached) continue;
+            iframe.dataset.vimeoObserverAttached = "1";
+            observer.observe(iframe);
+          }
+        }
+
+        if (document.readyState === "loading") {
+          document.addEventListener("DOMContentLoaded", attachAll);
+        } else {
+          attachAll();
+        }
+      })();
+    </script>
+  </body>
+</html>
+
+<script is:inline>
+  (function () {
+    const btn = document.getElementById("theme-toggle");
+    if (!btn) return;
+    const root = document.documentElement;
+    btn.addEventListener("click", function () {
+      const next = root.getAttribute("data-theme") === "dark" ? "light" : "dark";
+      root.setAttribute("data-theme", next);
+      localStorage.setItem("theme", next);
+    });
+  })();
+</script>
+
+<script is:inline>
+  // Masonry: assign each .grid-item a `grid-row: span N` based on its
+  // measured height so a single CSS grid produces zig-zag, masonry-style
+  // layout. Re-runs on resize and when filters change (call window.relayoutMasonry).
+  (function () {
+    function layout(grid) {
+      var styles = getComputedStyle(grid);
+      if (styles.display !== "grid") {
+        grid.querySelectorAll(".grid-item").forEach(function (el) {
+          el.style.gridRowEnd = "";
+        });
+        return;
+      }
+      var rowH = parseFloat(styles.gridAutoRows) || 8;
+      grid.querySelectorAll(".grid-item").forEach(function (el) {
+        if (getComputedStyle(el).display === "none") return;
+        var rect = el.getBoundingClientRect();
+        var marginBottom = parseFloat(getComputedStyle(el).marginBottom) || 0;
+        var span = Math.ceil((rect.height + marginBottom) / rowH);
+        el.style.gridRowEnd = "span " + span;
+      });
+    }
+
+    function layoutAll() {
+      document.querySelectorAll(".grid").forEach(layout);
+    }
+
+    window.relayoutMasonry = layoutAll;
+
+    function ready(fn) {
+      if (document.readyState !== "loading") fn();
+      else document.addEventListener("DOMContentLoaded", fn);
+    }
+
+    ready(function () {
+      layoutAll();
+      // ResizeObserver catches lazy-loaded images, font swaps, and any other
+      // size change without us having to listen for each one specifically.
+      if (window.ResizeObserver) {
+        var pending = false;
+        var ro = new ResizeObserver(function () {
+          if (pending) return;
+          pending = true;
+          requestAnimationFrame(function () {
+            pending = false;
+            layoutAll();
+          });
+        });
+        document.querySelectorAll(".grid-item").forEach(function (el) {
+          ro.observe(el);
+        });
+      } else {
+        // Fallback for very old browsers.
+        document.querySelectorAll(".grid img").forEach(function (img) {
+          if (img.complete) return;
+          img.addEventListener("load", layoutAll, { once: true });
+          img.addEventListener("error", layoutAll, { once: true });
+        });
+      }
+    });
+
+    var resizeTimer;
+    window.addEventListener("resize", function () {
+      clearTimeout(resizeTimer);
+      resizeTimer = setTimeout(layoutAll, 100);
+    });
+  })();
+</script>
+
+<style is:global>
+  @import "../styles/global.css";
+</style>

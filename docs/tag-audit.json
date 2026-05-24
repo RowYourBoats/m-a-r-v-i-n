@@ -1,0 +1,825 @@
+{
+  "generated": "2026-05-14T02:45:51.283Z",
+  "catalogue_total": 601,
+  "image_axes": {
+    "format": {
+      "deck": 372,
+      "poster": 42,
+      "editorial": 38,
+      "publication-design": 38,
+      "campaign": 32,
+      "event": 24,
+      "installation": 20,
+      "exhibition": 14,
+      "web": 11,
+      "stationery": 9,
+      "merch": 6,
+      "booth": 4,
+      "product-marking": 2
+    },
+    "characteristics": {
+      "interactive": 240,
+      "motion": 41,
+      "3d": 16,
+      "real-time": 5,
+      "making": 1
+    },
+    "subject": {
+      "proposal": 353,
+      "photography": 42,
+      "illustration": 39,
+      "typography": 38,
+      "identity": 31,
+      "data-visualization": 30,
+      "letter-design": 30,
+      "logo": 16,
+      "study": 15,
+      "product-render": 8,
+      "diagram": 6,
+      "iconography": 5
+    },
+    "medium": {
+      "digital": 456,
+      "print": 76,
+      "environments": 50,
+      "product": 11,
+      "video": 8
+    }
+  },
+  "project_axes": {
+    "project_type": {
+      "publication-design": 11,
+      "retail": 9,
+      "editorial": 4,
+      "exhibition": 4,
+      "campaign": 3,
+      "event": 2,
+      "keynote": 2,
+      "teaching": 2,
+      "writing": 2,
+      "installation": 1,
+      "internal-tools": 1
+    },
+    "characteristic": {
+      "real-time": 5,
+      "interactive": 3,
+      "generative": 1
+    },
+    "sector": {
+      "personal": 10,
+      "education": 8,
+      "architecture": 2,
+      "design-studio": 2,
+      "cultural-institution": 1,
+      "furniture": 1,
+      "quantum-computing": 1,
+      "tech": 1,
+      "telecom": 1
+    },
+    "market": {
+      "personal": 15,
+      "b2b": 5,
+      "b2c": 3,
+      "internal": 2,
+      "b2b2c": 1
+    },
+    "image_tags": {
+      "illustration": 16,
+      "typography": 16,
+      "data-visualization": 15,
+      "photography": 15,
+      "editorial": 14,
+      "interactive": 14,
+      "poster": 14,
+      "motion": 12,
+      "deck": 11,
+      "letter-design": 11,
+      "publication-design": 11,
+      "identity": 10,
+      "proposal": 10,
+      "event": 9,
+      "3d": 8,
+      "logo": 7,
+      "campaign": 6,
+      "exhibition": 6,
+      "installation": 6,
+      "stationery": 5,
+      "study": 5,
+      "experiential": 4,
+      "retail": 4,
+      "web": 4,
+      "design-system": 3,
+      "merch": 3,
+      "product-render": 3,
+      "real-time": 3,
+      "booth": 2,
+      "diagram": 2,
+      "digital": 2,
+      "iconography": 2,
+      "spatial": 2,
+      "architecture": 1,
+      "art-direction": 1,
+      "brand": 1,
+      "customer-experience": 1,
+      "making": 1,
+      "process": 1,
+      "product": 1,
+      "product-marking": 1,
+      "user interface": 1,
+      "user-experience": 1
+    }
+  },
+  "flags": {
+    "cross_axis_values": [
+      {
+        "value": "installation",
+        "hits": [
+          {
+            "axis": "format",
+            "scope": "image",
+            "count": 20
+          },
+          {
+            "axis": "project_type",
+            "scope": "project",
+            "count": 1
+          },
+          {
+            "axis": "image_tags",
+            "scope": "project",
+            "count": 6
+          }
+        ]
+      },
+      {
+        "value": "editorial",
+        "hits": [
+          {
+            "axis": "format",
+            "scope": "image",
+            "count": 38
+          },
+          {
+            "axis": "project_type",
+            "scope": "project",
+            "count": 4
+          },
+          {
+            "axis": "image_tags",
+            "scope": "project",
+            "count": 14
+          }
+        ]
+      },
+      {
+        "value": "publication-design",
+        "hits": [
+          {
+            "axis": "format",
+            "scope": "image",
+            "count": 38
+          },
+          {
+            "axis": "project_type",
+            "scope": "project",
+            "count": 11
+          },
+          {
+            "axis": "image_tags",
+            "scope": "project",
+            "count": 11
+          }
+        ]
+      },
+      {
+        "value": "stationery",
+        "hits": [
+          {
+            "axis": "format",
+            "scope": "image",
+            "count": 9
+          },
+          {
+            "axis": "image_tags",
+            "scope": "project",
+            "count": 5
+          }
+        ]
+      },
+      {
+        "value": "poster",
+        "hits": [
+          {
+            "axis": "format",
+            "scope": "image",
+            "count": 42
+          },
+          {
+            "axis": "image_tags",
+            "scope": "project",
+            "count": 14
+          }
+        ]
+      },
+      {
+        "value": "campaign",
+        "hits": [
+          {
+            "axis": "format",
+            "scope": "image",
+            "count": 32
+          },
+          {
+            "axis": "project_type",
+            "scope": "project",
+            "count": 3
+          },
+          {
+            "axis": "image_tags",
+            "scope": "project",
+            "count": 6
+          }
+        ]
+      },
+      {
+        "value": "web",
+        "hits": [
+          {
+            "axis": "format",
+            "scope": "image",
+            "count": 11
+          },
+          {
+            "axis": "image_tags",
+            "scope": "project",
+            "count": 4
+          }
+        ]
+      },
+      {
+        "value": "exhibition",
+        "hits": [
+          {
+            "axis": "format",
+            "scope": "image",
+            "count": 14
+          },
+          {
+            "axis": "project_type",
+            "scope": "project",
+            "count": 4
+          },
+          {
+            "axis": "image_tags",
+            "scope": "project",
+            "count": 6
+          }
+        ]
+      },
+      {
+        "value": "event",
+        "hits": [
+          {
+            "axis": "format",
+            "scope": "image",
+            "count": 24
+          },
+          {
+            "axis": "project_type",
+            "scope": "project",
+            "count": 2
+          },
+          {
+            "axis": "image_tags",
+            "scope": "project",
+            "count": 9
+          }
+        ]
+      },
+      {
+        "value": "booth",
+        "hits": [
+          {
+            "axis": "format",
+            "scope": "image",
+            "count": 4
+          },
+          {
+            "axis": "image_tags",
+            "scope": "project",
+            "count": 2
+          }
+        ]
+      },
+      {
+        "value": "merch",
+        "hits": [
+          {
+            "axis": "format",
+            "scope": "image",
+            "count": 6
+          },
+          {
+            "axis": "image_tags",
+            "scope": "project",
+            "count": 3
+          }
+        ]
+      },
+      {
+        "value": "product-marking",
+        "hits": [
+          {
+            "axis": "format",
+            "scope": "image",
+            "count": 2
+          },
+          {
+            "axis": "image_tags",
+            "scope": "project",
+            "count": 1
+          }
+        ]
+      },
+      {
+        "value": "deck",
+        "hits": [
+          {
+            "axis": "format",
+            "scope": "image",
+            "count": 372
+          },
+          {
+            "axis": "image_tags",
+            "scope": "project",
+            "count": 11
+          }
+        ]
+      },
+      {
+        "value": "motion",
+        "hits": [
+          {
+            "axis": "characteristics",
+            "scope": "image",
+            "count": 41
+          },
+          {
+            "axis": "image_tags",
+            "scope": "project",
+            "count": 12
+          }
+        ]
+      },
+      {
+        "value": "3d",
+        "hits": [
+          {
+            "axis": "characteristics",
+            "scope": "image",
+            "count": 16
+          },
+          {
+            "axis": "image_tags",
+            "scope": "project",
+            "count": 8
+          }
+        ]
+      },
+      {
+        "value": "real-time",
+        "hits": [
+          {
+            "axis": "characteristics",
+            "scope": "image",
+            "count": 5
+          },
+          {
+            "axis": "characteristic",
+            "scope": "project",
+            "count": 5
+          },
+          {
+            "axis": "image_tags",
+            "scope": "project",
+            "count": 3
+          }
+        ]
+      },
+      {
+        "value": "interactive",
+        "hits": [
+          {
+            "axis": "characteristics",
+            "scope": "image",
+            "count": 240
+          },
+          {
+            "axis": "characteristic",
+            "scope": "project",
+            "count": 3
+          },
+          {
+            "axis": "image_tags",
+            "scope": "project",
+            "count": 14
+          }
+        ]
+      },
+      {
+        "value": "making",
+        "hits": [
+          {
+            "axis": "characteristics",
+            "scope": "image",
+            "count": 1
+          },
+          {
+            "axis": "image_tags",
+            "scope": "project",
+            "count": 1
+          }
+        ]
+      },
+      {
+        "value": "data-visualization",
+        "hits": [
+          {
+            "axis": "subject",
+            "scope": "image",
+            "count": 30
+          },
+          {
+            "axis": "image_tags",
+            "scope": "project",
+            "count": 15
+          }
+        ]
+      },
+      {
+        "value": "letter-design",
+        "hits": [
+          {
+            "axis": "subject",
+            "scope": "image",
+            "count": 30
+          },
+          {
+            "axis": "image_tags",
+            "scope": "project",
+            "count": 11
+          }
+        ]
+      },
+      {
+        "value": "typography",
+        "hits": [
+          {
+            "axis": "subject",
+            "scope": "image",
+            "count": 38
+          },
+          {
+            "axis": "image_tags",
+            "scope": "project",
+            "count": 16
+          }
+        ]
+      },
+      {
+        "value": "illustration",
+        "hits": [
+          {
+            "axis": "subject",
+            "scope": "image",
+            "count": 39
+          },
+          {
+            "axis": "image_tags",
+            "scope": "project",
+            "count": 16
+          }
+        ]
+      },
+      {
+        "value": "study",
+        "hits": [
+          {
+            "axis": "subject",
+            "scope": "image",
+            "count": 15
+          },
+          {
+            "axis": "image_tags",
+            "scope": "project",
+            "count": 5
+          }
+        ]
+      },
+      {
+        "value": "photography",
+        "hits": [
+          {
+            "axis": "subject",
+            "scope": "image",
+            "count": 42
+          },
+          {
+            "axis": "image_tags",
+            "scope": "project",
+            "count": 15
+          }
+        ]
+      },
+      {
+        "value": "logo",
+        "hits": [
+          {
+            "axis": "subject",
+            "scope": "image",
+            "count": 16
+          },
+          {
+            "axis": "image_tags",
+            "scope": "project",
+            "count": 7
+          }
+        ]
+      },
+      {
+        "value": "identity",
+        "hits": [
+          {
+            "axis": "subject",
+            "scope": "image",
+            "count": 31
+          },
+          {
+            "axis": "image_tags",
+            "scope": "project",
+            "count": 10
+          }
+        ]
+      },
+      {
+        "value": "iconography",
+        "hits": [
+          {
+            "axis": "subject",
+            "scope": "image",
+            "count": 5
+          },
+          {
+            "axis": "image_tags",
+            "scope": "project",
+            "count": 2
+          }
+        ]
+      },
+      {
+        "value": "diagram",
+        "hits": [
+          {
+            "axis": "subject",
+            "scope": "image",
+            "count": 6
+          },
+          {
+            "axis": "image_tags",
+            "scope": "project",
+            "count": 2
+          }
+        ]
+      },
+      {
+        "value": "product-render",
+        "hits": [
+          {
+            "axis": "subject",
+            "scope": "image",
+            "count": 8
+          },
+          {
+            "axis": "image_tags",
+            "scope": "project",
+            "count": 3
+          }
+        ]
+      },
+      {
+        "value": "proposal",
+        "hits": [
+          {
+            "axis": "subject",
+            "scope": "image",
+            "count": 353
+          },
+          {
+            "axis": "image_tags",
+            "scope": "project",
+            "count": 10
+          }
+        ]
+      },
+      {
+        "value": "digital",
+        "hits": [
+          {
+            "axis": "medium",
+            "scope": "image",
+            "count": 456
+          },
+          {
+            "axis": "image_tags",
+            "scope": "project",
+            "count": 2
+          }
+        ]
+      },
+      {
+        "value": "product",
+        "hits": [
+          {
+            "axis": "medium",
+            "scope": "image",
+            "count": 11
+          },
+          {
+            "axis": "image_tags",
+            "scope": "project",
+            "count": 1
+          }
+        ]
+      },
+      {
+        "value": "retail",
+        "hits": [
+          {
+            "axis": "project_type",
+            "scope": "project",
+            "count": 9
+          },
+          {
+            "axis": "image_tags",
+            "scope": "project",
+            "count": 4
+          }
+        ]
+      },
+      {
+        "value": "architecture",
+        "hits": [
+          {
+            "axis": "sector",
+            "scope": "project",
+            "count": 2
+          },
+          {
+            "axis": "image_tags",
+            "scope": "project",
+            "count": 1
+          }
+        ]
+      },
+      {
+        "value": "personal",
+        "hits": [
+          {
+            "axis": "sector",
+            "scope": "project",
+            "count": 10
+          },
+          {
+            "axis": "market",
+            "scope": "project",
+            "count": 15
+          }
+        ]
+      }
+    ],
+    "singletons": [
+      {
+        "scope": "image",
+        "axis": "characteristics",
+        "value": "making"
+      },
+      {
+        "scope": "project",
+        "axis": "project_type",
+        "value": "internal-tools"
+      },
+      {
+        "scope": "project",
+        "axis": "project_type",
+        "value": "installation"
+      },
+      {
+        "scope": "project",
+        "axis": "characteristic",
+        "value": "generative"
+      },
+      {
+        "scope": "project",
+        "axis": "sector",
+        "value": "tech"
+      },
+      {
+        "scope": "project",
+        "axis": "sector",
+        "value": "furniture"
+      },
+      {
+        "scope": "project",
+        "axis": "sector",
+        "value": "quantum-computing"
+      },
+      {
+        "scope": "project",
+        "axis": "sector",
+        "value": "cultural-institution"
+      },
+      {
+        "scope": "project",
+        "axis": "sector",
+        "value": "telecom"
+      },
+      {
+        "scope": "project",
+        "axis": "market",
+        "value": "b2b2c"
+      },
+      {
+        "scope": "project",
+        "axis": "image_tags",
+        "value": "brand"
+      },
+      {
+        "scope": "project",
+        "axis": "image_tags",
+        "value": "product-marking"
+      },
+      {
+        "scope": "project",
+        "axis": "image_tags",
+        "value": "user interface"
+      },
+      {
+        "scope": "project",
+        "axis": "image_tags",
+        "value": "customer-experience"
+      },
+      {
+        "scope": "project",
+        "axis": "image_tags",
+        "value": "user-experience"
+      },
+      {
+        "scope": "project",
+        "axis": "image_tags",
+        "value": "architecture"
+      },
+      {
+        "scope": "project",
+        "axis": "image_tags",
+        "value": "process"
+      },
+      {
+        "scope": "project",
+        "axis": "image_tags",
+        "value": "art-direction"
+      },
+      {
+        "scope": "project",
+        "axis": "image_tags",
+        "value": "product"
+      },
+      {
+        "scope": "project",
+        "axis": "image_tags",
+        "value": "making"
+      }
+    ]
+  },
+  "coverage": {
+    "format": {
+      "with": 523,
+      "without": 78,
+      "total": 601
+    },
+    "characteristics": {
+      "with": 282,
+      "without": 319,
+      "total": 601
+    },
+    "subject": {
+      "with": 523,
+      "without": 78,
+      "total": 601
+    },
+    "medium": {
+      "with": 601,
+      "without": 0,
+      "total": 601
+    }
+  }
+}

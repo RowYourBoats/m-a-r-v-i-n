@@ -1,0 +1,499 @@
+---
+import Base from "@/layouts/Base.astro";
+import { getCollection, getEntry, render } from "astro:content";
+import manifest from "@/data/manifest.json";
+
+const raw = await getCollection("bullets", ({ id }) => !id.startsWith("_template"));
+const intro = await getEntry("pages", "marvin");
+const { Content: IntroContent } = await render(intro!);
+
+const profileImages = (manifest.items as any[])
+  .filter((i) => i.project === "m-a-r-v-i-n")
+  .sort((a, b) => (a.id || "").localeCompare(b.id || ""));
+
+const cleanTag = (t: string) => t.replace(/^~/, "");
+
+const stripBold = (s: string) => (s || "").replace(/\*\*/g, "");
+
+const MONTH: Record<string, string> = {
+  january: "01", february: "02", march: "03", april: "04",
+  may: "05", june: "06", july: "07", august: "08",
+  september: "09", october: "10", november: "11", december: "12",
+  spring: "03", summer: "06", fall: "09", winter: "12",
+};
+
+const dateSortKey = (d: string) => {
+  if (!d) return "";
+  const s = d.trim().toLowerCase();
+  if (/\b(present|current|ongoing)\b/.test(s)) return "9999-99";
+  const ym = s.match(/\d{4}/);
+  if (!ym) return s;
+  const year = ym[0];
+  const start = Math.max(0, ym.index! - 15);
+  const end = ym.index! + 4 + 15;
+  const window = s.slice(start, ym.index!) + " " + s.slice(ym.index! + 4, end);
+  for (const [m, n] of Object.entries(MONTH)) {
+    if (window.includes(m)) return `${year}-${n}`;
+  }
+  return `${year}-00`;
+};
+
+type Bullet = {
+  id: string;
+  bulletId: string;
+  category: string;
+  company: string;
+  role: string;
+  project: string;
+  date: string;
+  size: string;
+  tags: string[];
+  text: string;
+};
+
+type ParsedBody = { sized: { small: string[]; medium: string[]; large: string[] }; flat: string };
+
+const parseBody = (body: string): ParsedBody => {
+  const src = (body || "").trim();
+  const sized = { small: [] as string[], medium: [] as string[], large: [] as string[] };
+  const re = /^##\s+(Small|Medium|Large)\s*$/gim;
+  const markers: { size: keyof typeof sized; index: number; length: number }[] = [];
+  let m: RegExpExecArray | null;
+  while ((m = re.exec(src)) !== null) {
+    markers.push({ size: m[1].toLowerCase() as keyof typeof sized, index: m.index, length: m[0].length });
+  }
+  if (markers.length === 0) return { sized, flat: src };
+  for (let i = 0; i < markers.length; i++) {
+    const start = markers[i].index + markers[i].length;
+    const end = i + 1 < markers.length ? markers[i + 1].index : src.length;
+    const content = src.slice(start, end).trim();
+    if (!content) continue;
+    if (markers[i].size === "large") {
+      sized.large = [content];
+    } else {
+      const items = content
+        .split(/\n\s*-\s+/)
+        .map((s) => s.replace(/^-\s+/, "").trim())
+        .filter(Boolean);
+      sized[markers[i].size] = items;
+    }
+  }
+  return { sized, flat: "" };
+};
+
+const bullets: Bullet[] = raw.flatMap((entry) => {
+  const base = {
+    bulletId: entry.data.id || entry.id,
+    category: (entry.data.category || "").toLowerCase(),
+    company: entry.data.company || "",
+    role: entry.data.role || "",
+    project: entry.data.project || "",
+    date: entry.data.date || "",
+    tags: (entry.data.tags || []).map(cleanTag),
+  };
+  const parsed = parseBody(entry.body || "");
+  const hasSized = parsed.sized.small.length || parsed.sized.medium.length || parsed.sized.large.length;
+  if (!hasSized) {
+    return [{ ...base, id: entry.id, size: "", text: parsed.flat }];
+  }
+  const out: Bullet[] = [];
+  (["small", "medium", "large"] as const).forEach((size) => {
+    parsed.sized[size].forEach((text, i) => {
+      out.push({ ...base, id: `${entry.id}#${size}-${i}`, size, text });
+    });
+  });
+  return out;
+});
+
+const EXP_CATS = new Set(["experience"]);
+const allExp = bullets.filter((b) => EXP_CATS.has(b.category));
+const roles = allExp.filter((b) => b.size === "large" && !b.project);
+const projects = allExp.filter((b) => !(b.size === "large" && !b.project));
+
+type Row = {
+  id: string;
+  bulletId: string;
+  size: string;
+  group: string;
+  where: string;
+  when: string;
+  whenSort: string;
+  what: string;
+  how: string;
+  tags: string[];
+};
+
+const normalizeWork = (b: Bullet): Row => ({
+  id: b.id,
+  bulletId: b.bulletId,
+  size: b.size,
+  group: b.company ? `${b.company}|${b.project || "__none__"}` : "",
+  where: b.company,
+  when: b.date,
+  whenSort: dateSortKey(b.date),
+  what: b.project || b.role,
+  how: b.text,
+  tags: b.tags,
+});
+
+const DATE_PAT = /(?:January|February|March|April|May|June|July|August|September|October|November|December|Spring|Fall|Summer|Winter)\s+\d{4}|\b\d{4}\b/;
+
+const normalizeExhibition = (b: Bullet): Row => {
+  const text = b.text;
+  const parts = text.split(/\s+[—–-]\s+/);
+  let where = "", when = "", what = "", how = "";
+  if (parts.length >= 2) {
+    what = parts[0].trim().replace(/^["""]|["""]$/g, "");
+    const rest = parts.slice(1).join(" — ").trim();
+    const dm = rest.match(DATE_PAT);
+    if (dm) {
+      where = rest.slice(0, dm.index!).replace(/[,\s]+$/, "");
+      when = dm[0];
+      how = rest.slice(dm.index! + dm[0].length).replace(/^[.,\s]+/, "");
+    } else {
+      where = rest;
+    }
+  } else {
+    const dm = text.match(DATE_PAT);
+    if (dm) {
+      what = text.slice(0, dm.index!).replace(/[,\s]+$/, "");
+      when = dm[0];
+      how = text.slice(dm.index! + dm[0].length).replace(/^[.,\s]+/, "");
+    } else {
+      what = text;
+    }
+  }
+  return {
+    id: b.id, bulletId: b.bulletId, size: b.size, group: "",
+    where, when, whenSort: dateSortKey(when), what, how, tags: b.tags,
+  };
+};
+
+const normalizeEducation = (b: Bullet): Row => {
+  const parts = b.text.split(/\s+[—–-]\s+/);
+  const main = parts[0].trim();
+  const when = parts[1]?.trim() || "";
+  const boldMatch = main.match(/^\*\*(.+?)\*\*(?:\s*,)?\s*(.*)$/);
+  let where = "", what = "";
+  if (boldMatch) {
+    where = boldMatch[1];
+    what = boldMatch[2].trim();
+  } else {
+    const [a, b2] = main.split(/,(.+)/);
+    where = a?.trim() || "";
+    what = b2?.trim() || "";
+  }
+  return { id: b.id, bulletId: b.bulletId, size: b.size, group: "", where, when, whenSort: dateSortKey(when), what, how: "", tags: b.tags };
+};
+
+const normalizeSkill = (b: Bullet): Row => {
+  const [cat, tools] = b.text.split(/:(.+)/);
+  return {
+    id: b.id, bulletId: b.bulletId, size: b.size, group: "",
+    where: "", when: "", whenSort: "",
+    what: (tools ? cat : "").trim(),
+    how: (tools ?? cat ?? "").trim(),
+    tags: b.tags,
+  };
+};
+
+const normalizeAward = (b: Bullet): Row => {
+  const parts = b.text.split(/\s+[—–-]\s+/);
+  const what = (parts[0] || "").trim();
+  const rest = parts.slice(1).join(" — ").trim();
+  const dm = rest.match(DATE_PAT);
+  let when = "", how = rest;
+  if (dm) {
+    when = dm[0];
+    how = (rest.slice(0, dm.index!) + rest.slice(dm.index! + dm[0].length)).replace(/^[.,\s]+|[.,\s]+$/g, "");
+  }
+  return {
+    id: b.id, bulletId: b.bulletId, size: b.size, group: "",
+    where: "", when, whenSort: dateSortKey(when), what, how, tags: b.tags,
+  };
+};
+
+const normalizeTeaching = (b: Bullet): Row => ({
+  id: b.id, bulletId: b.bulletId, size: b.size, group: "",
+  where: b.company,
+  when: b.date,
+  whenSort: dateSortKey(b.date),
+  what: b.role,
+  how: b.text,
+  tags: b.tags,
+});
+
+type Section = { label: string; rows: Row[]; hasSizer: boolean };
+
+const sections: Section[] = [];
+if (roles.length) sections.push({ label: "Roles", rows: roles.map(normalizeWork), hasSizer: false });
+if (projects.length) sections.push({ label: "Projects", rows: projects.map(normalizeWork), hasSizer: true });
+
+const EXTRA: { label: string; cats: string[]; normalize: (b: Bullet) => Row }[] = [
+  { label: "Teaching", cats: ["teaching"], normalize: normalizeTeaching },
+  { label: "Exhibitions & Publications", cats: ["exhibition", "writing", "publication", "talks"], normalize: normalizeExhibition },
+  { label: "Education", cats: ["education"], normalize: normalizeEducation },
+  { label: "Awards", cats: ["award"], normalize: normalizeAward },
+  { label: "Skills", cats: ["skill"], normalize: normalizeSkill },
+];
+
+const usedIds = new Set(allExp.map((b) => b.id));
+for (const { label, cats, normalize } of EXTRA) {
+  const group = bullets.filter((b) => cats.includes(b.category));
+  if (group.length) {
+    sections.push({ label, rows: group.map(normalize), hasSizer: false });
+    group.forEach((b) => usedIds.add(b.id));
+  }
+}
+
+const DATED = new Set(["Roles", "Projects", "Teaching", "Exhibitions & Publications", "Education"]);
+for (const sec of sections) {
+  if (DATED.has(sec.label)) {
+    sec.rows.sort((a, b) => (b.whenSort || "").localeCompare(a.whenSort || ""));
+  }
+}
+
+const companies = [...new Set(bullets.filter((b) => b.category !== "teaching").map((b) => b.company).filter(Boolean))].sort();
+const categories = [...new Set(bullets.map((b) => b.category).filter(Boolean))].sort();
+const total = sections.reduce((n, s) => n + s.rows.length, 0);
+const hasSizes = bullets.some((b) => b.size);
+---
+
+<Base title="Marvin de Jong">
+  <div class="profile profile--spread">
+    <div class="profile-text">
+      <div class="prose">
+        <IntroContent />
+      </div>
+    </div>
+
+    <div class="profile-media">
+      {profileImages.map((img) => (
+        <figure>
+          <img src={img.src} alt={img.title || ""} loading="lazy" />
+          {img.title && <figcaption>{img.title}</figcaption>}
+        </figure>
+      ))}
+    </div>
+  </div>
+
+  <div class="cv-head">
+    <h1 class="cv-title">table</h1>
+    <p class="cv-sub">{total} bullets</p>
+  </div>
+
+  <div class="cv-filters">
+    <input type="text" id="cv-search" placeholder="search" autocomplete="off" />
+    <select id="cv-company">
+      <option value="">all companies</option>
+      {companies.map((c) => <option value={c}>{c}</option>)}
+    </select>
+    <select id="cv-category">
+      <option value="">all categories</option>
+      {categories.map((c) => <option value={c}>{c}</option>)}
+    </select>
+    {hasSizes && (
+      <select id="cv-size">
+        <option value="small">small</option>
+        <option value="medium">medium</option>
+        <option value="large">large</option>
+      </select>
+    )}
+  </div>
+
+  <div class="cv-table-wrap">
+    <table class="cv-table" id="cv-table">
+      <colgroup>
+        <col class="cv-col-where" />
+        <col class="cv-col-when" />
+        <col class="cv-col-what" />
+        <col class="cv-col-how" />
+        <col class="cv-col-tags" />
+      </colgroup>
+      <thead>
+        <tr>
+          <th data-col="0">where<span class="cv-sort-arrow"></span></th>
+          <th data-col="1">when<span class="cv-sort-arrow"></span></th>
+          <th data-col="2">what<span class="cv-sort-arrow"></span></th>
+          <th data-col="3">how<span class="cv-sort-arrow"></span></th>
+          <th>tags</th>
+        </tr>
+      </thead>
+      <tbody>
+        {sections.map((sec) => (
+          <>
+            <tr class="cv-section-row" data-section={sec.label}>
+              <td colspan="5">
+                <h2>{sec.label}</h2>
+                <span class="cv-section-count">{sec.rows.length}</span>
+                <span class="cv-toggle-arrow">&#9660;</span>
+              </td>
+            </tr>
+            {sec.rows.map((r) => (
+              <tr
+                class="cv-row"
+                data-section={sec.label}
+                data-size={r.size}
+                data-group={r.group}
+                data-bullet-id={r.bulletId}
+              >
+                <td>{stripBold(r.where)}</td>
+                <td class="cv-nowrap" data-sort={r.whenSort}>{r.when}</td>
+                <td>{stripBold(r.what)}</td>
+                <td>{stripBold(r.how)}</td>
+                <td>
+                  {r.tags.map((t) => (
+                    <span class="cv-tag">{t}</span>
+                  ))}
+                </td>
+              </tr>
+            ))}
+          </>
+        ))}
+      </tbody>
+    </table>
+  </div>
+
+  <script is:inline>
+    (function () {
+      var table = document.getElementById("cv-table");
+      if (!table) return;
+      var tbody = table.querySelector("tbody");
+
+      // ---- Collapse ----
+      function toggleSection(secRow) {
+        var sec = secRow.dataset.section;
+        var rows = tbody.querySelectorAll('tr.cv-row[data-section="' + sec + '"]');
+        var arrow = secRow.querySelector(".cv-toggle-arrow");
+        var isHidden = rows.length > 0 && rows[0].classList.contains("cv-section-hidden");
+        rows.forEach(function (r) { r.classList.toggle("cv-section-hidden", !isHidden); });
+        arrow.innerHTML = isHidden ? "\u25BC" : "\u25B6";
+        if (isHidden) applySize();
+        applyFilters();
+      }
+      table.addEventListener("click", function (e) {
+        var secRow = e.target.closest("tr.cv-section-row");
+        if (!secRow) return;
+        toggleSection(secRow);
+      });
+
+      // ---- Sort ----
+      var sortCol = -1, sortAsc = true;
+      table.querySelectorAll("thead th[data-col]").forEach(function (th) {
+        th.addEventListener("click", function () {
+          var col = parseInt(th.dataset.col);
+          if (sortCol === col) sortAsc = !sortAsc;
+          else { sortCol = col; sortAsc = true; }
+
+          var blocks = [];
+          var current = null;
+          Array.from(tbody.rows).forEach(function (row) {
+            if (row.classList.contains("cv-section-row")) {
+              current = { header: row, rows: [] };
+              blocks.push(current);
+            } else if (current) current.rows.push(row);
+          });
+
+          blocks.forEach(function (sec) {
+            sec.rows.sort(function (a, b) {
+              var aV = (a.cells[col].dataset.sort || a.cells[col].textContent).trim().toLowerCase();
+              var bV = (b.cells[col].dataset.sort || b.cells[col].textContent).trim().toLowerCase();
+              if (aV < bV) return sortAsc ? -1 : 1;
+              if (aV > bV) return sortAsc ? 1 : -1;
+              return 0;
+            });
+          });
+          blocks.forEach(function (sec) {
+            tbody.appendChild(sec.header);
+            sec.rows.forEach(function (r) { tbody.appendChild(r); });
+          });
+
+          table.querySelectorAll(".cv-sort-arrow").forEach(function (s) { s.textContent = ""; });
+          var arrow = th.querySelector(".cv-sort-arrow");
+          if (arrow) arrow.textContent = sortAsc ? " \u25B2" : " \u25BC";
+        });
+      });
+
+      // ---- Size selector ----
+      var sizer = document.getElementById("cv-size");
+      function applySize() {
+        if (!sizer) return;
+        var level = sizer.value;
+        var priority = level === "large" ? ["large", "medium", "small"]
+                     : level === "medium" ? ["medium", "small", "large"]
+                                          : ["small", "medium", "large"];
+        var rows = tbody.querySelectorAll('tr.cv-row[data-section="Projects"]');
+        var groups = {};
+        rows.forEach(function (row) {
+          var g = row.dataset.group || "";
+          if (!g) { row.dataset.sizeHidden = ""; return; }
+          var s = row.dataset.size || "";
+          if (!groups[g]) groups[g] = {};
+          if (!groups[g][s]) groups[g][s] = [];
+          groups[g][s].push(row);
+        });
+        Object.keys(groups).forEach(function (g) {
+          var sizeMap = groups[g];
+          Object.values(sizeMap).forEach(function (arr) {
+            arr.forEach(function (r) { r.dataset.sizeHidden = "1"; });
+          });
+          for (var i = 0; i < priority.length; i++) {
+            if (sizeMap[priority[i]]) {
+              sizeMap[priority[i]].forEach(function (r) { r.dataset.sizeHidden = ""; });
+              break;
+            }
+          }
+        });
+      }
+      sizer?.addEventListener("change", function () { applySize(); applyFilters(); });
+
+      // ---- Filters ----
+      var searchBox = document.getElementById("cv-search");
+      var companySel = document.getElementById("cv-company");
+      var categorySel = document.getElementById("cv-category");
+
+      function applyFilters() {
+        var q = (searchBox.value || "").toLowerCase().trim();
+        var company = companySel.value;
+        var category = categorySel.value;
+
+        tbody.querySelectorAll("tr.cv-row").forEach(function (row) {
+          if (row.dataset.sizeHidden === "1") { row.style.display = "none"; return; }
+          if (row.classList.contains("cv-section-hidden")) { row.style.display = "none"; return; }
+          var show = true;
+          if (company && row.cells[0].textContent.trim() !== company) show = false;
+          if (category) {
+            var sec = row.dataset.section;
+            var matchesCat =
+              (category === "experience" || category === "teaching") && (sec === "Roles" || sec === "Projects") ||
+              (category === "exhibition" || category === "writing" || category === "publication" || category === "talks") && sec === "Exhibitions & Publications" ||
+              category === "education" && sec === "Education" ||
+              category === "award" && sec === "Awards" ||
+              category === "skill" && sec === "Skills";
+            if (!matchesCat) show = false;
+          }
+          if (show && q) show = row.textContent.toLowerCase().indexOf(q) !== -1;
+          row.style.display = show ? "" : "none";
+        });
+
+        var hasFilter = q || company || category;
+        tbody.querySelectorAll("tr.cv-section-row").forEach(function (secRow) {
+          var sec = secRow.dataset.section;
+          if (!hasFilter) { secRow.style.display = ""; return; }
+          var visibleAny = false;
+          tbody.querySelectorAll('tr.cv-row[data-section="' + sec + '"]').forEach(function (r) {
+            if (r.style.display !== "none") visibleAny = true;
+          });
+          secRow.style.display = visibleAny ? "" : "none";
+        });
+      }
+
+      searchBox?.addEventListener("input", applyFilters);
+      companySel?.addEventListener("change", applyFilters);
+      categorySel?.addEventListener("change", applyFilters);
+
+      applySize();
+      applyFilters();
+    })();
+  </script>
+</Base>

@@ -1,0 +1,232 @@
+---
+import { Image } from "astro:assets";
+import Base from "@/layouts/Base.astro";
+import PortfolioPageScript from "@/components/PortfolioPageScript.astro";
+import manifest from "@/data/manifest.json";
+import schema from "@/data/schema.json";
+import { getCollection, getEntry, render } from "astro:content";
+
+const intro = await getEntry("pages", "practice");
+const { Content: IntroContent } = await render(intro!);
+
+const { items } = manifest;
+const personalItems = items.filter((item: any) => item.personal && !item.staging && !item.hidden_from_feed);
+
+// Only show essays from practice/ projects on this page
+const allWriting = await getCollection("writing");
+const writingEntries = allWriting.filter((e) => e.id.startsWith("practice/"));
+
+// Each essay's companion images are manifest items flagged `essay_of` (built by
+// build-manifest for any image sharing the essay's folder). They're hidden from
+// the feed; surface one as the Practice card cover. Frontmatter `cover` picks a
+// specific filename, else the first uploaded (Blob) companion image.
+const essayImagesById = new Map<string, any[]>();
+for (const it of items as any[]) {
+  if (!it.essay_of) continue;
+  const list = essayImagesById.get(it.essay_of) || [];
+  list.push(it);
+  essayImagesById.set(it.essay_of, list);
+}
+const coverBaseName = (src: string) => decodeURIComponent((src || "").split("/").pop() || "");
+const essayCover = new Map<string, any>();
+for (const entry of writingEntries) {
+  const imgs = essayImagesById.get(entry.id);
+  if (!imgs || !imgs.length) continue;
+  const named = entry.data.cover && imgs.find((i) => coverBaseName(i.src) === entry.data.cover);
+  essayCover.set(entry.id, named || imgs.find((i) => (i.src || "").startsWith("https://")) || imgs[0]);
+}
+
+// Merge essays and images into a single reverse-chronological feed.
+// Sort key prefers a real date (item.created or entry.data.date),
+// then falls back to item.year, then 0.
+const sortKey = (iso: string | null | undefined, year: number | null | undefined) => {
+  if (iso) {
+    const t = new Date(iso).getTime();
+    if (!Number.isNaN(t)) return t;
+  }
+  if (year) return Date.UTC(year, 11, 31);
+  return 0;
+};
+type Feed =
+  | { kind: "writing"; entry: (typeof writingEntries)[number]; sort: number }
+  | { kind: "item"; item: any; sort: number };
+const feed: Feed[] = [
+  ...writingEntries.map((entry): Feed => ({
+    kind: "writing",
+    entry,
+    sort: sortKey(entry.data.date, null),
+  })),
+  ...personalItems.map((item: any): Feed => ({
+    kind: "item",
+    item,
+    sort: sortKey(item.created, item.year),
+  })),
+].sort((a, b) => b.sort - a.sort);
+
+// Curated Practice-page filters per the filter architecture directive.
+// Same { label, matches[] } shape as Work.
+const practiceFilters = schema.practice_filters || { pinned: [], expanded: [] };
+const pinnedFilters = practiceFilters.pinned;
+const expandedFilters = practiceFilters.expanded;
+
+// SSR-seed `grid-row: span N` so masonry is roughly distributed before the
+// JS layout pass in Base.astro runs. Without it, every grid item starts as
+// an 8px-tall cell and native loading="lazy" effectively fires for everything
+// at once. JS refines the spans on DOMContentLoaded.
+const ROW_H = 8;
+const COL_W_REF = 600;
+const LABEL_H = 32;
+function seedSpan(item: { width?: number; height?: number }) {
+  if (!item.width || !item.height) return undefined;
+  const imgH = (COL_W_REF * item.height) / item.width;
+  return Math.ceil((imgH + LABEL_H) / ROW_H);
+}
+---
+
+<Base title="Practice — Marvin de Jong">
+  <div class="page-intro prose">
+    <IntroContent />
+  </div>
+
+  <div class="filter-bar" id="filters">
+    <button class="filter-trigger" id="filter-trigger">Filter</button>
+    <button data-filter="all" aria-pressed="true">All</button>
+    {pinnedFilters.map((f) => (
+      <button data-tag={f.label} data-matches={f.matches.join(",")} aria-pressed="false">{f.label}</button>
+    ))}
+    {expandedFilters.map((f) => (
+      <button data-tag={f.label} data-matches={f.matches.join(",")} aria-pressed="false" class="filter-extra">{f.label}</button>
+    ))}
+    {expandedFilters.length > 0 && (
+      <button class="filter-more" id="filter-more">+</button>
+    )}
+  </div>
+
+  <div class="grid" id="grid">
+    {feed.map((f) => f.kind === "writing" ? (
+      <a
+        class="grid-item grid-item--writing"
+        href={`/writing/${f.entry.id}`}
+        data-tags={(f.entry.data.tags || []).join(",")}
+        style={essayCover.get(f.entry.id)?.width ? `grid-row-end: span ${seedSpan(essayCover.get(f.entry.id))}` : undefined}
+      >
+        <div class="writing-card">
+          <p class="writing-card-title">{f.entry.data.title}</p>
+          {essayCover.get(f.entry.id)?.width && (
+            <Image
+              src={essayCover.get(f.entry.id).src}
+              width={essayCover.get(f.entry.id).width}
+              height={essayCover.get(f.entry.id).height}
+              widths={[480, 768, 1200]}
+              sizes="(max-width: 680px) 100vw, 50vw"
+              alt={f.entry.data.title}
+              loading="lazy"
+              decoding="async"
+              class="thumb writing-card-cover"
+            />
+          )}
+        </div>
+      </a>
+    ) : (() => {
+      // Image items routed to a snapshot fallback or snapshot_only project
+      // have no project page — render as <div> so the card isn't a dead link.
+      const proj = (manifest.projects as any)[f.item.project];
+      const linked = proj && !proj.snapshot_only;
+      const Element: any = linked ? "a" : "div";
+      return (
+      <Element
+        class="grid-item"
+        href={linked ? `/projects/${f.item.project}` : undefined}
+        data-tags={[...(f.item.tags || []), ...(f.item.project_tags || [])].join(",")}
+        style={seedSpan(f.item) ? `grid-row-end: span ${seedSpan(f.item)}` : undefined}
+      >
+        {f.item.type === "video" ? (
+          <div
+            class="thumb-video"
+            style={f.item.width && f.item.height ? `aspect-ratio: ${f.item.width} / ${f.item.height}` : undefined}
+          >
+            <iframe
+              src={f.item.video}
+              loading="lazy"
+              allow="autoplay; fullscreen; picture-in-picture"
+              allowfullscreen
+            ></iframe>
+          </div>
+        ) : f.item.width && f.item.height ? (
+          <Image
+            src={f.item.src}
+            width={f.item.width}
+            height={f.item.height}
+            widths={[480, 768, 1200, 1800]}
+            sizes="(max-width: 680px) 100vw, 50vw"
+            alt={f.item.description || f.item.title}
+            loading="lazy"
+            decoding="async"
+            class="thumb thumb--portrait"
+          />
+        ) : (
+          <img
+            src={f.item.src}
+            alt={f.item.description || f.item.title}
+            loading="lazy"
+            decoding="async"
+            class="thumb thumb--portrait"
+          />
+        )}
+        <p class="label">{f.item.title}</p>
+      </Element>
+      );
+    })())}
+  </div>
+
+</Base>
+
+<PortfolioPageScript />
+<script is:inline>
+  // Filter behavior for the Practice grid. Chip click filters items by tag;
+  // last-used filter restored from localStorage on load. Grid items are <a>
+  // elements — clicking navigates directly (essays → /writing/<slug>, images
+  // → /projects/<slug>), no inline detail.
+  (function () {
+    var filters = document.getElementById("filters");
+    var trigger = document.getElementById("filter-trigger");
+    var more = document.getElementById("filter-more");
+    var grid = document.getElementById("grid");
+
+    window.__portfolio.initFilterTrigger();
+
+    var activeMatches = null;
+
+    filters?.addEventListener("click", function (e) {
+      var btn = e.target;
+      if (btn.tagName !== "BUTTON" || btn === trigger || btn === more) return;
+      filters.querySelectorAll("button").forEach(function (b) {
+        if (b === trigger || b === more) return;
+        b.setAttribute("aria-pressed", "false");
+      });
+      btn.setAttribute("aria-pressed", "true");
+      var filterAll = btn.dataset.filter === "all";
+      if (filterAll) {
+        activeMatches = null;
+        trigger && (trigger.textContent = "Filter");
+      } else {
+        var raw = btn.dataset.matches || btn.dataset.tag || "";
+        activeMatches = raw.split(",").filter(Boolean);
+        trigger && (trigger.textContent = btn.textContent);
+      }
+      filters.classList.remove("filter-open");
+      window.__portfolio.saveFilter("filter:practice", filterAll ? "all" : btn.dataset.tag);
+      grid.querySelectorAll(".grid-item").forEach(function (el) {
+        var tags = (el.dataset.tags || "").split(",");
+        var show = !activeMatches || activeMatches.some(function (m) { return tags.includes(m); });
+        el.style.display = show ? "" : "none";
+      });
+      window.relayoutMasonry && window.relayoutMasonry();
+    });
+
+    // Restore the last-used filter from localStorage.
+    var storedFilter = window.__portfolio.loadFilter("filter:practice");
+    var storedBtn = storedFilter && filters?.querySelector('button[data-tag="' + storedFilter + '"]');
+    if (storedBtn) storedBtn.click();
+  })();
+</script>

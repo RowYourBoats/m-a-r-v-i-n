@@ -1,0 +1,3696 @@
+{
+  "aws": {
+    "name": "AWS Re:Invent",
+    "slug": "aws",
+    "client": "AWS Re:Invent",
+    "aliases": [
+      "Article Group",
+      "Amazon Web Services",
+      "Amazon"
+    ],
+    "date_range": "2025",
+    "roles": [
+      "Freelance Designer"
+    ],
+    "category": "keynote",
+    "image_folders": [
+      "work/article-group"
+    ],
+    "market": "b2b",
+    "project_type": [
+      "keynote",
+      "event"
+    ],
+    "sector": "tech",
+    "characteristic": [],
+    "role": null,
+    "scale": null,
+    "image_tags": [
+      "data-visualization",
+      "experiential",
+      "retail",
+      "typography"
+    ],
+    "lead_images": [],
+    "order": [],
+    "personal": false,
+    "snapshot_only": false,
+    "chronological": false,
+    "unlisted": false,
+    "description": "Freelance Designer for Amazon AWS: Reinvent Keynote for Dr. Swami Sivasubramanian focusing on motion and data visualization. Working across the full deck, with a concentration on data visualization and technical diagram work. \n\nThe keynote reached a live audience of 10,000+ and has been viewed over 4.7 million times on YouTube. Visualizing the stories of Dr. Swami Sivasubramanian — VP of AWS Agentic AI; Byron Cook — Vice President and Distinguished Scientist, Automated Reasoning Group; and Colleen Aubrey — AWS SVP Applied AI Solutions.\n",
+    "credits": [
+      {
+        "role": "Designer",
+        "name": "Marvin de Jong"
+      },
+      {
+        "role": "Creative Director",
+        "name": "Steph Ayoob"
+      },
+      {
+        "role": "Designer (sections not shown here)",
+        "name": "Joel MacDonald"
+      }
+    ],
+    "videos": [
+      {
+        "title": "Reinforcement Learning Gyms",
+        "featured": true,
+        "video_mode": "background",
+        "year": 2025,
+        "url": "https://player.vimeo.com/video/1187652525?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479&amp;autoplay=1&amp;muted=1&amp;loop=1"
+      },
+      {
+        "title": "Agent Core Comparison",
+        "year": 2025,
+        "url": "https://player.vimeo.com/video/1187652763?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479&amp;autoplay=1&amp;muted=1&amp;loop=1"
+      },
+      {
+        "title": "Fine Tuning",
+        "year": 2025,
+        "url": "https://player.vimeo.com/video/1187652572?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479&amp;autoplay=1&amp;muted=1&amp;loop=1"
+      },
+      {
+        "title": "Model Distillation",
+        "featured": true,
+        "video_mode": "background",
+        "year": 2025,
+        "url": "https://player.vimeo.com/video/1187652528?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479&amp;autoplay=1&amp;muted=1&amp;loop=1"
+      },
+      {
+        "title": "Transformation and Agility",
+        "featured": true,
+        "video_mode": "background",
+        "year": 2025,
+        "url": "https://player.vimeo.com/video/1187653086?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479&amp;autoplay=1&amp;muted=1&amp;loop=1"
+      },
+      {
+        "title": "Contact Center",
+        "year": 2025,
+        "url": "https://player.vimeo.com/video/1187653007?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479&amp;autoplay=1&amp;muted=1&amp;loop=1"
+      },
+      {
+        "title": "Acceleration",
+        "year": 2025,
+        "url": "https://player.vimeo.com/video/1187653080?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479&amp;autoplay=1&amp;muted=1&amp;loop=1"
+      },
+      {
+        "title": "LLM and Neuro Symbolic AI",
+        "featured": true,
+        "video_mode": "background",
+        "year": 2025,
+        "url": "https://player.vimeo.com/video/1187652881?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479&amp;autoplay=1&amp;muted=1&amp;loop=1"
+      },
+      {
+        "title": "Colleen Aubrey, Agent in the Loop",
+        "year": 2025,
+        "url": "https://player.vimeo.com/video/1187652931?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479&amp;autoplay=1&amp;muted=1&amp;loop=1"
+      },
+      {
+        "title": "Neurosymbolic AI and Verification",
+        "year": 2025,
+        "url": "https://player.vimeo.com/video/1187652586?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479&amp;autoplay=1&amp;muted=1&amp;loop=1"
+      }
+    ]
+  },
+  "dsr-competition-materials": {
+    "name": "Competition Materials",
+    "slug": "dsr-competition-materials",
+    "client": "DS+R",
+    "aliases": [
+      "Diller Scofidio + Renfro",
+      "DS+R",
+      "DSR"
+    ],
+    "date_range": "2016-2017",
+    "roles": [
+      "Designer"
+    ],
+    "category": "experience",
+    "image_folders": [
+      "work/dsr/competition-materials"
+    ],
+    "market": "b2b",
+    "project_type": [
+      "publication-design"
+    ],
+    "sector": "architecture",
+    "characteristic": [],
+    "role": null,
+    "scale": null,
+    "image_tags": [
+      "editorial",
+      "photography",
+      "publication-design",
+      "typography"
+    ],
+    "lead_images": [],
+    "order": [],
+    "personal": false,
+    "snapshot_only": false,
+    "chronological": false,
+    "unlisted": false,
+    "description": "",
+    "credits": [
+      {
+        "role": "Design",
+        "name": "Marvin de Jong"
+      }
+    ],
+    "videos": [],
+    "umbrella": "dsr"
+  },
+  "herman-miller-all-together-now": {
+    "name": "All Together Now",
+    "slug": "herman-miller-all-together-now",
+    "client": "Herman Miller",
+    "aliases": [
+      "Herman Miller",
+      "HermanMiller"
+    ],
+    "date_range": "2017-2019",
+    "roles": [
+      "Global Brand Designer"
+    ],
+    "category": "experience",
+    "image_folders": [
+      "work/herman-miller/all-together-now"
+    ],
+    "market": "b2b2c",
+    "project_type": [
+      "campaign",
+      "publication-design",
+      "exhibition"
+    ],
+    "sector": "furniture",
+    "characteristic": [],
+    "role": null,
+    "scale": null,
+    "image_tags": [
+      "event",
+      "exhibition",
+      "typography"
+    ],
+    "lead_images": [],
+    "order": [],
+    "personal": false,
+    "snapshot_only": false,
+    "chronological": false,
+    "unlisted": false,
+    "description": "Graphics for Herman Miller's All Together Now exhibition at the Salone del Mobile.",
+    "credits": [
+      {
+        "role": "Brand Design",
+        "name": "Marvin de Jong"
+      },
+      {
+        "role": "Brand Creative Director",
+        "name": "Emily C M Anderson"
+      }
+    ],
+    "videos": [],
+    "umbrella": "herman-miller"
+  },
+  "herman-miller-better-world-report": {
+    "name": "Better World Report",
+    "slug": "herman-miller-better-world-report",
+    "client": "Herman Miller",
+    "aliases": [
+      "Herman Miller",
+      "HermanMiller"
+    ],
+    "date_range": "2017-2019",
+    "roles": [
+      "Global Brand Designer"
+    ],
+    "category": "experience",
+    "image_folders": [
+      "work/herman-miller/better-world-report"
+    ],
+    "market": "b2b2c",
+    "project_type": [
+      "campaign",
+      "publication-design",
+      "exhibition"
+    ],
+    "sector": "furniture",
+    "characteristic": [],
+    "role": null,
+    "scale": null,
+    "image_tags": [
+      "data-visualization",
+      "editorial"
+    ],
+    "lead_images": [],
+    "order": [],
+    "personal": false,
+    "snapshot_only": false,
+    "chronological": false,
+    "unlisted": false,
+    "description": "A revamp of Herman Miller's approach to data visualization grounded in the company's sustainability reporting efforts, the Better World Report.",
+    "credits": [
+      {
+        "role": "Brand Design",
+        "name": "Marvin de Jong"
+      },
+      {
+        "role": "Brand Creative Director",
+        "name": "Emily C M Anderson"
+      }
+    ],
+    "videos": [],
+    "umbrella": "herman-miller"
+  },
+  "herman-miller-brand-guidelines": {
+    "name": "Brand Guidelines",
+    "slug": "herman-miller-brand-guidelines",
+    "client": "Herman Miller",
+    "aliases": [
+      "Herman Miller",
+      "HermanMiller"
+    ],
+    "date_range": "2017-2019",
+    "roles": [
+      "Global Brand Designer"
+    ],
+    "category": "experience",
+    "image_folders": [
+      "work/herman-miller/brand-guidelines"
+    ],
+    "market": "b2b2c",
+    "project_type": [
+      "campaign",
+      "publication-design",
+      "exhibition"
+    ],
+    "sector": "furniture",
+    "characteristic": [],
+    "role": null,
+    "scale": null,
+    "image_tags": [
+      "photography"
+    ],
+    "lead_images": [],
+    "order": [],
+    "personal": false,
+    "snapshot_only": false,
+    "chronological": false,
+    "unlisted": false,
+    "description": "",
+    "credits": [
+      {
+        "role": "Design",
+        "name": "Marvin de Jong"
+      }
+    ],
+    "videos": [],
+    "umbrella": "herman-miller"
+  },
+  "herman-miller-brand-system": {
+    "name": "Brand System",
+    "slug": "herman-miller-brand-system",
+    "client": "Herman Miller",
+    "aliases": [
+      "Herman Miller",
+      "HermanMiller"
+    ],
+    "date_range": "2017-2019",
+    "roles": [
+      "Global Brand Designer"
+    ],
+    "category": "experience",
+    "image_folders": [
+      "work/herman-miller/brand-system"
+    ],
+    "market": "b2b2c",
+    "project_type": [
+      "campaign",
+      "publication-design",
+      "exhibition"
+    ],
+    "sector": "furniture",
+    "characteristic": [],
+    "role": null,
+    "scale": null,
+    "image_tags": [
+      "brand",
+      "data-visualization",
+      "design-system",
+      "typography"
+    ],
+    "lead_images": [],
+    "order": [],
+    "personal": false,
+    "snapshot_only": false,
+    "chronological": false,
+    "unlisted": false,
+    "description": "",
+    "credits": [
+      {
+        "role": "Design",
+        "name": "Marvin de Jong"
+      }
+    ],
+    "videos": [],
+    "umbrella": "herman-miller"
+  },
+  "herman-miller-geiger-holiday-card": {
+    "name": "Geiger Holiday Card",
+    "slug": "herman-miller-geiger-holiday-card",
+    "client": "Herman Miller",
+    "aliases": [
+      "Herman Miller",
+      "HermanMiller"
+    ],
+    "date_range": "2017-2019",
+    "roles": [
+      "Global Brand Designer"
+    ],
+    "category": "experience",
+    "image_folders": [
+      "work/herman-miller/geiger-holiday-card"
+    ],
+    "market": "b2b2c",
+    "project_type": [
+      "campaign",
+      "publication-design",
+      "exhibition"
+    ],
+    "sector": "furniture",
+    "characteristic": [],
+    "role": null,
+    "scale": null,
+    "image_tags": [
+      "illustration",
+      "stationery"
+    ],
+    "lead_images": [],
+    "order": [],
+    "personal": false,
+    "snapshot_only": false,
+    "chronological": false,
+    "unlisted": false,
+    "description": "A holiday card celebrating Gieger (part of Herman Miller Group) value of collaboration. Illustrated by Charlotte Trounce.",
+    "credits": [
+      {
+        "role": "Brand Design",
+        "name": "Marvin de Jong"
+      },
+      {
+        "role": "Brand Creative Director",
+        "name": "Emily C M Anderson"
+      },
+      {
+        "role": "illustrator",
+        "name": "Charlotte Trounce"
+      }
+    ],
+    "videos": [],
+    "umbrella": "herman-miller"
+  },
+  "herman-miller-herman-miller-cares": {
+    "name": "Herman Miller Cares",
+    "slug": "herman-miller-herman-miller-cares",
+    "client": "Herman Miller",
+    "aliases": [
+      "Herman Miller",
+      "HermanMiller"
+    ],
+    "date_range": "2017-2019",
+    "roles": [
+      "Global Brand Designer"
+    ],
+    "category": "experience",
+    "image_folders": [
+      "work/herman-miller/herman-miller-cares"
+    ],
+    "market": "b2b2c",
+    "project_type": [
+      "campaign",
+      "publication-design",
+      "exhibition"
+    ],
+    "sector": "furniture",
+    "characteristic": [],
+    "role": null,
+    "scale": null,
+    "image_tags": [
+      "campaign",
+      "editorial",
+      "illustration",
+      "photography",
+      "stationery"
+    ],
+    "lead_images": [],
+    "order": [],
+    "personal": false,
+    "snapshot_only": false,
+    "chronological": false,
+    "unlisted": false,
+    "description": "",
+    "credits": [
+      {
+        "role": "Brand Designer",
+        "name": "Marvin de Jong"
+      },
+      {
+        "role": "Brand Creative Director",
+        "name": "Emily C M Anderson"
+      },
+      {
+        "role": "Illustration",
+        "name": "Edward Ubiera"
+      },
+      {
+        "role": "Photography",
+        "name": "Daniel Dorsa"
+      }
+    ],
+    "videos": [],
+    "umbrella": "herman-miller"
+  },
+  "herman-miller-industrial-facility": {
+    "name": "Industrial Facility",
+    "slug": "herman-miller-industrial-facility",
+    "client": "Herman Miller",
+    "aliases": [
+      "Herman Miller",
+      "HermanMiller"
+    ],
+    "date_range": "2017-2019",
+    "roles": [
+      "Global Brand Designer"
+    ],
+    "category": "experience",
+    "image_folders": [
+      "work/herman-miller/industrial-facility"
+    ],
+    "market": "b2b2c",
+    "project_type": [
+      "campaign",
+      "publication-design",
+      "exhibition"
+    ],
+    "sector": "furniture",
+    "characteristic": [],
+    "role": null,
+    "scale": null,
+    "image_tags": [
+      "event",
+      "exhibition",
+      "illustration",
+      "installation"
+    ],
+    "lead_images": [],
+    "order": [],
+    "personal": false,
+    "snapshot_only": false,
+    "chronological": false,
+    "unlisted": false,
+    "description": "",
+    "credits": [
+      {
+        "role": "Brand Design",
+        "name": "Marvin de Jong"
+      },
+      {
+        "role": "Brand Creative Director",
+        "name": "Emily C M Anderson"
+      }
+    ],
+    "videos": [],
+    "umbrella": "herman-miller"
+  },
+  "herman-miller-merch": {
+    "name": "Merch",
+    "slug": "herman-miller-merch",
+    "client": "Herman Miller",
+    "aliases": [
+      "Herman Miller",
+      "HermanMiller"
+    ],
+    "date_range": "2017-2019",
+    "roles": [
+      "Global Brand Designer"
+    ],
+    "category": "experience",
+    "image_folders": [
+      "work/herman-miller/merch"
+    ],
+    "market": "b2b2c",
+    "project_type": [
+      "campaign",
+      "publication-design",
+      "exhibition"
+    ],
+    "sector": "furniture",
+    "characteristic": [],
+    "role": null,
+    "scale": null,
+    "image_tags": [
+      "identity",
+      "merch"
+    ],
+    "lead_images": [],
+    "order": [],
+    "personal": false,
+    "snapshot_only": false,
+    "chronological": false,
+    "unlisted": false,
+    "description": "",
+    "credits": [
+      {
+        "role": "Brand Design",
+        "name": "Marvin de Jong"
+      },
+      {
+        "role": "Brand Creative Director",
+        "name": "Emily C M Anderson"
+      }
+    ],
+    "videos": [],
+    "umbrella": "herman-miller"
+  },
+  "herman-miller-product-marking": {
+    "name": "Product Marking",
+    "slug": "herman-miller-product-marking",
+    "client": "Herman Miller",
+    "aliases": [
+      "Herman Miller",
+      "HermanMiller"
+    ],
+    "date_range": "2017-2019",
+    "roles": [
+      "Global Brand Designer"
+    ],
+    "category": "experience",
+    "image_folders": [
+      "work/herman-miller/product-marking"
+    ],
+    "market": "b2b2c",
+    "project_type": [
+      "campaign",
+      "publication-design",
+      "exhibition"
+    ],
+    "sector": "furniture",
+    "characteristic": [],
+    "role": null,
+    "scale": null,
+    "image_tags": [
+      "identity",
+      "product-marking"
+    ],
+    "lead_images": [],
+    "order": [],
+    "personal": false,
+    "snapshot_only": false,
+    "chronological": false,
+    "unlisted": false,
+    "description": "",
+    "credits": [
+      {
+        "role": "Brand Design",
+        "name": "Marvin de Jong"
+      },
+      {
+        "role": "Brand Creative Director",
+        "name": "Emily C M Anderson"
+      }
+    ],
+    "videos": [],
+    "umbrella": "herman-miller"
+  },
+  "herman-miller-ward-bennett": {
+    "name": "Ward Bennett",
+    "slug": "herman-miller-ward-bennett",
+    "client": "Herman Miller",
+    "aliases": [
+      "Herman Miller",
+      "HermanMiller"
+    ],
+    "date_range": "2017-2019",
+    "roles": [
+      "Global Brand Designer"
+    ],
+    "category": "experience",
+    "image_folders": [
+      "work/herman-miller/ward-bennett"
+    ],
+    "market": "b2b2c",
+    "project_type": [
+      "campaign",
+      "publication-design",
+      "exhibition"
+    ],
+    "sector": "furniture",
+    "characteristic": [],
+    "role": null,
+    "scale": null,
+    "image_tags": [
+      "event",
+      "exhibition",
+      "typography"
+    ],
+    "lead_images": [],
+    "order": [],
+    "personal": false,
+    "snapshot_only": false,
+    "chronological": false,
+    "unlisted": false,
+    "description": "",
+    "credits": [
+      {
+        "role": "Brand Design",
+        "name": "Marvin de Jong"
+      },
+      {
+        "role": "Brand Creative Director",
+        "name": "Emily C M Anderson"
+      }
+    ],
+    "videos": [],
+    "umbrella": "herman-miller"
+  },
+  "herman-miller-herman-miller-group": {
+    "name": "Herman Miller Group",
+    "slug": "herman-miller-herman-miller-group",
+    "client": "Herman Miller",
+    "aliases": [
+      "Herman Miller",
+      "HermanMiller"
+    ],
+    "date_range": "2017-2019",
+    "roles": [
+      "Global Brand Designer"
+    ],
+    "category": "experience",
+    "image_folders": [
+      "work/herman-miller/herman-miller-group"
+    ],
+    "market": "b2b2c",
+    "project_type": [
+      "campaign",
+      "publication-design",
+      "exhibition"
+    ],
+    "sector": "furniture",
+    "characteristic": [],
+    "role": null,
+    "scale": null,
+    "image_tags": [
+      "identity",
+      "logo"
+    ],
+    "lead_images": [],
+    "order": [],
+    "personal": false,
+    "snapshot_only": false,
+    "chronological": false,
+    "unlisted": false,
+    "description": "",
+    "credits": [
+      {
+        "role": "Brand Design",
+        "name": "Marvin de Jong"
+      },
+      {
+        "role": "Brand Creative Director",
+        "name": "Emily C M Anderson"
+      }
+    ],
+    "videos": [],
+    "umbrella": "herman-miller"
+  },
+  "ionq-brand": {
+    "name": "Brand",
+    "slug": "ionq-brand",
+    "client": "IonQ",
+    "aliases": [
+      "IonQ"
+    ],
+    "date_range": "2023-2025",
+    "roles": [
+      "Creative Director (Remote)"
+    ],
+    "category": "experience",
+    "image_folders": [
+      "work/ionq/brand"
+    ],
+    "market": "b2b",
+    "project_type": [],
+    "sector": "quantum-computing",
+    "characteristic": [],
+    "role": null,
+    "scale": null,
+    "image_tags": [
+      "data-visualization",
+      "deck",
+      "iconography",
+      "identity",
+      "illustration",
+      "logo",
+      "photography",
+      "poster",
+      "typography"
+    ],
+    "lead_images": [],
+    "order": [
+      "IonQ Product Family",
+      "IonQ Ion Trap Technology Visual",
+      "IonQ Brand Guidelines - 21.png",
+      "Guidelines Teaser",
+      "IonQ Logo Animation",
+      "Screenshot 2026-04-13 231149.png",
+      "IonQ Text Animation Treatment",
+      "IonQ Brand Guidelines - 78.png",
+      "IonQ Brand Guidelines - 88.png",
+      "IonQ Brand Guidelines - 91.png",
+      "IonQ Brand Guidelines - 102.png",
+      "IonQ Brand Guidelines - 114.png",
+      "84.png",
+      "83.png",
+      "frame 7.png"
+    ],
+    "personal": false,
+    "snapshot_only": false,
+    "chronological": false,
+    "unlisted": false,
+    "description": "IonQ is a leader in quantum computing — a field that, by its nature, resists easy depiction. The brand challenge was to make something abstract feel material: to give audiences a sense that what they were engaging with is solid, present, and real. \n\nThe visual system is organized around three pillars — Scientific, Optimistic, Confident — translated into a language built to communicate concepts and open conversation rather than decorate them. Scientific reads as evidence, curiosity, and rigor. Optimistic as the belief that this work matters and that the future it points toward is worth describing carefully. Confident as the willingness to make clear decisions and stand behind them.\n\nThe guidelines codify how IonQ shows up across surfaces, anchoring the audience inside a field that can otherwise feel elusive, and giving the company a coherent, durable voice as the category continues to form.\"\n",
+    "credits": [
+      {
+        "role": "Creative Director",
+        "name": "Marvin de Jong"
+      }
+    ],
+    "videos": [
+      {
+        "title": "IonQ Product Family",
+        "featured": true,
+        "video_mode": "background",
+        "url": "https://player.vimeo.com/video/1188244621?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479&amp;autoplay=1&amp;muted=1&amp;loop=1"
+      },
+      {
+        "title": "IonQ Ion Trap Technology Visual",
+        "featured": false,
+        "video_mode": "background",
+        "url": "https://player.vimeo.com/video/925961564?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479&amp;autoplay=1&amp;muted=1&amp;loop=1"
+      },
+      {
+        "title": "IonQ Logo Animation",
+        "url": "https://player.vimeo.com/video/1009063662?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479&amp;autoplay=1&amp;muted=1&amp;loop=1"
+      },
+      {
+        "title": "IonQ Text Animation Treatment",
+        "url": "https://player.vimeo.com/video/1188244624?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479&amp;autoplay=1&amp;muted=1&amp;loop=1"
+      },
+      {
+        "title": "Guidelines Teaser",
+        "url": "https://player.vimeo.com/video/925210328?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479&amp;autoplay=1&amp;muted=1&amp;loop=1"
+      }
+    ],
+    "umbrella": "ionq"
+  },
+  "ionq-brand-guidelines": {
+    "name": "Brand Guidelines",
+    "slug": "ionq-brand-guidelines",
+    "client": "IonQ",
+    "aliases": [
+      "IonQ"
+    ],
+    "date_range": "2023-2025",
+    "roles": [
+      "Creative Director (Remote)"
+    ],
+    "category": "experience",
+    "image_folders": [
+      "work/ionq/brand-guidelines"
+    ],
+    "market": "b2b",
+    "project_type": [],
+    "sector": "quantum-computing",
+    "characteristic": [],
+    "role": null,
+    "scale": null,
+    "image_tags": [
+      "data-visualization",
+      "illustration",
+      "photography"
+    ],
+    "lead_images": [],
+    "order": [],
+    "personal": false,
+    "snapshot_only": false,
+    "chronological": false,
+    "unlisted": true,
+    "description": "",
+    "credits": [
+      {
+        "role": "Creative Director",
+        "name": "Marvin de Jong"
+      }
+    ],
+    "videos": [],
+    "umbrella": "ionq"
+  },
+  "ionq-data-visualization": {
+    "name": "Data Visualization",
+    "slug": "ionq-data-visualization",
+    "client": "IonQ",
+    "aliases": [
+      "IonQ"
+    ],
+    "date_range": "2023-2025",
+    "roles": [
+      "Creative Director (Remote)"
+    ],
+    "category": "experience",
+    "image_folders": [
+      "work/ionq/data-visualization"
+    ],
+    "market": "b2b",
+    "project_type": [],
+    "sector": "quantum-computing",
+    "characteristic": [],
+    "role": null,
+    "scale": null,
+    "image_tags": [
+      "data-visualization",
+      "deck"
+    ],
+    "lead_images": [],
+    "order": [],
+    "personal": false,
+    "snapshot_only": false,
+    "chronological": false,
+    "unlisted": false,
+    "description": "",
+    "credits": [
+      {
+        "role": "Design",
+        "name": "Marvin de Jong"
+      }
+    ],
+    "videos": [],
+    "umbrella": "ionq"
+  },
+  "ionq-diagrams": {
+    "name": "Diagrams",
+    "slug": "ionq-diagrams",
+    "client": "IonQ",
+    "aliases": [
+      "IonQ"
+    ],
+    "date_range": "2023-2025",
+    "roles": [
+      "Creative Director (Remote)"
+    ],
+    "category": "experience",
+    "image_folders": [
+      "work/ionq/diagrams"
+    ],
+    "market": "b2b",
+    "project_type": [],
+    "sector": "quantum-computing",
+    "characteristic": [],
+    "role": null,
+    "scale": null,
+    "image_tags": [
+      "deck",
+      "diagram"
+    ],
+    "lead_images": [],
+    "order": [],
+    "personal": false,
+    "snapshot_only": false,
+    "chronological": false,
+    "unlisted": false,
+    "description": "",
+    "credits": [
+      {
+        "role": "Creative Director",
+        "name": "Marvin de Jong"
+      }
+    ],
+    "videos": [],
+    "umbrella": "ionq"
+  },
+  "ionq-elevator-screen": {
+    "name": "Elevator Screen",
+    "slug": "ionq-elevator-screen",
+    "client": "IonQ",
+    "aliases": [
+      "IonQ"
+    ],
+    "date_range": "2023-2025",
+    "roles": [
+      "Creative Director (Remote)"
+    ],
+    "category": "experience",
+    "image_folders": [
+      "work/ionq/elevator-screen"
+    ],
+    "market": "b2b",
+    "project_type": [],
+    "sector": "quantum-computing",
+    "characteristic": [],
+    "role": null,
+    "scale": null,
+    "image_tags": [
+      "iconography",
+      "motion"
+    ],
+    "lead_images": [],
+    "order": [],
+    "personal": false,
+    "snapshot_only": false,
+    "chronological": false,
+    "unlisted": false,
+    "description": "",
+    "credits": [
+      {
+        "role": "Creative Director",
+        "name": "Marvin de Jong"
+      }
+    ],
+    "videos": [],
+    "umbrella": "ionq"
+  },
+  "ionq-expo": {
+    "name": "Expo",
+    "slug": "ionq-expo",
+    "client": "IonQ",
+    "aliases": [
+      "IonQ"
+    ],
+    "date_range": "2023-2025",
+    "roles": [
+      "Creative Director (Remote)"
+    ],
+    "category": "experience",
+    "image_folders": [
+      "work/ionq/expo"
+    ],
+    "market": "b2b",
+    "project_type": [],
+    "sector": "quantum-computing",
+    "characteristic": [],
+    "role": null,
+    "scale": null,
+    "image_tags": [
+      "booth",
+      "event",
+      "exhibition",
+      "photography",
+      "poster",
+      "product-render",
+      "typography"
+    ],
+    "lead_images": [],
+    "order": [],
+    "personal": false,
+    "snapshot_only": false,
+    "chronological": false,
+    "unlisted": false,
+    "description": "",
+    "credits": [
+      {
+        "role": "Creative Director",
+        "name": "Marvin de Jong"
+      }
+    ],
+    "videos": [],
+    "umbrella": "ionq"
+  },
+  "ionq-facade": {
+    "name": "Facade",
+    "slug": "ionq-facade",
+    "client": "IonQ",
+    "aliases": [
+      "IonQ"
+    ],
+    "date_range": "2023-2025",
+    "roles": [
+      "Creative Director (Remote)"
+    ],
+    "category": "experience",
+    "image_folders": [
+      "work/ionq/facade"
+    ],
+    "market": "b2b",
+    "project_type": [],
+    "sector": "quantum-computing",
+    "characteristic": [],
+    "role": null,
+    "scale": null,
+    "image_tags": [
+      "logo"
+    ],
+    "lead_images": [],
+    "order": [],
+    "personal": false,
+    "snapshot_only": false,
+    "chronological": false,
+    "unlisted": false,
+    "description": "",
+    "credits": [
+      {
+        "role": "Design",
+        "name": "Marvin de Jong"
+      }
+    ],
+    "videos": [],
+    "umbrella": "ionq"
+  },
+  "ionq-illustrations": {
+    "name": "Illustrations",
+    "slug": "ionq-illustrations",
+    "client": "IonQ",
+    "aliases": [
+      "IonQ"
+    ],
+    "date_range": "2023-2025",
+    "roles": [
+      "Creative Director (Remote)"
+    ],
+    "category": "experience",
+    "image_folders": [
+      "work/ionq/illustrations"
+    ],
+    "market": "b2b",
+    "project_type": [],
+    "sector": "quantum-computing",
+    "characteristic": [],
+    "role": null,
+    "scale": null,
+    "image_tags": [
+      "diagram",
+      "editorial",
+      "illustration"
+    ],
+    "lead_images": [],
+    "order": [],
+    "personal": false,
+    "snapshot_only": false,
+    "chronological": false,
+    "unlisted": false,
+    "description": "",
+    "credits": [
+      {
+        "role": "Design",
+        "name": "Marvin de Jong"
+      }
+    ],
+    "videos": [],
+    "umbrella": "ionq"
+  },
+  "ionq-product": {
+    "name": "Product",
+    "slug": "ionq-product",
+    "client": "IonQ",
+    "aliases": [
+      "IonQ"
+    ],
+    "date_range": "2023-2025",
+    "roles": [
+      "Creative Director (Remote)"
+    ],
+    "category": "experience",
+    "image_folders": [
+      "work/ionq/product"
+    ],
+    "market": "b2b",
+    "project_type": [],
+    "sector": "quantum-computing",
+    "characteristic": [],
+    "role": null,
+    "scale": null,
+    "image_tags": [
+      "deck",
+      "identity",
+      "photography",
+      "product-render"
+    ],
+    "lead_images": [],
+    "order": [],
+    "personal": false,
+    "snapshot_only": false,
+    "chronological": false,
+    "unlisted": false,
+    "description": "",
+    "credits": [
+      {
+        "role": "Creative Director",
+        "name": "Marvin de Jong"
+      }
+    ],
+    "videos": [],
+    "umbrella": "ionq"
+  },
+  "ionq-templates": {
+    "name": "Templates",
+    "slug": "ionq-templates",
+    "client": "IonQ",
+    "aliases": [
+      "IonQ"
+    ],
+    "date_range": "2023-2025",
+    "roles": [
+      "Creative Director (Remote)"
+    ],
+    "category": "experience",
+    "image_folders": [
+      "work/ionq/templates"
+    ],
+    "market": "b2b",
+    "project_type": [],
+    "sector": "quantum-computing",
+    "characteristic": [],
+    "role": null,
+    "scale": null,
+    "image_tags": [
+      "deck"
+    ],
+    "lead_images": [],
+    "order": [],
+    "personal": false,
+    "snapshot_only": false,
+    "chronological": false,
+    "unlisted": false,
+    "description": "",
+    "credits": [
+      {
+        "role": "Creative Director",
+        "name": "Marvin de Jong"
+      }
+    ],
+    "videos": [],
+    "umbrella": "ionq"
+  },
+  "ionq-zoom-backgrounds": {
+    "name": "Zoom Backgrounds",
+    "slug": "ionq-zoom-backgrounds",
+    "client": "IonQ",
+    "aliases": [
+      "IonQ"
+    ],
+    "date_range": "2023-2025",
+    "roles": [
+      "Creative Director (Remote)"
+    ],
+    "category": "experience",
+    "image_folders": [
+      "work/ionq/zoom-backgrounds"
+    ],
+    "market": "b2b",
+    "project_type": [],
+    "sector": "quantum-computing",
+    "characteristic": [],
+    "role": null,
+    "scale": null,
+    "image_tags": [
+      "photography"
+    ],
+    "lead_images": [],
+    "order": [],
+    "personal": false,
+    "snapshot_only": false,
+    "chronological": false,
+    "unlisted": false,
+    "description": "",
+    "credits": [
+      {
+        "role": "Creative Director",
+        "name": "Marvin de Jong"
+      }
+    ],
+    "videos": [],
+    "umbrella": "ionq"
+  },
+  "ionq-one-pagers": {
+    "name": "One Pagers",
+    "slug": "ionq-one-pagers",
+    "client": "IonQ",
+    "aliases": [
+      "IonQ"
+    ],
+    "date_range": "2023-2025",
+    "roles": [
+      "Creative Director (Remote)"
+    ],
+    "category": "experience",
+    "image_folders": [
+      "work/ionq/one-pagers"
+    ],
+    "market": "b2b",
+    "project_type": [],
+    "sector": "quantum-computing",
+    "characteristic": [],
+    "role": null,
+    "scale": null,
+    "image_tags": [
+      "3d",
+      "booth",
+      "event",
+      "exhibition",
+      "illustration",
+      "publication-design",
+      "typography"
+    ],
+    "lead_images": [],
+    "order": [],
+    "personal": false,
+    "snapshot_only": false,
+    "chronological": false,
+    "unlisted": false,
+    "description": "Promotional and corporate one-pagers — campaign posters, annual report cover, executive profiles, product pages, and pricing sheets.",
+    "credits": [
+      {
+        "role": "Creative Director",
+        "name": "Marvin de Jong"
+      }
+    ],
+    "videos": [],
+    "umbrella": "ionq"
+  },
+  "moma-teens-program": {
+    "name": "Teens Program",
+    "slug": "moma-teens-program",
+    "client": "MoMA",
+    "aliases": [
+      "MoMA"
+    ],
+    "date_range": "2015-2016",
+    "roles": [
+      "Freelance Designer"
+    ],
+    "category": "experience",
+    "image_folders": [
+      "work/moma/teens-program"
+    ],
+    "market": "b2c",
+    "project_type": [
+      "editorial",
+      "publication-design"
+    ],
+    "sector": "cultural-institution",
+    "characteristic": [],
+    "role": null,
+    "scale": null,
+    "image_tags": [
+      "publication-design"
+    ],
+    "lead_images": [],
+    "order": [],
+    "personal": false,
+    "snapshot_only": false,
+    "chronological": false,
+    "unlisted": false,
+    "description": "",
+    "credits": [
+      {
+        "role": "Design",
+        "name": "Marvin de Jong"
+      }
+    ],
+    "videos": [],
+    "umbrella": "moma"
+  },
+  "pratt-design-system": {
+    "name": "Design System",
+    "slug": "pratt-design-system",
+    "client": "Pratt",
+    "aliases": [
+      "Pratt Institute",
+      "Pratt"
+    ],
+    "date_range": "2015-2016",
+    "roles": [
+      "Freelance Designer"
+    ],
+    "category": "experience",
+    "image_folders": [
+      "work/pratt/design-system"
+    ],
+    "market": "b2c",
+    "project_type": [],
+    "sector": "education",
+    "characteristic": [],
+    "role": null,
+    "scale": null,
+    "image_tags": [
+      "editorial",
+      "event",
+      "poster",
+      "publication-design"
+    ],
+    "lead_images": [],
+    "order": [],
+    "personal": false,
+    "snapshot_only": false,
+    "chronological": false,
+    "unlisted": false,
+    "description": "",
+    "credits": [
+      {
+        "role": "Design",
+        "name": "Marvin de Jong"
+      }
+    ],
+    "videos": [],
+    "umbrella": "pratt"
+  },
+  "pratt-credits": {
+    "name": "credits",
+    "slug": "pratt-credits",
+    "client": "Pratt",
+    "aliases": [
+      "Pratt Institute",
+      "Pratt"
+    ],
+    "date_range": "2015-2016",
+    "roles": [
+      "Freelance Designer"
+    ],
+    "category": "experience",
+    "image_folders": [
+      "work/pratt/credits"
+    ],
+    "market": "b2c",
+    "project_type": [],
+    "sector": "education",
+    "characteristic": [],
+    "role": null,
+    "scale": null,
+    "image_tags": [],
+    "lead_images": [],
+    "order": [],
+    "personal": false,
+    "snapshot_only": false,
+    "chronological": false,
+    "unlisted": false,
+    "description": "",
+    "credits": [
+      {
+        "role": "Design",
+        "name": "Marvin de Jong"
+      }
+    ],
+    "videos": [],
+    "umbrella": "pratt"
+  },
+  "studio-dffpm": {
+    "name": "DFFPM",
+    "slug": "studio-dffpm",
+    "client": "DFFPM",
+    "aliases": [
+      "m-a-r-v-i-n studio",
+      "m-a-r-v-i-n (studio)"
+    ],
+    "date_range": "2021-2022",
+    "roles": [
+      "Creative Director / Owner"
+    ],
+    "category": "experience",
+    "image_folders": [
+      "work/studio/dffpm"
+    ],
+    "market": "b2b",
+    "project_type": [
+      "publication-design"
+    ],
+    "sector": "architecture",
+    "characteristic": [
+      "real-time"
+    ],
+    "role": null,
+    "scale": null,
+    "image_tags": [
+      "identity",
+      "letter-design",
+      "logo",
+      "merch",
+      "poster"
+    ],
+    "lead_images": [],
+    "order": [],
+    "personal": false,
+    "snapshot_only": false,
+    "chronological": false,
+    "unlisted": false,
+    "description": "",
+    "credits": [
+      {
+        "role": "Creative Direction",
+        "name": "Marvin de Jong"
+      }
+    ],
+    "videos": [],
+    "umbrella": "studio"
+  },
+  "studio-gahi": {
+    "name": "Gahi",
+    "slug": "studio-gahi",
+    "client": "Gahi",
+    "aliases": [
+      "m-a-r-v-i-n studio",
+      "m-a-r-v-i-n (studio)"
+    ],
+    "date_range": "2015-2021",
+    "roles": [
+      "Creative Director / Owner"
+    ],
+    "category": "experience",
+    "image_folders": [
+      "work/studio/gahi"
+    ],
+    "market": "b2b",
+    "project_type": [
+      "publication-design"
+    ],
+    "sector": "design-studio",
+    "characteristic": [
+      "real-time"
+    ],
+    "role": null,
+    "scale": null,
+    "image_tags": [
+      "identity",
+      "interactive",
+      "letter-design",
+      "logo",
+      "photography",
+      "poster",
+      "publication-design",
+      "web"
+    ],
+    "lead_images": [],
+    "order": [],
+    "personal": false,
+    "snapshot_only": false,
+    "chronological": false,
+    "unlisted": false,
+    "description": "",
+    "credits": [
+      {
+        "role": "Creative Direction",
+        "name": "Marvin de Jong"
+      }
+    ],
+    "videos": [],
+    "umbrella": "studio"
+  },
+  "studio-miller-atre": {
+    "name": "Miller-Atre",
+    "slug": "studio-miller-atre",
+    "client": "Miller-Atre",
+    "aliases": [
+      "m-a-r-v-i-n studio",
+      "m-a-r-v-i-n (studio)"
+    ],
+    "date_range": "2017",
+    "roles": [
+      "Creative Director / Owner"
+    ],
+    "category": "experience",
+    "image_folders": [
+      "work/studio/miller-atre"
+    ],
+    "market": "b2b",
+    "project_type": [
+      "publication-design"
+    ],
+    "sector": "design-studio",
+    "characteristic": [
+      "real-time"
+    ],
+    "role": null,
+    "scale": null,
+    "image_tags": [
+      "identity",
+      "logo",
+      "stationery",
+      "web"
+    ],
+    "lead_images": [],
+    "order": [],
+    "personal": false,
+    "snapshot_only": false,
+    "chronological": false,
+    "unlisted": false,
+    "description": "",
+    "credits": [
+      {
+        "role": "Creative Direction",
+        "name": "Marvin de Jong"
+      }
+    ],
+    "videos": [],
+    "umbrella": "studio"
+  },
+  "studio-paprika": {
+    "name": "Paprika",
+    "slug": "studio-paprika",
+    "client": "Paprika",
+    "aliases": [
+      "m-a-r-v-i-n studio",
+      "m-a-r-v-i-n (studio)"
+    ],
+    "date_range": "2015",
+    "roles": [
+      "Creative Director / Owner"
+    ],
+    "category": "experience",
+    "image_folders": [
+      "work/studio/paprika"
+    ],
+    "market": "b2b",
+    "project_type": [
+      "publication-design"
+    ],
+    "sector": "design-studio",
+    "characteristic": [
+      "real-time"
+    ],
+    "role": null,
+    "scale": null,
+    "image_tags": [
+      "editorial",
+      "publication-design"
+    ],
+    "lead_images": [],
+    "order": [],
+    "personal": false,
+    "snapshot_only": false,
+    "chronological": false,
+    "unlisted": false,
+    "description": "",
+    "credits": [
+      {
+        "role": "Creative Direction",
+        "name": "Marvin de Jong"
+      }
+    ],
+    "videos": [],
+    "umbrella": "studio"
+  },
+  "studio-the-politic": {
+    "name": "The Politic",
+    "slug": "studio-the-politic",
+    "client": "The Politic",
+    "aliases": [
+      "m-a-r-v-i-n studio",
+      "m-a-r-v-i-n (studio)"
+    ],
+    "date_range": "2014",
+    "roles": [
+      "Creative Director / Owner"
+    ],
+    "category": "experience",
+    "image_folders": [
+      "work/studio/the-politic"
+    ],
+    "market": "b2b",
+    "project_type": [
+      "publication-design"
+    ],
+    "sector": "design-studio",
+    "characteristic": [
+      "real-time"
+    ],
+    "role": null,
+    "scale": null,
+    "image_tags": [
+      "editorial",
+      "illustration",
+      "publication-design"
+    ],
+    "lead_images": [],
+    "order": [],
+    "personal": false,
+    "snapshot_only": false,
+    "chronological": false,
+    "unlisted": false,
+    "description": "",
+    "credits": [
+      {
+        "role": "Creative Direction",
+        "name": "Marvin de Jong"
+      }
+    ],
+    "videos": [],
+    "umbrella": "studio"
+  },
+  "studio-tillotson-associates": {
+    "name": "Tillotson Associates Announcement Card",
+    "slug": "studio-tillotson-associates",
+    "client": "Tillotson Associates",
+    "aliases": [
+      "m-a-r-v-i-n studio",
+      "m-a-r-v-i-n (studio)"
+    ],
+    "date_range": "2016",
+    "roles": [
+      "Creative Director / Owner"
+    ],
+    "category": "experience",
+    "image_folders": [
+      "work/studio/tillotson-associates"
+    ],
+    "market": "b2b",
+    "project_type": [
+      "publication-design"
+    ],
+    "sector": "design-studio",
+    "characteristic": [
+      "real-time"
+    ],
+    "role": null,
+    "scale": null,
+    "image_tags": [
+      "stationery"
+    ],
+    "lead_images": [],
+    "order": [],
+    "personal": false,
+    "snapshot_only": false,
+    "chronological": false,
+    "unlisted": false,
+    "description": "",
+    "credits": [
+      {
+        "role": "Creative Direction",
+        "name": "Marvin de Jong"
+      }
+    ],
+    "videos": [],
+    "umbrella": "studio"
+  },
+  "studio-marin-montessori": {
+    "name": "Marin Montessori Cookbook",
+    "slug": "studio-marin-montessori",
+    "client": "Marin Montessori",
+    "aliases": [
+      "m-a-r-v-i-n studio",
+      "m-a-r-v-i-n (studio)"
+    ],
+    "date_range": "2026",
+    "roles": [
+      "Creative Director / Owner"
+    ],
+    "category": "experience",
+    "image_folders": [
+      "work/studio/marin-montessori"
+    ],
+    "market": "b2b",
+    "project_type": [
+      "publication-design"
+    ],
+    "sector": "design-studio",
+    "characteristic": [
+      "real-time"
+    ],
+    "role": null,
+    "scale": null,
+    "image_tags": [
+      "publication-design"
+    ],
+    "lead_images": [],
+    "order": [],
+    "personal": false,
+    "snapshot_only": false,
+    "chronological": false,
+    "unlisted": false,
+    "description": "",
+    "credits": [
+      {
+        "role": "Creative Direction",
+        "name": "Marvin de Jong"
+      }
+    ],
+    "videos": [],
+    "umbrella": "studio"
+  },
+  "verizon-5G-campaigns": {
+    "name": "5G Campaigns",
+    "slug": "verizon-5G-campaigns",
+    "client": "Verizon",
+    "aliases": [
+      "Verizon",
+      "Verizon_Selection",
+      "Verizon Decks-JPG"
+    ],
+    "date_range": "2019-2022",
+    "roles": [
+      "Senior Designer → Associate Creative Director, 2D Retail and Experiential"
+    ],
+    "category": "experience",
+    "image_folders": [
+      "work/verizon/5G-campaigns"
+    ],
+    "market": "b2c",
+    "project_type": [
+      "retail"
+    ],
+    "sector": "telecom",
+    "characteristic": [],
+    "role": null,
+    "scale": null,
+    "image_tags": [
+      "campaign",
+      "event"
+    ],
+    "lead_images": [],
+    "order": [],
+    "personal": false,
+    "snapshot_only": false,
+    "chronological": false,
+    "unlisted": false,
+    "description": "5G campaign retail lead at 140, Verizon's internal agency, under Senior Creative Director Derek Love. Led a small team across creative for 5G campaigns in Verizon's 6,800+ retail locations — from concept through executive review, with final proposals prototyped in a mock-up store at HQ.",
+    "credits": [
+      {
+        "role": "ACD / Design Lead",
+        "name": "Marvin de Jong"
+      },
+      {
+        "role": "Senior Creative Director",
+        "name": "Derek Love"
+      }
+    ],
+    "videos": [
+      {
+        "title": "5G Vinyl Roll Out",
+        "url": "https://player.vimeo.com/video/689101413?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479&amp;autoplay=1&amp;muted=1&amp;loop=1"
+      },
+      {
+        "title": "5G Built Right for NYC",
+        "url": "https://player.vimeo.com/video/941507917?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479&amp;autoplay=1&amp;muted=1&amp;loop=1"
+      },
+      {
+        "title": "5G Built Right for You.",
+        "url": "https://player.vimeo.com/video/536011268?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479&amp;autoplay=1&amp;muted=1&amp;loop=1"
+      },
+      {
+        "title": "5G from America's most reliable network.",
+        "url": "https://player.vimeo.com/video/941507973?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479&amp;autoplay=1&amp;muted=1&amp;loop=1"
+      },
+      {
+        "title": "5G from America's most reliable network.",
+        "url": "https://player.vimeo.com/video/801037709?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479&amp;autoplay=1&amp;muted=1&amp;loop=1"
+      }
+    ],
+    "umbrella": "verizon"
+  },
+  "verizon-5G-home-vui": {
+    "name": "5G Home VUI",
+    "slug": "verizon-5G-home-vui",
+    "client": "Verizon",
+    "aliases": [
+      "Verizon",
+      "Verizon_Selection",
+      "Verizon Decks-JPG"
+    ],
+    "date_range": "2019-2022",
+    "roles": [
+      "Senior Designer → Associate Creative Director, 2D Retail and Experiential"
+    ],
+    "category": "experience",
+    "image_folders": [
+      "work/verizon/5G-home-vui"
+    ],
+    "market": "b2c",
+    "project_type": [],
+    "sector": "telecom",
+    "characteristic": [],
+    "role": null,
+    "scale": null,
+    "image_tags": [
+      "user interface",
+      "customer-experience",
+      "user-experience",
+      "digital",
+      "motion"
+    ],
+    "lead_images": [],
+    "order": [],
+    "personal": false,
+    "snapshot_only": false,
+    "chronological": false,
+    "unlisted": false,
+    "description": "Voice User Interface for Verizon 5G in-store experience. Rolled out across 5G Home markets and at events like the SuperBowl.",
+    "credits": [
+      {
+        "role": "ACD / Design Lead",
+        "name": "Marvin de Jong"
+      },
+      {
+        "role": "Designer",
+        "name": "Oscar Saylor"
+      },
+      {
+        "role": "Designer",
+        "name": "Ilya Yavnoshan"
+      },
+      {
+        "role": "Copywriter",
+        "name": "Michael Dougherty"
+      },
+      {
+        "role": "Senior Creative Director",
+        "name": "Derek Love"
+      }
+    ],
+    "videos": [
+      {
+        "title": "5G Home Simplified Menu",
+        "url": "https://player.vimeo.com/video/801038561?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479&amp;autoplay=1&amp;muted=1&amp;loop=1"
+      },
+      {
+        "title": "5G Home Overview",
+        "url": "https://player.vimeo.com/video/537128023?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479&amp;autoplay=1&amp;muted=1&amp;loop=1"
+      },
+      {
+        "title": "5G Home Entertainment",
+        "url": "https://player.vimeo.com/video/537127443?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479&amp;autoplay=1&amp;muted=1&amp;loop=1"
+      },
+      {
+        "title": "5G Home Plans",
+        "url": "https://player.vimeo.com/video/537127763?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479&amp;autoplay=1&amp;muted=1&amp;loop=1"
+      },
+      {
+        "title": "5G Home Interaction in Store",
+        "url": "https://player.vimeo.com/video/539663371?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479&amp;autoplay=1&amp;muted=1&amp;loop=1"
+      }
+    ],
+    "umbrella": "verizon"
+  },
+  "verizon-chicago": {
+    "name": "Chicago",
+    "slug": "verizon-chicago",
+    "client": "Verizon",
+    "aliases": [
+      "Verizon",
+      "Verizon_Selection",
+      "Verizon Decks-JPG"
+    ],
+    "date_range": "2019-2022",
+    "roles": [
+      "Senior Designer → Associate Creative Director, 2D Retail and Experiential"
+    ],
+    "category": "experience",
+    "image_folders": [
+      "work/verizon/chicago"
+    ],
+    "market": "b2c",
+    "project_type": [
+      "retail"
+    ],
+    "sector": "telecom",
+    "characteristic": [],
+    "role": null,
+    "scale": null,
+    "image_tags": [
+      "campaign",
+      "installation",
+      "interactive",
+      "motion"
+    ],
+    "lead_images": [],
+    "order": [],
+    "personal": false,
+    "snapshot_only": false,
+    "chronological": false,
+    "unlisted": false,
+    "description": "",
+    "credits": [
+      {
+        "role": "ACD / Design Lead",
+        "name": "Marvin de Jong"
+      },
+      {
+        "role": "Copywriter",
+        "name": "Michael Dougherty"
+      },
+      {
+        "role": "Senior Creative Director",
+        "name": "Derek Love"
+      }
+    ],
+    "videos": [
+      {
+        "title": "Chicago Entrance Screens",
+        "featured": true,
+        "video_mode": "background",
+        "url": "https://player.vimeo.com/video/537126173?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479&amp;autoplay=1&amp;muted=1&amp;loop=1"
+      },
+      {
+        "title": "Atrium Video",
+        "featured": false,
+        "video_mode": "background",
+        "url": "https://player.vimeo.com/video/529211014?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479&amp;autoplay=1&amp;muted=1&amp;loop=1"
+      },
+      {
+        "title": "Screen 2: Changes Everything",
+        "url": "https://player.vimeo.com/video/529210889?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479&amp;autoplay=1&amp;muted=1&amp;loop=1"
+      },
+      {
+        "title": "Live Attract Loop",
+        "url": "https://player.vimeo.com/video/529213770?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479&amp;autoplay=1&amp;muted=1&amp;loop=1"
+      },
+      {
+        "title": "5G Live Video: A Short Teaser of Positive Societal Impact",
+        "featured": true,
+        "video_mode": "background",
+        "url": "https://player.vimeo.com/video/529212438?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479&amp;autoplay=1&amp;muted=1&amp;loop=1"
+      },
+      {
+        "title": "Play Attract Loop",
+        "url": "https://player.vimeo.com/video/529213865?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479&amp;autoplay=1&amp;muted=1&amp;loop=1"
+      },
+      {
+        "title": "5G Play Video: A Short Teaser of Personal Scale Use Cases",
+        "featured": true,
+        "video_mode": "background",
+        "url": "https://player.vimeo.com/video/529213125?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479&amp;autoplay=1&amp;muted=1&amp;loop=1"
+      },
+      {
+        "title": "Live Style Video Back of Store",
+        "featured": true,
+        "video_mode": "background",
+        "url": "https://player.vimeo.com/video/529211063"
+      },
+      {
+        "title": "Chicago Store Summary",
+        "url": "https://player.vimeo.com/video/939231024?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479&amp;autoplay=1&amp;muted=1&amp;loop=1"
+      }
+    ],
+    "umbrella": "verizon"
+  },
+  "verizon-digital-3": {
+    "name": "digital 3",
+    "slug": "verizon-digital-3",
+    "client": "Verizon",
+    "aliases": [
+      "Verizon",
+      "Verizon_Selection",
+      "Verizon Decks-JPG"
+    ],
+    "date_range": "2019-2022",
+    "roles": [
+      "Senior Designer → Associate Creative Director, 2D Retail and Experiential"
+    ],
+    "category": "experience",
+    "image_folders": [
+      "work/verizon/digital-3"
+    ],
+    "market": "b2c",
+    "project_type": [
+      "retail"
+    ],
+    "sector": "telecom",
+    "characteristic": [],
+    "role": null,
+    "scale": null,
+    "image_tags": [
+      "deck",
+      "interactive",
+      "logo",
+      "proposal"
+    ],
+    "lead_images": [],
+    "order": [],
+    "personal": false,
+    "snapshot_only": false,
+    "chronological": false,
+    "unlisted": true,
+    "description": "",
+    "credits": [
+      {
+        "role": "ACD / Design Lead",
+        "name": "Marvin de Jong"
+      },
+      {
+        "role": "Designer",
+        "name": "Kyla Arsadjaja"
+      },
+      {
+        "role": "Designer",
+        "name": "Junyun Chen"
+      },
+      {
+        "role": "Senior Creative Director",
+        "name": "Derek Love"
+      }
+    ],
+    "videos": [],
+    "umbrella": "verizon"
+  },
+  "verizon-digital-3-addendum": {
+    "name": "digital 3 addendum",
+    "slug": "verizon-digital-3-addendum",
+    "client": "Verizon",
+    "aliases": [
+      "Verizon",
+      "Verizon_Selection",
+      "Verizon Decks-JPG"
+    ],
+    "date_range": "2019-2022",
+    "roles": [
+      "Senior Designer → Associate Creative Director, 2D Retail and Experiential"
+    ],
+    "category": "experience",
+    "image_folders": [
+      "work/verizon/digital-3-addendum"
+    ],
+    "market": "b2c",
+    "project_type": [],
+    "sector": "telecom",
+    "characteristic": [],
+    "role": null,
+    "scale": null,
+    "image_tags": [
+      "architecture",
+      "proposal",
+      "data-visualization",
+      "design-system",
+      "digital",
+      "experiential",
+      "interactive",
+      "process",
+      "retail",
+      "spatial",
+      "typography",
+      "art-direction"
+    ],
+    "lead_images": [],
+    "order": [],
+    "personal": false,
+    "snapshot_only": false,
+    "chronological": false,
+    "unlisted": true,
+    "description": "",
+    "credits": [
+      {
+        "role": "ACD / Design Lead",
+        "name": "Marvin de Jong"
+      },
+      {
+        "role": "Designer",
+        "name": "Kyla Arsadjaja"
+      },
+      {
+        "role": "Designer",
+        "name": "Junyun Chen"
+      },
+      {
+        "role": "Senior Creative Director",
+        "name": "Derek Love"
+      }
+    ],
+    "videos": [],
+    "umbrella": "verizon"
+  },
+  "verizon-discovery": {
+    "name": "Discovery",
+    "slug": "verizon-discovery",
+    "client": "Verizon",
+    "aliases": [
+      "Verizon",
+      "Verizon_Selection",
+      "Verizon Decks-JPG"
+    ],
+    "date_range": "2019-2022",
+    "roles": [
+      "Senior Designer → Associate Creative Director, 2D Retail and Experiential"
+    ],
+    "category": "experience",
+    "image_folders": [
+      "work/verizon/discovery"
+    ],
+    "market": "b2c",
+    "project_type": [
+      "retail"
+    ],
+    "sector": "telecom",
+    "characteristic": [],
+    "role": null,
+    "scale": null,
+    "image_tags": [
+      "deck",
+      "interactive",
+      "proposal"
+    ],
+    "lead_images": [],
+    "order": [],
+    "personal": false,
+    "snapshot_only": false,
+    "chronological": false,
+    "unlisted": false,
+    "description": "",
+    "credits": [
+      {
+        "role": "ACD / Design Lead",
+        "name": "Marvin de Jong"
+      },
+      {
+        "role": "Senior Creative Director 2D",
+        "name": "Derek Love"
+      },
+      {
+        "role": "Senior Creative Director 3D",
+        "name": "Ric Edwards"
+      }
+    ],
+    "videos": [],
+    "umbrella": "verizon"
+  },
+  "verizon-future-of-retail": {
+    "name": "future of retail",
+    "slug": "verizon-future-of-retail",
+    "client": "Verizon",
+    "aliases": [
+      "Verizon",
+      "Verizon_Selection",
+      "Verizon Decks-JPG"
+    ],
+    "date_range": "2019-2022",
+    "roles": [
+      "Senior Designer → Associate Creative Director, 2D Retail and Experiential"
+    ],
+    "category": "experience",
+    "image_folders": [
+      "work/verizon/future-of-retail"
+    ],
+    "market": "b2c",
+    "project_type": [
+      "retail"
+    ],
+    "sector": "telecom",
+    "characteristic": [],
+    "role": null,
+    "scale": null,
+    "image_tags": [
+      "deck",
+      "interactive",
+      "proposal"
+    ],
+    "lead_images": [],
+    "order": [],
+    "personal": false,
+    "snapshot_only": false,
+    "chronological": false,
+    "unlisted": true,
+    "description": "",
+    "credits": [
+      {
+        "role": "ACD / Design Lead",
+        "name": "Marvin de Jong"
+      },
+      {
+        "role": "Copywriter",
+        "name": "Michael Dougherty"
+      },
+      {
+        "role": "Senior Creative Director 2D",
+        "name": "Derek Love"
+      },
+      {
+        "role": "Architecture & Industrial Design",
+        "name": "Daniel Weil (Pentagram)"
+      }
+    ],
+    "videos": [
+      {
+        "title": "Chicago Entrance Screens",
+        "url": "https://player.vimeo.com/video/537126173?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479&amp;autoplay=1&amp;muted=1&amp;loop=1"
+      }
+    ],
+    "umbrella": "verizon"
+  },
+  "verizon-future-of-retail-workingDeck": {
+    "name": "future of retail",
+    "slug": "verizon-future-of-retail-workingDeck",
+    "client": "Verizon",
+    "aliases": [
+      "Verizon",
+      "Verizon_Selection",
+      "Verizon Decks-JPG"
+    ],
+    "date_range": "2019-2022",
+    "roles": [
+      "Senior Designer → Associate Creative Director, 2D Retail and Experiential"
+    ],
+    "category": "experience",
+    "image_folders": [
+      "work/verizon/future-of-retail-workingDeck"
+    ],
+    "market": "b2c",
+    "project_type": [],
+    "sector": "telecom",
+    "characteristic": [],
+    "role": null,
+    "scale": null,
+    "image_tags": [
+      "data-visualization",
+      "design-system",
+      "experiential",
+      "interactive",
+      "motion",
+      "product",
+      "retail",
+      "spatial",
+      "proposal"
+    ],
+    "lead_images": [],
+    "order": [],
+    "personal": false,
+    "snapshot_only": false,
+    "chronological": false,
+    "unlisted": true,
+    "description": "",
+    "credits": [
+      {
+        "role": "ACD / Design Lead",
+        "name": "Marvin de Jong"
+      },
+      {
+        "role": "Copywriter",
+        "name": "Michael Dougherty"
+      },
+      {
+        "role": "Senior Creative Director 2D",
+        "name": "Derek Love"
+      },
+      {
+        "role": "Architecture & Industrial Design",
+        "name": "Daniel Weil (Pentagram)"
+      }
+    ],
+    "videos": [],
+    "umbrella": "verizon"
+  },
+  "verizon-network-reliability": {
+    "name": "Network Reliability",
+    "slug": "verizon-network-reliability",
+    "client": "Verizon",
+    "aliases": [
+      "Verizon",
+      "Verizon_Selection",
+      "Verizon Decks-JPG"
+    ],
+    "date_range": "2019-2022",
+    "roles": [
+      "Senior Designer → Associate Creative Director, 2D Retail and Experiential"
+    ],
+    "category": "experience",
+    "image_folders": [
+      "work/verizon/network-reliability"
+    ],
+    "market": "b2c",
+    "project_type": [],
+    "sector": "telecom",
+    "characteristic": [],
+    "role": null,
+    "scale": null,
+    "image_tags": [
+      "photography"
+    ],
+    "lead_images": [],
+    "order": [],
+    "personal": false,
+    "snapshot_only": false,
+    "chronological": false,
+    "unlisted": false,
+    "description": "",
+    "credits": [
+      {
+        "role": "ACD / Design Lead",
+        "name": "Marvin de Jong"
+      },
+      {
+        "role": "Senior Creative Director",
+        "name": "Derek Love"
+      }
+    ],
+    "videos": [],
+    "umbrella": "verizon"
+  },
+  "verizon-playlist-recommendation": {
+    "name": "Playlist Recommendation",
+    "slug": "verizon-playlist-recommendation",
+    "client": "Verizon",
+    "aliases": [
+      "Verizon",
+      "Verizon_Selection",
+      "Verizon Decks-JPG"
+    ],
+    "date_range": "2019-2022",
+    "roles": [
+      "Senior Designer → Associate Creative Director, 2D Retail and Experiential"
+    ],
+    "category": "experience",
+    "image_folders": [
+      "work/verizon/playlist-recommendation"
+    ],
+    "market": "b2c",
+    "project_type": [
+      "retail"
+    ],
+    "sector": "telecom",
+    "characteristic": [],
+    "role": null,
+    "scale": null,
+    "image_tags": [
+      "data-visualization",
+      "motion",
+      "poster",
+      "proposal"
+    ],
+    "lead_images": [],
+    "order": [],
+    "personal": false,
+    "snapshot_only": false,
+    "chronological": false,
+    "unlisted": false,
+    "description": "",
+    "credits": [
+      {
+        "role": "ACD / Design Lead",
+        "name": "Marvin de Jong"
+      },
+      {
+        "role": "Senior Creative Director",
+        "name": "Derek Love"
+      }
+    ],
+    "videos": [],
+    "umbrella": "verizon"
+  },
+  "verizon-retail-3-sem": {
+    "name": "retail 3 sem",
+    "slug": "verizon-retail-3-sem",
+    "client": "Verizon",
+    "aliases": [
+      "Verizon",
+      "Verizon_Selection",
+      "Verizon Decks-JPG"
+    ],
+    "date_range": "2019-2022",
+    "roles": [
+      "Senior Designer → Associate Creative Director, 2D Retail and Experiential"
+    ],
+    "category": "experience",
+    "image_folders": [
+      "work/verizon/retail-3-sem"
+    ],
+    "market": "b2c",
+    "project_type": [],
+    "sector": "telecom",
+    "characteristic": [],
+    "role": null,
+    "scale": null,
+    "image_tags": [
+      "deck",
+      "interactive",
+      "motion",
+      "poster",
+      "product-render",
+      "proposal"
+    ],
+    "lead_images": [],
+    "order": [],
+    "personal": false,
+    "snapshot_only": false,
+    "chronological": false,
+    "unlisted": true,
+    "description": "",
+    "credits": [
+      {
+        "role": "ACD / Design Lead",
+        "name": "Marvin de Jong"
+      },
+      {
+        "role": "Senior Creative Director",
+        "name": "Derek Love"
+      }
+    ],
+    "videos": [],
+    "umbrella": "verizon"
+  },
+  "verizon-retail-walkthrough": {
+    "name": "retail walkthrough",
+    "slug": "verizon-retail-walkthrough",
+    "client": "Verizon",
+    "aliases": [
+      "Verizon",
+      "Verizon_Selection",
+      "Verizon Decks-JPG"
+    ],
+    "date_range": "2019-2022",
+    "roles": [
+      "Senior Designer → Associate Creative Director, 2D Retail and Experiential"
+    ],
+    "category": "experience",
+    "image_folders": [
+      "work/verizon/retail-walkthrough"
+    ],
+    "market": "b2c",
+    "project_type": [
+      "retail"
+    ],
+    "sector": "telecom",
+    "characteristic": [],
+    "role": null,
+    "scale": null,
+    "image_tags": [
+      "campaign",
+      "data-visualization",
+      "deck",
+      "editorial",
+      "identity",
+      "illustration",
+      "interactive",
+      "letter-design",
+      "merch",
+      "motion",
+      "photography",
+      "poster",
+      "proposal"
+    ],
+    "lead_images": [],
+    "order": [],
+    "personal": false,
+    "snapshot_only": false,
+    "chronological": false,
+    "unlisted": true,
+    "description": "",
+    "credits": [
+      {
+        "role": "ACD / Design Lead",
+        "name": "Marvin de Jong"
+      },
+      {
+        "role": "Senior Creative Director",
+        "name": "Derek Love"
+      }
+    ],
+    "videos": [],
+    "umbrella": "verizon"
+  },
+  "verizon-speedtest": {
+    "name": "Speedtest",
+    "slug": "verizon-speedtest",
+    "client": "Verizon",
+    "aliases": [
+      "Verizon",
+      "Verizon_Selection",
+      "Verizon Decks-JPG"
+    ],
+    "date_range": "2019-2022",
+    "roles": [
+      "Senior Designer → Associate Creative Director, 2D Retail and Experiential"
+    ],
+    "category": "experience",
+    "image_folders": [
+      "work/verizon/speedtest"
+    ],
+    "market": "b2c",
+    "project_type": [],
+    "sector": "telecom",
+    "characteristic": [],
+    "role": null,
+    "scale": null,
+    "image_tags": [
+      "data-visualization",
+      "installation",
+      "interactive",
+      "motion"
+    ],
+    "lead_images": [],
+    "order": [],
+    "personal": false,
+    "snapshot_only": false,
+    "chronological": false,
+    "unlisted": false,
+    "description": "",
+    "credits": [
+      {
+        "role": "ACD / Design Lead",
+        "name": "Marvin de Jong"
+      },
+      {
+        "role": "Senior Creative Director",
+        "name": "Derek Love"
+      }
+    ],
+    "videos": [],
+    "umbrella": "verizon"
+  },
+  "verizon-superbowl": {
+    "name": "Superbowl",
+    "slug": "verizon-superbowl",
+    "client": "Verizon",
+    "aliases": [
+      "Verizon",
+      "Verizon_Selection",
+      "Verizon Decks-JPG"
+    ],
+    "date_range": "2019-2022",
+    "roles": [
+      "Senior Designer → Associate Creative Director, 2D Retail and Experiential"
+    ],
+    "category": "experience",
+    "image_folders": [
+      "work/verizon/superbowl"
+    ],
+    "market": "b2c",
+    "project_type": [],
+    "sector": "telecom",
+    "characteristic": [],
+    "role": null,
+    "scale": null,
+    "image_tags": [
+      "data-visualization",
+      "installation",
+      "interactive",
+      "motion"
+    ],
+    "lead_images": [],
+    "order": [],
+    "personal": false,
+    "snapshot_only": false,
+    "chronological": false,
+    "unlisted": false,
+    "description": "",
+    "credits": [
+      {
+        "role": "ACD / Design Lead",
+        "name": "Marvin de Jong"
+      },
+      {
+        "role": "Senior Creative Director 2D",
+        "name": "Derek Love"
+      },
+      {
+        "role": "Senior Creative Director 3D",
+        "name": "Ric Edwards"
+      }
+    ],
+    "videos": [],
+    "umbrella": "verizon"
+  },
+  "verizon-taking-stock": {
+    "name": "Taking Stock",
+    "slug": "verizon-taking-stock",
+    "client": "Verizon",
+    "aliases": [
+      "Verizon",
+      "Verizon_Selection",
+      "Verizon Decks-JPG"
+    ],
+    "date_range": "2019-2022",
+    "roles": [
+      "Senior Designer → Associate Creative Director, 2D Retail and Experiential"
+    ],
+    "category": "experience",
+    "image_folders": [
+      "work/verizon/taking-stock"
+    ],
+    "market": "b2c",
+    "project_type": [],
+    "sector": "telecom",
+    "characteristic": [],
+    "role": null,
+    "scale": null,
+    "image_tags": [
+      "deck",
+      "identity",
+      "proposal"
+    ],
+    "lead_images": [],
+    "order": [],
+    "personal": false,
+    "snapshot_only": false,
+    "chronological": false,
+    "unlisted": false,
+    "description": "",
+    "credits": [
+      {
+        "role": "ACD / Design Lead",
+        "name": "Marvin de Jong"
+      }
+    ],
+    "videos": [],
+    "umbrella": "verizon"
+  },
+  "verizon-the-met": {
+    "name": "The Met",
+    "slug": "verizon-the-met",
+    "client": "Verizon",
+    "aliases": [
+      "Verizon",
+      "Verizon_Selection",
+      "Verizon Decks-JPG"
+    ],
+    "date_range": "2019-2022",
+    "roles": [
+      "Senior Designer → Associate Creative Director, 2D Retail and Experiential"
+    ],
+    "category": "experience",
+    "image_folders": [
+      "work/verizon/the-met"
+    ],
+    "market": "b2c",
+    "project_type": [
+      "retail"
+    ],
+    "sector": "telecom",
+    "characteristic": [],
+    "role": null,
+    "scale": null,
+    "image_tags": [
+      "campaign",
+      "event",
+      "proposal"
+    ],
+    "lead_images": [],
+    "order": [],
+    "personal": false,
+    "snapshot_only": false,
+    "chronological": false,
+    "unlisted": false,
+    "description": "",
+    "credits": [
+      {
+        "role": "ACD / Design Lead",
+        "name": "Marvin de Jong"
+      },
+      {
+        "role": "Designer",
+        "name": "Kyla Arsadjaja"
+      }
+    ],
+    "videos": [],
+    "umbrella": "verizon"
+  },
+  "a-pixel-monologue": {
+    "name": "A Pixel Monologue",
+    "slug": "a-pixel-monologue",
+    "client": "personal",
+    "aliases": [],
+    "date_range": "2015",
+    "roles": [],
+    "category": "experience",
+    "image_folders": [
+      "practice/a-pixel-monologue"
+    ],
+    "market": "personal",
+    "project_type": [],
+    "sector": "personal",
+    "characteristic": [],
+    "role": null,
+    "scale": null,
+    "image_tags": [
+      "motion"
+    ],
+    "lead_images": [],
+    "order": [],
+    "personal": true,
+    "snapshot_only": false,
+    "chronological": false,
+    "unlisted": false,
+    "description": "The pixel speaks. A white square grows and shrinks against black while a single voice counts its way from 786,432 to 33,177,600 — VGA to 8K — narrating its own dissolution into the smooth surface of the contemporary screen.\n\n\"Try to see the I. The object's boundary that I am. / 1024 by 768, we are 786,432. / People are born today that will never know me. People are born today that will never see me. / We grew up together. Matured together. We were the true accomplishment of a generation. A square. An array of squares. / Unfortunately, you have come to realize that the less you see, the better. To want nothing but yourself. Everything that is other than you is a distraction. A distraction from the spectacle that is your life. / 1920 by 1080, we are 2,073,600. HD. / As gods of the screen, you've slowly been unlocking the secrets of your eyes. And soon we will pay the price. We will move from the seen to the overseen. / You are thrilled. Retina displays, 4K, 8K, Ultra HD, Ultra Mega Super HD. You want to see the world without me. A world where the remainder is erased. / I shall become a trace. An artifact of an ancient world. Wisps of 8-bit. The threads of a world of squares. / Erase me. So that you become everything. Erase me. So that there is only you. / 4096 by 2160. We are 8,847,003. / We have become almost indistinguishable. 7680 by 4320. We are invisible. We have lost meaning. You will never see us again. / Awareness and caring will fade. The spectacle will remain. / I will fade into a blur. The nothingness you desire of me.\"\n",
+    "credits": [
+      {
+        "role": "Design",
+        "name": "Marvin de Jong"
+      }
+    ],
+    "videos": [
+      {
+        "title": "a pixel monologue",
+        "year": 2015,
+        "video_mode": "ui",
+        "url": "https://player.vimeo.com/video/114141500",
+        "subject": [
+          "study"
+        ],
+        "characteristics": [
+          "real-time",
+          "3d",
+          "essay"
+        ],
+        "description": "The pixel speaks."
+      }
+    ]
+  },
+  "ambiguous-form": {
+    "name": "Ambiguous Form",
+    "slug": "ambiguous-form",
+    "client": "personal",
+    "aliases": [],
+    "date_range": "2014-2016",
+    "roles": [],
+    "category": "experience",
+    "image_folders": [
+      "practice/ambiguous-form"
+    ],
+    "market": "personal",
+    "project_type": [],
+    "sector": "personal",
+    "characteristic": [],
+    "role": null,
+    "scale": null,
+    "image_tags": [
+      "3d",
+      "editorial",
+      "installation",
+      "letter-design",
+      "motion",
+      "publication-design",
+      "typography"
+    ],
+    "lead_images": [],
+    "order": [],
+    "personal": true,
+    "snapshot_only": false,
+    "chronological": false,
+    "unlisted": false,
+    "description": "",
+    "credits": [
+      {
+        "role": "Design",
+        "name": "Marvin de Jong"
+      }
+    ],
+    "videos": [
+      {
+        "title": "Pin Up",
+        "year": 2015,
+        "url": "https://player.vimeo.com/video/1182869413"
+      },
+      {
+        "title": "Poster Cube",
+        "year": 2025,
+        "url": "https://player.vimeo.com/video/1182859090",
+        "subject": [
+          "study"
+        ],
+        "characteristics": [
+          "real-time",
+          "3d"
+        ],
+        "description": "Exploring materials and motion in Unreal Engine."
+      }
+    ]
+  },
+  "comma": {
+    "name": "Comma",
+    "slug": "comma",
+    "client": "personal",
+    "aliases": [],
+    "date_range": "2014-2015",
+    "roles": [],
+    "category": "print",
+    "image_folders": [
+      "practice/comma"
+    ],
+    "market": "personal",
+    "project_type": [
+      "publication-design",
+      "editorial"
+    ],
+    "sector": "personal",
+    "characteristic": [],
+    "role": null,
+    "scale": null,
+    "image_tags": [
+      "editorial",
+      "illustration",
+      "publication-design",
+      "typography"
+    ],
+    "lead_images": [],
+    "order": [],
+    "personal": true,
+    "snapshot_only": false,
+    "chronological": false,
+    "unlisted": false,
+    "description": "A book collecting a series of essays on illusion and ambiguity. The comma is scaled up to become an ambiguous shape, the text is classically set while the images are treated like a scroll forming one column that breaks and interrupts.",
+    "credits": [
+      {
+        "role": "Design",
+        "name": "Marvin de Jong"
+      }
+    ],
+    "videos": []
+  },
+  "Cup": {
+    "name": "Cup",
+    "slug": "Cup",
+    "client": "personal",
+    "aliases": [],
+    "date_range": "2015",
+    "roles": [],
+    "category": "experience",
+    "image_folders": [
+      "practice/cup"
+    ],
+    "market": "personal",
+    "project_type": [],
+    "sector": "personal",
+    "characteristic": [],
+    "role": null,
+    "scale": null,
+    "image_tags": [
+      "motion"
+    ],
+    "lead_images": [],
+    "order": [],
+    "personal": true,
+    "snapshot_only": false,
+    "chronological": false,
+    "unlisted": false,
+    "description": "A video essay on the small window between waking and comprehension — when objects haven't yet been organized into meaning.\n",
+    "credits": [
+      {
+        "role": "Design",
+        "name": "Marvin de Jong"
+      }
+    ],
+    "videos": [
+      {
+        "title": "Cup",
+        "year": 2015,
+        "video_mode": "ui",
+        "url": "https://player.vimeo.com/video/130357433",
+        "subject": [
+          "study"
+        ],
+        "characteristics": [
+          "essay"
+        ],
+        "description": "The pixel speaks."
+      }
+    ]
+  },
+  "ephemerality": {
+    "name": "Ephemerality",
+    "slug": "ephemerality",
+    "client": "personal",
+    "aliases": [],
+    "date_range": "2014-present",
+    "roles": [],
+    "category": "experience",
+    "image_folders": [
+      "practice/ephemerality"
+    ],
+    "market": "personal",
+    "project_type": [],
+    "sector": "personal",
+    "characteristic": [],
+    "role": null,
+    "scale": null,
+    "image_tags": [
+      "stationery",
+      "typography"
+    ],
+    "lead_images": [],
+    "order": [],
+    "personal": true,
+    "snapshot_only": false,
+    "chronological": false,
+    "unlisted": false,
+    "description": "A business card that captures its ephemeral nature in a message.",
+    "credits": [
+      {
+        "role": "Design",
+        "name": "Marvin de Jong"
+      }
+    ],
+    "videos": []
+  },
+  "kabk-posters": {
+    "name": "KABK Posters",
+    "slug": "kabk-posters",
+    "client": "personal",
+    "aliases": [],
+    "date_range": "2011-2013",
+    "roles": [],
+    "category": "print",
+    "image_folders": [
+      "practice/kabk"
+    ],
+    "market": "personal",
+    "project_type": [],
+    "sector": "personal",
+    "characteristic": [],
+    "role": null,
+    "scale": null,
+    "image_tags": [
+      "campaign",
+      "illustration",
+      "letter-design",
+      "poster",
+      "typography"
+    ],
+    "lead_images": [],
+    "order": [],
+    "personal": true,
+    "snapshot_only": false,
+    "chronological": false,
+    "unlisted": false,
+    "description": "Posters exploring legibility, layering, and 'handschrift.'",
+    "credits": [
+      {
+        "role": "Design",
+        "name": "Marvin de Jong"
+      }
+    ],
+    "videos": []
+  },
+  "marin-cookbook": {
+    "name": "Marin Montessori Cookbook",
+    "slug": "marin-cookbook",
+    "client": "personal",
+    "aliases": [],
+    "date_range": "2026",
+    "roles": [],
+    "category": "print",
+    "image_folders": [
+      "practice/marin-cookbook"
+    ],
+    "market": "personal",
+    "project_type": [
+      "publication-design",
+      "editorial"
+    ],
+    "sector": "education",
+    "characteristic": [],
+    "role": null,
+    "scale": null,
+    "image_tags": [],
+    "lead_images": [],
+    "order": [],
+    "personal": false,
+    "snapshot_only": false,
+    "chronological": false,
+    "unlisted": false,
+    "description": "A cookbook for and by the parents and students of Marin Montessori.",
+    "credits": [
+      {
+        "role": "Design and Editing",
+        "name": "Marvin de Jong"
+      },
+      {
+        "role": "Editor",
+        "name": "Talia Ida"
+      },
+      {
+        "role": "Editor",
+        "name": "Shree Starkman"
+      }
+    ],
+    "videos": []
+  },
+  "mcgill-arch": {
+    "name": "Mcgill Arch",
+    "slug": "mcgill-arch",
+    "client": "personal",
+    "aliases": [],
+    "date_range": "2014",
+    "roles": [],
+    "category": "print",
+    "image_folders": [
+      "practice/mcgill-arch"
+    ],
+    "market": "personal",
+    "project_type": [
+      "publication-design"
+    ],
+    "sector": "education",
+    "characteristic": [],
+    "role": null,
+    "scale": null,
+    "image_tags": [
+      "letter-design",
+      "poster",
+      "typography"
+    ],
+    "lead_images": [],
+    "order": [],
+    "personal": true,
+    "snapshot_only": false,
+    "chronological": false,
+    "unlisted": false,
+    "description": "A poster for the 2014 History and Theory of Architecture Lecture Series at McGill University.",
+    "credits": [
+      {
+        "role": "Design",
+        "name": "Marvin de Jong"
+      }
+    ],
+    "videos": []
+  },
+  "my-life-is-good-book": {
+    "name": "My Life is Good Book",
+    "slug": "my-life-is-good-book",
+    "client": "personal",
+    "aliases": [],
+    "date_range": "2012",
+    "roles": [],
+    "category": "print",
+    "image_folders": [
+      "practice/my-life-is-good-book"
+    ],
+    "market": "personal",
+    "project_type": [
+      "publication-design"
+    ],
+    "sector": "personal",
+    "characteristic": [],
+    "role": null,
+    "scale": null,
+    "image_tags": [
+      "editorial",
+      "illustration",
+      "publication-design"
+    ],
+    "lead_images": [],
+    "order": [],
+    "personal": true,
+    "snapshot_only": false,
+    "chronological": false,
+    "unlisted": false,
+    "description": "A small concept book based on overlapping thoughts and the wild jumps of a late night work session.",
+    "credits": [
+      {
+        "role": "Design",
+        "name": "Marvin de Jong"
+      }
+    ],
+    "videos": []
+  },
+  "smoke-systems": {
+    "name": "Smoke",
+    "slug": "smoke-systems",
+    "client": "personal",
+    "aliases": [],
+    "date_range": "2025-present",
+    "roles": [],
+    "category": "real-time",
+    "image_folders": [
+      "practice/smoke-systems"
+    ],
+    "market": "personal",
+    "project_type": [],
+    "sector": "personal",
+    "characteristic": [
+      "real-time",
+      "generative"
+    ],
+    "role": null,
+    "scale": null,
+    "image_tags": [
+      "3d",
+      "motion",
+      "real-time",
+      "study"
+    ],
+    "lead_images": [],
+    "order": [],
+    "personal": true,
+    "snapshot_only": false,
+    "chronological": false,
+    "unlisted": false,
+    "description": "Continuing exploration of smoke and particle systems, both real-time and rendered, in Unreal Engine.",
+    "credits": [
+      {
+        "role": null,
+        "name": "Marvin de Jong"
+      }
+    ],
+    "videos": [
+      {
+        "title": "Smoke Test 1",
+        "url": "https://player.vimeo.com/video/1185305449",
+        "characteristics": [
+          "real-time",
+          "3d"
+        ],
+        "subject": [
+          "study"
+        ]
+      },
+      {
+        "title": "Smoke Test 2",
+        "url": "https://player.vimeo.com/video/1185305534",
+        "characteristics": [
+          "real-time",
+          "3d"
+        ],
+        "subject": [
+          "study"
+        ]
+      },
+      {
+        "title": "Smoke Test 3",
+        "url": "https://player.vimeo.com/video/1185305119",
+        "characteristics": [
+          "real-time",
+          "3d"
+        ],
+        "subject": [
+          "study"
+        ]
+      },
+      {
+        "title": "Smoke Test 4",
+        "url": "https://player.vimeo.com/video/1185305661",
+        "characteristics": [
+          "real-time",
+          "3d"
+        ],
+        "subject": [
+          "study"
+        ]
+      }
+    ]
+  },
+  "snapshot": {
+    "name": "Snapshots",
+    "slug": "snapshot",
+    "client": "personal",
+    "aliases": [
+      "personal",
+      "IndependentProjects"
+    ],
+    "date_range": "2014-present",
+    "roles": [],
+    "category": "experience",
+    "image_folders": [
+      "practice/snapshots"
+    ],
+    "market": "personal",
+    "project_type": [],
+    "sector": "personal",
+    "characteristic": [
+      "real-time"
+    ],
+    "role": null,
+    "scale": null,
+    "image_tags": [],
+    "lead_images": [],
+    "order": [],
+    "personal": true,
+    "snapshot_only": false,
+    "chronological": true,
+    "unlisted": false,
+    "description": "",
+    "credits": [
+      {
+        "role": "Design",
+        "name": "Marvin de Jong"
+      }
+    ],
+    "videos": []
+  },
+  "snu": {
+    "name": "SNU",
+    "slug": "snu",
+    "client": "personal",
+    "aliases": [],
+    "date_range": "2013",
+    "roles": [],
+    "category": "print",
+    "image_folders": [
+      "practice/SNU"
+    ],
+    "market": "personal",
+    "project_type": [
+      "publication-design"
+    ],
+    "sector": "education",
+    "characteristic": [],
+    "role": null,
+    "scale": null,
+    "image_tags": [
+      "data-visualization",
+      "editorial",
+      "illustration"
+    ],
+    "lead_images": [],
+    "order": [],
+    "personal": true,
+    "snapshot_only": false,
+    "chronological": false,
+    "unlisted": false,
+    "description": "",
+    "credits": [
+      {
+        "role": "Design",
+        "name": "Marvin de Jong"
+      }
+    ],
+    "videos": []
+  },
+  "space": {
+    "name": "Space",
+    "slug": "space",
+    "client": "personal",
+    "aliases": [],
+    "date_range": "2025",
+    "roles": [],
+    "category": "experience",
+    "image_folders": [
+      "practice/space"
+    ],
+    "market": "personal",
+    "project_type": [
+      "installation"
+    ],
+    "sector": "personal",
+    "characteristic": [
+      "real-time"
+    ],
+    "role": null,
+    "scale": null,
+    "image_tags": [
+      "3d",
+      "real-time",
+      "study"
+    ],
+    "lead_images": [],
+    "order": [],
+    "personal": true,
+    "snapshot_only": false,
+    "chronological": false,
+    "unlisted": false,
+    "description": "",
+    "credits": [
+      {
+        "role": "Design",
+        "name": "Marvin de Jong"
+      }
+    ],
+    "videos": []
+  },
+  "stephanie-hanes": {
+    "name": "Layout design for PreCog magazine.",
+    "slug": "stephanie-hanes",
+    "client": "personal",
+    "aliases": [],
+    "date_range": "2025",
+    "roles": [],
+    "category": "print",
+    "image_folders": [
+      "practice/stephanie-hanes"
+    ],
+    "market": "personal",
+    "project_type": [
+      "editorial",
+      "publication-design"
+    ],
+    "sector": "personal",
+    "characteristic": [],
+    "role": null,
+    "scale": null,
+    "image_tags": [
+      "3d",
+      "illustration",
+      "letter-design",
+      "study"
+    ],
+    "lead_images": [],
+    "order": [],
+    "personal": true,
+    "snapshot_only": false,
+    "chronological": false,
+    "unlisted": false,
+    "description": "Layout design for the 'Ouroboros' issue of PreCog magazine featuring the work of Stephanie Hanes and writing of Kelsey Sucena. Using Unreal Engine to design a distorting folding form.",
+    "credits": [
+      {
+        "role": "Design",
+        "name": "Marvin de Jong"
+      },
+      {
+        "role": "Artist",
+        "name": "Stephanie Hanes"
+      },
+      {
+        "role": "Author",
+        "name": "Kelsey Sucena"
+      }
+    ],
+    "videos": []
+  },
+  "wonmin-park-statements": {
+    "name": "Artist & Project Statements",
+    "slug": "wonmin-park-statements",
+    "client": "Wonmin Park",
+    "aliases": [
+      "Wonmin Park"
+    ],
+    "date_range": "2011-present",
+    "roles": [],
+    "category": "writing",
+    "image_folders": [
+      "practice/wonmin-park/statements"
+    ],
+    "market": "b2b",
+    "project_type": [
+      "writing"
+    ],
+    "sector": "design-studio",
+    "characteristic": [],
+    "role": null,
+    "scale": null,
+    "image_tags": [
+      "photography"
+    ],
+    "lead_images": [],
+    "order": [],
+    "personal": true,
+    "snapshot_only": false,
+    "chronological": false,
+    "unlisted": false,
+    "description": "",
+    "credits": [
+      {
+        "role": "Writing",
+        "name": "Marvin de Jong"
+      }
+    ],
+    "videos": [],
+    "umbrella": "wonmin-park"
+  },
+  "yale-posters": {
+    "name": "posters",
+    "slug": "yale-posters",
+    "client": "Yale",
+    "aliases": [
+      "Yale University",
+      "Yale"
+    ],
+    "date_range": "2013-2015",
+    "roles": [
+      "MFA, Graphic Design"
+    ],
+    "category": "education",
+    "image_folders": [
+      "practice/yale/posters"
+    ],
+    "market": "personal",
+    "project_type": [],
+    "sector": "education",
+    "characteristic": [],
+    "role": null,
+    "scale": null,
+    "image_tags": [
+      "3d",
+      "letter-design",
+      "poster",
+      "study",
+      "typography"
+    ],
+    "lead_images": [],
+    "order": [],
+    "personal": true,
+    "snapshot_only": false,
+    "chronological": false,
+    "unlisted": false,
+    "description": "",
+    "credits": [
+      {
+        "role": "Student",
+        "name": "Marvin de Jong"
+      }
+    ],
+    "videos": [],
+    "umbrella": "yale"
+  },
+  "yale-public-browsing": {
+    "name": "Public Browsing",
+    "slug": "yale-public-browsing",
+    "client": "Yale",
+    "aliases": [
+      "Yale University",
+      "Yale"
+    ],
+    "date_range": "2013-2015",
+    "roles": [
+      "MFA, Graphic Design"
+    ],
+    "category": "education",
+    "image_folders": [
+      "practice/yale/public-browsing"
+    ],
+    "market": "personal",
+    "project_type": [],
+    "sector": "education",
+    "characteristic": [],
+    "role": null,
+    "scale": null,
+    "image_tags": [
+      "data-visualization",
+      "interactive",
+      "web"
+    ],
+    "lead_images": [],
+    "order": [],
+    "personal": true,
+    "snapshot_only": false,
+    "chronological": false,
+    "unlisted": false,
+    "description": "A Chrome add-on that would store your browsing in a json for you to share and compare with others.",
+    "credits": [
+      {
+        "role": "Student",
+        "name": "Marvin de Jong"
+      }
+    ],
+    "videos": [],
+    "umbrella": "yale"
+  },
+  "yale-thesis": {
+    "name": "Thesis",
+    "slug": "yale-thesis",
+    "client": "Yale",
+    "aliases": [
+      "Yale University",
+      "Yale"
+    ],
+    "date_range": "2013-2015",
+    "roles": [
+      "MFA, Graphic Design"
+    ],
+    "category": "education",
+    "image_folders": [
+      "practice/yale/thesis"
+    ],
+    "market": "personal",
+    "project_type": [],
+    "sector": "education",
+    "characteristic": [],
+    "role": null,
+    "scale": null,
+    "image_tags": [
+      "3d",
+      "data-visualization",
+      "editorial",
+      "illustration",
+      "interactive",
+      "letter-design",
+      "making",
+      "motion",
+      "photography",
+      "poster",
+      "publication-design",
+      "study",
+      "web"
+    ],
+    "lead_images": [],
+    "order": [],
+    "personal": true,
+    "snapshot_only": false,
+    "chronological": false,
+    "unlisted": false,
+    "description": "",
+    "credits": [
+      {
+        "role": "Student",
+        "name": "Marvin de Jong"
+      }
+    ],
+    "videos": [],
+    "umbrella": "yale"
+  },
+  "yale-uppercase-soul": {
+    "name": "Uppercase Soul",
+    "slug": "yale-uppercase-soul",
+    "client": "Yale",
+    "aliases": [
+      "Yale University",
+      "Yale"
+    ],
+    "date_range": "2013-2015",
+    "roles": [
+      "MFA, Graphic Design"
+    ],
+    "category": "education",
+    "image_folders": [
+      "practice/yale/uppercase-soul"
+    ],
+    "market": "personal",
+    "project_type": [],
+    "sector": "education",
+    "characteristic": [],
+    "role": null,
+    "scale": null,
+    "image_tags": [
+      "editorial",
+      "illustration",
+      "letter-design",
+      "poster"
+    ],
+    "lead_images": [],
+    "order": [],
+    "personal": true,
+    "snapshot_only": false,
+    "chronological": false,
+    "unlisted": false,
+    "description": "",
+    "credits": [
+      {
+        "role": "Design",
+        "name": "Marvin de Jong"
+      }
+    ],
+    "videos": [],
+    "umbrella": "yale"
+  },
+  "yale-studio": {
+    "name": "Yale Studio",
+    "slug": "yale-studio",
+    "client": "personal",
+    "aliases": [],
+    "date_range": "2013-2015",
+    "roles": [],
+    "category": "experience",
+    "image_folders": [
+      "practice/yale-studio"
+    ],
+    "market": "personal",
+    "project_type": [
+      "exhibition"
+    ],
+    "sector": "education",
+    "characteristic": [],
+    "role": null,
+    "scale": null,
+    "image_tags": [
+      "event",
+      "exhibition",
+      "photography",
+      "poster"
+    ],
+    "lead_images": [],
+    "order": [],
+    "personal": true,
+    "snapshot_only": false,
+    "chronological": false,
+    "unlisted": false,
+    "description": "",
+    "credits": [
+      {
+        "role": "Design",
+        "name": "Marvin de Jong"
+      }
+    ],
+    "videos": []
+  },
+  "nyu-typography-course": {
+    "name": "Typography Course",
+    "slug": "nyu-typography-course",
+    "client": "NYU",
+    "aliases": [
+      "New York University",
+      "NYU"
+    ],
+    "date_range": "2016",
+    "roles": [
+      "Substitute Instructor, Typography"
+    ],
+    "category": "teaching",
+    "image_folders": [
+      "teaching/nyu/typography-course"
+    ],
+    "market": "internal",
+    "project_type": [
+      "teaching"
+    ],
+    "sector": "education",
+    "characteristic": [],
+    "role": null,
+    "scale": null,
+    "image_tags": [],
+    "lead_images": [],
+    "order": [],
+    "personal": false,
+    "snapshot_only": false,
+    "chronological": false,
+    "unlisted": false,
+    "description": "",
+    "credits": [
+      {
+        "role": "Instructor",
+        "name": "Marvin de Jong"
+      }
+    ],
+    "videos": [],
+    "umbrella": "nyu"
+  },
+  "parsons-interaction-studio": {
+    "name": "Interaction Studio",
+    "slug": "parsons-interaction-studio",
+    "client": "Parsons",
+    "aliases": [
+      "Parsons School of Design",
+      "Parsons"
+    ],
+    "date_range": "2018",
+    "roles": [
+      "Part-Time Faculty, Core Studio Interaction"
+    ],
+    "category": "teaching",
+    "image_folders": [
+      "teaching/parsons/interaction-studio"
+    ],
+    "market": "internal",
+    "project_type": [
+      "teaching"
+    ],
+    "sector": "education",
+    "characteristic": [
+      "interactive"
+    ],
+    "role": null,
+    "scale": null,
+    "image_tags": [],
+    "lead_images": [],
+    "order": [],
+    "personal": false,
+    "snapshot_only": false,
+    "chronological": false,
+    "unlisted": false,
+    "description": "",
+    "credits": [
+      {
+        "role": "Faculty",
+        "name": "Marvin de Jong"
+      }
+    ],
+    "videos": [],
+    "umbrella": "parsons"
+  }
+}

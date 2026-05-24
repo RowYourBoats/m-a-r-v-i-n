@@ -1,0 +1,42 @@
+---
+// Shared client-side helpers for the Work archive and Practice pages.
+// Both pages render this once and call into window.__portfolio for the
+// mobile filter-bar trigger and per-page filter persistence (localStorage).
+// Page-specific bits (filter handlers, ?tag= deep linking on archive) stay
+// in each page's own <script>.
+---
+<script is:inline>
+  (function () {
+    function initFilterTrigger() {
+      var filters = document.getElementById("filters");
+      var trigger = document.getElementById("filter-trigger");
+      var more = document.getElementById("filter-more");
+      trigger && trigger.addEventListener("click", function () {
+        filters.classList.toggle("filter-open");
+      });
+      more && more.addEventListener("click", function () {
+        filters.classList.toggle("filter-expanded");
+        more.textContent = filters.classList.contains("filter-expanded") ? "−" : "+";
+      });
+    }
+
+    // Persist the active filter per page (mirrors the theme localStorage
+    // pattern in Base.astro). Stores the selected button's data-tag; "all"
+    // clears the key so the page reverts to the default next visit.
+    function saveFilter(key, label) {
+      try {
+        if (label && label !== "all") localStorage.setItem(key, label);
+        else localStorage.removeItem(key);
+      } catch (e) {}
+    }
+    function loadFilter(key) {
+      try { return localStorage.getItem(key); } catch (e) { return null; }
+    }
+
+    window.__portfolio = {
+      initFilterTrigger: initFilterTrigger,
+      saveFilter: saveFilter,
+      loadFilter: loadFilter,
+    };
+  })();
+</script>

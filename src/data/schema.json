@@ -1,0 +1,295 @@
+{
+  "pinned": [
+    "retail",
+    "data-visualization",
+    "interactive",
+    "motion",
+    "essay"
+  ],
+  "work_filters": {
+    "pinned": [
+      {
+        "label": "spatial",
+        "matches": [
+          "exhibition",
+          "installation",
+          "retail"
+        ]
+      },
+      {
+        "label": "identity",
+        "matches": [
+          "identity"
+        ]
+      },
+      {
+        "label": "keynote",
+        "matches": [
+          "keynote"
+        ]
+      },
+      {
+        "label": "interactive",
+        "matches": [
+          "interactive"
+        ]
+      },
+      {
+        "label": "editorial",
+        "matches": [
+          "editorial",
+          "publication-design"
+        ]
+      }
+    ],
+    "expanded": [
+      {
+        "label": "poster",
+        "matches": [
+          "poster"
+        ]
+      },
+      {
+        "label": "event",
+        "matches": [
+          "event"
+        ]
+      },
+      {
+        "label": "web",
+        "matches": [
+          "web"
+        ]
+      },
+      {
+        "label": "campaign",
+        "matches": [
+          "campaign"
+        ]
+      },
+      {
+        "label": "deck",
+        "matches": [
+          "deck"
+        ]
+      },
+      {
+        "label": "merch",
+        "matches": [
+          "merch"
+        ]
+      },
+      {
+        "label": "motion",
+        "matches": [
+          "motion"
+        ]
+      },
+      {
+        "label": "video",
+        "matches": [
+          "video"
+        ]
+      },
+      {
+        "label": "data-visualization",
+        "matches": [
+          "data-visualization"
+        ]
+      },
+      {
+        "label": "photography",
+        "matches": [
+          "photography"
+        ]
+      },
+      {
+        "label": "illustration",
+        "matches": [
+          "illustration"
+        ]
+      },
+      {
+        "label": "3d",
+        "matches": [
+          "3d"
+        ]
+      }
+    ]
+  },
+  "practice_filters": {
+    "pinned": [
+      {
+        "label": "letter-design",
+        "matches": [
+          "letter-design"
+        ]
+      },
+      {
+        "label": "video",
+        "matches": [
+          "video"
+        ]
+      },
+      {
+        "label": "study",
+        "matches": [
+          "study"
+        ]
+      },
+      {
+        "label": "real-time",
+        "matches": [
+          "real-time"
+        ]
+      },
+      {
+        "label": "editorial",
+        "matches": [
+          "editorial",
+          "publication-design"
+        ]
+      }
+    ],
+    "expanded": [
+      {
+        "label": "3d",
+        "matches": [
+          "3d"
+        ]
+      },
+      {
+        "label": "typography",
+        "matches": [
+          "typography"
+        ]
+      },
+      {
+        "label": "poster",
+        "matches": [
+          "poster"
+        ]
+      },
+      {
+        "label": "motion",
+        "matches": [
+          "motion"
+        ]
+      },
+      {
+        "label": "interactive",
+        "matches": [
+          "interactive"
+        ]
+      },
+      {
+        "label": "web",
+        "matches": [
+          "web"
+        ]
+      },
+      {
+        "label": "data-visualization",
+        "matches": [
+          "data-visualization"
+        ]
+      },
+      {
+        "label": "photography",
+        "matches": [
+          "photography"
+        ]
+      },
+      {
+        "label": "spatial",
+        "matches": [
+          "installation",
+          "exhibition"
+        ]
+      },
+      {
+        "label": "essay",
+        "matches": [
+          "essay"
+        ]
+      }
+    ]
+  },
+  "tags": [
+    "3d",
+    "architecture",
+    "b2b",
+    "b2b2c",
+    "b2c",
+    "booth",
+    "campaign",
+    "cultural-institution",
+    "data-visualization",
+    "deck",
+    "design-studio",
+    "diagram",
+    "editorial",
+    "education",
+    "event",
+    "exhibition",
+    "furniture",
+    "generative",
+    "iconography",
+    "identity",
+    "illustration",
+    "installation",
+    "interactive",
+    "internal",
+    "keynote",
+    "letter-design",
+    "logo",
+    "making",
+    "merch",
+    "motion",
+    "personal",
+    "photography",
+    "poster",
+    "product-marking",
+    "product-render",
+    "proposal",
+    "publication-design",
+    "quantum-computing",
+    "real-time",
+    "retail",
+    "stationery",
+    "study",
+    "teaching",
+    "tech",
+    "telecom",
+    "typography",
+    "web",
+    "writing"
+  ],
+  "mediums": [
+    "digital",
+    "print",
+    "environments",
+    "product",
+    "video"
+  ],
+  "clients": [
+    "AWS Re:Invent",
+    "DFFPM",
+    "DS+R",
+    "Gahi",
+    "Herman Miller",
+    "IonQ",
+    "Marin Montessori",
+    "Miller-Atre",
+    "MoMA",
+    "NYU",
+    "Paprika",
+    "Parsons",
+    "Pratt",
+    "The Politic",
+    "Tillotson Associates",
+    "Verizon",
+    "Wonmin Park",
+    "Yale"
+  ]
+}

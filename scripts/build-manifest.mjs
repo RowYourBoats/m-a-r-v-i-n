@@ -1,0 +1,402 @@
+#!/usr/bin/env node
+// Rebuild src/data/manifest.json from image_catalogue.json + projects.json.
+// Archives the previous manifest.
+
+import fs from "node:fs";
+import path from "node:path";
+import { fileURLToPath } from "node:url";
+import { imageSize } from "image-size";
+
+const __dirname = path.dirname(fileURLToPath(import.meta.url));
+const root = path.resolve(__dirname, "..");
+const catalogPath = path.join(root, "public/images/image_catalogue.json");
+const projectsPath = path.join(root, "src/data/projects.json");
+const manifestPath = path.join(root, "src/data/manifest.json");
+const archivePath = path.join(root, "src/data/manifest.archive.json");
+const imagesDir = path.join(root, "public/images");
+
+const catalogue = JSON.parse(fs.readFileSync(catalogPath, "utf8"));
+const registry = JSON.parse(fs.readFileSync(projectsPath, "utf8"));
+
+// Flatten the four project-level facets into a single array of values for
+// archive grid filtering. Empty/null values are dropped. See plan: tag
+// namespace split.
+const FACETS = ["market", "project_type", "sector", "characteristic"];
+const projectTagsFor = (proj) => {
+  if (!proj) return [];
+  const out = [];
+  for (const f of FACETS) {
+    const v = proj[f];
+    if (!v) continue;
+    if (Array.isArray(v)) for (const x of v) { if (x) out.push(x); }
+    else out.push(v);
+  }
+  return out;
+};
+
+// Preserve existing Blob URLs + dimensions from the current manifest so
+// rebuilds don't revert CDN links or re-probe every image on disk.
+// Key blob URLs by BOTH localPath (fast path) and item.id so folder renames
+// don't silently wipe them — path-based lookups fail across restructures
+// but the id (slugified path) is stable.
+const blobUrls = new Map();
+const blobById = new Map();
+const prevDims = new Map();
+const prevVideoDims = new Map();
+if (fs.existsSync(manifestPath)) {
+  const prev = JSON.parse(fs.readFileSync(manifestPath, "utf8"));
+  for (const item of prev.items || []) {
+    if (item.src && item.src.startsWith("https://")) {
+      const localPath = "/images/" + (item.src.split("/images/")[1] || "");
+      blobUrls.set(decodeURIComponent(localPath), item.src);
+      if (item.id) blobById.set(item.id, item.src);
+    }
+    if (item.width && item.height) {
+      if (item.type === "video" && item.video) {
+        // Cache key on the bare URL so dim probing survives video_mode flips
+        // (which rewrite the query string on every build).
+        prevVideoDims.set(item.video.split("?")[0], { width: item.width, height: item.height });
+      } else {
+        const localPath = item.src?.startsWith("https://")
+          ? "/images/" + decodeURIComponent(item.src.split("/images/")[1] || "")
+          : item.src;
+        if (localPath) prevDims.set(localPath, { width: item.width, height: item.height });
+      }
+    }
+  }
+  fs.copyFileSync(manifestPath, archivePath);
+  console.log("archived →", path.relative(root, archivePath));
+  console.log(`preserved ${blobUrls.size} blob URLs by path, ${blobById.size} by id, ${prevDims.size} image dims, ${prevVideoDims.size} video dims`);
+}
+
+// Probe Vimeo video dimensions via oEmbed. Cached via prevVideoDims so we
+// only hit the network for new videos. Used to set the iframe's aspect-ratio
+// so a square or vertical source doesn't get pillarboxed/letterboxed inside
+// a hardcoded 16:9 wrapper. Fallback (no probe, fetch fails) is handled
+// downstream — render sites use 16:9 when width/height are missing.
+const probeVideoDims = async (url) => {
+  const key = url.split("?")[0];
+  if (prevVideoDims.has(key)) return prevVideoDims.get(key);
+  if (!/vimeo\.com/.test(url)) return null;
+  // player.vimeo.com/video/<id> or vimeo.com/<id>; oEmbed accepts either.
+  try {
+    const res = await fetch(`https://vimeo.com/api/oembed.json?url=${encodeURIComponent(key)}&maxwidth=1920`);
+    if (!res.ok) return null;
+    const j = await res.json();
+    if (j.width && j.height) {
+      const dims = { width: j.width, height: j.height };
+      prevVideoDims.set(key, dims);
+      return dims;
+    }
+  } catch {}
+  return null;
+};
+
+// Probe image dimensions from the local file, falling back to previous
+// manifest values if the file isn't present (e.g. on CI without images).
+const probeDims = (localSrc) => {
+  const rel = localSrc.replace(/^\/images\//, "");
+  const abs = path.join(imagesDir, decodeURIComponent(rel));
+  if (fs.existsSync(abs)) {
+    try {
+      const { width, height } = imageSize(fs.readFileSync(abs));
+      if (width && height) return { width, height };
+    } catch {}
+  }
+  return prevDims.get(localSrc) || null;
+};
+
+// Build folder → project slug lookup from registry's image_folders.
+const folderToSlug = {};
+for (const [slug, proj] of Object.entries(registry)) {
+  for (const folder of proj.image_folders || []) {
+    folderToSlug[folder] = slug;
+  }
+}
+
+const FALLBACK_SLUG = "snapshot";
+
+// Essay-companion folders: any folder containing a non-underscore .md file
+// is treated as an essay's image set. Images in that folder are flagged
+// `hidden_from_feed` (so they don't clutter Work/Practice) and `essay_of`
+// points to the writing-collection id (path relative to public/images, no ext).
+// Convention matches content.config.ts writing loader: `**/[!_]*.md`.
+const essayByFolder = new Map();
+const walkForEssays = (dir) => {
+  for (const entry of fs.readdirSync(dir, { withFileTypes: true })) {
+    if (entry.name.startsWith(".") || entry.name.startsWith("_")) continue;
+    const abs = path.join(dir, entry.name);
+    if (entry.isDirectory()) {
+      walkForEssays(abs);
+    } else if (entry.isFile() && entry.name.endsWith(".md")) {
+      const folderRel = path
+        .relative(imagesDir, dir)
+        .split(path.sep)
+        .join("/");
+      const essayId = path
+        .relative(imagesDir, abs)
+        .split(path.sep)
+        .join("/")
+        .replace(/\.md$/, "");
+      essayByFolder.set(folderRel, essayId);
+    }
+  }
+};
+walkForEssays(imagesDir);
+
+const slugify = (s) =>
+  s
+    .toLowerCase()
+    .replace(/\.[a-z0-9]+$/i, "")
+    .replace(/[^a-z0-9]+/g, "-")
+    .replace(/^-+|-+$/g, "")
+    .slice(0, 60);
+
+const projectFromFile = (file_path) => {
+  // 3-level structure: tier/client/project/file
+  const parts = (file_path || "").split("/");
+  // Try 3 segments (work/verizon/selection), then 2, then 1
+  for (let n = 3; n >= 1; n--) {
+    const key = parts.slice(0, n).join("/");
+    if (folderToSlug[key]) return folderToSlug[key];
+  }
+  return FALLBACK_SLUG;
+};
+
+const projectYears = new Map();
+const usedIds = new Set();
+const mkId = (base) => {
+  let id = base || "item";
+  let n = 1;
+  let final = id;
+  while (usedIds.has(final)) final = `${id}-${++n}`;
+  usedIds.add(final);
+  return final;
+};
+
+// Build image items from catalogue.
+const items = catalogue.map((raw) => {
+  const filePath = (raw.file_path || "").replace(/\\/g, "/");
+  const slug = projectFromFile(filePath);
+  const proj = registry[slug] || registry[FALLBACK_SLUG];
+  const id = mkId(slugify(filePath || raw.title || "item"));
+  const localSrc = "/images/" + filePath.replace(/^\/+/, "");
+  // Check Blob URLs: id (stable across renames) → new path → old_file_path.
+  let src = blobById.get(id) || blobUrls.get(localSrc);
+  if (!src && raw.old_file_path) {
+    const oldFilePath = raw.old_file_path.replace(/\\/g, "/");
+    const oldSrc = "/images/" + oldFilePath.replace(/^\/+/, "");
+    src = blobUrls.get(decodeURIComponent(oldSrc)) || blobUrls.get(oldSrc);
+  }
+  src = src || localSrc;
+
+  // Derive year: exif > filesystem-within-range > project_date_range > filesystem.
+  // project_date_range is read from the live project registry (authored in
+  // _project.md) so a date_range edit flows through on the next build without
+  // needing to re-stamp the catalogue.
+  const projectRange = proj?.date_range || raw.project_date_range || null;
+  let year = null;
+  let bestDate = null;
+  const createdDate = raw.created_date || null;
+  const fsDate = raw.created || null;
+  // Per-item dates (set by `mine-shot-dates.mjs` from EXIF or filename
+  // patterns) only override the project's `date_range` when the project is
+  // flagged `chronological: true` in its _project.md. Most projects are
+  // coherent collections (decks, books, campaigns) where the project's date
+  // is the right truth and per-item capture timestamps are noise. Opt in for
+  // snapshot folders and similar timeline-like collections.
+  const hasRealDate = proj?.chronological === true && !!raw.date_source;
+  const fsYear = fsDate ? new Date(fsDate).getUTCFullYear() : null;
+
+  if (hasRealDate && createdDate) {
+    year = new Date(createdDate).getUTCFullYear();
+    bestDate = createdDate;
+  } else if (projectRange && fsYear) {
+    const [rangeStart, rangeEnd] = projectRange.split("-").map(Number);
+    if (fsYear >= rangeStart && fsYear <= rangeEnd) {
+      year = fsYear;
+      bestDate = fsDate;
+    } else {
+      year = rangeStart > 2000 ? rangeStart : null;
+      bestDate = projectRange;
+    }
+  } else if (projectRange) {
+    const rangeStart = parseInt(projectRange.split("-")[0], 10);
+    year = rangeStart > 2000 ? rangeStart : null;
+    bestDate = projectRange;
+  } else if (fsDate) {
+    year = fsYear;
+    bestDate = fsDate;
+  }
+  if (year) {
+    projectYears.set(slug, Math.max(projectYears.get(slug) || 0, year));
+  }
+
+  // Per-image tags are now stratified into format/characteristics/subject in
+  // the catalogue (see _DEPRECATED/scripts/restructure-catalogue-tags.mjs). Manifest items
+  // expose both: the raw three-axis arrays (for future facet-aware consumers)
+  // and a flat `tags` union (for the existing data-tags filter UI).
+  const fmt = Array.isArray(raw.format) ? raw.format : [];
+  const chr = Array.isArray(raw.characteristics) ? raw.characteristics : [];
+  const sub = Array.isArray(raw.subject) ? raw.subject : [];
+  // Back-compat: very old catalogues may still carry a flat `tags` field if
+  // the restructure script hasn't been run on them. Honor it.
+  const legacyTags = Array.isArray(raw.tags) ? raw.tags : [];
+  const item = {
+    id,
+    src,
+    type: "image",
+    title: raw.title || "",
+    tags: [...new Set([...fmt, ...chr, ...sub, ...legacyTags])],
+    format: fmt,
+    characteristics: chr,
+    subject: sub,
+    project_tags: projectTagsFor(proj),
+    medium: raw.medium || "",
+    project: slug,
+    description: raw.description || "",
+  };
+  const dims = probeDims(localSrc);
+  if (dims) {
+    item.width = dims.width;
+    item.height = dims.height;
+  }
+  if (raw.style) item.style = raw.style;
+  if (bestDate) item.created = bestDate;
+  if (projectRange) item.date_range = projectRange;
+  if (year) item.year = year;
+  // Tier-based routing:
+  //   work/     → Work page (item.personal unset)
+  //   practice/ → Practice page (item.personal = true)
+  //   else      → staging: shown on neither page (personal + staging = true)
+  // A project's explicit `personal` flag still overrides the tier default,
+  // so a practice/ project can opt into Work with `personal: false`.
+  const tier = filePath.split("/")[0];
+  const isStaging = tier !== "work" && tier !== "practice";
+  const personal = proj?.personal ?? tier !== "work";
+  if (personal) {
+    item.personal = true;
+    if (slug === "snapshot" && !item.tags.includes("snapshot")) {
+      item.tags.push("snapshot");
+    }
+  }
+  if (isStaging) item.staging = true;
+  // Essay companion: mark + hide from feed if this image lives in a folder
+  // that also holds an essay .md.
+  const folderRel = filePath.split("/").slice(0, -1).join("/");
+  const essayId = essayByFolder.get(folderRel);
+  if (essayId) {
+    item.essay_of = essayId;
+    item.hidden_from_feed = true;
+  }
+  // Project-level unlisted: hide all items from the Work/Practice index but
+  // keep /projects/[slug] reachable (e.g. for share links).
+  if (proj?.unlisted) item.hidden_from_feed = true;
+  // Featured: surfaces this item on the homepage hero feed. Authored as
+  // `lead_images: [filename, ...]` on the project's _project.md (already
+  // plumbed through projects.json by build-projects.mjs).
+  const leads = proj?.lead_images || [];
+  if (leads.some((f) => filePath.endsWith("/" + f) || filePath.endsWith(f))) {
+    item.featured = true;
+  }
+  return item;
+});
+
+// Generate video items from projects that have videos defined.
+// Year priority: vid.year > vid.date's 4-digit year > project-derived year > date_range start.
+const videoBuilders = [];
+for (const [slug, proj] of Object.entries(registry)) {
+  for (const vid of proj.videos || []) {
+    if (!vid.url) continue;
+    const id = mkId(slugify(vid.title || `${slug}-video`));
+
+    let vidYear = vid.year ? parseInt(String(vid.year), 10) : null;
+    if (!vidYear && vid.date) {
+      const m = String(vid.date).match(/\d{4}/);
+      if (m) vidYear = parseInt(m[0], 10);
+    }
+    if (!vidYear) vidYear = projectYears.get(slug) || null;
+    if (!vidYear && proj.date_range) {
+      const m = String(proj.date_range).match(/\d{4}/);
+      if (m) vidYear = parseInt(m[0], 10);
+    }
+    if (vidYear) {
+      projectYears.set(slug, Math.max(projectYears.get(slug) || 0, vidYear));
+    }
+
+    videoBuilders.push((async () => {
+      // video_mode: "background" (default) → no controls, autoplay-muted-loop.
+      // video_mode: "ui" → controls visible, autoplay muted, looped.
+      // URL params are rebuilt from the flag, not authored, so flipping the
+      // flag in _project.md is the single source of truth on rebuild.
+      // background=1 alone sometimes fails to autoplay when there are several
+      // iframes on a page (browser throttling); pair it with explicit
+      // autoplay/muted/loop/playsinline for reliability across browsers.
+      const baseUrl = vid.url.split("?")[0];
+      const params = vid.video_mode === "ui"
+        ? "autoplay=1&muted=1&loop=1&playsinline=1"
+        : "background=1&autoplay=1&muted=1&loop=1&playsinline=1";
+      const item = {
+        id,
+        type: "video",
+        video: `${baseUrl}?${params}`,
+        video_mode: vid.video_mode || "background",
+        title: vid.title || "",
+        // Mirror image items: fold the video entry's characteristics + subject
+        // into the flat `tags` union so the data-tags filter UI can match them
+        // (e.g. `essay` on a video essay → the Practice essay filter).
+        tags: [...new Set([
+          "video",
+          ...(Array.isArray(vid.characteristics) ? vid.characteristics : []),
+          ...(Array.isArray(vid.subject) ? vid.subject : []),
+        ])],
+        project_tags: projectTagsFor(proj),
+        medium: "video",
+        project: slug,
+      };
+      const dims = await probeVideoDims(baseUrl);
+      if (dims) {
+        item.width = dims.width;
+        item.height = dims.height;
+      }
+      if (vid.date) item.created = vid.date;
+      if (vidYear) item.year = vidYear;
+      if (proj.personal) item.personal = true;
+      if (proj.unlisted) item.hidden_from_feed = true;
+      if (vid.featured) item.featured = true;
+      return item;
+    })());
+  }
+}
+const cachedBefore = prevVideoDims.size;
+const videoItems = await Promise.all(videoBuilders);
+for (const v of videoItems) items.push(v);
+if (videoBuilders.length) {
+  const probed = prevVideoDims.size - cachedBefore;
+  const withDims = videoItems.filter(v => v.width && v.height).length;
+  console.log(`videos: ${videoItems.length} total, ${withDims} with dims (${probed} freshly probed)`);
+}
+
+// Build manifest project records from registry.
+const projects = {};
+for (const [slug, proj] of Object.entries(registry)) {
+  const hasItems = items.some((i) => i.project === slug);
+  if (!hasItems) continue;
+  projects[slug] = {
+    title: proj.name,
+    description: proj.description || "",
+    client: proj.client,
+    year: projectYears.get(slug) || null,
+    credits: proj.credits || [],
+    order: proj.order || [],
+    snapshot_only: proj.snapshot_only === true,
+  };
+}
+
+const manifest = { projects, items };
+fs.writeFileSync(manifestPath, JSON.stringify(manifest, null, 2) + "\n");
+console.log(
+  `wrote ${items.length} items across ${Object.keys(projects).length} projects →`,
+  path.relative(root, manifestPath),
+);
+console.log("projects:", Object.keys(projects));

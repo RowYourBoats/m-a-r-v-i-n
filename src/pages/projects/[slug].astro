@@ -1,0 +1,155 @@
+---
+import { Image } from "astro:assets";
+import Base from "@/layouts/Base.astro";
+import manifest from "@/data/manifest.json";
+import projectsData from "@/data/projects.json";
+
+const { slug } = Astro.params;
+const { projects, items: allManifestItems } = manifest as any;
+const project = projects[slug!];
+
+if (!project || project.snapshot_only) return Astro.redirect("/archive");
+
+// manifest.projects drops `image_folders`, so the tier (work / practice /
+// teaching) comes from projects.json. Practice projects send the visitor
+// back to /practice and light up the Practice nav item; everything else
+// belongs to the archive.
+const projectFull = (projectsData as any)[slug!];
+const tier = projectFull?.image_folders?.[0]?.split("/")[0] ?? "work";
+const isPractice = tier === "practice";
+const backHref = isPractice ? "/practice" : "/archive";
+const backLabel = isPractice ? "Back to practice" : "Back to archive";
+const navSection = isPractice ? "practice" : "archive";
+
+const items = allManifestItems.filter((i: any) => i.project === slug);
+
+// Apply explicit ordering from `order` field in _project.md frontmatter (surfaced
+// through projects.json by build-projects.mjs). Listed entries come first in
+// listed order; unlisted items fall through to alphabetical key.
+// Key per item: video items use their title; image items use the filename.
+const order: string[] = project.order || [];
+if (order.length || items.length > 1) {
+  const orderIndex = new Map(order.map((f: string, i: number) => [f, i]));
+  const orderKey = (i: any) => i.type === "video"
+    ? (i.title || "")
+    : decodeURIComponent((i.src || "").split("/").pop() || "");
+  items.sort((a: any, b: any) => {
+    const ak = orderKey(a);
+    const bk = orderKey(b);
+    const ai = orderIndex.get(ak);
+    const bi = orderIndex.get(bk);
+    if (ai !== undefined && bi !== undefined) return ai - bi;
+    if (ai !== undefined) return -1;
+    if (bi !== undefined) return 1;
+    return ak.localeCompare(bk);
+  });
+}
+
+// Tag frequency across items in this project → main tag + other tags
+const tagCounts = new Map<string, number>();
+for (const it of items) {
+  for (const t of (it.tags || [])) tagCounts.set(t, (tagCounts.get(t) || 0) + 1);
+}
+const sortedTags = [...tagCounts.entries()].sort((a, b) => b[1] - a[1]).map(([t]) => t);
+const mainTag = sortedTags[0] || null;
+
+// Project-page videos: strip `background=1` from the URL so Vimeo's player
+// chrome (play/pause, mute/unmute, fullscreen) appears. The grid embeds these
+// same items in background mode for the autoplay-muted-loop feel; here we
+// want them controllable. autoplay/muted/loop/playsinline are preserved.
+const toUIVideoUrl = (url: string) => {
+  if (!url) return url;
+  const [base, query = ""] = url.split("?");
+  const params = query.split("&").filter((p) => p && !p.startsWith("background="));
+  return params.length ? `${base}?${params.join("&")}` : base;
+};
+
+// 2 related items from OTHER projects sharing the main tag
+const allItems = (manifest as any).items as any[];
+let related: any[] = [];
+if (mainTag) {
+  related = allItems
+    .filter((i) => i.project !== slug && i.type === "image" && i.src && (i.tags || []).includes(mainTag))
+    .sort(() => Math.random() - 0.5)
+    .slice(0, 2);
+}
+---
+
+<Base title={`${project.title} — Marvin de Jong`} section={navSection}>
+  <a href={backHref} class="detail-project-link" style="display:inline-block;">&larr; {backLabel}</a>
+
+  <header class="project-header">
+    <h1>{project.title}</h1>
+    {project.description && (
+      <div class="description">
+        {project.description.split(/\n\s*\n/).map((para: string) => (
+          <p>{para.trim()}</p>
+        ))}
+      </div>
+    )}
+    {project.client && <p class="detail-meta">{project.client}{project.year ? ` — ${project.year}` : ""}</p>}
+  </header>
+
+  <div class="project-media">
+    {items.map((item) => (
+      <figure class="project-media-item" data-id={item.id}>
+        {item.type === "video" ? (
+          <div
+            class="project-media-frame"
+            style={item.width && item.height ? `aspect-ratio: ${item.width} / ${item.height}` : undefined}
+          >
+            <iframe src={toUIVideoUrl(item.video)} loading="lazy" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
+          </div>
+        ) : item.width && item.height ? (
+          <Image
+            src={item.src}
+            width={item.width}
+            height={item.height}
+            widths={[768, 1200, 1920, 2400]}
+            sizes="100vw"
+            alt={item.description || item.title}
+            loading="lazy"
+          />
+        ) : (
+          <img src={item.src} alt={item.description || item.title} loading="lazy" />
+        )}
+        {item.title && <figcaption class="label">{item.title}</figcaption>}
+      </figure>
+    ))}
+  </div>
+
+  {project.credits && project.credits.length > 0 && (
+    <div class="detail-credits">
+      {project.credits.map((c: any) => (
+        <div><span class="detail-credit-role">{c.role}</span> {c.name}</div>
+      ))}
+    </div>
+  )}
+
+  {mainTag && related.length > 0 && (
+    <section>
+      <p class="detail-meta">More {mainTag}</p>
+      <div class="detail-related">
+        {related.map((s) => (
+          <a href={`/projects/${s.project}`}>
+            {s.width && s.height ? (
+              <Image
+                src={s.src}
+                width={s.width}
+                height={s.height}
+                widths={[300, 600, 900]}
+                sizes="300px"
+                alt={s.description || s.title}
+                class="detail-related-thumb"
+                loading="lazy"
+              />
+            ) : (
+              <img src={s.src} alt={s.description || s.title} class="detail-related-thumb" loading="lazy" />
+            )}
+          </a>
+        ))}
+      </div>
+    </section>
+  )}
+
+</Base>

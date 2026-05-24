@@ -1,0 +1,110 @@
+---
+const next = Astro.url.searchParams.get("next") || "/";
+const isSamePath = next.startsWith("/") && !next.startsWith("//");
+const safeNext = isSamePath ? next : "/";
+---
+
+<!doctype html>
+<html lang="en" data-theme="light">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Marvin de Jong</title>
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="preload" href="/fonts/PPNeueMontreal-Regular.woff2"
+          as="font" type="font/woff2" crossorigin />
+    <style>
+      @font-face {
+        font-family: "PP Neue Montreal";
+        src: url("/fonts/PPNeueMontreal-Regular.woff2") format("woff2");
+        font-weight: 400;
+        font-display: swap;
+      }
+      :root {
+        --color-bg: #ffffff;
+        --color-fg: #000000;
+        --color-accent: #ed0f0a;
+        --font: "PP Neue Montreal", sans-serif;
+        --fs: clamp(14px, 1.5625vw, 1.3rem);
+      }
+      [data-theme="dark"] {
+        --color-bg: #151b27;
+        --color-fg: #ffffff;
+      }
+      *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+      html { height: 100%; }
+      body {
+        font-family: var(--font);
+        font-size: var(--fs);
+        color: var(--color-fg);
+        background: var(--color-bg);
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        -webkit-font-smoothing: antialiased;
+      }
+      .gate {
+        display: flex;
+        flex-direction: column;
+        gap: 2em;
+        text-align: center;
+        max-width: 24ch;
+      }
+      .gate h1 { font-weight: 400; font-size: inherit; }
+      .gate .sub { opacity: 0.5; }
+      .gate form {
+        display: flex;
+        flex-direction: column;
+        gap: 0.75em;
+      }
+      .gate input {
+        font: inherit;
+        color: var(--color-fg);
+        background: none;
+        border: none;
+        border-bottom: 1px solid var(--color-fg);
+        padding: 0.25em 0;
+        text-align: center;
+        outline: none;
+      }
+      .gate input::placeholder { color: var(--color-fg); opacity: 0.3; }
+      .gate button {
+        font: inherit;
+        color: var(--color-fg);
+        background: none;
+        border: none;
+        cursor: pointer;
+        padding: 0;
+      }
+      .gate button:hover { color: var(--color-accent); }
+      .gate .error { color: var(--color-accent); display: none; }
+    </style>
+  </head>
+  <body>
+    <div class="gate">
+      <div>
+        <h1>Marvin de Jong</h1>
+        <p class="sub">Password protected</p>
+      </div>
+      <form method="POST" action="/api/auth">
+        <input type="hidden" name="next" value={safeNext} />
+        <input type="password" name="password" placeholder="password"
+               autocomplete="off" required />
+        <button type="submit">Enter</button>
+      </form>
+      <p class="error" id="error">Wrong password</p>
+    </div>
+  </body>
+</html>
+
+<script is:inline>
+  (function () {
+    var stored = localStorage.getItem("theme");
+    if (stored) document.documentElement.setAttribute("data-theme", stored);
+    if (location.search.indexOf("error=1") !== -1) {
+      var el = document.getElementById("error");
+      if (el) el.style.display = "";
+    }
+  })();
+</script>

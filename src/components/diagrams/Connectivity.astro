@@ -1,0 +1,345 @@
+---
+// Side-by-side comparison: all-to-all vs. nearest-neighbor connectivity.
+// Two animated SVGs sharing the same theme tokens and lifecycle runtime.
+---
+
+<figure class="diagram diagram-connectivity">
+  <div class="diagram-pair">
+    <div class="diagram-cell">
+      <h3 class="diagram-subtitle">All-to-all connectivity</h3>
+      <svg id="connectivity-ata" viewBox="-300 -300 600 600" preserveAspectRatio="xMidYMid meet" aria-hidden="true"></svg>
+      <p class="diagram-caption">Two-qubit gates can be performed between any two qubits with no extra steps.</p>
+    </div>
+
+    <div class="diagram-cell">
+      <h3 class="diagram-subtitle">Nearest-neighbor connectivity</h3>
+      <svg id="connectivity-routing" viewBox="-280 -160 560 320" preserveAspectRatio="xMidYMid meet" aria-hidden="true"></svg>
+      <p class="diagram-caption">Two-qubit gates between distant qubits require many extra gates to move information around.</p>
+    </div>
+  </div>
+</figure>
+
+<style>
+  .diagram { margin: 0; }
+  .diagram-pair {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: var(--pad);
+    align-items: start;
+  }
+  .diagram-cell {
+    display: flex;
+    flex-direction: column;
+    gap: var(--pad-sm);
+  }
+  .diagram-subtitle {
+    font-size: var(--fs-secondary);
+    font-weight: 400;
+  }
+  .diagram-caption {
+    font-size: var(--fs-secondary);
+    line-height: 1.3;
+    color: var(--color-fg);
+  }
+  .diagram svg {
+    display: block;
+    width: 100%;
+    height: auto;
+  }
+  .diagram :global(.edge)        { stroke: var(--diagram-edge); stroke-width: 1; fill: none; }
+  .diagram :global(.edge-active) { stroke: var(--diagram-edge-active); stroke-width: 2.5; fill: none; }
+  .diagram :global(.node)        { fill: var(--diagram-node); }
+  .diagram :global(.node-mid)    { fill: var(--diagram-node-mid); }
+  .diagram :global(.node-active) { fill: var(--diagram-node-active); }
+</style>
+
+<script>
+  import { attachLifecycle } from "./_runtime";
+
+  const NS = "http://www.w3.org/2000/svg";
+
+  function buildAllToAll(svg: SVGSVGElement) {
+    const N = 13;
+    const RADIUS = 240;
+    const NODE_R = 10;
+    const HOLD_MS = 500;
+    const FADE_MS = 80;
+
+    const nodes = Array.from({ length: N }, (_, i) => {
+      const a = (i / N) * Math.PI * 2 - Math.PI / 2;
+      return { x: Math.cos(a) * RADIUS, y: Math.sin(a) * RADIUS };
+    });
+
+    const staticLayer = document.createElementNS(NS, "g");
+    const activeLayer = document.createElementNS(NS, "g");
+    const nodeLayer = document.createElementNS(NS, "g");
+    svg.append(staticLayer, activeLayer, nodeLayer);
+
+    for (let i = 0; i < N; i++) {
+      for (let j = i + 1; j < N; j++) {
+        const l = document.createElementNS(NS, "line");
+        l.setAttribute("x1", String(nodes[i].x));
+        l.setAttribute("y1", String(nodes[i].y));
+        l.setAttribute("x2", String(nodes[j].x));
+        l.setAttribute("y2", String(nodes[j].y));
+        l.setAttribute("class", "edge");
+        staticLayer.appendChild(l);
+      }
+    }
+
+    const activeLine = document.createElementNS(NS, "line");
+    activeLine.setAttribute("class", "edge-active");
+    activeLine.style.opacity = "0";
+    activeLine.style.transition = `opacity ${FADE_MS}ms linear`;
+    activeLayer.appendChild(activeLine);
+
+    const nodeEls = nodes.map(({ x, y }) => {
+      const c = document.createElementNS(NS, "circle");
+      c.setAttribute("cx", String(x));
+      c.setAttribute("cy", String(y));
+      c.setAttribute("r", String(NODE_R));
+      c.setAttribute("class", "node");
+      c.style.transition = `fill ${FADE_MS}ms linear`;
+      nodeLayer.appendChild(c);
+      return c;
+    });
+
+    let prev: [number, number] | null = null;
+    let running = false;
+    let timer: ReturnType<typeof setTimeout> | null = null;
+
+    function pickPair(): [number, number] {
+      let a: number, b: number;
+      do {
+        a = Math.floor(Math.random() * N);
+        b = Math.floor(Math.random() * N);
+      } while (
+        a === b ||
+        (prev && ((a === prev[0] && b === prev[1]) || (a === prev[1] && b === prev[0])))
+      );
+      return [a, b];
+    }
+
+    function flash() {
+      if (!running) return;
+      const [a, b] = pickPair();
+      prev = [a, b];
+
+      activeLine.setAttribute("x1", String(nodes[a].x));
+      activeLine.setAttribute("y1", String(nodes[a].y));
+      activeLine.setAttribute("x2", String(nodes[b].x));
+      activeLine.setAttribute("y2", String(nodes[b].y));
+      activeLine.style.opacity = "1";
+      nodeEls[a].setAttribute("class", "node-active");
+      nodeEls[b].setAttribute("class", "node-active");
+
+      timer = setTimeout(() => {
+        if (!running) return;
+        activeLine.style.opacity = "0";
+        nodeEls[a].setAttribute("class", "node");
+        nodeEls[b].setAttribute("class", "node");
+        timer = setTimeout(flash, FADE_MS);
+      }, HOLD_MS);
+    }
+
+    return {
+      start() {
+        if (running) return;
+        running = true;
+        flash();
+      },
+      stop() {
+        running = false;
+        if (timer) {
+          clearTimeout(timer);
+          timer = null;
+        }
+        activeLine.style.opacity = "0";
+        nodeEls.forEach((e) => e.setAttribute("class", "node"));
+      },
+    };
+  }
+
+  function buildRouting(svg: SVGSVGElement) {
+    const COLS = 7;
+    const ROWS = 4;
+    const SPACING = 80;
+    const NODE_R = 10;
+    const HOP_MS = 320;
+    const HOLD_MS = 700;
+    const FADE_MS = 220;
+    const MIN_HOPS = 4;
+
+    type Node = { x: number; y: number; row: number; col: number };
+    const nodes: Node[] = [];
+    for (let r = 0; r < ROWS; r++) {
+      for (let c = 0; c < COLS; c++) {
+        nodes.push({
+          x: c * SPACING - ((COLS - 1) * SPACING) / 2,
+          y: r * SPACING - ((ROWS - 1) * SPACING) / 2,
+          row: r,
+          col: c,
+        });
+      }
+    }
+
+    const adj: number[][] = nodes.map(() => []);
+    const staticEdges: Array<[number, number]> = [];
+    for (let i = 0; i < nodes.length; i++) {
+      if (nodes[i].col < COLS - 1) {
+        const j = i + 1;
+        staticEdges.push([i, j]);
+        adj[i].push(j);
+        adj[j].push(i);
+      }
+      if (nodes[i].row < ROWS - 1) {
+        const j = i + COLS;
+        staticEdges.push([i, j]);
+        adj[i].push(j);
+        adj[j].push(i);
+      }
+    }
+
+    function shortestPath(src: number, dst: number): number[] {
+      const prev = new Array(nodes.length).fill(-1);
+      const seen = new Array(nodes.length).fill(false);
+      const q = [src];
+      seen[src] = true;
+      while (q.length) {
+        const u = q.shift()!;
+        if (u === dst) break;
+        for (const v of adj[u]) {
+          if (!seen[v]) {
+            seen[v] = true;
+            prev[v] = u;
+            q.push(v);
+          }
+        }
+      }
+      const path: number[] = [];
+      for (let cur = dst; cur !== -1; cur = prev[cur]) path.push(cur);
+      return path.reverse();
+    }
+    function manhattan(a: number, b: number) {
+      return Math.abs(nodes[a].col - nodes[b].col) + Math.abs(nodes[a].row - nodes[b].row);
+    }
+
+    const staticLayer = document.createElementNS(NS, "g");
+    const activeLayer = document.createElementNS(NS, "g");
+    const nodeLayer = document.createElementNS(NS, "g");
+    svg.append(staticLayer, activeLayer, nodeLayer);
+
+    staticEdges.forEach(([a, b]) => {
+      const l = document.createElementNS(NS, "line");
+      l.setAttribute("x1", String(nodes[a].x));
+      l.setAttribute("y1", String(nodes[a].y));
+      l.setAttribute("x2", String(nodes[b].x));
+      l.setAttribute("y2", String(nodes[b].y));
+      l.setAttribute("class", "edge");
+      staticLayer.appendChild(l);
+    });
+
+    const nodeEls = nodes.map(({ x, y }) => {
+      const c = document.createElementNS(NS, "circle");
+      c.setAttribute("cx", String(x));
+      c.setAttribute("cy", String(y));
+      c.setAttribute("r", String(NODE_R));
+      c.setAttribute("class", "node");
+      c.style.transition = `fill ${FADE_MS}ms linear`;
+      nodeLayer.appendChild(c);
+      return c;
+    });
+
+    let running = false;
+    let generation = 0;
+    let liveLines: SVGLineElement[] = [];
+
+    const sleep = (ms: number) => new Promise((r) => setTimeout(r, ms));
+
+    async function loop(myGen: number) {
+      while (running && myGen === generation) {
+        let src: number, dst: number;
+        do {
+          src = Math.floor(Math.random() * nodes.length);
+          dst = Math.floor(Math.random() * nodes.length);
+        } while (src === dst || manhattan(src, dst) < MIN_HOPS);
+
+        const path = shortestPath(src, dst);
+        nodeEls[src].setAttribute("class", "node-active");
+        nodeEls[dst].setAttribute("class", "node-active");
+
+        const lines: SVGLineElement[] = [];
+        for (let i = 0; i < path.length - 1; i++) {
+          const a = nodes[path[i]];
+          const b = nodes[path[i + 1]];
+          const line = document.createElementNS(NS, "line");
+          line.setAttribute("x1", String(a.x));
+          line.setAttribute("y1", String(a.y));
+          line.setAttribute("x2", String(b.x));
+          line.setAttribute("y2", String(b.y));
+          line.setAttribute("class", "edge-active");
+          const len = Math.hypot(b.x - a.x, b.y - a.y);
+          line.style.strokeDasharray = String(len);
+          line.style.strokeDashoffset = String(len);
+          line.style.transition = `stroke-dashoffset ${HOP_MS}ms linear`;
+          activeLayer.appendChild(line);
+          lines.push(line);
+        }
+        liveLines = lines;
+
+        for (let i = 0; i < lines.length; i++) {
+          if (!running || myGen !== generation) break;
+          lines[i].getBoundingClientRect();
+          lines[i].style.strokeDashoffset = "0";
+          await sleep(HOP_MS);
+          if (i < lines.length - 1) {
+            nodeEls[path[i + 1]].setAttribute("class", "node-mid");
+          }
+        }
+
+        if (!running || myGen !== generation) break;
+        await sleep(HOLD_MS);
+
+        if (!running || myGen !== generation) break;
+        lines.forEach((l) => {
+          l.style.transition = `opacity ${FADE_MS}ms linear`;
+          l.style.opacity = "0";
+        });
+        path.forEach((i) => nodeEls[i].setAttribute("class", "node"));
+        await sleep(FADE_MS);
+        lines.forEach((l) => l.remove());
+        liveLines = [];
+      }
+
+      // cleanup if stop() interrupted mid-iteration
+      liveLines.forEach((l) => l.remove());
+      liveLines = [];
+      nodeEls.forEach((e) => e.setAttribute("class", "node"));
+    }
+
+    return {
+      start() {
+        if (running) return;
+        running = true;
+        const myGen = ++generation;
+        loop(myGen);
+      },
+      stop() {
+        running = false;
+        generation++;
+      },
+    };
+  }
+
+  const ata = document.getElementById("connectivity-ata") as SVGSVGElement | null;
+  const routing = document.getElementById("connectivity-routing") as SVGSVGElement | null;
+
+  if (ata) {
+    const ctrl = buildAllToAll(ata);
+    attachLifecycle(ata, ctrl.start, ctrl.stop);
+  }
+  if (routing) {
+    const ctrl = buildRouting(routing);
+    attachLifecycle(routing, ctrl.start, ctrl.stop);
+  }
+</script>

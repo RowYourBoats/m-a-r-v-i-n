@@ -1,0 +1,74 @@
+---
+import { Image } from "astro:assets";
+import Base from "@/layouts/Base.astro";
+import manifest from "@/data/manifest.json";
+import { getEntry, render } from "astro:content";
+
+const intro = await getEntry("pages", "index");
+const IntroContent = intro ? (await render(intro)).Content : null;
+
+const { items } = manifest;
+
+const heroItems = items
+  .filter((item: any) => item.featured && !item.personal && !item.staging && !item.hidden_from_feed)
+  .sort((a: any, b: any) =>
+    (b.year || 0) - (a.year || 0) ||
+    (a.project || "").localeCompare(b.project || "")
+  );
+---
+
+<Base title="Work — Marvin de Jong">
+  {IntroContent && (
+    <div class="page-intro prose">
+      <IntroContent />
+    </div>
+  )}
+
+  <div class="hero-feed">
+    {heroItems.map((item: any, i: number) => {
+      const proj = (manifest as any).projects[item.project];
+      const linked = proj && !proj.snapshot_only;
+      const Element: any = linked ? "a" : "div";
+      return (
+      <Element class="hero-item" href={linked ? `/projects/${item.project}` : undefined}>
+        {item.type === "video" ? (
+          <div
+            class="hero-media"
+            style={item.width && item.height ? `aspect-ratio: ${item.width} / ${item.height}` : undefined}
+          >
+            <iframe
+              src={item.video}
+              loading="lazy"
+              allow="autoplay; fullscreen; picture-in-picture"
+              allowfullscreen
+            ></iframe>
+          </div>
+        ) : item.width && item.height ? (
+          <Image
+            src={item.src}
+            width={item.width}
+            height={item.height}
+            widths={[768, 1200, 1920, 2400]}
+            sizes="100vw"
+            alt={item.description || item.title}
+            loading={i < 2 ? "eager" : "lazy"}
+            decoding="async"
+            fetchpriority={i === 0 ? "high" : undefined}
+            class="hero-media"
+          />
+        ) : (
+          <img
+            src={item.src}
+            alt={item.description || item.title}
+            loading={i < 2 ? "eager" : "lazy"}
+            decoding="async"
+            fetchpriority={i === 0 ? "high" : undefined}
+            class="hero-media"
+          />
+        )}
+        {item.title && <p class="label">{item.title}</p>}
+      </Element>
+      );
+    })}
+  </div>
+</Base>

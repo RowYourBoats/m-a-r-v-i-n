@@ -1,0 +1,191 @@
+---
+import { Image } from "astro:assets";
+import Base from "@/layouts/Base.astro";
+import PortfolioPageScript from "@/components/PortfolioPageScript.astro";
+import manifest from "@/data/manifest.json";
+import schema from "@/data/schema.json";
+import { getEntry, render } from "astro:content";
+
+const intro = await getEntry("pages", "archive");
+const { Content: IntroContent } = await render(intro!);
+
+const { items, projects } = manifest;
+
+// Only show non-personal items on Work page, newest first.
+// Within a year, group by project so each project's videos sit adjacent to
+// its images (videos are appended to the manifest at the end, so without a
+// project-level secondary key they'd dump at the tail of every year group).
+const workItems = items.filter((item) => !item.personal && !item.hidden_from_feed)
+  .sort((a, b) =>
+    (b.year || 0) - (a.year || 0) ||
+    (a.project || "").localeCompare(b.project || "")
+  );
+
+// Curated Work-page filters per the filter architecture directive.
+// Each entry is { label, matches[] }: `label` is the button text, `matches` is
+// the set of underlying data-tags values that count as a hit (e.g. the
+// "identity" button matches the `identity-system` project_type).
+const workFilters = schema.work_filters || { pinned: [], expanded: [] };
+const pinnedFilters = workFilters.pinned;
+const expandedFilters = workFilters.expanded;
+
+// SSR-seed `grid-row: span N` so masonry is roughly distributed before the
+// JS layout pass in Base.astro runs. Without it, every grid item starts as
+// an 8px-tall cell, so hundreds of items appear "near the viewport" at first
+// paint and the browser kicks off fetches for nearly all of them at once,
+// defeating loading="lazy". JS still refines the spans on DOMContentLoaded.
+const ROW_H = 8;
+const COL_W_REF = 600;
+const LABEL_H = 32;
+function seedSpan(item: { width?: number; height?: number }) {
+  if (!item.width || !item.height) return undefined;
+  const imgH = (COL_W_REF * item.height) / item.width;
+  return Math.ceil((imgH + LABEL_H) / ROW_H);
+}
+---
+
+<Base title="Archive — Marvin de Jong">
+  <div class="page-intro prose">
+    <IntroContent />
+  </div>
+
+  <div class="filter-bar" id="filters">
+    <button class="filter-trigger" id="filter-trigger">Filter</button>
+    <button data-filter="all" aria-pressed="true">All</button>
+    {pinnedFilters.map((f) => (
+      <button data-tag={f.label} data-matches={f.matches.join(",")} aria-pressed="false">{f.label}</button>
+    ))}
+    {expandedFilters.map((f) => (
+      <button data-tag={f.label} data-matches={f.matches.join(",")} aria-pressed="false" class="filter-extra">{f.label}</button>
+    ))}
+    {expandedFilters.length > 0 && (
+      <button class="filter-more" id="filter-more">+</button>
+    )}
+  </div>
+
+  <div class="grid" id="grid">
+    {workItems.map((item, i) => {
+      // Items routed to FALLBACK_SLUG ("snapshot") or to a snapshot_only project
+      // have no project page (projects/[slug] redirects them away). Render them
+      // as a plain <div> so the card isn't a dead link.
+      const proj = (projects as any)[item.project];
+      const linked = proj && !proj.snapshot_only;
+      const Element: any = linked ? "a" : "div";
+      return (
+      <Element
+        class="grid-item"
+        href={linked ? `/projects/${item.project}` : undefined}
+        data-tags={[...(item.tags || []), ...(item.project_tags || [])].join(",")}
+        style={seedSpan(item) ? `grid-row-end: span ${seedSpan(item)}` : undefined}
+      >
+        {item.type === "video" ? (
+          <div
+            class="thumb-video"
+            style={item.width && item.height ? `aspect-ratio: ${item.width} / ${item.height}` : undefined}
+          >
+            <iframe
+              src={item.video}
+              loading="lazy"
+              allow="autoplay; fullscreen; picture-in-picture"
+              allowfullscreen
+            ></iframe>
+          </div>
+        ) : item.width && item.height ? (
+          <Image
+            src={item.src}
+            width={item.width}
+            height={item.height}
+            widths={[480, 768, 1200, 1800]}
+            sizes="(max-width: 680px) 100vw, 50vw"
+            alt={item.description || item.title}
+            loading={i < 8 ? "eager" : "lazy"}
+            decoding="async"
+            fetchpriority={i === 0 ? "high" : undefined}
+            class="thumb thumb--portrait"
+          />
+        ) : (
+          <img
+            src={item.src}
+            alt={item.description || item.title}
+            loading={i < 8 ? "eager" : "lazy"}
+            decoding="async"
+            fetchpriority={i === 0 ? "high" : undefined}
+            class="thumb thumb--portrait"
+          />
+        )}
+        <p class="label">{item.title}</p>
+      </Element>
+      );
+    })}
+  </div>
+
+</Base>
+
+<PortfolioPageScript />
+<script is:inline>
+  // Filter behavior for the Work archive: chip clicks + ?tag=X deep linking
+  // + localStorage restore. Grid items are <a> elements — click navigates
+  // directly to /projects/[slug], no inline detail.
+  (function () {
+    var filters = document.getElementById("filters");
+    var trigger = document.getElementById("filter-trigger");
+    var more = document.getElementById("filter-more");
+    var grid = document.getElementById("grid");
+
+    window.__portfolio.initFilterTrigger();
+
+    // activeMatches = the underlying data-tags values that count as hits for
+    // the currently selected filter button (OR semantics). null = "show all".
+    var activeMatches = null;
+
+    filters?.addEventListener("click", function (e) {
+      var btn = e.target;
+      if (btn.tagName !== "BUTTON" || btn === trigger || btn === more) return;
+      filters.querySelectorAll("button").forEach(function (b) {
+        b.setAttribute("aria-pressed", "false");
+      });
+      btn.setAttribute("aria-pressed", "true");
+      var filterAll = btn.dataset.filter === "all";
+      if (filterAll) {
+        activeMatches = null;
+        trigger.textContent = "Filter";
+      } else {
+        var raw = btn.dataset.matches || btn.dataset.tag || "";
+        activeMatches = raw.split(",").filter(Boolean);
+        trigger.textContent = btn.textContent;
+      }
+      filters.classList.remove("filter-open");
+      window.__portfolio.saveFilter("filter:archive", filterAll ? "all" : btn.dataset.tag);
+      applyFilter();
+    });
+
+    function applyFilter() {
+      grid.querySelectorAll(".grid-item").forEach(function (el) {
+        var tags = (el.dataset.tags || "").split(",");
+        var show = !activeMatches || activeMatches.some(function (m) { return tags.includes(m); });
+        el.style.display = show ? "" : "none";
+      });
+      window.relayoutMasonry && window.relayoutMasonry();
+    }
+
+    // ?tag=X deep linking: first try a curated filter button (e.g. ?tag=identity
+    // clicks the `identity` button). If no curated button matches the label,
+    // fall back to a synthetic single-tag filter so legacy links still work.
+    var urlTag = new URLSearchParams(window.location.search).get("tag");
+    if (urlTag) {
+      var initBtn = filters?.querySelector('button[data-tag="' + urlTag + '"]');
+      if (initBtn) {
+        initBtn.click();
+      } else {
+        activeMatches = [urlTag];
+        trigger.textContent = urlTag;
+        applyFilter();
+      }
+    } else {
+      // No deep link → restore the last-used filter from localStorage.
+      var stored = window.__portfolio.loadFilter("filter:archive");
+      var storedBtn = stored && filters?.querySelector('button[data-tag="' + stored + '"]');
+      if (storedBtn) storedBtn.click();
+    }
+  })();
+</script>
