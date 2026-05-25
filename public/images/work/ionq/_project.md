@@ -66,20 +66,36 @@ projects:
         video_mode: background
         url: >-
           https://player.vimeo.com/video/1188244621?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479&amp;autoplay=1&amp;muted=1&amp;loop=1
+        characteristics:
+          - 3d
+        subject:
+          - product-render
       - title: IonQ Ion Trap Technology Visual
         featured: false
         video_mode: background
         url: >-
           https://player.vimeo.com/video/925961564?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479&amp;autoplay=1&amp;muted=1&amp;loop=1
+        characteristics:
+          - 3d
+        subject:
+          - product-render
       - title: IonQ Logo Animation
         url: >-
           https://player.vimeo.com/video/1009063662?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479&amp;autoplay=1&amp;muted=1&amp;loop=1
+        characteristics:
+          - motion
+        subject:
+          - logo
       - title: IonQ Text Animation Treatment
         url: >-
           https://player.vimeo.com/video/1188244624?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479&amp;autoplay=1&amp;muted=1&amp;loop=1
+        characteristics:
+          - motion
       - title: Guidelines Teaser
         url: >-
           https://player.vimeo.com/video/925210328?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479&amp;autoplay=1&amp;muted=1&amp;loop=1
+        subject:
+          - identity
     credits:
       - role: Creative Director
         name: Marvin de Jong
@@ -89,6 +105,7 @@ projects:
     description: The full brand toolkit, built from a single logo-and-typeface sheet into a comprehensive guidelines document — palette pared to orange to differentiate from IBM Quantum, type simplified to one face and one weight, decisions documented incrementally as the design work demanded them.
     image_tags:
       - data-visualization
+      - deck
       - illustration
       - photography
     credits:
@@ -181,7 +198,9 @@ projects:
     name: Zoom Backgrounds
     description: Zoom backgrounds for the IonQ team — photographic compositions extending the brand into everyday remote-work surfaces.
     image_tags:
+      - 3d
       - photography
+      - product-render
     credits:
       - role: Creative Director
         name: Marvin de Jong

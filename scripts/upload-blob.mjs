@@ -21,13 +21,35 @@ if (!token) {
   process.exit(1);
 }
 
+// Adopt-existing pass: build pathname → url map from the live blob store, so
+// items whose manifest src lost its URL (build-data fragility) can re-adopt
+// the existing blob instead of re-uploading or failing on "already exists".
+const existing = new Map();
+let cursor;
+do {
+  const page = await list({ token, cursor, limit: 1000 });
+  for (const b of page.blobs) existing.set(b.pathname, b.url);
+  cursor = page.cursor;
+} while (cursor);
+console.log(`indexed ${existing.size} existing blobs`);
+
 let uploaded = 0;
+let adopted = 0;
 let skipped = 0;
 let failed = 0;
 
 for (const item of manifest.items) {
   if (!item.src || item.src.startsWith("https://")) {
     skipped++;
+    continue;
+  }
+
+  const blobPath = item.src.replace(/^\/images\//, "images/");
+
+  const existingUrl = existing.get(blobPath);
+  if (existingUrl) {
+    item.src = existingUrl;
+    adopted++;
     continue;
   }
 
@@ -39,7 +61,6 @@ for (const item of manifest.items) {
   }
 
   const file = fs.readFileSync(localPath);
-  const blobPath = item.src.replace(/^\/images\//, "images/");
 
   try {
     const blob = await put(blobPath, file, {
@@ -57,4 +78,4 @@ for (const item of manifest.items) {
 }
 
 fs.writeFileSync(manifestPath, JSON.stringify(manifest, null, 2) + "\n");
-console.log(`done — uploaded: ${uploaded}, skipped: ${skipped}, failed: ${failed}`);
+console.log(`done — uploaded: ${uploaded}, adopted: ${adopted}, skipped: ${skipped}, failed: ${failed}`);

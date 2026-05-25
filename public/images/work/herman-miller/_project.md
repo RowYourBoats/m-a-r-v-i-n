@@ -152,8 +152,7 @@ projects:
         name: Emily C M Anderson
   herman-miller-group:
     name: Herman Miller Group
-    description: Asset alignment across the Herman Miller Group — establishing shared production standards across Herman Miller, Geiger, Nemschoff, and other subsidiaries: icons constructed to the same spec, photography white-balanced consistently, planning drawings following common conventions.
-    description: Identifying 
+    description: "Asset alignment across the Herman Miller Group — establishing shared production standards across Herman Miller, Geiger, Nemschoff, and other subsidiaries: icons constructed to the same spec, photography white-balanced consistently, planning drawings following common conventions."
     image_tags:
       - identity
       - logo

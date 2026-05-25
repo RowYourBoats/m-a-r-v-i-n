@@ -197,7 +197,7 @@
     "snapshot_only": false,
     "chronological": false,
     "unlisted": false,
-    "description": "Graphics for Herman Miller's All Together Now exhibition at the Salone del Mobile.",
+    "description": "Exhibition graphics for **All Together Now** at Salone del Mobile. Herman Miller's Milan show bringing all subsidiaries under one roof for the first time. Posters, flyer, and merch under Emily C.M. Anderson.",
     "credits": [
       {
         "role": "Brand Design",
@@ -247,7 +247,7 @@
     "snapshot_only": false,
     "chronological": false,
     "unlisted": false,
-    "description": "A revamp of Herman Miller's approach to data visualization grounded in the company's sustainability reporting efforts, the Better World Report.",
+    "description": "A redesign of Herman Miller's annual sustainability publication, restructuring its data visualizations so y-axis direction reads consistently (up means good), chart types match narrative intent, and inflection points carry context — not just coordinates.",
     "credits": [
       {
         "role": "Brand Design",
@@ -296,7 +296,7 @@
     "snapshot_only": false,
     "chronological": false,
     "unlisted": false,
-    "description": "",
+    "description": "Herman Miller brand guidelines documentation, with photography standards governing how product and lifestyle imagery sits alongside the wider system.",
     "credits": [
       {
         "role": "Design",
@@ -344,7 +344,7 @@
     "snapshot_only": false,
     "chronological": false,
     "unlisted": false,
-    "description": "",
+    "description": "Picnic — Herman Miller's design system, organized into front-end, product, and brand pillars. Co-owned the brand pillar with Emily C.M. Anderson, consolidating fragmented PDF guidelines and standardizing asset production across Herman Miller, Geiger, Nemschoff, and the wider group.",
     "credits": [
       {
         "role": "Design",
@@ -390,7 +390,7 @@
     "snapshot_only": false,
     "chronological": false,
     "unlisted": false,
-    "description": "A holiday card celebrating Gieger (part of Herman Miller Group) value of collaboration. Illustrated by Charlotte Trounce.",
+    "description": "A Geiger holiday card on the theme of collaboration, illustrated by Charlotte Trounce — produced for Herman Miller's executive office furniture subsidiary.",
     "credits": [
       {
         "role": "Brand Design",
@@ -408,9 +408,9 @@
     "videos": [],
     "umbrella": "herman-miller"
   },
-  "herman-miller-herman-miller-cares": {
+  "herman-miller-cares": {
     "name": "Herman Miller Cares",
-    "slug": "herman-miller-herman-miller-cares",
+    "slug": "herman-miller-cares",
     "client": "Herman Miller",
     "aliases": [
       "Herman Miller",
@@ -447,7 +447,7 @@
     "snapshot_only": false,
     "chronological": false,
     "unlisted": false,
-    "description": "",
+    "description": "Holiday card and campaign for Herman Miller's Childhood Literacy initiative — illustration by Edward Ubiera, photography by Daniel Dorsa with Herman Miller furniture brought into the set. The photos later promoted Ubiera's illustration workshop at the flagship store.",
     "credits": [
       {
         "role": "Brand Designer",
@@ -507,7 +507,7 @@
     "snapshot_only": false,
     "chronological": false,
     "unlisted": false,
-    "description": "",
+    "description": "Exhibition graphics for the NYC flagship show celebrating Herman Miller's partnership with product design duo Industrial Facility — illustrations of HM products cut in matte vinyl and applied to acrylic, where the material contrast gave the outlines a sculptural dimension.",
     "credits": [
       {
         "role": "Brand Design",
@@ -557,7 +557,7 @@
     "snapshot_only": false,
     "chronological": false,
     "unlisted": false,
-    "description": "",
+    "description": "Employee merchandise for Herman Miller — sweaters, hats, water bottles — balancing the robustness needed for a manufacturing workforce with the company's design legacy.",
     "credits": [
       {
         "role": "Brand Design",
@@ -598,6 +598,7 @@
     "role": null,
     "scale": null,
     "image_tags": [
+      "illustration",
       "identity",
       "product-marking"
     ],
@@ -607,7 +608,56 @@
     "snapshot_only": false,
     "chronological": false,
     "unlisted": false,
-    "description": "",
+    "description": "Product marking guidelines for Herman Miller and Geiger, rooted in materiality — marks that belong to the surface, embossed, engraved, or molded into the material. Including a special-edition Eames Eucalyptus table — one of the few pieces to carry both Vitra and Herman Miller branding.",
+    "credits": [
+      {
+        "role": "Brand Design",
+        "name": "Marvin de Jong"
+      },
+      {
+        "role": "Brand Creative Director",
+        "name": "Emily C M Anderson"
+      }
+    ],
+    "videos": [],
+    "umbrella": "herman-miller"
+  },
+  "herman-miller-hot-prospect": {
+    "name": "Hot Prospect",
+    "slug": "herman-miller-hot-prospect",
+    "client": "Herman Miller",
+    "aliases": [
+      "Herman Miller",
+      "HermanMiller"
+    ],
+    "date_range": "2017-2019",
+    "roles": [
+      "Global Brand Designer"
+    ],
+    "category": "experience",
+    "image_folders": [
+      "work/herman-miller/hot-prospect"
+    ],
+    "market": "b2b2c",
+    "project_type": [
+      "campaign",
+      "publication-design",
+      "exhibition"
+    ],
+    "sector": "furniture",
+    "characteristic": [],
+    "role": null,
+    "scale": null,
+    "image_tags": [
+      "editorial"
+    ],
+    "lead_images": [],
+    "order": [],
+    "personal": false,
+    "snapshot_only": false,
+    "chronological": false,
+    "unlisted": false,
+    "description": "Art direction for a WHY magazine article on Richard Holbrook's workplace research, paired with illustrations commissioned from Tanawat Sakdawisarak — chosen for his whimsical, slightly surreal hand.",
     "credits": [
       {
         "role": "Brand Design",
@@ -658,7 +708,7 @@
     "snapshot_only": false,
     "chronological": false,
     "unlisted": false,
-    "description": "",
+    "description": "Herman Miller presented furniture by designer Ward Bennett paired with objects, quotations, and archival photographs.",
     "credits": [
       {
         "role": "Brand Design",
@@ -672,9 +722,9 @@
     "videos": [],
     "umbrella": "herman-miller"
   },
-  "herman-miller-herman-miller-group": {
+  "herman-miller-group": {
     "name": "Herman Miller Group",
-    "slug": "herman-miller-herman-miller-group",
+    "slug": "herman-miller-group",
     "client": "Herman Miller",
     "aliases": [
       "Herman Miller",
@@ -708,7 +758,7 @@
     "snapshot_only": false,
     "chronological": false,
     "unlisted": false,
-    "description": "",
+    "description": "Asset alignment across the Herman Miller Group — establishing shared production standards across Herman Miller, Geiger, Nemschoff, and other subsidiaries: icons constructed to the same spec, photography white-balanced consistently, planning drawings following common conventions.",
     "credits": [
       {
         "role": "Brand Design",
@@ -776,7 +826,7 @@
     "snapshot_only": false,
     "chronological": false,
     "unlisted": false,
-    "description": "IonQ is a leader in quantum computing — a field that, by its nature, resists easy depiction. The brand challenge was to make something abstract feel material: to give audiences a sense that what they were engaging with is solid, present, and real. \n\nThe visual system is organized around three pillars — Scientific, Optimistic, Confident — translated into a language built to communicate concepts and open conversation rather than decorate them. Scientific reads as evidence, curiosity, and rigor. Optimistic as the belief that this work matters and that the future it points toward is worth describing carefully. Confident as the willingness to make clear decisions and stand behind them.\n\nThe guidelines codify how IonQ shows up across surfaces, anchoring the audience inside a field that can otherwise feel elusive, and giving the company a coherent, durable voice as the category continues to form.\"\n",
+    "description": "IonQ is a leader in quantum computing — a field that, by its nature, resists easy depiction. The brand challenge was to make something abstract feel material: to give audiences a sense that what they were engaging with is solid, present, and real. \nThe visual system is organized around three pillars — Scientific, Optimistic, Confident — translated into a language built to communicate concepts and open conversation rather than decorate them. Scientific reads as evidence, curiosity, and rigor. Optimistic as the belief that this work matters and that the future it points toward is worth describing carefully. Confident as the willingness to make clear decisions and stand behind them.\nThe guidelines codify how IonQ shows up across surfaces, anchoring the audience inside a field that can otherwise feel elusive, and giving the company a coherent, durable voice as the category continues to form.\n",
     "credits": [
       {
         "role": "Creative Director",
@@ -788,25 +838,49 @@
         "title": "IonQ Product Family",
         "featured": true,
         "video_mode": "background",
-        "url": "https://player.vimeo.com/video/1188244621?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479&amp;autoplay=1&amp;muted=1&amp;loop=1"
+        "url": "https://player.vimeo.com/video/1188244621?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479&amp;autoplay=1&amp;muted=1&amp;loop=1",
+        "characteristics": [
+          "3d"
+        ],
+        "subject": [
+          "product-render"
+        ]
       },
       {
         "title": "IonQ Ion Trap Technology Visual",
         "featured": false,
         "video_mode": "background",
-        "url": "https://player.vimeo.com/video/925961564?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479&amp;autoplay=1&amp;muted=1&amp;loop=1"
+        "url": "https://player.vimeo.com/video/925961564?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479&amp;autoplay=1&amp;muted=1&amp;loop=1",
+        "characteristics": [
+          "3d"
+        ],
+        "subject": [
+          "product-render"
+        ]
       },
       {
         "title": "IonQ Logo Animation",
-        "url": "https://player.vimeo.com/video/1009063662?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479&amp;autoplay=1&amp;muted=1&amp;loop=1"
+        "url": "https://player.vimeo.com/video/1009063662?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479&amp;autoplay=1&amp;muted=1&amp;loop=1",
+        "characteristics": [
+          "motion"
+        ],
+        "subject": [
+          "logo"
+        ]
       },
       {
         "title": "IonQ Text Animation Treatment",
-        "url": "https://player.vimeo.com/video/1188244624?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479&amp;autoplay=1&amp;muted=1&amp;loop=1"
+        "url": "https://player.vimeo.com/video/1188244624?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479&amp;autoplay=1&amp;muted=1&amp;loop=1",
+        "characteristics": [
+          "motion"
+        ]
       },
       {
         "title": "Guidelines Teaser",
-        "url": "https://player.vimeo.com/video/925210328?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479&amp;autoplay=1&amp;muted=1&amp;loop=1"
+        "url": "https://player.vimeo.com/video/925210328?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479&amp;autoplay=1&amp;muted=1&amp;loop=1",
+        "subject": [
+          "identity"
+        ]
       }
     ],
     "umbrella": "ionq"
@@ -834,6 +908,7 @@
     "scale": null,
     "image_tags": [
       "data-visualization",
+      "deck",
       "illustration",
       "photography"
     ],
@@ -843,7 +918,7 @@
     "snapshot_only": false,
     "chronological": false,
     "unlisted": true,
-    "description": "",
+    "description": "The full brand toolkit, built from a single logo-and-typeface sheet into a comprehensive guidelines document — palette pared to orange to differentiate from IBM Quantum, type simplified to one face and one weight, decisions documented incrementally as the design work demanded them.",
     "credits": [
       {
         "role": "Creative Director",
@@ -884,7 +959,7 @@
     "snapshot_only": false,
     "chronological": false,
     "unlisted": false,
-    "description": "",
+    "description": "IonQ's data visualization language for technical content. #AQ benchmarks, roadmap timelines, error correction overheads, and quantum network architectures developed across investor presentations, partner marketing, and scientific narratives.",
     "credits": [
       {
         "role": "Design",
@@ -925,7 +1000,7 @@
     "snapshot_only": false,
     "chronological": false,
     "unlisted": false,
-    "description": "",
+    "description": "A systematic approach to diagrams across IonQ's communications — giving shape to ion trap mechanics, quantum architectures, and system relationships that resist easy depiction, deployed across decks and technical documentation.",
     "credits": [
       {
         "role": "Creative Director",
@@ -966,7 +1041,7 @@
     "snapshot_only": false,
     "chronological": false,
     "unlisted": false,
-    "description": "",
+    "description": "Motion content for IonQ's HQ elevator screen — a small-format daily touchpoint cycling iconography and IonQ's key differentiators.",
     "credits": [
       {
         "role": "Creative Director",
@@ -1012,7 +1087,7 @@
     "snapshot_only": false,
     "chronological": false,
     "unlisted": false,
-    "description": "",
+    "description": "End-to-end creative for IonQ's major event presences — SuperCompute, Quantum Korea, and Quantum World Congress — spanning booth and stage design, keynote storytelling, microsites, and product reveals including Forte Enterprise and Tempo.",
     "credits": [
       {
         "role": "Creative Director",
@@ -1052,7 +1127,7 @@
     "snapshot_only": false,
     "chronological": false,
     "unlisted": false,
-    "description": "",
+    "description": "Logo and exterior signage treatment for IonQ's HQ facade — extending the rebuilt brand from screen to street.",
     "credits": [
       {
         "role": "Design",
@@ -1094,7 +1169,7 @@
     "snapshot_only": false,
     "chronological": false,
     "unlisted": false,
-    "description": "",
+    "description": "Definition of IonQ's illustration style — working with an illustrator to clean up and systematize the existing visual language, producing diagrammatic and editorial illustration for technical content.",
     "credits": [
       {
         "role": "Design",
@@ -1137,7 +1212,7 @@
     "snapshot_only": false,
     "chronological": false,
     "unlisted": false,
-    "description": "",
+    "description": "Product imaging for IonQ — extensive retouching of the main chip image until it became a primary asset across events, plus product renders directed with a 3D designer for keynotes and announcements.",
     "credits": [
       {
         "role": "Creative Director",
@@ -1177,7 +1252,7 @@
     "snapshot_only": false,
     "chronological": false,
     "unlisted": false,
-    "description": "",
+    "description": "A Figma template system enabling IonQ's marketing team to self-serve routine production — online banners, social posts, one-pager PDFs — reducing the design team's involvement in day-to-day output.",
     "credits": [
       {
         "role": "Creative Director",
@@ -1209,7 +1284,9 @@
     "role": null,
     "scale": null,
     "image_tags": [
-      "photography"
+      "3d",
+      "photography",
+      "product-render"
     ],
     "lead_images": [],
     "order": [],
@@ -1217,7 +1294,7 @@
     "snapshot_only": false,
     "chronological": false,
     "unlisted": false,
-    "description": "",
+    "description": "Zoom backgrounds for the IonQ team — photographic compositions extending the brand into everyday remote-work surfaces.",
     "credits": [
       {
         "role": "Creative Director",
@@ -1306,7 +1383,94 @@
     "snapshot_only": false,
     "chronological": false,
     "unlisted": false,
-    "description": "",
+    "description": "The 2015 MoMA Teens brochure — communicating the museum's free programming to high-school audiences across New York.",
+    "credits": [
+      {
+        "role": "Design",
+        "name": "Marvin de Jong"
+      }
+    ],
+    "videos": [],
+    "umbrella": "moma"
+  },
+  "moma-marron-dossiers": {
+    "name": "Marron Research Committee Dossiers",
+    "slug": "moma-marron-dossiers",
+    "client": "MoMA",
+    "aliases": [
+      "MoMA"
+    ],
+    "date_range": "2015-2016",
+    "roles": [
+      "Freelance Designer"
+    ],
+    "category": "experience",
+    "image_folders": [
+      "work/moma/marron-dossiers"
+    ],
+    "market": "b2c",
+    "project_type": [
+      "editorial",
+      "publication-design"
+    ],
+    "sector": "cultural-institution",
+    "characteristic": [],
+    "role": null,
+    "scale": null,
+    "image_tags": [
+      "publication-design"
+    ],
+    "lead_images": [],
+    "order": [],
+    "personal": false,
+    "snapshot_only": false,
+    "chronological": false,
+    "unlisted": false,
+    "description": "An ebook templating framework for MoMA's Marron Research Committee Dossiers — a then-new series of scholarly digital publications produced with Yale, Princeton, Columbia, IFA, and NYU.",
+    "credits": [
+      {
+        "role": "Design",
+        "name": "Marvin de Jong"
+      }
+    ],
+    "videos": [],
+    "umbrella": "moma"
+  },
+  "moma-picasso-sculpture": {
+    "name": "Picasso Sculpture",
+    "slug": "moma-picasso-sculpture",
+    "client": "MoMA",
+    "aliases": [
+      "MoMA"
+    ],
+    "date_range": "2015-2016",
+    "roles": [
+      "Freelance Designer"
+    ],
+    "category": "experience",
+    "image_folders": [
+      "work/moma/picasso-sculpture"
+    ],
+    "market": "b2c",
+    "project_type": [
+      "editorial",
+      "publication-design"
+    ],
+    "sector": "cultural-institution",
+    "characteristic": [],
+    "role": null,
+    "scale": null,
+    "image_tags": [
+      "exhibition",
+      "installation"
+    ],
+    "lead_images": [],
+    "order": [],
+    "personal": false,
+    "snapshot_only": false,
+    "chronological": false,
+    "unlisted": false,
+    "description": "Setting the wall text for MoMA's Picasso Sculpture — the first US survey of Picasso's sculptural work in nearly half a century, installed across the entire fourth floor of the museum (September 2015 – February 2016).",
     "credits": [
       {
         "role": "Design",
@@ -1350,7 +1514,7 @@
     "snapshot_only": false,
     "chronological": false,
     "unlisted": false,
-    "description": "",
+    "description": "Lecture posters (Jiri Pelcl, the Green Week series), thesis show graphics for BFA Photography's Babylone — U.S.A., postcards, program brochures, and campus flags for the Manhattan location.",
     "credits": [
       {
         "role": "Design",
@@ -1438,7 +1602,7 @@
     "snapshot_only": false,
     "chronological": false,
     "unlisted": false,
-    "description": "",
+    "description": "Naming and rebrand for architecture studio Differential Permanence — launched as DFFPM, with a new logo, typographic system, and brand identity at rollout.",
     "credits": [
       {
         "role": "Creative Direction",
@@ -1490,7 +1654,7 @@
     "snapshot_only": false,
     "chronological": false,
     "unlisted": false,
-    "description": "",
+    "description": "Creative direction for Korean fashion brand Gahi (formerly Hagahi) — identity, catalogues, photoshoots, and a trend-forward e-commerce site using conversation bubbles and emoji as interface elements.",
     "credits": [
       {
         "role": "Creative Direction",
@@ -1549,9 +1713,9 @@
     "umbrella": "studio"
   },
   "studio-paprika": {
-    "name": "Paprika",
+    "name": "Paprika!",
     "slug": "studio-paprika",
-    "client": "Paprika",
+    "client": "Paprika!",
     "aliases": [
       "m-a-r-v-i-n studio",
       "m-a-r-v-i-n (studio)"
@@ -1584,7 +1748,7 @@
     "snapshot_only": false,
     "chronological": false,
     "unlisted": false,
-    "description": "",
+    "description": "Editorial design for the first broadsheet issue of Paprika!, the Yale School of Architecture's student-run publication — produced during the MFA at the Yale School of Art, when the publication shifted from a smaller newspaper format into the broadsheet that became its signature.",
     "credits": [
       {
         "role": "Creative Direction",
@@ -1676,7 +1840,7 @@
     "snapshot_only": false,
     "chronological": false,
     "unlisted": false,
-    "description": "",
+    "description": "An announcement card for lighting firm Tillotson Design Associates marking a new partnership — two foil printings layered to produce a reflective dotted pattern that shifts under changing light angles.",
     "credits": [
       {
         "role": "Creative Direction",
@@ -1721,7 +1885,7 @@
     "snapshot_only": false,
     "chronological": false,
     "unlisted": false,
-    "description": "",
+    "description": "Gather at the Table — a community cookbook for Marin Montessori School. Casebound, cloth cover, set in Neue Montreal and printed by Pureprint on Fedrigoni Arena — recipes and images from families across the community, framed by the Montessori philosophy.",
     "credits": [
       {
         "role": "Creative Direction",
@@ -1758,7 +1922,8 @@
     "scale": null,
     "image_tags": [
       "campaign",
-      "event"
+      "event",
+      "retail"
     ],
     "lead_images": [],
     "order": [],
@@ -1780,23 +1945,38 @@
     "videos": [
       {
         "title": "5G Vinyl Roll Out",
-        "url": "https://player.vimeo.com/video/689101413?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479&amp;autoplay=1&amp;muted=1&amp;loop=1"
+        "url": "https://player.vimeo.com/video/689101413?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479&amp;autoplay=1&amp;muted=1&amp;loop=1",
+        "characteristics": [
+          "making"
+        ]
       },
       {
         "title": "5G Built Right for NYC",
-        "url": "https://player.vimeo.com/video/941507917?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479&amp;autoplay=1&amp;muted=1&amp;loop=1"
+        "url": "https://player.vimeo.com/video/941507917?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479&amp;autoplay=1&amp;muted=1&amp;loop=1",
+        "characteristics": [
+          "motion"
+        ]
       },
       {
         "title": "5G Built Right for You.",
-        "url": "https://player.vimeo.com/video/536011268?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479&amp;autoplay=1&amp;muted=1&amp;loop=1"
+        "url": "https://player.vimeo.com/video/536011268?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479&amp;autoplay=1&amp;muted=1&amp;loop=1",
+        "characteristics": [
+          "motion"
+        ]
       },
       {
         "title": "5G from America's most reliable network.",
-        "url": "https://player.vimeo.com/video/941507973?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479&amp;autoplay=1&amp;muted=1&amp;loop=1"
+        "url": "https://player.vimeo.com/video/941507973?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479&amp;autoplay=1&amp;muted=1&amp;loop=1",
+        "characteristics": [
+          "motion"
+        ]
       },
       {
         "title": "5G from America's most reliable network.",
-        "url": "https://player.vimeo.com/video/801037709?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479&amp;autoplay=1&amp;muted=1&amp;loop=1"
+        "url": "https://player.vimeo.com/video/801037709?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479&amp;autoplay=1&amp;muted=1&amp;loop=1",
+        "characteristics": [
+          "motion"
+        ]
       }
     ],
     "umbrella": "verizon"
@@ -1863,23 +2043,38 @@
     "videos": [
       {
         "title": "5G Home Simplified Menu",
-        "url": "https://player.vimeo.com/video/801038561?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479&amp;autoplay=1&amp;muted=1&amp;loop=1"
+        "url": "https://player.vimeo.com/video/801038561?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479&amp;autoplay=1&amp;muted=1&amp;loop=1",
+        "characteristics": [
+          "interactive"
+        ]
       },
       {
         "title": "5G Home Overview",
-        "url": "https://player.vimeo.com/video/537128023?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479&amp;autoplay=1&amp;muted=1&amp;loop=1"
+        "url": "https://player.vimeo.com/video/537128023?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479&amp;autoplay=1&amp;muted=1&amp;loop=1",
+        "characteristics": [
+          "storytelling"
+        ]
       },
       {
         "title": "5G Home Entertainment",
-        "url": "https://player.vimeo.com/video/537127443?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479&amp;autoplay=1&amp;muted=1&amp;loop=1"
+        "url": "https://player.vimeo.com/video/537127443?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479&amp;autoplay=1&amp;muted=1&amp;loop=1",
+        "characteristics": [
+          "storytelling"
+        ]
       },
       {
         "title": "5G Home Plans",
-        "url": "https://player.vimeo.com/video/537127763?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479&amp;autoplay=1&amp;muted=1&amp;loop=1"
+        "url": "https://player.vimeo.com/video/537127763?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479&amp;autoplay=1&amp;muted=1&amp;loop=1",
+        "characteristics": [
+          "storytelling"
+        ]
       },
       {
         "title": "5G Home Interaction in Store",
-        "url": "https://player.vimeo.com/video/539663371?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479&amp;autoplay=1&amp;muted=1&amp;loop=1"
+        "url": "https://player.vimeo.com/video/539663371?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479&amp;autoplay=1&amp;muted=1&amp;loop=1",
+        "characteristics": [
+          "interactive"
+        ]
       }
     ],
     "umbrella": "verizon"
@@ -1941,47 +2136,77 @@
         "title": "Chicago Entrance Screens",
         "featured": true,
         "video_mode": "background",
-        "url": "https://player.vimeo.com/video/537126173?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479&amp;autoplay=1&amp;muted=1&amp;loop=1"
+        "url": "https://player.vimeo.com/video/537126173?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479&amp;autoplay=1&amp;muted=1&amp;loop=1",
+        "characteristics": [
+          "motion"
+        ]
       },
       {
         "title": "Atrium Video",
         "featured": false,
         "video_mode": "background",
-        "url": "https://player.vimeo.com/video/529211014?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479&amp;autoplay=1&amp;muted=1&amp;loop=1"
+        "url": "https://player.vimeo.com/video/529211014?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479&amp;autoplay=1&amp;muted=1&amp;loop=1",
+        "characteristics": [
+          "motion"
+        ]
       },
       {
         "title": "Screen 2: Changes Everything",
-        "url": "https://player.vimeo.com/video/529210889?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479&amp;autoplay=1&amp;muted=1&amp;loop=1"
+        "url": "https://player.vimeo.com/video/529210889?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479&amp;autoplay=1&amp;muted=1&amp;loop=1",
+        "characteristics": [
+          "motion"
+        ]
       },
       {
         "title": "Live Attract Loop",
-        "url": "https://player.vimeo.com/video/529213770?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479&amp;autoplay=1&amp;muted=1&amp;loop=1"
+        "url": "https://player.vimeo.com/video/529213770?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479&amp;autoplay=1&amp;muted=1&amp;loop=1",
+        "characteristics": [
+          "motion"
+        ]
       },
       {
         "title": "5G Live Video: A Short Teaser of Positive Societal Impact",
         "featured": true,
         "video_mode": "background",
-        "url": "https://player.vimeo.com/video/529212438?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479&amp;autoplay=1&amp;muted=1&amp;loop=1"
+        "url": "https://player.vimeo.com/video/529212438?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479&amp;autoplay=1&amp;muted=1&amp;loop=1",
+        "characteristics": [
+          "storytelling"
+        ]
       },
       {
         "title": "Play Attract Loop",
-        "url": "https://player.vimeo.com/video/529213865?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479&amp;autoplay=1&amp;muted=1&amp;loop=1"
+        "url": "https://player.vimeo.com/video/529213865?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479&amp;autoplay=1&amp;muted=1&amp;loop=1",
+        "characteristics": [
+          "motion"
+        ]
       },
       {
         "title": "5G Play Video: A Short Teaser of Personal Scale Use Cases",
         "featured": true,
         "video_mode": "background",
-        "url": "https://player.vimeo.com/video/529213125?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479&amp;autoplay=1&amp;muted=1&amp;loop=1"
+        "url": "https://player.vimeo.com/video/529213125?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479&amp;autoplay=1&amp;muted=1&amp;loop=1",
+        "characteristics": [
+          "storytelling"
+        ]
       },
       {
         "title": "Live Style Video Back of Store",
         "featured": true,
         "video_mode": "background",
-        "url": "https://player.vimeo.com/video/529211063"
+        "url": "https://player.vimeo.com/video/529211063",
+        "characteristics": [
+          "storytelling"
+        ],
+        "subject": [
+          "lifestyle"
+        ]
       },
       {
         "title": "Chicago Store Summary",
-        "url": "https://player.vimeo.com/video/939231024?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479&amp;autoplay=1&amp;muted=1&amp;loop=1"
+        "url": "https://player.vimeo.com/video/939231024?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479&amp;autoplay=1&amp;muted=1&amp;loop=1",
+        "characteristics": [
+          "interactive"
+        ]
       }
     ],
     "umbrella": "verizon"
@@ -2222,7 +2447,10 @@
     "videos": [
       {
         "title": "Chicago Entrance Screens",
-        "url": "https://player.vimeo.com/video/537126173?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479&amp;autoplay=1&amp;muted=1&amp;loop=1"
+        "url": "https://player.vimeo.com/video/537126173?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479&amp;autoplay=1&amp;muted=1&amp;loop=1",
+        "characteristics": [
+          "motion"
+        ]
       }
     ],
     "umbrella": "verizon"
@@ -2475,7 +2703,8 @@
       "motion",
       "photography",
       "poster",
-      "proposal"
+      "proposal",
+      "retail"
     ],
     "lead_images": [],
     "order": [],
@@ -2787,7 +3016,10 @@
       {
         "title": "Pin Up",
         "year": 2015,
-        "url": "https://player.vimeo.com/video/1182869413"
+        "url": "https://player.vimeo.com/video/1182869413",
+        "characteristics": [
+          "making"
+        ]
       },
       {
         "title": "Poster Cube",

@@ -38,7 +38,7 @@
     },
     "herman-miller-all-together-now": {
       "title": "All Together Now",
-      "description": "Graphics for Herman Miller's All Together Now exhibition at the Salone del Mobile.",
+      "description": "Exhibition graphics for **All Together Now** at Salone del Mobile. Herman Miller's Milan show bringing all subsidiaries under one roof for the first time. Posters, flyer, and merch under Emily C.M. Anderson.",
       "client": "Herman Miller",
       "year": 2017,
       "credits": [
@@ -56,7 +56,7 @@
     },
     "herman-miller-better-world-report": {
       "title": "Better World Report",
-      "description": "A revamp of Herman Miller's approach to data visualization grounded in the company's sustainability reporting efforts, the Better World Report.",
+      "description": "A redesign of Herman Miller's annual sustainability publication, restructuring its data visualizations so y-axis direction reads consistently (up means good), chart types match narrative intent, and inflection points carry context — not just coordinates.",
       "client": "Herman Miller",
       "year": 2017,
       "credits": [
@@ -74,7 +74,7 @@
     },
     "herman-miller-brand-guidelines": {
       "title": "Brand Guidelines",
-      "description": "",
+      "description": "Herman Miller brand guidelines documentation, with photography standards governing how product and lifestyle imagery sits alongside the wider system.",
       "client": "Herman Miller",
       "year": 2017,
       "credits": [
@@ -88,7 +88,7 @@
     },
     "herman-miller-geiger-holiday-card": {
       "title": "Geiger Holiday Card",
-      "description": "A holiday card celebrating Gieger (part of Herman Miller Group) value of collaboration. Illustrated by Charlotte Trounce.",
+      "description": "A Geiger holiday card on the theme of collaboration, illustrated by Charlotte Trounce — produced for Herman Miller's executive office furniture subsidiary.",
       "client": "Herman Miller",
       "year": 2017,
       "credits": [
@@ -108,9 +108,9 @@
       "order": [],
       "snapshot_only": false
     },
-    "herman-miller-herman-miller-cares": {
+    "herman-miller-cares": {
       "title": "Herman Miller Cares",
-      "description": "",
+      "description": "Holiday card and campaign for Herman Miller's Childhood Literacy initiative — illustration by Edward Ubiera, photography by Daniel Dorsa with Herman Miller furniture brought into the set. The photos later promoted Ubiera's illustration workshop at the flagship store.",
       "client": "Herman Miller",
       "year": 2017,
       "credits": [
@@ -136,7 +136,7 @@
     },
     "herman-miller-industrial-facility": {
       "title": "Industrial Facility",
-      "description": "",
+      "description": "Exhibition graphics for the NYC flagship show celebrating Herman Miller's partnership with product design duo Industrial Facility — illustrations of HM products cut in matte vinyl and applied to acrylic, where the material contrast gave the outlines a sculptural dimension.",
       "client": "Herman Miller",
       "year": 2017,
       "credits": [
@@ -154,7 +154,7 @@
     },
     "herman-miller-merch": {
       "title": "Merch",
-      "description": "",
+      "description": "Employee merchandise for Herman Miller — sweaters, hats, water bottles — balancing the robustness needed for a manufacturing workforce with the company's design legacy.",
       "client": "Herman Miller",
       "year": 2017,
       "credits": [
@@ -172,7 +172,7 @@
     },
     "herman-miller-product-marking": {
       "title": "Product Marking",
-      "description": "",
+      "description": "Product marking guidelines for Herman Miller and Geiger, rooted in materiality — marks that belong to the surface, embossed, engraved, or molded into the material. Including a special-edition Eames Eucalyptus table — one of the few pieces to carry both Vitra and Herman Miller branding.",
       "client": "Herman Miller",
       "year": 2017,
       "credits": [
@@ -190,7 +190,7 @@
     },
     "herman-miller-ward-bennett": {
       "title": "Ward Bennett",
-      "description": "",
+      "description": "Herman Miller presented furniture by designer Ward Bennett paired with objects, quotations, and archival photographs.",
       "client": "Herman Miller",
       "year": 2017,
       "credits": [
@@ -206,9 +206,9 @@
       "order": [],
       "snapshot_only": false
     },
-    "herman-miller-herman-miller-group": {
+    "herman-miller-group": {
       "title": "Herman Miller Group",
-      "description": "",
+      "description": "Asset alignment across the Herman Miller Group — establishing shared production standards across Herman Miller, Geiger, Nemschoff, and other subsidiaries: icons constructed to the same spec, photography white-balanced consistently, planning drawings following common conventions.",
       "client": "Herman Miller",
       "year": 2017,
       "credits": [
@@ -226,7 +226,7 @@
     },
     "ionq-brand": {
       "title": "Brand",
-      "description": "IonQ is a leader in quantum computing — a field that, by its nature, resists easy depiction. The brand challenge was to make something abstract feel material: to give audiences a sense that what they were engaging with is solid, present, and real. \n\nThe visual system is organized around three pillars — Scientific, Optimistic, Confident — translated into a language built to communicate concepts and open conversation rather than decorate them. Scientific reads as evidence, curiosity, and rigor. Optimistic as the belief that this work matters and that the future it points toward is worth describing carefully. Confident as the willingness to make clear decisions and stand behind them.\n\nThe guidelines codify how IonQ shows up across surfaces, anchoring the audience inside a field that can otherwise feel elusive, and giving the company a coherent, durable voice as the category continues to form.\"\n",
+      "description": "IonQ is a leader in quantum computing — a field that, by its nature, resists easy depiction. The brand challenge was to make something abstract feel material: to give audiences a sense that what they were engaging with is solid, present, and real. \nThe visual system is organized around three pillars — Scientific, Optimistic, Confident — translated into a language built to communicate concepts and open conversation rather than decorate them. Scientific reads as evidence, curiosity, and rigor. Optimistic as the belief that this work matters and that the future it points toward is worth describing carefully. Confident as the willingness to make clear decisions and stand behind them.\nThe guidelines codify how IonQ shows up across surfaces, anchoring the audience inside a field that can otherwise feel elusive, and giving the company a coherent, durable voice as the category continues to form.\n",
       "client": "IonQ",
       "year": 2023,
       "credits": [
@@ -256,7 +256,7 @@
     },
     "ionq-brand-guidelines": {
       "title": "Brand Guidelines",
-      "description": "",
+      "description": "The full brand toolkit, built from a single logo-and-typeface sheet into a comprehensive guidelines document — palette pared to orange to differentiate from IBM Quantum, type simplified to one face and one weight, decisions documented incrementally as the design work demanded them.",
       "client": "IonQ",
       "year": 2023,
       "credits": [
@@ -270,7 +270,7 @@
     },
     "ionq-data-visualization": {
       "title": "Data Visualization",
-      "description": "",
+      "description": "IonQ's data visualization language for technical content. #AQ benchmarks, roadmap timelines, error correction overheads, and quantum network architectures developed across investor presentations, partner marketing, and scientific narratives.",
       "client": "IonQ",
       "year": 2023,
       "credits": [
@@ -284,7 +284,7 @@
     },
     "ionq-diagrams": {
       "title": "Diagrams",
-      "description": "",
+      "description": "A systematic approach to diagrams across IonQ's communications — giving shape to ion trap mechanics, quantum architectures, and system relationships that resist easy depiction, deployed across decks and technical documentation.",
       "client": "IonQ",
       "year": 2023,
       "credits": [
@@ -298,7 +298,7 @@
     },
     "ionq-elevator-screen": {
       "title": "Elevator Screen",
-      "description": "",
+      "description": "Motion content for IonQ's HQ elevator screen — a small-format daily touchpoint cycling iconography and IonQ's key differentiators.",
       "client": "IonQ",
       "year": 2023,
       "credits": [
@@ -312,7 +312,7 @@
     },
     "ionq-expo": {
       "title": "Expo",
-      "description": "",
+      "description": "End-to-end creative for IonQ's major event presences — SuperCompute, Quantum Korea, and Quantum World Congress — spanning booth and stage design, keynote storytelling, microsites, and product reveals including Forte Enterprise and Tempo.",
       "client": "IonQ",
       "year": 2023,
       "credits": [
@@ -326,7 +326,7 @@
     },
     "ionq-facade": {
       "title": "Facade",
-      "description": "",
+      "description": "Logo and exterior signage treatment for IonQ's HQ facade — extending the rebuilt brand from screen to street.",
       "client": "IonQ",
       "year": 2023,
       "credits": [
@@ -340,7 +340,7 @@
     },
     "ionq-illustrations": {
       "title": "Illustrations",
-      "description": "",
+      "description": "Definition of IonQ's illustration style — working with an illustrator to clean up and systematize the existing visual language, producing diagrammatic and editorial illustration for technical content.",
       "client": "IonQ",
       "year": 2023,
       "credits": [
@@ -354,7 +354,7 @@
     },
     "ionq-product": {
       "title": "Product",
-      "description": "",
+      "description": "Product imaging for IonQ — extensive retouching of the main chip image until it became a primary asset across events, plus product renders directed with a 3D designer for keynotes and announcements.",
       "client": "IonQ",
       "year": 2023,
       "credits": [
@@ -368,7 +368,7 @@
     },
     "ionq-templates": {
       "title": "Templates",
-      "description": "",
+      "description": "A Figma template system enabling IonQ's marketing team to self-serve routine production — online banners, social posts, one-pager PDFs — reducing the design team's involvement in day-to-day output.",
       "client": "IonQ",
       "year": 2023,
       "credits": [
@@ -382,7 +382,7 @@
     },
     "ionq-zoom-backgrounds": {
       "title": "Zoom Backgrounds",
-      "description": "",
+      "description": "Zoom backgrounds for the IonQ team — photographic compositions extending the brand into everyday remote-work surfaces.",
       "client": "IonQ",
       "year": 2023,
       "credits": [
@@ -410,7 +410,7 @@
     },
     "moma-teens-program": {
       "title": "Teens Program",
-      "description": "",
+      "description": "The 2015 MoMA Teens brochure — communicating the museum's free programming to high-school audiences across New York.",
       "client": "MoMA",
       "year": 2015,
       "credits": [
@@ -424,7 +424,7 @@
     },
     "pratt-design-system": {
       "title": "Design System",
-      "description": "",
+      "description": "Lecture posters (Jiri Pelcl, the Green Week series), thesis show graphics for BFA Photography's Babylone — U.S.A., postcards, program brochures, and campus flags for the Manhattan location.",
       "client": "Pratt",
       "year": 2015,
       "credits": [
@@ -438,7 +438,7 @@
     },
     "studio-dffpm": {
       "title": "DFFPM",
-      "description": "",
+      "description": "Naming and rebrand for architecture studio Differential Permanence — launched as DFFPM, with a new logo, typographic system, and brand identity at rollout.",
       "client": "DFFPM",
       "year": 2021,
       "credits": [
@@ -452,7 +452,7 @@
     },
     "studio-gahi": {
       "title": "Gahi",
-      "description": "",
+      "description": "Creative direction for Korean fashion brand Gahi (formerly Hagahi) — identity, catalogues, photoshoots, and a trend-forward e-commerce site using conversation bubbles and emoji as interface elements.",
       "client": "Gahi",
       "year": 2015,
       "credits": [
@@ -479,9 +479,9 @@
       "snapshot_only": false
     },
     "studio-paprika": {
-      "title": "Paprika",
-      "description": "",
-      "client": "Paprika",
+      "title": "Paprika!",
+      "description": "Editorial design for the first broadsheet issue of Paprika!, the Yale School of Architecture's student-run publication — produced during the MFA at the Yale School of Art, when the publication shifted from a smaller newspaper format into the broadsheet that became its signature.",
+      "client": "Paprika!",
       "year": 2015,
       "credits": [
         {
@@ -508,7 +508,7 @@
     },
     "studio-tillotson-associates": {
       "title": "Tillotson Associates Announcement Card",
-      "description": "",
+      "description": "An announcement card for lighting firm Tillotson Design Associates marking a new partnership — two foil printings layered to produce a reflective dotted pattern that shifts under changing light angles.",
       "client": "Tillotson Associates",
       "year": 2016,
       "credits": [
@@ -522,7 +522,7 @@
     },
     "studio-marin-montessori": {
       "title": "Marin Montessori Cookbook",
-      "description": "",
+      "description": "Gather at the Table — a community cookbook for Marin Montessori School. Casebound, cloth cover, set in Neue Montreal and printed by Pureprint on Fedrigoni Arena — recipes and images from families across the community, framed by the Montessori philosophy.",
       "client": "Marin Montessori",
       "year": 2026,
       "credits": [
@@ -3937,7 +3937,7 @@
         "furniture"
       ],
       "medium": "digital",
-      "project": "herman-miller-herman-miller-cares",
+      "project": "herman-miller-cares",
       "description": "A collage showcasing Herman Miller's holiday card workshop through studio photography, digital design process imagery, and the promotional card, illustrating the creative environment and event execution.",
       "width": 1074,
       "height": 1008,
@@ -4004,7 +4004,7 @@
         "furniture"
       ],
       "medium": "digital",
-      "project": "herman-miller-herman-miller-cares",
+      "project": "herman-miller-cares",
       "description": "Portrait of a designer in their vibrant studio space, highlighting the creative process and personal work featured in Herman Miller's 'Cares' initiative.",
       "width": 1000,
       "height": 667,
@@ -4037,7 +4037,7 @@
         "furniture"
       ],
       "medium": "print",
-      "project": "herman-miller-herman-miller-cares",
+      "project": "herman-miller-cares",
       "description": "A vibrant illustration for Herman Miller's care initiative depicts a character with a plant pot as a head reading a book, surrounded by fantastical elements like a castle, friendly creatures, and lush foliage in a playful, surreal style.",
       "width": 1057,
       "height": 1439,
@@ -4069,7 +4069,7 @@
         "furniture"
       ],
       "medium": "digital",
-      "project": "herman-miller-herman-miller-group",
+      "project": "herman-miller-group",
       "description": "This image displays Herman Miller's brand portfolio categorized into Fully Owned, Majority Stake, Minority Stake, and Alliance Partners sections through a grid of logos.",
       "width": 3028,
       "height": 902,
@@ -4408,8 +4408,12 @@
       "src": "https://ws6i2dfuggcaavs2.public.blob.vercel-storage.com/images/work/ionq/brand-guidelines/IonQ%20Brand%20Guidelines%20-%20114.png",
       "type": "image",
       "title": "IonQ Video Filming Guidelines",
-      "tags": [],
-      "format": [],
+      "tags": [
+        "deck"
+      ],
+      "format": [
+        "deck"
+      ],
       "characteristics": [],
       "subject": [],
       "project_tags": [
@@ -5474,10 +5478,17 @@
       "src": "https://ws6i2dfuggcaavs2.public.blob.vercel-storage.com/images/IonQ/ZOOM-ROOM-04%20FORTE%20ENTERPRISE.png",
       "type": "image",
       "title": "IonQ Tempo Product Display",
-      "tags": [],
+      "tags": [
+        "3d",
+        "product-render"
+      ],
       "format": [],
-      "characteristics": [],
-      "subject": [],
+      "characteristics": [
+        "3d"
+      ],
+      "subject": [
+        "product-render"
+      ],
       "project_tags": [
         "b2b",
         "quantum-computing"
@@ -5497,10 +5508,17 @@
       "src": "https://ws6i2dfuggcaavs2.public.blob.vercel-storage.com/images/IonQ/ZOOM-ROOM-04%20TEMPO.png",
       "type": "image",
       "title": "IonQ Tempo Product Design",
-      "tags": [],
+      "tags": [
+        "3d",
+        "product-render"
+      ],
       "format": [],
-      "characteristics": [],
-      "subject": [],
+      "characteristics": [
+        "3d"
+      ],
+      "subject": [
+        "product-render"
+      ],
       "project_tags": [
         "b2b",
         "quantum-computing"
@@ -5694,8 +5712,12 @@
       "src": "https://ws6i2dfuggcaavs2.public.blob.vercel-storage.com/images/work/pratt/design-system/MarvinDeJong-DesignPortfolio.jpeg",
       "type": "image",
       "title": "Pratt Manhattan Center Signage",
-      "tags": [],
-      "format": [],
+      "tags": [
+        "event"
+      ],
+      "format": [
+        "event"
+      ],
       "characteristics": [],
       "subject": [],
       "project_tags": [
@@ -5746,8 +5768,12 @@
       "src": "https://ws6i2dfuggcaavs2.public.blob.vercel-storage.com/images/work/pratt/design-system/PrattFlags.jpeg",
       "type": "image",
       "title": "Pratt Manhattan Center & Gallery Banners",
-      "tags": [],
-      "format": [],
+      "tags": [
+        "event"
+      ],
+      "format": [
+        "event"
+      ],
       "characteristics": [],
       "subject": [],
       "project_tags": [
@@ -6773,8 +6799,12 @@
       "src": "https://ws6i2dfuggcaavs2.public.blob.vercel-storage.com/images/Verizon_Selection/Verizon%20770%20Lexington%20Ave%2023%20June%2020210112.jpg",
       "type": "image",
       "title": "Verizon 770 Lexington Ave Storefront",
-      "tags": [],
-      "format": [],
+      "tags": [
+        "retail"
+      ],
+      "format": [
+        "retail"
+      ],
       "characteristics": [],
       "subject": [],
       "project_tags": [
@@ -18330,8 +18360,12 @@
       "src": "https://ws6i2dfuggcaavs2.public.blob.vercel-storage.com/images/Verizon%20Decks-JPG/Retail_Walkthrough_2022_03_22/Slide20.JPG",
       "type": "image",
       "title": "Express Pickup Locker Exterior",
-      "tags": [],
-      "format": [],
+      "tags": [
+        "retail"
+      ],
+      "format": [
+        "retail"
+      ],
       "characteristics": [],
       "subject": [],
       "project_tags": [
@@ -18355,8 +18389,12 @@
       "src": "https://ws6i2dfuggcaavs2.public.blob.vercel-storage.com/images/Verizon%20Decks-JPG/Retail_Walkthrough_2022_03_22/Slide21.JPG",
       "type": "image",
       "title": "Express Pickup Locker Interior",
-      "tags": [],
-      "format": [],
+      "tags": [
+        "retail"
+      ],
+      "format": [
+        "retail"
+      ],
       "characteristics": [],
       "subject": [],
       "project_tags": [
@@ -18380,8 +18418,12 @@
       "src": "https://ws6i2dfuggcaavs2.public.blob.vercel-storage.com/images/Verizon%20Decks-JPG/Retail_Walkthrough_2022_03_22/Slide22.JPG",
       "type": "image",
       "title": "Verizon Retail Space Design",
-      "tags": [],
-      "format": [],
+      "tags": [
+        "retail"
+      ],
+      "format": [
+        "retail"
+      ],
       "characteristics": [],
       "subject": [],
       "project_tags": [
@@ -18405,8 +18447,12 @@
       "src": "https://ws6i2dfuggcaavs2.public.blob.vercel-storage.com/images/Verizon%20Decks-JPG/Retail_Walkthrough_2022_03_22/Slide23.JPG",
       "type": "image",
       "title": "Verizon Retail Locker Messaging Series",
-      "tags": [],
-      "format": [],
+      "tags": [
+        "retail"
+      ],
+      "format": [
+        "retail"
+      ],
       "characteristics": [],
       "subject": [],
       "project_tags": [
@@ -20435,23 +20481,28 @@
     },
     {
       "id": "practice-controlled-instability-screenshot-2026-01-17-114909",
-      "src": "/images/practice/controlled-instability/Screenshot 2026-01-17 114909.png",
+      "src": "https://ws6i2dfuggcaavs2.public.blob.vercel-storage.com/images/practice/controlled-instability/Screenshot%202026-01-17%20114909.png",
       "type": "image",
       "title": "Screenshot 2026 01 17 114909",
       "tags": [
+        "3d",
+        "real-time",
         "snapshot"
       ],
       "format": [],
-      "characteristics": [],
+      "characteristics": [
+        "3d",
+        "real-time"
+      ],
       "subject": [],
       "project_tags": [
         "personal",
         "personal",
         "real-time"
       ],
-      "medium": "",
+      "medium": "digital",
       "project": "snapshot",
-      "description": "",
+      "description": "Forms flicker in place, a screenshot of a real-time interaction. ",
       "width": 1133,
       "height": 2023,
       "created": "2014-present",
@@ -20467,10 +20518,13 @@
       "type": "image",
       "title": "animal architecture arch macrotermes natalensis",
       "tags": [
+        "reference",
         "snapshot"
       ],
       "format": [],
-      "characteristics": [],
+      "characteristics": [
+        "reference"
+      ],
       "subject": [],
       "project_tags": [
         "personal",
@@ -20479,7 +20533,7 @@
       ],
       "medium": "",
       "project": "snapshot",
-      "description": "",
+      "description": "Termite (Macrotermes natalensis). Two columns rising toward an arch.",
       "width": 2169,
       "height": 1702,
       "created": "2014-present",
@@ -20495,10 +20549,13 @@
       "type": "image",
       "title": "animal architecture carton nest jet ant",
       "tags": [
+        "reference",
         "snapshot"
       ],
       "format": [],
-      "characteristics": [],
+      "characteristics": [
+        "reference"
+      ],
       "subject": [],
       "project_tags": [
         "personal",
@@ -20507,7 +20564,7 @@
       ],
       "medium": "",
       "project": "snapshot",
-      "description": "",
+      "description": "Jet ant (Lasius fuliginosus). A section of carton nest, its thin walls reinforced by a fungus grown into them.",
       "width": 2239,
       "height": 2260,
       "created": "2014-present",
@@ -20523,10 +20580,13 @@
       "type": "image",
       "title": "animal architecture dam beaver",
       "tags": [
+        "reference",
         "snapshot"
       ],
       "format": [],
-      "characteristics": [],
+      "characteristics": [
+        "reference"
+      ],
       "subject": [],
       "project_tags": [
         "personal",
@@ -20535,7 +20595,7 @@
       ],
       "medium": "",
       "project": "snapshot",
-      "description": "",
+      "description": "Beaver dam. The structure holds back a pond..",
       "width": 3353,
       "height": 2642,
       "created": "2014-present",
@@ -20551,10 +20611,13 @@
       "type": "image",
       "title": "animal architecture eyrie osprey",
       "tags": [
+        "reference",
         "snapshot"
       ],
       "format": [],
-      "characteristics": [],
+      "characteristics": [
+        "reference"
+      ],
       "subject": [],
       "project_tags": [
         "personal",
@@ -20563,7 +20626,7 @@
       ],
       "medium": "",
       "project": "snapshot",
-      "description": "",
+      "description": "Osprey eyrie. Boughs and branches stacked into a perch above the canopy.",
       "width": 2254,
       "height": 2427,
       "created": "2014-present",
@@ -20579,10 +20642,13 @@
       "type": "image",
       "title": "animal architecture fungus mass leafcutter ant",
       "tags": [
+        "reference",
         "snapshot"
       ],
       "format": [],
-      "characteristics": [],
+      "characteristics": [
+        "reference"
+      ],
       "subject": [],
       "project_tags": [
         "personal",
@@ -20591,7 +20657,7 @@
       ],
       "medium": "",
       "project": "snapshot",
-      "description": "",
+      "description": "Leafcutter ant (Atta texana). The fungus mass cultivated inside the nest. At right, magnified.",
       "width": 3308,
       "height": 1286,
       "created": "2014-present",
@@ -20607,10 +20673,13 @@
       "type": "image",
       "title": "animal architecture galleries built termites reticulitermes",
       "tags": [
+        "reference",
         "snapshot"
       ],
       "format": [],
-      "characteristics": [],
+      "characteristics": [
+        "reference"
+      ],
       "subject": [],
       "project_tags": [
         "personal",
@@ -20619,7 +20688,7 @@
       ],
       "medium": "",
       "project": "snapshot",
-      "description": "",
+      "description": "Reticulitermes. A colony gnawed through its container and built a covered gallery to the next one.",
       "width": 2188,
       "height": 2362,
       "created": "2014-present",
@@ -20635,10 +20704,13 @@
       "type": "image",
       "title": "animal architecture larch stem carpenter ants",
       "tags": [
+        "reference",
         "snapshot"
       ],
       "format": [],
-      "characteristics": [],
+      "characteristics": [
+        "reference"
+      ],
       "subject": [],
       "project_tags": [
         "personal",
@@ -20647,7 +20719,7 @@
       ],
       "medium": "",
       "project": "snapshot",
-      "description": "",
+      "description": "Carpenter ant (Camponotus herculeanus). Galleries bored through a larch stem.",
       "width": 2253,
       "height": 3346,
       "created": "2014-present",
@@ -20663,10 +20735,13 @@
       "type": "image",
       "title": "animal architecture nest harvest mouse",
       "tags": [
+        "reference",
         "snapshot"
       ],
       "format": [],
-      "characteristics": [],
+      "characteristics": [
+        "reference"
+      ],
       "subject": [],
       "project_tags": [
         "personal",
@@ -20675,7 +20750,7 @@
       ],
       "medium": "",
       "project": "snapshot",
-      "description": "",
+      "description": "Harvest mouse (Micromys minutus). A nest woven into the standing stalks of an oat field.",
       "width": 2201,
       "height": 3249,
       "created": "2014-present",
@@ -20691,10 +20766,13 @@
       "type": "image",
       "title": "animal architecture nest sociable weaverbird",
       "tags": [
+        "reference",
         "snapshot"
       ],
       "format": [],
-      "characteristics": [],
+      "characteristics": [
+        "reference"
+      ],
       "subject": [],
       "project_tags": [
         "personal",
@@ -20703,7 +20781,7 @@
       ],
       "medium": "",
       "project": "snapshot",
-      "description": "",
+      "description": "Sociable weaverbird. A communal nest, hung from a single armature, riddled with entries.",
       "width": 1991,
       "height": 2096,
       "created": "2014-present",
@@ -20719,10 +20797,13 @@
       "type": "image",
       "title": "animal architecture rain roofs termite cubitermes",
       "tags": [
+        "reference",
         "snapshot"
       ],
       "format": [],
-      "characteristics": [],
+      "characteristics": [
+        "reference"
+      ],
       "subject": [],
       "project_tags": [
         "personal",
@@ -20731,7 +20812,7 @@
       ],
       "medium": "",
       "project": "snapshot",
-      "description": "",
+      "description": "Cubitermes. Termitaria capped with rain roofs. The cross-section reveals the chambers within.",
       "width": 2244,
       "height": 1589,
       "created": "2014-present",
@@ -20747,10 +20828,13 @@
       "type": "image",
       "title": "animal architecture sandshell difflugia pyriformis",
       "tags": [
+        "reference",
         "snapshot"
       ],
       "format": [],
-      "characteristics": [],
+      "characteristics": [
+        "reference"
+      ],
       "subject": [],
       "project_tags": [
         "personal",
@@ -20759,7 +20843,7 @@
       ],
       "medium": "",
       "project": "snapshot",
-      "description": "",
+      "description": "Difflugia pyriformis. A single-celled amoeba that builds its shell from swallowed sand.",
       "width": 1058,
       "height": 3844,
       "created": "2014-present",
@@ -20775,10 +20859,13 @@
       "type": "image",
       "title": "animal architecture underground nest termites apicotermes gurgulifex",
       "tags": [
+        "reference",
         "snapshot"
       ],
       "format": [],
-      "characteristics": [],
+      "characteristics": [
+        "reference"
+      ],
       "subject": [],
       "project_tags": [
         "personal",
@@ -20787,7 +20874,7 @@
       ],
       "medium": "",
       "project": "snapshot",
-      "description": "",
+      "description": "Termite (Apicotermes gurgulifex). A clay nest suspended underground, separated from the surrounding soil by an air gap.",
       "width": 1088,
       "height": 1377,
       "created": "2014-present",
@@ -21018,7 +21105,9 @@
       "video_mode": "background",
       "title": "IonQ Product Family",
       "tags": [
-        "video"
+        "video",
+        "3d",
+        "product-render"
       ],
       "project_tags": [
         "b2b",
@@ -21038,7 +21127,9 @@
       "video_mode": "background",
       "title": "IonQ Ion Trap Technology Visual",
       "tags": [
-        "video"
+        "video",
+        "3d",
+        "product-render"
       ],
       "project_tags": [
         "b2b",
@@ -21057,7 +21148,9 @@
       "video_mode": "background",
       "title": "IonQ Logo Animation",
       "tags": [
-        "video"
+        "video",
+        "motion",
+        "logo"
       ],
       "project_tags": [
         "b2b",
@@ -21076,7 +21169,8 @@
       "video_mode": "background",
       "title": "IonQ Text Animation Treatment",
       "tags": [
-        "video"
+        "video",
+        "motion"
       ],
       "project_tags": [
         "b2b",
@@ -21095,7 +21189,8 @@
       "video_mode": "background",
       "title": "Guidelines Teaser",
       "tags": [
-        "video"
+        "video",
+        "identity"
       ],
       "project_tags": [
         "b2b",
@@ -21114,7 +21209,8 @@
       "video_mode": "background",
       "title": "5G Vinyl Roll Out",
       "tags": [
-        "video"
+        "video",
+        "making"
       ],
       "project_tags": [
         "b2c",
@@ -21134,7 +21230,8 @@
       "video_mode": "background",
       "title": "5G Built Right for NYC",
       "tags": [
-        "video"
+        "video",
+        "motion"
       ],
       "project_tags": [
         "b2c",
@@ -21154,7 +21251,8 @@
       "video_mode": "background",
       "title": "5G Built Right for You.",
       "tags": [
-        "video"
+        "video",
+        "motion"
       ],
       "project_tags": [
         "b2c",
@@ -21174,7 +21272,8 @@
       "video_mode": "background",
       "title": "5G from America's most reliable network.",
       "tags": [
-        "video"
+        "video",
+        "motion"
       ],
       "project_tags": [
         "b2c",
@@ -21194,7 +21293,8 @@
       "video_mode": "background",
       "title": "5G from America's most reliable network.",
       "tags": [
-        "video"
+        "video",
+        "motion"
       ],
       "project_tags": [
         "b2c",
@@ -21214,7 +21314,8 @@
       "video_mode": "background",
       "title": "5G Home Simplified Menu",
       "tags": [
-        "video"
+        "video",
+        "interactive"
       ],
       "project_tags": [
         "b2c",
@@ -21233,7 +21334,8 @@
       "video_mode": "background",
       "title": "5G Home Overview",
       "tags": [
-        "video"
+        "video",
+        "storytelling"
       ],
       "project_tags": [
         "b2c",
@@ -21252,7 +21354,8 @@
       "video_mode": "background",
       "title": "5G Home Entertainment",
       "tags": [
-        "video"
+        "video",
+        "storytelling"
       ],
       "project_tags": [
         "b2c",
@@ -21271,7 +21374,8 @@
       "video_mode": "background",
       "title": "5G Home Plans",
       "tags": [
-        "video"
+        "video",
+        "storytelling"
       ],
       "project_tags": [
         "b2c",
@@ -21290,7 +21394,8 @@
       "video_mode": "background",
       "title": "5G Home Interaction in Store",
       "tags": [
-        "video"
+        "video",
+        "interactive"
       ],
       "project_tags": [
         "b2c",
@@ -21309,7 +21414,8 @@
       "video_mode": "background",
       "title": "Chicago Entrance Screens",
       "tags": [
-        "video"
+        "video",
+        "motion"
       ],
       "project_tags": [
         "b2c",
@@ -21330,7 +21436,8 @@
       "video_mode": "background",
       "title": "Atrium Video",
       "tags": [
-        "video"
+        "video",
+        "motion"
       ],
       "project_tags": [
         "b2c",
@@ -21350,7 +21457,8 @@
       "video_mode": "background",
       "title": "Screen 2: Changes Everything",
       "tags": [
-        "video"
+        "video",
+        "motion"
       ],
       "project_tags": [
         "b2c",
@@ -21370,7 +21478,8 @@
       "video_mode": "background",
       "title": "Live Attract Loop",
       "tags": [
-        "video"
+        "video",
+        "motion"
       ],
       "project_tags": [
         "b2c",
@@ -21390,7 +21499,8 @@
       "video_mode": "background",
       "title": "5G Live Video: A Short Teaser of Positive Societal Impact",
       "tags": [
-        "video"
+        "video",
+        "storytelling"
       ],
       "project_tags": [
         "b2c",
@@ -21411,7 +21521,8 @@
       "video_mode": "background",
       "title": "Play Attract Loop",
       "tags": [
-        "video"
+        "video",
+        "motion"
       ],
       "project_tags": [
         "b2c",
@@ -21431,7 +21542,8 @@
       "video_mode": "background",
       "title": "5G Play Video: A Short Teaser of Personal Scale Use Cases",
       "tags": [
-        "video"
+        "video",
+        "storytelling"
       ],
       "project_tags": [
         "b2c",
@@ -21452,7 +21564,9 @@
       "video_mode": "background",
       "title": "Live Style Video Back of Store",
       "tags": [
-        "video"
+        "video",
+        "storytelling",
+        "lifestyle"
       ],
       "project_tags": [
         "b2c",
@@ -21473,7 +21587,8 @@
       "video_mode": "background",
       "title": "Chicago Store Summary",
       "tags": [
-        "video"
+        "video",
+        "interactive"
       ],
       "project_tags": [
         "b2c",
@@ -21493,7 +21608,8 @@
       "video_mode": "background",
       "title": "Chicago Entrance Screens",
       "tags": [
-        "video"
+        "video",
+        "motion"
       ],
       "project_tags": [
         "b2c",
@@ -21538,7 +21654,8 @@
       "video_mode": "background",
       "title": "Pin Up",
       "tags": [
-        "video"
+        "video",
+        "making"
       ],
       "project_tags": [
         "personal",

@@ -87,7 +87,10 @@ for (const tier of TIERS) {
       // Umbrella + sub-projects: each sub becomes its own project record.
       // Umbrella itself is not a navigable project (no image folder of its own).
       for (const [subKey, subEntry] of Object.entries(umbrella.projects)) {
-        const slug = subEntry.slug || `${umbrellaSlug}-${subKey}`;
+        const slug = subEntry.slug
+          || (subKey === umbrellaSlug || subKey.startsWith(`${umbrellaSlug}-`)
+                ? subKey
+                : `${umbrellaSlug}-${subKey}`);
         projects[slug] = {
           name: subEntry.name || subKey,
           slug,

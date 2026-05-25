@@ -19,6 +19,8 @@ videos:
   - title: Pin Up
     year: 2015
     url: https://player.vimeo.com/video/1182869413
+    characteristics:
+      - making
   - title: Poster Cube
     year: 2025
     url: https://player.vimeo.com/video/1182859090
