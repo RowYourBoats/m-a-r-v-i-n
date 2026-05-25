@@ -38,7 +38,7 @@ Four mechanisms to control where a project appears. Authored on the project's `_
 
 | What you want | How |
 |---|---|
-| Shown on `/archive` (Work) | default for anything under `public/images/work/` |
+| Shown on `/work` | default for anything under `public/images/work/` |
 | Shown on `/practice` instead | `personal: true` (or place under `practice/`) |
 | Off both indexes, direct link gated by `SITE_PASSWORD` | `unlisted: true` on `_project.md` |
 | Off both indexes, no project page either | `snapshot_only: true` (`/projects/<slug>` redirects home) |
@@ -110,7 +110,7 @@ Key fields:
 - `slug` — canonical project key, used in URLs and manifest
 - `aliases` — all name variants (resolves naming mismatches between systems)
 - `image_folders` — derived from which folder the `_project.md` lives in
-- `market` / `project_type` / `sector` / `characteristic` — the four project-level facets used for filtering and recruiter-context. Replaced the older `portfolio_tags:` field — see "Filter architecture" below for vocabularies and how the `/archive` filter buttons translate to these values.
+- `market` / `project_type` / `sector` / `characteristic` — the four project-level facets used for filtering and recruiter-context. Replaced the older `portfolio_tags:` field — see "Filter architecture" below for vocabularies and how the `/work` filter buttons translate to these values.
 - `role` / `scale` — optional. Plumbed for the future art-direction cross-logic (subject = photography/illustration AND project.role contains "Art Direction") and recruiter-mode filtering.
 - `videos` — Vimeo embed URLs, generated as video items in the manifest. Each entry may set `video_mode` and `featured` (see below)
 - `lead_images` — list of image filenames in this folder that should be flagged `featured` in the manifest (the homepage hero feed reads from here)
@@ -171,13 +171,7 @@ Project-level concepts (retail, brand, exhibition, etc.) are NOT image tags — 
 
 Date priority: `exif` > filesystem date within `project_date_range` > range start year > filesystem fallback.
 
-**Profile images on `/marvin`** go through the same pipeline:
-- Folder: `public/images/m-a-r-v-i-n/` with `01_`, `02_` numeric prefix for order.
-- Catalogue entry per file; `title` field becomes the `<figcaption>` on the rendered page.
-- `projects.json` has an `m-a-r-v-i-n` entry with `personal: true` and `image_folders: ["m-a-r-v-i-n"]` so the manifest groups them under `project: "m-a-r-v-i-n"`.
-- `src/pages/marvin.astro` filters `manifest.items` by `project === "m-a-r-v-i-n"`, sorts by id (filename-derived, so `01_` < `02_`).
-
-Swap workflow: drop new file → add/edit catalogue entry with `title` → `node scripts/build-manifest.mjs` → `node --env-file=.env scripts/upload-blob.mjs` → commit.
+**Portraits / profile imagery on the editorial home `/`** — no auto-rendered gallery. The old `/marvin` page used to ingest `public/images/m-a-r-v-i-n/` as a `project: "m-a-r-v-i-n"` slot and render it as a side gallery; that block was dropped with the editorial-home rewrite. To surface portraits today, author them explicitly as a `kind: filmstrip` section in `src/content/pages/marvin.md` (see [Editorial home `/`](#editorial-home-)). The `public/images/m-a-r-v-i-n/` folder is no longer surfaced anywhere by default.
 
 ### CV bullets (content collection)
 
@@ -211,12 +205,13 @@ tags:
 Prose narrative. May be multiple paragraphs. Used for long-form resume or portfolio detail views.
 ```
 
-**Section classification** in `/marvin`:
+**Section classification** in `/resume`:
 - `experience`/`teaching` with a Large body and no `project` → **Roles** (e.g. `role-scope-*` files)
 - `experience` (any other shape) → **Projects** (grouped by `company|project`, size slider picks variant)
 - `teaching` (non-role) → **Teaching** (its own section, no size slider)
-- `exhibition`/`writing` → **Exhibitions & Publications**
-- `education`/`award`/`skill` → their own sections
+- `exhibition`/`writing`/`publication`/`talks` → **Exhibitions & Publications**
+- `education`/`skill` → their own sections
+- `award` → currently hidden (single bullet; section + dropdown option suppressed)
 
 **Size slider behavior:** for the Projects section, rows are grouped by `company|project`. The slider picks one size (small/medium/large) to show per group; falls back to the nearest available if the exact size isn't present.
 
@@ -227,13 +222,13 @@ cmd /c "mklink /J src\content\bullets D:\ClaudeCoding\Jullie-Resume\input\bullet
 
 ### Bullet ↔ image-folder linking (via `id`)
 
-The 6-char `id` in bullet frontmatter is the stable handle for linking bullets to image folders. Every row rendered on `/marvin` carries `data-bullet-id="<id>"` so downstream JS or project pages can query by it.
+The 6-char `id` in bullet frontmatter is the stable handle for linking bullets to image folders. Every row rendered on `/resume` carries `data-bullet-id="<id>"` so downstream JS or project pages can query by it.
 
 **Recommended integration pattern** (not yet wired):
 
 1. Add `bullet_ids: ["d91fb7", "a8cafe"]` to each entry in `src/data/projects.json`. List all bullet ids whose work is represented by the project's image folder.
 2. Manifest stays as-is (keyed by project slug, not bullet id).
-3. A project page can resolve bullets → images by looking up `projects[slug].bullet_ids`, and the /marvin table can resolve rows → project images by reverse-indexing (`bulletId → project slug`) from projects.json.
+3. A project page can resolve bullets → images by looking up `projects[slug].bullet_ids`, and the /resume table can resolve rows → project images by reverse-indexing (`bulletId → project slug`) from projects.json.
 
 **Why this shape:**
 - Bullets are authored in Jullie and synced via junction. Adding a reverse field on the bullet (like `project_key:`) requires Jullie-side schema changes — we control `projects.json` locally, so putting the link there keeps authoring surfaces separated.
@@ -243,10 +238,10 @@ The 6-char `id` in bullet frontmatter is the stable handle for linking bullets t
 **To prepare image folders with this in mind:**
 - Group images under `public/images/<tier>/<client>/<project>/` as you do today.
 - When adding a new project to `projects.json`, populate `bullet_ids` with any bullet whose content lives under that folder.
-- If a bullet represents a cross-project role scope (no specific deliverables), leave it out of every project — it'll still show in Roles via the /marvin logic, just without a folder link.
+- If a bullet represents a cross-project role scope (no specific deliverables), leave it out of every project — it'll still show in Roles via the /resume logic, just without a folder link.
 
 **Where the id flows in the code:**
-- `src/pages/marvin.astro` → `parseBody()` extracts sizes from body; each emitted row carries `bulletId: entry.data.id`.
+- `src/pages/resume.astro` → `parseBody()` extracts sizes from body; each emitted row carries `bulletId: entry.data.id`.
 - Rendered as `data-bullet-id` on each `<tr>` — inspectable in DOM, usable for JS lookup.
 - `stripBold()` strips `**` markers from `where`/`what`/`how` at render time.
 
@@ -295,7 +290,7 @@ miner) before they resolve — same as any image.
 
 ## Filter architecture
 
-The `/archive` (Work) and `/practice` filter bars are **curated**, not derived from a tag union. The two filter sets live in `src/data/schema.json` under `work_filters` and `practice_filters`, each with `pinned` and `expanded` arrays.
+The `/work` and `/practice` filter bars are **curated**, not derived from a tag union. The two filter sets live in `src/data/schema.json` under `work_filters` and `practice_filters`, each with `pinned` and `expanded` arrays.
 
 Each filter entry is a `{ label, matches[] }` pair:
 
@@ -303,7 +298,9 @@ Each filter entry is a `{ label, matches[] }` pair:
 { "label": "spatial", "matches": ["exhibition", "installation", "retail"] }
 ```
 
-`label` is the button text. `matches` is the list of underlying values that count as a hit — they're checked against each item's `data-tags` (the flat union of `item.tags`, the per-image axes, and `item.project_tags`). This separation lets one button cover several underlying values: `spatial` matches `exhibition` OR `installation` OR `retail`; `editorial` matches both `editorial` and `publication-design`. A `label` need not be a real tag value — it's just a display label over its `matches` set.
+`label` is the button text. `matches` is the list of underlying values that count as a hit — they're checked against each item's `data-tags`, which is **only `item.tags`** (the per-image axes: format, characteristics, subject). `item.project_tags` is intentionally *not* in this set — project-level facets like `retail` or `exhibition` no longer leak into the per-item filter, so a motion video in a retail-themed project doesn't surface under `spatial`. `project_tags` is still emitted on every item for future page-assembler use (e.g. "pull all items from `retail` projects").
+
+This `label`/`matches` separation lets one button cover several underlying values: `spatial` matches `exhibition` OR `installation` OR `retail`; `editorial` matches both `editorial` and `publication-design`. A `label` need not be a real tag value — it's just a display label over its `matches` set.
 
 Current sets (see `src/data/schema.json` for live values):
 
@@ -365,6 +362,7 @@ Runs the heavier image-reconciliation cycle:
 | `scripts/stub-catalogue.mjs` | Register a folder's new images into the catalogue as stub entries (empty tag axes). `node scripts/stub-catalogue.mjs <folder> [--apply]`. Lightweight stand-in for the miner — gets images into the pipeline + `/admin/images` for hand-tagging |
 | `scripts/upload-blob.mjs` | Upload images to Vercel Blob, rewrite manifest URLs |
 | `scripts/sync-chroma.mjs` | Sync catalogue to Chroma vector store (powers `/api/search`) |
+| `scripts/sync-vimeo-posters.mjs` | Walks `src/content/pages/*.md`, finds Vimeo URLs in filmstrip assets, fetches canonical posters via oEmbed, writes `src/data/vimeo-posters.json`. Idempotent — only unknown IDs are fetched. Runs as the last step of `npm run build-data`. |
 | `scripts/audit-tags.mjs` | Read-only tag audit: per-value counts across all image + project axes, cross-axis duplicate flags, singletons. Writes `docs/tag-audit.json`. Run after every tagging pass. |
 | `public/images/miner.cjs` | Ollama-based vision tagger; run from `public/images/` to populate catalogue entries (format/characteristics/subject) for newly-added images |
 
@@ -396,11 +394,70 @@ Saves are immediate but downstream JSON is not — run `npm run build-data` afte
 
 ## Pages
 
-- `/` (Work) — hero feed: items flagged `featured: true` (via `lead_images` for images and per-video `featured: true`), single column full-width within page padding
-- `/archive` — full Work archive: non-personal items, masonry grid, tag filters, sorted newest first
-- `/practice` — personal images + essays, light tag filter
-- `/marvin` — bio, contact, profile images with captions (from manifest, project `m-a-r-v-i-n`), resume (5-column CV table: where/when/what/how/tags with size slider on Projects, section collapse, sort, search, company/category filters)
-- `/projects/[slug]` — auto-generated per project from the manifest. Media renders single-column full-bleed.
+Nav order: **Marvin · Work · Practice · Resume**.
+
+- `/` (Marvin) — editorial home: lead bio prose from `src/content/pages/marvin.md` body, then iterates the frontmatter `sections` array (short prose lines + filmstrip modules). See [Editorial home `/`](#editorial-home-) below.
+- `/work` — full work archive: non-personal items, masonry grid, curated tag filters (`work_filters` in `schema.json`), sorted newest first.
+- `/practice` — personal images + essays, curated tag filters (`practice_filters`).
+- `/resume` — short intro + contact (from `src/content/pages/resume.md`), then the CV table: 5 columns (where/when/what/how/tags) with size slider on Projects, section collapse, sort, search, company/category filters.
+- `/projects/[slug]` — auto-generated per project from the manifest. Media renders single-column full-bleed. Highlights the **Work** nav item (or **Practice** for items under `practice/`).
+
+### Editorial home (`/`)
+
+The home page is content-driven, not layout-driven. It reads `src/content/pages/marvin.md`:
+
+- The **markdown body** renders as the lead (a few intro paragraphs).
+- The **`sections` array** in frontmatter is iterated below. Two section kinds today:
+
+```yaml
+---
+title: Marvin
+sections:
+  - kind: text
+    body: "Brand and identity work."
+  - kind: filmstrip
+    assets:
+      - src: /images/aws-keynote.jpg
+        type: image
+        project_url: /projects/aws
+        project_label: AWS Re:Invent
+      - src: /images/ionq-identity.jpg
+        type: image
+        project_url: /projects/ionq-brand
+        project_label: IonQ
+      - src: /videos/verizon-flagship.mp4
+        type: video
+        poster: /images/verizon-poster.jpg
+        project_url: /projects/verizon-chicago
+        project_label: Verizon Chicago
+---
+Lead bio paragraph(s) here.
+```
+
+**`kind: text`** — renders a single `<p class="prose-line">` styled as body copy (full size, roman, default color). No headers — sections aren't hierarchical, they're just stacked. Future room to add a `kind: aside` variant for small/italic flow markers if needed.
+
+**`kind: filmstrip`** — the Filmstrip module (`src/components/Filmstrip.astro`). Up to 5 assets per filmstrip. Schema is enforced by Zod in `src/content.config.ts` — adding a 6th asset fails the build with `sections.<i>.assets: Too big: expected array to have <=5 items`.
+
+Filmstrip behavior:
+- Thumbnails row sits **above** the primary (acts as a contents bar). Click a thumb to swap which asset is primary, in place (no modal, no carousel — vanilla JS scoped to `[data-filmstrip]`).
+- Primary is full content-column width; height scales with the asset's natural aspect ratio (no max-height cap — the editorial column is intentionally full-bleed, even on large displays).
+- Caption sits under the primary as a small link to `project_url`. `project_label` text + link target update on swap. `project_url` is per-asset (each thumb can deep-link to a different project).
+- Mobile: primary stays full-width; thumbs scroll horizontally instead of wrapping.
+
+Three rendering paths, picked automatically per asset:
+- `type: image` → `<img>`. Clicking the primary navigates to `project_url`.
+- `type: video` with a Vimeo / YouTube URL → `<iframe>` (auto-detected). An invisible `<a>` overlay on top of the iframe catches clicks and navigates; the iframe still plays. Tradeoff: in-place player chrome (Vimeo play/pause) is unreachable — visitors play the full video on the project page.
+- `type: video` with an HTML5 file (.mp4 etc.) → `<video muted autoplay loop>` with a sound toggle when primary. Clicking the primary navigates.
+
+Video posters:
+- Vimeo assets auto-resolve their poster via oEmbed at build time. The cache lives at `src/data/vimeo-posters.json` and is populated by `scripts/sync-vimeo-posters.mjs --apply` (runs as the last step of `npm run build-data`, idempotent — only unknown IDs are fetched).
+- Explicit `poster:` in YAML always wins over the auto-resolved one.
+- HTML5 video without a poster shows a neutral placeholder behind the play glyph.
+
+Authoring gotcha:
+- Don't paste HTML entity-encoded `&amp;` into YAML — YAML stores it literally and Vimeo will treat `amp;autoplay` as a parameter name. The component auto-decodes `&amp;` → `&` for forgiveness, but write plain `&` in YAML to begin with.
+
+To add a new section, edit `marvin.md`'s `sections` array. Astro picks up content collection changes via hot reload in `dev`. If you added new Vimeo URLs, also run `npm run build-data` (or just `node scripts/sync-vimeo-posters.mjs --apply`) so their posters land in the cache before the next build.
 
 ## Video modes
 
@@ -441,7 +498,7 @@ Tokens in `src/styles/global.css`:
 
 - `--fs-base: clamp(14px, 1.5625vw, 1.3rem)` — mobile floor (~14–21px). Used as the legacy `--fs` alias and as the mobile-flatten target.
 - `--fs-body: clamp(14px, 2.5vw, 48px)` — desktop ceiling 3em. Body copy, page intros, prose, essays, nav, filter bar.
-- `--fs-secondary: clamp(14px, 1.667vw, 32px)` — desktop ceiling 2em. Resume table on `/marvin`, grid item captions (`.label`), detail foldout, project tags, hero feed captions.
+- `--fs-secondary: clamp(14px, 1.667vw, 32px)` — desktop ceiling 2em. Resume table on `/resume`, grid item captions (`.label`), detail foldout, project tags, hero feed captions, filmstrip captions.
 - `--pad: clamp(32px, 2.5vw, 64px)` — all padding/gaps.
 - `--pad-sm: clamp(8px, 0.625vw, 16px)` — caption-to-image gap.
 - `--pad-bottom` — derived; bottom margin under captioned grid cells so total whitespace below the image equals `--pad`.
@@ -454,12 +511,16 @@ Multi-paragraph body copy: wrap in `<div class="prose">` for tight `p + p` spaci
 
 ## Layout
 
-- `.page-intro` — page-intro copy on `/archive` and `/practice`. `max-width: 66.6667%` on desktop (8 of 12 cols), full-width below 760px.
-- `.profile--spread` — Marvin two-column intro layout. Real 12-col CSS grid: `.profile-text` spans cols 1–8, `.profile-media` spans 9–12. Collapses to single column at ≤680px.
-- `.hero-feed` — homepage feed. Items render full width within the page padding (no edge bleed).
-- `.project-media` — project page media stack. Same: full width within the page padding.
+- `.page-intro` — page-intro copy on `/work`, `/practice`, and `/resume`. `max-width: 66.6667%` on desktop (8 of 12 cols), full-width below 760px.
+- `.editorial` — editorial home (`/`) column. Vertical flex with `--pad` gap. No max-width — filmstrips are intentionally full-bleed at any viewport.
+- `.editorial-lead` — lead prose under the title on `/`. `max-width: 60ch` so the text doesn't run line-wide on huge displays even though the filmstrip can.
+- `.prose-line` — body-style paragraph for `kind: text` sections. `--fs-body`, default color, roman. Same visual weight as the lead prose. `max-width: 60ch`.
+- `.filmstrip-stage` — grid-stacked primary/inactive slots in one cell so swapping doesn't reflow surrounding content (`visibility` toggle, not `display`). No height cap — the asset's aspect ratio is honored at full width.
+- `.filmstrip-thumbs` — horizontal row of thumbs above the primary; `overflow-x: auto` on narrow viewports.
+- `.hero-feed` — (legacy) hero feed shape; not currently used by any page after the home rewrite. Reachable through grep; safe to remove if it doesn't return.
+- `.project-media` — project page media stack. Full width within the page padding.
 
-The resume on `/marvin` (`.cv-head`, `.cv-filters`, `.cv-table-wrap`) is explicitly sized at `--fs-secondary` so it stays at 2em while the rest of the page uses `--fs-body` (3em on desktop).
+The CV table on `/resume` (`.cv-head`, `.cv-filters`, `.cv-table-wrap`) is explicitly sized at `--fs-secondary` so it stays at 2em while the rest of the page uses `--fs-body` (3em on desktop).
 
 ## Known-stale tooling
 

@@ -33,39 +33,49 @@ videos:
   featured: True
   video_mode: background
   year: 2025
+  format: [keynote]
   url: "https://player.vimeo.com/video/1187652525?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479&amp;autoplay=1&amp;muted=1&amp;loop=1"
 - title: "Agent Core Comparison" 
   year: 2025
+  format: [keynote]
   url: "https://player.vimeo.com/video/1187652763?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479&amp;autoplay=1&amp;muted=1&amp;loop=1"
 - title: "Fine Tuning" 
   year: 2025
+  format: [keynote]
   url: "https://player.vimeo.com/video/1187652572?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479&amp;autoplay=1&amp;muted=1&amp;loop=1"
 - title: "Model Distillation" 
   featured: True
   video_mode: background
   year: 2025
+  format: [keynote]
   url: "https://player.vimeo.com/video/1187652528?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479&amp;autoplay=1&amp;muted=1&amp;loop=1"
 - title: "Transformation and Agility" 
   featured: True
   video_mode: background
   year: 2025
+  format: [keynote]
   url: "https://player.vimeo.com/video/1187653086?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479&amp;autoplay=1&amp;muted=1&amp;loop=1"
 - title: "Contact Center" 
   year: 2025
+  format: [keynote]
   url: "https://player.vimeo.com/video/1187653007?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479&amp;autoplay=1&amp;muted=1&amp;loop=1"
 - title: "Acceleration" 
   year: 2025
+  format: [keynote]
   url: "https://player.vimeo.com/video/1187653080?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479&amp;autoplay=1&amp;muted=1&amp;loop=1"
 - title: "LLM and Neuro Symbolic AI" 
   featured: True
   video_mode: background
   year: 2025
+  format: [keynote]
   url: "https://player.vimeo.com/video/1187652881?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479&amp;autoplay=1&amp;muted=1&amp;loop=1"
 - title: "Colleen Aubrey, Agent in the Loop" 
   year: 2025
+  format: [keynote]
   url: "https://player.vimeo.com/video/1187652931?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479&amp;autoplay=1&amp;muted=1&amp;loop=1"
 - title: "Neurosymbolic AI and Verification" 
   year: 2025
+  format: [keynote]
   url: "https://player.vimeo.com/video/1187652586?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479&amp;autoplay=1&amp;muted=1&amp;loop=1"
 image_tags:
   - data-visualization

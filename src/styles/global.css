@@ -849,3 +849,229 @@ video {
   }
 }
 
+/* ---- Editorial home (/) + Filmstrip ----
+   Short prose lines (.prose-line) act as flow markers between Filmstrip
+   modules. Filmstrip swaps which asset is primary in place via vanilla JS
+   (see src/components/Filmstrip.astro); only the active slot is visible. */
+.editorial {
+  display: flex;
+  flex-direction: column;
+  gap: var(--pad);
+}
+
+/* Slightly more breathing room around filmstrips when they meet text, without
+   inflating text-to-text or filmstrip-to-filmstrip gaps. Flex `gap` doesn't
+   collapse with margins, so this adds `--pad-sm` on top of the base `--pad`. */
+.editorial > .filmstrip + .prose-line,
+.editorial > .prose-line + .filmstrip,
+.editorial > .editorial-lead + .filmstrip {
+  margin-top: var(--pad-sm);
+}
+
+.editorial-lead {
+  /* same width as other page-intros so the lead reads as page copy, not as
+     a filmstrip caption. */
+  max-width: 60ch;
+}
+
+.prose-line {
+  font-size: var(--fs-body);
+  color: var(--color-fg);
+  /* No vertical margin — `.editorial` is a flex column with `gap: var(--pad)`
+     and flex doesn't margin-collapse, so adding margin here would double-space
+     every text section. The editorial gap is the single source of inter-section
+     rhythm. */
+  margin: 0;
+  max-width: 60ch;
+}
+
+.filmstrip {
+  display: flex;
+  flex-direction: column;
+  gap: var(--pad-sm);
+}
+
+.filmstrip-stage {
+  /* All slots share one grid cell so the stage height = tallest slot, and
+     swapping doesn't reflow surrounding content. Only .is-active is shown
+     (visibility, not display, so the cell keeps its height).
+     `minmax(0, 1fr)` keeps a single-asset filmstrip from collapsing to its
+     content's intrinsic min-width (which can happen because the grid track
+     is auto when columns aren't declared). No height cap — aspect-ratio is
+     honored at whatever width and the assets are full-bleed by intent.
+     Stage is the click-to-advance surface (no <button> wrapper because it
+     contains arbitrary block content; the JS handler does the work, and
+     keyboard users advance via the thumbs). */
+  display: grid;
+  grid-template-areas: "primary";
+  grid-template-columns: minmax(0, 1fr);
+  position: relative;
+  width: 100%;
+  cursor: pointer;
+}
+
+.filmstrip-slot {
+  grid-area: primary;
+  visibility: hidden;
+  pointer-events: none;
+  display: block;
+  text-decoration: none;
+  color: inherit;
+}
+
+.filmstrip-slot.is-active {
+  visibility: visible;
+  pointer-events: auto;
+}
+
+.filmstrip-slot img,
+.filmstrip-slot video {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+/* Embed-style slots (Vimeo / YouTube iframes) have no intrinsic dimensions,
+   so we give them a 16:9 box. Iframe owns clicks — slot isn't an <a>. */
+.filmstrip-slot.is-embed {
+  aspect-ratio: 16 / 9;
+  width: 100%;
+}
+
+.filmstrip-slot.is-embed {
+  position: relative;
+}
+
+.filmstrip-slot.is-embed iframe {
+  display: block;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+/* Iframes capture clicks, so the parent stage never sees them. A click-catcher
+   div sits on top of the iframe; its clicks bubble to the stage handler,
+   which advances. Tradeoff: any player chrome inside the iframe (Vimeo's
+   play/pause) becomes unreachable in-place — visitors play the full video on
+   the project page instead. */
+.filmstrip-embed-catcher {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  display: block;
+  cursor: pointer;
+}
+
+.filmstrip-thumb-fill {
+  display: block;
+  width: 100%;
+  height: 100%;
+  background: color-mix(in oklab, var(--color-fg) 15%, transparent);
+}
+
+.filmstrip-sound {
+  position: absolute;
+  bottom: var(--pad-sm);
+  right: var(--pad-sm);
+  background: color-mix(in oklab, var(--color-bg) 80%, transparent);
+  color: var(--color-fg);
+  border: 1px solid color-mix(in oklab, var(--color-fg) 20%, transparent);
+  padding: 4px 10px;
+  font: inherit;
+  font-size: var(--fs-secondary);
+  cursor: pointer;
+  z-index: 1;
+}
+
+.filmstrip-caption {
+  font-size: var(--fs-body);
+  color: var(--color-fg);
+  margin: 0;
+}
+
+.filmstrip-caption a {
+  color: inherit;
+}
+
+.filmstrip-controls {
+  display: flex;
+  gap: var(--pad);
+  font-size: var(--fs-body);
+}
+
+.filmstrip-control {
+  font: inherit;
+  color: inherit;
+  background: transparent;
+  border: 0;
+  padding: 0;
+  cursor: pointer;
+  line-height: 1;
+}
+
+.filmstrip-control:hover {
+  color: var(--color-accent);
+}
+
+/* `.filmstrip-thumbs[hidden]` is needed because `display: flex` below
+   overrides the HTML `hidden` attribute's default `display: none`. */
+.filmstrip-thumbs[hidden] {
+  display: none;
+}
+
+.filmstrip-thumbs {
+  list-style: none;
+  display: flex;
+  gap: var(--pad-sm);
+  padding: 0;
+  margin: 0;
+  /* Narrow viewports: scroll horizontally rather than wrapping. */
+  overflow-x: auto;
+  scrollbar-width: thin;
+}
+
+.filmstrip-thumbs li {
+  flex: 0 0 auto;
+}
+
+.filmstrip-thumb {
+  position: relative;
+  display: block;
+  /* Scales from ~96px on small viewports to ~192px (≈2x) at 4K. Vimeo
+     posters are 16:9 so a 16:9 thumb shows the full frame, not a center
+     crop. Image thumbs with arbitrary aspects fall back to object-fit:cover. */
+  width: clamp(96px, 5vw, 192px);
+  aspect-ratio: 16 / 9;
+  padding: 0;
+  border: 2px solid transparent;
+  background: transparent;
+  cursor: pointer;
+  overflow: hidden;
+}
+
+.filmstrip-thumb[aria-pressed="true"] {
+  border-color: var(--color-fg);
+}
+
+.filmstrip-thumb img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.filmstrip-thumb-play {
+  /* Pure-CSS triangle so video thumbs are visually distinct. */
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 8px 0 8px 12px;
+  border-color: transparent transparent transparent #fff;
+  transform: translate(-40%, -50%);
+  filter: drop-shadow(0 0 2px rgba(0, 0, 0, 0.5));
+  pointer-events: none;
+}
+

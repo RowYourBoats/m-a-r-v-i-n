@@ -5,23 +5,24 @@ interface Props {
   title?: string;
   // Optional override for the active nav item. `/projects/[slug]` uses this
   // because a project's path can't tell you whether it's work or practice.
-  section?: "work" | "archive" | "practice" | "marvin";
+  section?: "marvin" | "work" | "practice" | "resume";
 }
 
 const { title = "Marvin de Jong", section } = Astro.props;
 const path = Astro.url.pathname;
 
 const SECTION_BY_HREF: Record<string, string> = {
-  "/": "work",
-  "/archive": "archive",
+  "/": "marvin",
+  "/work": "work",
   "/practice": "practice",
-  "/marvin": "marvin",
+  "/resume": "resume",
 };
 
 function isCurrent(href: string) {
   if (section) return SECTION_BY_HREF[href] === section;
   if (href === "/") return path === "/";
-  if (href === "/archive") return path.startsWith("/archive") || path.startsWith("/projects");
+  // /projects/[slug] pages light up the Work tab (they're individual works).
+  if (href === "/work") return path.startsWith("/work") || path.startsWith("/projects");
   return path.startsWith(href);
 }
 ---
@@ -46,10 +47,10 @@ function isCurrent(href: string) {
   </head>
   <body>
     <nav class="nav">
-      <a href="/" aria-current={isCurrent("/") ? "page" : undefined}>Work</a>
-      <a href="/archive" aria-current={isCurrent("/archive") ? "page" : undefined}>Archive</a>
+      <a href="/" aria-current={isCurrent("/") ? "page" : undefined}>Marvin</a>
+      <a href="/work" aria-current={isCurrent("/work") ? "page" : undefined}>Work</a>
       <a href="/practice" aria-current={isCurrent("/practice") ? "page" : undefined}>Practice</a>
-      <a href="/marvin" aria-current={isCurrent("/marvin") ? "page" : undefined}>Marvin</a>
+      <a href="/resume" aria-current={isCurrent("/resume") ? "page" : undefined}>Resume</a>
       <button class="theme-toggle" id="theme-toggle" aria-label="Toggle theme"></button>
     </nav>
     <main class="page">
@@ -59,7 +60,7 @@ function isCurrent(href: string) {
     <script is:inline>
       // Vimeo iframe scroll-aware suspend.
       //
-      // Each Vimeo iframe runs a full Player SPA — 46 of them on /archive
+      // Each Vimeo iframe runs a full Player SPA — 46 of them on /work
       // burn ~2.5 GB of memory and pin a CPU core. `loading="lazy"` already
       // defers iframes that are far from the viewport on first paint; this
       // observer handles the rest of the lifecycle: once an iframe is loaded

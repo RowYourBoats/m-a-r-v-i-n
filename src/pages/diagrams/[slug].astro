@@ -4,7 +4,7 @@ import Base from "@/layouts/Base.astro";
 
 const { slug } = Astro.params;
 const entry = await getEntry("diagrams", slug!);
-if (!entry) return Astro.redirect("/archive");
+if (!entry) return Astro.redirect("/work");
 
 const { title, caption, component, project_keys = [] } = entry.data;
 

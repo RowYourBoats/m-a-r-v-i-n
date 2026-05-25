@@ -2,7 +2,7 @@
 
 Canonical reference for tags on images (`public/images/image_catalogue.json`) and projects (`public/images/{tier}/{client}/_project.md`). Update as decisions are made.
 
-Last reviewed: 2026-05-13.
+Last reviewed: 2026-05-25.
 
 ## How this doc works
 
@@ -10,6 +10,7 @@ Last reviewed: 2026-05-13.
 - Compare the audit output to this doc. Anything in the audit not listed here is unrecognized: either fold in (and add a row), or kick out (and add a migration entry).
 - This doc records *decisions*, not snapshots. When a tag changes status (added / dropped / consolidated), note it in the migration log.
 - The four image-level axes are orthogonal — values do not move across them. If a value seems to belong in two axes, one of them is wrong.
+- `medium` and `format` in particular are independent. `medium` is the practice / discipline (event design, video, print design, digital design, …); `format` is the artifact / output type (deck, poster, keynote, …). The same project can — and usually does — carry both, in any combination. Don't infer one from the other; don't restrict one based on the other.
 
 ---
 
@@ -17,21 +18,22 @@ Last reviewed: 2026-05-13.
 
 Per-image tags. Four axes, each doing distinct work.
 
-### `medium` — the substrate
+### `medium` — practice / discipline
 
-Where the work lives. Singular.
+What discipline of design work this is. Singular per image. Distinct from the asset's *file type* (image / video / audio) — `medium` is the conceptual practice, not the codec.
 
 | value | meaning |
 | --- | --- |
-| `digital` | screen-bound static / interactive: site, deck, social, generative output, photograph-as-file |
-| `print` | physical printed artifact: book, poster, packaging printed graphics |
-| `environments` | spatial / built: installation, retail interior |
-| `product` | object as substrate: merch, packaging-as-object, physical product graphics |
-| `video` | time-based moving image (distinct medium with its own production language) |
+| `digital` | screen-bound static / interactive design: sites, decks, social, generative output, UI work |
+| `print` | print design: books, posters, packaging printed graphics |
+| `environments` | spatial / built design: installation, retail interior, wayfinding |
+| `product` | product design: merch, packaging-as-object, physical product graphics |
+| `video` | motion / video work as its own discipline (production language distinct from static design) |
+| `event` | event design: brand expression in the context of a moment / gathering, where the artifact's purpose is to inhabit that moment |
 
-### `format` — artifact shape
+### `format` — artifact / output type
 
-What the image *is*. Multi-value allowed but usually one per image.
+What the asset *is* as an output. Multi-value allowed. Applies to images **and** videos (build-manifest threads per-video `format` into video item tags exactly as it does for images).
 
 | value | n | meaning |
 | --- | --- | --- |
@@ -39,14 +41,16 @@ What the image *is*. Multi-value allowed but usually one per image.
 | `poster` | 42 | poster artwork |
 | `editorial` | 38 | editorial layout (magazine, newspaper) |
 | `campaign` | 32 | campaign artwork (under review — see working notes) |
-| `event` | 24 | event-context image |
 | `publication-design` | 37 | book / publication page or spread (design of a publication) |
 | `installation` | 20 | installation photograph |
 | `exhibition` | 14 | exhibition view |
+| `keynote` | 0 | keynote slide, animation, or full presentation (image or video) — surfaces under the `keynote` chip |
 | `stationery` | 9 | letterhead, cards, invites |
 | `merch` | 6 | merch object |
 | `booth` | 4 | trade-show booth |
 | `web` | 4 | website / web artifact |
+
+`event` moved out of `format` on 2026-05-25 — it's a discipline (now `medium: event`), not an artifact shape. A poster *for* an event is `format: poster, medium: event`.
 
 ### `characteristics` — qualities
 
@@ -130,6 +134,9 @@ Decisions and the data work that follows. Pending rows are open until the data r
 | 2026-05-13 | Consolidate `format: publication` (24) into `format: publication-design` (37). publication-design is the more accurate term — the design of a publication, not the publication itself. | done |
 | 2026-05-13 | Drop `format: video` (8). Set `medium: video` on those entries. Video belongs on the substrate axis, not the artifact-shape axis. | done |
 | 2026-05-13 | Reworked `work_filters` in `src/data/schema.json`. Pinned: `spatial` (exhibition+installation+retail), `identity`, `keynote`, `interactive`, `editorial` (editorial+publication-design). Expanded: poster, event, web, campaign, deck, merch, motion, video, data-visualization, photography, illustration, 3d. Fixed the `identity` chip (`matches` was the now-removed `identity-system`; now `identity`). Reconciled `schema.mediums` to the canonical 5. | done |
+| 2026-05-25 | Add `event` to `medium` vocabulary, drop `event` from `format`. 23 catalogue entries migrated by `scripts/migrate-event-medium-2026-05-25.mjs`: format `event` removed, medium set to `event` (overwriting prior digital/print/environments classification). Reframes the axes: `medium` = practice/discipline, `format` = artifact/output type, orthogonal. | done |
+| 2026-05-25 | Add `keynote` to `format` vocabulary. Was previously only in `project_type`; the `/work` keynote chip had nothing to match per-item. Now applies to any keynote slide / deck / animation / video. AWS videos seeded with `format: [keynote]` in `_project.md`. Tag images via the admin portal as they're added. | done |
+| 2026-05-25 | Extend videos to carry `format` (and override `medium`) in their per-video `_project.md` entry. Previously only `characteristics` + `subject` threaded into the video item's tags; `format` is now in the union too. Enables `format: keynote` on AWS videos and any other per-video artifact tagging. | done |
 
 ## Working notes / open questions
 

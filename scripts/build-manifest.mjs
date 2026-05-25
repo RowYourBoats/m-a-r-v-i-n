@@ -342,16 +342,21 @@ for (const [slug, proj] of Object.entries(registry)) {
         video: `${baseUrl}?${params}`,
         video_mode: vid.video_mode || "background",
         title: vid.title || "",
-        // Mirror image items: fold the video entry's characteristics + subject
-        // into the flat `tags` union so the data-tags filter UI can match them
-        // (e.g. `essay` on a video essay → the Practice essay filter).
+        // Mirror image items: fold the video entry's format + characteristics +
+        // subject into the flat `tags` union so the data-tags filter UI can
+        // match them (e.g. `keynote` on an AWS video → the keynote chip;
+        // `essay` on a video essay → the Practice essay filter).
         tags: [...new Set([
           "video",
+          ...(Array.isArray(vid.format) ? vid.format : []),
           ...(Array.isArray(vid.characteristics) ? vid.characteristics : []),
           ...(Array.isArray(vid.subject) ? vid.subject : []),
         ])],
         project_tags: projectTagsFor(proj),
-        medium: "video",
+        // Per-video `medium:` override (default still "video"). Per the
+        // post-2026-05-25 framing, medium = practice/discipline, so a video
+        // documenting an event can declare `medium: event` explicitly.
+        medium: vid.medium || "video",
         project: slug,
       };
       const dims = await probeVideoDims(baseUrl);

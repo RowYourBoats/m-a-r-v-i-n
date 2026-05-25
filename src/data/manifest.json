@@ -3114,13 +3114,11 @@
       "tags": [
         "poster",
         "exhibition",
-        "event",
         "photography"
       ],
       "format": [
         "poster",
-        "exhibition",
-        "event"
+        "exhibition"
       ],
       "characteristics": [],
       "subject": [
@@ -3131,7 +3129,7 @@
         "exhibition",
         "education"
       ],
-      "medium": "environments",
+      "medium": "event",
       "project": "yale-studio",
       "description": "A grid-based collage poster for the 2015 undergraduate thesis show, composed of diverse photographic elements showcasing students and their work, with prominent typographic emphasis on 'STUDIO' to highlight the exhibition's focus.",
       "width": 916,
@@ -3150,13 +3148,11 @@
       "tags": [
         "poster",
         "exhibition",
-        "event",
         "photography"
       ],
       "format": [
         "poster",
-        "exhibition",
-        "event"
+        "exhibition"
       ],
       "characteristics": [],
       "subject": [
@@ -3167,7 +3163,7 @@
         "exhibition",
         "education"
       ],
-      "medium": "environments",
+      "medium": "event",
       "project": "yale-studio",
       "description": "",
       "width": 1897,
@@ -3523,14 +3519,12 @@
       "title": "IonQ Forte Enterprise Promotional Poster",
       "tags": [
         "booth",
-        "event",
         "exhibition",
         "3d",
         "typography"
       ],
       "format": [
         "booth",
-        "event",
         "exhibition"
       ],
       "characteristics": [
@@ -3543,7 +3537,7 @@
         "b2b",
         "quantum-computing"
       ],
-      "medium": "print",
+      "medium": "event",
       "project": "ionq-one-pagers",
       "description": "A minimalist promotional poster for IonQ's quantum computing system, showcasing key technical specifications in a clean, high-contrast layout.",
       "width": 3839,
@@ -3653,12 +3647,10 @@
       "title": "Herman Miller All Together Now Milan 2019 Window Display",
       "tags": [
         "exhibition",
-        "event",
         "typography"
       ],
       "format": [
-        "exhibition",
-        "event"
+        "exhibition"
       ],
       "characteristics": [],
       "subject": [
@@ -3671,7 +3663,7 @@
         "exhibition",
         "furniture"
       ],
-      "medium": "environments",
+      "medium": "event",
       "project": "herman-miller-all-together-now",
       "description": "A curated retail window display for Herman Miller's 'All Together Now' campaign, featuring modular grid arrangements of furniture within illuminated compartments to showcase diverse product lines.",
       "width": 8688,
@@ -4085,13 +4077,11 @@
       "title": "Herman Miller Exhibition Illustrations",
       "tags": [
         "installation",
-        "event",
         "exhibition",
         "illustration"
       ],
       "format": [
         "installation",
-        "event",
         "exhibition"
       ],
       "characteristics": [],
@@ -4105,7 +4095,7 @@
         "exhibition",
         "furniture"
       ],
-      "medium": "environments",
+      "medium": "event",
       "project": "herman-miller-industrial-facility",
       "description": "Minimalist illustrated furniture pieces displayed in a white gallery space, showcasing Herman Miller's design heritage through simplified graphic representations.",
       "width": 2345,
@@ -4122,12 +4112,10 @@
       "title": "Herman Miller Industrial Design Product Showcase",
       "tags": [
         "installation",
-        "event",
         "exhibition"
       ],
       "format": [
         "installation",
-        "event",
         "exhibition"
       ],
       "characteristics": [],
@@ -4139,7 +4127,7 @@
         "exhibition",
         "furniture"
       ],
-      "medium": "environments",
+      "medium": "event",
       "project": "herman-miller-industrial-facility",
       "description": "A curated top-down arrangement of Herman Miller's industrial design products, including storage solutions, stationery, and printed materials, demonstrating functional elegance and material aesthetics in a workspace context.",
       "width": 8000,
@@ -4252,12 +4240,10 @@
       "title": "Ward Bennett Chair Exhibition Display",
       "tags": [
         "exhibition",
-        "event",
         "typography"
       ],
       "format": [
-        "exhibition",
-        "event"
+        "exhibition"
       ],
       "characteristics": [],
       "subject": [
@@ -4270,7 +4256,7 @@
         "exhibition",
         "furniture"
       ],
-      "medium": "environments",
+      "medium": "event",
       "project": "herman-miller-ward-bennett",
       "description": "A Ward Bennett-designed chair presented in a minimalist exhibition space, showcasing the brand's design legacy through curated spatial arrangement and natural lighting.",
       "width": 1600,
@@ -4287,12 +4273,10 @@
       "title": "Ward Bennett Chair Exhibition",
       "tags": [
         "exhibition",
-        "event",
         "typography"
       ],
       "format": [
-        "exhibition",
-        "event"
+        "exhibition"
       ],
       "characteristics": [],
       "subject": [
@@ -4305,7 +4289,7 @@
         "exhibition",
         "furniture"
       ],
-      "medium": "environments",
+      "medium": "event",
       "project": "herman-miller-ward-bennett",
       "description": "Herman Miller showcases the Ward Bennett chair in a minimalist exhibition setting, emphasizing its design through clean architectural lines and strategic lighting.",
       "width": 8000,
@@ -5109,7 +5093,6 @@
       "type": "image",
       "title": "IonQ Quantum Computing -  Quantum Korea",
       "tags": [
-        "event",
         "booth",
         "exhibition",
         "typography",
@@ -5117,7 +5100,6 @@
         "product-render"
       ],
       "format": [
-        "event",
         "booth",
         "exhibition"
       ],
@@ -5131,7 +5113,7 @@
         "b2b",
         "quantum-computing"
       ],
-      "medium": "print",
+      "medium": "event",
       "project": "ionq-expo",
       "description": "A light box poster layout for IonQ's quantum computing products, showcasing brand identity, product photography, and technical specs to emphasize market readiness and performance capabilities.",
       "width": 12488,
@@ -5149,7 +5131,6 @@
       "tags": [
         "poster",
         "booth",
-        "event",
         "exhibition",
         "product-render",
         "typography"
@@ -5157,7 +5138,6 @@
       "format": [
         "poster",
         "booth",
-        "event",
         "exhibition"
       ],
       "characteristics": [],
@@ -5169,7 +5149,7 @@
         "b2b",
         "quantum-computing"
       ],
-      "medium": "print",
+      "medium": "event",
       "project": "ionq-expo",
       "description": "A digital promotional design for IonQ showcasing their enterprise-grade quantum computing hardware with minimalist aesthetics and geometric patterns, emphasizing brand identity and technological advancement.",
       "width": 1982,
@@ -5186,14 +5166,12 @@
       "title": "IonQ Quantum Computing Expo Booth",
       "tags": [
         "booth",
-        "event",
         "exhibition",
         "typography",
         "product-render"
       ],
       "format": [
         "booth",
-        "event",
         "exhibition"
       ],
       "characteristics": [],
@@ -5205,7 +5183,7 @@
         "b2b",
         "quantum-computing"
       ],
-      "medium": "environments",
+      "medium": "event",
       "project": "ionq-expo",
       "description": "A professionally designed exhibition booth for IonQ at a technology event, showcasing the brand's leadership in commercial quantum computing through strategic spatial layout and immersive branding elements.",
       "width": 1920,
@@ -5684,12 +5662,10 @@
       "type": "image",
       "title": "Pratt Institute Design Event Poster: 'Designing with Diversity'",
       "tags": [
-        "poster",
-        "event"
+        "poster"
       ],
       "format": [
-        "poster",
-        "event"
+        "poster"
       ],
       "characteristics": [],
       "subject": [],
@@ -5697,7 +5673,7 @@
         "b2c",
         "education"
       ],
-      "medium": "print",
+      "medium": "event",
       "project": "pratt-design-system",
       "description": "A promotional poster for a lecture event at Pratt Institute's School of Design, highlighting Czech design and the work of Jiří Pelcl Studio. Features event details, a minimalist glass cactus illustration, and institutional branding in a clean layout.",
       "width": 600,
@@ -5712,19 +5688,15 @@
       "src": "https://ws6i2dfuggcaavs2.public.blob.vercel-storage.com/images/work/pratt/design-system/MarvinDeJong-DesignPortfolio.jpeg",
       "type": "image",
       "title": "Pratt Manhattan Center Signage",
-      "tags": [
-        "event"
-      ],
-      "format": [
-        "event"
-      ],
+      "tags": [],
+      "format": [],
       "characteristics": [],
       "subject": [],
       "project_tags": [
         "b2c",
         "education"
       ],
-      "medium": "environments",
+      "medium": "event",
       "project": "pratt-design-system",
       "description": "Exterior signage for the Sondra and David S. Mack Pratt Manhattan Center and Pratt Manhattan Gallery, showcasing branded banners on a historic building facade.",
       "width": 1805,
@@ -5768,19 +5740,15 @@
       "src": "https://ws6i2dfuggcaavs2.public.blob.vercel-storage.com/images/work/pratt/design-system/PrattFlags.jpeg",
       "type": "image",
       "title": "Pratt Manhattan Center & Gallery Banners",
-      "tags": [
-        "event"
-      ],
-      "format": [
-        "event"
-      ],
+      "tags": [],
+      "format": [],
       "characteristics": [],
       "subject": [],
       "project_tags": [
         "b2c",
         "education"
       ],
-      "medium": "environments",
+      "medium": "event",
       "project": "pratt-design-system",
       "description": "Photograph of black banner installations for Pratt Manhattan Center and Gallery, demonstrating the institution's brand identity through minimalist typography and strategic placement on a historic building facade.",
       "width": 3005,
@@ -6680,11 +6648,9 @@
       "type": "image",
       "title": "Verizon 5G NYC Store Wrap",
       "tags": [
-        "event",
         "campaign"
       ],
       "format": [
-        "event",
         "campaign"
       ],
       "characteristics": [],
@@ -6694,7 +6660,7 @@
         "retail",
         "telecom"
       ],
-      "medium": "environments",
+      "medium": "event",
       "project": "verizon-5G-campaigns",
       "description": "This image showcases a retail storefront wrap for Verizon’s 2019 NYC launch campaign, featuring prominent '5G built right for NYC' branding across the glass facade in a minimalist, urban context.",
       "width": 960,
@@ -6710,11 +6676,9 @@
       "type": "image",
       "title": "Verizon 5G NYC Storefront",
       "tags": [
-        "event",
         "campaign"
       ],
       "format": [
-        "event",
         "campaign"
       ],
       "characteristics": [],
@@ -6724,7 +6688,7 @@
         "retail",
         "telecom"
       ],
-      "medium": "environments",
+      "medium": "event",
       "project": "verizon-5G-campaigns",
       "description": "A retail storefront design for Verizon’s 5G campaign, utilizing bold typography and spatial layout to emphasize '5G built right for NYC' within a contemporary commercial environment.",
       "width": 4032,
@@ -6740,11 +6704,9 @@
       "type": "image",
       "title": "Verizon 5G Urban Brand Activation",
       "tags": [
-        "event",
         "campaign"
       ],
       "format": [
-        "event",
         "campaign"
       ],
       "characteristics": [],
@@ -6754,7 +6716,7 @@
         "retail",
         "telecom"
       ],
-      "medium": "environments",
+      "medium": "event",
       "project": "verizon-5G-campaigns",
       "description": "This image showcases a large-scale 5G branding installation on a city storefront, where bold typography merges with the urban environment to promote Verizon's 5G campaign.",
       "width": 1000,
@@ -6770,11 +6732,9 @@
       "type": "image",
       "title": "Verizon 5G Storefront Graphics",
       "tags": [
-        "event",
         "campaign"
       ],
       "format": [
-        "event",
         "campaign"
       ],
       "characteristics": [],
@@ -6784,7 +6744,7 @@
         "retail",
         "telecom"
       ],
-      "medium": "environments",
+      "medium": "event",
       "project": "verizon-5G-campaigns",
       "description": "This image captures Verizon's 5G campaign through large-scale window graphics on a retail storefront, highlighting 'built right for 5G' and '5G built right for NYC' messaging in an urban setting.",
       "width": 2006,
@@ -6828,11 +6788,9 @@
       "type": "image",
       "title": "Verizon 5G Storefront Campaign",
       "tags": [
-        "event",
         "campaign"
       ],
       "format": [
-        "event",
         "campaign"
       ],
       "characteristics": [],
@@ -6842,7 +6800,7 @@
         "retail",
         "telecom"
       ],
-      "medium": "environments",
+      "medium": "event",
       "project": "verizon-5G-campaigns",
       "description": "A glass storefront installation showcases oversized '5G' lettering with Verizon's signature red 'V' logo, executed as part of a brand-driven retail campaign in an urban environment.",
       "width": 1974,
@@ -6858,11 +6816,9 @@
       "type": "image",
       "title": "Verizon 5G Campaign Window Display",
       "tags": [
-        "event",
         "campaign"
       ],
       "format": [
-        "event",
         "campaign"
       ],
       "characteristics": [],
@@ -6872,7 +6828,7 @@
         "retail",
         "telecom"
       ],
-      "medium": "environments",
+      "medium": "event",
       "project": "verizon-5G-campaigns",
       "description": "A retail window installation for Verizon's 5G campaign at 770 Lexington Ave, showcasing large-scale typography and the brand's iconic red 'V' logo against a reflective urban backdrop.",
       "width": 8223,
@@ -20184,12 +20140,10 @@
       "type": "image",
       "title": "Verizon x The Met Storefront Collaboration",
       "tags": [
-        "event",
         "campaign",
         "proposal"
       ],
       "format": [
-        "event",
         "campaign"
       ],
       "characteristics": [],
@@ -20201,7 +20155,7 @@
         "retail",
         "telecom"
       ],
-      "medium": "environments",
+      "medium": "event",
       "project": "verizon-the-met",
       "description": "A collaborative retail space showcasing Verizon’s integration with The Met’s 'Unframed' campaign through a modern glass facade and prominent typography.",
       "width": 2670,
@@ -20217,12 +20171,10 @@
       "type": "image",
       "title": "Verizon at The Met Retail Environment",
       "tags": [
-        "event",
         "campaign",
         "proposal"
       ],
       "format": [
-        "event",
         "campaign"
       ],
       "characteristics": [],
@@ -20234,7 +20186,7 @@
         "retail",
         "telecom"
       ],
-      "medium": "environments",
+      "medium": "event",
       "project": "verizon-the-met",
       "description": "A minimalist retail space for Verizon within The Met, integrating product displays and a cultural mural to create an immersive brand experience.",
       "width": 2670,
@@ -20250,12 +20202,10 @@
       "type": "image",
       "title": "Verizon Retail Space at The Met",
       "tags": [
-        "event",
         "campaign",
         "proposal"
       ],
       "format": [
-        "event",
         "campaign"
       ],
       "characteristics": [],
@@ -20267,7 +20217,7 @@
         "retail",
         "telecom"
       ],
-      "medium": "environments",
+      "medium": "event",
       "project": "verizon-the-met",
       "description": "A modern retail environment for Verizon within The Met, featuring organized product displays, minimalist spatial design, and integrated seating.",
       "width": 2674,
@@ -20891,7 +20841,8 @@
       "video_mode": "background",
       "title": "Reinforcement Learning Gyms",
       "tags": [
-        "video"
+        "video",
+        "keynote"
       ],
       "project_tags": [
         "b2b",
@@ -20913,7 +20864,8 @@
       "video_mode": "background",
       "title": "Agent Core Comparison",
       "tags": [
-        "video"
+        "video",
+        "keynote"
       ],
       "project_tags": [
         "b2b",
@@ -20934,7 +20886,8 @@
       "video_mode": "background",
       "title": "Fine Tuning",
       "tags": [
-        "video"
+        "video",
+        "keynote"
       ],
       "project_tags": [
         "b2b",
@@ -20955,7 +20908,8 @@
       "video_mode": "background",
       "title": "Model Distillation",
       "tags": [
-        "video"
+        "video",
+        "keynote"
       ],
       "project_tags": [
         "b2b",
@@ -20977,7 +20931,8 @@
       "video_mode": "background",
       "title": "Transformation and Agility",
       "tags": [
-        "video"
+        "video",
+        "keynote"
       ],
       "project_tags": [
         "b2b",
@@ -20999,7 +20954,8 @@
       "video_mode": "background",
       "title": "Contact Center",
       "tags": [
-        "video"
+        "video",
+        "keynote"
       ],
       "project_tags": [
         "b2b",
@@ -21020,7 +20976,8 @@
       "video_mode": "background",
       "title": "Acceleration",
       "tags": [
-        "video"
+        "video",
+        "keynote"
       ],
       "project_tags": [
         "b2b",
@@ -21041,7 +20998,8 @@
       "video_mode": "background",
       "title": "LLM and Neuro Symbolic AI",
       "tags": [
-        "video"
+        "video",
+        "keynote"
       ],
       "project_tags": [
         "b2b",
@@ -21063,7 +21021,8 @@
       "video_mode": "background",
       "title": "Colleen Aubrey, Agent in the Loop",
       "tags": [
-        "video"
+        "video",
+        "keynote"
       ],
       "project_tags": [
         "b2b",
@@ -21084,7 +21043,8 @@
       "video_mode": "background",
       "title": "Neurosymbolic AI and Verification",
       "tags": [
-        "video"
+        "video",
+        "keynote"
       ],
       "project_tags": [
         "b2b",

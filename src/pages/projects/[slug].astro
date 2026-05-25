@@ -8,18 +8,18 @@ const { slug } = Astro.params;
 const { projects, items: allManifestItems } = manifest as any;
 const project = projects[slug!];
 
-if (!project || project.snapshot_only) return Astro.redirect("/archive");
+if (!project || project.snapshot_only) return Astro.redirect("/work");
 
 // manifest.projects drops `image_folders`, so the tier (work / practice /
 // teaching) comes from projects.json. Practice projects send the visitor
 // back to /practice and light up the Practice nav item; everything else
-// belongs to the archive.
+// belongs to /work.
 const projectFull = (projectsData as any)[slug!];
 const tier = projectFull?.image_folders?.[0]?.split("/")[0] ?? "work";
 const isPractice = tier === "practice";
-const backHref = isPractice ? "/practice" : "/archive";
-const backLabel = isPractice ? "Back to practice" : "Back to archive";
-const navSection = isPractice ? "practice" : "archive";
+const backHref = isPractice ? "/practice" : "/work";
+const backLabel = isPractice ? "Back to practice" : "Back to work";
+const navSection = isPractice ? "practice" : "work";
 
 const items = allManifestItems.filter((i: any) => i.project === slug);
 

@@ -36,10 +36,30 @@ const bullets = defineCollection({
   }),
 });
 
+// Editorial-page sections. `text` is a short prose line that sits between
+// media blocks as a flow marker; `filmstrip` renders a primary + up to 4
+// thumbs (5 assets total, build fails past 5 via Zod .max(5)).
+const filmstripAsset = z.object({
+  src: z.string(),
+  type: z.enum(["image", "video"]),
+  poster: z.string().optional(),
+  project_url: z.string().optional(),
+  project_label: z.string().optional(),
+});
+
+const pageSection = z.discriminatedUnion("kind", [
+  z.object({ kind: z.literal("text"), body: z.string() }),
+  z.object({
+    kind: z.literal("filmstrip"),
+    assets: z.array(filmstripAsset).min(1).max(5),
+  }),
+]);
+
 const pages = defineCollection({
   loader: glob({ pattern: "*.md", base: "./src/content/pages" }),
   schema: z.object({
     title: z.string().optional(),
+    sections: z.array(pageSection).optional(),
   }),
 });
 

@@ -1,0 +1,257 @@
+---
+// Filmstrip — primary asset + up to 5 assets total. Click a thumb to swap
+// directly; click anywhere on the primary stage to advance to the next asset
+// (cycles). The caption between thumbs and stage is the link to the active
+// asset's project_url. Video assets play muted by default with a sound
+// toggle. Asset shape mirrors src/content.config.ts → filmstripAsset.
+
+interface Asset {
+  src: string;
+  type: "image" | "video";
+  poster?: string;
+  project_url?: string;
+  project_label?: string;
+}
+
+interface Props {
+  assets: Asset[];
+}
+
+import vimeoPosters from "@/data/vimeo-posters.json";
+
+const { assets } = Astro.props;
+
+// Friendly to authoring: if a URL was pasted with HTML entity-encoded `&amp;`
+// (common when copying from a rendered page), normalize it to plain `&`.
+// YAML stores `&amp;` literally, which would otherwise corrupt query strings.
+const decode = (s?: string) => (s || "").replace(/&amp;/g, "&");
+
+// Vimeo / YouTube embed URLs can't play in a <video> element — they're
+// iframe documents. Auto-detect so authors can keep `type: video` for both
+// HTML5 files and player embeds.
+const isEmbedUrl = (s: string) =>
+  /player\.vimeo\.com|youtube\.com\/embed|youtu\.be\//.test(s);
+
+// Resolve a Vimeo poster from the cache populated by
+// scripts/sync-vimeo-posters.mjs. Falls back to undefined; caller treats
+// that as "no poster, show the play-glyph placeholder."
+const vimeoIdFrom = (s: string) => {
+  const m = s.match(/player\.vimeo\.com\/video\/(\d+)/);
+  return m ? m[1] : null;
+};
+
+// Strip all Vimeo player chrome (incl. the unmute button) by ensuring
+// `background=1` is present. Keep the rest of the params alone — background=1
+// + the existing autoplay/muted/loop is the sane combo for filmstrip primaries
+// since we're using click-to-advance instead of in-iframe interaction.
+const ensureVimeoBackground = (src: string) => {
+  if (!/player\.vimeo\.com\/video\//.test(src)) return src;
+  if (/[?&]background=1\b/.test(src)) return src;
+  return src + (src.includes("?") ? "&" : "?") + "background=1";
+};
+
+const norm = assets.map((a) => {
+  const src = decode(a.src);
+  const id = vimeoIdFrom(src);
+  const autoPoster = id ? (vimeoPosters as Record<string, string>)[id] : undefined;
+  const finalSrc = a.type === "video" ? ensureVimeoBackground(src) : src;
+  return {
+    ...a,
+    src: finalSrc,
+    // Explicit `poster:` in YAML wins; fall back to the auto-resolved Vimeo
+    // poster when present.
+    poster: decode(a.poster) || autoPoster || "",
+    project_url: decode(a.project_url),
+    isEmbed: a.type === "video" && isEmbedUrl(src),
+  };
+});
+---
+
+<div class="filmstrip" data-filmstrip>
+  {norm.length > 1 && (
+    <div class="filmstrip-controls" aria-label="Filmstrip navigation">
+      <button type="button" class="filmstrip-control" data-prev aria-label="Previous asset">←</button>
+      <button type="button" class="filmstrip-control" data-next aria-label="Next asset">→</button>
+    </div>
+  )}
+
+  <p class="filmstrip-caption">
+    {norm[0].project_url ? (
+      <a href={norm[0].project_url} data-caption-link>{norm[0].project_label || ""}</a>
+    ) : (
+      <span data-caption-text>{norm[0].project_label || ""}</span>
+    )}
+  </p>
+
+  {/*
+    Thumbnails hidden for now — left in DOM (display:none) so the swap script
+    keeps tracking aria-pressed state without branching. Re-show by removing
+    the .filmstrip-thumbs `display: none` rule.
+  */}
+  <ol class="filmstrip-thumbs" hidden>
+    {norm.map((a, i) => (
+      <li>
+        <button
+          type="button"
+          class={`filmstrip-thumb${a.type === "video" ? " is-video" : ""}`}
+          data-i={i}
+          aria-pressed={i === 0 ? "true" : "false"}
+          aria-label={`Show ${a.project_label || `asset ${i + 1}`}`}
+        >
+          {a.type === "video" && a.poster ? (
+            <img src={a.poster} alt="" loading="lazy" decoding="async" />
+          ) : a.type === "image" ? (
+            <img src={a.src} alt="" loading="lazy" decoding="async" />
+          ) : (
+            <span class="filmstrip-thumb-fill" aria-hidden="true"></span>
+          )}
+          {a.type === "video" && <span class="filmstrip-thumb-play" aria-hidden="true"></span>}
+        </button>
+      </li>
+    ))}
+  </ol>
+
+  <div class="filmstrip-stage" data-stage>
+    {norm.map((a, i) => {
+      // Three rendering paths:
+      //   - image  → <img>
+      //   - video file (.mp4 etc.) → <video> muted autoplay, sound toggle
+      //   - embed (Vimeo / YouTube) → <iframe> + click-catcher overlay so
+      //     clicks reach the stage (iframes capture their own clicks).
+      const slotClass = `filmstrip-slot${i === 0 ? " is-active" : ""}${a.isEmbed ? " is-embed" : ""}`;
+      return (
+        <div class={slotClass} data-i={i} data-label={a.project_label || ""} data-url={a.project_url || ""}>
+          {a.isEmbed ? (
+            <>
+              <iframe
+                src={a.src}
+                loading={i === 0 ? "eager" : "lazy"}
+                allow="autoplay; fullscreen; picture-in-picture"
+                allowfullscreen
+                frameborder="0"
+              ></iframe>
+              <div class="filmstrip-embed-catcher" aria-hidden="true"></div>
+            </>
+          ) : a.type === "video" ? (
+            <video
+              src={a.src}
+              poster={a.poster}
+              muted
+              loop
+              playsinline
+              preload="metadata"
+              autoplay={i === 0 ? true : undefined}
+            />
+          ) : (
+            <img
+              src={a.src}
+              alt={a.project_label || ""}
+              loading={i === 0 ? "eager" : "lazy"}
+              decoding="async"
+            />
+          )}
+        </div>
+      );
+    })}
+    <button class="filmstrip-sound" data-sound type="button" aria-label="Toggle sound" hidden>
+      <span data-sound-label>muted</span>
+    </button>
+  </div>
+</div>
+
+<script>
+  // Scoped to each [data-filmstrip] on the page. Thumbs jump directly; the
+  // stage advances cyclically on click. Caption is the keyboard/screen-reader
+  // path to project_url (the stage itself is just a sighted-mouse affordance,
+  // so it doesn't carry button semantics).
+  document.querySelectorAll<HTMLElement>("[data-filmstrip]").forEach((fs) => {
+    const stage = fs.querySelector<HTMLElement>("[data-stage]");
+    const slots = fs.querySelectorAll<HTMLElement>(".filmstrip-slot");
+    const thumbs = fs.querySelectorAll<HTMLButtonElement>(".filmstrip-thumb");
+    const captionLink = fs.querySelector<HTMLAnchorElement>("[data-caption-link]");
+    const captionText = fs.querySelector<HTMLElement>("[data-caption-text]");
+    const soundBtn = fs.querySelector<HTMLButtonElement>("[data-sound]");
+    const soundLabel = fs.querySelector<HTMLElement>("[data-sound-label]");
+
+    let currentIndex = 0;
+
+    function activate(idx: number) {
+      currentIndex = idx;
+      slots.forEach((s, i) => {
+        s.classList.toggle("is-active", i === idx);
+        const v = s.querySelector("video");
+        if (!v) return;
+        if (i === idx) {
+          v.play().catch(() => {});
+        } else {
+          v.pause();
+        }
+      });
+      thumbs.forEach((t, i) => {
+        t.setAttribute("aria-pressed", i === idx ? "true" : "false");
+      });
+      const active = slots[idx];
+      const label = active.dataset.label || "";
+      const url = active.dataset.url || "";
+      if (captionLink) {
+        captionLink.textContent = label;
+        if (url) {
+          captionLink.href = url;
+          captionLink.hidden = false;
+        } else {
+          captionLink.hidden = true;
+        }
+      }
+      if (captionText) {
+        captionText.textContent = url ? "" : label;
+      }
+      // Sound toggle only meaningful for HTML5 <video>; iframes own their
+      // own sound UI.
+      const activeVideo = active.querySelector("video");
+      if (soundBtn && soundLabel) {
+        if (activeVideo) {
+          soundBtn.hidden = false;
+          soundLabel.textContent = activeVideo.muted ? "muted" : "sound";
+        } else {
+          soundBtn.hidden = true;
+        }
+      }
+    }
+
+    function advance() {
+      if (slots.length < 2) return;
+      activate((currentIndex + 1) % slots.length);
+    }
+
+    function previous() {
+      if (slots.length < 2) return;
+      activate((currentIndex - 1 + slots.length) % slots.length);
+    }
+
+    thumbs.forEach((t) => {
+      t.addEventListener("click", () => {
+        const i = parseInt(t.dataset.i || "0", 10);
+        activate(i);
+      });
+    });
+
+    fs.querySelector<HTMLButtonElement>("[data-prev]")?.addEventListener("click", previous);
+    fs.querySelector<HTMLButtonElement>("[data-next]")?.addEventListener("click", advance);
+
+    stage?.addEventListener("click", (e) => {
+      // Sound toggle has its own behavior; don't also advance.
+      if ((e.target as HTMLElement).closest("[data-sound]")) return;
+      advance();
+    });
+
+    if (soundBtn && soundLabel) {
+      soundBtn.addEventListener("click", (e) => {
+        e.stopPropagation();
+        const activeVideo = fs.querySelector<HTMLVideoElement>(".filmstrip-slot.is-active video");
+        if (!activeVideo) return;
+        activeVideo.muted = !activeVideo.muted;
+        soundLabel.textContent = activeVideo.muted ? "muted" : "sound";
+      });
+    }
+  });
+</script>

@@ -6,7 +6,7 @@
     "dev": "astro dev",
     "build": "astro build",
     "preview": "astro preview",
-    "build-data": "node scripts/build-projects.mjs && node scripts/mine-dates.mjs && node scripts/build-manifest.mjs",
+    "build-data": "node scripts/build-projects.mjs && node scripts/mine-dates.mjs && node scripts/build-manifest.mjs && node scripts/sync-vimeo-posters.mjs --apply",
     "refresh-images": "node scripts/reconcile-catalogue-paths.mjs --apply && node scripts/sync-image-tags.mjs && npm run build-data",
     "sync": "node scripts/sync-chroma.mjs"
   },

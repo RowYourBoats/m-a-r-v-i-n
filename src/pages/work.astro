@@ -6,7 +6,7 @@ import manifest from "@/data/manifest.json";
 import schema from "@/data/schema.json";
 import { getEntry, render } from "astro:content";
 
-const intro = await getEntry("pages", "archive");
+const intro = await getEntry("pages", "work");
 const { Content: IntroContent } = await render(intro!);
 
 const { items, projects } = manifest;
@@ -44,7 +44,7 @@ function seedSpan(item: { width?: number; height?: number }) {
 }
 ---
 
-<Base title="Archive — Marvin de Jong">
+<Base title="Work — Marvin de Jong">
   <div class="page-intro prose">
     <IntroContent />
   </div>
@@ -123,7 +123,7 @@ function seedSpan(item: { width?: number; height?: number }) {
 
 <PortfolioPageScript />
 <script is:inline>
-  // Filter behavior for the Work archive: chip clicks + ?tag=X deep linking
+  // Filter behavior for the Work page: chip clicks + ?tag=X deep linking
   // + localStorage restore. Grid items are <a> elements — click navigates
   // directly to /projects/[slug], no inline detail.
   (function () {
@@ -155,7 +155,7 @@ function seedSpan(item: { width?: number; height?: number }) {
         trigger.textContent = btn.textContent;
       }
       filters.classList.remove("filter-open");
-      window.__portfolio.saveFilter("filter:archive", filterAll ? "all" : btn.dataset.tag);
+      window.__portfolio.saveFilter("filter:work", filterAll ? "all" : btn.dataset.tag);
       applyFilter();
     });
 
@@ -183,7 +183,7 @@ function seedSpan(item: { width?: number; height?: number }) {
       }
     } else {
       // No deep link → restore the last-used filter from localStorage.
-      var stored = window.__portfolio.loadFilter("filter:archive");
+      var stored = window.__portfolio.loadFilter("filter:work");
       var storedBtn = stored && filters?.querySelector('button[data-tag="' + stored + '"]');
       if (storedBtn) storedBtn.click();
     }

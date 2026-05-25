@@ -1,15 +1,10 @@
 ---
 import Base from "@/layouts/Base.astro";
 import { getCollection, getEntry, render } from "astro:content";
-import manifest from "@/data/manifest.json";
 
 const raw = await getCollection("bullets", ({ id }) => !id.startsWith("_template"));
-const intro = await getEntry("pages", "marvin");
+const intro = await getEntry("pages", "resume");
 const { Content: IntroContent } = await render(intro!);
-
-const profileImages = (manifest.items as any[])
-  .filter((i) => i.project === "m-a-r-v-i-n")
-  .sort((a, b) => (a.id || "").localeCompare(b.id || ""));
 
 const cleanTag = (t: string) => t.replace(/^~/, "");
 
@@ -268,22 +263,9 @@ const total = sections.reduce((n, s) => n + s.rows.length, 0);
 const hasSizes = bullets.some((b) => b.size);
 ---
 
-<Base title="Marvin de Jong">
-  <div class="profile profile--spread">
-    <div class="profile-text">
-      <div class="prose">
-        <IntroContent />
-      </div>
-    </div>
-
-    <div class="profile-media">
-      {profileImages.map((img) => (
-        <figure>
-          <img src={img.src} alt={img.title || ""} loading="lazy" />
-          {img.title && <figcaption>{img.title}</figcaption>}
-        </figure>
-      ))}
-    </div>
+<Base title="Resume — Marvin de Jong">
+  <div class="page-intro prose">
+    <IntroContent />
   </div>
 
   <div class="cv-head">
