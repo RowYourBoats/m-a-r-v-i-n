@@ -6,13 +6,19 @@ import { getEntry, render } from "astro:content";
 const entry = await getEntry("pages", "marvin");
 const { Content } = await render(entry!);
 const sections = entry?.data.sections ?? [];
+// Only render the lead wrapper if the markdown body has actual content —
+// otherwise the empty .editorial-lead is still a flex child and the
+// .editorial gap lands above the first section, doubling the top space.
+const hasLead = !!entry?.body && entry.body.trim().length > 0;
 ---
 
 <Base title="Marvin de Jong">
   <div class="editorial">
-    <div class="prose editorial-lead">
-      <Content />
-    </div>
+    {hasLead && (
+      <div class="prose editorial-lead">
+        <Content />
+      </div>
+    )}
 
     {sections.map((section) => {
       if (section.kind === "text") {
