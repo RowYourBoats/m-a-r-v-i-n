@@ -75,7 +75,7 @@ function seedSpan(item: { width?: number; height?: number }) {
       <Element
         class="grid-item"
         href={linked ? `/projects/${item.project}` : undefined}
-        data-tags={[...(item.tags || []), ...(item.project_tags || [])].join(",")}
+        data-tags={(item.tags || []).join(",")}
         style={seedSpan(item) ? `grid-row-end: span ${seedSpan(item)}` : undefined}
       >
         {item.type === "video" ? (

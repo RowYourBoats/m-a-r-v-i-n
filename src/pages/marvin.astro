@@ -233,7 +233,6 @@ const EXTRA: { label: string; cats: string[]; normalize: (b: Bullet) => Row }[] 
   { label: "Teaching", cats: ["teaching"], normalize: normalizeTeaching },
   { label: "Exhibitions & Publications", cats: ["exhibition", "writing", "publication", "talks"], normalize: normalizeExhibition },
   { label: "Education", cats: ["education"], normalize: normalizeEducation },
-  { label: "Awards", cats: ["award"], normalize: normalizeAward },
   { label: "Skills", cats: ["skill"], normalize: normalizeSkill },
 ];
 
@@ -254,7 +253,17 @@ for (const sec of sections) {
 }
 
 const companies = [...new Set(bullets.filter((b) => b.category !== "teaching").map((b) => b.company).filter(Boolean))].sort();
-const categories = [...new Set(bullets.map((b) => b.category).filter(Boolean))].sort();
+
+// Curated dropdown options. Mirrors the on-page sections so two categories
+// (e.g. exhibition + writing) that surface the same section appear as one
+// option. Excludes "award" — only one bullet, section hidden.
+const categoryOptions: { value: string; label: string }[] = [
+  { value: "experience", label: "experience" },
+  { value: "teaching", label: "teaching" },
+  { value: "exhibition", label: "exhibitions & publications" },
+  { value: "education", label: "education" },
+  { value: "skill", label: "skills" },
+];
 const total = sections.reduce((n, s) => n + s.rows.length, 0);
 const hasSizes = bullets.some((b) => b.size);
 ---
@@ -290,7 +299,7 @@ const hasSizes = bullets.some((b) => b.size);
     </select>
     <select id="cv-category">
       <option value="">all categories</option>
-      {categories.map((c) => <option value={c}>{c}</option>)}
+      {categoryOptions.map((c) => <option value={c.value}>{c.label}</option>)}
     </select>
     {hasSizes && (
       <select id="cv-size">
@@ -465,10 +474,10 @@ const hasSizes = bullets.some((b) => b.size);
           if (category) {
             var sec = row.dataset.section;
             var matchesCat =
-              (category === "experience" || category === "teaching") && (sec === "Roles" || sec === "Projects") ||
-              (category === "exhibition" || category === "writing" || category === "publication" || category === "talks") && sec === "Exhibitions & Publications" ||
+              category === "experience" && (sec === "Roles" || sec === "Projects") ||
+              category === "teaching" && sec === "Teaching" ||
+              category === "exhibition" && sec === "Exhibitions & Publications" ||
               category === "education" && sec === "Education" ||
-              category === "award" && sec === "Awards" ||
               category === "skill" && sec === "Skills";
             if (!matchesCat) show = false;
           }
