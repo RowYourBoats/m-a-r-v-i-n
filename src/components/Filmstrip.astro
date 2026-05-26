@@ -40,21 +40,24 @@ const vimeoIdFrom = (s: string) => {
   return m ? m[1] : null;
 };
 
-// Strip all Vimeo player chrome (incl. the unmute button) by ensuring
-// `background=1` is present. Keep the rest of the params alone — background=1
-// + the existing autoplay/muted/loop is the sane combo for filmstrip primaries
-// since we're using click-to-advance instead of in-iframe interaction.
-const ensureVimeoBackground = (src: string) => {
+// Strip + rebuild Vimeo URLs with the known-good background-mode combo —
+// mirrors what scripts/build-manifest.mjs does for /work videos. The
+// previous "append &background=1 to whatever the author pasted" approach
+// broke autoplay in some browsers (likely due to interactions with
+// `app_id` / `player_id` tracking params that survived). Going through the
+// /work-tested combo gives clean chrome (no unmute button) AND reliable
+// autoplay.
+const normalizeVimeoSrc = (src: string) => {
   if (!/player\.vimeo\.com\/video\//.test(src)) return src;
-  if (/[?&]background=1\b/.test(src)) return src;
-  return src + (src.includes("?") ? "&" : "?") + "background=1";
+  const base = src.split("?")[0];
+  return `${base}?background=1&autoplay=1&muted=1&loop=1&playsinline=1`;
 };
 
 const norm = assets.map((a) => {
   const src = decode(a.src);
   const id = vimeoIdFrom(src);
   const autoPoster = id ? (vimeoPosters as Record<string, string>)[id] : undefined;
-  const finalSrc = a.type === "video" ? ensureVimeoBackground(src) : src;
+  const finalSrc = a.type === "video" ? normalizeVimeoSrc(src) : src;
   return {
     ...a,
     src: finalSrc,
