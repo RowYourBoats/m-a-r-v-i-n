@@ -185,6 +185,7 @@ role: Global Brand Designer
 project: Picnic — the Herman Miller Design System (brand pillar)
 date: May 2017 – June 2019
 id: d91fb7                  # 6-char hex — matches filename suffix
+order: 1                    # optional integer — lifts this bullet within a same-date group; unranked bullets fall to alphabetical-by-filename
 tags:
   - brand-standards
   - design-documentation
@@ -214,6 +215,10 @@ Prose narrative. May be multiple paragraphs. Used for long-form resume or portfo
 - `award` → currently hidden (single bullet; section + dropdown option suppressed)
 
 **Size slider behavior:** for the Projects section, rows are grouped by `company|project`. The slider picks one size (small/medium/large) to show per group; falls back to the nearest available if the exact size isn't present.
+
+**Sort within a section:** primary `whenSort` desc (newest first) → `order` ascending among same-date bullets → unranked bullets stay in stable filename-alphabetical order. Use `order:` on the frontmatter to lift a bullet above its alphabetical peers when many bullets share a date (e.g. all `m-a-r-v-i-n` bullets share `June 2015 – Present`).
+
+**Role-scope prefix strip:** some legacy role-scope bullets begin their Large body with `**Role scope** —` as an inline prefix. The render-time strip in `src/pages/resume.astro` removes it (redundant with the "Roles" section header). New bullets don't need the prefix; if they have it, the strip is idempotent.
 
 **Junction setup** (needed after fresh clone on Windows):
 ```
