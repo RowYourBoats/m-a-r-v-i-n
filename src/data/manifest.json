@@ -422,6 +422,20 @@
       "order": [],
       "snapshot_only": false
     },
+    "oppo-MWC-Barcelona": {
+      "title": "MWC Barcelona",
+      "description": "Designed the keynote for OPPO's Mobile World Congress keynote — a hardware launch presentation pairing motion graphics, bold typography, and product showcases into a single stage narrative.",
+      "client": "Oppo",
+      "year": 2022,
+      "credits": [
+        {
+          "role": "Creative Lead",
+          "name": "Marvin de Jong"
+        }
+      ],
+      "order": [],
+      "snapshot_only": false
+    },
     "pratt-design-system": {
       "title": "Design System",
       "description": "Lecture posters (Jiri Pelcl, the Green Week series), thesis show graphics for BFA Photography's Babylone — U.S.A., postcards, program brochures, and campus flags for the Manhattan location.",
@@ -21161,6 +21175,136 @@
       "width": 1920,
       "height": 1080,
       "year": 2023
+    },
+    {
+      "id": "smart-and-connected-devices",
+      "type": "video",
+      "video": "https://player.vimeo.com/video/805393265?background=1&autoplay=1&muted=1&loop=1&playsinline=1",
+      "video_mode": "background",
+      "title": "Smart and Connected Devices",
+      "tags": [
+        "video",
+        "keynote",
+        "motion"
+      ],
+      "project_tags": [
+        "b2b",
+        "retail",
+        "tech"
+      ],
+      "medium": "video",
+      "project": "oppo-MWC-Barcelona",
+      "width": 1920,
+      "height": 1080,
+      "year": 2022
+    },
+    {
+      "id": "market-share",
+      "type": "video",
+      "video": "https://player.vimeo.com/video/805306804?background=1&autoplay=1&muted=1&loop=1&playsinline=1",
+      "video_mode": "background",
+      "title": "Market Share",
+      "tags": [
+        "video",
+        "keynote",
+        "motion"
+      ],
+      "project_tags": [
+        "b2b",
+        "retail",
+        "tech"
+      ],
+      "medium": "video",
+      "project": "oppo-MWC-Barcelona",
+      "width": 1920,
+      "height": 1080,
+      "year": 2022
+    },
+    {
+      "id": "liquid-cooler",
+      "type": "video",
+      "video": "https://player.vimeo.com/video/805404163?background=1&autoplay=1&muted=1&loop=1&playsinline=1",
+      "video_mode": "background",
+      "title": "Liquid Cooler",
+      "tags": [
+        "video",
+        "keynote",
+        "motion"
+      ],
+      "project_tags": [
+        "b2b",
+        "retail",
+        "tech"
+      ],
+      "medium": "video",
+      "project": "oppo-MWC-Barcelona",
+      "width": 1920,
+      "height": 1080,
+      "year": 2022
+    },
+    {
+      "id": "wifi-router",
+      "type": "video",
+      "video": "https://player.vimeo.com/video/805404094?background=1&autoplay=1&muted=1&loop=1&playsinline=1",
+      "video_mode": "background",
+      "title": "WiFi Router",
+      "tags": [
+        "video",
+        "keynote",
+        "motion"
+      ],
+      "project_tags": [
+        "b2b",
+        "retail",
+        "tech"
+      ],
+      "medium": "video",
+      "project": "oppo-MWC-Barcelona",
+      "width": 1920,
+      "height": 1080,
+      "year": 2022
+    },
+    {
+      "id": "product-summary",
+      "type": "video",
+      "video": "https://player.vimeo.com/video/805425458?background=1&autoplay=1&muted=1&loop=1&playsinline=1",
+      "video_mode": "background",
+      "title": "Product Summary",
+      "tags": [
+        "video",
+        "keynote",
+        "motion"
+      ],
+      "project_tags": [
+        "b2b",
+        "retail",
+        "tech"
+      ],
+      "medium": "video",
+      "project": "oppo-MWC-Barcelona",
+      "width": 1920,
+      "height": 1080,
+      "year": 2022
+    },
+    {
+      "id": "key-selling-points",
+      "type": "video",
+      "video": "https://player.vimeo.com/video/805413741?background=1&autoplay=1&muted=1&loop=1&playsinline=1",
+      "video_mode": "background",
+      "title": "Key Selling Points",
+      "tags": [
+        "video",
+        "keynote",
+        "motion"
+      ],
+      "project_tags": [
+        "b2b",
+        "retail",
+        "tech"
+      ],
+      "medium": "video",
+      "project": "oppo-MWC-Barcelona",
+      "year": 2022
     },
     {
       "id": "5g-vinyl-roll-out",

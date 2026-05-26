@@ -1510,6 +1510,109 @@
     "videos": [],
     "umbrella": "moma"
   },
+  "oppo-MWC-Barcelona": {
+    "name": "MWC Barcelona",
+    "slug": "oppo-MWC-Barcelona",
+    "client": "Oppo",
+    "aliases": [],
+    "date_range": "2022-2023",
+    "roles": [
+      "Creative Lead"
+    ],
+    "category": "experience",
+    "image_folders": [
+      "work/oppo/MWC-Barcelona"
+    ],
+    "market": "b2b",
+    "project_type": [
+      "retail"
+    ],
+    "sector": "tech",
+    "characteristic": [],
+    "role": null,
+    "scale": null,
+    "image_tags": [
+      "campaign",
+      "event",
+      "retail"
+    ],
+    "lead_images": [],
+    "order": [],
+    "personal": false,
+    "snapshot_only": false,
+    "chronological": false,
+    "unlisted": false,
+    "description": "Designed the keynote for OPPO's Mobile World Congress keynote — a hardware launch presentation pairing motion graphics, bold typography, and product showcases into a single stage narrative.",
+    "credits": [
+      {
+        "role": "Creative Lead",
+        "name": "Marvin de Jong"
+      }
+    ],
+    "videos": [
+      {
+        "title": "Smart and Connected Devices",
+        "url": "https://player.vimeo.com/video/805393265?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479&amp;autoplay=1&amp;muted=1&amp;loop=1",
+        "characteristics": [
+          "motion"
+        ],
+        "format": [
+          "keynote"
+        ]
+      },
+      {
+        "title": "Market Share",
+        "url": "https://player.vimeo.com/video/805306804?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479&amp;autoplay=1&amp;muted=1&amp;loop=1",
+        "characteristics": [
+          "motion"
+        ],
+        "format": [
+          "keynote"
+        ]
+      },
+      {
+        "title": "Liquid Cooler",
+        "url": "https://player.vimeo.com/video/805404163?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479&amp;autoplay=1&amp;muted=1&amp;loop=1",
+        "characteristics": [
+          "motion"
+        ],
+        "format": [
+          "keynote"
+        ]
+      },
+      {
+        "title": "WiFi Router",
+        "url": "https://player.vimeo.com/video/805404094?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479&amp;autoplay=1&amp;muted=1&amp;loop=1",
+        "characteristics": [
+          "motion"
+        ],
+        "format": [
+          "keynote"
+        ]
+      },
+      {
+        "title": "Product Summary",
+        "url": "https://player.vimeo.com/video/805425458?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479&amp;autoplay=1&amp;muted=1&amp;loop=1",
+        "characteristics": [
+          "motion"
+        ],
+        "format": [
+          "keynote"
+        ]
+      },
+      {
+        "title": "Key Selling Points",
+        "url": "https://player.vimeo.com/video/805413741?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479&amp;autoplay=1&amp;muted=1&amp;loop=1",
+        "characteristics": [
+          "motion"
+        ],
+        "format": [
+          "keynote"
+        ]
+      }
+    ],
+    "umbrella": "oppo"
+  },
   "pratt-design-system": {
     "name": "Design System",
     "slug": "pratt-design-system",
