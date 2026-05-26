@@ -33,6 +33,15 @@ const bullets = defineCollection({
     project_key: z.string().optional(),
     project: z.string().optional(),
     size: z.string().optional(),
+    // 6-char hex hash — matches filename suffix; canonical identifier
+    // surviving filename changes. Coerce because hashes with only decimal
+    // digits (e.g. `099625`) parse as numbers in YAML.
+    id: z.coerce.string().optional(),
+    // Explicit rank within a same-date group on /resume. Lower numbers sort
+    // first; bullets without `order` fall to the end in stable alphabetical
+    // order. Use it to surface "important" bullets in groups where dates tie
+    // (e.g. all m-a-r-v-i-n bullets share `June 2015 – Present`).
+    order: z.number().optional(),
   }),
 });
 

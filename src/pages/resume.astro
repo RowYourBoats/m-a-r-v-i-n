@@ -44,6 +44,7 @@ type Bullet = {
   size: string;
   tags: string[];
   text: string;
+  order?: number;
 };
 
 type ParsedBody = { sized: { small: string[]; medium: string[]; large: string[] }; flat: string };
@@ -85,6 +86,7 @@ const bullets: Bullet[] = raw.flatMap((entry) => {
     project: entry.data.project || "",
     date: entry.data.date || "",
     tags: (entry.data.tags || []).map(cleanTag),
+    order: entry.data.order,
   };
   const parsed = parseBody(entry.body || "");
   const hasSized = parsed.sized.small.length || parsed.sized.medium.length || parsed.sized.large.length;
@@ -116,7 +118,15 @@ type Row = {
   what: string;
   how: string;
   tags: string[];
+  order?: number;
 };
+
+// Some role-scope bullets start their Large body with `**Role scope** —`
+// as an inline identifier. Strip it at render time so the body doesn't
+// duplicate the "Roles" section header above it. Idempotent — bullets
+// without the prefix are unchanged.
+const stripRoleScopePrefix = (s: string) =>
+  s.replace(/^\s*\*\*Role scope\*\*\s*[—–-]\s*/i, "").trim();
 
 const normalizeWork = (b: Bullet): Row => ({
   id: b.id,
@@ -127,8 +137,9 @@ const normalizeWork = (b: Bullet): Row => ({
   when: b.date,
   whenSort: dateSortKey(b.date),
   what: b.project || b.role,
-  how: b.text,
+  how: stripRoleScopePrefix(b.text),
   tags: b.tags,
+  order: b.order,
 });
 
 const DATE_PAT = /(?:January|February|March|April|May|June|July|August|September|October|November|December|Spring|Fall|Summer|Winter)\s+\d{4}|\b\d{4}\b/;
@@ -160,7 +171,7 @@ const normalizeExhibition = (b: Bullet): Row => {
   }
   return {
     id: b.id, bulletId: b.bulletId, size: b.size, group: "",
-    where, when, whenSort: dateSortKey(when), what, how, tags: b.tags,
+    where, when, whenSort: dateSortKey(when), what, how, tags: b.tags, order: b.order,
   };
 };
 
@@ -178,7 +189,7 @@ const normalizeEducation = (b: Bullet): Row => {
     where = a?.trim() || "";
     what = b2?.trim() || "";
   }
-  return { id: b.id, bulletId: b.bulletId, size: b.size, group: "", where, when, whenSort: dateSortKey(when), what, how: "", tags: b.tags };
+  return { id: b.id, bulletId: b.bulletId, size: b.size, group: "", where, when, whenSort: dateSortKey(when), what, how: "", tags: b.tags, order: b.order };
 };
 
 const normalizeSkill = (b: Bullet): Row => {
@@ -188,7 +199,7 @@ const normalizeSkill = (b: Bullet): Row => {
     where: "", when: "", whenSort: "",
     what: (tools ? cat : "").trim(),
     how: (tools ?? cat ?? "").trim(),
-    tags: b.tags,
+    tags: b.tags, order: b.order,
   };
 };
 
@@ -204,7 +215,7 @@ const normalizeAward = (b: Bullet): Row => {
   }
   return {
     id: b.id, bulletId: b.bulletId, size: b.size, group: "",
-    where: "", when, whenSort: dateSortKey(when), what, how, tags: b.tags,
+    where: "", when, whenSort: dateSortKey(when), what, how, tags: b.tags, order: b.order,
   };
 };
 
@@ -216,6 +227,7 @@ const normalizeTeaching = (b: Bullet): Row => ({
   what: b.role,
   how: b.text,
   tags: b.tags,
+  order: b.order,
 });
 
 type Section = { label: string; rows: Row[]; hasSizer: boolean };
@@ -243,7 +255,19 @@ for (const { label, cats, normalize } of EXTRA) {
 const DATED = new Set(["Roles", "Projects", "Teaching", "Exhibitions & Publications", "Education"]);
 for (const sec of sections) {
   if (DATED.has(sec.label)) {
-    sec.rows.sort((a, b) => (b.whenSort || "").localeCompare(a.whenSort || ""));
+    // Primary: whenSort desc (newest first). Tiebreaker: explicit `order`
+    // ascending, with ranked rows sitting above unranked. Unranked rows
+    // keep their stable filename-alphabetical order from the collection load.
+    sec.rows.sort((a, b) => {
+      const d = (b.whenSort || "").localeCompare(a.whenSort || "");
+      if (d !== 0) return d;
+      const ao = a.order;
+      const bo = b.order;
+      if (ao != null && bo != null) return ao - bo;
+      if (ao != null) return -1;
+      if (bo != null) return 1;
+      return 0;
+    });
   }
 }
 
