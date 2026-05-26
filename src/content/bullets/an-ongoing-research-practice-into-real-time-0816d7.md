@@ -4,6 +4,7 @@ company: m-a-r-v-i-n studio
 date: June 2015 – Present
 id: 0816d7
 project: Real-Time Prototypes — Unreal Engine 5 + TouchDesigner
+order: 3
 role: Creative Director / Owner
 tags:
 - unreal-engine-5

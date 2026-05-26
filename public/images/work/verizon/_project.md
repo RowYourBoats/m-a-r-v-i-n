@@ -163,7 +163,7 @@ projects:
           https://player.vimeo.com/video/529213125?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479&amp;autoplay=1&amp;muted=1&amp;loop=1
         characteristics:
           - storytelling
-      - title: Live Style Video Back of Store
+      - title: Lifestyle Video Back of Store
         featured: true
         video_mode: background
         url: https://player.vimeo.com/video/529211063

@@ -13,9 +13,15 @@ sections:
          type: video
          project_url: /projects/aws
          project_label: AWS Keynote
+       - src: https://ws6i2dfuggcaavs2.public.blob.vercel-storage.com/images/Verizon_Selection/ChicagoImage.jpeg
+         type: image
+         project_url: /projects/verizon-chicago
+         project_label: Verizon Chicago 5G
        - src: https://player.vimeo.com/video/801038561?badge=0&autopause=0&player_id=0&app_id=58479&autoplay=1&muted=1&loop=1
          type: video
-         project_url: /projects/verizon-chicago
-         project_label: Verizon Chicago Revamp
+         project_url: /projects/verizon-5G-home-vui
+         project_label: 5G Home VUI
+
+
 
 ---

@@ -8,4 +8,4 @@ role: Designer
 
 ## Large
 
-**Role scope** — Designer on the five-person business development team under Jhaelen Hernandez-Eli, working directly with Liz Diller. Responsible for all design output leaving the team — competition materials, portfolio books, RFQ and RFP submissions.
+Designer on the five-person business development team under Jhaelen Hernandez-Eli, working directly with Liz Diller. Responsible for all design output leaving the team — competition materials, portfolio books, RFQ and RFP submissions.

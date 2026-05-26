@@ -3,7 +3,7 @@ category: experience
 company: m-a-r-v-i-n studio
 date: June 2015 – Present
 id: 31d43a
-project: Semantic Career Engine
+project: Tools
 role: Creative Director / Owner
 tags:
 - ollama
@@ -20,4 +20,8 @@ tags:
 
 ## Small
 
-- Built a local-first, CLI-driven career engine that stores accomplishments as vector embeddings and generates tailored application documents on demand — powered by Ollama.
+-   Three local-first tools: m-a-r-v-i-n.com, a vision-mined portfolio catalogue; Jullie, a semantic career index; and Until, a deadline tracker and scratchpad.
+
+## Medium
+
+-   Building local-first, queryable systems for career history: m-a-r-v-i-n.com, a vision-model-mined portfolio catalogue with structured taxonomy and filters; Jullie, a semantic memory system that makes career documentation searchable, pattern-aware, and reframeable; and Until, a horizons-and-rituals model for engaging honestly with how work unfolds over time.
