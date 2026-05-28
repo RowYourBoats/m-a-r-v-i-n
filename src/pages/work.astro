@@ -164,6 +164,7 @@ function seedSpan(item: { width?: number; height?: number }) {
         : location.pathname + "?tag=" + encodeURIComponent(btn.dataset.tag);
       history.replaceState(null, "", nextUrl);
       applyFilter();
+      window.scrollTo(0, 0);
     });
 
     function applyFilter() {

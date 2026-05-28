@@ -225,6 +225,7 @@ function seedSpan(item: { width?: number; height?: number }) {
         el.style.display = show ? "" : "none";
       });
       window.relayoutMasonry && window.relayoutMasonry();
+      window.scrollTo(0, 0);
     });
 
     // ?tag=X deep linking: restore from URL on load.
