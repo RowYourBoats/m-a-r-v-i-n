@@ -123,9 +123,10 @@ function seedSpan(item: { width?: number; height?: number }) {
 
 <PortfolioPageScript />
 <script is:inline>
-  // Filter behavior for the Work page: chip clicks + ?tag=X deep linking
-  // + localStorage restore. Grid items are <a> elements — click navigates
-  // directly to /projects/[slug], no inline detail.
+  // Filter state lives in the URL (?tag=X) only. Clicking the "Work" nav
+  // link lands on bare /work and resets; browser-back from a project page
+  // restores the prior filter because it's in the URL. Grid items are <a>
+  // elements — click navigates directly to /projects/[slug].
   (function () {
     var filters = document.getElementById("filters");
     var trigger = document.getElementById("filter-trigger");
@@ -155,7 +156,13 @@ function seedSpan(item: { width?: number; height?: number }) {
         trigger.textContent = btn.textContent;
       }
       filters.classList.remove("filter-open");
-      window.__portfolio.saveFilter("filter:work", filterAll ? "all" : btn.dataset.tag);
+      // replaceState so chip clicks don't pile up history entries; a future
+      // click on a grid item is what pushes the filtered URL onto the stack
+      // so back returns here.
+      var nextUrl = filterAll
+        ? location.pathname
+        : location.pathname + "?tag=" + encodeURIComponent(btn.dataset.tag);
+      history.replaceState(null, "", nextUrl);
       applyFilter();
     });
 
@@ -181,11 +188,6 @@ function seedSpan(item: { width?: number; height?: number }) {
         trigger.textContent = urlTag;
         applyFilter();
       }
-    } else {
-      // No deep link → restore the last-used filter from localStorage.
-      var stored = window.__portfolio.loadFilter("filter:work");
-      var storedBtn = stored && filters?.querySelector('button[data-tag="' + stored + '"]');
-      if (storedBtn) storedBtn.click();
     }
   })();
 </script>

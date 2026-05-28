@@ -217,7 +217,6 @@
     "role": null,
     "scale": null,
     "image_tags": [
-      "event",
       "exhibition",
       "typography"
     ],
@@ -465,8 +464,6 @@
     "role": null,
     "scale": null,
     "image_tags": [
-      "campaign",
-      "editorial",
       "illustration",
       "photography",
       "stationery"
@@ -526,7 +523,6 @@
     "role": null,
     "scale": null,
     "image_tags": [
-      "event",
       "exhibition",
       "illustration",
       "installation"
@@ -628,7 +624,6 @@
     "role": null,
     "scale": null,
     "image_tags": [
-      "illustration",
       "identity",
       "product-marking"
     ],
@@ -679,7 +674,9 @@
     "role": null,
     "scale": null,
     "image_tags": [
-      "editorial"
+      "editorial",
+      "illustration",
+      "web"
     ],
     "lead_images": [],
     "order": [],
@@ -689,6 +686,10 @@
     "unlisted": false,
     "description": "Art direction for a WHY magazine article on Richard Holbrook's workplace research, paired with illustrations commissioned from Tanawat Sakdawisarak — chosen for his whimsical, slightly surreal hand.",
     "credits": [
+      {
+        "role": "Illustrator",
+        "name": "Tanawat Sakdawisarak"
+      },
       {
         "role": "Brand Design",
         "name": "Marvin de Jong"
@@ -728,7 +729,6 @@
     "role": null,
     "scale": null,
     "image_tags": [
-      "event",
       "exhibition",
       "typography"
     ],
@@ -824,15 +824,8 @@
     "role": null,
     "scale": null,
     "image_tags": [
-      "data-visualization",
       "deck",
-      "iconography",
-      "identity",
-      "illustration",
-      "logo",
-      "photography",
-      "poster",
-      "typography"
+      "identity"
     ],
     "lead_images": [],
     "order": [
@@ -1104,7 +1097,6 @@
     "scale": null,
     "image_tags": [
       "booth",
-      "event",
       "exhibition",
       "photography",
       "poster",
@@ -1358,7 +1350,6 @@
     "image_tags": [
       "3d",
       "booth",
-      "event",
       "exhibition",
       "illustration",
       "publication-design",
@@ -1637,7 +1628,6 @@
     "scale": null,
     "image_tags": [
       "editorial",
-      "event",
       "poster",
       "publication-design"
     ],
@@ -1794,7 +1784,56 @@
         "name": "Marvin de Jong"
       }
     ],
-    "videos": [],
+    "videos": [
+      {
+        "title": "Landing",
+        "url": "https://player.vimeo.com/video/749690323?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479&amp;autoplay=1&amp;muted=1&amp;loop=1",
+        "medium": "digital",
+        "format": [
+          "web"
+        ],
+        "subject": [
+          "lifestyle",
+          "photography"
+        ]
+      },
+      {
+        "title": "Selection",
+        "url": "https://player.vimeo.com/video/749690414?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479&amp;autoplay=1&amp;muted=1&amp;loop=1",
+        "medium": "digital",
+        "format": [
+          "web"
+        ],
+        "subject": [
+          "lifestyle",
+          "photography"
+        ]
+      },
+      {
+        "title": "Gallery",
+        "url": "https://player.vimeo.com/video/749690357?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479&amp;autoplay=1&amp;muted=1&amp;loop=1",
+        "medium": "digital",
+        "format": [
+          "web"
+        ],
+        "subject": [
+          "lifestyle",
+          "photography"
+        ]
+      },
+      {
+        "title": "Menu",
+        "url": "https://player.vimeo.com/video/749690388?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479&amp;autoplay=1&amp;muted=1&amp;loop=1",
+        "medium": "digital",
+        "format": [
+          "web"
+        ],
+        "subject": [
+          "lifestyle",
+          "photography"
+        ]
+      }
+    ],
     "umbrella": "studio"
   },
   "studio-miller-atre": {
@@ -2055,7 +2094,6 @@
     "scale": null,
     "image_tags": [
       "campaign",
-      "event",
       "retail"
     ],
     "lead_images": [],
@@ -2549,7 +2587,9 @@
     "scale": null,
     "image_tags": [
       "deck",
+      "identity",
       "interactive",
+      "logo",
       "proposal"
     ],
     "lead_images": [],
@@ -3032,7 +3072,6 @@
     "scale": null,
     "image_tags": [
       "campaign",
-      "event",
       "proposal"
     ],
     "lead_images": [],
@@ -3564,7 +3603,9 @@
     ],
     "role": null,
     "scale": null,
-    "image_tags": [],
+    "image_tags": [
+      "3d"
+    ],
     "lead_images": [],
     "order": [],
     "personal": true,
@@ -3954,7 +3995,6 @@
     "role": null,
     "scale": null,
     "image_tags": [
-      "event",
       "exhibition",
       "photography",
       "poster"

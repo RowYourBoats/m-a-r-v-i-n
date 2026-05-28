@@ -188,6 +188,28 @@
       "order": [],
       "snapshot_only": false
     },
+    "herman-miller-hot-prospect": {
+      "title": "Hot Prospect",
+      "description": "Art direction for a WHY magazine article on Richard Holbrook's workplace research, paired with illustrations commissioned from Tanawat Sakdawisarak — chosen for his whimsical, slightly surreal hand.",
+      "client": "Herman Miller",
+      "year": 2017,
+      "credits": [
+        {
+          "role": "Illustrator",
+          "name": "Tanawat Sakdawisarak"
+        },
+        {
+          "role": "Brand Design",
+          "name": "Marvin de Jong"
+        },
+        {
+          "role": "Brand Creative Director",
+          "name": "Emily C M Anderson"
+        }
+      ],
+      "order": [],
+      "snapshot_only": false
+    },
     "herman-miller-ward-bennett": {
       "title": "Ward Bennett",
       "description": "Herman Miller presented furniture by designer Ward Bennett paired with objects, quotations, and archival photographs.",
@@ -411,6 +433,20 @@
     "moma-teens-program": {
       "title": "Teens Program",
       "description": "The 2015 MoMA Teens brochure — communicating the museum's free programming to high-school audiences across New York.",
+      "client": "MoMA",
+      "year": 2015,
+      "credits": [
+        {
+          "role": "Design",
+          "name": "Marvin de Jong"
+        }
+      ],
+      "order": [],
+      "snapshot_only": false
+    },
+    "moma-marron-dossiers": {
+      "title": "Marron Research Committee Dossiers",
+      "description": "An ebook templating framework for MoMA's Marron Research Committee Dossiers — a then-new series of scholarly digital publications produced with Yale, Princeton, Columbia, IFA, and NYU.",
       "client": "MoMA",
       "year": 2015,
       "credits": [
@@ -3468,38 +3504,6 @@
       "year": 2016
     },
     {
-      "id": "work-ionq-brand-screenshot-2025-04-30-143411",
-      "src": "https://ws6i2dfuggcaavs2.public.blob.vercel-storage.com/images/work/ionq/brand/Screenshot%202025-04-30%20143411.png",
-      "type": "image",
-      "title": "Quantum is Now - IonQ Campaign",
-      "tags": [
-        "poster",
-        "photography",
-        "typography"
-      ],
-      "format": [
-        "poster"
-      ],
-      "characteristics": [],
-      "subject": [
-        "photography",
-        "typography"
-      ],
-      "project_tags": [
-        "b2b",
-        "quantum-computing"
-      ],
-      "medium": "print",
-      "project": "ionq-brand",
-      "description": "A bold typographic poster for IonQ showcasing quantum computing advancements through high-contrast design, featuring a close-up of Evaporated Glass Traps with impactful typography.",
-      "width": 1416,
-      "height": 2121,
-      "style": "Bold typography on black background with white and orange accents, technical product photography of Evaporated Glass Traps, clean minimal layout focused on quantum technology innovation",
-      "created": "2023-2025",
-      "date_range": "2023-2025",
-      "year": 2023
-    },
-    {
       "id": "work-ionq-one-pagers-screenshot-2025-05-05-114813",
       "src": "https://ws6i2dfuggcaavs2.public.blob.vercel-storage.com/images/work/ionq/one-pagers/Screenshot%202025-05-05%20114813.png",
       "type": "image",
@@ -3850,109 +3854,6 @@
       "year": 2017
     },
     {
-      "id": "work-herman-miller-geiger-holiday-card-geiger-holidaycard-wi",
-      "src": "https://ws6i2dfuggcaavs2.public.blob.vercel-storage.com/images/HermanMiller/Geiger_HolidayCard_withMiloSerif-1.jpg",
-      "type": "image",
-      "title": "Geiger Holiday Card Illustration with Interlocking Rings",
-      "tags": [
-        "stationery",
-        "illustration"
-      ],
-      "format": [
-        "stationery"
-      ],
-      "characteristics": [],
-      "subject": [
-        "illustration"
-      ],
-      "project_tags": [
-        "b2b2c",
-        "campaign",
-        "publication-design",
-        "exhibition",
-        "furniture"
-      ],
-      "medium": "print",
-      "project": "herman-miller-geiger-holiday-card",
-      "description": "A vibrant, minimalist illustration for Herman Miller's holiday card, depicting diverse individuals interacting with colorful interlocking rings to symbolize collaboration and connection.",
-      "width": 1499,
-      "height": 2113,
-      "style": "Flat, bold color illustration with human-centric elements and geometric ring motif emphasizing unity and community",
-      "created": "2017-2019",
-      "date_range": "2017-2019",
-      "year": 2017
-    },
-    {
-      "id": "work-herman-miller-geiger-holiday-card-image-2",
-      "src": "https://ws6i2dfuggcaavs2.public.blob.vercel-storage.com/images/HermanMiller/Image_2.jpg",
-      "type": "image",
-      "title": "Geiger Holiday Card Illustration",
-      "tags": [
-        "stationery",
-        "illustration"
-      ],
-      "format": [
-        "stationery"
-      ],
-      "characteristics": [],
-      "subject": [
-        "illustration"
-      ],
-      "project_tags": [
-        "b2b2c",
-        "campaign",
-        "publication-design",
-        "exhibition",
-        "furniture"
-      ],
-      "medium": "print",
-      "project": "herman-miller-geiger-holiday-card",
-      "description": "Minimalist illustration for Herman Miller's Geiger holiday card featuring diverse figures interacting with vibrant, interlocking rings to symbolize connection and collaboration.",
-      "width": 8000,
-      "height": 4500,
-      "style": "Minimalist flat illustration with vibrant color scheme and symbolic ring motifs",
-      "created": "2017-2019",
-      "date_range": "2017-2019",
-      "year": 2017
-    },
-    {
-      "id": "work-herman-miller-herman-miller-cares-collage",
-      "src": "https://ws6i2dfuggcaavs2.public.blob.vercel-storage.com/images/HermanMiller/Collage.png",
-      "type": "image",
-      "title": "Herman Miller Holiday Card Workshop Collage",
-      "tags": [
-        "stationery",
-        "editorial",
-        "campaign",
-        "photography"
-      ],
-      "format": [
-        "stationery",
-        "editorial",
-        "campaign"
-      ],
-      "characteristics": [],
-      "subject": [
-        "photography"
-      ],
-      "project_tags": [
-        "b2b2c",
-        "campaign",
-        "publication-design",
-        "exhibition",
-        "furniture"
-      ],
-      "medium": "digital",
-      "project": "herman-miller-cares",
-      "description": "A collage showcasing Herman Miller's holiday card workshop through studio photography, digital design process imagery, and the promotional card, illustrating the creative environment and event execution.",
-      "width": 1074,
-      "height": 1008,
-      "style": "Vibrant, studio-focused photography capturing the creative process and workshop atmosphere with emphasis on colorful design elements and digital work.",
-      "created": "2017-2019",
-      "date_range": "2017-2019",
-      "year": 2017
-    },
-    {
       "id": "work-ionq-one-pagers-screenshot-2025-08-31-003520",
       "src": "https://ws6i2dfuggcaavs2.public.blob.vercel-storage.com/images/work/ionq/one-pagers/Screenshot%202025-08-31%20003520.png",
       "type": "image",
@@ -3981,76 +3882,6 @@
       "created": "2023-2025",
       "date_range": "2023-2025",
       "year": 2023
-    },
-    {
-      "id": "work-herman-miller-herman-miller-cares-herman-miller-edward-",
-      "src": "https://ws6i2dfuggcaavs2.public.blob.vercel-storage.com/images/HermanMiller/Herman%20Miller%20-%20Edward%20Ubiera_0029.jpg",
-      "type": "image",
-      "title": "Herman Miller Cares Studio Portrait",
-      "tags": [
-        "campaign",
-        "editorial",
-        "stationery",
-        "photography"
-      ],
-      "format": [
-        "campaign",
-        "editorial",
-        "stationery"
-      ],
-      "characteristics": [],
-      "subject": [
-        "photography"
-      ],
-      "project_tags": [
-        "b2b2c",
-        "campaign",
-        "publication-design",
-        "exhibition",
-        "furniture"
-      ],
-      "medium": "digital",
-      "project": "herman-miller-cares",
-      "description": "Portrait of a designer in their vibrant studio space, highlighting the creative process and personal work featured in Herman Miller's 'Cares' initiative.",
-      "width": 1000,
-      "height": 667,
-      "style": "Vibrant contemporary studio portrait showcasing artistic workspace and personal design process",
-      "created": "2017-2019",
-      "date_range": "2017-2019",
-      "year": 2017
-    },
-    {
-      "id": "work-herman-miller-herman-miller-cares-screenshot-2026-04-18",
-      "src": "https://ws6i2dfuggcaavs2.public.blob.vercel-storage.com/images/work/herman-miller/herman-miller-cares/Screenshot%202026-04-18%20225650.png",
-      "type": "image",
-      "title": "Herman Miller Cares Whimsical Illustration",
-      "tags": [
-        "stationery",
-        "illustration"
-      ],
-      "format": [
-        "stationery"
-      ],
-      "characteristics": [],
-      "subject": [
-        "illustration"
-      ],
-      "project_tags": [
-        "b2b2c",
-        "campaign",
-        "publication-design",
-        "exhibition",
-        "furniture"
-      ],
-      "medium": "print",
-      "project": "herman-miller-cares",
-      "description": "A vibrant illustration for Herman Miller's care initiative depicts a character with a plant pot as a head reading a book, surrounded by fantastical elements like a castle, friendly creatures, and lush foliage in a playful, surreal style.",
-      "width": 1057,
-      "height": 1439,
-      "style": "Whimsical surreal flat illustration",
-      "created": "2017-2019",
-      "date_range": "2017-2019",
-      "year": 2017
     },
     {
       "id": "work-herman-miller-herman-miller-group-screenshot-2026-04-18",
@@ -4314,39 +4145,8 @@
       "year": 2017
     },
     {
-      "id": "work-ionq-brand-83",
-      "src": "https://ws6i2dfuggcaavs2.public.blob.vercel-storage.com/images/IonQ/83.png",
-      "type": "image",
-      "title": "IonQ Quantum Computing Brand Visual System",
-      "tags": [
-        "illustration",
-        "data-visualization",
-        "iconography"
-      ],
-      "format": [],
-      "characteristics": [],
-      "subject": [
-        "illustration",
-        "data-visualization",
-        "iconography"
-      ],
-      "project_tags": [
-        "b2b",
-        "quantum-computing"
-      ],
-      "medium": "digital",
-      "project": "ionq-brand",
-      "description": "A grid of icons organized by categories like 'Perfect Qubits' and 'Low SPAM Errors' illustrates IonQ's brand identity through minimalist orange and black design, showcasing technical strengths in quantum computing.",
-      "width": 1920,
-      "height": 1080,
-      "style": "minimalist technical illustration with orange and black geometric iconography",
-      "created": "2023-2025",
-      "date_range": "2023-2025",
-      "year": 2023
-    },
-    {
-      "id": "work-ionq-brand-frame-7",
-      "src": "https://ws6i2dfuggcaavs2.public.blob.vercel-storage.com/images/IonQ/Frame%207.png",
+      "id": "work-verizon-future-of-retail-frame-7",
+      "src": "https://ws6i2dfuggcaavs2.public.blob.vercel-storage.com/images/Verizon_Selection/Frame%207.png",
       "type": "image",
       "title": "IonQ & Busan Metropolitan City Brand Collab",
       "tags": [
@@ -4360,18 +4160,20 @@
         "identity"
       ],
       "project_tags": [
-        "b2b",
-        "quantum-computing"
+        "b2c",
+        "retail",
+        "telecom"
       ],
       "medium": "digital",
-      "project": "ionq-brand",
+      "project": "verizon-future-of-retail",
       "description": "A clean, minimalist presentation showcasing the brand identities of IonQ and Busan Metropolitan City side-by-side on a black background, highlighting collaborative partnership branding",
       "width": 3840,
       "height": 2160,
       "style": "Minimalist brand partnership with distinct logo presentation on a black background, emphasizing corporate identity and design simplicity",
-      "created": "2023-2025",
-      "date_range": "2023-2025",
-      "year": 2023
+      "created": "2019-2022",
+      "date_range": "2019-2022",
+      "year": 2019,
+      "hidden_from_feed": true
     },
     {
       "id": "work-ionq-brand-guidelines-ionq-brand-guidelines-102",
@@ -4428,36 +4230,6 @@
       "date_range": "2023-2025",
       "year": 2023,
       "hidden_from_feed": true
-    },
-    {
-      "id": "work-ionq-brand-ionq-brand-guidelines-21",
-      "src": "https://ws6i2dfuggcaavs2.public.blob.vercel-storage.com/images/IonQ/IonQ%20Brand%20Guidelines%20-%2021.png",
-      "type": "image",
-      "title": "IonQ Brand Guidelines Color Page",
-      "tags": [
-        "deck",
-        "identity"
-      ],
-      "format": [
-        "deck"
-      ],
-      "characteristics": [],
-      "subject": [
-        "identity"
-      ],
-      "project_tags": [
-        "b2b",
-        "quantum-computing"
-      ],
-      "medium": "print",
-      "project": "ionq-brand",
-      "description": "A page from IonQ's brand guidelines detailing their core brand color, IonQ Orange, with technical specifications and the tagline 'The future is quantum,' showcasing brand identity through minimalist design and bold typography.",
-      "width": 1920,
-      "height": 1080,
-      "style": "modern minimalist with bold typography and vibrant brand color application",
-      "created": "2023-2025",
-      "date_range": "2023-2025",
-      "year": 2023
     },
     {
       "id": "work-ionq-brand-guidelines-ionq-brand-guidelines-78",
@@ -4542,33 +4314,6 @@
       "date_range": "2023-2025",
       "year": 2023,
       "hidden_from_feed": true
-    },
-    {
-      "id": "work-ionq-brand-screenshot-2026-04-13-231149",
-      "src": "https://ws6i2dfuggcaavs2.public.blob.vercel-storage.com/images/IonQ/Screenshot%202026-04-13%20231149.png",
-      "type": "image",
-      "title": "IonQ Brand Guidelines Overview",
-      "tags": [
-        "logo"
-      ],
-      "format": [],
-      "characteristics": [],
-      "subject": [
-        "logo"
-      ],
-      "project_tags": [
-        "b2b",
-        "quantum-computing"
-      ],
-      "medium": "digital",
-      "project": "ionq-brand",
-      "description": "A comprehensive showcase of IonQ's brand guidelines featuring sections on brand strategy, color palette, logo usage, and video examples to ensure consistent visual identity across all platforms.",
-      "width": 2680,
-      "height": 1500,
-      "style": "Modern, tech-focused brand guide with a dark background, bold orange accents, and clean, structured layouts for professional consistency.",
-      "created": "2023-2025",
-      "date_range": "2023-2025",
-      "year": 2023
     },
     {
       "id": "work-ionq-data-visualization-aq-attainment",
@@ -5526,8 +5271,8 @@
       "year": 2023
     },
     {
-      "id": "work-moma-teens-program-picassosculpturemoma",
-      "src": "https://ws6i2dfuggcaavs2.public.blob.vercel-storage.com/images/work/moma/teens-program/PicassoSculptureMoMA.jpeg",
+      "id": "work-moma-marron-dossiers-picassosculpturemoma",
+      "src": "https://ws6i2dfuggcaavs2.public.blob.vercel-storage.com/images/work/moma/marron-dossiers/PicassoSculptureMoMA.jpeg",
       "type": "image",
       "title": "Picasso's Sculpture MoMA Digital Publication Cover",
       "tags": [
@@ -5545,7 +5290,7 @@
         "cultural-institution"
       ],
       "medium": "digital",
-      "project": "moma-teens-program",
+      "project": "moma-marron-dossiers",
       "description": "A digital publication cover for MoMA's 'MRC Dossier 2: Museum Research Consortium Study Session' on Picasso's sculpture, featuring minimalist typography, a historical black-and-white photograph of an atelier scene, and strategic brand integration.",
       "width": 906,
       "height": 1280,
@@ -5555,8 +5300,8 @@
       "year": 2015
     },
     {
-      "id": "work-moma-teens-program-picassosculpturemoma-mrc-dossier1",
-      "src": "https://ws6i2dfuggcaavs2.public.blob.vercel-storage.com/images/work/moma/teens-program/PicassoSculptureMoMA_MRC%20Dossier1.jpeg",
+      "id": "work-moma-marron-dossiers-picassosculpturemoma-mrc-dossier1",
+      "src": "https://ws6i2dfuggcaavs2.public.blob.vercel-storage.com/images/work/moma/marron-dossiers/PicassoSculptureMoMA_MRC%20Dossier1.jpeg",
       "type": "image",
       "title": "Picasso's Sculpture Dossier Cover",
       "tags": [
@@ -5574,7 +5319,7 @@
         "cultural-institution"
       ],
       "medium": "digital",
-      "project": "moma-teens-program",
+      "project": "moma-marron-dossiers",
       "description": "Print cover for MoMA’s Museum Research Consortium Study Session, featuring a black-and-white photograph of Picasso’s studio and bold typographic elements.",
       "width": 906,
       "height": 1280,
@@ -5584,8 +5329,8 @@
       "year": 2015
     },
     {
-      "id": "work-moma-teens-program-picassosculpturemoma-mrc-dossier2",
-      "src": "https://ws6i2dfuggcaavs2.public.blob.vercel-storage.com/images/work/moma/teens-program/PicassoSculptureMoMA_MRC%20Dossier2.jpeg",
+      "id": "work-moma-marron-dossiers-picassosculpturemoma-mrc-dossier2",
+      "src": "https://ws6i2dfuggcaavs2.public.blob.vercel-storage.com/images/work/moma/marron-dossiers/PicassoSculptureMoMA_MRC%20Dossier2.jpeg",
       "type": "image",
       "title": "MoMA Teens Program Dossier: Picasso Sculpture Analysis",
       "tags": [
@@ -5603,7 +5348,7 @@
         "cultural-institution"
       ],
       "medium": "digital",
-      "project": "moma-teens-program",
+      "project": "moma-marron-dossiers",
       "description": "A page from the MoMA Teens Program dossier analyzing Picasso's sculptural works, including comparative discussions of 'Head' and his iconic Guitar (1912) and Man (1958) sculptures, presented through academic text and image captions.",
       "width": 906,
       "height": 1280,
@@ -5613,8 +5358,8 @@
       "year": 2015
     },
     {
-      "id": "work-moma-teens-program-picassosculpturemoma-mrc-dossier3",
-      "src": "https://ws6i2dfuggcaavs2.public.blob.vercel-storage.com/images/work/moma/teens-program/PicassoSculptureMoMA_MRC%20Dossier3.jpeg",
+      "id": "work-moma-marron-dossiers-picassosculpturemoma-mrc-dossier3",
+      "src": "https://ws6i2dfuggcaavs2.public.blob.vercel-storage.com/images/work/moma/marron-dossiers/PicassoSculptureMoMA_MRC%20Dossier3.jpeg",
       "type": "image",
       "title": "Picasso Sculpture Studies Dossier Page",
       "tags": [
@@ -5632,7 +5377,7 @@
         "cultural-institution"
       ],
       "medium": "digital",
-      "project": "moma-teens-program",
+      "project": "moma-marron-dossiers",
       "description": "A printed page showcasing four pencil sketches of Picasso's 1958 wooden sculpture studies, part of the Museum of Modern Art's MRC dossier for teens program.",
       "width": 906,
       "height": 1280,
@@ -5642,8 +5387,8 @@
       "year": 2015
     },
     {
-      "id": "work-moma-teens-program-portfolio-marvin-dejong-email",
-      "src": "https://ws6i2dfuggcaavs2.public.blob.vercel-storage.com/images/work/moma/teens-program/portfolio_Marvin_deJong_eMail.jpeg",
+      "id": "work-moma-marron-dossiers-portfolio-marvin-dejong-email",
+      "src": "https://ws6i2dfuggcaavs2.public.blob.vercel-storage.com/images/work/moma/marron-dossiers/portfolio_Marvin_deJong_eMail.jpeg",
       "type": "image",
       "title": "MOMA Digital Publication Cover: Picasso's Sculpture Dossier",
       "tags": [
@@ -5661,7 +5406,7 @@
         "cultural-institution"
       ],
       "medium": "digital",
-      "project": "moma-teens-program",
+      "project": "moma-marron-dossiers",
       "description": "A digital publication cover for MoMA's Museum Research Consortium Dossier 2, featuring a monochrome photograph of Picasso's studio with sculptures and minimalist typography. The design emphasizes the integration of historical imagery with modern typographic layout.",
       "width": 715,
       "height": 1011,
@@ -5702,15 +5447,19 @@
       "src": "https://ws6i2dfuggcaavs2.public.blob.vercel-storage.com/images/work/pratt/design-system/MarvinDeJong-DesignPortfolio.jpeg",
       "type": "image",
       "title": "Pratt Manhattan Center Signage",
-      "tags": [],
-      "format": [],
+      "tags": [
+        "exhibition"
+      ],
+      "format": [
+        "exhibition"
+      ],
       "characteristics": [],
       "subject": [],
       "project_tags": [
         "b2c",
         "education"
       ],
-      "medium": "event",
+      "medium": "print",
       "project": "pratt-design-system",
       "description": "Exterior signage for the Sondra and David S. Mack Pratt Manhattan Center and Pratt Manhattan Gallery, showcasing branded banners on a historic building facade.",
       "width": 1805,
@@ -5754,15 +5503,19 @@
       "src": "https://ws6i2dfuggcaavs2.public.blob.vercel-storage.com/images/work/pratt/design-system/PrattFlags.jpeg",
       "type": "image",
       "title": "Pratt Manhattan Center & Gallery Banners",
-      "tags": [],
-      "format": [],
+      "tags": [
+        "exhibition"
+      ],
+      "format": [
+        "exhibition"
+      ],
       "characteristics": [],
       "subject": [],
       "project_tags": [
         "b2c",
         "education"
       ],
-      "medium": "event",
+      "medium": "print",
       "project": "pratt-design-system",
       "description": "Photograph of black banner installations for Pratt Manhattan Center and Gallery, demonstrating the institution's brand identity through minimalist typography and strategic placement on a historic building facade.",
       "width": 3005,
@@ -9694,8 +9447,8 @@
       "hidden_from_feed": true
     },
     {
-      "id": "work-verizon-future-of-retail-frame-7",
-      "src": "https://ws6i2dfuggcaavs2.public.blob.vercel-storage.com/images/Verizon_Selection/Frame%207.png",
+      "id": "work-verizon-future-of-retail-frame-7-2",
+      "src": "https://ws6i2dfuggcaavs2.public.blob.vercel-storage.com/images/work/verizon/future-of-retail/Frame%207.png",
       "type": "image",
       "title": "Vibrant Album Cover Retail Display",
       "tags": [
@@ -20480,68 +20233,6 @@
       "id": "practice-architecture-fantasy-perdido-street-station-animal-",
       "src": "https://ws6i2dfuggcaavs2.public.blob.vercel-storage.com/images/practice/architecture-fantasy/perdido-street-station/animal-architecture-arch-macrotermes-natalensis.png",
       "type": "image",
-      "title": "animal architecture arch macrotermes natalensis",
-      "tags": [
-        "reference",
-        "snapshot"
-      ],
-      "format": [],
-      "characteristics": [
-        "reference"
-      ],
-      "subject": [],
-      "project_tags": [
-        "personal",
-        "personal",
-        "real-time"
-      ],
-      "medium": "",
-      "project": "snapshot",
-      "description": "Termite (Macrotermes natalensis). Two columns rising toward an arch.",
-      "width": 2169,
-      "height": 1702,
-      "created": "2014-present",
-      "date_range": "2014-present",
-      "year": 2014,
-      "personal": true,
-      "essay_of": "practice/architecture-fantasy/perdido-street-station/perdido-street-station",
-      "hidden_from_feed": true
-    },
-    {
-      "id": "practice-architecture-fantasy-perdido-street-station-animal--2",
-      "src": "https://ws6i2dfuggcaavs2.public.blob.vercel-storage.com/images/practice/architecture-fantasy/perdido-street-station/animal-architecture-carton-nest-jet-ant.png",
-      "type": "image",
-      "title": "animal architecture carton nest jet ant",
-      "tags": [
-        "reference",
-        "snapshot"
-      ],
-      "format": [],
-      "characteristics": [
-        "reference"
-      ],
-      "subject": [],
-      "project_tags": [
-        "personal",
-        "personal",
-        "real-time"
-      ],
-      "medium": "",
-      "project": "snapshot",
-      "description": "Jet ant (Lasius fuliginosus). A section of carton nest, its thin walls reinforced by a fungus grown into them.",
-      "width": 2239,
-      "height": 2260,
-      "created": "2014-present",
-      "date_range": "2014-present",
-      "year": 2014,
-      "personal": true,
-      "essay_of": "practice/architecture-fantasy/perdido-street-station/perdido-street-station",
-      "hidden_from_feed": true
-    },
-    {
-      "id": "practice-architecture-fantasy-perdido-street-station-animal--3",
-      "src": "https://ws6i2dfuggcaavs2.public.blob.vercel-storage.com/images/practice/architecture-fantasy/perdido-street-station/animal-architecture-dam-beaver.png",
-      "type": "image",
       "title": "animal architecture dam beaver",
       "tags": [
         "reference",
@@ -20570,70 +20261,8 @@
       "hidden_from_feed": true
     },
     {
-      "id": "practice-architecture-fantasy-perdido-street-station-animal--4",
-      "src": "https://ws6i2dfuggcaavs2.public.blob.vercel-storage.com/images/practice/architecture-fantasy/perdido-street-station/animal-architecture-eyrie-osprey.png",
-      "type": "image",
-      "title": "animal architecture eyrie osprey",
-      "tags": [
-        "reference",
-        "snapshot"
-      ],
-      "format": [],
-      "characteristics": [
-        "reference"
-      ],
-      "subject": [],
-      "project_tags": [
-        "personal",
-        "personal",
-        "real-time"
-      ],
-      "medium": "",
-      "project": "snapshot",
-      "description": "Osprey eyrie. Boughs and branches stacked into a perch above the canopy.",
-      "width": 2254,
-      "height": 2427,
-      "created": "2014-present",
-      "date_range": "2014-present",
-      "year": 2014,
-      "personal": true,
-      "essay_of": "practice/architecture-fantasy/perdido-street-station/perdido-street-station",
-      "hidden_from_feed": true
-    },
-    {
-      "id": "practice-architecture-fantasy-perdido-street-station-animal--5",
-      "src": "https://ws6i2dfuggcaavs2.public.blob.vercel-storage.com/images/practice/architecture-fantasy/perdido-street-station/animal-architecture-fungus-mass-leafcutter-ant.png",
-      "type": "image",
-      "title": "animal architecture fungus mass leafcutter ant",
-      "tags": [
-        "reference",
-        "snapshot"
-      ],
-      "format": [],
-      "characteristics": [
-        "reference"
-      ],
-      "subject": [],
-      "project_tags": [
-        "personal",
-        "personal",
-        "real-time"
-      ],
-      "medium": "",
-      "project": "snapshot",
-      "description": "Leafcutter ant (Atta texana). The fungus mass cultivated inside the nest. At right, magnified.",
-      "width": 3308,
-      "height": 1286,
-      "created": "2014-present",
-      "date_range": "2014-present",
-      "year": 2014,
-      "personal": true,
-      "essay_of": "practice/architecture-fantasy/perdido-street-station/perdido-street-station",
-      "hidden_from_feed": true
-    },
-    {
-      "id": "practice-architecture-fantasy-perdido-street-station-animal--6",
-      "src": "https://ws6i2dfuggcaavs2.public.blob.vercel-storage.com/images/practice/architecture-fantasy/perdido-street-station/animal-architecture-galleries-built-termites-reticulitermes.png",
+      "id": "practice-architecture-fantasy-perdido-street-station-animal--2",
+      "src": "https://ws6i2dfuggcaavs2.public.blob.vercel-storage.com/images/practice/architecture-fantasy/perdido-street-station/animal-architecture-carton-nest-jet-ant.png",
       "type": "image",
       "title": "animal architecture galleries built termites reticulitermes",
       "tags": [
@@ -20663,190 +20292,970 @@
       "hidden_from_feed": true
     },
     {
-      "id": "practice-architecture-fantasy-perdido-street-station-animal--7",
-      "src": "https://ws6i2dfuggcaavs2.public.blob.vercel-storage.com/images/practice/architecture-fantasy/perdido-street-station/animal-architecture-larch-stem-carpenter-ants.png",
+      "id": "work-moma-teens-program-moma-teensprogram-01",
+      "src": "https://ws6i2dfuggcaavs2.public.blob.vercel-storage.com/images/work/moma/teens-program/MoMA_teensProgram_01.jpg",
       "type": "image",
-      "title": "animal architecture larch stem carpenter ants",
+      "title": "MoMA teensProgram 01",
       "tags": [
-        "reference",
-        "snapshot"
+        "publication-design"
       ],
-      "format": [],
-      "characteristics": [
-        "reference"
+      "format": [
+        "publication-design"
       ],
+      "characteristics": [],
       "subject": [],
       "project_tags": [
-        "personal",
-        "personal",
-        "real-time"
+        "b2c",
+        "editorial",
+        "publication-design",
+        "cultural-institution"
       ],
-      "medium": "",
-      "project": "snapshot",
-      "description": "Carpenter ant (Camponotus herculeanus). Galleries bored through a larch stem.",
-      "width": 2253,
-      "height": 3346,
-      "created": "2014-present",
-      "date_range": "2014-present",
-      "year": 2014,
-      "personal": true,
-      "essay_of": "practice/architecture-fantasy/perdido-street-station/perdido-street-station",
-      "hidden_from_feed": true
+      "medium": "print",
+      "project": "moma-teens-program",
+      "description": "",
+      "width": 1528,
+      "height": 2037,
+      "created": "2015-2016",
+      "date_range": "2015-2016",
+      "year": 2015
     },
     {
-      "id": "practice-architecture-fantasy-perdido-street-station-animal--8",
-      "src": "https://ws6i2dfuggcaavs2.public.blob.vercel-storage.com/images/practice/architecture-fantasy/perdido-street-station/animal-architecture-nest-harvest-mouse.png",
+      "id": "work-moma-teens-program-moma-teensprogram-03",
+      "src": "https://ws6i2dfuggcaavs2.public.blob.vercel-storage.com/images/work/moma/teens-program/MoMA_teensProgram_03.jpg",
       "type": "image",
-      "title": "animal architecture nest harvest mouse",
+      "title": "MoMA teensProgram 03",
       "tags": [
-        "reference",
-        "snapshot"
+        "publication-design"
       ],
-      "format": [],
-      "characteristics": [
-        "reference"
+      "format": [
+        "publication-design"
       ],
+      "characteristics": [],
       "subject": [],
       "project_tags": [
-        "personal",
-        "personal",
-        "real-time"
+        "b2c",
+        "editorial",
+        "publication-design",
+        "cultural-institution"
       ],
-      "medium": "",
-      "project": "snapshot",
-      "description": "Harvest mouse (Micromys minutus). A nest woven into the standing stalks of an oat field.",
-      "width": 2201,
-      "height": 3249,
-      "created": "2014-present",
-      "date_range": "2014-present",
-      "year": 2014,
-      "personal": true,
-      "essay_of": "practice/architecture-fantasy/perdido-street-station/perdido-street-station",
-      "hidden_from_feed": true
+      "medium": "print",
+      "project": "moma-teens-program",
+      "description": "",
+      "width": 4024,
+      "height": 2687,
+      "created": "2015-2016",
+      "date_range": "2015-2016",
+      "year": 2015
     },
     {
-      "id": "practice-architecture-fantasy-perdido-street-station-animal--9",
-      "src": "https://ws6i2dfuggcaavs2.public.blob.vercel-storage.com/images/practice/architecture-fantasy/perdido-street-station/animal-architecture-nest-sociable-weaverbird.png",
+      "id": "work-moma-teens-program-moma-teensprogram-04",
+      "src": "https://ws6i2dfuggcaavs2.public.blob.vercel-storage.com/images/work/moma/teens-program/MoMA_teensProgram_04.jpg",
       "type": "image",
-      "title": "animal architecture nest sociable weaverbird",
+      "title": "MoMA teensProgram 04",
       "tags": [
-        "reference",
-        "snapshot"
+        "publication-design"
       ],
-      "format": [],
-      "characteristics": [
-        "reference"
+      "format": [
+        "publication-design"
       ],
+      "characteristics": [],
       "subject": [],
       "project_tags": [
-        "personal",
-        "personal",
-        "real-time"
+        "b2c",
+        "editorial",
+        "publication-design",
+        "cultural-institution"
       ],
-      "medium": "",
-      "project": "snapshot",
-      "description": "Sociable weaverbird. A communal nest, hung from a single armature, riddled with entries.",
-      "width": 1991,
-      "height": 2096,
-      "created": "2014-present",
-      "date_range": "2014-present",
-      "year": 2014,
-      "personal": true,
-      "essay_of": "practice/architecture-fantasy/perdido-street-station/perdido-street-station",
-      "hidden_from_feed": true
+      "medium": "print",
+      "project": "moma-teens-program",
+      "description": "",
+      "width": 4463,
+      "height": 2053,
+      "created": "2015-2016",
+      "date_range": "2015-2016",
+      "year": 2015
     },
     {
-      "id": "practice-architecture-fantasy-perdido-street-station-animal--10",
-      "src": "https://ws6i2dfuggcaavs2.public.blob.vercel-storage.com/images/practice/architecture-fantasy/perdido-street-station/animal-architecture-rain-roofs-termite-cubitermes.png",
+      "id": "work-moma-teens-program-moma-teensprogram-05",
+      "src": "https://ws6i2dfuggcaavs2.public.blob.vercel-storage.com/images/work/moma/teens-program/MoMA_teensProgram_05.jpg",
       "type": "image",
-      "title": "animal architecture rain roofs termite cubitermes",
+      "title": "MoMA teensProgram 05",
       "tags": [
-        "reference",
-        "snapshot"
+        "publication-design"
       ],
-      "format": [],
-      "characteristics": [
-        "reference"
+      "format": [
+        "publication-design"
       ],
+      "characteristics": [],
       "subject": [],
       "project_tags": [
-        "personal",
-        "personal",
-        "real-time"
+        "b2c",
+        "editorial",
+        "publication-design",
+        "cultural-institution"
       ],
-      "medium": "",
-      "project": "snapshot",
-      "description": "Cubitermes. Termitaria capped with rain roofs. The cross-section reveals the chambers within.",
-      "width": 2244,
-      "height": 1589,
-      "created": "2014-present",
-      "date_range": "2014-present",
-      "year": 2014,
-      "personal": true,
-      "essay_of": "practice/architecture-fantasy/perdido-street-station/perdido-street-station",
-      "hidden_from_feed": true
+      "medium": "print",
+      "project": "moma-teens-program",
+      "description": "",
+      "width": 4482,
+      "height": 1308,
+      "created": "2015-2016",
+      "date_range": "2015-2016",
+      "year": 2015
     },
     {
-      "id": "practice-architecture-fantasy-perdido-street-station-animal--11",
-      "src": "https://ws6i2dfuggcaavs2.public.blob.vercel-storage.com/images/practice/architecture-fantasy/perdido-street-station/animal-architecture-sandshell-difflugia-pyriformis.png",
+      "id": "work-moma-teens-program-moma-teensprogram-06",
+      "src": "https://ws6i2dfuggcaavs2.public.blob.vercel-storage.com/images/work/moma/teens-program/MoMA_teensProgram_06.jpg",
       "type": "image",
-      "title": "animal architecture sandshell difflugia pyriformis",
+      "title": "MoMA teensProgram 06",
       "tags": [
-        "reference",
-        "snapshot"
+        "publication-design"
       ],
-      "format": [],
-      "characteristics": [
-        "reference"
+      "format": [
+        "publication-design"
       ],
+      "characteristics": [],
       "subject": [],
       "project_tags": [
-        "personal",
-        "personal",
-        "real-time"
+        "b2c",
+        "editorial",
+        "publication-design",
+        "cultural-institution"
       ],
-      "medium": "",
-      "project": "snapshot",
-      "description": "Difflugia pyriformis. A single-celled amoeba that builds its shell from swallowed sand.",
-      "width": 1058,
-      "height": 3844,
-      "created": "2014-present",
-      "date_range": "2014-present",
-      "year": 2014,
-      "personal": true,
-      "essay_of": "practice/architecture-fantasy/perdido-street-station/perdido-street-station",
-      "hidden_from_feed": true
+      "medium": "print",
+      "project": "moma-teens-program",
+      "description": "",
+      "width": 4608,
+      "height": 1313,
+      "created": "2015-2016",
+      "date_range": "2015-2016",
+      "year": 2015
     },
     {
-      "id": "practice-architecture-fantasy-perdido-street-station-animal--12",
-      "src": "https://ws6i2dfuggcaavs2.public.blob.vercel-storage.com/images/practice/architecture-fantasy/perdido-street-station/animal-architecture-underground-nest-termites-apicotermes-gurgulifex.png",
+      "id": "work-pratt-design-system-dscn1457",
+      "src": "https://ws6i2dfuggcaavs2.public.blob.vercel-storage.com/images/work/pratt/design-system/DSCN1457.jpg",
       "type": "image",
-      "title": "animal architecture underground nest termites apicotermes gurgulifex",
+      "title": "DSCN1457",
       "tags": [
-        "reference",
+        "exhibition"
+      ],
+      "format": [
+        "exhibition"
+      ],
+      "characteristics": [],
+      "subject": [],
+      "project_tags": [
+        "b2c",
+        "education"
+      ],
+      "medium": "print",
+      "project": "pratt-design-system",
+      "description": "",
+      "width": 2533,
+      "height": 3377,
+      "created": "2015-2016",
+      "date_range": "2015-2016",
+      "year": 2015
+    },
+    {
+      "id": "work-pratt-design-system-dscn1458",
+      "src": "https://ws6i2dfuggcaavs2.public.blob.vercel-storage.com/images/work/pratt/design-system/DSCN1458.jpg",
+      "type": "image",
+      "title": "DSCN1458",
+      "tags": [
+        "exhibition"
+      ],
+      "format": [
+        "exhibition"
+      ],
+      "characteristics": [],
+      "subject": [],
+      "project_tags": [
+        "b2c",
+        "education"
+      ],
+      "medium": "print",
+      "project": "pratt-design-system",
+      "description": "",
+      "width": 2152,
+      "height": 2869,
+      "created": "2015-2016",
+      "date_range": "2015-2016",
+      "year": 2015
+    },
+    {
+      "id": "work-herman-miller-for-you-everyone-foryoueveryone-01",
+      "src": "https://ws6i2dfuggcaavs2.public.blob.vercel-storage.com/images/work/herman-miller/for-you-everyone/forYouEveryone_01.jpg",
+      "type": "image",
+      "title": "forYouEveryone 01",
+      "tags": [
+        "exhibition",
+        "illustration",
         "snapshot"
       ],
-      "format": [],
-      "characteristics": [
-        "reference"
+      "format": [
+        "exhibition"
       ],
-      "subject": [],
+      "characteristics": [],
+      "subject": [
+        "illustration"
+      ],
       "project_tags": [
         "personal",
         "personal",
         "real-time"
       ],
-      "medium": "",
+      "medium": "print",
       "project": "snapshot",
-      "description": "Termite (Apicotermes gurgulifex). A clay nest suspended underground, separated from the surrounding soil by an air gap.",
-      "width": 1088,
-      "height": 1377,
+      "description": "",
+      "width": 2070,
+      "height": 2760,
       "created": "2014-present",
       "date_range": "2014-present",
       "year": 2014,
-      "personal": true,
-      "essay_of": "practice/architecture-fantasy/perdido-street-station/perdido-street-station",
-      "hidden_from_feed": true
+      "personal": true
+    },
+    {
+      "id": "work-herman-miller-for-you-everyone-foryoueveryone-02",
+      "src": "https://ws6i2dfuggcaavs2.public.blob.vercel-storage.com/images/work/herman-miller/for-you-everyone/forYouEveryone_02.jpg",
+      "type": "image",
+      "title": "forYouEveryone 02",
+      "tags": [
+        "exhibition",
+        "illustration",
+        "snapshot"
+      ],
+      "format": [
+        "exhibition"
+      ],
+      "characteristics": [],
+      "subject": [
+        "illustration"
+      ],
+      "project_tags": [
+        "personal",
+        "personal",
+        "real-time"
+      ],
+      "medium": "print",
+      "project": "snapshot",
+      "description": "",
+      "width": 2456,
+      "height": 3275,
+      "created": "2014-present",
+      "date_range": "2014-present",
+      "year": 2014,
+      "personal": true
+    },
+    {
+      "id": "work-herman-miller-for-you-everyone-foryoueveryone-03",
+      "src": "https://ws6i2dfuggcaavs2.public.blob.vercel-storage.com/images/work/herman-miller/for-you-everyone/forYouEveryone_03.jpg",
+      "type": "image",
+      "title": "forYouEveryone 03",
+      "tags": [
+        "exhibition",
+        "photography",
+        "snapshot"
+      ],
+      "format": [
+        "exhibition"
+      ],
+      "characteristics": [],
+      "subject": [
+        "photography"
+      ],
+      "project_tags": [
+        "personal",
+        "personal",
+        "real-time"
+      ],
+      "medium": "print",
+      "project": "snapshot",
+      "description": "",
+      "width": 2456,
+      "height": 3275,
+      "created": "2014-present",
+      "date_range": "2014-present",
+      "year": 2014,
+      "personal": true
+    },
+    {
+      "id": "work-herman-miller-geiger-holiday-card-geiger-holidaycard",
+      "src": "https://ws6i2dfuggcaavs2.public.blob.vercel-storage.com/images/work/herman-miller/geiger-holiday-card/Geiger_HolidayCard.jpg",
+      "type": "image",
+      "title": "Geiger HolidayCard",
+      "tags": [
+        "stationery",
+        "illustration"
+      ],
+      "format": [
+        "stationery"
+      ],
+      "characteristics": [],
+      "subject": [
+        "illustration"
+      ],
+      "project_tags": [
+        "b2b2c",
+        "campaign",
+        "publication-design",
+        "exhibition",
+        "furniture"
+      ],
+      "medium": "print",
+      "project": "herman-miller-geiger-holiday-card",
+      "description": "",
+      "width": 2200,
+      "height": 2933,
+      "created": "2017-2019",
+      "date_range": "2017-2019",
+      "year": 2017
+    },
+    {
+      "id": "work-herman-miller-geiger-holiday-card-geiger-holidaycard-02",
+      "src": "https://ws6i2dfuggcaavs2.public.blob.vercel-storage.com/images/work/herman-miller/geiger-holiday-card/Geiger_HolidayCard_02.jpg",
+      "type": "image",
+      "title": "Geiger HolidayCard 02",
+      "tags": [
+        "stationery",
+        "illustration"
+      ],
+      "format": [
+        "stationery"
+      ],
+      "characteristics": [],
+      "subject": [
+        "illustration"
+      ],
+      "project_tags": [
+        "b2b2c",
+        "campaign",
+        "publication-design",
+        "exhibition",
+        "furniture"
+      ],
+      "medium": "print",
+      "project": "herman-miller-geiger-holiday-card",
+      "description": "",
+      "width": 3602,
+      "height": 2701,
+      "created": "2017-2019",
+      "date_range": "2017-2019",
+      "year": 2017
+    },
+    {
+      "id": "work-herman-miller-geiger-holiday-card-screenshot-2026-04-13",
+      "src": "https://ws6i2dfuggcaavs2.public.blob.vercel-storage.com/images/work/herman-miller/geiger-holiday-card/Screenshot%202026-04-13%20230957.png",
+      "type": "image",
+      "title": "Screenshot 2026 04 13 230957",
+      "tags": [
+        "stationery",
+        "illustration"
+      ],
+      "format": [
+        "stationery"
+      ],
+      "characteristics": [],
+      "subject": [
+        "illustration"
+      ],
+      "project_tags": [
+        "b2b2c",
+        "campaign",
+        "publication-design",
+        "exhibition",
+        "furniture"
+      ],
+      "medium": "print",
+      "project": "herman-miller-geiger-holiday-card",
+      "description": "",
+      "width": 2673,
+      "height": 1412,
+      "created": "2017-2019",
+      "date_range": "2017-2019",
+      "year": 2017
+    },
+    {
+      "id": "work-herman-miller-herman-miller-cares-hermanmillercare-01",
+      "src": "https://ws6i2dfuggcaavs2.public.blob.vercel-storage.com/images/work/herman-miller/herman-miller-cares/HermanMillerCare_01.jpg",
+      "type": "image",
+      "title": "HermanMillerCare 01",
+      "tags": [
+        "stationery",
+        "illustration"
+      ],
+      "format": [
+        "stationery"
+      ],
+      "characteristics": [],
+      "subject": [
+        "illustration"
+      ],
+      "project_tags": [
+        "b2b2c",
+        "campaign",
+        "publication-design",
+        "exhibition",
+        "furniture"
+      ],
+      "medium": "print",
+      "project": "herman-miller-cares",
+      "description": "",
+      "width": 3770,
+      "height": 2828,
+      "created": "2017-2019",
+      "date_range": "2017-2019",
+      "year": 2017
+    },
+    {
+      "id": "work-herman-miller-herman-miller-cares-hermanmillercare-02",
+      "src": "https://ws6i2dfuggcaavs2.public.blob.vercel-storage.com/images/work/herman-miller/herman-miller-cares/HermanMillerCare_02.jpg",
+      "type": "image",
+      "title": "HermanMillerCare 02",
+      "tags": [
+        "stationery",
+        "illustration"
+      ],
+      "format": [
+        "stationery"
+      ],
+      "characteristics": [],
+      "subject": [
+        "illustration"
+      ],
+      "project_tags": [
+        "b2b2c",
+        "campaign",
+        "publication-design",
+        "exhibition",
+        "furniture"
+      ],
+      "medium": "print",
+      "project": "herman-miller-cares",
+      "description": "",
+      "width": 2153,
+      "height": 2871,
+      "created": "2017-2019",
+      "date_range": "2017-2019",
+      "year": 2017
+    },
+    {
+      "id": "work-herman-miller-herman-miller-cares-hermanmillercare-03",
+      "src": "https://ws6i2dfuggcaavs2.public.blob.vercel-storage.com/images/work/herman-miller/herman-miller-cares/HermanMillerCare_03.jpg",
+      "type": "image",
+      "title": "HermanMillerCare 03",
+      "tags": [
+        "stationery"
+      ],
+      "format": [
+        "stationery"
+      ],
+      "characteristics": [],
+      "subject": [],
+      "project_tags": [
+        "b2b2c",
+        "campaign",
+        "publication-design",
+        "exhibition",
+        "furniture"
+      ],
+      "medium": "print",
+      "project": "herman-miller-cares",
+      "description": "",
+      "width": 3736,
+      "height": 2802,
+      "created": "2017-2019",
+      "date_range": "2017-2019",
+      "year": 2017
+    },
+    {
+      "id": "work-herman-miller-herman-miller-cares-hermanmillercare-04",
+      "src": "https://ws6i2dfuggcaavs2.public.blob.vercel-storage.com/images/work/herman-miller/herman-miller-cares/HermanMillerCare_04.jpg",
+      "type": "image",
+      "title": "HermanMillerCare 04",
+      "tags": [
+        "photography"
+      ],
+      "format": [],
+      "characteristics": [],
+      "subject": [
+        "photography"
+      ],
+      "project_tags": [
+        "b2b2c",
+        "campaign",
+        "publication-design",
+        "exhibition",
+        "furniture"
+      ],
+      "medium": "event",
+      "project": "herman-miller-cares",
+      "description": "",
+      "width": 1000,
+      "height": 667,
+      "created": "2017-2019",
+      "date_range": "2017-2019",
+      "year": 2017
+    },
+    {
+      "id": "work-herman-miller-herman-miller-cares-hermanmillercare-05",
+      "src": "https://ws6i2dfuggcaavs2.public.blob.vercel-storage.com/images/work/herman-miller/herman-miller-cares/HermanMillerCare_05.png",
+      "type": "image",
+      "title": "HermanMillerCare 05",
+      "tags": [
+        "photography"
+      ],
+      "format": [],
+      "characteristics": [],
+      "subject": [
+        "photography"
+      ],
+      "project_tags": [
+        "b2b2c",
+        "campaign",
+        "publication-design",
+        "exhibition",
+        "furniture"
+      ],
+      "medium": "event",
+      "project": "herman-miller-cares",
+      "description": "",
+      "width": 1074,
+      "height": 1008,
+      "created": "2017-2019",
+      "date_range": "2017-2019",
+      "year": 2017
+    },
+    {
+      "id": "work-ionq-brand-ionq-brand-image-01",
+      "src": "https://ws6i2dfuggcaavs2.public.blob.vercel-storage.com/images/work/ionq/brand/IonQ-Brand-Image-01.png",
+      "type": "image",
+      "title": "IonQ Brand Image 01",
+      "tags": [
+        "deck",
+        "identity"
+      ],
+      "format": [
+        "deck"
+      ],
+      "characteristics": [],
+      "subject": [
+        "identity"
+      ],
+      "project_tags": [
+        "b2b",
+        "quantum-computing"
+      ],
+      "medium": "digital",
+      "project": "ionq-brand",
+      "description": "",
+      "width": 1900,
+      "height": 2173,
+      "created": "2023-2025",
+      "date_range": "2023-2025",
+      "year": 2023
+    },
+    {
+      "id": "work-ionq-brand-ionq-brand-image-02",
+      "src": "https://ws6i2dfuggcaavs2.public.blob.vercel-storage.com/images/work/ionq/brand/IonQ-Brand-Image-02.png",
+      "type": "image",
+      "title": "IonQ Brand Image 02",
+      "tags": [
+        "deck",
+        "identity"
+      ],
+      "format": [
+        "deck"
+      ],
+      "characteristics": [],
+      "subject": [
+        "identity"
+      ],
+      "project_tags": [
+        "b2b",
+        "quantum-computing"
+      ],
+      "medium": "digital",
+      "project": "ionq-brand",
+      "description": "",
+      "width": 828,
+      "height": 807,
+      "created": "2023-2025",
+      "date_range": "2023-2025",
+      "year": 2023
+    },
+    {
+      "id": "work-ionq-brand-ionq-brand-image-03",
+      "src": "https://ws6i2dfuggcaavs2.public.blob.vercel-storage.com/images/work/ionq/brand/IonQ-Brand-Image-03.png",
+      "type": "image",
+      "title": "IonQ Brand Image 03",
+      "tags": [
+        "deck",
+        "identity"
+      ],
+      "format": [
+        "deck"
+      ],
+      "characteristics": [],
+      "subject": [
+        "identity"
+      ],
+      "project_tags": [
+        "b2b",
+        "quantum-computing"
+      ],
+      "medium": "digital",
+      "project": "ionq-brand",
+      "description": "",
+      "width": 2068,
+      "height": 2105,
+      "created": "2023-2025",
+      "date_range": "2023-2025",
+      "year": 2023
+    },
+    {
+      "id": "work-ionq-brand-ionq-brand-image-04",
+      "src": "https://ws6i2dfuggcaavs2.public.blob.vercel-storage.com/images/work/ionq/brand/IonQ-Brand-Image-04.png",
+      "type": "image",
+      "title": "IonQ Brand Image 04",
+      "tags": [
+        "deck",
+        "identity"
+      ],
+      "format": [
+        "deck"
+      ],
+      "characteristics": [],
+      "subject": [
+        "identity"
+      ],
+      "project_tags": [
+        "b2b",
+        "quantum-computing"
+      ],
+      "medium": "digital",
+      "project": "ionq-brand",
+      "description": "",
+      "width": 1920,
+      "height": 854,
+      "created": "2023-2025",
+      "date_range": "2023-2025",
+      "year": 2023
+    },
+    {
+      "id": "work-ionq-brand-ionq-brand-image-05",
+      "src": "https://ws6i2dfuggcaavs2.public.blob.vercel-storage.com/images/work/ionq/brand/IonQ-Brand-Image-05.png",
+      "type": "image",
+      "title": "IonQ Brand Image 05",
+      "tags": [
+        "deck",
+        "identity"
+      ],
+      "format": [
+        "deck"
+      ],
+      "characteristics": [],
+      "subject": [
+        "identity"
+      ],
+      "project_tags": [
+        "b2b",
+        "quantum-computing"
+      ],
+      "medium": "digital",
+      "project": "ionq-brand",
+      "description": "",
+      "width": 3840,
+      "height": 1464,
+      "created": "2023-2025",
+      "date_range": "2023-2025",
+      "year": 2023
+    },
+    {
+      "id": "work-ionq-brand-ionq-brand-image-06",
+      "src": "https://ws6i2dfuggcaavs2.public.blob.vercel-storage.com/images/work/ionq/brand/IonQ-Brand-Image-06.png",
+      "type": "image",
+      "title": "IonQ Brand Image 06",
+      "tags": [
+        "deck",
+        "identity"
+      ],
+      "format": [
+        "deck"
+      ],
+      "characteristics": [],
+      "subject": [
+        "identity"
+      ],
+      "project_tags": [
+        "b2b",
+        "quantum-computing"
+      ],
+      "medium": "digital",
+      "project": "ionq-brand",
+      "description": "",
+      "width": 2680,
+      "height": 1500,
+      "created": "2023-2025",
+      "date_range": "2023-2025",
+      "year": 2023
+    },
+    {
+      "id": "work-ionq-brand-ionq-brand-image-07",
+      "src": "https://ws6i2dfuggcaavs2.public.blob.vercel-storage.com/images/work/ionq/brand/IonQ-Brand-Image-07.png",
+      "type": "image",
+      "title": "IonQ Brand Image 07",
+      "tags": [
+        "deck",
+        "identity"
+      ],
+      "format": [
+        "deck"
+      ],
+      "characteristics": [],
+      "subject": [
+        "identity"
+      ],
+      "project_tags": [
+        "b2b",
+        "quantum-computing"
+      ],
+      "medium": "digital",
+      "project": "ionq-brand",
+      "description": "",
+      "width": 1416,
+      "height": 2121,
+      "created": "2023-2025",
+      "date_range": "2023-2025",
+      "year": 2023
+    },
+    {
+      "id": "work-ionq-brand-ionq-brand-image-08",
+      "src": "https://ws6i2dfuggcaavs2.public.blob.vercel-storage.com/images/work/ionq/brand/IonQ-Brand-Image-08.png",
+      "type": "image",
+      "title": "IonQ Brand Image 08",
+      "tags": [
+        "deck",
+        "identity"
+      ],
+      "format": [
+        "deck"
+      ],
+      "characteristics": [],
+      "subject": [
+        "identity"
+      ],
+      "project_tags": [
+        "b2b",
+        "quantum-computing"
+      ],
+      "medium": "digital",
+      "project": "ionq-brand",
+      "description": "",
+      "width": 1920,
+      "height": 1080,
+      "created": "2023-2025",
+      "date_range": "2023-2025",
+      "year": 2023
+    },
+    {
+      "id": "work-ionq-brand-ionq-brand-image-09",
+      "src": "https://ws6i2dfuggcaavs2.public.blob.vercel-storage.com/images/work/ionq/brand/IonQ-Brand-Image-09.png",
+      "type": "image",
+      "title": "IonQ Brand Image 09",
+      "tags": [
+        "deck",
+        "identity"
+      ],
+      "format": [
+        "deck"
+      ],
+      "characteristics": [],
+      "subject": [
+        "identity"
+      ],
+      "project_tags": [
+        "b2b",
+        "quantum-computing"
+      ],
+      "medium": "digital",
+      "project": "ionq-brand",
+      "description": "",
+      "width": 1920,
+      "height": 1080,
+      "created": "2023-2025",
+      "date_range": "2023-2025",
+      "year": 2023
+    },
+    {
+      "id": "work-herman-miller-hot-prospect-hotprospect-00",
+      "src": "https://ws6i2dfuggcaavs2.public.blob.vercel-storage.com/images/work/herman-miller/hot-prospect/HotProspect-00.png",
+      "type": "image",
+      "title": "HotProspect 00",
+      "tags": [
+        "web",
+        "editorial",
+        "illustration"
+      ],
+      "format": [
+        "web",
+        "editorial"
+      ],
+      "characteristics": [],
+      "subject": [
+        "illustration"
+      ],
+      "project_tags": [
+        "b2b2c",
+        "campaign",
+        "publication-design",
+        "exhibition",
+        "furniture"
+      ],
+      "medium": "digital",
+      "project": "herman-miller-hot-prospect",
+      "description": "",
+      "width": 1472,
+      "height": 936,
+      "created": "2017-2019",
+      "date_range": "2017-2019",
+      "year": 2017
+    },
+    {
+      "id": "work-herman-miller-hot-prospect-hotprospect-01",
+      "src": "https://ws6i2dfuggcaavs2.public.blob.vercel-storage.com/images/work/herman-miller/hot-prospect/HotProspect-01.png",
+      "type": "image",
+      "title": "HotProspect 01",
+      "tags": [
+        "web",
+        "editorial",
+        "illustration"
+      ],
+      "format": [
+        "web",
+        "editorial"
+      ],
+      "characteristics": [],
+      "subject": [
+        "illustration"
+      ],
+      "project_tags": [
+        "b2b2c",
+        "campaign",
+        "publication-design",
+        "exhibition",
+        "furniture"
+      ],
+      "medium": "digital",
+      "project": "herman-miller-hot-prospect",
+      "description": "",
+      "width": 1472,
+      "height": 1685,
+      "created": "2017-2019",
+      "date_range": "2017-2019",
+      "year": 2017
+    },
+    {
+      "id": "work-herman-miller-hot-prospect-hotprospect-02",
+      "src": "https://ws6i2dfuggcaavs2.public.blob.vercel-storage.com/images/work/herman-miller/hot-prospect/HotProspect-02.png",
+      "type": "image",
+      "title": "HotProspect 02",
+      "tags": [
+        "web",
+        "editorial",
+        "illustration"
+      ],
+      "format": [
+        "web",
+        "editorial"
+      ],
+      "characteristics": [],
+      "subject": [
+        "illustration"
+      ],
+      "project_tags": [
+        "b2b2c",
+        "campaign",
+        "publication-design",
+        "exhibition",
+        "furniture"
+      ],
+      "medium": "digital",
+      "project": "herman-miller-hot-prospect",
+      "description": "",
+      "width": 1472,
+      "height": 3006,
+      "created": "2017-2019",
+      "date_range": "2017-2019",
+      "year": 2017
+    },
+    {
+      "id": "work-herman-miller-hot-prospect-hotprospect-03",
+      "src": "https://ws6i2dfuggcaavs2.public.blob.vercel-storage.com/images/work/herman-miller/hot-prospect/HotProspect-03.png",
+      "type": "image",
+      "title": "HotProspect 03",
+      "tags": [
+        "web",
+        "editorial",
+        "illustration"
+      ],
+      "format": [
+        "web",
+        "editorial"
+      ],
+      "characteristics": [],
+      "subject": [
+        "illustration"
+      ],
+      "project_tags": [
+        "b2b2c",
+        "campaign",
+        "publication-design",
+        "exhibition",
+        "furniture"
+      ],
+      "medium": "digital",
+      "project": "herman-miller-hot-prospect",
+      "description": "",
+      "width": 1472,
+      "height": 1977,
+      "created": "2017-2019",
+      "date_range": "2017-2019",
+      "year": 2017
+    },
+    {
+      "id": "work-herman-miller-hot-prospect-hotprospect-04",
+      "src": "https://ws6i2dfuggcaavs2.public.blob.vercel-storage.com/images/work/herman-miller/hot-prospect/HotProspect-04.png",
+      "type": "image",
+      "title": "HotProspect 04",
+      "tags": [
+        "web",
+        "editorial",
+        "illustration"
+      ],
+      "format": [
+        "web",
+        "editorial"
+      ],
+      "characteristics": [],
+      "subject": [
+        "illustration"
+      ],
+      "project_tags": [
+        "b2b2c",
+        "campaign",
+        "publication-design",
+        "exhibition",
+        "furniture"
+      ],
+      "medium": "digital",
+      "project": "herman-miller-hot-prospect",
+      "description": "",
+      "width": 1472,
+      "height": 2006,
+      "created": "2017-2019",
+      "date_range": "2017-2019",
+      "year": 2017
     },
     {
       "id": "reinforcement-learning-gyms",
@@ -21305,6 +21714,102 @@
       "medium": "video",
       "project": "oppo-MWC-Barcelona",
       "year": 2022
+    },
+    {
+      "id": "landing",
+      "type": "video",
+      "video": "https://player.vimeo.com/video/749690323?background=1&autoplay=1&muted=1&loop=1&playsinline=1",
+      "video_mode": "background",
+      "title": "Landing",
+      "tags": [
+        "video",
+        "web",
+        "lifestyle",
+        "photography"
+      ],
+      "project_tags": [
+        "b2b",
+        "publication-design",
+        "design-studio",
+        "real-time"
+      ],
+      "medium": "digital",
+      "project": "studio-gahi",
+      "width": 1440,
+      "height": 954,
+      "year": 2015
+    },
+    {
+      "id": "selection",
+      "type": "video",
+      "video": "https://player.vimeo.com/video/749690414?background=1&autoplay=1&muted=1&loop=1&playsinline=1",
+      "video_mode": "background",
+      "title": "Selection",
+      "tags": [
+        "video",
+        "web",
+        "lifestyle",
+        "photography"
+      ],
+      "project_tags": [
+        "b2b",
+        "publication-design",
+        "design-studio",
+        "real-time"
+      ],
+      "medium": "digital",
+      "project": "studio-gahi",
+      "width": 1440,
+      "height": 954,
+      "year": 2015
+    },
+    {
+      "id": "gallery",
+      "type": "video",
+      "video": "https://player.vimeo.com/video/749690357?background=1&autoplay=1&muted=1&loop=1&playsinline=1",
+      "video_mode": "background",
+      "title": "Gallery",
+      "tags": [
+        "video",
+        "web",
+        "lifestyle",
+        "photography"
+      ],
+      "project_tags": [
+        "b2b",
+        "publication-design",
+        "design-studio",
+        "real-time"
+      ],
+      "medium": "digital",
+      "project": "studio-gahi",
+      "width": 1440,
+      "height": 954,
+      "year": 2015
+    },
+    {
+      "id": "menu",
+      "type": "video",
+      "video": "https://player.vimeo.com/video/749690388?background=1&autoplay=1&muted=1&loop=1&playsinline=1",
+      "video_mode": "background",
+      "title": "Menu",
+      "tags": [
+        "video",
+        "web",
+        "lifestyle",
+        "photography"
+      ],
+      "project_tags": [
+        "b2b",
+        "publication-design",
+        "design-studio",
+        "real-time"
+      ],
+      "medium": "digital",
+      "project": "studio-gahi",
+      "width": 1440,
+      "height": 954,
+      "year": 2015
     },
     {
       "id": "5g-vinyl-roll-out",

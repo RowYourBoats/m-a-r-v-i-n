@@ -29,7 +29,6 @@ projects:
       review, with final proposals prototyped in a mock-up store at HQ.
     image_tags:
       - campaign
-      - event
       - retail
     videos:
       - title: 5G Vinyl Roll Out
@@ -249,7 +248,9 @@ projects:
     unlisted: true
     image_tags:
       - deck
+      - identity
       - interactive
+      - logo
       - proposal
     videos:
       - title: Chicago Entrance Screens
@@ -392,7 +393,6 @@ projects:
     name: The Met
     image_tags:
       - campaign
-      - event
       - proposal
     credits:
       - role: ACD / Design Lead

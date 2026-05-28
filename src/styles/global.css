@@ -382,20 +382,6 @@ video {
   opacity: 0.5;
 }
 
-.detail-project-link {
-  font: inherit;
-  color: var(--color-accent);
-  background: none;
-  border: none;
-  padding: 0;
-  cursor: pointer;
-  text-align: left;
-}
-
-.detail-project-link:hover {
-  opacity: 0.5;
-}
-
 .detail-credits {
   display: flex;
   flex-wrap: wrap;

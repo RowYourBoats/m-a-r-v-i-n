@@ -5,7 +5,7 @@ client: personal
 aliases:
   - personal
   - IndependentProjects
-date_range: '2014-present'
+date_range: 2014-present
 chronological: true
 roles: []
 category: experience
@@ -15,8 +15,10 @@ sector: personal
 characteristic:
   - real-time
 personal: true
-description: ''
+description: ""
 credits:
   - role: Design
     name: Marvin de Jong
+image_tags:
+  - 3d
 ---

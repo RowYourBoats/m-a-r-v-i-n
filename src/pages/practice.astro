@@ -183,10 +183,10 @@ function seedSpan(item: { width?: number; height?: number }) {
 
 <PortfolioPageScript />
 <script is:inline>
-  // Filter behavior for the Practice grid. Chip click filters items by tag;
-  // last-used filter restored from localStorage on load. Grid items are <a>
-  // elements — clicking navigates directly (essays → /writing/<slug>, images
-  // → /projects/<slug>), no inline detail.
+  // Filter state lives in the URL (?tag=X) only. Clicking the "Practice"
+  // nav link lands on bare /practice and resets; browser-back from a
+  // project/essay page restores the prior filter via the URL. Grid items
+  // are <a> elements — click navigates directly.
   (function () {
     var filters = document.getElementById("filters");
     var trigger = document.getElementById("filter-trigger");
@@ -215,7 +215,10 @@ function seedSpan(item: { width?: number; height?: number }) {
         trigger && (trigger.textContent = btn.textContent);
       }
       filters.classList.remove("filter-open");
-      window.__portfolio.saveFilter("filter:practice", filterAll ? "all" : btn.dataset.tag);
+      var nextUrl = filterAll
+        ? location.pathname
+        : location.pathname + "?tag=" + encodeURIComponent(btn.dataset.tag);
+      history.replaceState(null, "", nextUrl);
       grid.querySelectorAll(".grid-item").forEach(function (el) {
         var tags = (el.dataset.tags || "").split(",");
         var show = !activeMatches || activeMatches.some(function (m) { return tags.includes(m); });
@@ -224,9 +227,9 @@ function seedSpan(item: { width?: number; height?: number }) {
       window.relayoutMasonry && window.relayoutMasonry();
     });
 
-    // Restore the last-used filter from localStorage.
-    var storedFilter = window.__portfolio.loadFilter("filter:practice");
-    var storedBtn = storedFilter && filters?.querySelector('button[data-tag="' + storedFilter + '"]');
-    if (storedBtn) storedBtn.click();
+    // ?tag=X deep linking: restore from URL on load.
+    var urlTag = new URLSearchParams(window.location.search).get("tag");
+    var initBtn = urlTag && filters?.querySelector('button[data-tag="' + urlTag + '"]');
+    if (initBtn) initBtn.click();
   })();
 </script>

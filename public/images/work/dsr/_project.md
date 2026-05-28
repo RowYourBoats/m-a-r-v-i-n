@@ -16,7 +16,11 @@ project_type:
 sector: architecture
 characteristic: []
 personal: false
-description: Competition materials and portfolio books for Diller Scofidio + Renfro's international architecture commissions — produced on the five-person business development team, working directly with Liz Diller and Jhaelen Hernandez-Eli. Submissions in this period included the Susan Wakil Health Building (University of Sydney), DS+R's first foray into Australia.
+description: >-
+  Competition materials and portfolio books for Diller Scofidio + Renfro's international architecture commissions —
+  produced on the five-person business development team, working directly with Liz Diller and Jhaelen Hernandez-Eli.
+  Submissions in this period included the Susan Wakil Health Building (University of Sydney), DS+R's first foray into
+  Australia.
 credits:
   - role: Design
     name: Marvin de Jong

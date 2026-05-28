@@ -35,15 +35,8 @@ projects:
       The guidelines codify how IonQ shows up across surfaces, anchoring the audience inside a field that can otherwise
       feel elusive, and giving the company a coherent, durable voice as the category continues to form.
     image_tags:
-      - data-visualization
       - deck
-      - iconography
       - identity
-      - illustration
-      - logo
-      - photography
-      - poster
-      - typography
     order:
       - IonQ Product Family
       - IonQ Ion Trap Technology Visual
@@ -102,7 +95,10 @@ projects:
   brand-guidelines:
     name: Brand Guidelines
     unlisted: true
-    description: The full brand toolkit, built from a single logo-and-typeface sheet into a comprehensive guidelines document — palette pared to orange to differentiate from IBM Quantum, type simplified to one face and one weight, decisions documented incrementally as the design work demanded them.
+    description: >-
+      The full brand toolkit, built from a single logo-and-typeface sheet into a comprehensive guidelines document —
+      palette pared to orange to differentiate from IBM Quantum, type simplified to one face and one weight, decisions
+      documented incrementally as the design work demanded them.
     image_tags:
       - data-visualization
       - deck
@@ -113,7 +109,10 @@ projects:
         name: Marvin de Jong
   data-visualization:
     name: Data Visualization
-    description: "IonQ's data visualization language for technical content. #AQ benchmarks, roadmap timelines, error correction overheads, and quantum network architectures developed across investor presentations, partner marketing, and scientific narratives."
+    description: >-
+      IonQ's data visualization language for technical content. #AQ benchmarks, roadmap timelines, error correction
+      overheads, and quantum network architectures developed across investor presentations, partner marketing, and
+      scientific narratives.
     image_tags:
       - data-visualization
       - deck
@@ -122,7 +121,10 @@ projects:
         name: Marvin de Jong
   diagrams:
     name: Diagrams
-    description: A systematic approach to diagrams across IonQ's communications — giving shape to ion trap mechanics, quantum architectures, and system relationships that resist easy depiction, deployed across decks and technical documentation.
+    description: >-
+      A systematic approach to diagrams across IonQ's communications — giving shape to ion trap mechanics, quantum
+      architectures, and system relationships that resist easy depiction, deployed across decks and technical
+      documentation.
     image_tags:
       - deck
       - diagram
@@ -131,7 +133,9 @@ projects:
         name: Marvin de Jong
   elevator-screen:
     name: Elevator Screen
-    description: Motion content for IonQ's HQ elevator screen — a small-format daily touchpoint cycling iconography and IonQ's key differentiators.
+    description: >-
+      Motion content for IonQ's HQ elevator screen — a small-format daily touchpoint cycling iconography and IonQ's key
+      differentiators.
     image_tags:
       - iconography
       - motion
@@ -140,10 +144,12 @@ projects:
         name: Marvin de Jong
   expo:
     name: Expo
-    description: End-to-end creative for IonQ's major event presences — SuperCompute, Quantum Korea, and Quantum World Congress — spanning booth and stage design, keynote storytelling, microsites, and product reveals including Forte Enterprise and Tempo.
+    description: >-
+      End-to-end creative for IonQ's major event presences — SuperCompute, Quantum Korea, and Quantum World Congress —
+      spanning booth and stage design, keynote storytelling, microsites, and product reveals including Forte Enterprise
+      and Tempo.
     image_tags:
       - booth
-      - event
       - exhibition
       - photography
       - poster
@@ -167,7 +173,9 @@ projects:
         name: Marvin de Jong
   illustrations:
     name: Illustrations
-    description: Definition of IonQ's illustration style — working with an illustrator to clean up and systematize the existing visual language, producing diagrammatic and editorial illustration for technical content.
+    description: >-
+      Definition of IonQ's illustration style — working with an illustrator to clean up and systematize the existing
+      visual language, producing diagrammatic and editorial illustration for technical content.
     image_tags:
       - diagram
       - editorial
@@ -177,7 +185,9 @@ projects:
         name: Marvin de Jong
   product:
     name: Product
-    description: Product imaging for IonQ — extensive retouching of the main chip image until it became a primary asset across events, plus product renders directed with a 3D designer for keynotes and announcements.
+    description: >-
+      Product imaging for IonQ — extensive retouching of the main chip image until it became a primary asset across
+      events, plus product renders directed with a 3D designer for keynotes and announcements.
     image_tags:
       - deck
       - identity
@@ -188,7 +198,9 @@ projects:
         name: Marvin de Jong
   templates:
     name: Templates
-    description: A Figma template system enabling IonQ's marketing team to self-serve routine production — online banners, social posts, one-pager PDFs — reducing the design team's involvement in day-to-day output.
+    description: >-
+      A Figma template system enabling IonQ's marketing team to self-serve routine production — online banners, social
+      posts, one-pager PDFs — reducing the design team's involvement in day-to-day output.
     image_tags:
       - deck
     credits:
@@ -196,7 +208,9 @@ projects:
         name: Marvin de Jong
   zoom-backgrounds:
     name: Zoom Backgrounds
-    description: Zoom backgrounds for the IonQ team — photographic compositions extending the brand into everyday remote-work surfaces.
+    description: >-
+      Zoom backgrounds for the IonQ team — photographic compositions extending the brand into everyday remote-work
+      surfaces.
     image_tags:
       - 3d
       - photography
@@ -215,7 +229,6 @@ projects:
     image_tags:
       - 3d
       - booth
-      - event
       - exhibition
       - illustration
       - publication-design
