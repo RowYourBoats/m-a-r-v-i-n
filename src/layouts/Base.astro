@@ -36,6 +36,21 @@ function isCurrent(href: string) {
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <link rel="preload" href="/fonts/PPNeueMontreal-Regular.woff2" as="font" type="font/woff2" crossorigin />
     <style>button{font:inherit;color:inherit}</style>
+    {
+      /* Google Analytics (GA4). Production-only so local dev traffic
+         doesn't pollute the data. The measurement ID is public by design. */
+      import.meta.env.PROD && (
+        <>
+          <script is:inline async src="https://www.googletagmanager.com/gtag/js?id=G-0GT0MJK0KZ"></script>
+          <script is:inline>
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-0GT0MJK0KZ');
+          </script>
+        </>
+      )
+    }
     <script is:inline>
       // Set theme before first paint so the page never flashes the wrong mode.
       (function () {
