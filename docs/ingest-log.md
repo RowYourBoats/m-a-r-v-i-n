@@ -1,0 +1,625 @@
+# Ingest run log
+
+Newest run first. Appended automatically by `npm run ingest`.
+
+## 2026-05-30T07:07:37.458Z — ingest (applied)
+
+- **reconcile:** 0 remap(s), 3 dropped, 20 unregistered on disk
+  - quarantine: `practice/architecture-fantasy/perdido-street-station/animal-architecture-dam-beaver.png` (file missing — has caption, kept)
+  - quarantine: `practice/architecture-fantasy/perdido-street-station/animal-architecture-galleries-built-termites-reticulitermes.png` (file missing — has caption, kept)
+  - quarantine: `practice/architecture-fantasy/perdido-street-station/05-animal-architecture-arch-macrotermes-natalensis.png` (file missing — has caption, kept)
+- **stub:** +0 new image(s)
+- **mine-dates:** 716 stamped, 126 missing
+- **sync-image-tags:** 0 _project.md updated
+- **build-projects:** 77 projects, 49 tags, 19 clients
+- **build-manifest:** 691 items across 70 projects
+- **rehydrate:** 0 matched, 0 unmatched
+- **upload-blob:** uploaded 0, adopted 0, skipped 691, failed 0
+- **vimeo-posters:** 2 referenced, 0 fetched
+
+## 2026-05-30T06:56:51.453Z — ingest (applied)
+
+- **reconcile:** 0 remap(s), 5 quarantined (kept), 20 unregistered on disk
+  - quarantine: `practice/architecture-fantasy/perdido-street-station/animal-architecture-dam-beaver.png` (file not on disk anywhere)
+  - quarantine: `practice/architecture-fantasy/perdido-street-station/animal-architecture-galleries-built-termites-reticulitermes.png` (file not on disk anywhere)
+  - quarantine: `practice/architecture-fantasy/perdido-street-station/02-animal-architecture-sandshell-difflugia-pyriformis.png` (file not on disk anywhere)
+  - quarantine: `practice/architecture-fantasy/perdido-street-station/05-animal-architecture-arch-macrotermes-natalensis.png` (file not on disk anywhere)
+  - quarantine: `practice/marin-cookbook/Screenshot 2026-03-23 222443.png` (file not on disk anywhere)
+- **stub:** +0 new image(s)
+- **mine-dates:** 716 stamped, 128 missing
+- **sync-image-tags:** 0 _project.md updated
+- **build-projects:** 77 projects, 49 tags, 19 clients
+- **build-manifest:** 692 items across 70 projects
+- **rehydrate:** 0 matched, 0 unmatched
+- **upload-blob:** uploaded 0, adopted 0, skipped 692, failed 0
+- **vimeo-posters:** 2 referenced, 0 fetched
+
+## 2026-05-30T06:56:24.475Z — ingest (applied)
+
+- **reconcile:** 0 remap(s), 5 quarantined (kept), 20 unregistered on disk
+  - quarantine: `practice/architecture-fantasy/perdido-street-station/animal-architecture-dam-beaver.png` (file not on disk anywhere)
+  - quarantine: `practice/architecture-fantasy/perdido-street-station/animal-architecture-galleries-built-termites-reticulitermes.png` (file not on disk anywhere)
+  - quarantine: `practice/architecture-fantasy/perdido-street-station/02-animal-architecture-sandshell-difflugia-pyriformis.png` (file not on disk anywhere)
+  - quarantine: `practice/architecture-fantasy/perdido-street-station/05-animal-architecture-arch-macrotermes-natalensis.png` (file not on disk anywhere)
+  - quarantine: `practice/marin-cookbook/Screenshot 2026-03-23 222443.png` (file not on disk anywhere)
+- **stub:** +0 new image(s)
+- **mine-dates:** 716 stamped, 128 missing
+- **sync-image-tags:** 0 _project.md updated
+- **build-projects:** 77 projects, 49 tags, 19 clients
+- **build-manifest:** 692 items across 70 projects
+- **rehydrate:** 0 matched, 0 unmatched
+- **upload-blob:** uploaded 0, adopted 0, skipped 692, failed 0
+- **vimeo-posters:** 2 referenced, 0 fetched
+
+## 2026-05-30T06:53:20.564Z — ingest (applied)
+
+- **reconcile:** 0 remap(s), 5 quarantined (kept), 20 unregistered on disk
+  - quarantine: `practice/architecture-fantasy/perdido-street-station/animal-architecture-dam-beaver.png` (file not on disk anywhere)
+  - quarantine: `practice/architecture-fantasy/perdido-street-station/animal-architecture-galleries-built-termites-reticulitermes.png` (file not on disk anywhere)
+  - quarantine: `practice/architecture-fantasy/perdido-street-station/02-animal-architecture-sandshell-difflugia-pyriformis.png` (file not on disk anywhere)
+  - quarantine: `practice/architecture-fantasy/perdido-street-station/05-animal-architecture-arch-macrotermes-natalensis.png` (file not on disk anywhere)
+  - quarantine: `practice/marin-cookbook/Screenshot 2026-03-23 222443.png` (file not on disk anywhere)
+- **stub:** +0 new image(s)
+- **mine-dates:** 716 stamped, 128 missing
+- **sync-image-tags:** 0 _project.md updated
+- **build-projects:** 77 projects, 49 tags, 19 clients
+- **build-manifest:** 692 items across 70 projects
+- **rehydrate:** 0 matched, 2 unmatched
+- **upload-blob:** uploaded 2, adopted 0, skipped 690, failed 0
+- **vimeo-posters:** 2 referenced, 0 fetched
+
+## 2026-05-30T06:46:29.176Z — ingest (applied)
+
+- **reconcile:** 0 remap(s), 5 quarantined (kept), 20 unregistered on disk
+  - quarantine: `practice/architecture-fantasy/perdido-street-station/animal-architecture-dam-beaver.png` (file not on disk anywhere)
+  - quarantine: `practice/architecture-fantasy/perdido-street-station/animal-architecture-galleries-built-termites-reticulitermes.png` (file not on disk anywhere)
+  - quarantine: `practice/architecture-fantasy/perdido-street-station/02-animal-architecture-sandshell-difflugia-pyriformis.png` (file not on disk anywhere)
+  - quarantine: `practice/architecture-fantasy/perdido-street-station/05-animal-architecture-arch-macrotermes-natalensis.png` (file not on disk anywhere)
+  - quarantine: `practice/marin-cookbook/Screenshot 2026-03-23 222443.png` (file not on disk anywhere)
+- **stub:** +0 new image(s)
+- **mine-dates:** 716 stamped, 128 missing
+- **sync-image-tags:** 0 _project.md updated
+- **build-projects:** 77 projects, 49 tags, 19 clients
+- **build-manifest:** 690 items across 70 projects
+- **rehydrate:** 0 matched, 0 unmatched
+- **upload-blob:** uploaded 0, adopted 0, skipped 690, failed 0
+- **vimeo-posters:** 2 referenced, 0 fetched
+
+## 2026-05-30T06:45:13.516Z — ingest (applied)
+
+- **reconcile:** 0 remap(s), 5 quarantined (kept), 20 unregistered on disk
+  - quarantine: `practice/architecture-fantasy/perdido-street-station/animal-architecture-dam-beaver.png` (file not on disk anywhere)
+  - quarantine: `practice/architecture-fantasy/perdido-street-station/animal-architecture-galleries-built-termites-reticulitermes.png` (file not on disk anywhere)
+  - quarantine: `practice/architecture-fantasy/perdido-street-station/02-animal-architecture-sandshell-difflugia-pyriformis.png` (file not on disk anywhere)
+  - quarantine: `practice/architecture-fantasy/perdido-street-station/05-animal-architecture-arch-macrotermes-natalensis.png` (file not on disk anywhere)
+  - quarantine: `practice/marin-cookbook/Screenshot 2026-03-23 222443.png` (file not on disk anywhere)
+- **stub:** +0 new image(s)
+- **mine-dates:** 716 stamped, 128 missing
+- **sync-image-tags:** 0 _project.md updated
+- **build-projects:** 77 projects, 49 tags, 19 clients
+- **build-manifest:** 690 items across 70 projects
+- **rehydrate:** 0 matched, 0 unmatched
+- **upload-blob:** uploaded 0, adopted 0, skipped 690, failed 0
+- **vimeo-posters:** 2 referenced, 0 fetched
+
+## 2026-05-30T06:45:06.003Z — ingest (applied)
+
+- **reconcile:** 0 remap(s), 5 quarantined (kept), 22 unregistered on disk
+  - quarantine: `practice/architecture-fantasy/perdido-street-station/animal-architecture-dam-beaver.png` (file not on disk anywhere)
+  - quarantine: `practice/architecture-fantasy/perdido-street-station/animal-architecture-galleries-built-termites-reticulitermes.png` (file not on disk anywhere)
+  - quarantine: `practice/architecture-fantasy/perdido-street-station/02-animal-architecture-sandshell-difflugia-pyriformis.png` (file not on disk anywhere)
+  - quarantine: `practice/architecture-fantasy/perdido-street-station/05-animal-architecture-arch-macrotermes-natalensis.png` (file not on disk anywhere)
+  - quarantine: `practice/marin-cookbook/Screenshot 2026-03-23 222443.png` (file not on disk anywhere)
+- **stub:** +2 new image(s)
+  - `practice/architecture-fantasy/perdido-street-station/05-animal-architecture-galleries-built-termites-reticulitermes.png`
+  - `practice/architecture-fantasy/perdido-street-station/11-animal-architecture-dam-beaver.png`
+- **mine-dates:** 716 stamped, 128 missing
+- **sync-image-tags:** 0 _project.md updated
+- **build-projects:** 77 projects, 49 tags, 19 clients
+- **build-manifest:** 690 items across 70 projects
+- **rehydrate:** 0 matched, 61 unmatched
+- **upload-blob:** uploaded 49, adopted 12, skipped 629, failed 0
+- **vimeo-posters:** 2 referenced, 0 fetched
+
+## 2026-05-30T06:24:15.769Z — ingest (applied)
+
+- **reconcile:** 0 remap(s), 3 quarantined (kept), 22 unregistered on disk
+  - quarantine: `practice/architecture-fantasy/perdido-street-station/02-animal-architecture-sandshell-difflugia-pyriformis.png` (file not on disk anywhere)
+  - quarantine: `practice/architecture-fantasy/perdido-street-station/05-animal-architecture-arch-macrotermes-natalensis.png` (file not on disk anywhere)
+  - quarantine: `practice/marin-cookbook/Screenshot 2026-03-23 222443.png` (file not on disk anywhere)
+- **stub:** +2 new image(s)
+  - `practice/architecture-fantasy/perdido-street-station/00-animal-architecture-arch-macrotermes-natalensis.png`
+  - `practice/architecture-fantasy/perdido-street-station/02-animal-architecture-sandshell-difflugia-pyriformis-updated.png`
+- **mine-dates:** 716 stamped, 126 missing
+- **sync-image-tags:** 0 _project.md updated
+- **build-projects:** 77 projects, 49 tags, 19 clients
+- **build-manifest:** 678 items across 70 projects
+- **rehydrate:** 0 matched, 1 unmatched
+- **upload-blob:** uploaded 0, adopted 1, skipped 677, failed 0
+- **vimeo-posters:** 2 referenced, 0 fetched
+
+## 2026-05-29T18:26:42.327Z — ingest (applied)
+
+- **reconcile:** 0 remap(s), 1 quarantined (kept), 20 unregistered on disk
+  - quarantine: `practice/marin-cookbook/Screenshot 2026-03-23 222443.png` (file not on disk anywhere)
+- **stub:** +0 new image(s)
+- **mine-dates:** 716 stamped, 124 missing
+- **sync-image-tags:** 0 _project.md updated
+- **build-projects:** 77 projects, 49 tags, 19 clients
+- **build-manifest:** 893 items across 72 projects
+- **rehydrate:** 0 matched, 0 unmatched
+- **upload-blob:** uploaded 0, adopted 0, skipped 893, failed 0
+- **vimeo-posters:** 2 referenced, 0 fetched
+
+## 2026-05-29T18:04:42.215Z — ingest (applied)
+
+- **reconcile:** 0 remap(s), 0 quarantined (kept), 21 unregistered on disk
+- **stub:** +1 new image(s)
+  - `practice/jullie-app/jullie-resume-app.png`
+- **mine-dates:** 717 stamped, 123 missing
+- **sync-image-tags:** 0 _project.md updated
+- **build-projects:** 78 projects, 49 tags, 19 clients
+- **build-manifest:** 893 items across 73 projects
+- **rehydrate:** 0 matched, 216 unmatched
+- **upload-blob:** uploaded 209, adopted 7, skipped 677, failed 0
+- **vimeo-posters:** 2 referenced, 0 fetched
+
+## 2026-05-28T18:35:01.870Z — ingest (applied)
+
+- **reconcile:** 0 remap(s), 0 quarantined (kept), 20 unregistered on disk
+- **stub:** +0 new image(s)
+- **mine-dates:** 716 stamped, 123 missing
+- **sync-image-tags:** 0 _project.md updated
+- **build-projects:** 77 projects, 49 tags, 19 clients
+- **build-manifest:** 892 items across 72 projects
+- **rehydrate:** 0 matched, 215 unmatched
+- **vimeo-posters:** 2 referenced, 0 fetched
+- _blob upload skipped — BLOB_READ_WRITE_TOKEN not set (local /images/ paths kept)_
+
+## 2026-05-28T18:33:57.095Z — ingest (applied)
+
+- **reconcile:** 0 remap(s), 0 quarantined (kept), 235 unregistered on disk
+- **stub:** +215 new image(s)
+  - `Screenshot 2026-04-13 232633.png`
+  - `Screenshot 2026-04-13 232639.png`
+  - `practice/SNU/02_SNU_dataVis.jpeg`
+  - `practice/ambiguous-form/LetterForm.jpeg`
+  - `practice/architecture-fantasy/perdido-street-station/01-animal-architecture-nest-sociable-weaverbird.png`
+  - `practice/architecture-fantasy/perdido-street-station/02-animal-architecture-sandshell-difflugia-pyriformis.png`
+  - `practice/architecture-fantasy/perdido-street-station/03-animal-architecture-eyrie-osprey.png`
+  - `practice/architecture-fantasy/perdido-street-station/04-animal-architecture-larch-stem-carpenter-ants.png`
+  - `practice/architecture-fantasy/perdido-street-station/05-animal-architecture-arch-macrotermes-natalensis.png`
+  - `practice/architecture-fantasy/perdido-street-station/06-animal-architecture-carton-nest-jet-ant.png`
+  - `practice/architecture-fantasy/perdido-street-station/07-animal-architecture-fungus-mass-leafcutter-ant.png`
+  - `practice/architecture-fantasy/perdido-street-station/08-animal-architecture-rain-roofs-termite-cubitermes.png`
+  - `practice/architecture-fantasy/perdido-street-station/09-animal-architecture-nest-harvest-mouse.png`
+  - `practice/architecture-fantasy/perdido-street-station/10-animal-architecture-underground-nest-termites-apicotermes-gurgulifex.png`
+  - `practice/kabk/DSC_0065.JPG`
+  - `practice/kabk/DSC_0068.JPG`
+  - `practice/kabk/DSC_0070.JPG`
+  - `practice/kabk/DSC_0072.JPG`
+  - `practice/kabk/DSC_0073.JPG`
+  - `practice/kabk/DSC_0075.JPG`
+  - `practice/kabk/DSC_0077.JPG`
+  - `practice/kabk/DSC_0081.JPG`
+  - `practice/kabk/DSC_0084.JPG`
+  - `practice/kabk/DSC_0089.JPG`
+  - `practice/kabk/DSC_0096.JPG`
+  - `practice/kabk/DSC_0097.JPG`
+  - `practice/kabk/DSC_0099.JPG`
+  - `practice/kabk/DSC_0100.JPG`
+  - `practice/kabk/DSC_0101.JPG`
+  - `practice/kabk/DSC_0107.JPG`
+  - `practice/kabk/DSC_0110.JPG`
+  - `practice/kabk/DSC_0112.JPG`
+  - `practice/kabk/DSC_0913.jpg`
+  - `practice/kabk/DSC_0923.jpg`
+  - `practice/kabk/DSC_0934.jpg`
+  - `practice/kabk/DSC_0936.jpg`
+  - `practice/kabk/DSC_0937.jpg`
+  - `practice/kabk/DSC_0938.jpg`
+  - `practice/kabk/DSC_0939.jpg`
+  - `practice/kabk/DSC_0945.jpg`
+  - `practice/kabk/DSC_0946.jpg`
+  - `practice/kabk/poster_floor_04-01.jpg`
+  - `practice/marin-cookbook/Screenshot 2026-03-23 222443.png`
+  - `practice/mcgill-arch/big poster.jpg`
+  - `practice/smoke-systems/Screenshot 2025-12-16 135424.png`
+  - `practice/snapshots/DSCN1476.jpg`
+  - `practice/snapshots/DSCN1480.jpg`
+  - `practice/stephanie-hanes/nDisplay_PathTracer_StephanieHanes.LightingOnly.CineCameraActor.0018.png`
+  - `practice/yale-studio/Screenshot 2026-04-16 154721.png`
+  - `practice/yale/public-browsing/publicBrowsing_05.png`
+  - `practice/yale/riso/DSCN1481.jpg`
+  - `practice/yale/riso/DSCN1482.jpg`
+  - `practice/yale/riso/DSCN1483.jpg`
+  - `practice/yale/riso/DSCN1484.jpg`
+  - `practice/yale/riso/DSCN1485.jpg`
+  - `practice/yale/riso/DSCN1486.jpg`
+  - `practice/yale/riso/DSCN1487.jpg`
+  - `practice/yale/uppercase-soul/Screenshot 2026-04-14 092219.png`
+  - `work/herman-miller/all-together-now/Image_3.jpg`
+  - `work/herman-miller/all-together-now/Screenshot 2026-04-13 230926.png`
+  - `work/ionq/brand-guidelines/IonQ Brand Guidelines - 27.png`
+  - `work/ionq/brand-guidelines/IonQ Brand Guidelines - 35.png`
+  - `work/ionq/data-visualization/Keynote copy.png`
+  - `work/ionq/data-visualization/NDA Sales Deck - Draft - 73.png`
+  - `work/ionq/one-pagers/Screenshot 2025-05-27 144136.png`
+  - `work/ionq/zoom-backgrounds/ZOOM-ROOM-02 OPTICAL.png`
+  - `work/verizon/5G-home-vui/verizon-02 - Copy.png`
+  - `work/verizon/digital-3-addendum/Slide35.JPG`
+  - `work/verizon/digital-3-addendum/Slide36.JPG`
+  - `work/verizon/digital-3-addendum/Slide37.JPG`
+  - `work/verizon/digital-3-addendum/Slide38.JPG`
+  - `work/verizon/digital-3-addendum/Slide39.JPG`
+  - `work/verizon/digital-3-addendum/Slide40.JPG`
+  - `work/verizon/digital-3-addendum/Slide41.JPG`
+  - `work/verizon/digital-3-addendum/Slide42.JPG`
+  - `work/verizon/digital-3-addendum/Slide43.JPG`
+  - `work/verizon/digital-3-addendum/Slide44.JPG`
+  - `work/verizon/digital-3-addendum/Slide45.JPG`
+  - `work/verizon/digital-3-addendum/Slide46.JPG`
+  - `work/verizon/digital-3-addendum/Slide47.JPG`
+  - `work/verizon/digital-3-addendum/Slide48.JPG`
+  - `work/verizon/digital-3-addendum/Slide49.JPG`
+  - `work/verizon/digital-3-addendum/Slide50.JPG`
+  - `work/verizon/digital-3-addendum/Slide51.JPG`
+  - `work/verizon/digital-3-addendum/Slide52.JPG`
+  - `work/verizon/digital-3-addendum/Slide53.JPG`
+  - `work/verizon/digital-3-addendum/Slide54.JPG`
+  - `work/verizon/digital-3-addendum/Slide55.JPG`
+  - `work/verizon/digital-3-addendum/Slide56.JPG`
+  - `work/verizon/digital-3-addendum/Slide57.JPG`
+  - `work/verizon/digital-3-addendum/Slide58.JPG`
+  - `work/verizon/digital-3-addendum/Slide59.JPG`
+  - `work/verizon/digital-3-addendum/Slide60.JPG`
+  - `work/verizon/digital-3-addendum/Slide61.JPG`
+  - `work/verizon/digital-3-addendum/Slide62.JPG`
+  - `work/verizon/digital-3-addendum/Slide63.JPG`
+  - `work/verizon/digital-3-addendum/Slide64.JPG`
+  - `work/verizon/digital-3-addendum/Slide65.JPG`
+  - `work/verizon/digital-3/Slide18.JPG`
+  - `work/verizon/digital-3/Slide19.JPG`
+  - `work/verizon/future-of-retail-workingDeck/Slide1.JPG`
+  - `work/verizon/future-of-retail-workingDeck/Slide10.JPG`
+  - `work/verizon/future-of-retail-workingDeck/Slide11.JPG`
+  - `work/verizon/future-of-retail-workingDeck/Slide12.JPG`
+  - `work/verizon/future-of-retail-workingDeck/Slide13.JPG`
+  - `work/verizon/future-of-retail-workingDeck/Slide14.JPG`
+  - `work/verizon/future-of-retail-workingDeck/Slide15.JPG`
+  - `work/verizon/future-of-retail-workingDeck/Slide16.JPG`
+  - `work/verizon/future-of-retail-workingDeck/Slide17.JPG`
+  - `work/verizon/future-of-retail-workingDeck/Slide18.JPG`
+  - `work/verizon/future-of-retail-workingDeck/Slide19.JPG`
+  - `work/verizon/future-of-retail-workingDeck/Slide2.JPG`
+  - `work/verizon/future-of-retail-workingDeck/Slide20.JPG`
+  - `work/verizon/future-of-retail-workingDeck/Slide21.JPG`
+  - `work/verizon/future-of-retail-workingDeck/Slide22.JPG`
+  - `work/verizon/future-of-retail-workingDeck/Slide23.JPG`
+  - `work/verizon/future-of-retail-workingDeck/Slide24.JPG`
+  - `work/verizon/future-of-retail-workingDeck/Slide25.JPG`
+  - `work/verizon/future-of-retail-workingDeck/Slide26.JPG`
+  - `work/verizon/future-of-retail-workingDeck/Slide27.JPG`
+  - `work/verizon/future-of-retail-workingDeck/Slide28.JPG`
+  - `work/verizon/future-of-retail-workingDeck/Slide29.JPG`
+  - `work/verizon/future-of-retail-workingDeck/Slide3.JPG`
+  - `work/verizon/future-of-retail-workingDeck/Slide30.JPG`
+  - `work/verizon/future-of-retail-workingDeck/Slide31.JPG`
+  - `work/verizon/future-of-retail-workingDeck/Slide32.JPG`
+  - `work/verizon/future-of-retail-workingDeck/Slide33.JPG`
+  - `work/verizon/future-of-retail-workingDeck/Slide34.JPG`
+  - `work/verizon/future-of-retail-workingDeck/Slide35.JPG`
+  - `work/verizon/future-of-retail-workingDeck/Slide36.JPG`
+  - `work/verizon/future-of-retail-workingDeck/Slide37.JPG`
+  - `work/verizon/future-of-retail-workingDeck/Slide38.JPG`
+  - `work/verizon/future-of-retail-workingDeck/Slide39.JPG`
+  - `work/verizon/future-of-retail-workingDeck/Slide4.JPG`
+  - `work/verizon/future-of-retail-workingDeck/Slide40.JPG`
+  - `work/verizon/future-of-retail-workingDeck/Slide41.JPG`
+  - `work/verizon/future-of-retail-workingDeck/Slide42.JPG`
+  - `work/verizon/future-of-retail-workingDeck/Slide43.JPG`
+  - `work/verizon/future-of-retail-workingDeck/Slide44.JPG`
+  - `work/verizon/future-of-retail-workingDeck/Slide45.JPG`
+  - `work/verizon/future-of-retail-workingDeck/Slide46.JPG`
+  - `work/verizon/future-of-retail-workingDeck/Slide47.JPG`
+  - `work/verizon/future-of-retail-workingDeck/Slide48.JPG`
+  - `work/verizon/future-of-retail-workingDeck/Slide49.JPG`
+  - `work/verizon/future-of-retail-workingDeck/Slide5.JPG`
+  - `work/verizon/future-of-retail-workingDeck/Slide50.JPG`
+  - `work/verizon/future-of-retail-workingDeck/Slide51.JPG`
+  - `work/verizon/future-of-retail-workingDeck/Slide52.JPG`
+  - `work/verizon/future-of-retail-workingDeck/Slide53.JPG`
+  - `work/verizon/future-of-retail-workingDeck/Slide54.JPG`
+  - `work/verizon/future-of-retail-workingDeck/Slide55.JPG`
+  - `work/verizon/future-of-retail-workingDeck/Slide56.JPG`
+  - `work/verizon/future-of-retail-workingDeck/Slide57.JPG`
+  - `work/verizon/future-of-retail-workingDeck/Slide58.JPG`
+  - `work/verizon/future-of-retail-workingDeck/Slide59.JPG`
+  - `work/verizon/future-of-retail-workingDeck/Slide6.JPG`
+  - `work/verizon/future-of-retail-workingDeck/Slide60.JPG`
+  - `work/verizon/future-of-retail-workingDeck/Slide61.JPG`
+  - `work/verizon/future-of-retail-workingDeck/Slide62.JPG`
+  - `work/verizon/future-of-retail-workingDeck/Slide63.JPG`
+  - `work/verizon/future-of-retail-workingDeck/Slide64.JPG`
+  - `work/verizon/future-of-retail-workingDeck/Slide65.JPG`
+  - `work/verizon/future-of-retail-workingDeck/Slide66.JPG`
+  - `work/verizon/future-of-retail-workingDeck/Slide67.JPG`
+  - `work/verizon/future-of-retail-workingDeck/Slide68.JPG`
+  - `work/verizon/future-of-retail-workingDeck/Slide69.JPG`
+  - `work/verizon/future-of-retail-workingDeck/Slide7.JPG`
+  - `work/verizon/future-of-retail-workingDeck/Slide70.JPG`
+  - `work/verizon/future-of-retail-workingDeck/Slide71.JPG`
+  - `work/verizon/future-of-retail-workingDeck/Slide72.JPG`
+  - `work/verizon/future-of-retail-workingDeck/Slide73.JPG`
+  - `work/verizon/future-of-retail-workingDeck/Slide74.JPG`
+  - `work/verizon/future-of-retail-workingDeck/Slide75.JPG`
+  - `work/verizon/future-of-retail-workingDeck/Slide76.JPG`
+  - `work/verizon/future-of-retail-workingDeck/Slide77.JPG`
+  - `work/verizon/future-of-retail-workingDeck/Slide78.JPG`
+  - `work/verizon/future-of-retail-workingDeck/Slide79.JPG`
+  - `work/verizon/future-of-retail-workingDeck/Slide8.JPG`
+  - `work/verizon/future-of-retail-workingDeck/Slide80.JPG`
+  - `work/verizon/future-of-retail-workingDeck/Slide81.JPG`
+  - `work/verizon/future-of-retail-workingDeck/Slide82.JPG`
+  - `work/verizon/future-of-retail-workingDeck/Slide83.JPG`
+  - `work/verizon/future-of-retail-workingDeck/Slide84.JPG`
+  - `work/verizon/future-of-retail-workingDeck/Slide85.JPG`
+  - `work/verizon/future-of-retail-workingDeck/Slide86.JPG`
+  - `work/verizon/future-of-retail-workingDeck/Slide87.JPG`
+  - `work/verizon/future-of-retail-workingDeck/Slide88.JPG`
+  - `work/verizon/future-of-retail-workingDeck/Slide89.JPG`
+  - `work/verizon/future-of-retail-workingDeck/Slide9.JPG`
+  - `work/verizon/future-of-retail-workingDeck/Slide90.JPG`
+  - `work/verizon/future-of-retail-workingDeck/Slide91.JPG`
+  - `work/verizon/future-of-retail-workingDeck/Slide92.JPG`
+  - `work/verizon/future-of-retail-workingDeck/Slide93.JPG`
+  - `work/verizon/future-of-retail-workingDeck/Slide94.JPG`
+  - `work/verizon/future-of-retail-workingDeck/Slide95.JPG`
+  - `work/verizon/future-of-retail/Frame 92796.png`
+  - `work/verizon/network-reliability/Verizon 770 Lexington Ave 23 June 20213125.jpg`
+  - `work/verizon/retail-3-sem/Slide111.JPG`
+  - `work/verizon/retail-3-sem/Slide116.JPG`
+  - `work/verizon/retail-3-sem/Slide125.JPG`
+  - `work/verizon/retail-3-sem/Slide143.JPG`
+  - `work/verizon/retail-3-sem/Slide18.JPG`
+  - `work/verizon/retail-3-sem/Slide23.JPG`
+  - `work/verizon/retail-3-sem/Slide27.JPG`
+  - `work/verizon/retail-3-sem/Slide46.JPG`
+  - `work/verizon/retail-3-sem/Slide53.JPG`
+  - `work/verizon/retail-3-sem/Slide72.JPG`
+  - `work/verizon/retail-3-sem/Slide83.JPG`
+  - `work/verizon/retail-3-sem/Slide88.JPG`
+  - `work/verizon/retail-walkthrough/Slide25.JPG`
+  - `work/verizon/retail-walkthrough/Slide26.JPG`
+  - `work/verizon/retail-walkthrough/Slide3.JPG`
+  - `work/verizon/retail-walkthrough/Slide45.JPG`
+  - `work/verizon/retail-walkthrough/Slide8.JPG`
+  - `work/verizon/the-met/Screenshot 2026-04-13 232431.png`
+- **mine-dates:** 716 stamped, 123 missing
+- **sync-image-tags:** 1 _project.md updated
+- **build-projects:** 77 projects, 49 tags, 19 clients
+- **build-manifest:** 892 items across 72 projects
+- **rehydrate:** 0 matched, 215 unmatched
+- **vimeo-posters:** 2 referenced, 0 fetched
+- _blob upload skipped — BLOB_READ_WRITE_TOKEN not set (local /images/ paths kept)_
+
+## 2026-05-28T18:32:48.599Z — ingest (dry-run, no writes)
+
+- **reconcile:** 0 remap(s), 0 quarantined (kept), 235 unregistered on disk
+- **stub:** +215 new image(s)
+  - `Screenshot 2026-04-13 232633.png`
+  - `Screenshot 2026-04-13 232639.png`
+  - `practice/SNU/02_SNU_dataVis.jpeg`
+  - `practice/ambiguous-form/LetterForm.jpeg`
+  - `practice/architecture-fantasy/perdido-street-station/01-animal-architecture-nest-sociable-weaverbird.png`
+  - `practice/architecture-fantasy/perdido-street-station/02-animal-architecture-sandshell-difflugia-pyriformis.png`
+  - `practice/architecture-fantasy/perdido-street-station/03-animal-architecture-eyrie-osprey.png`
+  - `practice/architecture-fantasy/perdido-street-station/04-animal-architecture-larch-stem-carpenter-ants.png`
+  - `practice/architecture-fantasy/perdido-street-station/05-animal-architecture-arch-macrotermes-natalensis.png`
+  - `practice/architecture-fantasy/perdido-street-station/06-animal-architecture-carton-nest-jet-ant.png`
+  - `practice/architecture-fantasy/perdido-street-station/07-animal-architecture-fungus-mass-leafcutter-ant.png`
+  - `practice/architecture-fantasy/perdido-street-station/08-animal-architecture-rain-roofs-termite-cubitermes.png`
+  - `practice/architecture-fantasy/perdido-street-station/09-animal-architecture-nest-harvest-mouse.png`
+  - `practice/architecture-fantasy/perdido-street-station/10-animal-architecture-underground-nest-termites-apicotermes-gurgulifex.png`
+  - `practice/kabk/DSC_0065.JPG`
+  - `practice/kabk/DSC_0068.JPG`
+  - `practice/kabk/DSC_0070.JPG`
+  - `practice/kabk/DSC_0072.JPG`
+  - `practice/kabk/DSC_0073.JPG`
+  - `practice/kabk/DSC_0075.JPG`
+  - `practice/kabk/DSC_0077.JPG`
+  - `practice/kabk/DSC_0081.JPG`
+  - `practice/kabk/DSC_0084.JPG`
+  - `practice/kabk/DSC_0089.JPG`
+  - `practice/kabk/DSC_0096.JPG`
+  - `practice/kabk/DSC_0097.JPG`
+  - `practice/kabk/DSC_0099.JPG`
+  - `practice/kabk/DSC_0100.JPG`
+  - `practice/kabk/DSC_0101.JPG`
+  - `practice/kabk/DSC_0107.JPG`
+  - `practice/kabk/DSC_0110.JPG`
+  - `practice/kabk/DSC_0112.JPG`
+  - `practice/kabk/DSC_0913.jpg`
+  - `practice/kabk/DSC_0923.jpg`
+  - `practice/kabk/DSC_0934.jpg`
+  - `practice/kabk/DSC_0936.jpg`
+  - `practice/kabk/DSC_0937.jpg`
+  - `practice/kabk/DSC_0938.jpg`
+  - `practice/kabk/DSC_0939.jpg`
+  - `practice/kabk/DSC_0945.jpg`
+  - `practice/kabk/DSC_0946.jpg`
+  - `practice/kabk/poster_floor_04-01.jpg`
+  - `practice/marin-cookbook/Screenshot 2026-03-23 222443.png`
+  - `practice/mcgill-arch/big poster.jpg`
+  - `practice/smoke-systems/Screenshot 2025-12-16 135424.png`
+  - `practice/snapshots/DSCN1476.jpg`
+  - `practice/snapshots/DSCN1480.jpg`
+  - `practice/stephanie-hanes/nDisplay_PathTracer_StephanieHanes.LightingOnly.CineCameraActor.0018.png`
+  - `practice/yale-studio/Screenshot 2026-04-16 154721.png`
+  - `practice/yale/public-browsing/publicBrowsing_05.png`
+  - `practice/yale/riso/DSCN1481.jpg`
+  - `practice/yale/riso/DSCN1482.jpg`
+  - `practice/yale/riso/DSCN1483.jpg`
+  - `practice/yale/riso/DSCN1484.jpg`
+  - `practice/yale/riso/DSCN1485.jpg`
+  - `practice/yale/riso/DSCN1486.jpg`
+  - `practice/yale/riso/DSCN1487.jpg`
+  - `practice/yale/uppercase-soul/Screenshot 2026-04-14 092219.png`
+  - `work/herman-miller/all-together-now/Image_3.jpg`
+  - `work/herman-miller/all-together-now/Screenshot 2026-04-13 230926.png`
+  - `work/ionq/brand-guidelines/IonQ Brand Guidelines - 27.png`
+  - `work/ionq/brand-guidelines/IonQ Brand Guidelines - 35.png`
+  - `work/ionq/data-visualization/Keynote copy.png`
+  - `work/ionq/data-visualization/NDA Sales Deck - Draft - 73.png`
+  - `work/ionq/one-pagers/Screenshot 2025-05-27 144136.png`
+  - `work/ionq/zoom-backgrounds/ZOOM-ROOM-02 OPTICAL.png`
+  - `work/verizon/5G-home-vui/verizon-02 - Copy.png`
+  - `work/verizon/digital-3-addendum/Slide35.JPG`
+  - `work/verizon/digital-3-addendum/Slide36.JPG`
+  - `work/verizon/digital-3-addendum/Slide37.JPG`
+  - `work/verizon/digital-3-addendum/Slide38.JPG`
+  - `work/verizon/digital-3-addendum/Slide39.JPG`
+  - `work/verizon/digital-3-addendum/Slide40.JPG`
+  - `work/verizon/digital-3-addendum/Slide41.JPG`
+  - `work/verizon/digital-3-addendum/Slide42.JPG`
+  - `work/verizon/digital-3-addendum/Slide43.JPG`
+  - `work/verizon/digital-3-addendum/Slide44.JPG`
+  - `work/verizon/digital-3-addendum/Slide45.JPG`
+  - `work/verizon/digital-3-addendum/Slide46.JPG`
+  - `work/verizon/digital-3-addendum/Slide47.JPG`
+  - `work/verizon/digital-3-addendum/Slide48.JPG`
+  - `work/verizon/digital-3-addendum/Slide49.JPG`
+  - `work/verizon/digital-3-addendum/Slide50.JPG`
+  - `work/verizon/digital-3-addendum/Slide51.JPG`
+  - `work/verizon/digital-3-addendum/Slide52.JPG`
+  - `work/verizon/digital-3-addendum/Slide53.JPG`
+  - `work/verizon/digital-3-addendum/Slide54.JPG`
+  - `work/verizon/digital-3-addendum/Slide55.JPG`
+  - `work/verizon/digital-3-addendum/Slide56.JPG`
+  - `work/verizon/digital-3-addendum/Slide57.JPG`
+  - `work/verizon/digital-3-addendum/Slide58.JPG`
+  - `work/verizon/digital-3-addendum/Slide59.JPG`
+  - `work/verizon/digital-3-addendum/Slide60.JPG`
+  - `work/verizon/digital-3-addendum/Slide61.JPG`
+  - `work/verizon/digital-3-addendum/Slide62.JPG`
+  - `work/verizon/digital-3-addendum/Slide63.JPG`
+  - `work/verizon/digital-3-addendum/Slide64.JPG`
+  - `work/verizon/digital-3-addendum/Slide65.JPG`
+  - `work/verizon/digital-3/Slide18.JPG`
+  - `work/verizon/digital-3/Slide19.JPG`
+  - `work/verizon/future-of-retail-workingDeck/Slide1.JPG`
+  - `work/verizon/future-of-retail-workingDeck/Slide10.JPG`
+  - `work/verizon/future-of-retail-workingDeck/Slide11.JPG`
+  - `work/verizon/future-of-retail-workingDeck/Slide12.JPG`
+  - `work/verizon/future-of-retail-workingDeck/Slide13.JPG`
+  - `work/verizon/future-of-retail-workingDeck/Slide14.JPG`
+  - `work/verizon/future-of-retail-workingDeck/Slide15.JPG`
+  - `work/verizon/future-of-retail-workingDeck/Slide16.JPG`
+  - `work/verizon/future-of-retail-workingDeck/Slide17.JPG`
+  - `work/verizon/future-of-retail-workingDeck/Slide18.JPG`
+  - `work/verizon/future-of-retail-workingDeck/Slide19.JPG`
+  - `work/verizon/future-of-retail-workingDeck/Slide2.JPG`
+  - `work/verizon/future-of-retail-workingDeck/Slide20.JPG`
+  - `work/verizon/future-of-retail-workingDeck/Slide21.JPG`
+  - `work/verizon/future-of-retail-workingDeck/Slide22.JPG`
+  - `work/verizon/future-of-retail-workingDeck/Slide23.JPG`
+  - `work/verizon/future-of-retail-workingDeck/Slide24.JPG`
+  - `work/verizon/future-of-retail-workingDeck/Slide25.JPG`
+  - `work/verizon/future-of-retail-workingDeck/Slide26.JPG`
+  - `work/verizon/future-of-retail-workingDeck/Slide27.JPG`
+  - `work/verizon/future-of-retail-workingDeck/Slide28.JPG`
+  - `work/verizon/future-of-retail-workingDeck/Slide29.JPG`
+  - `work/verizon/future-of-retail-workingDeck/Slide3.JPG`
+  - `work/verizon/future-of-retail-workingDeck/Slide30.JPG`
+  - `work/verizon/future-of-retail-workingDeck/Slide31.JPG`
+  - `work/verizon/future-of-retail-workingDeck/Slide32.JPG`
+  - `work/verizon/future-of-retail-workingDeck/Slide33.JPG`
+  - `work/verizon/future-of-retail-workingDeck/Slide34.JPG`
+  - `work/verizon/future-of-retail-workingDeck/Slide35.JPG`
+  - `work/verizon/future-of-retail-workingDeck/Slide36.JPG`
+  - `work/verizon/future-of-retail-workingDeck/Slide37.JPG`
+  - `work/verizon/future-of-retail-workingDeck/Slide38.JPG`
+  - `work/verizon/future-of-retail-workingDeck/Slide39.JPG`
+  - `work/verizon/future-of-retail-workingDeck/Slide4.JPG`
+  - `work/verizon/future-of-retail-workingDeck/Slide40.JPG`
+  - `work/verizon/future-of-retail-workingDeck/Slide41.JPG`
+  - `work/verizon/future-of-retail-workingDeck/Slide42.JPG`
+  - `work/verizon/future-of-retail-workingDeck/Slide43.JPG`
+  - `work/verizon/future-of-retail-workingDeck/Slide44.JPG`
+  - `work/verizon/future-of-retail-workingDeck/Slide45.JPG`
+  - `work/verizon/future-of-retail-workingDeck/Slide46.JPG`
+  - `work/verizon/future-of-retail-workingDeck/Slide47.JPG`
+  - `work/verizon/future-of-retail-workingDeck/Slide48.JPG`
+  - `work/verizon/future-of-retail-workingDeck/Slide49.JPG`
+  - `work/verizon/future-of-retail-workingDeck/Slide5.JPG`
+  - `work/verizon/future-of-retail-workingDeck/Slide50.JPG`
+  - `work/verizon/future-of-retail-workingDeck/Slide51.JPG`
+  - `work/verizon/future-of-retail-workingDeck/Slide52.JPG`
+  - `work/verizon/future-of-retail-workingDeck/Slide53.JPG`
+  - `work/verizon/future-of-retail-workingDeck/Slide54.JPG`
+  - `work/verizon/future-of-retail-workingDeck/Slide55.JPG`
+  - `work/verizon/future-of-retail-workingDeck/Slide56.JPG`
+  - `work/verizon/future-of-retail-workingDeck/Slide57.JPG`
+  - `work/verizon/future-of-retail-workingDeck/Slide58.JPG`
+  - `work/verizon/future-of-retail-workingDeck/Slide59.JPG`
+  - `work/verizon/future-of-retail-workingDeck/Slide6.JPG`
+  - `work/verizon/future-of-retail-workingDeck/Slide60.JPG`
+  - `work/verizon/future-of-retail-workingDeck/Slide61.JPG`
+  - `work/verizon/future-of-retail-workingDeck/Slide62.JPG`
+  - `work/verizon/future-of-retail-workingDeck/Slide63.JPG`
+  - `work/verizon/future-of-retail-workingDeck/Slide64.JPG`
+  - `work/verizon/future-of-retail-workingDeck/Slide65.JPG`
+  - `work/verizon/future-of-retail-workingDeck/Slide66.JPG`
+  - `work/verizon/future-of-retail-workingDeck/Slide67.JPG`
+  - `work/verizon/future-of-retail-workingDeck/Slide68.JPG`
+  - `work/verizon/future-of-retail-workingDeck/Slide69.JPG`
+  - `work/verizon/future-of-retail-workingDeck/Slide7.JPG`
+  - `work/verizon/future-of-retail-workingDeck/Slide70.JPG`
+  - `work/verizon/future-of-retail-workingDeck/Slide71.JPG`
+  - `work/verizon/future-of-retail-workingDeck/Slide72.JPG`
+  - `work/verizon/future-of-retail-workingDeck/Slide73.JPG`
+  - `work/verizon/future-of-retail-workingDeck/Slide74.JPG`
+  - `work/verizon/future-of-retail-workingDeck/Slide75.JPG`
+  - `work/verizon/future-of-retail-workingDeck/Slide76.JPG`
+  - `work/verizon/future-of-retail-workingDeck/Slide77.JPG`
+  - `work/verizon/future-of-retail-workingDeck/Slide78.JPG`
+  - `work/verizon/future-of-retail-workingDeck/Slide79.JPG`
+  - `work/verizon/future-of-retail-workingDeck/Slide8.JPG`
+  - `work/verizon/future-of-retail-workingDeck/Slide80.JPG`
+  - `work/verizon/future-of-retail-workingDeck/Slide81.JPG`
+  - `work/verizon/future-of-retail-workingDeck/Slide82.JPG`
+  - `work/verizon/future-of-retail-workingDeck/Slide83.JPG`
+  - `work/verizon/future-of-retail-workingDeck/Slide84.JPG`
+  - `work/verizon/future-of-retail-workingDeck/Slide85.JPG`
+  - `work/verizon/future-of-retail-workingDeck/Slide86.JPG`
+  - `work/verizon/future-of-retail-workingDeck/Slide87.JPG`
+  - `work/verizon/future-of-retail-workingDeck/Slide88.JPG`
+  - `work/verizon/future-of-retail-workingDeck/Slide89.JPG`
+  - `work/verizon/future-of-retail-workingDeck/Slide9.JPG`
+  - `work/verizon/future-of-retail-workingDeck/Slide90.JPG`
+  - `work/verizon/future-of-retail-workingDeck/Slide91.JPG`
+  - `work/verizon/future-of-retail-workingDeck/Slide92.JPG`
+  - `work/verizon/future-of-retail-workingDeck/Slide93.JPG`
+  - `work/verizon/future-of-retail-workingDeck/Slide94.JPG`
+  - `work/verizon/future-of-retail-workingDeck/Slide95.JPG`
+  - `work/verizon/future-of-retail/Frame 92796.png`
+  - `work/verizon/network-reliability/Verizon 770 Lexington Ave 23 June 20213125.jpg`
+  - `work/verizon/retail-3-sem/Slide111.JPG`
+  - `work/verizon/retail-3-sem/Slide116.JPG`
+  - `work/verizon/retail-3-sem/Slide125.JPG`
+  - `work/verizon/retail-3-sem/Slide143.JPG`
+  - `work/verizon/retail-3-sem/Slide18.JPG`
+  - `work/verizon/retail-3-sem/Slide23.JPG`
+  - `work/verizon/retail-3-sem/Slide27.JPG`
+  - `work/verizon/retail-3-sem/Slide46.JPG`
+  - `work/verizon/retail-3-sem/Slide53.JPG`
+  - `work/verizon/retail-3-sem/Slide72.JPG`
+  - `work/verizon/retail-3-sem/Slide83.JPG`
+  - `work/verizon/retail-3-sem/Slide88.JPG`
+  - `work/verizon/retail-walkthrough/Slide25.JPG`
+  - `work/verizon/retail-walkthrough/Slide26.JPG`
+  - `work/verizon/retail-walkthrough/Slide3.JPG`
+  - `work/verizon/retail-walkthrough/Slide45.JPG`
+  - `work/verizon/retail-walkthrough/Slide8.JPG`
+  - `work/verizon/the-met/Screenshot 2026-04-13 232431.png`
+

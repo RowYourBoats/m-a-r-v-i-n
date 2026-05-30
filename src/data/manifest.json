@@ -942,6 +942,20 @@
       "order": [],
       "snapshot_only": false
     },
+    "jullie": {
+      "title": "Jullie App",
+      "description": "Your career is stored as a pile of short text records, each one turned into a list of numbers (an embedding) that captures its meaning. A job description is turned into the same kind of numbers, plus a few other lenses. \"Matching\" is measuring which career records sit closest to the job description in that number-space -- then re-ranking with some non-vector signals on top. The career corpus never changes when you run a new job; only the question changes. Same subject, different viewer, different view.\n",
+      "client": "personal",
+      "year": 2013,
+      "credits": [
+        {
+          "role": "Design",
+          "name": "Marvin de Jong"
+        }
+      ],
+      "order": [],
+      "snapshot_only": false
+    },
     "kabk-posters": {
       "title": "KABK Posters",
       "description": "Posters exploring legibility, layering, and 'handschrift.'",
@@ -2056,8 +2070,8 @@
       "personal": true
     },
     {
-      "id": "practice-stephanie-hanes-stephaniehanes-detaillightingonly-0",
-      "src": "https://ws6i2dfuggcaavs2.public.blob.vercel-storage.com/images/IndependentProjects/StephanieHanes.DetailLightingOnly.0002.png",
+      "id": "practice-stephanie-hanes-stephaniehanes-detaillightingonly-0002",
+      "src": "https://ws6i2dfuggcaavs2.public.blob.vercel-storage.com/images/practice/stephanie-hanes/StephanieHanes.DetailLightingOnly.0002.png",
       "type": "image",
       "title": "Celestial Bodies with Glowing Ice Elements",
       "tags": [
@@ -2167,8 +2181,8 @@
       "personal": true
     },
     {
-      "id": "practice-stephanie-hanes-stephaniehanes-reflectionsonly-0016",
-      "src": "https://ws6i2dfuggcaavs2.public.blob.vercel-storage.com/images/IndependentProjects/StephanieHanes.ReflectionsOnly.0016%201.png",
+      "id": "practice-stephanie-hanes-stephaniehanes-reflectionsonly-0016-1",
+      "src": "https://ws6i2dfuggcaavs2.public.blob.vercel-storage.com/images/practice/stephanie-hanes/StephanieHanes.ReflectionsOnly.0016%201.png",
       "type": "image",
       "title": "Celestial Bodies Glass Distortion",
       "tags": [
@@ -2204,7 +2218,7 @@
       "personal": true
     },
     {
-      "id": "practice-wonmin-park-statements-haze-series-white-white-back",
+      "id": "practice-wonmin-park-statements-haze-series-white-white-back-l-size",
       "src": "https://ws6i2dfuggcaavs2.public.blob.vercel-storage.com/images/practice/wonmin-park/statements/Haze-series-white-white-back-L-size.jpg",
       "type": "image",
       "title": "Haze Series Minimalist Furniture",
@@ -2507,8 +2521,8 @@
       "personal": true
     },
     {
-      "id": "practice-yale-thesis-original-19c0c34b8f58f117b842b0ccf3c156",
-      "src": "https://ws6i2dfuggcaavs2.public.blob.vercel-storage.com/images/Yale/original_19c0c34b8f58f117b842b0ccf3c1563c.png",
+      "id": "practice-yale-thesis-original-19c0c34b8f58f117b842b0ccf3c1563c",
+      "src": "https://ws6i2dfuggcaavs2.public.blob.vercel-storage.com/images/practice/yale/thesis/original_19c0c34b8f58f117b842b0ccf3c1563c.png",
       "type": "image",
       "title": "Public Browsing Timeline Visualization",
       "tags": [
@@ -2538,8 +2552,8 @@
       "personal": true
     },
     {
-      "id": "practice-yale-thesis-original-2553c28b14a8e088c0ad1de06674e2",
-      "src": "https://ws6i2dfuggcaavs2.public.blob.vercel-storage.com/images/Yale/original_2553c28b14a8e088c0ad1de06674e2a7.jpg",
+      "id": "practice-yale-thesis-original-2553c28b14a8e088c0ad1de06674e2a7",
+      "src": "https://ws6i2dfuggcaavs2.public.blob.vercel-storage.com/images/practice/yale/thesis/original_2553c28b14a8e088c0ad1de06674e2a7.jpg",
       "type": "image",
       "title": "Yale Urs Lehni (Rollo Press) Workshop",
       "tags": [
@@ -2572,8 +2586,8 @@
       "personal": true
     },
     {
-      "id": "practice-yale-thesis-original-40df324de378a5f92e1c6cdd802a90",
-      "src": "https://ws6i2dfuggcaavs2.public.blob.vercel-storage.com/images/Yale/original_40df324de378a5f92e1c6cdd802a9075.jpg",
+      "id": "practice-yale-thesis-original-40df324de378a5f92e1c6cdd802a9075",
+      "src": "https://ws6i2dfuggcaavs2.public.blob.vercel-storage.com/images/practice/yale/thesis/original_40df324de378a5f92e1c6cdd802a9075.jpg",
       "type": "image",
       "title": "Neon Geometric Abstraction",
       "tags": [
@@ -2605,8 +2619,8 @@
       "personal": true
     },
     {
-      "id": "practice-yale-thesis-original-4dc0bbcd1c25a212f6f99a3ca214a5",
-      "src": "https://ws6i2dfuggcaavs2.public.blob.vercel-storage.com/images/Yale/original_4dc0bbcd1c25a212f6f99a3ca214a56a.jpg",
+      "id": "practice-yale-thesis-original-4dc0bbcd1c25a212f6f99a3ca214a56a",
+      "src": "https://ws6i2dfuggcaavs2.public.blob.vercel-storage.com/images/practice/yale/thesis/original_4dc0bbcd1c25a212f6f99a3ca214a56a.jpg",
       "type": "image",
       "title": "Feet Detail Print Study",
       "tags": [
@@ -2638,8 +2652,8 @@
       "personal": true
     },
     {
-      "id": "practice-yale-thesis-original-950e3cd508e6707b9791804b161b2b",
-      "src": "https://ws6i2dfuggcaavs2.public.blob.vercel-storage.com/images/Yale/original_950e3cd508e6707b9791804b161b2b76.jpg",
+      "id": "practice-yale-thesis-original-950e3cd508e6707b9791804b161b2b76",
+      "src": "https://ws6i2dfuggcaavs2.public.blob.vercel-storage.com/images/practice/yale/thesis/original_950e3cd508e6707b9791804b161b2b76.jpg",
       "type": "image",
       "title": "Gradient Typographic Abstraction",
       "tags": [
@@ -2669,8 +2683,8 @@
       "personal": true
     },
     {
-      "id": "practice-yale-thesis-original-a657d80917ef96fcfa08dbbc416bd6",
-      "src": "https://ws6i2dfuggcaavs2.public.blob.vercel-storage.com/images/Yale/original_a657d80917ef96fcfa08dbbc416bd6a2.png",
+      "id": "practice-yale-thesis-original-a657d80917ef96fcfa08dbbc416bd6a2",
+      "src": "https://ws6i2dfuggcaavs2.public.blob.vercel-storage.com/images/practice/yale/thesis/original_a657d80917ef96fcfa08dbbc416bd6a2.png",
       "type": "image",
       "title": "Cloudscape Still Life",
       "tags": [
@@ -2699,8 +2713,8 @@
       "personal": true
     },
     {
-      "id": "practice-yale-thesis-original-ad4d1179c68233a936a838077805e4",
-      "src": "https://ws6i2dfuggcaavs2.public.blob.vercel-storage.com/images/Yale/original_ad4d1179c68233a936a838077805e408.png",
+      "id": "practice-yale-thesis-original-ad4d1179c68233a936a838077805e408",
+      "src": "https://ws6i2dfuggcaavs2.public.blob.vercel-storage.com/images/practice/yale/thesis/original_ad4d1179c68233a936a838077805e408.png",
       "type": "image",
       "title": "Bubbled Utensil Study",
       "tags": [
@@ -2729,8 +2743,8 @@
       "personal": true
     },
     {
-      "id": "practice-yale-thesis-original-be506b3f4a7bfd74ad9ceff8d17be8",
-      "src": "https://ws6i2dfuggcaavs2.public.blob.vercel-storage.com/images/Yale/original_be506b3f4a7bfd74ad9ceff8d17be8c2.png",
+      "id": "practice-yale-thesis-original-be506b3f4a7bfd74ad9ceff8d17be8c2",
+      "src": "https://ws6i2dfuggcaavs2.public.blob.vercel-storage.com/images/practice/yale/thesis/original_be506b3f4a7bfd74ad9ceff8d17be8c2.png",
       "type": "image",
       "title": "Minimalist Centered Square",
       "tags": [
@@ -2760,8 +2774,8 @@
       "personal": true
     },
     {
-      "id": "practice-yale-thesis-original-d3c634d13e90c2897b879f1df59559",
-      "src": "https://ws6i2dfuggcaavs2.public.blob.vercel-storage.com/images/Yale/original_d3c634d13e90c2897b879f1df5955946.png",
+      "id": "practice-yale-thesis-original-d3c634d13e90c2897b879f1df5955946",
+      "src": "https://ws6i2dfuggcaavs2.public.blob.vercel-storage.com/images/practice/yale/thesis/original_d3c634d13e90c2897b879f1df5955946.png",
       "type": "image",
       "title": "Blurred Anatomy Study",
       "tags": [
@@ -2790,8 +2804,8 @@
       "personal": true
     },
     {
-      "id": "practice-yale-thesis-original-d5aa1a072c76e44bfc17db31bf6abc",
-      "src": "https://ws6i2dfuggcaavs2.public.blob.vercel-storage.com/images/Yale/original_d5aa1a072c76e44bfc17db31bf6abced.png",
+      "id": "practice-yale-thesis-original-d5aa1a072c76e44bfc17db31bf6abced",
+      "src": "https://ws6i2dfuggcaavs2.public.blob.vercel-storage.com/images/practice/yale/thesis/original_d5aa1a072c76e44bfc17db31bf6abced.png",
       "type": "image",
       "title": "Digital Gradient Typography Experiment",
       "tags": [
@@ -2826,8 +2840,8 @@
       "personal": true
     },
     {
-      "id": "practice-yale-thesis-original-ded1c03c29d067634e5dc2a0be8972",
-      "src": "https://ws6i2dfuggcaavs2.public.blob.vercel-storage.com/images/Yale/original_ded1c03c29d067634e5dc2a0be8972d1.png",
+      "id": "practice-yale-thesis-original-ded1c03c29d067634e5dc2a0be8972d1",
+      "src": "https://ws6i2dfuggcaavs2.public.blob.vercel-storage.com/images/practice/yale/thesis/original_ded1c03c29d067634e5dc2a0be8972d1.png",
       "type": "image",
       "title": "Red Polka Dot Door Handle Composition",
       "tags": [
@@ -2864,8 +2878,8 @@
       "personal": true
     },
     {
-      "id": "practice-yale-thesis-original-e7df6d6698fb384872efa7c0f881b4",
-      "src": "https://ws6i2dfuggcaavs2.public.blob.vercel-storage.com/images/Yale/original_e7df6d6698fb384872efa7c0f881b4b6.png",
+      "id": "practice-yale-thesis-original-e7df6d6698fb384872efa7c0f881b4b6",
+      "src": "https://ws6i2dfuggcaavs2.public.blob.vercel-storage.com/images/practice/yale/thesis/original_e7df6d6698fb384872efa7c0f881b4b6.png",
       "type": "image",
       "title": "Placeholder Grid Test Page",
       "tags": [
@@ -2895,8 +2909,8 @@
       "personal": true
     },
     {
-      "id": "practice-yale-thesis-original-f8ac574d7c399c7637841b3afa72f9",
-      "src": "https://ws6i2dfuggcaavs2.public.blob.vercel-storage.com/images/Yale/original_f8ac574d7c399c7637841b3afa72f996.png",
+      "id": "practice-yale-thesis-original-f8ac574d7c399c7637841b3afa72f996",
+      "src": "https://ws6i2dfuggcaavs2.public.blob.vercel-storage.com/images/practice/yale/thesis/original_f8ac574d7c399c7637841b3afa72f996.png",
       "type": "image",
       "title": "Sand Dune Texture Study",
       "tags": [
@@ -2992,8 +3006,8 @@
       "personal": true
     },
     {
-      "id": "practice-yale-uppercase-soul-uppercase-soul-a-missouri-bendi",
-      "src": "https://ws6i2dfuggcaavs2.public.blob.vercel-storage.com/images/IndependentProjects/UpperCase-Soul-A-Missouri-Bendito-Mockup%20copy.jpg",
+      "id": "practice-yale-uppercase-soul-uppercase-soul-a-missouri-bendito-mockup-copy",
+      "src": "https://ws6i2dfuggcaavs2.public.blob.vercel-storage.com/images/practice/yale/uppercase-soul/UpperCase-Soul-A-Missouri-Bendito-Mockup%20copy.jpg",
       "type": "image",
       "title": "UpperCase Soul Brand Mockup",
       "tags": [
@@ -3659,8 +3673,8 @@
       "year": 2016
     },
     {
-      "id": "work-herman-miller-all-together-now-hmg-alltogethernowmilan1",
-      "src": "https://ws6i2dfuggcaavs2.public.blob.vercel-storage.com/images/HermanMiller/HMG_AllTogetherNowMilan19_creditNicholasCalcott_hi_0520.jpg",
+      "id": "work-herman-miller-all-together-now-hmg-alltogethernowmilan19-creditnicholascalcott-hi-0520",
+      "src": "https://ws6i2dfuggcaavs2.public.blob.vercel-storage.com/images/work/herman-miller/all-together-now/HMG_AllTogetherNowMilan19_creditNicholasCalcott_hi_0520.jpg",
       "type": "image",
       "title": "Herman Miller All Together Now Milan 2019 Window Display",
       "tags": [
@@ -3692,8 +3706,8 @@
       "year": 2017
     },
     {
-      "id": "work-herman-miller-better-world-report-screenshot-2026-04-13",
-      "src": "https://ws6i2dfuggcaavs2.public.blob.vercel-storage.com/images/HermanMiller/Screenshot%202026-04-13%20234851.png",
+      "id": "work-herman-miller-better-world-report-screenshot-2026-04-13-234851",
+      "src": "https://ws6i2dfuggcaavs2.public.blob.vercel-storage.com/images/work/herman-miller/better-world-report/Screenshot%202026-04-13%20234851.png",
       "type": "image",
       "title": "Herman Miller Initiative Growth Visualization",
       "tags": [
@@ -3725,8 +3739,8 @@
       "year": 2017
     },
     {
-      "id": "work-herman-miller-better-world-report-screenshot-2026-04-13-2",
-      "src": "https://ws6i2dfuggcaavs2.public.blob.vercel-storage.com/images/HermanMiller/Screenshot%202026-04-13%20234858.png",
+      "id": "work-herman-miller-better-world-report-screenshot-2026-04-13-234858",
+      "src": "https://ws6i2dfuggcaavs2.public.blob.vercel-storage.com/images/work/herman-miller/better-world-report/Screenshot%202026-04-13%20234858.png",
       "type": "image",
       "title": "Sustainability Initiatives Growth Visualization",
       "tags": [
@@ -3758,8 +3772,8 @@
       "year": 2017
     },
     {
-      "id": "work-herman-miller-better-world-report-screenshot-2026-04-13-3",
-      "src": "https://ws6i2dfuggcaavs2.public.blob.vercel-storage.com/images/HermanMiller/Screenshot%202026-04-13%20234902.png",
+      "id": "work-herman-miller-better-world-report-screenshot-2026-04-13-234902",
+      "src": "https://ws6i2dfuggcaavs2.public.blob.vercel-storage.com/images/work/herman-miller/better-world-report/Screenshot%202026-04-13%20234902.png",
       "type": "image",
       "title": "Herman Miller Better World Report Data Visualization",
       "tags": [
@@ -3791,8 +3805,8 @@
       "year": 2017
     },
     {
-      "id": "work-herman-miller-better-world-report-screenshot-2026-04-13-4",
-      "src": "https://ws6i2dfuggcaavs2.public.blob.vercel-storage.com/images/HermanMiller/Screenshot%202026-04-13%20234913.png",
+      "id": "work-herman-miller-better-world-report-screenshot-2026-04-13-234913",
+      "src": "https://ws6i2dfuggcaavs2.public.blob.vercel-storage.com/images/work/herman-miller/better-world-report/Screenshot%202026-04-13%20234913.png",
       "type": "image",
       "title": "Herman Miller Earthright Initiative Timeline",
       "tags": [
@@ -3824,8 +3838,8 @@
       "year": 2017
     },
     {
-      "id": "work-herman-miller-brand-guidelines-screenshot-2026-04-13-23",
-      "src": "https://ws6i2dfuggcaavs2.public.blob.vercel-storage.com/images/HermanMiller/Screenshot%202026-04-13%20231003.png",
+      "id": "work-herman-miller-brand-guidelines-screenshot-2026-04-13-231003",
+      "src": "https://ws6i2dfuggcaavs2.public.blob.vercel-storage.com/images/work/herman-miller/brand-guidelines/Screenshot%202026-04-13%20231003.png",
       "type": "image",
       "title": "Dual-Brand Chair CMF Photography",
       "tags": [
@@ -3884,7 +3898,7 @@
       "year": 2023
     },
     {
-      "id": "work-herman-miller-herman-miller-group-screenshot-2026-04-18",
+      "id": "work-herman-miller-herman-miller-group-screenshot-2026-04-18-225624",
       "src": "https://ws6i2dfuggcaavs2.public.blob.vercel-storage.com/images/work/herman-miller/herman-miller-group/Screenshot%202026-04-18%20225624.png",
       "type": "image",
       "title": "Herman Miller Brand Portfolio Structure",
@@ -3916,8 +3930,8 @@
       "year": 2017
     },
     {
-      "id": "work-herman-miller-industrial-facility-hermanmiller-exhibiti",
-      "src": "https://ws6i2dfuggcaavs2.public.blob.vercel-storage.com/images/HermanMiller/HermanMiller_Exhibition_001.jpg",
+      "id": "work-herman-miller-industrial-facility-hermanmiller-exhibition-003",
+      "src": "https://ws6i2dfuggcaavs2.public.blob.vercel-storage.com/images/work/herman-miller/industrial-facility/HermanMiller_Exhibition_003.jpg",
       "type": "image",
       "title": "Herman Miller Exhibition Illustrations",
       "tags": [
@@ -4146,7 +4160,7 @@
     },
     {
       "id": "work-verizon-future-of-retail-frame-7",
-      "src": "https://ws6i2dfuggcaavs2.public.blob.vercel-storage.com/images/Verizon_Selection/Frame%207.png",
+      "src": "https://ws6i2dfuggcaavs2.public.blob.vercel-storage.com/images/work/verizon/future-of-retail/Frame%207.png",
       "type": "image",
       "title": "IonQ & Busan Metropolitan City Brand Collab",
       "tags": [
@@ -4883,8 +4897,8 @@
       "year": 2023
     },
     {
-      "id": "work-ionq-expo-ionq-commercializingquantum-3x2-3-2024-05-17-",
-      "src": "https://ws6i2dfuggcaavs2.public.blob.vercel-storage.com/images/IonQ/IONQ%20-%20CommercializingQuantum%20-%203x2%203%20-%202024%2005%2017%20-%20Enterprise-Grade%202%201.png",
+      "id": "work-ionq-expo-ionq-commercializingquantum-3x2-3-2024-05-17-enterprise-grade-2-1",
+      "src": "https://ws6i2dfuggcaavs2.public.blob.vercel-storage.com/images/work/ionq/expo/IONQ%20-%20CommercializingQuantum%20-%203x2%203%20-%202024%2005%2017%20-%20Enterprise-Grade%202%201.png",
       "type": "image",
       "title": "IonQ Quantum Enterprise System Visual",
       "tags": [
@@ -4919,8 +4933,8 @@
       "year": 2023
     },
     {
-      "id": "work-ionq-expo-whatsapp-image-2024-06-23-at-13-02-37-619ec73",
-      "src": "https://ws6i2dfuggcaavs2.public.blob.vercel-storage.com/images/IonQ/WhatsApp%20Image%202024-06-23%20at%2013.02.37_619ec731%20(1)%201.png",
+      "id": "work-ionq-expo-whatsapp-image-2024-06-23-at-13-02-37-619ec731-1-1",
+      "src": "https://ws6i2dfuggcaavs2.public.blob.vercel-storage.com/images/work/ionq/expo/WhatsApp%20Image%202024-06-23%20at%2013.02.37_619ec731%20%281%29%201.png",
       "type": "image",
       "title": "IonQ Quantum Computing Expo Booth",
       "tags": [
@@ -6381,8 +6395,8 @@
       "year": 2014
     },
     {
-      "id": "work-studio-tillotson-associates-realistic-business-card-moc",
-      "src": "https://ws6i2dfuggcaavs2.public.blob.vercel-storage.com/images/IndependentProjects/Realistic-business-card-mockup.jpg",
+      "id": "work-studio-tillotson-associates-realistic-business-card-mockup",
+      "src": "https://ws6i2dfuggcaavs2.public.blob.vercel-storage.com/images/work/studio/tillotson-associates/Realistic-business-card-mockup.jpg",
       "type": "image",
       "title": "Minimalist Business Card for Tillotson Design Associates",
       "tags": [
@@ -6522,8 +6536,8 @@
       "year": 2019
     },
     {
-      "id": "work-verizon-5g-campaigns-verizon-770-lexington-ave-23-june-",
-      "src": "https://ws6i2dfuggcaavs2.public.blob.vercel-storage.com/images/Verizon_Selection/Verizon%20770%20Lexington%20Ave%2023%20June%2020210112.jpg",
+      "id": "work-verizon-5g-campaigns-verizon-770-lexington-ave-23-june-20210112",
+      "src": "https://ws6i2dfuggcaavs2.public.blob.vercel-storage.com/images/work/verizon/5G-campaigns/Verizon%20770%20Lexington%20Ave%2023%20June%2020210112.jpg",
       "type": "image",
       "title": "Verizon 770 Lexington Ave Storefront",
       "tags": [
@@ -6550,8 +6564,8 @@
       "year": 2019
     },
     {
-      "id": "work-verizon-5g-campaigns-verizon-770-lexington-ave-23-june--2",
-      "src": "https://ws6i2dfuggcaavs2.public.blob.vercel-storage.com/images/Verizon_Selection/Verizon%20770%20Lexington%20Ave%2023%20June%2020210142.jpg",
+      "id": "work-verizon-5g-campaigns-verizon-770-lexington-ave-23-june-20210142",
+      "src": "https://ws6i2dfuggcaavs2.public.blob.vercel-storage.com/images/work/verizon/5G-campaigns/Verizon%20770%20Lexington%20Ave%2023%20June%2020210142.jpg",
       "type": "image",
       "title": "Verizon 5G Storefront Campaign",
       "tags": [
@@ -6578,8 +6592,8 @@
       "year": 2019
     },
     {
-      "id": "work-verizon-5g-campaigns-verizon-770-lexington-ave-23-june--3",
-      "src": "https://ws6i2dfuggcaavs2.public.blob.vercel-storage.com/images/Verizon_Selection/Verizon%20770%20Lexington%20Ave%2023%20June%2020210144.jpg",
+      "id": "work-verizon-5g-campaigns-verizon-770-lexington-ave-23-june-20210144",
+      "src": "https://ws6i2dfuggcaavs2.public.blob.vercel-storage.com/images/work/verizon/5G-campaigns/Verizon%20770%20Lexington%20Ave%2023%20June%2020210144.jpg",
       "type": "image",
       "title": "Verizon 5G Campaign Window Display",
       "tags": [
@@ -9622,8 +9636,8 @@
       "hidden_from_feed": true
     },
     {
-      "id": "work-verizon-future-of-retail-marvindejong-narrative-portfol",
-      "src": "https://ws6i2dfuggcaavs2.public.blob.vercel-storage.com/images/Verizon_Selection/MarvinDeJong-Narrative%20Portfolio.jpeg",
+      "id": "work-verizon-future-of-retail-marvindejong-narrative-portfolio",
+      "src": "https://ws6i2dfuggcaavs2.public.blob.vercel-storage.com/images/work/verizon/future-of-retail/MarvinDeJong-Narrative%20Portfolio.jpeg",
       "type": "image",
       "title": "Verizon Apple OEM Pop-up Concept",
       "tags": [
@@ -12765,8 +12779,8 @@
       "hidden_from_feed": true
     },
     {
-      "id": "work-verizon-network-reliability-verizon-770-lexington-ave-2",
-      "src": "https://ws6i2dfuggcaavs2.public.blob.vercel-storage.com/images/Verizon_Selection/Verizon%20770%20Lexington%20Ave%2023%20June%2020213119.jpg",
+      "id": "work-verizon-network-reliability-verizon-770-lexington-ave-23-june-20213119",
+      "src": "https://ws6i2dfuggcaavs2.public.blob.vercel-storage.com/images/work/verizon/network-reliability/Verizon%20770%20Lexington%20Ave%2023%20June%2020213119.jpg",
       "type": "image",
       "title": "Verizon Retail Environment at 770 Lexington Ave",
       "tags": [
@@ -12792,8 +12806,8 @@
       "year": 2019
     },
     {
-      "id": "work-verizon-playlist-recommendation-screenshot-2026-04-13-2",
-      "src": "https://ws6i2dfuggcaavs2.public.blob.vercel-storage.com/images/Verizon_Selection/Screenshot%202026-04-13%20234520.png",
+      "id": "work-verizon-playlist-recommendation-screenshot-2026-04-13-234520",
+      "src": "https://ws6i2dfuggcaavs2.public.blob.vercel-storage.com/images/work/verizon/playlist-recommendation/Screenshot%202026-04-13%20234520.png",
       "type": "image",
       "title": "Verizon Digital Playlist Campaign Showcase",
       "tags": [
@@ -12826,8 +12840,8 @@
       "year": 2019
     },
     {
-      "id": "work-verizon-playlist-recommendation-screenshot-2026-04-13-2-2",
-      "src": "https://ws6i2dfuggcaavs2.public.blob.vercel-storage.com/images/Verizon_Selection/Screenshot%202026-04-13%20234527.png",
+      "id": "work-verizon-playlist-recommendation-screenshot-2026-04-13-234527",
+      "src": "https://ws6i2dfuggcaavs2.public.blob.vercel-storage.com/images/work/verizon/playlist-recommendation/Screenshot%202026-04-13%20234527.png",
       "type": "image",
       "title": "Verizon Digital Ad Playlist for 5G Brand",
       "tags": [
@@ -12860,8 +12874,8 @@
       "year": 2019
     },
     {
-      "id": "work-verizon-playlist-recommendation-screenshot-2026-04-13-2-3",
-      "src": "https://ws6i2dfuggcaavs2.public.blob.vercel-storage.com/images/Verizon_Selection/Screenshot%202026-04-13%20234537.png",
+      "id": "work-verizon-playlist-recommendation-screenshot-2026-04-13-234537",
+      "src": "https://ws6i2dfuggcaavs2.public.blob.vercel-storage.com/images/work/verizon/playlist-recommendation/Screenshot%202026-04-13%20234537.png",
       "type": "image",
       "title": "Samsung 5G Foldable Campaign Print Assets",
       "tags": [
@@ -12894,8 +12908,8 @@
       "year": 2019
     },
     {
-      "id": "work-verizon-playlist-recommendation-screenshot-2026-04-13-2-4",
-      "src": "https://ws6i2dfuggcaavs2.public.blob.vercel-storage.com/images/Verizon_Selection/Screenshot%202026-04-13%20234608.png",
+      "id": "work-verizon-playlist-recommendation-screenshot-2026-04-13-234608",
+      "src": "https://ws6i2dfuggcaavs2.public.blob.vercel-storage.com/images/work/verizon/playlist-recommendation/Screenshot%202026-04-13%20234608.png",
       "type": "image",
       "title": "Verizon Playlist Recommendation Summary",
       "tags": [
@@ -12928,8 +12942,8 @@
       "year": 2019
     },
     {
-      "id": "work-verizon-playlist-recommendation-verizon-770-lexington-a",
-      "src": "https://ws6i2dfuggcaavs2.public.blob.vercel-storage.com/images/Verizon_Selection/Verizon%20770%20Lexington%20Ave%2023%20June%2020210064%20copy.png",
+      "id": "work-verizon-playlist-recommendation-verizon-770-lexington-ave-23-june-20210064-copy",
+      "src": "https://ws6i2dfuggcaavs2.public.blob.vercel-storage.com/images/work/verizon/playlist-recommendation/Verizon%20770%20Lexington%20Ave%2023%20June%2020210064%20copy.png",
       "type": "image",
       "title": "Verizon Lexington Avenue Galaxy Z Flip3 Window Display",
       "tags": [
@@ -12956,8 +12970,8 @@
       "year": 2019
     },
     {
-      "id": "work-verizon-playlist-recommendation-verizon-770-lexington-a-2",
-      "src": "https://ws6i2dfuggcaavs2.public.blob.vercel-storage.com/images/Verizon_Selection/Verizon%20770%20Lexington%20Ave%2023%20June%2020210064%20copyB.png",
+      "id": "work-verizon-playlist-recommendation-verizon-770-lexington-ave-23-june-20210064-copyb",
+      "src": "https://ws6i2dfuggcaavs2.public.blob.vercel-storage.com/images/work/verizon/playlist-recommendation/Verizon%20770%20Lexington%20Ave%2023%20June%2020210064%20copyB.png",
       "type": "image",
       "title": "Samsung Galaxy Z Flip3 Retail Window Display",
       "tags": [
@@ -12984,8 +12998,8 @@
       "year": 2019
     },
     {
-      "id": "work-verizon-playlist-recommendation-verizon-770-lexington-a-3",
-      "src": "https://ws6i2dfuggcaavs2.public.blob.vercel-storage.com/images/Verizon_Selection/Verizon%20770%20Lexington%20Ave%2023%20June%2020210064%20copyc.png",
+      "id": "work-verizon-playlist-recommendation-verizon-770-lexington-ave-23-june-20210064-copyc",
+      "src": "https://ws6i2dfuggcaavs2.public.blob.vercel-storage.com/images/work/verizon/playlist-recommendation/Verizon%20770%20Lexington%20Ave%2023%20June%2020210064%20copyc.png",
       "type": "image",
       "title": "Verizon Store Window 5G Promotion Poster",
       "tags": [
@@ -13012,8 +13026,8 @@
       "year": 2019
     },
     {
-      "id": "work-verizon-playlist-recommendation-verizon-770-lexington-a-4",
-      "src": "https://ws6i2dfuggcaavs2.public.blob.vercel-storage.com/images/Verizon_Selection/Verizon%20770%20Lexington%20Ave%2023%20June%2020210071.jpg",
+      "id": "work-verizon-playlist-recommendation-verizon-770-lexington-ave-23-june-20210071",
+      "src": "https://ws6i2dfuggcaavs2.public.blob.vercel-storage.com/images/work/verizon/playlist-recommendation/Verizon%20770%20Lexington%20Ave%2023%20June%2020210071.jpg",
       "type": "image",
       "title": "Verizon Network Digital Display at 770 Lexington Ave",
       "tags": [
@@ -13040,8 +13054,8 @@
       "year": 2019
     },
     {
-      "id": "work-verizon-playlist-recommendation-verizon-770-lexington-a-5",
-      "src": "https://ws6i2dfuggcaavs2.public.blob.vercel-storage.com/images/Verizon_Selection/Verizon%20770%20Lexington%20Ave%2023%20June%2020212680.jpg",
+      "id": "work-verizon-playlist-recommendation-verizon-770-lexington-ave-23-june-20212680",
+      "src": "https://ws6i2dfuggcaavs2.public.blob.vercel-storage.com/images/work/verizon/playlist-recommendation/Verizon%20770%20Lexington%20Ave%2023%20June%2020212680.jpg",
       "type": "image",
       "title": "Verizon Unlimited Retail Digital Signage",
       "tags": [
@@ -13068,8 +13082,8 @@
       "year": 2019
     },
     {
-      "id": "work-verizon-playlist-recommendation-verizon-770-lexington-a-6",
-      "src": "https://ws6i2dfuggcaavs2.public.blob.vercel-storage.com/images/Verizon_Selection/Verizon%20770%20Lexington%20Ave%2023%20June%2020212689.jpg",
+      "id": "work-verizon-playlist-recommendation-verizon-770-lexington-ave-23-june-20212689",
+      "src": "https://ws6i2dfuggcaavs2.public.blob.vercel-storage.com/images/work/verizon/playlist-recommendation/Verizon%20770%20Lexington%20Ave%2023%20June%2020212689.jpg",
       "type": "image",
       "title": "Verizon My Verizon App Digital Signage at 770 Lexington Ave",
       "tags": [
@@ -13096,8 +13110,8 @@
       "year": 2019
     },
     {
-      "id": "work-verizon-playlist-recommendation-verizon-770-lexington-a-7",
-      "src": "https://ws6i2dfuggcaavs2.public.blob.vercel-storage.com/images/Verizon_Selection/Verizon%20770%20Lexington%20Ave%2023%20June%2020212849.jpg",
+      "id": "work-verizon-playlist-recommendation-verizon-770-lexington-ave-23-june-20212849",
+      "src": "https://ws6i2dfuggcaavs2.public.blob.vercel-storage.com/images/work/verizon/playlist-recommendation/Verizon%20770%20Lexington%20Ave%2023%20June%2020212849.jpg",
       "type": "image",
       "title": "Verizon Retail Display with Rewards Poster",
       "tags": [
@@ -13124,8 +13138,8 @@
       "year": 2019
     },
     {
-      "id": "work-verizon-playlist-recommendation-verizon-770-lexington-a-8",
-      "src": "https://ws6i2dfuggcaavs2.public.blob.vercel-storage.com/images/Verizon_Selection/Verizon%20770%20Lexington%20Ave%2023%20June%2020212857.jpg",
+      "id": "work-verizon-playlist-recommendation-verizon-770-lexington-ave-23-june-20212857",
+      "src": "https://ws6i2dfuggcaavs2.public.blob.vercel-storage.com/images/work/verizon/playlist-recommendation/Verizon%20770%20Lexington%20Ave%2023%20June%2020212857.jpg",
       "type": "image",
       "title": "Verizon 770 Lexington Ave Lobby Interior",
       "tags": [
@@ -13152,8 +13166,8 @@
       "year": 2019
     },
     {
-      "id": "work-verizon-playlist-recommendation-verizon-770-lexington-a-9",
-      "src": "https://ws6i2dfuggcaavs2.public.blob.vercel-storage.com/images/Verizon_Selection/Verizon%20770%20Lexington%20Ave%2023%20June%2020212879.jpg",
+      "id": "work-verizon-playlist-recommendation-verizon-770-lexington-ave-23-june-20212879",
+      "src": "https://ws6i2dfuggcaavs2.public.blob.vercel-storage.com/images/work/verizon/playlist-recommendation/Verizon%20770%20Lexington%20Ave%2023%20June%2020212879.jpg",
       "type": "image",
       "title": "Verizon Convenience Branding in Urban Retail Window",
       "tags": [
@@ -19667,7 +19681,7 @@
       "hidden_from_feed": true
     },
     {
-      "id": "work-verizon-playlist-recommendation-screenshot-2026-04-13-2-5",
+      "id": "work-verizon-playlist-recommendation-screenshot-2026-04-13-234505",
       "src": "https://ws6i2dfuggcaavs2.public.blob.vercel-storage.com/images/work/verizon/playlist-recommendation/Screenshot%202026-04-13%20234505.png",
       "type": "image",
       "title": "CMI Research Digital Retail Findings",
@@ -19695,8 +19709,8 @@
       "year": 2019
     },
     {
-      "id": "work-verizon-speedtest-verizon-770-lexington-ave-23-june-202",
-      "src": "https://ws6i2dfuggcaavs2.public.blob.vercel-storage.com/images/Verizon_Selection/Verizon%20770%20Lexington%20Ave%2023%20June%2020213085.jpg",
+      "id": "work-verizon-speedtest-verizon-770-lexington-ave-23-june-20213085",
+      "src": "https://ws6i2dfuggcaavs2.public.blob.vercel-storage.com/images/work/verizon/speedtest/Verizon%20770%20Lexington%20Ave%2023%20June%2020213085.jpg",
       "type": "image",
       "title": "Verizon 5G Speed Test Display",
       "tags": [
@@ -19730,8 +19744,8 @@
       "year": 2019
     },
     {
-      "id": "work-verizon-speedtest-verizon-770-lexington-ave-23-june-202-2",
-      "src": "https://ws6i2dfuggcaavs2.public.blob.vercel-storage.com/images/Verizon_Selection/Verizon%20770%20Lexington%20Ave%2023%20June%2020213089.jpg",
+      "id": "work-verizon-speedtest-verizon-770-lexington-ave-23-june-20213089",
+      "src": "https://ws6i2dfuggcaavs2.public.blob.vercel-storage.com/images/work/verizon/speedtest/Verizon%20770%20Lexington%20Ave%2023%20June%2020213089.jpg",
       "type": "image",
       "title": "Verizon 5G Ultra-Low Lag Gaming Display",
       "tags": [
@@ -19765,8 +19779,8 @@
       "year": 2019
     },
     {
-      "id": "work-verizon-speedtest-verizon-770-lexington-ave-23-june-202-3",
-      "src": "https://ws6i2dfuggcaavs2.public.blob.vercel-storage.com/images/Verizon_Selection/Verizon%20770%20Lexington%20Ave%2023%20June%2020213108.jpg",
+      "id": "work-verizon-speedtest-verizon-770-lexington-ave-23-june-20213108",
+      "src": "https://ws6i2dfuggcaavs2.public.blob.vercel-storage.com/images/work/verizon/speedtest/Verizon%20770%20Lexington%20Ave%2023%20June%2020213108.jpg",
       "type": "image",
       "title": "Verizon 5G Speed Test Showcase",
       "tags": [
@@ -20230,68 +20244,6 @@
       "hidden_from_feed": true
     },
     {
-      "id": "practice-architecture-fantasy-perdido-street-station-animal-",
-      "src": "https://ws6i2dfuggcaavs2.public.blob.vercel-storage.com/images/practice/architecture-fantasy/perdido-street-station/animal-architecture-arch-macrotermes-natalensis.png",
-      "type": "image",
-      "title": "animal architecture dam beaver",
-      "tags": [
-        "reference",
-        "snapshot"
-      ],
-      "format": [],
-      "characteristics": [
-        "reference"
-      ],
-      "subject": [],
-      "project_tags": [
-        "personal",
-        "personal",
-        "real-time"
-      ],
-      "medium": "",
-      "project": "snapshot",
-      "description": "Beaver dam. The structure holds back a pond..",
-      "width": 3353,
-      "height": 2642,
-      "created": "2014-present",
-      "date_range": "2014-present",
-      "year": 2014,
-      "personal": true,
-      "essay_of": "practice/architecture-fantasy/perdido-street-station/perdido-street-station",
-      "hidden_from_feed": true
-    },
-    {
-      "id": "practice-architecture-fantasy-perdido-street-station-animal--2",
-      "src": "https://ws6i2dfuggcaavs2.public.blob.vercel-storage.com/images/practice/architecture-fantasy/perdido-street-station/animal-architecture-carton-nest-jet-ant.png",
-      "type": "image",
-      "title": "animal architecture galleries built termites reticulitermes",
-      "tags": [
-        "reference",
-        "snapshot"
-      ],
-      "format": [],
-      "characteristics": [
-        "reference"
-      ],
-      "subject": [],
-      "project_tags": [
-        "personal",
-        "personal",
-        "real-time"
-      ],
-      "medium": "",
-      "project": "snapshot",
-      "description": "Reticulitermes. A colony gnawed through its container and built a covered gallery to the next one.",
-      "width": 2188,
-      "height": 2362,
-      "created": "2014-present",
-      "date_range": "2014-present",
-      "year": 2014,
-      "personal": true,
-      "essay_of": "practice/architecture-fantasy/perdido-street-station/perdido-street-station",
-      "hidden_from_feed": true
-    },
-    {
       "id": "work-moma-teens-program-moma-teensprogram-01",
       "src": "https://ws6i2dfuggcaavs2.public.blob.vercel-storage.com/images/work/moma/teens-program/MoMA_teensProgram_01.jpg",
       "type": "image",
@@ -20644,7 +20596,7 @@
       "year": 2017
     },
     {
-      "id": "work-herman-miller-geiger-holiday-card-screenshot-2026-04-13",
+      "id": "work-herman-miller-geiger-holiday-card-screenshot-2026-04-13-230957",
       "src": "https://ws6i2dfuggcaavs2.public.blob.vercel-storage.com/images/work/herman-miller/geiger-holiday-card/Screenshot%202026-04-13%20230957.png",
       "type": "image",
       "title": "Screenshot 2026 04 13 230957",
@@ -21258,6 +21210,445 @@
       "year": 2017
     },
     {
+      "id": "practice-architecture-fantasy-perdido-street-station-01-animal-architecture-nest-sociable-weaverbird",
+      "src": "https://ws6i2dfuggcaavs2.public.blob.vercel-storage.com/images/practice/architecture-fantasy/perdido-street-station/01-animal-architecture-nest-sociable-weaverbird.png",
+      "type": "image",
+      "title": "01 animal architecture nest sociable weaverbird",
+      "tags": [
+        "publication-design",
+        "reference",
+        "snapshot"
+      ],
+      "format": [
+        "publication-design"
+      ],
+      "characteristics": [
+        "reference"
+      ],
+      "subject": [],
+      "project_tags": [
+        "personal",
+        "personal",
+        "real-time"
+      ],
+      "medium": "print",
+      "project": "snapshot",
+      "description": "Sociable weaverbird. A communal nest.",
+      "width": 1991,
+      "height": 2096,
+      "created": "2014-present",
+      "date_range": "2014-present",
+      "year": 2014,
+      "personal": true,
+      "essay_of": "practice/architecture-fantasy/perdido-street-station/perdido-street-station",
+      "hidden_from_feed": true
+    },
+    {
+      "id": "practice-architecture-fantasy-perdido-street-station-03-animal-architecture-eyrie-osprey",
+      "src": "https://ws6i2dfuggcaavs2.public.blob.vercel-storage.com/images/practice/architecture-fantasy/perdido-street-station/03-animal-architecture-eyrie-osprey.png",
+      "type": "image",
+      "title": "03 animal architecture eyrie osprey",
+      "tags": [
+        "publication-design",
+        "reference",
+        "snapshot"
+      ],
+      "format": [
+        "publication-design"
+      ],
+      "characteristics": [
+        "reference"
+      ],
+      "subject": [],
+      "project_tags": [
+        "personal",
+        "personal",
+        "real-time"
+      ],
+      "medium": "print",
+      "project": "snapshot",
+      "description": "Osprey eyrie. Boughs and branches stacked into a perch.",
+      "width": 2254,
+      "height": 2427,
+      "created": "2014-present",
+      "date_range": "2014-present",
+      "year": 2014,
+      "personal": true,
+      "essay_of": "practice/architecture-fantasy/perdido-street-station/perdido-street-station",
+      "hidden_from_feed": true
+    },
+    {
+      "id": "practice-architecture-fantasy-perdido-street-station-04-animal-architecture-larch-stem-carpenter-ants",
+      "src": "https://ws6i2dfuggcaavs2.public.blob.vercel-storage.com/images/practice/architecture-fantasy/perdido-street-station/04-animal-architecture-larch-stem-carpenter-ants.png",
+      "type": "image",
+      "title": "04 animal architecture larch stem carpenter ants",
+      "tags": [
+        "publication-design",
+        "reference",
+        "snapshot"
+      ],
+      "format": [
+        "publication-design"
+      ],
+      "characteristics": [
+        "reference"
+      ],
+      "subject": [],
+      "project_tags": [
+        "personal",
+        "personal",
+        "real-time"
+      ],
+      "medium": "print",
+      "project": "snapshot",
+      "description": "Carpenter ant (Camponotus herculeanus). Galleries bored through a larch stem.",
+      "width": 2253,
+      "height": 3346,
+      "created": "2014-present",
+      "date_range": "2014-present",
+      "year": 2014,
+      "personal": true,
+      "essay_of": "practice/architecture-fantasy/perdido-street-station/perdido-street-station",
+      "hidden_from_feed": true
+    },
+    {
+      "id": "practice-architecture-fantasy-perdido-street-station-06-animal-architecture-carton-nest-jet-ant",
+      "src": "https://ws6i2dfuggcaavs2.public.blob.vercel-storage.com/images/practice/architecture-fantasy/perdido-street-station/06-animal-architecture-carton-nest-jet-ant.png",
+      "type": "image",
+      "title": "06 animal architecture carton nest jet ant",
+      "tags": [
+        "publication-design",
+        "reference",
+        "snapshot"
+      ],
+      "format": [
+        "publication-design"
+      ],
+      "characteristics": [
+        "reference"
+      ],
+      "subject": [],
+      "project_tags": [
+        "personal",
+        "personal",
+        "real-time"
+      ],
+      "medium": "print",
+      "project": "snapshot",
+      "description": "Jet ant (Lasius fuliginosus). A section of carton nest, its thin walls reinforced by a fungus grown into them.",
+      "width": 2239,
+      "height": 2260,
+      "created": "2014-present",
+      "date_range": "2014-present",
+      "year": 2014,
+      "personal": true,
+      "essay_of": "practice/architecture-fantasy/perdido-street-station/perdido-street-station",
+      "hidden_from_feed": true
+    },
+    {
+      "id": "practice-architecture-fantasy-perdido-street-station-07-animal-architecture-fungus-mass-leafcutter-ant",
+      "src": "https://ws6i2dfuggcaavs2.public.blob.vercel-storage.com/images/practice/architecture-fantasy/perdido-street-station/07-animal-architecture-fungus-mass-leafcutter-ant.png",
+      "type": "image",
+      "title": "07 animal architecture fungus mass leafcutter ant",
+      "tags": [
+        "publication-design",
+        "reference",
+        "snapshot"
+      ],
+      "format": [
+        "publication-design"
+      ],
+      "characteristics": [
+        "reference"
+      ],
+      "subject": [],
+      "project_tags": [
+        "personal",
+        "personal",
+        "real-time"
+      ],
+      "medium": "print",
+      "project": "snapshot",
+      "description": "Leafcutter ant (Atta texana). The fungus mass cultivated inside the nest. At right, magnified.",
+      "width": 3308,
+      "height": 1286,
+      "created": "2014-present",
+      "date_range": "2014-present",
+      "year": 2014,
+      "personal": true,
+      "essay_of": "practice/architecture-fantasy/perdido-street-station/perdido-street-station",
+      "hidden_from_feed": true
+    },
+    {
+      "id": "practice-architecture-fantasy-perdido-street-station-08-animal-architecture-rain-roofs-termite-cubitermes",
+      "src": "https://ws6i2dfuggcaavs2.public.blob.vercel-storage.com/images/practice/architecture-fantasy/perdido-street-station/08-animal-architecture-rain-roofs-termite-cubitermes.png",
+      "type": "image",
+      "title": "08 animal architecture rain roofs termite cubitermes",
+      "tags": [
+        "publication-design",
+        "reference",
+        "snapshot"
+      ],
+      "format": [
+        "publication-design"
+      ],
+      "characteristics": [
+        "reference"
+      ],
+      "subject": [],
+      "project_tags": [
+        "personal",
+        "personal",
+        "real-time"
+      ],
+      "medium": "print",
+      "project": "snapshot",
+      "description": "Cubitermes. Mushroom-capped termitaria. The cross-section reveals the internal chambers.",
+      "width": 2244,
+      "height": 1589,
+      "created": "2014-present",
+      "date_range": "2014-present",
+      "year": 2014,
+      "personal": true,
+      "essay_of": "practice/architecture-fantasy/perdido-street-station/perdido-street-station",
+      "hidden_from_feed": true
+    },
+    {
+      "id": "practice-architecture-fantasy-perdido-street-station-09-animal-architecture-nest-harvest-mouse",
+      "src": "https://ws6i2dfuggcaavs2.public.blob.vercel-storage.com/images/practice/architecture-fantasy/perdido-street-station/09-animal-architecture-nest-harvest-mouse.png",
+      "type": "image",
+      "title": "09 animal architecture nest harvest mouse",
+      "tags": [
+        "publication-design",
+        "reference",
+        "snapshot"
+      ],
+      "format": [
+        "publication-design"
+      ],
+      "characteristics": [
+        "reference"
+      ],
+      "subject": [],
+      "project_tags": [
+        "personal",
+        "personal",
+        "real-time"
+      ],
+      "medium": "print",
+      "project": "snapshot",
+      "description": "Harvest mouse (Micromys minutus). A nest woven into the standing stalks of an oat field.",
+      "width": 2201,
+      "height": 3249,
+      "created": "2014-present",
+      "date_range": "2014-present",
+      "year": 2014,
+      "personal": true,
+      "essay_of": "practice/architecture-fantasy/perdido-street-station/perdido-street-station",
+      "hidden_from_feed": true
+    },
+    {
+      "id": "practice-architecture-fantasy-perdido-street-station-10-animal-architecture-underground-nest-termites-apicotermes-gurgulifex",
+      "src": "https://ws6i2dfuggcaavs2.public.blob.vercel-storage.com/images/practice/architecture-fantasy/perdido-street-station/10-animal-architecture-underground-nest-termites-apicotermes-gurgulifex.png",
+      "type": "image",
+      "title": "10 animal architecture underground nest termites apicotermes gurgulifex",
+      "tags": [
+        "publication-design",
+        "reference",
+        "snapshot"
+      ],
+      "format": [
+        "publication-design"
+      ],
+      "characteristics": [
+        "reference"
+      ],
+      "subject": [],
+      "project_tags": [
+        "personal",
+        "personal",
+        "real-time"
+      ],
+      "medium": "print",
+      "project": "snapshot",
+      "description": "Termite (Apicotermes gurgulifex). A clay nest suspended underground, separated from the surrounding soil by an air gap.",
+      "width": 1088,
+      "height": 1377,
+      "created": "2014-present",
+      "date_range": "2014-present",
+      "year": 2014,
+      "personal": true,
+      "essay_of": "practice/architecture-fantasy/perdido-street-station/perdido-street-station",
+      "hidden_from_feed": true
+    },
+    {
+      "id": "practice-jullie-app-jullie-resume-app",
+      "src": "https://ws6i2dfuggcaavs2.public.blob.vercel-storage.com/images/practice/jullie-app/jullie-resume-app.png",
+      "type": "image",
+      "title": "jullie resume app",
+      "tags": [
+        "web",
+        "interactive"
+      ],
+      "format": [
+        "web"
+      ],
+      "characteristics": [
+        "interactive"
+      ],
+      "subject": [],
+      "project_tags": [
+        "personal",
+        "publication-design",
+        "education"
+      ],
+      "medium": "digital",
+      "project": "jullie",
+      "description": "Image of the garden",
+      "width": 3805,
+      "height": 1984,
+      "created": "2013",
+      "date_range": "2013",
+      "year": 2013,
+      "personal": true
+    },
+    {
+      "id": "practice-architecture-fantasy-perdido-street-station-00-animal-architecture-arch-macrotermes-natalensis",
+      "src": "https://ws6i2dfuggcaavs2.public.blob.vercel-storage.com/images/practice/architecture-fantasy/perdido-street-station/00-animal-architecture-arch-macrotermes-natalensis.png",
+      "type": "image",
+      "title": "00 animal architecture arch macrotermes natalensis",
+      "tags": [
+        "publication-design",
+        "reference",
+        "snapshot"
+      ],
+      "format": [
+        "publication-design"
+      ],
+      "characteristics": [
+        "reference"
+      ],
+      "subject": [],
+      "project_tags": [
+        "personal",
+        "personal",
+        "real-time"
+      ],
+      "medium": "print",
+      "project": "snapshot",
+      "description": "Termites (Macrotermes natalensis) building an arch.",
+      "width": 2169,
+      "height": 1702,
+      "created": "2014-present",
+      "date_range": "2014-present",
+      "year": 2014,
+      "personal": true,
+      "essay_of": "practice/architecture-fantasy/perdido-street-station/perdido-street-station",
+      "hidden_from_feed": true
+    },
+    {
+      "id": "practice-architecture-fantasy-perdido-street-station-02-animal-architecture-sandshell-difflugia-pyriformis-updated",
+      "src": "https://ws6i2dfuggcaavs2.public.blob.vercel-storage.com/images/practice/architecture-fantasy/perdido-street-station/02-animal-architecture-sandshell-difflugia-pyriformis-updated.png",
+      "type": "image",
+      "title": "02 animal architecture sandshell difflugia pyriformis updated",
+      "tags": [
+        "publication-design",
+        "reference",
+        "snapshot"
+      ],
+      "format": [
+        "publication-design"
+      ],
+      "characteristics": [
+        "reference"
+      ],
+      "subject": [],
+      "project_tags": [
+        "personal",
+        "personal",
+        "real-time"
+      ],
+      "medium": "print",
+      "project": "snapshot",
+      "description": "Difflugia pyriformis. An amoeba that builds its shell from swallowed sand.",
+      "width": 2174,
+      "height": 2072,
+      "created": "2014-present",
+      "date_range": "2014-present",
+      "year": 2014,
+      "personal": true,
+      "essay_of": "practice/architecture-fantasy/perdido-street-station/perdido-street-station",
+      "hidden_from_feed": true
+    },
+    {
+      "id": "practice-architecture-fantasy-perdido-street-station-05-animal-architecture-galleries-built-termites-reticulitermes",
+      "src": "https://ws6i2dfuggcaavs2.public.blob.vercel-storage.com/images/practice/architecture-fantasy/perdido-street-station/05-animal-architecture-galleries-built-termites-reticulitermes.png",
+      "type": "image",
+      "title": "05 animal architecture galleries built termites reticulitermes",
+      "tags": [
+        "publication-design",
+        "reference",
+        "snapshot"
+      ],
+      "format": [
+        "publication-design"
+      ],
+      "characteristics": [
+        "reference"
+      ],
+      "subject": [],
+      "project_tags": [
+        "personal",
+        "personal",
+        "real-time"
+      ],
+      "medium": "print",
+      "project": "snapshot",
+      "description": "Reticulitermes. A colony building a covered gallery from one bottle to the next.",
+      "width": 2188,
+      "height": 2362,
+      "created": "2014-present",
+      "date_range": "2014-present",
+      "year": 2014,
+      "personal": true,
+      "essay_of": "practice/architecture-fantasy/perdido-street-station/perdido-street-station",
+      "hidden_from_feed": true
+    },
+    {
+      "id": "practice-architecture-fantasy-perdido-street-station-11-animal-architecture-dam-beaver",
+      "src": "https://ws6i2dfuggcaavs2.public.blob.vercel-storage.com/images/practice/architecture-fantasy/perdido-street-station/11-animal-architecture-dam-beaver.png",
+      "type": "image",
+      "title": "11 animal architecture dam beaver",
+      "tags": [
+        "publication-design",
+        "reference",
+        "snapshot"
+      ],
+      "format": [
+        "publication-design"
+      ],
+      "characteristics": [
+        "reference"
+      ],
+      "subject": [],
+      "project_tags": [
+        "personal",
+        "personal",
+        "real-time"
+      ],
+      "medium": "print",
+      "project": "snapshot",
+      "description": "Beaver dam. The structure holds back a pond..",
+      "width": 3353,
+      "height": 2642,
+      "created": "2014-present",
+      "date_range": "2014-present",
+      "year": 2014,
+      "personal": true,
+      "essay_of": "practice/architecture-fantasy/perdido-street-station/perdido-street-station",
+      "hidden_from_feed": true
+    },
+    {
       "id": "reinforcement-learning-gyms",
       "type": "video",
       "video": "https://player.vimeo.com/video/1187652525?background=1&autoplay=1&muted=1&loop=1&playsinline=1",
@@ -21713,6 +22104,8 @@
       ],
       "medium": "video",
       "project": "oppo-MWC-Barcelona",
+      "width": 1920,
+      "height": 1080,
       "year": 2022
     },
     {

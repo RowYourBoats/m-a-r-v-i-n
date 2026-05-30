@@ -10,6 +10,7 @@
 // it's safe to re-run. Dry-run by default; pass --apply to write.
 //
 // Usage:   node scripts/stub-catalogue.mjs <folder-under-public/images> [--apply]
+//          node scripts/stub-catalogue.mjs --all [--apply]   (whole tree; used by `npm run ingest`)
 // Example: node scripts/stub-catalogue.mjs work/studio/marin-montessori --apply
 
 import fs from "node:fs";
@@ -23,20 +24,30 @@ const imagesDir = path.join(root, "public/images");
 
 const args = process.argv.slice(2);
 const apply = args.includes("--apply");
+const all = args.includes("--all");
 const target = args.find((a) => !a.startsWith("--"));
 
-if (!target) {
+if (!all && !target) {
   console.error("usage: node scripts/stub-catalogue.mjs <folder-under-public/images> [--apply]");
+  console.error("       node scripts/stub-catalogue.mjs --all [--apply]");
   process.exit(1);
 }
 
-// Resolve target to a posix path relative to public/images and guard the boundary.
-const rel = path.relative(imagesDir, path.resolve(imagesDir, target)).replace(/\\/g, "/");
-const absDir = path.join(imagesDir, rel);
-if (!rel || rel.startsWith("..") || !fs.existsSync(absDir) || !fs.statSync(absDir).isDirectory()) {
-  console.error(`not a folder under public/images: ${target}`);
-  process.exit(1);
+// --all scans the whole tree; otherwise resolve target relative to public/images
+// and guard the boundary.
+let rel, absDir;
+if (all) {
+  rel = ".";
+  absDir = imagesDir;
+} else {
+  rel = path.relative(imagesDir, path.resolve(imagesDir, target)).replace(/\\/g, "/");
+  absDir = path.join(imagesDir, rel);
+  if (!rel || rel.startsWith("..") || !fs.existsSync(absDir) || !fs.statSync(absDir).isDirectory()) {
+    console.error(`not a folder under public/images: ${target}`);
+    process.exit(1);
+  }
 }
+const scope = all ? "the whole tree" : rel;
 
 const IMAGE_EXT = /\.(jpe?g|png|webp|gif|avif)$/i;
 
@@ -62,8 +73,13 @@ const found = [];
 
 found.sort();
 
+// Machine-readable line for the ingest orchestrator (`npm run ingest`).
+const summary = (added) =>
+  console.log(`##SUMMARY ${JSON.stringify({ step: "stub", apply, added })}`);
+
 if (found.length === 0) {
-  console.log(`no new images under ${rel} — everything there is already catalogued.`);
+  console.log(`no new images under ${scope} — everything there is already catalogued.`);
+  summary([]);
   process.exit(0);
 }
 
@@ -79,7 +95,7 @@ const stubs = found.map((fp) => ({
   subject: [],
 }));
 
-console.log(`${found.length} new image(s) under ${rel}:`);
+console.log(`${found.length} new image(s) under ${scope}:`);
 for (const s of stubs) console.log(`  + ${s.file_path}  ("${s.title}")`);
 
 if (apply) {
@@ -90,3 +106,4 @@ if (apply) {
 } else {
   console.log("\n(dry run — re-run with --apply to write)");
 }
+summary(found);

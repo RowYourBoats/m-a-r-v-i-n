@@ -87,3 +87,4 @@ for (const [clientFile, groups] of byFile) {
 }
 
 console.log(`updated ${updated} client _project.md files`);
+console.log(`##SUMMARY ${JSON.stringify({ step: "sync-image-tags", updated })}`);

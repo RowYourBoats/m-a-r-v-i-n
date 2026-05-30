@@ -144,13 +144,17 @@ const walkForEssays = (dir) => {
 };
 walkForEssays(imagesDir);
 
+// NB: do NOT truncate. The id is a slugified file_path used as the stable key
+// for preserving blob URLs across builds. Deeply-nested long filenames share a
+// long common prefix, so a length cap made distinct files collide on the same
+// id — which then handed them each other's blob URLs (wrong image under the
+// right caption). file_paths are unique, so the full slug is unique.
 const slugify = (s) =>
   s
     .toLowerCase()
     .replace(/\.[a-z0-9]+$/i, "")
     .replace(/[^a-z0-9]+/g, "-")
-    .replace(/^-+|-+$/g, "")
-    .slice(0, 60);
+    .replace(/^-+|-+$/g, "");
 
 const projectFromFile = (file_path) => {
   // 3-level structure: tier/client/project/file
@@ -174,15 +178,42 @@ const mkId = (base) => {
   return final;
 };
 
-// Build image items from catalogue.
-const items = catalogue.map((raw) => {
+// Curation gate: public/images is the source of truth for what *exists*, but
+// the catalogue also holds uncurated stubs (auto-added by `stub-catalogue` for
+// every file on disk — raw deck slides, camera-roll, screenshots — with a
+// filename title and no description/tags). Only publish images a human has
+// actually curated: ones carrying a description and/or any tag. Untagged stubs
+// stay in the catalogue (and in /admin/images, which reads the catalogue
+// directly and has a "missing tags" filter) so they can be gardened later, but
+// they never surface on the site until then.
+const isCurated = (raw) => {
+  const hasDesc = !!(raw.description && String(raw.description).trim());
+  const tagCount =
+    (raw.format || []).length +
+    (raw.characteristics || []).length +
+    (raw.subject || []).length +
+    (raw.tags || []).length;
+  return hasDesc || tagCount > 0;
+};
+const curatedCatalogue = catalogue.filter(isCurated);
+const hiddenStubCount = catalogue.length - curatedCatalogue.length;
+console.log(
+  `curation gate: publishing ${curatedCatalogue.length} curated image(s), ` +
+    `hiding ${hiddenStubCount} uncurated stub(s) (no description or tags — garden them in /admin/images)`,
+);
+
+// Build image items from catalogue (curated entries only).
+const items = curatedCatalogue.map((raw) => {
   const filePath = (raw.file_path || "").replace(/\\/g, "/");
   const slug = projectFromFile(filePath);
   const proj = registry[slug] || registry[FALLBACK_SLUG];
   const id = mkId(slugify(filePath || raw.title || "item"));
   const localSrc = "/images/" + filePath.replace(/^\/+/, "");
-  // Check Blob URLs: id (stable across renames) → new path → old_file_path.
-  let src = blobById.get(id) || blobUrls.get(localSrc);
+  // Check Blob URLs: exact current path first (authoritative), then id (helps
+  // a rename where the path changed), then old_file_path. Path-first is
+  // essential — id is a slugified path that can still collide for unusual
+  // names, and an id-first lookup could hand back another file's blob URL.
+  let src = blobUrls.get(localSrc) || blobById.get(id);
   if (!src && raw.old_file_path) {
     const oldFilePath = raw.old_file_path.replace(/\\/g, "/");
     const oldSrc = "/images/" + oldFilePath.replace(/^\/+/, "");
@@ -405,3 +436,4 @@ console.log(
   path.relative(root, manifestPath),
 );
 console.log("projects:", Object.keys(projects));
+console.log(`##SUMMARY ${JSON.stringify({ step: "build-manifest", items: items.length, projects: Object.keys(projects).length })}`);

@@ -52,18 +52,23 @@ for (const f of fs.readdirSync(pagesDir)) {
 const existing = fs.existsSync(cachePath) ? JSON.parse(fs.readFileSync(cachePath, "utf8")) : {};
 const missing = [...ids].filter((id) => !existing[id]);
 
+const summary = (fetched) =>
+  console.log(`##SUMMARY ${JSON.stringify({ step: "vimeo-posters", referenced: ids.size, fetched })}`);
+
 console.log(`vimeo IDs referenced: ${ids.size}, cached: ${ids.size - missing.length}, to fetch: ${missing.length}`);
 if (missing.length === 0) {
   if (!fs.existsSync(cachePath)) {
     if (APPLY) fs.writeFileSync(cachePath, JSON.stringify(existing, null, 2) + "\n");
     console.log(APPLY ? `wrote empty cache → ${path.relative(root, cachePath)}` : "(dry-run) would write empty cache");
   }
+  summary(0);
   process.exit(0);
 }
 
 if (!APPLY) {
   console.log("dry-run; pass --apply to fetch + write cache. Would fetch:");
   for (const id of missing) console.log(`  ${id}`);
+  summary(0);
   process.exit(0);
 }
 
@@ -91,3 +96,4 @@ for (const id of missing) {
 
 fs.writeFileSync(cachePath, JSON.stringify(out, null, 2) + "\n");
 console.log(`wrote ${Object.keys(out).length} entries → ${path.relative(root, cachePath)}`);
+summary(Object.keys(out).length - Object.keys(existing).length);

@@ -30,3 +30,4 @@ for (const entry of catalogue) {
 
 fs.writeFileSync(catalogPath, JSON.stringify(catalogue, null, 2) + "\n");
 console.log(`stamped ${stamped}, missing ${missing} → ${path.relative(root, catalogPath)}`);
+console.log(`##SUMMARY ${JSON.stringify({ step: "mine-dates", stamped, missing })}`);

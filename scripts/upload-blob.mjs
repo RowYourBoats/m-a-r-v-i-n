@@ -79,3 +79,4 @@ for (const item of manifest.items) {
 
 fs.writeFileSync(manifestPath, JSON.stringify(manifest, null, 2) + "\n");
 console.log(`done — uploaded: ${uploaded}, adopted: ${adopted}, skipped: ${skipped}, failed: ${failed}`);
+console.log(`##SUMMARY ${JSON.stringify({ step: "upload-blob", uploaded, adopted, skipped, failed })}`);

@@ -207,3 +207,4 @@ const schema = {
 };
 fs.writeFileSync(schemaPath, JSON.stringify(schema, null, 2) + "\n");
 console.log(`schema.json: ${schema.tags.length} tags, ${schema.clients.length} clients →`, path.relative(root, schemaPath));
+console.log(`##SUMMARY ${JSON.stringify({ step: "build-projects", projects: Object.keys(projects).length, tags: schema.tags.length, clients: schema.clients.length })}`);

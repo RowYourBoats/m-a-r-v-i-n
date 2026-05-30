@@ -37,3 +37,4 @@ for (const it of current.items || []) {
 
 fs.writeFileSync(manifestPath, JSON.stringify(current, null, 2));
 console.log(`matched: ${matched}, unmatched (no blob upload yet): ${unmatched}`);
+console.log(`##SUMMARY ${JSON.stringify({ step: "rehydrate", matched, unmatched })}`);

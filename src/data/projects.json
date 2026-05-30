@@ -1628,6 +1628,7 @@
     "scale": null,
     "image_tags": [
       "editorial",
+      "exhibition",
       "poster",
       "publication-design"
     ],
@@ -3334,6 +3335,44 @@
     ],
     "videos": []
   },
+  "jullie": {
+    "name": "Jullie App",
+    "slug": "jullie",
+    "client": "personal",
+    "aliases": [],
+    "date_range": "2013",
+    "roles": [],
+    "category": "digital",
+    "image_folders": [
+      "practice/jullie-app"
+    ],
+    "market": "personal",
+    "project_type": [
+      "publication-design"
+    ],
+    "sector": "education",
+    "characteristic": [],
+    "role": null,
+    "scale": null,
+    "image_tags": [
+      "interactive",
+      "web"
+    ],
+    "lead_images": [],
+    "order": [],
+    "personal": true,
+    "snapshot_only": false,
+    "chronological": false,
+    "unlisted": false,
+    "description": "Your career is stored as a pile of short text records, each one turned into a list of numbers (an embedding) that captures its meaning. A job description is turned into the same kind of numbers, plus a few other lenses. \"Matching\" is measuring which career records sit closest to the job description in that number-space -- then re-ranking with some non-vector signals on top. The career corpus never changes when you run a new job; only the question changes. Same subject, different viewer, different view.\n",
+    "credits": [
+      {
+        "role": "Design",
+        "name": "Marvin de Jong"
+      }
+    ],
+    "videos": []
+  },
   "kabk-posters": {
     "name": "KABK Posters",
     "slug": "kabk-posters",
@@ -3369,50 +3408,6 @@
       {
         "role": "Design",
         "name": "Marvin de Jong"
-      }
-    ],
-    "videos": []
-  },
-  "marin-cookbook": {
-    "name": "Marin Montessori Cookbook",
-    "slug": "marin-cookbook",
-    "client": "personal",
-    "aliases": [],
-    "date_range": "2026",
-    "roles": [],
-    "category": "print",
-    "image_folders": [
-      "practice/marin-cookbook"
-    ],
-    "market": "personal",
-    "project_type": [
-      "publication-design",
-      "editorial"
-    ],
-    "sector": "education",
-    "characteristic": [],
-    "role": null,
-    "scale": null,
-    "image_tags": [],
-    "lead_images": [],
-    "order": [],
-    "personal": false,
-    "snapshot_only": false,
-    "chronological": false,
-    "unlisted": false,
-    "description": "A cookbook for and by the parents and students of Marin Montessori.",
-    "credits": [
-      {
-        "role": "Design and Editing",
-        "name": "Marvin de Jong"
-      },
-      {
-        "role": "Editor",
-        "name": "Talia Ida"
-      },
-      {
-        "role": "Editor",
-        "name": "Shree Starkman"
       }
     ],
     "videos": []
