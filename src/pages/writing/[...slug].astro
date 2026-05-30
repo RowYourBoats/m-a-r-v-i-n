@@ -3,6 +3,7 @@ import Base from "@/layouts/Base.astro";
 import { Image } from "astro:assets";
 import { getEntry, render } from "astro:content";
 import manifest from "@/data/manifest.json";
+import { orderItems } from "@/lib/order-items";
 
 const { slug } = Astro.params;
 const entry = await getEntry("writing", slug!);
@@ -14,7 +15,12 @@ const { Content } = await render(entry);
 // Companion images flagged essay_of for this essay (built by build-manifest
 // for every image sharing the essay's folder). Two-column layout shows the
 // text alongside these figures; falls back to single-column when none.
-const figures = (manifest.items as any[]).filter((i) => i.essay_of === entry.id);
+// Ordered like project media: optional `order` list in the essay frontmatter,
+// then alphabetical by filename (so numbered prefixes 00-, 01- … sort right).
+const figures = orderItems(
+  (manifest.items as any[]).filter((i) => i.essay_of === entry.id),
+  entry.data.order || [],
+);
 ---
 
 <Base title={`${entry.data.title} — Marvin de Jong`}>

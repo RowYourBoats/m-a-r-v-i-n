@@ -1,0 +1,548 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>resume -- workflows</title>
+<style>
+  @font-face {
+    font-family: 'PP Neue Montreal';
+    src: local('PP Neue Montreal');
+    font-weight: 400;
+  }
+
+  :root {
+    --bg: #ffffff;
+    --fg: #000000;
+    --accent: #ed0f0a;
+    --code-bg: #f5f5f5;
+    --green: #319f1a;
+    --blue: #293c64;
+    --yellow: #d3bd43;
+    --orange: #d26a37;
+    --dim: 0.5;
+  }
+
+  [data-theme='dark'] {
+    --bg: #293c64;
+    --fg: #ffffff;
+    --accent: #ed0f0a;
+    --code-bg: #1e2d4a;
+    --green: #4dca34;
+    --blue: #8aa8d4;
+    --yellow: #eddb1f;
+    --orange: #e8864a;
+    --dim: 0.6;
+  }
+
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  body {
+    font-family: 'PP Neue Montreal', sans-serif;
+    font-size: 1.15rem;
+    font-weight: 400;
+    line-height: 1.3;
+    color: var(--fg);
+    background: var(--bg);
+    transition: background 0.3s ease, color 0.3s ease;
+    padding: 40px;
+  }
+
+  header {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    padding-bottom: 40px;
+  }
+
+  .header-left {
+    display: flex;
+    gap: 1.5rem;
+    align-items: baseline;
+  }
+
+  h1 {
+    font-size: 1.15rem;
+    font-weight: 400;
+    color: var(--accent);
+  }
+
+  .nav-link {
+    font-size: 0.85rem;
+    color: inherit;
+    text-decoration: none;
+    opacity: var(--dim);
+    transition: opacity 0.15s;
+  }
+
+  .nav-link:hover {
+    opacity: 1;
+    text-decoration: underline;
+    text-underline-offset: 4px;
+    text-decoration-thickness: 2px;
+  }
+
+  .theme-toggle {
+    background: none;
+    border: none;
+    font-family: inherit;
+    font-size: 1.15rem;
+    color: var(--fg);
+    cursor: pointer;
+    padding: 0;
+  }
+
+  .theme-toggle:hover {
+    text-decoration: underline;
+    text-underline-offset: 4px;
+    text-decoration-thickness: 2px;
+  }
+
+  .section {
+    padding: 20px 0;
+  }
+
+  .section-title {
+    font-size: 1.15rem;
+    font-weight: 400;
+    color: var(--accent);
+    padding-bottom: 10px;
+  }
+
+  .section-desc {
+    padding-bottom: 20px;
+    line-height: 1.4;
+  }
+
+  ol {
+    padding-left: 20px;
+  }
+
+  ol li {
+    padding: 4px 0;
+  }
+
+  ol li::marker {
+    font-weight: 400;
+  }
+
+  code {
+    font-size: 1.15rem;
+    background: var(--code-bg);
+    padding: 2px 4px;
+    transition: background 0.3s ease;
+  }
+
+  .detail {
+    font-size: 0.85rem;
+    opacity: var(--dim);
+    padding-top: 4px;
+  }
+
+  .subsection {
+    padding: 10px 0;
+  }
+
+  .subsection-title {
+    font-weight: 400;
+    padding-bottom: 8px;
+  }
+
+  .flow {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    align-items: center;
+    padding: 10px 0 20px;
+  }
+
+  .flow-step {
+    padding: 8px 10px;
+    border: 1px solid var(--fg);
+    font-size: 0.85rem;
+    white-space: nowrap;
+  }
+
+  .flow-arrow {
+    font-size: 0.85rem;
+    opacity: var(--dim);
+  }
+
+  .outcome {
+    padding: 4px 0 4px 20px;
+    font-size: 0.85rem;
+  }
+
+  .outcome-label {
+    font-weight: 400;
+  }
+
+  .kept { color: var(--green); }
+  .removed { color: var(--accent); }
+  .reworded { color: var(--yellow); }
+  .added { color: var(--blue); }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="header-left">
+    <h1>workflows</h1>
+    <a href="index.html" class="nav-link">reference</a>
+    <a href="vector-database.html" class="nav-link">vector database</a>
+  </div>
+  <button class="theme-toggle" onclick="toggleTheme()">dark</button>
+</header>
+
+
+<section class="section">
+  <div class="section-title">Data Model</div>
+  <p class="section-desc">Each bullet carries structured metadata alongside its text. Two fields control how bullets are organized and selected.</p>
+
+  <ol>
+    <li><code>size</code> -- "large", "medium", or "small". Large = full narrative paragraphs (company/project context). Medium = detailed bullet. Small = concise bullet. Bullets without a size are treated as small.</li>
+    <li><code>project</code> -- the project name within a company (e.g. "Picnic", "5G Flagship Store"). Groups size variants together so the pipeline can swap between densities.</li>
+    <li>Other fields: <code>company</code>, <code>role</code>, <code>date</code>, <code>category</code>, <code>tags</code>, <code>pinned</code></li>
+    <li>Categories: experience, teaching, education, exhibition, award, skill, writing</li>
+  </ol>
+</section>
+
+
+<section class="section">
+  <div class="section-title">Resume Generation</div>
+  <p class="section-desc">The core pipeline. Extracts requirements from a job description, scores every bullet against them, then generates a tailored resume. The pipeline is size-aware -- it searches concise bullets for precision, then expands to richer variants for the LLM.</p>
+
+  <div class="flow">
+    <span class="flow-step">JD file</span>
+    <span class="flow-arrow">-></span>
+    <span class="flow-step">Extract requirements</span>
+    <span class="flow-arrow">-></span>
+    <span class="flow-step">Search (small only)</span>
+    <span class="flow-arrow">-></span>
+    <span class="flow-step">Score bullets</span>
+    <span class="flow-arrow">-></span>
+    <span class="flow-step">Apply match memory</span>
+    <span class="flow-arrow">-></span>
+    <span class="flow-step">Select top 25</span>
+    <span class="flow-arrow">-></span>
+    <span class="flow-step">Expand siblings</span>
+    <span class="flow-arrow">-></span>
+    <span class="flow-step">Organize by company</span>
+    <span class="flow-arrow">-></span>
+    <span class="flow-step">LLM generates resume</span>
+  </div>
+
+  <ol>
+    <li>Split the JD into ~15 actionable requirement phrases, filtering boilerplate (salary, EEO, benefits)</li>
+    <li>For each requirement, semantic search returns top 10 bullets. Large bullets are excluded from search -- they embed poorly due to length. Also runs global JD match and tag-concept search</li>
+    <li>Score each bullet: best single-requirement match x3.0 (depth wins) plus breadth bonus for covering multiple requirements</li>
+    <li>Apply match memory -- boost bullets kept in similar past JDs (+0.5), penalize removed ones (-0.3)</li>
+    <li>Select: pinned bullets first, then best-per-requirement nominees, then fill by score up to 25</li>
+    <li>Expand siblings: for each selected small bullet, look up its medium sibling (same company + project) and swap it in for richer LLM input. Collect all large bullets for selected companies as narrative context</li>
+    <li>Group by company/role, sorted by relevance (strongest company first). Cap at 6 per company. <code>--chronological</code> instead orders roles by end date, most recent first ("Present" on top) -- relevance still decides which roles appear and breaks date ties</li>
+    <li>Large narratives are injected as company context in the prompt, replacing LLM-generated context docs. File-based context docs serve as fallback for companies without large bullets</li>
+    <li>Save both rendered resume and a raw copy (for later review)</li>
+  </ol>
+
+  <p class="detail">Use <code>--dry</code> to preview the mapping and graveyard without generating. Use <code>--simple</code> for single-shot mode.</p>
+
+  <div class="subsection">
+    <div class="subsection-title">Output &amp; exports</div>
+    <ol>
+      <li>Every run writes to a per-job folder named <code>&lt;company&gt;_&lt;role&gt;_&lt;date&gt;</code>, with files stemmed <code>&lt;name&gt;_&lt;role&gt;</code> so they read as portfolio artifacts on their own</li>
+      <li>Always written: the rendered resume <code>.md</code> and a raw copy (the pre-render baseline <code>resume review</code> diffs against)</li>
+      <li><code>--docx</code> adds a Word <code>.docx</code> styled from the template, a condensed 2-page variant (<code>_2pg.md</code> + <code>_2pg.docx</code>), and -- unless <code>--no-pdf</code> -- a matching <code>.pdf</code> beside each <code>.docx</code></li>
+      <li>PDFs render through the installed Word app, so they match the <code>.docx</code> line-for-line and <em>embed</em> the fonts -- the fix for mobile, where an opened <code>.docx</code> falls back to a system font</li>
+      <li>The export step is partial-failure tolerant: if <code>.docx</code> or PDF fails, the <code>.md</code> is still on disk and the run is marked partial rather than errored</li>
+    </ol>
+    <p class="detail">PDF fidelity needs Microsoft Word installed and <code>PP Neue Montreal</code> installed <em>for all users</em> (machine-wide). Word automation can't see per-user fonts and silently substitutes Arial into the PDF.</p>
+  </div>
+</section>
+
+
+<section class="section">
+  <div class="section-title">Batch Generation</div>
+  <p class="section-desc">Run the resume pipeline across many job descriptions in one warm process. The store and Ollama client load once, so the model cold-start cost is paid a single time instead of per JD.</p>
+
+  <div class="flow">
+    <span class="flow-step">JD files / directory</span>
+    <span class="flow-arrow">-></span>
+    <span class="flow-step">Expand + filter</span>
+    <span class="flow-arrow">-></span>
+    <span class="flow-step">Per JD: full pipeline</span>
+    <span class="flow-arrow">-></span>
+    <span class="flow-step">.md + .docx + PDF</span>
+    <span class="flow-arrow">-></span>
+    <span class="flow-step">Summary table + JSON</span>
+  </div>
+
+  <ol>
+    <li><code>resume batch &lt;jds...&gt;</code> takes any mix of JD files and directories. Directories expand to their <code>*.md</code> children, skipping <code>_template*</code></li>
+    <li>Each JD runs the same pipeline as <code>resume query</code>, writing <code>.docx</code> + a matching PDF by default. The warm process amortizes model load across the whole batch</li>
+    <li>Continues past per-JD errors by default and reports them at the end. <code>--stop-on-error</code> halts on the first failure</li>
+    <li><code>--skip-existing</code> skips JDs already generated within the last 7 days (<code>--skip-within-days N</code> to tune, <code>0</code> = same day only). Only folders that actually contain a resume count, so an empty/half-built folder never causes a skip. The default re-runs and overwrites (folder layout is idempotent)</li>
+    <li>Prints a per-JD summary line and writes a <code>batch_*.json</code> sidecar to the output dir recording status, company/role, and which artifacts succeeded</li>
+  </ol>
+
+  <p class="detail">Flags: <code>--no-docx</code> (markdown only), <code>--no-pdf</code> (skip the PDFs), <code>--top-n</code>, <code>--model</code>. Same Word + machine-wide font requirement as single-JD export.</p>
+</section>
+
+
+<section class="section">
+  <div class="section-title">Cover Letter</div>
+  <p class="section-desc">Two modes: build a kit for manual assembly, or have the LLM draft one using your voice samples.</p>
+
+  <div class="subsection">
+    <div class="subsection-title">Kit mode (default)</div>
+    <ol>
+      <li>Extract requirements from JD</li>
+      <li>Match bullets and narratives per requirement</li>
+      <li>Output a structured markdown kit: narratives up top, then per-requirement sections with matched bullets and narratives</li>
+    </ol>
+  </div>
+
+  <div class="subsection">
+    <div class="subsection-title">Generate mode (--generate)</div>
+    <ol>
+      <li>Same matching as kit mode</li>
+      <li>Collect top 10 experience bullets, matched narratives, and all voice-sample narratives</li>
+      <li>LLM drafts 3-4 paragraphs. Every claim must trace to a bullet or narrative. Voice samples set tone but are not quoted</li>
+    </ol>
+  </div>
+</section>
+
+
+<section class="section">
+  <div class="section-title">Gardening</div>
+  <p class="section-desc">Bulk editing and quality control for your bullet library. Two garden file formats are supported.</p>
+
+  <div class="subsection">
+    <div class="subsection-title">Narrative format (default)</div>
+    <ol>
+      <li>Garden files use <code># Company — Role</code> headers, <code>## Project</code> subheaders, and <code>**Large**</code> / <code>**Medium**</code> / <code>**Small**</code> size markers</li>
+      <li>Large sections contain full narrative paragraphs. Medium and Small are dash-prefixed bullet lists</li>
+      <li>Special sections at the bottom: Teaching, Exhibitions, Education, Awards, Skills, Writing</li>
+      <li><code>resume garden-import</code> auto-detects narrative format by the presence of size markers</li>
+    </ol>
+  </div>
+
+  <div class="subsection">
+    <div class="subsection-title">Legacy format</div>
+    <ol>
+      <li>Flat structure: <code>## Experience</code> > <code>### Company | Role</code> > <code>- bullet</code></li>
+      <li>No size or project metadata. Auto-detected when no size markers are found</li>
+    </ol>
+  </div>
+
+  <div class="subsection">
+    <div class="subsection-title">Export</div>
+    <ol>
+      <li><code>resume garden</code> exports in narrative format if any bullets have size metadata, otherwise legacy</li>
+      <li><code>resume garden --format csv</code> exports as CSV regardless</li>
+    </ol>
+  </div>
+
+  <div class="subsection">
+    <div class="subsection-title">Web dashboard</div>
+    <ol>
+      <li><code>resume garden --serve</code> launches a dashboard on localhost:5000</li>
+      <li>Unified table with five columns (where, when, what, how, tags) across all sections: Roles, Projects, Exhibitions, Education, Awards, Skills</li>
+      <li>Detail slider on Projects toggles between large/medium/small view -- fallback shows the closest available size</li>
+      <li>Pinned bullets show at full opacity, unpinned are dimmed. Click a row to toggle</li>
+      <li>Sortable column headers with chronological date sorting</li>
+      <li><code>resume garden --chat</code> starts an interactive curator chat</li>
+    </ol>
+  </div>
+
+  <div class="subsection">
+    <div class="subsection-title">Deduplication</div>
+    <ol>
+      <li>For each bullet, semantic search for near-duplicates above a similarity threshold (default 0.85)</li>
+      <li>For each pair: keep one, merge with LLM, or skip</li>
+      <li><code>--auto</code> keeps the longer bullet automatically</li>
+    </ol>
+  </div>
+
+  <div class="subsection">
+    <div class="subsection-title">Retagging</div>
+    <ol>
+      <li>LLM extracts tiered tags per bullet: PRIMARY (specific tools, projects, metrics) and ~SECONDARY (broad skills)</li>
+      <li>Uses existing tag vocabulary to prevent drift</li>
+      <li>Default merges with existing tags. <code>--replace</code> overwrites</li>
+    </ol>
+  </div>
+</section>
+
+
+<section class="section">
+  <div class="section-title">Context Documents</div>
+  <p class="section-desc">Per-company narratives that feed into resume generation. Large bullets in the narrative garden format now serve as the primary source of context, with LLM-generated context docs as a fallback.</p>
+
+  <div class="subsection">
+    <div class="subsection-title">From garden (primary)</div>
+    <ol>
+      <li>Large bullets written in the garden file are hand-authored narratives per project</li>
+      <li>During resume generation, <code>expand_with_siblings()</code> collects large bullets for selected companies and injects them as context in the LLM prompt</li>
+      <li>Higher quality than LLM-generated context because they contain specific details, names, and first-person perspective</li>
+    </ol>
+  </div>
+
+  <div class="subsection">
+    <div class="subsection-title">From LLM (fallback)</div>
+    <ol>
+      <li><code>resume context generate</code> groups bullets by company (minimum 3) and asks the LLM to synthesize a narrative</li>
+      <li>Used as fallback for companies that lack large bullets in the garden</li>
+      <li><code>resume context list</code> shows all context docs. <code>resume context derive &lt;company&gt;</code> generates new bullets from a context doc</li>
+    </ol>
+  </div>
+</section>
+
+
+<section class="section">
+  <div class="section-title">Team Bios</div>
+  <p class="section-desc">Hand-written per-company prose about the team you worked on. Indexed separately and surfaced during resume generation alongside context docs.</p>
+
+  <ol>
+    <li>Add .md files to the team bios directory with company/role frontmatter</li>
+    <li><code>resume team-bio index</code> indexes all bios into a dedicated ChromaDB collection</li>
+    <li><code>resume team-bio search "query"</code> finds relevant bios by semantic search</li>
+    <li>During resume generation, matched team bios are included as additional context for the LLM</li>
+  </ol>
+</section>
+
+
+<section class="section">
+  <div class="section-title">Narratives</div>
+  <p class="section-desc">Prose voice samples and experience narratives used in cover letter generation.</p>
+
+  <ol>
+    <li>Add .md files with type and tags frontmatter to the narratives directory</li>
+    <li><code>resume narratives</code> lists all loaded narratives with type and tags</li>
+    <li><code>resume narrative-add &lt;file&gt;</code> copies a file into the narratives directory</li>
+    <li>During cover letter generation, narratives are matched per-requirement and voice samples set the tone</li>
+  </ol>
+</section>
+
+
+<section class="section">
+  <div class="section-title">Learning Loop</div>
+  <p class="section-desc">The system learns from your edits. No training -- just score adjustments and new bullet variants that compound over time.</p>
+
+  <div class="flow">
+    <span class="flow-step">Generate resume</span>
+    <span class="flow-arrow">-></span>
+    <span class="flow-step">User edits</span>
+    <span class="flow-arrow">-></span>
+    <span class="flow-step">resume review</span>
+    <span class="flow-arrow">-></span>
+    <span class="flow-step">Diff + ingest</span>
+    <span class="flow-arrow">-></span>
+    <span class="flow-step">Match record saved</span>
+    <span class="flow-arrow">-></span>
+    <span class="flow-step">Future scores adjusted</span>
+  </div>
+
+  <ol>
+    <li>Generate a resume with <code>resume query</code> (saves both rendered and raw copy)</li>
+    <li>Edit the resume -- remove weak bullets, reword others, add new ones</li>
+    <li>Run <code>resume review &lt;edited&gt; --jd &lt;jd&gt;</code></li>
+    <li>The system diffs the original against your edits:</li>
+  </ol>
+
+  <div class="outcome">
+    <span class="outcome-label kept">Kept</span> -- bullet confirmed. Tracked in match record
+  </div>
+  <div class="outcome">
+    <span class="outcome-label removed">Removed</span> -- bullet rejected. Penalized -0.3 for similar future JDs
+  </div>
+  <div class="outcome">
+    <span class="outcome-label reworded">Reworded</span> -- new variant ingested as a separate bullet (>= 75% word overlap detected)
+  </div>
+  <div class="outcome">
+    <span class="outcome-label added">Added</span> -- new bullet ingested with metadata extracted from context
+  </div>
+
+  <ol start="5">
+    <li>Match record (YAML) stores kept/removed bullet IDs tied to this JD</li>
+    <li>On next <code>resume query</code>, <code>apply_match_memory()</code> finds similar past JDs by word overlap and adjusts scores</li>
+    <li>Over multiple review cycles, selection converges toward your preferences without any model retraining</li>
+  </ol>
+</section>
+
+
+<section class="section">
+  <div class="section-title">Data Ingestion</div>
+  <p class="section-desc">Multiple ways to get bullets into the system.</p>
+
+  <ol>
+    <li><code>resume add "text" --company X</code> -- single bullet with metadata (supports <code>--size</code> and <code>--project</code>)</li>
+    <li><code>resume ingest</code> -- bulk ingest all .md files from input/bullets/</li>
+    <li><code>resume ingest-resume &lt;file&gt; --tag</code> -- parse an existing resume into individual bullets with auto-tagging</li>
+    <li><code>resume watch</code> -- continuous file watcher that auto-ingests on create/modify/delete</li>
+    <li><code>resume playground ingest</code> -- sandbox ingest for experimentation, promoted to main store with <code>playground promote</code></li>
+    <li><code>resume migrate</code> -- one-time migration from old directory layout (bullets/, data/) to input/ structure</li>
+  </ol>
+
+  <p class="detail">All bullets are stored as markdown files with YAML frontmatter (including size and project fields) in input/bullets/ and indexed in ChromaDB with Ollama embeddings.</p>
+</section>
+
+
+<section class="section">
+  <div class="section-title">Playground</div>
+  <p class="section-desc">An isolated sandbox for experimenting with bulk PDF/MD ingestion before committing to the main store.</p>
+
+  <div class="flow">
+    <span class="flow-step">PDFs / MDs</span>
+    <span class="flow-arrow">-></span>
+    <span class="flow-step">playground ingest</span>
+    <span class="flow-arrow">-></span>
+    <span class="flow-step">Review (list / garden)</span>
+    <span class="flow-arrow">-></span>
+    <span class="flow-step">playground promote --all</span>
+    <span class="flow-arrow">-></span>
+    <span class="flow-step">Main store</span>
+  </div>
+
+  <ol>
+    <li><code>resume playground ingest [folder]</code> parses PDFs and MDs into bullets in a separate ChromaDB collection</li>
+    <li><code>resume playground list</code> and <code>playground garden</code> let you review before committing</li>
+    <li><code>resume playground promote --all</code> copies playground bullets and files into the main store</li>
+    <li><code>resume playground purge</code> clears the sandbox without touching main data</li>
+  </ol>
+
+  <p class="detail">Run <code>resume deduplicate</code> after promoting to clean up overlaps with existing bullets.</p>
+</section>
+
+
+<section class="section">
+  <div class="section-title">Snapshot Diff</div>
+  <p class="section-desc">Track changes to the store over time.</p>
+
+  <ol>
+    <li>A snapshot of bullet IDs and text hashes is saved after each <code>ingest</code> or <code>garden-import</code></li>
+    <li><code>resume diff</code> compares the current store against the last snapshot</li>
+    <li>Shows added, removed, and modified bullets with a summary count</li>
+  </ol>
+</section>
+
+
+<script>
+function toggleTheme() {
+  const html = document.documentElement;
+  const btn = document.querySelector('.theme-toggle');
+  if (html.getAttribute('data-theme') === 'light') {
+    html.setAttribute('data-theme', 'dark');
+    btn.textContent = 'light';
+  } else {
+    html.setAttribute('data-theme', 'light');
+    btn.textContent = 'dark';
+  }
+}
+</script>
+
+</body>
+</html>

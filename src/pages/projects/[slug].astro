@@ -3,44 +3,38 @@ import { Image } from "astro:assets";
 import Base from "@/layouts/Base.astro";
 import manifest from "@/data/manifest.json";
 import projectsData from "@/data/projects.json";
+import { getProjectDocs } from "@/lib/app-docs";
+import { orderItems } from "@/lib/order-items";
 
 const { slug } = Astro.params;
 const { projects, items: allManifestItems } = manifest as any;
-const project = projects[slug!];
 
-if (!project || project.snapshot_only) return Astro.redirect("/work");
+// App-doc projects (folders shipping HTML documentation) are sourced from
+// projects.json, which always has the _project.md entry — so an image-less
+// project still resolves rather than redirecting on a missing manifest entry.
+const projectFull = (projectsData as any)[slug!];
+const docs = getProjectDocs(projectFull?.image_folders);
+const isDocProject = docs.length > 0;
+
+const project = projects[slug!];
+if (!isDocProject && (!project || project.snapshot_only)) return Astro.redirect("/work");
 
 // manifest.projects drops `image_folders`, so the tier (work / practice /
 // teaching) comes from projects.json. Practice projects light up the
 // Practice nav item; everything else belongs to /work.
-const projectFull = (projectsData as any)[slug!];
 const tier = projectFull?.image_folders?.[0]?.split("/")[0] ?? "work";
 const isPractice = tier === "practice";
 const navSection = isPractice ? "practice" : "work";
 
-const items = allManifestItems.filter((i: any) => i.project === slug);
+const pageTitle = `${isDocProject ? projectFull.name : project.title} — Marvin de Jong`;
 
-// Apply explicit ordering from `order` field in _project.md frontmatter (surfaced
-// through projects.json by build-projects.mjs). Listed entries come first in
-// listed order; unlisted items fall through to alphabetical key.
-// Key per item: video items use their title; image items use the filename.
-const order: string[] = project.order || [];
-if (order.length || items.length > 1) {
-  const orderIndex = new Map(order.map((f: string, i: number) => [f, i]));
-  const orderKey = (i: any) => i.type === "video"
-    ? (i.title || "")
-    : decodeURIComponent((i.src || "").split("/").pop() || "");
-  items.sort((a: any, b: any) => {
-    const ak = orderKey(a);
-    const bk = orderKey(b);
-    const ai = orderIndex.get(ak);
-    const bi = orderIndex.get(bk);
-    if (ai !== undefined && bi !== undefined) return ai - bi;
-    if (ai !== undefined) return -1;
-    if (bi !== undefined) return 1;
-    return ak.localeCompare(bk);
-  });
-}
+// Order media by the explicit `order` list from _project.md (surfaced through
+// projects.json by build-projects.mjs), then alphabetically by filename/title.
+// Same rule as essays (see src/lib/order-items.ts) so the two stay consistent.
+const items = orderItems(
+  allManifestItems.filter((i: any) => i.project === slug),
+  (project && project.order) || [],
+);
 
 // Tag frequency across items in this project → main tag + other tags
 const tagCounts = new Map<string, number>();
@@ -72,79 +66,127 @@ if (mainTag) {
 }
 ---
 
-<Base title={`${project.title} — Marvin de Jong`} section={navSection}>
-  <header class="project-header">
-    <h1>{project.title}</h1>
-    {project.description && (
-      <div class="description">
-        {project.description.split(/\n\s*\n/).map((para: string) => (
-          <p>{para.trim()}</p>
+<Base title={pageTitle} section={navSection}>
+  {isDocProject ? (
+    <article class="appdoc-page">
+      <header class="project-header">
+        <h1>{projectFull.name}</h1>
+        {projectFull.description && (
+          <div class="description">
+            {projectFull.description.split(/\n\s*\n/).map((para: string) => (
+              <p>{para.trim()}</p>
+            ))}
+          </div>
+        )}
+      </header>
+
+      <nav class="appdoc-toc" aria-label="Contents">
+        {docs.map((doc) => (
+          <div class="appdoc-toc-group">
+            <a href={`#${doc.id}`} class="appdoc-toc-doc">{doc.label}</a>
+            {doc.sections.length > 0 && (
+              <ul>
+                {doc.sections.map((s) => (
+                  <li><a href={`#${s.id}`}>{s.label}</a></li>
+                ))}
+              </ul>
+            )}
+          </div>
+        ))}
+      </nav>
+
+      <div class="appdoc">
+        {docs.map((doc) => (
+          <section id={doc.id} class="appdoc-doc">
+            <h2 class="appdoc-doc-title">{doc.label}</h2>
+            <Fragment set:html={doc.html} />
+          </section>
         ))}
       </div>
-    )}
-    {project.client && <p class="detail-meta">{project.client}{project.year ? ` — ${project.year}` : ""}</p>}
-  </header>
 
-  <div class="project-media">
-    {items.map((item) => (
-      <figure class="project-media-item" data-id={item.id}>
-        {item.type === "video" ? (
-          <div
-            class="project-media-frame"
-            style={item.width && item.height ? `aspect-ratio: ${item.width} / ${item.height}` : undefined}
-          >
-            <iframe src={toUIVideoUrl(item.video)} loading="lazy" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
+      {projectFull.credits && projectFull.credits.length > 0 && (
+        <div class="detail-credits">
+          {projectFull.credits.map((c: any) => (
+            <div><span class="detail-credit-role">{c.role}</span> {c.name}</div>
+          ))}
+        </div>
+      )}
+    </article>
+  ) : (
+    <Fragment>
+      <header class="project-header">
+        <h1>{project.title}</h1>
+        {project.description && (
+          <div class="description">
+            {project.description.split(/\n\s*\n/).map((para: string) => (
+              <p>{para.trim()}</p>
+            ))}
           </div>
-        ) : item.width && item.height ? (
-          <Image
-            src={item.src}
-            width={item.width}
-            height={item.height}
-            widths={[768, 1200, 1920, 2400]}
-            sizes="100vw"
-            alt={item.description || item.title}
-            loading="lazy"
-          />
-        ) : (
-          <img src={item.src} alt={item.description || item.title} loading="lazy" />
         )}
-        {item.title && <figcaption class="label">{item.title}</figcaption>}
-      </figure>
-    ))}
-  </div>
+        {project.client && <p class="detail-meta">{project.client}{project.year ? ` — ${project.year}` : ""}</p>}
+      </header>
 
-  {project.credits && project.credits.length > 0 && (
-    <div class="detail-credits">
-      {project.credits.map((c: any) => (
-        <div><span class="detail-credit-role">{c.role}</span> {c.name}</div>
-      ))}
-    </div>
-  )}
-
-  {mainTag && related.length > 0 && (
-    <section>
-      <p class="detail-meta">More {mainTag}</p>
-      <div class="detail-related">
-        {related.map((s) => (
-          <a href={`/projects/${s.project}`}>
-            {s.width && s.height ? (
+      <div class="project-media">
+        {items.map((item) => (
+          <figure class="project-media-item" data-id={item.id}>
+            {item.type === "video" ? (
+              <div
+                class="project-media-frame"
+                style={item.width && item.height ? `aspect-ratio: ${item.width} / ${item.height}` : undefined}
+              >
+                <iframe src={toUIVideoUrl(item.video)} loading="lazy" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
+              </div>
+            ) : item.width && item.height ? (
               <Image
-                src={s.src}
-                width={s.width}
-                height={s.height}
-                widths={[300, 600, 900]}
-                sizes="300px"
-                alt={s.description || s.title}
-                class="detail-related-thumb"
+                src={item.src}
+                width={item.width}
+                height={item.height}
+                widths={[768, 1200, 1920, 2400]}
+                sizes="100vw"
+                alt={item.description || item.title}
                 loading="lazy"
               />
             ) : (
-              <img src={s.src} alt={s.description || s.title} class="detail-related-thumb" loading="lazy" />
+              <img src={item.src} alt={item.description || item.title} loading="lazy" />
             )}
-          </a>
+            {item.title && <figcaption class="label">{item.title}</figcaption>}
+          </figure>
         ))}
       </div>
-    </section>
-  )}
 
+      {project.credits && project.credits.length > 0 && (
+        <div class="detail-credits">
+          {project.credits.map((c: any) => (
+            <div><span class="detail-credit-role">{c.role}</span> {c.name}</div>
+          ))}
+        </div>
+      )}
+
+      {mainTag && related.length > 0 && (
+        <section>
+          <p class="detail-meta">More {mainTag}</p>
+          <div class="detail-related">
+            {related.map((s) => (
+              <a href={`/projects/${s.project}`}>
+                {s.width && s.height ? (
+                  <Image
+                    src={s.src}
+                    width={s.width}
+                    height={s.height}
+                    widths={[300, 600, 900]}
+                    sizes="300px"
+                    alt={s.description || s.title}
+                    class="detail-related-thumb"
+                    loading="lazy"
+                  />
+                ) : (
+                  <img src={s.src} alt={s.description || s.title} class="detail-related-thumb" loading="lazy" />
+                )}
+              </a>
+            ))}
+          </div>
+        </section>
+      )}
+    </Fragment>
+  )}
 </Base>

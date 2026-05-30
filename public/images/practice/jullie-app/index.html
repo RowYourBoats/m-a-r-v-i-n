@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>resume -- reference</title>
+<style>
+  @font-face {
+    font-family: 'PP Neue Montreal';
+    src: local('PP Neue Montreal');
+    font-weight: 400;
+  }
+  @font-face {
+    font-family: 'PP Neue Montreal';
+    src: local('PP Neue Montreal Medium');
+    font-weight: 500;
+  }
+
+  :root {
+    --bg: #ffffff;
+    --fg: #000000;
+    --accent: #ed0f0a;
+    --code-bg: #f5f5f5;
+  }
+
+  [data-theme='dark'] {
+    --bg: #293c64;
+    --fg: #ffffff;
+    --accent: #ed0f0a;
+    --code-bg: #1e2d4a;
+  }
+
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  body {
+    font-family: 'PP Neue Montreal', sans-serif;
+    font-size: 1.15rem;
+    font-weight: 400;
+    line-height: 1.3;
+    color: var(--fg);
+    background: var(--bg);
+    transition: background 0.3s ease, color 0.3s ease;
+    padding: 40px;
+  }
+
+  header {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    padding-bottom: 40px;
+  }
+
+  h1 {
+    font-size: 1.15rem;
+    font-weight: 500;
+    color: var(--accent);
+  }
+
+  .header-left {
+    display: flex;
+    gap: 1.5rem;
+    align-items: baseline;
+  }
+
+  .nav-link {
+    font-size: 0.85rem;
+    color: inherit;
+    text-decoration: none;
+    opacity: 0.5;
+    transition: opacity 0.15s;
+  }
+
+  .nav-link:hover {
+    opacity: 1;
+    text-decoration: underline;
+    text-underline-offset: 4px;
+    text-decoration-thickness: 2px;
+  }
+
+  .theme-toggle {
+    background: none;
+    border: none;
+    font-family: inherit;
+    font-size: 1.15rem;
+    color: var(--fg);
+    cursor: pointer;
+    padding: 0;
+  }
+
+  .theme-toggle:hover {
+    text-decoration: underline;
+    text-underline-offset: 4px;
+    text-decoration-thickness: 2px;
+  }
+
+  .section {
+    padding: 20px 0;
+  }
+
+  .section-title {
+    font-size: 1.15rem;
+    font-weight: 500;
+    color: var(--accent);
+    padding-bottom: 10px;
+  }
+
+  .section-title .status {
+    font-weight: 400;
+    color: var(--fg);
+    opacity: 0.5;
+  }
+
+  .section.deprecated .command code,
+  .section.deprecated .command p {
+    opacity: 0.6;
+  }
+
+  .command {
+    padding: 8px 0;
+  }
+
+  .command code {
+    font-size: 1.15rem;
+    line-height: 1.3;
+    background: var(--code-bg);
+    padding: 2px 4px;
+    transition: background 0.3s ease;
+  }
+
+  .command p {
+    font-size: 0.85rem;
+    color: var(--fg);
+    opacity: 0.7;
+    padding-top: 4px;
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="header-left">
+    <h1>resume</h1>
+    <a href="workflows.html" class="nav-link">workflows</a>
+    <a href="vector-database.html" class="nav-link">vector database</a>
+  </div>
+  <button class="theme-toggle" onclick="toggleTheme()">dark</button>
+</header>
+
+<section class="section">
+  <div class="section-title">Data In</div>
+
+  <div class="command">
+    <code>resume add "text" --company X</code>
+    <p>Add single bullet with metadata</p>
+  </div>
+
+  <div class="command">
+    <code>resume ingest</code>
+    <p>Bulk ingest all .md files from input/bullets/</p>
+  </div>
+
+  <div class="command">
+    <code>resume ingest-resume &lt;file&gt; --tag</code>
+    <p>Parse existing resume into bullets with auto-tagging</p>
+  </div>
+
+  <div class="command">
+    <code>resume watch</code>
+    <p>Auto-ingest on file create/modify/delete</p>
+  </div>
+
+  <div class="command">
+    <code>resume migrate</code>
+    <p>Migrate files from old directory layout to input/ structure</p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="section-title">Gardening</div>
+
+  <div class="command">
+    <code>resume garden</code>
+    <p>Export all bullets as editable markdown</p>
+  </div>
+
+  <div class="command">
+    <code>resume garden --serve</code>
+    <p>Launch interactive web dashboard (Flask, default port 5000)</p>
+  </div>
+
+  <div class="command">
+    <code>resume garden --chat</code>
+    <p>Start interactive garden curator chat</p>
+  </div>
+
+  <div class="command">
+    <code>resume garden --format csv</code>
+    <p>Export as CSV instead of markdown</p>
+  </div>
+
+  <div class="command">
+    <code>resume garden-import &lt;file&gt; --replace</code>
+    <p>Re-import edited garden file</p>
+  </div>
+
+  <div class="command">
+    <code>resume deduplicate</code>
+    <p>Find dupes: keep, remove, or merge (--auto keeps longer)</p>
+  </div>
+
+  <div class="command">
+    <code>resume retag</code>
+    <p>Deep-tag with tiered tags (--replace to overwrite)</p>
+  </div>
+
+  <div class="command">
+    <code>resume pin "text"</code>
+    <p>Pin bullet (always selected)</p>
+  </div>
+
+  <div class="command">
+    <code>resume unpin "text"</code>
+    <p>Unpin a bullet</p>
+  </div>
+</section>
+
+<section class="section deprecated">
+  <div class="section-title">Context <span class="status">— under consideration</span></div>
+
+  <div class="command">
+    <code>resume context generate</code>
+    <p>Create company narrative docs from bullets. Superseded by Large bullets collected inline during query.</p>
+  </div>
+
+  <div class="command">
+    <code>resume context list</code>
+    <p>List context docs</p>
+  </div>
+
+  <div class="command">
+    <code>resume context derive &lt;company&gt;</code>
+    <p>Generate fresh bullets from a context doc (--dry to preview)</p>
+  </div>
+</section>
+
+<section class="section deprecated">
+  <div class="section-title">Team Bios <span class="status">— under consideration</span></div>
+
+  <div class="command">
+    <code>resume team-bio list</code>
+    <p>List all team bio files. Currently only reach the prompt when a matching context doc exists.</p>
+  </div>
+
+  <div class="command">
+    <code>resume team-bio index</code>
+    <p>(Re)index all team bios into ChromaDB</p>
+  </div>
+
+  <div class="command">
+    <code>resume team-bio search "query"</code>
+    <p>Semantic search across team bios</p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="section-title">Narratives</div>
+
+  <div class="command">
+    <code>resume narratives</code>
+    <p>List all narrative prose files</p>
+  </div>
+
+  <div class="command">
+    <code>resume narrative-add &lt;file&gt;</code>
+    <p>Copy a narrative .md into the narratives directory</p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="section-title">Resume</div>
+
+  <div class="command">
+    <code>resume query &lt;jd&gt; --dry</code>
+    <p>Preview: mapping + graveyard</p>
+  </div>
+
+  <div class="command">
+    <code>resume query &lt;jd&gt;</code>
+    <p>Generate tailored resume</p>
+  </div>
+
+  <div class="command">
+    <code>resume query &lt;jd&gt; --docx</code>
+    <p>Also write .docx + matching PDF + 2-page variant, styled from the Word template (per-job folder)</p>
+  </div>
+
+  <div class="command">
+    <code>resume query &lt;jd&gt; --docx --no-pdf</code>
+    <p>Skip the PDF; write the .docx only</p>
+  </div>
+
+  <div class="command">
+    <code>resume query &lt;jd&gt; --chronological</code>
+    <p>Order roles by end date (most recent first) instead of by relevance — works on batch too</p>
+  </div>
+
+  <div class="command">
+    <code>resume review &lt;edited&gt; --jd &lt;jd&gt;</code>
+    <p>Learn from edits</p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="section-title">Batch</div>
+
+  <div class="command">
+    <code>resume batch &lt;jds...&gt;</code>
+    <p>Process many JDs / a directory in one warm process — .docx + PDF on by default</p>
+  </div>
+
+  <div class="command">
+    <code>resume batch input/jds/ --skip-existing</code>
+    <p>Skip JDs already generated within the last 7 days (--skip-within-days N to tune; counts only folders with real output)</p>
+  </div>
+
+  <div class="command">
+    <code>resume batch input/jds/ --no-pdf</code>
+    <p>Skip PDFs (--no-docx for markdown only, --stop-on-error to halt on first failure)</p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="section-title">Cover Letter</div>
+
+  <div class="command">
+    <code>resume cover-letter &lt;jd&gt;</code>
+    <p>Build cover letter kit</p>
+  </div>
+
+  <div class="command">
+    <code>resume cover-letter &lt;jd&gt; --generate</code>
+    <p>LLM draft</p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="section-title">Analysis</div>
+
+  <div class="command">
+    <code>resume list</code>
+    <p>List all bullets (--category, --company filters)</p>
+  </div>
+
+  <div class="command">
+    <code>resume search "query"</code>
+    <p>Semantic search across bullets</p>
+  </div>
+
+  <div class="command">
+    <code>resume coverage &lt;jd&gt;</code>
+    <p>Check bullet coverage vs JD</p>
+  </div>
+
+  <div class="command">
+    <code>resume companies</code>
+    <p>Career timeline</p>
+  </div>
+
+  <div class="command">
+    <code>resume skills</code>
+    <p>Skill analysis</p>
+  </div>
+
+  <div class="command">
+    <code>resume tags</code>
+    <p>Tag analysis</p>
+  </div>
+
+  <div class="command">
+    <code>resume brief</code>
+    <p>One-page career cheat sheet</p>
+  </div>
+
+  <div class="command">
+    <code>resume diff</code>
+    <p>Show what changed since last snapshot</p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="section-title">Playground</div>
+
+  <div class="command">
+    <code>resume playground ingest [folder]</code>
+    <p>Bulk ingest PDFs/MDs into sandbox</p>
+  </div>
+
+  <div class="command">
+    <code>resume playground list</code>
+    <p>List playground bullets</p>
+  </div>
+
+  <div class="command">
+    <code>resume playground garden</code>
+    <p>Export playground as garden file</p>
+  </div>
+
+  <div class="command">
+    <code>resume playground promote --all</code>
+    <p>Copy playground bullets to main store</p>
+  </div>
+
+  <div class="command">
+    <code>resume playground purge</code>
+    <p>Clear the playground</p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="section-title">Maintenance</div>
+
+  <div class="command">
+    <code>resume purge --yes</code>
+    <p>Delete ALL bullet files and clear the store</p>
+  </div>
+</section>
+
+<script>
+function toggleTheme() {
+  const html = document.documentElement;
+  const btn = document.querySelector('.theme-toggle');
+  if (html.getAttribute('data-theme') === 'light') {
+    html.setAttribute('data-theme', 'dark');
+    btn.textContent = 'light';
+  } else {
+    html.setAttribute('data-theme', 'light');
+    btn.textContent = 'dark';
+  }
+}
+</script>
+
+</body>
+</html>

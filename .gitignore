@@ -11,6 +11,8 @@ dist/
 public/images/**/*
 !public/images/**/
 !public/images/**/*.md
+# App documentation (HTML rendered into project pages) ships in code, not Blob.
+!public/images/**/*.html
 
 # Bullets template
 src/content/bullets/_template.md

@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>resume -- vector database</title>
+<style>
+  @font-face {
+    font-family: 'PP Neue Montreal';
+    src: local('PP Neue Montreal');
+    font-weight: 400;
+  }
+
+  :root {
+    --bg: #ffffff;
+    --fg: #000000;
+    --accent: #ed0f0a;
+    --code-bg: #f5f5f5;
+    --green: #319f1a;
+    --blue: #293c64;
+    --yellow: #d3bd43;
+    --orange: #d26a37;
+    --dim: 0.5;
+  }
+
+  [data-theme='dark'] {
+    --bg: #293c64;
+    --fg: #ffffff;
+    --accent: #ed0f0a;
+    --code-bg: #1e2d4a;
+    --green: #4dca34;
+    --blue: #8aa8d4;
+    --yellow: #eddb1f;
+    --orange: #e8864a;
+    --dim: 0.6;
+  }
+
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  body {
+    font-family: 'PP Neue Montreal', sans-serif;
+    font-size: 1.15rem;
+    font-weight: 400;
+    line-height: 1.3;
+    color: var(--fg);
+    background: var(--bg);
+    transition: background 0.3s ease, color 0.3s ease;
+    padding: 40px;
+  }
+
+  header {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    padding-bottom: 40px;
+  }
+
+  .header-left {
+    display: flex;
+    gap: 1.5rem;
+    align-items: baseline;
+  }
+
+  h1 {
+    font-size: 1.15rem;
+    font-weight: 400;
+    color: var(--accent);
+  }
+
+  .nav-link {
+    font-size: 0.85rem;
+    color: inherit;
+    text-decoration: none;
+    opacity: var(--dim);
+    transition: opacity 0.15s;
+  }
+
+  .nav-link:hover {
+    opacity: 1;
+    text-decoration: underline;
+    text-underline-offset: 4px;
+    text-decoration-thickness: 2px;
+  }
+
+  .theme-toggle {
+    background: none;
+    border: none;
+    font-family: inherit;
+    font-size: 1.15rem;
+    color: var(--fg);
+    cursor: pointer;
+    padding: 0;
+  }
+
+  .theme-toggle:hover {
+    text-decoration: underline;
+    text-underline-offset: 4px;
+    text-decoration-thickness: 2px;
+  }
+
+  .section {
+    padding: 20px 0;
+  }
+
+  .section-title {
+    font-size: 1.15rem;
+    font-weight: 400;
+    color: var(--accent);
+    padding-bottom: 10px;
+  }
+
+  .section-desc {
+    padding-bottom: 20px;
+    line-height: 1.4;
+    max-width: 60rem;
+  }
+
+  ol, ul {
+    padding-left: 20px;
+    max-width: 60rem;
+  }
+
+  ol li, ul li {
+    padding: 4px 0;
+  }
+
+  ol li::marker {
+    font-weight: 400;
+  }
+
+  code {
+    font-size: 1.15rem;
+    background: var(--code-bg);
+    padding: 2px 4px;
+    transition: background 0.3s ease;
+  }
+
+  .detail {
+    font-size: 0.85rem;
+    opacity: var(--dim);
+    padding-top: 4px;
+    max-width: 60rem;
+    line-height: 1.4;
+  }
+
+  .subsection {
+    padding: 10px 0;
+  }
+
+  .subsection-title {
+    font-weight: 400;
+    padding-bottom: 8px;
+  }
+
+  .flow {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    align-items: center;
+    padding: 10px 0 20px;
+  }
+
+  .flow-step {
+    padding: 8px 10px;
+    border: 1px solid var(--fg);
+    font-size: 0.85rem;
+    white-space: nowrap;
+  }
+
+  .flow-arrow {
+    font-size: 0.85rem;
+    opacity: var(--dim);
+  }
+
+  .axis {
+    padding: 6px 0 6px 20px;
+    font-size: 0.95rem;
+    max-width: 60rem;
+  }
+
+  .axis-label {
+    font-weight: 400;
+  }
+
+  .axis-weight {
+    font-size: 0.85rem;
+    opacity: var(--dim);
+  }
+
+  .semantic { color: var(--blue); }
+  .keyphrase { color: var(--accent); }
+  .tag { color: var(--green); }
+  .breadth { color: var(--yellow); }
+  .signature { color: var(--orange); }
+
+  .callout {
+    border-left: 2px solid var(--accent);
+    padding: 4px 0 4px 16px;
+    margin: 8px 0 20px;
+    line-height: 1.4;
+    max-width: 60rem;
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="header-left">
+    <h1>vector database</h1>
+    <a href="index.html" class="nav-link">reference</a>
+    <a href="workflows.html" class="nav-link">workflows</a>
+  </div>
+  <button class="theme-toggle" onclick="toggleTheme()">dark</button>
+</header>
+
+
+<section class="section">
+  <div class="section-title">Mental Model</div>
+  <p class="section-desc">Your career is stored as a pile of short text records, each one turned into a list of numbers (an <em>embedding</em>) that captures its meaning. A job description is turned into the same kind of numbers, plus a few other lenses. "Matching" is measuring which career records sit closest to the job description in that number-space -- then re-ranking with some non-vector signals on top. The career corpus never changes when you run a new job; only the question changes. Same subject, different viewer, different view.</p>
+
+  <div class="callout">One correction to the usual intuition: this is <em>not</em> purely a vector database. Vector similarity (semantic search) is one axis out of five. In the current weights, literal keyword hits are weighted <em>higher</em> than vector similarity. The vectors do the recall; the other axes do much of the ranking.</div>
+</section>
+
+
+<section class="section">
+  <div class="section-title">Two Halves</div>
+  <p class="section-desc">Everything is one of two motions. The <strong>write path</strong> turns a markdown file into embedded records (<code>add</code>, <code>ingest</code>, <code>garden-import</code>, web edits). The <strong>read path</strong> turns a job description into queries that rank those records (<code>query</code>, <code>batch</code>). The store in the middle is ChromaDB in <code>data/</code> -- the only persistent index. The markdown files in <code>input/bullets/</code> are the source of truth; Chroma is the derived, queryable copy.</p>
+
+  <div class="flow">
+    <span class="flow-step">input/bullets/*.md</span>
+    <span class="flow-arrow">-- write --&gt;</span>
+    <span class="flow-step">ChromaDB (data/)</span>
+    <span class="flow-arrow">&lt;-- read --</span>
+    <span class="flow-step">job description</span>
+  </div>
+</section>
+
+
+<section class="section">
+  <div class="section-title">Write Path -- a bullet becomes a vector</div>
+  <p class="section-desc">How text on disk turns into something searchable. Each step is a function you can read in the source.</p>
+
+  <div class="flow">
+    <span class="flow-step">.md file</span>
+    <span class="flow-arrow">-&gt;</span>
+    <span class="flow-step">parse to unit</span>
+    <span class="flow-arrow">-&gt;</span>
+    <span class="flow-step">expand per size</span>
+    <span class="flow-arrow">-&gt;</span>
+    <span class="flow-step">Ollama embeds text</span>
+    <span class="flow-arrow">-&gt;</span>
+    <span class="flow-step">store record + metadata</span>
+    <span class="flow-arrow">-&gt;</span>
+    <span class="flow-step">LLM enrich (tags + signals)</span>
+  </div>
+
+  <ol>
+    <li><strong>File to unit.</strong> <code>parse_bullet_unit()</code> reads a file into a <code>BulletUnit</code> -- one editorial idea with shared metadata (<code>company</code>, <code>role</code>, <code>date</code>, <code>project</code>, <code>tags</code>, <code>signals</code>, stable <code>id</code>) and up to three size bodies (<code>## Small</code> / <code>## Medium</code> / <code>## Large</code>). The 6-char <code>unit_id</code> is assigned once and never regenerated, so edits and re-imports stay anchored.</li>
+    <li><strong>Unit to per-size records.</strong> <code>to_bullets()</code> expands the unit into one record per non-empty size body, keyed <code>{unit_id}:{size}</code>. They share all metadata but <em>each gets its own embedding</em> from its own body text -- so Small and Large renditions of the same project sit near each other but aren't identical.</li>
+    <li><strong>Text to embedding.</strong> The actual vector step. On upsert, ChromaDB sends the body text to Ollama (model <code>qwen3-embedding</code> by default, set in <code>config.yaml</code>) which returns an embedding -- a fixed-length list of numbers encoding meaning. Similar work lands near; unrelated work lands far. Nearness is cosine distance (<code>hnsw:space: cosine</code>).</li>
+    <li><strong>The stored record.</strong> Each Chroma record holds an <code>id</code>, the raw <code>document</code> text, the <code>embedding</code>, and a flat <code>metadata</code> dict of scalars. Metadata matters because the read path filters and scores on it <em>without</em> touching the vectors.</li>
+  </ol>
+
+  <p class="detail">You never see the numbers -- they're an internal coordinate system. The only time a vector surfaces is as a similarity score (<code>1 - distance</code>) in search results.</p>
+</section>
+
+
+<section class="section">
+  <div class="section-title">Enrichment -- tags &amp; signals</div>
+  <p class="section-desc">Raw text alone is a weak handle. Two LLM passes enrich each experience unit. The difference between them is intentional: tags <em>describe</em>, signals <em>certify</em>.</p>
+
+  <div class="subsection">
+    <div class="subsection-title">Tags (open vocabulary)</div>
+    <ol>
+      <li>Two tiers: PRIMARY (specific -- tools, projects, deliverables) and SECONDARY (broad capability, prefixed <code>~</code>)</li>
+      <li>Reuse-existing-vocabulary is enforced so the tag space stays coherent instead of sprawling</li>
+      <li>Auto-runs on <code>add</code> and <code>garden-import</code> for untagged experience units; <code>retag</code> re-runs it deliberately</li>
+    </ol>
+  </div>
+
+  <div class="subsection">
+    <div class="subsection-title">Signals (closed vocabulary)</div>
+    <ol>
+      <li>A fixed capability set in <code>CAPABILITY_DEFINITIONS</code> (e.g. <code>brand-system-scale</code>, <code>design-systems</code>, <code>visual-craft</code>, <code>technical-narrative-translation</code>)</li>
+      <li>The prompt asks "what is this bullet credible <em>evidence</em> of?" -- not what it's about, but what it <em>proves</em></li>
+      <li>0-4 tokens per bullet, "fail rather than reach." You extend the vocabulary by editing the dict, not by letting the LLM invent</li>
+    </ol>
+  </div>
+</section>
+
+
+<section class="section">
+  <div class="section-title">Read Path -- a job description looks at the corpus</div>
+  <p class="section-desc">A JD is not turned into a single query. It is fractured into three lenses, each interrogating the corpus a different way.</p>
+
+  <div class="flow">
+    <span class="flow-step">JD text</span>
+    <span class="flow-arrow">-&gt;</span>
+    <span class="flow-step">requirements</span>
+    <span class="flow-arrow">+</span>
+    <span class="flow-step">keyphrases</span>
+    <span class="flow-arrow">+</span>
+    <span class="flow-step">capability signatures</span>
+    <span class="flow-arrow">-&gt;</span>
+    <span class="flow-step">score &amp; rank bullets</span>
+  </div>
+
+  <ol>
+    <li><strong>Requirements.</strong> The JD is split into sentences, boilerplate (comp, EEO, location) is dropped, and each line is weighted -- hard requirements 1.0, ambiguous 0.5, culture 0.3. Each is semantic-searched on its own, so every distinct ask gets its own shot at surfacing a bullet.</li>
+    <li><strong>Keyphrases.</strong> 12-20 weighted phrases that appear <em>literally</em> in the JD. A verbatim filter throws out anything the LLM hallucinated or paraphrased. Multi-word phrases decompose into single-word backoffs at reduced weight so partial hits still earn credit.</li>
+    <li><strong>Capability signatures.</strong> The JD abstracted into 5-10 underlying capabilities ("brand-system-at-scale"), each grounded in both the closed signal vocabulary and your existing tags. The deepest lens -- what the employer is actually hiring for beneath the wording.</li>
+  </ol>
+</section>
+
+
+<section class="section">
+  <div class="section-title">The Five Scoring Axes</div>
+  <p class="section-desc">Every candidate bullet is scored as a weighted blend. Weights live in <code>config.py</code> and are tunable.</p>
+
+  <div class="axis"><span class="axis-label keyphrase">keyphrase</span> -- literal JD keywords the bullet text contains <span class="axis-weight">(weight 2.0 -- highest)</span></div>
+  <div class="axis"><span class="axis-label semantic">semantic</span> -- best vector similarity to any requirement <span class="axis-weight">(weight 1.5)</span></div>
+  <div class="axis"><span class="axis-label signature">signature</span> -- match against capability signatures, itself a blend of vector + signal + tag <span class="axis-weight">(weight 1.5)</span></div>
+  <div class="axis"><span class="axis-label tag">tag</span> -- fraction of JD tags the bullet also carries <span class="axis-weight">(weight 1.0)</span></div>
+  <div class="axis"><span class="axis-label breadth">breadth</span> -- small bonus for covering multiple requirements <span class="axis-weight">(weight 1.0)</span></div>
+
+  <div class="callout">The headline: keyphrase (2.0) outweighs the semantic vector axis (1.5). The vector database does the <em>recall</em> -- it finds candidates worth considering at all -- but literal keyword overlap does more of the <em>ranking</em>. If a bullet you expected didn't surface, check whether it shares actual words with the JD before suspecting the embeddings.</div>
+
+  <p class="section-desc" style="padding-top:10px;">After scoring, a few cleanups run: a company-affinity bump for the best-fit company, unit-level dedup (only the strongest size variant of a project survives), near-duplicate suppression, and phased selection (pins first, then each requirement's best bullet, then fill by score). Large bodies are excluded from selection throughout -- they're matching context, not resume content.</p>
+</section>
+
+
+<section class="section">
+  <div class="section-title">Viewer &amp; Subject</div>
+  <p class="section-desc">What happens to the view of your career when the thing doing the looking changes position. This maps onto the architecture cleanly, and it tells you what the system can surface.</p>
+
+  <ul>
+    <li><strong>The subject is fixed.</strong> Your corpus -- embeddings, tags, signals -- is computed once at ingest and doesn't move when you run a job. A fixed constellation of points in meaning-space.</li>
+    <li><strong>The viewer is the JD.</strong> A job description is a <em>position</em> in that same space plus a set of lenses. Running a query is placing the viewer somewhere and asking "what's nearby, and bright, from here?"</li>
+    <li><strong>Move the viewer, the view changes.</strong> A design-systems JD and an experiential-events JD stand in different places. The Herman Miller brand-pillar bullet is bright from the first, dim from the second -- not because the bullet changed, but because the angle did. Nothing was rewritten; the projection rotated.</li>
+    <li><strong>The lenses change the view independently of position.</strong> Two JDs near each other in vector space can still pull different bullets if their literal keyphrases or capability signatures differ -- those axes care about wording and certified capability, not geometric nearness.</li>
+    <li><strong>Coverage gaps are viewer-relative.</strong> A capability signature with no bullet above the confidence threshold is a gap <em>from that viewpoint</em> -- something this employer wants that your corpus can't prove. Move the viewer and the gaps move.</li>
+    <li><strong>Drift over time.</strong> Because the viewer is data, you can hold one JD still and watch how your <em>answers</em> to it change as you add bullets. The viewer holds, the subject grows, the view sharpens -- the longitudinal signal of a maturing corpus.</li>
+    <li><strong>A self-portrait view.</strong> The viewer needn't be an external JD. Point it at your own stated ambition ("creative director, brand-led, AI-native studio") and the same machinery surfaces which bullets already argue for it and which signatures stay ungrounded. The subject becomes its own viewer.</li>
+  </ul>
+
+  <p class="detail">The clean way to hold it: embeddings give you a space, lenses give you a question, the JD gives you a standpoint. Change any of the three and the view changes while the career underneath stays exactly what it is.</p>
+</section>
+
+
+<section class="section">
+  <div class="section-title">What It Can Surface Over Time</div>
+  <p class="section-desc">Beyond per-JD resumes, the same store already supports -- or is a short hop from -- these views.</p>
+
+  <ol>
+    <li><strong>Capability coverage map</strong> -- which closed-vocab signals your corpus can prove vs. which are thin or empty. A direct read on what to go <em>do</em>, not just what to write</li>
+    <li><strong>Company x capability matrix</strong> -- the matrix view already crosses companies with tags; signals would make it crossings of proven capability by era</li>
+    <li><strong>Gap-to-target</strong> -- given a target role described once, the set of signatures it needs that your corpus doesn't yet ground</li>
+    <li><strong>Redundancy / over-indexing</strong> -- clusters of bullets sitting on top of each other in vector space mean you're saying one thing many ways; the dedup logic already detects this</li>
+    <li><strong>Vocabulary drift</strong> -- tags appearing on only one bullet (caught by the frequency gate) are noise the system already distrusts; surfacing them invites cleanup</li>
+  </ol>
+</section>
+
+
+<section class="section">
+  <div class="section-title">The Ingestion Dashboard <span style="opacity:0.5;">— shipped</span></div>
+  <p class="section-desc">The write-side console now lives in the garden UI (<code>garden --serve</code> → <code>/ingest</code>). It makes the ingest → enrich → store pipeline visible and stepwise instead of a one-shot CLI call, with you in the loop at each step.</p>
+
+  <div class="flow">
+    <span class="flow-step">paste / PDF</span>
+    <span class="flow-arrow">-&gt;</span>
+    <span class="flow-step">split &amp; size</span>
+    <span class="flow-arrow">-&gt;</span>
+    <span class="flow-step">review tags + signals</span>
+    <span class="flow-arrow">-&gt;</span>
+    <span class="flow-step">embed &amp; commit</span>
+    <span class="flow-arrow">-&gt;</span>
+    <span class="flow-step">coverage feedback</span>
+  </div>
+
+  <ol>
+    <li><strong>Intake</strong> -- paste text / a resume, or upload a PDF (<code>_extract_pdf_text</code> + <code>_parse_resume_lines</code>). Output: <strong>drafts</strong> — JSON staging records in <code>input/_drafts/</code>, outside <code>bullets_dir</code> so the loader/watcher never embed them</li>
+    <li><strong>Split &amp; size</strong> -- <code>split</code> breaks a body into one draft per sentence; the inline editor drafts Small/Medium/Large bodies. Still nothing embedded</li>
+    <li><strong>Review tags &amp; signals</strong> -- per-draft <code>propose tags</code> / <code>propose signals</code> run the enrichers on demand; approve or edit before commit. The single biggest quality lever — everything downstream rides on tag/signal accuracy</li>
+    <li><strong>Embed &amp; commit</strong> -- <code>commit_draft</code> is the only embed point: write the <code>.md</code> → <code>upsert_unit</code> → delete the draft, in that order, so a failed embed leaves nothing half-done</li>
+    <li><strong>Coverage feedback</strong> -- a live coverage strip shows per-signal counts; each commit flashes the before/after delta (<code>design-systems 0→1</code>), so you add bullets toward gaps, not blindly</li>
+  </ol>
+
+  <div class="callout"><strong>Core invariant:</strong> a draft is never embedded until you commit. <strong>What it isn't:</strong> not a resume builder, not a writing tool — an ingestion and enrichment console that orchestrates existing functions (<code>write_bullet_unit</code>, <code>upsert_unit</code>, the enrichers) rather than replacing them. New code is one module (<code>ingestion.py</code>) plus two templates.</div>
+</section>
+
+
+<section class="section">
+  <div class="section-title">The Capability Timeline <span style="opacity:0.5;">— shipped</span></div>
+  <p class="section-desc"><code>/timeline</code> answers "when did each capability first surface, and where does it recur?" — two renderings of one deferred aggregate (<code>capability_timeline</code>), toggled client-side.</p>
+
+  <ol>
+    <li><strong>Milestones</strong> (default) -- each capability as a row ordered by the year it first appeared, with the originating role. A single-proof-point capability is flagged "thinly proven" — the hook for adding new roles as evidence</li>
+    <li><strong>Bands</strong> -- a capability × year grid marking every recurrence, first occurrence highlighted. Same data, denser view</li>
+  </ol>
+
+  <p class="detail">Needs the <code>signals</code> field populated — that's what the dashboard's review step is for going forward. To backfill the existing corpus in one pass, run <code>resume retag-signals</code> (CLI); until then the timeline shows an empty-state hint. A new <code>_start_date_key</code> (LHS mirror of <code>query._end_date_key</code>) parses the <em>start</em> of each date range so "first surfaced" is real.</p>
+</section>
+
+
+<section class="section">
+  <div class="section-title">Source Map</div>
+  <ol>
+    <li><code>embeddings.py</code> -- the Ollama embedding function (text to vector)</li>
+    <li><code>store.py</code> -- ChromaDB wrapper: <code>upsert_unit</code>, <code>search</code>, cosine space, metadata round-trip</li>
+    <li><code>models.py</code> -- <code>Bullet</code> / <code>BulletUnit</code>, <code>to_bullets()</code>, <code>bullet_to_metadata</code>, stable <code>unit_id</code></li>
+    <li><code>query.py</code> -- the whole read path: requirement / keyphrase / signature extraction, <code>CAPABILITY_DEFINITIONS</code>, the five-axis blend in <code>select_bullets</code></li>
+    <li><code>config.py</code> -- the scoring weights (<code>score_alpha_semantic</code> through <code>score_epsilon_signature</code>) and quality gates</li>
+    <li><code>ingestion.py</code> -- write-side console: <code>Draft</code> + I/O, <code>commit_draft</code>, <code>signal_coverage</code> / <code>capability_timeline</code> (with <code>_start_date_key</code>); routes in <code>garden_web.py</code>, views in <code>templates/web/ingest.html</code> + <code>timeline.html</code></li>
+    <li><code>docs/bullets.md</code> -- the unit model and storage layout in more depth</li>
+  </ol>
+</section>
+
+
+<script>
+function toggleTheme() {
+  const html = document.documentElement;
+  const btn = document.querySelector('.theme-toggle');
+  if (html.getAttribute('data-theme') === 'light') {
+    html.setAttribute('data-theme', 'dark');
+    btn.textContent = 'light';
+  } else {
+    html.setAttribute('data-theme', 'light');
+    btn.textContent = 'dark';
+  }
+}
+</script>
+
+</body>
+</html>

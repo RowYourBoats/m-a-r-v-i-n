@@ -12,6 +12,10 @@ const writing = defineCollection({
     // essay's folder) to show on the Practice card. Falls back to the first
     // uploaded companion image when omitted.
     cover: z.string().optional(),
+    // Optional explicit order for companion figures (filenames). Listed first
+    // in order; the rest fall through to alphabetical filename. Same rule as a
+    // project's `order:` — usually unnecessary if files are numbered.
+    order: z.array(z.string()).optional(),
   }),
 });
 
