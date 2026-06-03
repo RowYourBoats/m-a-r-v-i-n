@@ -21743,7 +21743,7 @@
       "id": "practice-precog-ouroboros-precog-magazine-stephaniehanes-page1",
       "src": "https://ws6i2dfuggcaavs2.public.blob.vercel-storage.com/images/practice/precog/ouroboros/PreCog-Magazine-StephanieHanes-page1.jpg",
       "type": "image",
-      "title": "PreCog Magazine StephanieHanes page1",
+      "title": "PreCog Magazine Stephanie Hanes Opening Page",
       "tags": [
         "editorial",
         "3d",
@@ -21772,17 +21772,17 @@
       "personal": true
     },
     {
-      "id": "practice-precog-ouroboros-precog-magazine-stephaniehanes-page2",
-      "src": "https://ws6i2dfuggcaavs2.public.blob.vercel-storage.com/images/practice/precog/ouroboros/PreCog-Magazine-StephanieHanes-page2.jpg",
+      "id": "practice-precog-ouroboros-precog-magazine-stephaniehanes-page2-3",
+      "src": "/images/practice/precog/ouroboros/PreCog-Magazine-StephanieHanes-page2-3.jpg",
       "type": "image",
-      "title": "PreCog Magazine StephanieHanes page2",
+      "title": "PreCog Magazine Stephanie Hanes Spread 1",
       "tags": [
-        "editorial",
+        "publication-design",
         "3d",
         "typography"
       ],
       "format": [
-        "editorial"
+        "publication-design"
       ],
       "characteristics": [
         "3d"
@@ -21797,24 +21797,24 @@
       "medium": "print",
       "project": "ouroboros",
       "description": "",
-      "width": 1200,
+      "width": 2392,
       "height": 1500,
       "created": "April 4, 2026",
       "date_range": "April 4, 2026",
       "personal": true
     },
     {
-      "id": "practice-precog-ouroboros-precog-magazine-stephaniehanes-page3",
-      "src": "https://ws6i2dfuggcaavs2.public.blob.vercel-storage.com/images/practice/precog/ouroboros/PreCog-Magazine-StephanieHanes-page3.jpg",
+      "id": "practice-precog-ouroboros-precog-magazine-stephaniehanes-page4-5",
+      "src": "/images/practice/precog/ouroboros/PreCog-Magazine-StephanieHanes-page4-5.jpg",
       "type": "image",
-      "title": "PreCog Magazine StephanieHanes page3",
+      "title": "PreCog Magazine Stephanie Hanes Spread 2",
       "tags": [
-        "editorial",
+        "publication-design",
         "3d",
         "typography"
       ],
       "format": [
-        "editorial"
+        "publication-design"
       ],
       "characteristics": [
         "3d"
@@ -21829,71 +21829,7 @@
       "medium": "print",
       "project": "ouroboros",
       "description": "",
-      "width": 1200,
-      "height": 1500,
-      "created": "April 4, 2026",
-      "date_range": "April 4, 2026",
-      "personal": true
-    },
-    {
-      "id": "practice-precog-ouroboros-precog-magazine-stephaniehanes-page4",
-      "src": "https://ws6i2dfuggcaavs2.public.blob.vercel-storage.com/images/practice/precog/ouroboros/PreCog-Magazine-StephanieHanes-page4.jpg",
-      "type": "image",
-      "title": "PreCog Magazine StephanieHanes page4",
-      "tags": [
-        "editorial",
-        "3d",
-        "typography"
-      ],
-      "format": [
-        "editorial"
-      ],
-      "characteristics": [
-        "3d"
-      ],
-      "subject": [
-        "typography"
-      ],
-      "project_tags": [
-        "personal",
-        "personal"
-      ],
-      "medium": "print",
-      "project": "ouroboros",
-      "description": "",
-      "width": 1200,
-      "height": 1500,
-      "created": "April 4, 2026",
-      "date_range": "April 4, 2026",
-      "personal": true
-    },
-    {
-      "id": "practice-precog-ouroboros-precog-magazine-stephaniehanes-page5",
-      "src": "https://ws6i2dfuggcaavs2.public.blob.vercel-storage.com/images/practice/precog/ouroboros/PreCog-Magazine-StephanieHanes-page5.jpg",
-      "type": "image",
-      "title": "PreCog Magazine StephanieHanes page5",
-      "tags": [
-        "editorial",
-        "3d",
-        "typography"
-      ],
-      "format": [
-        "editorial"
-      ],
-      "characteristics": [
-        "3d"
-      ],
-      "subject": [
-        "typography"
-      ],
-      "project_tags": [
-        "personal",
-        "personal"
-      ],
-      "medium": "print",
-      "project": "ouroboros",
-      "description": "",
-      "width": 1200,
+      "width": 2390,
       "height": 1500,
       "created": "April 4, 2026",
       "date_range": "April 4, 2026",

@@ -2,6 +2,20 @@
 
 Newest run first. Appended automatically by `npm run ingest`.
 
+## 2026-06-03T22:03:03.440Z — ingest (applied)
+
+- **reconcile:** 0 remap(s), 0 dropped, 22 unregistered on disk
+- **stub:** +2 new image(s)
+  - `practice/precog/ouroboros/PreCog-Magazine-StephanieHanes-page2-3.jpg`
+  - `practice/precog/ouroboros/PreCog-Magazine-StephanieHanes-page4-5.jpg`
+- **mine-dates:** 719 stamped, 123 missing
+- **sync-image-tags:** 0 _project.md updated
+- **build-projects:** 78 projects, 50 tags, 19 clients
+- **build-manifest:** 689 items across 71 projects
+- **rehydrate:** 0 matched, 0 unmatched
+- **upload-blob:** uploaded 0, adopted 0, skipped 689, failed 0
+- **vimeo-posters:** 2 referenced, 0 fetched
+
 ## 2026-06-03T20:12:01.987Z — ingest (applied)
 
 - **reconcile:** 0 remap(s), 0 quarantined (kept), 20 unregistered on disk
