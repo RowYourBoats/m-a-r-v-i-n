@@ -2,6 +2,18 @@
 
 Newest run first. Appended automatically by `npm run ingest`.
 
+## 2026-06-03T22:19:58.653Z — ingest (applied)
+
+- **reconcile:** 0 remap(s), 0 quarantined (kept), 20 unregistered on disk
+- **stub:** +0 new image(s)
+- **mine-dates:** 719 stamped, 123 missing
+- **sync-image-tags:** 0 _project.md updated
+- **build-projects:** 78 projects, 50 tags, 19 clients
+- **build-manifest:** 691 items across 71 projects
+- **rehydrate:** 0 matched, 2 unmatched
+- **upload-blob:** uploaded 2, adopted 0, skipped 689, failed 0
+- **vimeo-posters:** 2 referenced, 0 fetched
+
 ## 2026-06-03T22:03:03.440Z — ingest (applied)
 
 - **reconcile:** 0 remap(s), 0 dropped, 22 unregistered on disk
