@@ -2,6 +2,35 @@
 
 Newest run first. Appended automatically by `npm run ingest`.
 
+## 2026-06-03T20:12:01.987Z — ingest (applied)
+
+- **reconcile:** 0 remap(s), 0 quarantined (kept), 20 unregistered on disk
+- **stub:** +0 new image(s)
+- **mine-dates:** 721 stamped, 123 missing
+- **sync-image-tags:** 1 _project.md updated
+- **build-projects:** 78 projects, 50 tags, 19 clients
+- **build-manifest:** 693 items across 71 projects
+- **rehydrate:** 0 matched, 5 unmatched
+- **upload-blob:** uploaded 5, adopted 0, skipped 688, failed 0
+- **vimeo-posters:** 2 referenced, 0 fetched
+
+## 2026-06-03T20:01:42.808Z — ingest (applied)
+
+- **reconcile:** 0 remap(s), 0 quarantined (kept), 25 unregistered on disk
+- **stub:** +5 new image(s)
+  - `practice/precog/ouroboros/PreCog-Magazine-StephanieHanes-page1.jpg`
+  - `practice/precog/ouroboros/PreCog-Magazine-StephanieHanes-page2.jpg`
+  - `practice/precog/ouroboros/PreCog-Magazine-StephanieHanes-page3.jpg`
+  - `practice/precog/ouroboros/PreCog-Magazine-StephanieHanes-page4.jpg`
+  - `practice/precog/ouroboros/PreCog-Magazine-StephanieHanes-page5.jpg`
+- **mine-dates:** 721 stamped, 123 missing
+- **sync-image-tags:** 0 _project.md updated
+- **build-projects:** 78 projects, 50 tags, 19 clients
+- **build-manifest:** 688 items across 70 projects
+- **rehydrate:** 0 matched, 0 unmatched
+- **upload-blob:** uploaded 0, adopted 0, skipped 688, failed 0
+- **vimeo-posters:** 2 referenced, 0 fetched
+
 ## 2026-05-30T07:07:37.458Z — ingest (applied)
 
 - **reconcile:** 0 remap(s), 3 dropped, 20 unregistered on disk

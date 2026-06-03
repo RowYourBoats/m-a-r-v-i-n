@@ -147,7 +147,8 @@
         "label": "editorial",
         "matches": [
           "editorial",
-          "publication-design"
+          "publication-design",
+          "essay"
         ]
       }
     ],
@@ -230,6 +231,7 @@
     "diagram",
     "editorial",
     "education",
+    "essay",
     "event",
     "exhibition",
     "furniture",

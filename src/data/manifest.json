@@ -998,6 +998,28 @@
       "order": [],
       "snapshot_only": false
     },
+    "ouroboros": {
+      "title": "Ouroboros",
+      "description": "Article design for Celestial Bodies written by Kelsey Sucenca featuring work by Stephanie Hanes. The design was part of a Precog magazine's Ouroboros issue and combined folding and overlapping 3D geometry with modernist typography.",
+      "client": "personal",
+      "year": null,
+      "credits": [
+        {
+          "role": "Design",
+          "name": "Marvin de Jong"
+        },
+        {
+          "role": "Author",
+          "name": "Kelsey Sucenca"
+        },
+        {
+          "role": "Artist",
+          "name": "Stephanie Hanes"
+        }
+      ],
+      "order": [],
+      "snapshot_only": false
+    },
     "smoke-systems": {
       "title": "Smoke",
       "description": "Continuing exploration of smoke and particle systems, both real-time and rendered, in Unreal Engine.",
@@ -1526,20 +1548,24 @@
       "title": "Neon Korean Typography Experiment",
       "tags": [
         "installation",
+        "editorial",
         "real-time",
         "3d",
         "interactive",
+        "essay",
         "letter-design",
         "typography",
         "snapshot"
       ],
       "format": [
-        "installation"
+        "installation",
+        "editorial"
       ],
       "characteristics": [
         "real-time",
         "3d",
-        "interactive"
+        "interactive",
+        "essay"
       ],
       "subject": [
         "letter-design",
@@ -2223,10 +2249,16 @@
       "type": "image",
       "title": "Haze Series Minimalist Furniture",
       "tags": [
+        "editorial",
+        "essay",
         "photography"
       ],
-      "format": [],
-      "characteristics": [],
+      "format": [
+        "editorial"
+      ],
+      "characteristics": [
+        "essay"
+      ],
       "subject": [
         "photography"
       ],
@@ -2254,10 +2286,16 @@
       "type": "image",
       "title": "Unfocused Table Installation",
       "tags": [
+        "editorial",
+        "essay",
         "photography"
       ],
-      "format": [],
-      "characteristics": [],
+      "format": [
+        "editorial"
+      ],
+      "characteristics": [
+        "essay"
+      ],
       "subject": [
         "photography"
       ],
@@ -20216,14 +20254,19 @@
       "type": "image",
       "title": "Screenshot 2026 01 17 114909",
       "tags": [
+        "editorial",
         "3d",
         "real-time",
+        "essay",
         "snapshot"
       ],
-      "format": [],
+      "format": [
+        "editorial"
+      ],
       "characteristics": [
         "3d",
-        "real-time"
+        "real-time",
+        "essay"
       ],
       "subject": [],
       "project_tags": [
@@ -21216,14 +21259,18 @@
       "title": "01 animal architecture nest sociable weaverbird",
       "tags": [
         "publication-design",
+        "editorial",
         "reference",
+        "essay",
         "snapshot"
       ],
       "format": [
-        "publication-design"
+        "publication-design",
+        "editorial"
       ],
       "characteristics": [
-        "reference"
+        "reference",
+        "essay"
       ],
       "subject": [],
       "project_tags": [
@@ -21250,14 +21297,18 @@
       "title": "03 animal architecture eyrie osprey",
       "tags": [
         "publication-design",
+        "editorial",
         "reference",
+        "essay",
         "snapshot"
       ],
       "format": [
-        "publication-design"
+        "publication-design",
+        "editorial"
       ],
       "characteristics": [
-        "reference"
+        "reference",
+        "essay"
       ],
       "subject": [],
       "project_tags": [
@@ -21284,14 +21335,18 @@
       "title": "04 animal architecture larch stem carpenter ants",
       "tags": [
         "publication-design",
+        "editorial",
         "reference",
+        "essay",
         "snapshot"
       ],
       "format": [
-        "publication-design"
+        "publication-design",
+        "editorial"
       ],
       "characteristics": [
-        "reference"
+        "reference",
+        "essay"
       ],
       "subject": [],
       "project_tags": [
@@ -21318,14 +21373,18 @@
       "title": "06 animal architecture carton nest jet ant",
       "tags": [
         "publication-design",
+        "editorial",
         "reference",
+        "essay",
         "snapshot"
       ],
       "format": [
-        "publication-design"
+        "publication-design",
+        "editorial"
       ],
       "characteristics": [
-        "reference"
+        "reference",
+        "essay"
       ],
       "subject": [],
       "project_tags": [
@@ -21352,14 +21411,18 @@
       "title": "07 animal architecture fungus mass leafcutter ant",
       "tags": [
         "publication-design",
+        "editorial",
         "reference",
+        "essay",
         "snapshot"
       ],
       "format": [
-        "publication-design"
+        "publication-design",
+        "editorial"
       ],
       "characteristics": [
-        "reference"
+        "reference",
+        "essay"
       ],
       "subject": [],
       "project_tags": [
@@ -21386,14 +21449,18 @@
       "title": "08 animal architecture rain roofs termite cubitermes",
       "tags": [
         "publication-design",
+        "editorial",
         "reference",
+        "essay",
         "snapshot"
       ],
       "format": [
-        "publication-design"
+        "publication-design",
+        "editorial"
       ],
       "characteristics": [
-        "reference"
+        "reference",
+        "essay"
       ],
       "subject": [],
       "project_tags": [
@@ -21420,14 +21487,18 @@
       "title": "09 animal architecture nest harvest mouse",
       "tags": [
         "publication-design",
+        "editorial",
         "reference",
+        "essay",
         "snapshot"
       ],
       "format": [
-        "publication-design"
+        "publication-design",
+        "editorial"
       ],
       "characteristics": [
-        "reference"
+        "reference",
+        "essay"
       ],
       "subject": [],
       "project_tags": [
@@ -21454,14 +21525,18 @@
       "title": "10 animal architecture underground nest termites apicotermes gurgulifex",
       "tags": [
         "publication-design",
+        "editorial",
         "reference",
+        "essay",
         "snapshot"
       ],
       "format": [
-        "publication-design"
+        "publication-design",
+        "editorial"
       ],
       "characteristics": [
-        "reference"
+        "reference",
+        "essay"
       ],
       "subject": [],
       "project_tags": [
@@ -21519,14 +21594,18 @@
       "title": "00 animal architecture arch macrotermes natalensis",
       "tags": [
         "publication-design",
+        "editorial",
         "reference",
+        "essay",
         "snapshot"
       ],
       "format": [
-        "publication-design"
+        "publication-design",
+        "editorial"
       ],
       "characteristics": [
-        "reference"
+        "reference",
+        "essay"
       ],
       "subject": [],
       "project_tags": [
@@ -21553,14 +21632,18 @@
       "title": "02 animal architecture sandshell difflugia pyriformis updated",
       "tags": [
         "publication-design",
+        "editorial",
         "reference",
+        "essay",
         "snapshot"
       ],
       "format": [
-        "publication-design"
+        "publication-design",
+        "editorial"
       ],
       "characteristics": [
-        "reference"
+        "reference",
+        "essay"
       ],
       "subject": [],
       "project_tags": [
@@ -21587,14 +21670,18 @@
       "title": "05 animal architecture galleries built termites reticulitermes",
       "tags": [
         "publication-design",
+        "editorial",
         "reference",
+        "essay",
         "snapshot"
       ],
       "format": [
-        "publication-design"
+        "publication-design",
+        "editorial"
       ],
       "characteristics": [
-        "reference"
+        "reference",
+        "essay"
       ],
       "subject": [],
       "project_tags": [
@@ -21621,14 +21708,18 @@
       "title": "11 animal architecture dam beaver",
       "tags": [
         "publication-design",
+        "editorial",
         "reference",
+        "essay",
         "snapshot"
       ],
       "format": [
-        "publication-design"
+        "publication-design",
+        "editorial"
       ],
       "characteristics": [
-        "reference"
+        "reference",
+        "essay"
       ],
       "subject": [],
       "project_tags": [
@@ -21647,6 +21738,166 @@
       "personal": true,
       "essay_of": "practice/architecture-fantasy/perdido-street-station/perdido-street-station",
       "hidden_from_feed": true
+    },
+    {
+      "id": "practice-precog-ouroboros-precog-magazine-stephaniehanes-page1",
+      "src": "https://ws6i2dfuggcaavs2.public.blob.vercel-storage.com/images/practice/precog/ouroboros/PreCog-Magazine-StephanieHanes-page1.jpg",
+      "type": "image",
+      "title": "PreCog Magazine StephanieHanes page1",
+      "tags": [
+        "editorial",
+        "3d",
+        "typography"
+      ],
+      "format": [
+        "editorial"
+      ],
+      "characteristics": [
+        "3d"
+      ],
+      "subject": [
+        "typography"
+      ],
+      "project_tags": [
+        "personal",
+        "personal"
+      ],
+      "medium": "print",
+      "project": "ouroboros",
+      "description": "",
+      "width": 1200,
+      "height": 1500,
+      "created": "April 4, 2026",
+      "date_range": "April 4, 2026",
+      "personal": true
+    },
+    {
+      "id": "practice-precog-ouroboros-precog-magazine-stephaniehanes-page2",
+      "src": "https://ws6i2dfuggcaavs2.public.blob.vercel-storage.com/images/practice/precog/ouroboros/PreCog-Magazine-StephanieHanes-page2.jpg",
+      "type": "image",
+      "title": "PreCog Magazine StephanieHanes page2",
+      "tags": [
+        "editorial",
+        "3d",
+        "typography"
+      ],
+      "format": [
+        "editorial"
+      ],
+      "characteristics": [
+        "3d"
+      ],
+      "subject": [
+        "typography"
+      ],
+      "project_tags": [
+        "personal",
+        "personal"
+      ],
+      "medium": "print",
+      "project": "ouroboros",
+      "description": "",
+      "width": 1200,
+      "height": 1500,
+      "created": "April 4, 2026",
+      "date_range": "April 4, 2026",
+      "personal": true
+    },
+    {
+      "id": "practice-precog-ouroboros-precog-magazine-stephaniehanes-page3",
+      "src": "https://ws6i2dfuggcaavs2.public.blob.vercel-storage.com/images/practice/precog/ouroboros/PreCog-Magazine-StephanieHanes-page3.jpg",
+      "type": "image",
+      "title": "PreCog Magazine StephanieHanes page3",
+      "tags": [
+        "editorial",
+        "3d",
+        "typography"
+      ],
+      "format": [
+        "editorial"
+      ],
+      "characteristics": [
+        "3d"
+      ],
+      "subject": [
+        "typography"
+      ],
+      "project_tags": [
+        "personal",
+        "personal"
+      ],
+      "medium": "print",
+      "project": "ouroboros",
+      "description": "",
+      "width": 1200,
+      "height": 1500,
+      "created": "April 4, 2026",
+      "date_range": "April 4, 2026",
+      "personal": true
+    },
+    {
+      "id": "practice-precog-ouroboros-precog-magazine-stephaniehanes-page4",
+      "src": "https://ws6i2dfuggcaavs2.public.blob.vercel-storage.com/images/practice/precog/ouroboros/PreCog-Magazine-StephanieHanes-page4.jpg",
+      "type": "image",
+      "title": "PreCog Magazine StephanieHanes page4",
+      "tags": [
+        "editorial",
+        "3d",
+        "typography"
+      ],
+      "format": [
+        "editorial"
+      ],
+      "characteristics": [
+        "3d"
+      ],
+      "subject": [
+        "typography"
+      ],
+      "project_tags": [
+        "personal",
+        "personal"
+      ],
+      "medium": "print",
+      "project": "ouroboros",
+      "description": "",
+      "width": 1200,
+      "height": 1500,
+      "created": "April 4, 2026",
+      "date_range": "April 4, 2026",
+      "personal": true
+    },
+    {
+      "id": "practice-precog-ouroboros-precog-magazine-stephaniehanes-page5",
+      "src": "https://ws6i2dfuggcaavs2.public.blob.vercel-storage.com/images/practice/precog/ouroboros/PreCog-Magazine-StephanieHanes-page5.jpg",
+      "type": "image",
+      "title": "PreCog Magazine StephanieHanes page5",
+      "tags": [
+        "editorial",
+        "3d",
+        "typography"
+      ],
+      "format": [
+        "editorial"
+      ],
+      "characteristics": [
+        "3d"
+      ],
+      "subject": [
+        "typography"
+      ],
+      "project_tags": [
+        "personal",
+        "personal"
+      ],
+      "medium": "print",
+      "project": "ouroboros",
+      "description": "",
+      "width": 1200,
+      "height": 1500,
+      "created": "April 4, 2026",
+      "date_range": "April 4, 2026",
+      "personal": true
     },
     {
       "id": "reinforcement-learning-gyms",

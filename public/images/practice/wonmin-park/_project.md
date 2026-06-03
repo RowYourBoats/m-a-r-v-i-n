@@ -24,5 +24,7 @@ projects:
   statements:
     name: Artist & Project Statements
     image_tags:
+      - editorial
+      - essay
       - photography
 ---
