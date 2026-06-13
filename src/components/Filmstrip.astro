@@ -71,20 +71,24 @@ const norm = assets.map((a) => {
 ---
 
 <div class="filmstrip" data-filmstrip>
-  {norm.length > 1 && (
-    <div class="filmstrip-controls" aria-label="Filmstrip navigation">
-      <button type="button" class="filmstrip-control" data-prev aria-label="Previous asset">←</button>
-      <button type="button" class="filmstrip-control" data-next aria-label="Next asset">→</button>
-    </div>
-  )}
-
-  <p class="filmstrip-caption">
-    {norm[0].project_url ? (
-      <a href={norm[0].project_url} data-caption-link>{norm[0].project_label || ""}</a>
-    ) : (
-      <span data-caption-text>{norm[0].project_label || ""}</span>
+  {/* Nav row: prev/next controls and the active-asset caption sit inline,
+     left to right ([← →]  Caption), separated from the stage below by --pad. */}
+  <div class="filmstrip-bar">
+    {norm.length > 1 && (
+      <div class="filmstrip-controls" aria-label="Filmstrip navigation">
+        <button type="button" class="filmstrip-control" data-prev aria-label="Previous asset">←</button>
+        <button type="button" class="filmstrip-control" data-next aria-label="Next asset">→</button>
+      </div>
     )}
-  </p>
+
+    <p class="filmstrip-caption">
+      {norm[0].project_url ? (
+        <a href={norm[0].project_url} data-caption-link>{norm[0].project_label || ""}</a>
+      ) : (
+        <span data-caption-text>{norm[0].project_label || ""}</span>
+      )}
+    </p>
+  </div>
 
   {/*
     Thumbnails hidden for now — left in DOM (display:none) so the swap script

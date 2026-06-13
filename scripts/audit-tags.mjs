@@ -25,7 +25,7 @@ const cataloguePath = path.join(root, "public/images/image_catalogue.json");
 const imagesDir = path.join(root, "public/images");
 const outPath = path.join(root, "docs/tag-audit.json");
 
-const TIERS = ["work", "practice", "teaching"];
+const TIERS = ["work", "practice", "tools", "teaching"];
 const IMAGE_AXES = ["format", "characteristics", "subject", "medium"];
 const PROJECT_AXES = ["project_type", "characteristic", "sector", "market", "image_tags"];
 

@@ -3,30 +3,32 @@ import { Image } from "astro:assets";
 import Base from "@/layouts/Base.astro";
 import manifest from "@/data/manifest.json";
 import projectsData from "@/data/projects.json";
-import { getProjectDocs } from "@/lib/app-docs";
+import { getProjectDoc } from "@/lib/project-doc";
 import { orderItems } from "@/lib/order-items";
 
 const { slug } = Astro.params;
 const { projects, items: allManifestItems } = manifest as any;
 
-// App-doc projects (folders shipping HTML documentation) are sourced from
-// projects.json, which always has the _project.md entry — so an image-less
-// project still resolves rather than redirecting on a missing manifest entry.
+// Doc projects are sourced from projects.json, which always has the _project.md
+// entry — so an image-less project still resolves rather than redirecting on a
+// missing manifest entry.
 const projectFull = (projectsData as any)[slug!];
-const docs = getProjectDocs(projectFull?.image_folders);
-const isDocProject = docs.length > 0;
+
+// Two render modes, in precedence order:
+//   1. Markdown doc — _project.md body with `layout: doc` (see project-doc.ts)
+//   2. Media grid   — the default
+const mdDoc = await getProjectDoc(projectFull?.image_folders);
 
 const project = projects[slug!];
-if (!isDocProject && (!project || project.snapshot_only)) return Astro.redirect("/work");
+if (!mdDoc && (!project || project.snapshot_only)) return Astro.redirect("/work");
 
 // manifest.projects drops `image_folders`, so the tier (work / practice /
-// teaching) comes from projects.json. Practice projects light up the
-// Practice nav item; everything else belongs to /work.
+// tools / teaching) comes from projects.json. Each tier lights up its own nav
+// item; everything else belongs to /work.
 const tier = projectFull?.image_folders?.[0]?.split("/")[0] ?? "work";
-const isPractice = tier === "practice";
-const navSection = isPractice ? "practice" : "work";
+const navSection = tier === "practice" ? "practice" : tier === "tools" ? "tools" : "work";
 
-const pageTitle = `${isDocProject ? projectFull.name : project.title} — Marvin de Jong`;
+const pageTitle = `${mdDoc ? projectFull.name : project.title} — Marvin de Jong`;
 
 // Order media by the explicit `order` list from _project.md (surfaced through
 // projects.json by build-projects.mjs), then alphabetically by filename/title.
@@ -67,7 +69,7 @@ if (mainTag) {
 ---
 
 <Base title={pageTitle} section={navSection}>
-  {isDocProject ? (
+  {mdDoc ? (
     <article class="appdoc-page">
       <header class="project-header">
         <h1>{projectFull.name}</h1>
@@ -80,29 +82,7 @@ if (mainTag) {
         )}
       </header>
 
-      <nav class="appdoc-toc" aria-label="Contents">
-        {docs.map((doc) => (
-          <div class="appdoc-toc-group">
-            <a href={`#${doc.id}`} class="appdoc-toc-doc">{doc.label}</a>
-            {doc.sections.length > 0 && (
-              <ul>
-                {doc.sections.map((s) => (
-                  <li><a href={`#${s.id}`}>{s.label}</a></li>
-                ))}
-              </ul>
-            )}
-          </div>
-        ))}
-      </nav>
-
-      <div class="appdoc">
-        {docs.map((doc) => (
-          <section id={doc.id} class="appdoc-doc">
-            <h2 class="appdoc-doc-title">{doc.label}</h2>
-            <Fragment set:html={doc.html} />
-          </section>
-        ))}
-      </div>
+      <div class="prose projectdoc" set:html={mdDoc.html} />
 
       {projectFull.credits && projectFull.credits.length > 0 && (
         <div class="detail-credits">
@@ -190,3 +170,10 @@ if (mainTag) {
     </Fragment>
   )}
 </Base>
+
+<script>
+  // Mount any inline animated diagrams (```diagram fences in a markdown doc).
+  // No-op on media / HTML-doc pages, which have no [data-diagram] placeholders.
+  import { mountAll } from "@/components/diagrams/registry";
+  mountAll();
+</script>

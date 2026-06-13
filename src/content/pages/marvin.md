@@ -7,6 +7,9 @@ sections:
      body: "Currently he is exploring how real-time engines can help form stay open to change through inputs like movement tracking, MIDI keyboards, sound, and other data. In his work he often engages with the materiality of form and how motion can tell a story."
    - kind: text
      body: "Across these projects, the recurring question is how to make legible, the stories, data, and information that resist easy depiction — history, quantum systems, network infrastructure, AI processes."
+   - kind: link
+     href: /resume
+     label: "Résumé"
    - kind: filmstrip
      assets:
        - src: https://player.vimeo.com/video/1187652525?badge=0&autopause=0&player_id=0&app_id=58479&autoplay=1&muted=1&loop=1
@@ -21,7 +24,5 @@ sections:
          type: video
          project_url: /projects/verizon-5G-home-vui
          project_label: 5G Home VUI
-
-
 
 ---

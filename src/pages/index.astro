@@ -27,6 +27,9 @@ const hasLead = !!entry?.body && entry.body.trim().length > 0;
       if (section.kind === "filmstrip") {
         return <Filmstrip assets={section.assets} />;
       }
+      if (section.kind === "link") {
+        return <p class="prose-line"><a href={section.href}>{section.label}</a></p>;
+      }
       return null;
     })}
   </div>

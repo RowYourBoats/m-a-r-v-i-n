@@ -2,6 +2,381 @@
 
 Newest run first. Appended automatically by `npm run ingest`.
 
+## 2026-06-13T07:35:06.984Z — ingest (applied)
+
+- **reconcile:** 0 remap(s), 2 dropped, 20 unregistered on disk
+  - quarantine: `work/ionq/illustrations/85.png` (file missing — has caption, kept)
+  - quarantine: `work/ionq/illustrations/Screenshot 2026-04-13 231155.png` (file missing — has caption, kept)
+- **stub:** +0 new image(s)
+- **mine-dates:** 758 stamped, 125 missing
+- **sync-image-tags:** 0 _project.md updated
+- **build-projects:** 77 projects, 50 tags, 19 clients
+- **build-manifest:** 712 items across 69 projects
+- **rehydrate:** 0 matched, 0 unmatched
+- **upload-blob:** uploaded 0, adopted 0, skipped 712, failed 0
+- **vimeo-posters:** 2 referenced, 0 fetched
+
+## 2026-06-13T07:34:26.541Z — ingest (applied)
+
+- **reconcile:** 0 remap(s), 2 quarantined (kept), 20 unregistered on disk
+  - quarantine: `work/ionq/illustrations/85.png` (file missing — has caption, kept)
+  - quarantine: `work/ionq/illustrations/Screenshot 2026-04-13 231155.png` (file missing — has caption, kept)
+- **stub:** +0 new image(s)
+- **mine-dates:** 759 stamped, 125 missing
+- **sync-image-tags:** 0 _project.md updated
+- **build-projects:** 77 projects, 50 tags, 19 clients
+- **build-manifest:** 713 items across 69 projects
+- **rehydrate:** 0 matched, 1 unmatched
+- **upload-blob:** uploaded 1, adopted 0, skipped 712, failed 0
+- **vimeo-posters:** 2 referenced, 0 fetched
+
+## 2026-06-13T07:33:24.172Z — ingest (applied)
+
+- **reconcile:** 0 remap(s), 2 quarantined (kept), 21 unregistered on disk
+  - quarantine: `work/ionq/illustrations/85.png` (file missing — has caption, kept)
+  - quarantine: `work/ionq/illustrations/Screenshot 2026-04-13 231155.png` (file missing — has caption, kept)
+- **stub:** +1 new image(s)
+  - `tools/until/until.png`
+- **mine-dates:** 759 stamped, 125 missing
+- **sync-image-tags:** 0 _project.md updated
+- **build-projects:** 77 projects, 50 tags, 19 clients
+- **build-manifest:** 712 items across 69 projects
+- **rehydrate:** 0 matched, 0 unmatched
+- **upload-blob:** uploaded 0, adopted 0, skipped 712, failed 0
+- **vimeo-posters:** 2 referenced, 0 fetched
+
+## 2026-06-13T07:26:06.699Z — ingest (applied)
+
+- **reconcile:** 0 remap(s), 2 quarantined (kept), 20 unregistered on disk
+  - quarantine: `work/ionq/illustrations/85.png` (file missing — has caption, kept)
+  - quarantine: `work/ionq/illustrations/Screenshot 2026-04-13 231155.png` (file missing — has caption, kept)
+- **stub:** +0 new image(s)
+- **mine-dates:** 758 stamped, 125 missing
+- **sync-image-tags:** 0 _project.md updated
+- **build-projects:** 77 projects, 50 tags, 19 clients
+- **build-manifest:** 712 items across 69 projects
+- **rehydrate:** 0 matched, 0 unmatched
+- **upload-blob:** uploaded 0, adopted 0, skipped 712, failed 0
+- **vimeo-posters:** 2 referenced, 0 fetched
+
+## 2026-06-13T07:24:56.231Z — ingest (applied)
+
+- **reconcile:** 0 remap(s), 2 quarantined (kept), 20 unregistered on disk
+  - quarantine: `work/ionq/illustrations/85.png` (file missing — has caption, kept)
+  - quarantine: `work/ionq/illustrations/Screenshot 2026-04-13 231155.png` (file missing — has caption, kept)
+- **stub:** +0 new image(s)
+- **mine-dates:** 758 stamped, 125 missing
+- **sync-image-tags:** 0 _project.md updated
+- **build-projects:** 77 projects, 50 tags, 19 clients
+- **build-manifest:** 712 items across 69 projects
+- **rehydrate:** 0 matched, 0 unmatched
+- **upload-blob:** uploaded 0, adopted 0, skipped 712, failed 0
+- **vimeo-posters:** 2 referenced, 0 fetched
+
+## 2026-06-13T07:04:25.386Z — ingest (applied)
+
+- **reconcile:** 0 remap(s), 2 quarantined (kept), 20 unregistered on disk
+  - quarantine: `work/ionq/illustrations/85.png` (file missing — has caption, kept)
+  - quarantine: `work/ionq/illustrations/Screenshot 2026-04-13 231155.png` (file missing — has caption, kept)
+- **stub:** +0 new image(s)
+- **mine-dates:** 758 stamped, 125 missing
+- **sync-image-tags:** 0 _project.md updated
+- **build-projects:** 77 projects, 50 tags, 19 clients
+- **build-manifest:** 712 items across 69 projects
+- **rehydrate:** 0 matched, 0 unmatched
+- **upload-blob:** uploaded 0, adopted 0, skipped 712, failed 0
+- **vimeo-posters:** 2 referenced, 0 fetched
+
+## 2026-06-13T07:00:31.189Z — ingest (applied)
+
+- **reconcile:** 0 remap(s), 2 quarantined (kept), 20 unregistered on disk
+  - quarantine: `work/ionq/illustrations/85.png` (file missing — has caption, kept)
+  - quarantine: `work/ionq/illustrations/Screenshot 2026-04-13 231155.png` (file missing — has caption, kept)
+- **stub:** +0 new image(s)
+- **mine-dates:** 758 stamped, 125 missing
+- **sync-image-tags:** 0 _project.md updated
+- **build-projects:** 77 projects, 50 tags, 19 clients
+- **build-manifest:** 712 items across 69 projects
+- **rehydrate:** 0 matched, 0 unmatched
+- **upload-blob:** uploaded 0, adopted 0, skipped 712, failed 0
+- **vimeo-posters:** 2 referenced, 0 fetched
+
+## 2026-06-13T07:00:06.145Z — ingest (applied)
+
+- **reconcile:** 0 remap(s), 2 quarantined (kept), 20 unregistered on disk
+  - quarantine: `work/ionq/illustrations/85.png` (file missing — has caption, kept)
+  - quarantine: `work/ionq/illustrations/Screenshot 2026-04-13 231155.png` (file missing — has caption, kept)
+- **stub:** +0 new image(s)
+- **mine-dates:** 758 stamped, 125 missing
+- **sync-image-tags:** 0 _project.md updated
+- **build-projects:** 77 projects, 50 tags, 19 clients
+- **build-manifest:** 712 items across 69 projects
+- **rehydrate:** 0 matched, 0 unmatched
+- **upload-blob:** uploaded 0, adopted 0, skipped 712, failed 0
+- **vimeo-posters:** 2 referenced, 0 fetched
+
+## 2026-06-13T06:58:55.478Z — ingest (applied)
+
+- **reconcile:** 0 remap(s), 2 quarantined (kept), 20 unregistered on disk
+  - quarantine: `work/ionq/illustrations/85.png` (file missing — has caption, kept)
+  - quarantine: `work/ionq/illustrations/Screenshot 2026-04-13 231155.png` (file missing — has caption, kept)
+- **stub:** +0 new image(s)
+- **mine-dates:** 758 stamped, 125 missing
+- **sync-image-tags:** 0 _project.md updated
+- **build-projects:** 77 projects, 50 tags, 19 clients
+- **build-manifest:** 712 items across 69 projects
+- **rehydrate:** 0 matched, 25 unmatched
+- **upload-blob:** uploaded 25, adopted 0, skipped 687, failed 0
+- **vimeo-posters:** 2 referenced, 0 fetched
+
+## 2026-06-13T06:52:12.665Z — ingest (applied)
+
+- **reconcile:** 0 remap(s), 2 quarantined (kept), 21 unregistered on disk
+  - quarantine: `work/ionq/illustrations/85.png` (file missing — has caption, kept)
+  - quarantine: `work/ionq/illustrations/Screenshot 2026-04-13 231155.png` (file missing — has caption, kept)
+- **stub:** +1 new image(s)
+  - `tools/until/until-app.png`
+- **mine-dates:** 758 stamped, 125 missing
+- **sync-image-tags:** 0 _project.md updated
+- **build-projects:** 77 projects, 50 tags, 19 clients
+- **build-manifest:** 687 items across 69 projects
+- **rehydrate:** 0 matched, 0 unmatched
+- **upload-blob:** uploaded 0, adopted 0, skipped 687, failed 0
+- **vimeo-posters:** 2 referenced, 0 fetched
+
+## 2026-06-13T01:54:42.105Z — ingest (applied)
+
+- **reconcile:** 1 remap(s), 2 quarantined (kept), 20 unregistered on disk
+  - remap: `tools/jullie-app/jullie-resume-app.png` → `tools/kept-app/jullie-resume-app.png`
+  - quarantine: `work/ionq/illustrations/85.png` (file missing — has caption, kept)
+  - quarantine: `work/ionq/illustrations/Screenshot 2026-04-13 231155.png` (file missing — has caption, kept)
+- **stub:** +0 new image(s)
+- **mine-dates:** 757 stamped, 125 missing
+- **sync-image-tags:** 0 _project.md updated
+- **build-projects:** 77 projects, 50 tags, 19 clients
+- **build-manifest:** 687 items across 69 projects
+- **rehydrate:** 0 matched, 1 unmatched
+- **upload-blob:** uploaded 1, adopted 0, skipped 686, failed 0
+- **vimeo-posters:** 2 referenced, 0 fetched
+
+## 2026-06-12T23:20:26.850Z — ingest (applied)
+
+- **reconcile:** 0 remap(s), 2 quarantined (kept), 20 unregistered on disk
+  - quarantine: `work/ionq/illustrations/85.png` (file missing — has caption, kept)
+  - quarantine: `work/ionq/illustrations/Screenshot 2026-04-13 231155.png` (file missing — has caption, kept)
+- **stub:** +0 new image(s)
+- **mine-dates:** 757 stamped, 125 missing
+- **sync-image-tags:** 0 _project.md updated
+- **build-projects:** 77 projects, 50 tags, 19 clients
+- **build-manifest:** 687 items across 69 projects
+- **rehydrate:** 0 matched, 0 unmatched
+- **upload-blob:** uploaded 0, adopted 0, skipped 687, failed 0
+- **vimeo-posters:** 2 referenced, 0 fetched
+
+## 2026-06-12T20:26:17.675Z — ingest (applied)
+
+- **reconcile:** 0 remap(s), 2 quarantined (kept), 20 unregistered on disk
+  - quarantine: `work/ionq/illustrations/85.png` (file missing — has caption, kept)
+  - quarantine: `work/ionq/illustrations/Screenshot 2026-04-13 231155.png` (file missing — has caption, kept)
+- **stub:** +0 new image(s)
+- **mine-dates:** 757 stamped, 125 missing
+- **sync-image-tags:** 0 _project.md updated
+- **build-projects:** 77 projects, 50 tags, 19 clients
+- **build-manifest:** 687 items across 69 projects
+- **rehydrate:** 0 matched, 0 unmatched
+- **upload-blob:** uploaded 0, adopted 0, skipped 687, failed 0
+- **vimeo-posters:** 2 referenced, 0 fetched
+
+## 2026-06-12T20:11:08.590Z — ingest (applied)
+
+- **reconcile:** 0 remap(s), 2 quarantined (kept), 20 unregistered on disk
+  - quarantine: `work/ionq/illustrations/85.png` (file missing — has caption, kept)
+  - quarantine: `work/ionq/illustrations/Screenshot 2026-04-13 231155.png` (file missing — has caption, kept)
+- **stub:** +0 new image(s)
+- **mine-dates:** 757 stamped, 125 missing
+- **sync-image-tags:** 0 _project.md updated
+- **build-projects:** 77 projects, 50 tags, 19 clients
+- **build-manifest:** 687 items across 69 projects
+- **rehydrate:** 0 matched, 0 unmatched
+- **upload-blob:** uploaded 0, adopted 0, skipped 687, failed 0
+- **vimeo-posters:** 2 referenced, 0 fetched
+
+## 2026-06-12T18:23:40.027Z — ingest (applied)
+
+- **reconcile:** 0 remap(s), 2 quarantined (kept), 20 unregistered on disk
+  - quarantine: `work/ionq/illustrations/85.png` (file missing — has caption, kept)
+  - quarantine: `work/ionq/illustrations/Screenshot 2026-04-13 231155.png` (file missing — has caption, kept)
+- **stub:** +0 new image(s)
+- **mine-dates:** 757 stamped, 125 missing
+- **sync-image-tags:** 0 _project.md updated
+- **build-projects:** 77 projects, 50 tags, 19 clients
+- **build-manifest:** 687 items across 69 projects
+- **rehydrate:** 0 matched, 0 unmatched
+- **upload-blob:** uploaded 0, adopted 0, skipped 687, failed 0
+- **vimeo-posters:** 2 referenced, 0 fetched
+
+## 2026-06-12T18:22:19.206Z — ingest (applied)
+
+- **reconcile:** 0 remap(s), 2 quarantined (kept), 20 unregistered on disk
+  - quarantine: `work/ionq/illustrations/85.png` (file missing — has caption, kept)
+  - quarantine: `work/ionq/illustrations/Screenshot 2026-04-13 231155.png` (file missing — has caption, kept)
+- **stub:** +0 new image(s)
+- **mine-dates:** 757 stamped, 125 missing
+- **sync-image-tags:** 0 _project.md updated
+- **build-projects:** 77 projects, 50 tags, 19 clients
+- **build-manifest:** 687 items across 69 projects
+- **rehydrate:** 0 matched, 0 unmatched
+- **upload-blob:** uploaded 0, adopted 0, skipped 687, failed 0
+- **vimeo-posters:** 2 referenced, 0 fetched
+
+## 2026-06-12T18:14:35.540Z — ingest (applied)
+
+- **reconcile:** 0 remap(s), 2 quarantined (kept), 20 unregistered on disk
+  - quarantine: `work/ionq/illustrations/85.png` (file missing — has caption, kept)
+  - quarantine: `work/ionq/illustrations/Screenshot 2026-04-13 231155.png` (file missing — has caption, kept)
+- **stub:** +0 new image(s)
+- **mine-dates:** 757 stamped, 125 missing
+- **sync-image-tags:** 0 _project.md updated
+- **build-projects:** 77 projects, 50 tags, 19 clients
+- **build-manifest:** 687 items across 69 projects
+- **rehydrate:** 0 matched, 0 unmatched
+- **upload-blob:** uploaded 0, adopted 0, skipped 687, failed 0
+- **vimeo-posters:** 2 referenced, 0 fetched
+
+## 2026-06-12T18:02:40.294Z — ingest (applied)
+
+- **reconcile:** 0 remap(s), 2 quarantined (kept), 20 unregistered on disk
+  - quarantine: `work/ionq/illustrations/85.png` (file missing — has caption, kept)
+  - quarantine: `work/ionq/illustrations/Screenshot 2026-04-13 231155.png` (file missing — has caption, kept)
+- **stub:** +0 new image(s)
+- **mine-dates:** 757 stamped, 125 missing
+- **sync-image-tags:** 0 _project.md updated
+- **build-projects:** 77 projects, 50 tags, 19 clients
+- **build-manifest:** 687 items across 69 projects
+- **rehydrate:** 0 matched, 0 unmatched
+- **upload-blob:** uploaded 0, adopted 0, skipped 687, failed 0
+- **vimeo-posters:** 2 referenced, 0 fetched
+
+## 2026-06-12T17:53:52.108Z — ingest (applied)
+
+- **reconcile:** 0 remap(s), 2 quarantined (kept), 20 unregistered on disk
+  - quarantine: `work/ionq/illustrations/85.png` (file missing — has caption, kept)
+  - quarantine: `work/ionq/illustrations/Screenshot 2026-04-13 231155.png` (file missing — has caption, kept)
+- **stub:** +0 new image(s)
+- **mine-dates:** 757 stamped, 125 missing
+- **sync-image-tags:** 0 _project.md updated
+- **build-projects:** 77 projects, 50 tags, 19 clients
+- **build-manifest:** 687 items across 69 projects
+- **rehydrate:** 0 matched, 0 unmatched
+- **upload-blob:** uploaded 0, adopted 0, skipped 687, failed 0
+- **vimeo-posters:** 2 referenced, 0 fetched
+
+## 2026-06-12T17:49:27.667Z — ingest (applied)
+
+- **reconcile:** 0 remap(s), 2 quarantined (kept), 20 unregistered on disk
+  - quarantine: `work/ionq/illustrations/85.png` (file missing — has caption, kept)
+  - quarantine: `work/ionq/illustrations/Screenshot 2026-04-13 231155.png` (file missing — has caption, kept)
+- **stub:** +0 new image(s)
+- **mine-dates:** 757 stamped, 125 missing
+- **sync-image-tags:** 0 _project.md updated
+- **build-projects:** 77 projects, 50 tags, 19 clients
+- **build-manifest:** 687 items across 69 projects
+- **rehydrate:** 0 matched, 0 unmatched
+- **upload-blob:** uploaded 0, adopted 0, skipped 687, failed 0
+- **vimeo-posters:** 2 referenced, 0 fetched
+
+## 2026-06-12T17:48:41.036Z — ingest (applied)
+
+- **reconcile:** 0 remap(s), 2 quarantined (kept), 20 unregistered on disk
+  - quarantine: `work/ionq/illustrations/85.png` (file missing — has caption, kept)
+  - quarantine: `work/ionq/illustrations/Screenshot 2026-04-13 231155.png` (file missing — has caption, kept)
+- **stub:** +0 new image(s)
+- **mine-dates:** 757 stamped, 125 missing
+- **sync-image-tags:** 0 _project.md updated
+- **build-projects:** 78 projects, 50 tags, 20 clients
+- **build-manifest:** 687 items across 70 projects
+- **rehydrate:** 0 matched, 0 unmatched
+- **upload-blob:** uploaded 0, adopted 0, skipped 687, failed 0
+- **vimeo-posters:** 2 referenced, 0 fetched
+
+## 2026-06-12T17:47:32.839Z — ingest (applied)
+
+- **reconcile:** 0 remap(s), 2 quarantined (kept), 20 unregistered on disk
+  - quarantine: `work/ionq/illustrations/85.png` (file missing — has caption, kept)
+  - quarantine: `work/ionq/illustrations/Screenshot 2026-04-13 231155.png` (file missing — has caption, kept)
+- **stub:** +0 new image(s)
+- **mine-dates:** 757 stamped, 125 missing
+- **sync-image-tags:** 0 _project.md updated
+- **build-projects:** 78 projects, 50 tags, 20 clients
+- **build-manifest:** 687 items across 70 projects
+- **rehydrate:** 0 matched, 0 unmatched
+- **upload-blob:** uploaded 0, adopted 0, skipped 687, failed 0
+- **vimeo-posters:** 2 referenced, 0 fetched
+
+## 2026-06-12T17:28:16.656Z — ingest (applied)
+
+- **reconcile:** 6 remap(s), 2 dropped, 64 unregistered on disk
+  - remap: `practice/yale/public-browsing/publicBrowsing_01.png` → `tools/public-browsing/publicBrowsing_01.png`
+  - remap: `practice/yale/public-browsing/publicBrowsing_02.png` → `tools/public-browsing/publicBrowsing_02.png`
+  - remap: `practice/yale/public-browsing/publicBrowsing_03.png` → `tools/public-browsing/publicBrowsing_03.png`
+  - remap: `practice/yale/public-browsing/publicBrowsing_04.png` → `tools/public-browsing/publicBrowsing_04.png`
+  - remap: `practice/yale/public-browsing/publicBrowsing_05.png` → `tools/public-browsing/publicBrowsing_05.png`
+  - remap: `practice/jullie-app/jullie-resume-app.png` → `tools/jullie-app/jullie-resume-app.png`
+  - quarantine: `work/ionq/illustrations/85.png` (file missing — has caption, kept)
+  - quarantine: `work/ionq/illustrations/Screenshot 2026-04-13 231155.png` (file missing — has caption, kept)
+- **stub:** +44 new image(s)
+  - `work/ionq/brand/Frame 161268501.png`
+  - `work/ionq/brand/Group 161268327.png`
+  - `work/ionq/brand/IonQ Brand Guidelines - 101.png`
+  - `work/ionq/brand/IonQ-Brand-Image-Color-highres.png`
+  - `work/ionq/brand/IonQ-Brand-Image-highres.png`
+  - `work/ionq/brand/image 50.png`
+  - `work/ionq/deck/Group 161268386.png`
+  - `work/ionq/deck/IonQ Presentation Template 2023_For Superside_Page_01.png`
+  - `work/ionq/deck/IonQ Presentation Template 2023_For Superside_Page_02.png`
+  - `work/ionq/deck/IonQ Presentation Template 2023_For Superside_Page_03.png`
+  - `work/ionq/deck/IonQ Presentation Template 2023_For Superside_Page_05.png`
+  - `work/ionq/deck/IonQ Presentation Template 2023_For Superside_Page_06.png`
+  - `work/ionq/deck/IonQ Presentation Template 2023_For Superside_Page_08.png`
+  - `work/ionq/deck/IonQ Presentation Template 2023_For Superside_Page_09.png`
+  - `work/ionq/deck/IonQ Presentation Template 2023_For Superside_Page_12.png`
+  - `work/ionq/deck/IonQ Presentation Template 2023_For Superside_Page_14.png`
+  - `work/ionq/facade/IONQ Exterior Colors Renders.png`
+  - `work/ionq/icons/Frame 161268476.png`
+  - `work/ionq/icons/Frame 161268477.png`
+  - `work/ionq/icons/Frame 161268478.png`
+  - `work/ionq/icons/Frame 161268479.png`
+  - `work/ionq/icons/Frame 161268480.png`
+  - `work/ionq/icons/Frame 161268481.png`
+  - `work/ionq/icons/Frame 161268482.png`
+  - `work/ionq/icons/Frame 161268483.png`
+  - `work/ionq/icons/Frame 161268484.png`
+  - `work/ionq/icons/Frame 161268485.png`
+  - `work/ionq/icons/Frame 161268486.png`
+  - `work/ionq/icons/Frame 161268487.png`
+  - `work/ionq/illustrations/Elements.png`
+  - `work/ionq/illustrations/Frame 161268454.png`
+  - `work/ionq/illustrations/Frame.png`
+  - `work/ionq/illustrations/Illustration 3_White.png`
+  - `work/ionq/illustrations/IonQ Brand Guidelines - 102.png`
+  - `work/ionq/illustrations/IonTrap.png`
+  - `work/ionq/illustrations/QuantumComputing-Security.png`
+  - `work/ionq/one-pagers/Group 161268384.png`
+  - `work/ionq/one-pagers/Group 161268385.png`
+  - `work/ionq/photography-video/스크린샷 2024-08-23 030829 1.png`
+  - `work/ionq/photography-video/스크린샷 2024-08-23 032319 1.png`
+  - `work/ionq/photography-video/스크린샷 2024-08-23 032319 2.png`
+  - `work/ionq/templates/Newsletter.png`
+  - `work/ionq/templates/SocialPost_Template.png`
+  - `work/ionq/typeface/Slide 16_9 - 62.jpg`
+- **mine-dates:** 757 stamped, 125 missing
+- **sync-image-tags:** 2 _project.md updated
+- **build-projects:** 79 projects, 50 tags, 21 clients
+- **build-manifest:** 687 items across 71 projects
+- **rehydrate:** 0 matched, 5 unmatched
+- **upload-blob:** uploaded 5, adopted 0, skipped 682, failed 0
+- **vimeo-posters:** 2 referenced, 0 fetched
+
 ## 2026-06-03T22:19:58.653Z — ingest (applied)
 
 - **reconcile:** 0 remap(s), 0 quarantined (kept), 20 unregistered on disk

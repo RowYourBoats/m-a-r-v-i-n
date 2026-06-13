@@ -366,7 +366,6 @@ Runs the heavier image-reconciliation cycle:
 | `scripts/reconcile-catalogue-paths.mjs` | Heal stale `file_path` entries after folder moves |
 | `scripts/stub-catalogue.mjs` | Register a folder's new images into the catalogue as stub entries (empty tag axes). `node scripts/stub-catalogue.mjs <folder> [--apply]`. Lightweight stand-in for the miner — gets images into the pipeline + `/admin/images` for hand-tagging |
 | `scripts/upload-blob.mjs` | Upload images to Vercel Blob, rewrite manifest URLs |
-| `scripts/sync-chroma.mjs` | Sync catalogue to Chroma vector store (powers `/api/search`) |
 | `scripts/sync-vimeo-posters.mjs` | Walks `src/content/pages/*.md`, finds Vimeo URLs in filmstrip assets, fetches canonical posters via oEmbed, writes `src/data/vimeo-posters.json`. Idempotent — only unknown IDs are fetched. Runs as the last step of `npm run build-data`. |
 | `scripts/audit-tags.mjs` | Read-only tag audit: per-value counts across all image + project axes, cross-axis duplicate flags, singletons. Writes `docs/tag-audit.json`. Run after every tagging pass. |
 | `public/images/miner.cjs` | Ollama-based vision tagger; run from `public/images/` to populate catalogue entries (format/characteristics/subject) for newly-added images |

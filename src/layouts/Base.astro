@@ -4,8 +4,10 @@ import Analytics from "@vercel/analytics/astro";
 interface Props {
   title?: string;
   // Optional override for the active nav item. `/projects/[slug]` uses this
-  // because a project's path can't tell you whether it's work or practice.
-  section?: "marvin" | "work" | "practice" | "resume";
+  // because a project's path can't tell you whether it's work, practice, or
+  // tools. `/resume` also uses it ("tools") — the résumé is reached from Tools,
+  // not its own nav tab.
+  section?: "marvin" | "work" | "practice" | "tools";
 }
 
 const { title = "Marvin de Jong", section } = Astro.props;
@@ -15,7 +17,7 @@ const SECTION_BY_HREF: Record<string, string> = {
   "/": "marvin",
   "/work": "work",
   "/practice": "practice",
-  "/resume": "resume",
+  "/tools": "tools",
 };
 
 function isCurrent(href: string) {
@@ -65,12 +67,20 @@ function isCurrent(href: string) {
       <a href="/" aria-current={isCurrent("/") ? "page" : undefined}>Marvin</a>
       <a href="/work" aria-current={isCurrent("/work") ? "page" : undefined}>Work</a>
       <a href="/practice" aria-current={isCurrent("/practice") ? "page" : undefined}>Practice</a>
-      <a href="/resume" aria-current={isCurrent("/resume") ? "page" : undefined}>Resume</a>
+      <a href="/tools" aria-current={isCurrent("/tools") ? "page" : undefined}>Tools</a>
       <button class="theme-toggle" id="theme-toggle" aria-label="Toggle theme"></button>
     </nav>
     <main class="page">
       <slot />
     </main>
+
+    <footer class="site-footer">
+      <a href="/resume">Résumé</a>
+      <a href="mailto:marvin@m-a-r-v-i-n.com">mail: marvin@m-a-r-v-i-n.com</a>
+      <a href="https://github.com/RowYourBoats" target="_blank" rel="noopener">Github: @RowYourBoats</a>
+      <a href="https://www.instagram.com/specifically_marvin/" target="_blank" rel="noopener">Instagram: @specifically_marvin</a>
+      <a href="https://www.linkedin.com/in/marvin-de-jong/" target="_blank" rel="noopener">LinkedIn: marvin-de-jong</a>
+    </footer>
 
     <script is:inline>
       // Vimeo iframe scroll-aware suspend.

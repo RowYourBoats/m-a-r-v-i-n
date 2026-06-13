@@ -1,0 +1,137 @@
+---
+import { Image } from "astro:assets";
+import Base from "@/layouts/Base.astro";
+import PortfolioPageScript from "@/components/PortfolioPageScript.astro";
+import manifest from "@/data/manifest.json";
+import projectsData from "@/data/projects.json";
+import { getCollection, getEntry, render } from "astro:content";
+
+const intro = await getEntry("pages", "tools");
+const { Content: IntroContent } = await render(intro!);
+
+const items = (manifest as any).items as any[];
+
+// Tools are authored as essay-style writing entries under tools/ (markdown +
+// frontmatter, same treatment as Practice essays — title-first card, optional
+// cover, a /writing page, and an outbound `link`). This keeps tools on an
+// existing page type rather than inventing a third.
+const toolEssays = (await getCollection("writing")).filter((e) => e.id.startsWith("tools/"));
+
+// Companion cover per essay: an `essay_of` image in the essay's folder (built
+// by build-manifest), with frontmatter `cover` selecting a specific filename.
+// Same logic as the Practice page.
+const essayImagesById = new Map<string, any[]>();
+for (const it of items) {
+  if (!it.essay_of) continue;
+  const list = essayImagesById.get(it.essay_of) || [];
+  list.push(it);
+  essayImagesById.set(it.essay_of, list);
+}
+const coverBaseName = (src: string) => decodeURIComponent((src || "").split("/").pop() || "");
+const essayCover = new Map<string, any>();
+for (const entry of toolEssays) {
+  const imgs = essayImagesById.get(entry.id);
+  if (!imgs || !imgs.length) continue;
+  const named = entry.data.cover && imgs.find((i) => coverBaseName(i.src) === entry.data.cover);
+  essayCover.set(entry.id, named || imgs.find((i) => (i.src || "").startsWith("https://")) || imgs[0]);
+}
+
+// Folders already migrated to an essay entry — exclude their legacy project
+// records so a tool doesn't appear twice during the transition.
+const essayFolders = new Set(toolEssays.map((e) => e.id.split("/").slice(0, -1).join("/")));
+
+const startYear = (range: string) => {
+  const m = String(range || "").match(/\d{4}/);
+  return m ? parseInt(m[0], 10) : 0;
+};
+
+// Tool projects not yet migrated (e.g. public-browsing) still render from the
+// project pipeline, linking to /projects/<slug>.
+const manifestProjects = (manifest as any).projects as Record<string, any>;
+const toolProjects = Object.values(projectsData as Record<string, any>)
+  .filter(
+    (p) =>
+      (p.image_folders?.[0] || "").startsWith("tools/") &&
+      !p.snapshot_only &&
+      !p.unlisted &&
+      !essayFolders.has(p.image_folders?.[0]) &&
+      // Only surface a project that actually resolves to a page: it must have a
+      // manifest entry with published items, else /projects/<slug> redirects to
+      // /work — a dead card. This also self-heals a mid-migration catalogue: a
+      // tools project whose images haven't been reconciled/republished yet just
+      // doesn't appear until `npm run ingest` heals the paths (vs. a dead link).
+      manifestProjects[p.slug] &&
+      !manifestProjects[p.slug].snapshot_only,
+  );
+
+const coverForProject = (slug: string) => {
+  const imgs = items.filter((i) => i.project === slug && i.type === "image" && i.src);
+  return imgs.find((i) => i.featured) || imgs[0] || null;
+};
+
+// Unified reverse-chronological card list across essay-tools and legacy
+// project-tools.
+type Card = { id: string; href: string; title: string; cover: any; year: number };
+const cards: Card[] = [
+  ...toolEssays.map((e): Card => ({
+    id: e.id,
+    href: `/writing/${e.id}`,
+    title: e.data.title,
+    cover: essayCover.get(e.id) || null,
+    year: startYear(e.data.date),
+  })),
+  ...toolProjects.map((p): Card => ({
+    id: p.slug,
+    href: `/projects/${p.slug}`,
+    title: p.name,
+    cover: coverForProject(p.slug),
+    year: startYear(p.date_range),
+  })),
+].sort((a, b) => b.year - a.year || a.title.localeCompare(b.title));
+
+// SSR-seed masonry spans so the layout is roughly distributed before
+// PortfolioPageScript refines it on load.
+const ROW_H = 8;
+const COL_W_REF = 600;
+const LABEL_H = 32;
+function seedSpan(item: { width?: number; height?: number } | null) {
+  if (!item?.width || !item?.height) return undefined;
+  const imgH = (COL_W_REF * item.height) / item.width;
+  return Math.ceil((imgH + LABEL_H) / ROW_H);
+}
+---
+
+<Base title="Tools — Marvin de Jong" section="tools">
+  <div class="page-intro prose">
+    <IntroContent />
+  </div>
+
+  <div class="grid" id="grid">
+    {cards.map((c) => (
+      <a
+        class="grid-item grid-item--writing"
+        href={c.href}
+        style={seedSpan(c.cover) ? `grid-row-end: span ${seedSpan(c.cover)}` : undefined}
+      >
+        <div class="writing-card">
+          <p class="writing-card-title">{c.title}</p>
+          {c.cover?.width && c.cover?.height && (
+            <Image
+              src={c.cover.src}
+              width={c.cover.width}
+              height={c.cover.height}
+              widths={[480, 768, 1200]}
+              sizes="(max-width: 680px) 100vw, 50vw"
+              alt={c.title}
+              loading="lazy"
+              decoding="async"
+              class="thumb writing-card-cover"
+            />
+          )}
+        </div>
+      </a>
+    ))}
+  </div>
+</Base>
+
+<PortfolioPageScript />

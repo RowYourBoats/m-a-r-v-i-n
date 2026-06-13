@@ -8,14 +8,13 @@
     "preview": "astro preview",
     "build-data": "node scripts/build-projects.mjs && node scripts/mine-dates.mjs && node scripts/build-manifest.mjs && node scripts/sync-vimeo-posters.mjs --apply",
     "ingest": "node scripts/ingest.mjs",
-    "sync": "node scripts/sync-chroma.mjs"
+    "sync-bullets": "node scripts/sync-bullets.mjs"
   },
   "dependencies": {
     "@astrojs/vercel": "^10.0.6",
     "@vercel/analytics": "^2.0.1",
     "@vercel/blob": "^2.3.3",
     "astro": "^6.2.1",
-    "chromadb": "^3.4.3",
     "exifr": "^7.1.3",
     "image-size": "^2.0.2",
     "ollama": "^0.6.3"

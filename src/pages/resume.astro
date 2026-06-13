@@ -10,6 +10,30 @@ const cleanTag = (t: string) => t.replace(/^~/, "");
 
 const stripBold = (s: string) => (s || "").replace(/\*\*/g, "");
 
+// Render-time inline formatter for the text cells. The site has no bold, so
+// `**x**`/`__x__` collapse to plain text (legacy markers), while single
+// `*x*`/`_x_` render as italics — the site's emphasis mechanism. Straight
+// quotes and apostrophes are upgraded to typographer's marks. Output is HTML
+// (used via set:html), so the raw text is escaped first.
+const escHtml = (s: string) =>
+  s.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
+
+const typographize = (s: string) =>
+  s
+    .replace(/(^|[\s([])"/g, "$1“") // opening double quote
+    .replace(/"/g, "”") // closing double quote
+    .replace(/(^|[\s([“])'/g, "$1‘") // opening single quote (rare)
+    .replace(/'/g, "’"); // apostrophe / closing single
+
+const emphasize = (s: string) =>
+  s
+    .replace(/\*\*(.+?)\*\*/g, "$1") // drop bold markers (no bold on the site)
+    .replace(/__(.+?)__/g, "$1")
+    .replace(/\*(.+?)\*/g, "<em>$1</em>") // single * → italic
+    .replace(/_(.+?)_/g, "<em>$1</em>"); // single _ → italic
+
+const formatInline = (s: string) => emphasize(typographize(escHtml((s || "").toString())));
+
 const MONTH: Record<string, string> = {
   january: "01", february: "02", march: "03", april: "04",
   may: "05", june: "06", july: "07", august: "08",
@@ -121,12 +145,12 @@ type Row = {
   order?: number;
 };
 
-// Some role-scope bullets start their Large body with `**Role scope** —`
-// as an inline identifier. Strip it at render time so the body doesn't
-// duplicate the "Roles" section header above it. Idempotent — bullets
-// without the prefix are unchanged.
+// Some role-scope bullets start their Large body with a "Role scope" label —
+// either `**Role scope** —` (older) or `**Role scope:**` (current). Strip it
+// at render time so the body doesn't duplicate the "Roles" section header
+// above it. Idempotent — bullets without the prefix are unchanged.
 const stripRoleScopePrefix = (s: string) =>
-  s.replace(/^\s*\*\*Role scope\*\*\s*[—–-]\s*/i, "").trim();
+  s.replace(/^\s*\*\*\s*Role scope\s*:?\s*\*\*\s*[—–:-]?\s*/i, "").trim();
 
 const normalizeWork = (b: Bullet): Row => ({
   id: b.id,
@@ -144,30 +168,35 @@ const normalizeWork = (b: Bullet): Row => ({
 
 const DATE_PAT = /(?:January|February|March|April|May|June|July|August|September|October|November|December|Spring|Fall|Summer|Winter)\s+\d{4}|\b\d{4}\b/;
 
+// Exhibition/publication bullets follow `<title>, <venue>, <location>, <date>.
+// <description>`. The title is the leading emphasis-wrapped span (**…**, *…*,
+// or ***…***) — kept with its markers so the cell renders italic. The date in
+// the remainder splits venue/location (→ where) from any trailing prose (→ how).
 const normalizeExhibition = (b: Bullet): Row => {
-  const text = b.text;
-  const parts = text.split(/\s+[—–-]\s+/);
-  let where = "", when = "", what = "", how = "";
-  if (parts.length >= 2) {
-    what = parts[0].trim().replace(/^["""]|["""]$/g, "");
-    const rest = parts.slice(1).join(" — ").trim();
-    const dm = rest.match(DATE_PAT);
-    if (dm) {
-      where = rest.slice(0, dm.index!).replace(/[,\s]+$/, "");
-      when = dm[0];
-      how = rest.slice(dm.index! + dm[0].length).replace(/^[.,\s]+/, "");
-    } else {
-      where = rest;
-    }
+  const text = (b.text || "").trim();
+  let what = "", rest = "";
+  const em = text.match(/^(\*{1,3}.+?\*{1,3})\s*[,—–-]?\s*([\s\S]*)$/);
+  if (em) {
+    what = em[1];
+    rest = em[2].trim();
   } else {
-    const dm = text.match(DATE_PAT);
-    if (dm) {
-      what = text.slice(0, dm.index!).replace(/[,\s]+$/, "");
-      when = dm[0];
-      how = text.slice(dm.index! + dm[0].length).replace(/^[.,\s]+/, "");
+    // No emphasized title: first comma/dash segment is the title.
+    const m = text.match(/^(.+?)\s*[,—–-]\s*([\s\S]*)$/);
+    if (m) {
+      what = m[1].trim();
+      rest = m[2].trim();
     } else {
       what = text;
     }
+  }
+  let where = "", when = "", how = "";
+  const dm = rest.match(DATE_PAT);
+  if (dm) {
+    where = rest.slice(0, dm.index!).replace(/[,\s]+$/, "").trim();
+    when = dm[0];
+    how = rest.slice(dm.index! + dm[0].length).replace(/^[.,\s]+/, "").trim();
+  } else {
+    where = rest.replace(/[.\s]+$/, "").trim();
   }
   return {
     id: b.id, bulletId: b.bulletId, size: b.size, group: "",
@@ -287,7 +316,7 @@ const total = sections.reduce((n, s) => n + s.rows.length, 0);
 const hasSizes = bullets.some((b) => b.size);
 ---
 
-<Base title="Resume — Marvin de Jong">
+<Base title="Resume — Marvin de Jong" section="tools">
   <div class="page-intro prose">
     <IntroContent />
   </div>
@@ -323,7 +352,6 @@ const hasSizes = bullets.some((b) => b.size);
         <col class="cv-col-when" />
         <col class="cv-col-what" />
         <col class="cv-col-how" />
-        <col class="cv-col-tags" />
       </colgroup>
       <thead>
         <tr>
@@ -331,14 +359,13 @@ const hasSizes = bullets.some((b) => b.size);
           <th data-col="1">when<span class="cv-sort-arrow"></span></th>
           <th data-col="2">what<span class="cv-sort-arrow"></span></th>
           <th data-col="3">how<span class="cv-sort-arrow"></span></th>
-          <th>tags</th>
         </tr>
       </thead>
       <tbody>
         {sections.map((sec) => (
           <>
             <tr class="cv-section-row" data-section={sec.label}>
-              <td colspan="5">
+              <td colspan="4">
                 <h2>{sec.label}</h2>
                 <span class="cv-section-count">{sec.rows.length}</span>
                 <span class="cv-toggle-arrow">&#9660;</span>
@@ -352,15 +379,10 @@ const hasSizes = bullets.some((b) => b.size);
                 data-group={r.group}
                 data-bullet-id={r.bulletId}
               >
-                <td>{stripBold(r.where)}</td>
+                <td><Fragment set:html={formatInline(r.where)} /></td>
                 <td class="cv-nowrap" data-sort={r.whenSort}>{r.when}</td>
-                <td>{stripBold(r.what)}</td>
-                <td>{stripBold(r.how)}</td>
-                <td>
-                  {r.tags.map((t) => (
-                    <span class="cv-tag">{t}</span>
-                  ))}
-                </td>
+                <td><Fragment set:html={formatInline(r.what)} /></td>
+                <td><Fragment set:html={formatInline(r.how)} /></td>
               </tr>
             ))}
           </>

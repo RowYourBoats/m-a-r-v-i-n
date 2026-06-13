@@ -39,7 +39,7 @@ for (const entry of catalogue) {
   const parts = entry.file_path.replace(/\\/g, "/").split("/");
   if (parts.length < 2) continue;
   const tier = parts[0];
-  if (!["work", "practice", "teaching"].includes(tier)) continue;
+  if (!["work", "practice", "tools", "teaching"].includes(tier)) continue;
   const client = parts[1];
   const clientDir = path.join(imagesDir, tier, client);
   const clientFile = path.join(clientDir, "_project.md");

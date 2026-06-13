@@ -426,7 +426,7 @@ video {
   margin-top: 0;
 }
 .prose h2 + p {
-  margin-top: 0.25em;
+  margin-top: var(--pad-sm);
 }
 
 /* ---- Essay page ---- */
@@ -523,36 +523,6 @@ video {
   line-height: 1.05;
 }
 
-.cv-filters {
-  display: flex;
-  gap: var(--pad);
-  margin-bottom: var(--pad-sm);
-  align-items: baseline;
-  flex-wrap: wrap;
-}
-.cv-filters input,
-.cv-filters select {
-  font: inherit;
-  color: var(--color-fg);
-  background: none;
-  border: none;
-  border-bottom: 1px solid var(--color-fg);
-  border-radius: 0;
-  padding: 0.2em 0;
-}
-.cv-filters input { min-width: 20ch; }
-.cv-filters input:focus,
-.cv-filters select:focus { outline: none; }
-.cv-filters input::placeholder {
-  color: var(--color-fg);
-  opacity: 0.3;
-}
-.cv-filters select {
-  cursor: pointer;
-  -webkit-appearance: none;
-  appearance: none;
-}
-
 /* ---- CV table (ported from Jullie's table.html) ---- */
 .cv-head {
   margin-top: var(--pad);
@@ -569,11 +539,17 @@ video {
   margin-bottom: var(--pad);
 }
 
+/* Lay the filter controls on the SAME column tracks as the table's colgroup
+   (.cv-col-where/when/what/how below) so each control sits exactly over its
+   column rather than near-but-not-quite. The controls aren't semantically tied
+   to the columns — this is purely visual alignment. Each control fills its track
+   (width:100%), so the underlines form one continuous ruled line that mirrors the
+   table header's bottom border. Collapses to a wrapping row once the table goes
+   single-column (≤760px, where the colgroup is hidden). */
 .cv-filters {
-  display: flex;
-  gap: 1.5em;
+  display: grid;
+  grid-template-columns: 15% 12.5% 12.5% 60%;
   align-items: baseline;
-  flex-wrap: wrap;
   position: sticky;
   top: calc(var(--pad) + 1.5em - 2px);
   z-index: 11;
@@ -588,9 +564,13 @@ video {
   border: none;
   border-bottom: 1px solid var(--color-fg);
   border-radius: 0;
-  padding: 0.25em 0;
+  /* Right padding matches the table cells (0.6em) so the typed/selected text
+     clears the next column's start the same way cell text does. */
+  padding: 0.25em 0.6em 0.25em 0;
+  width: 100%;
+  min-width: 0;
+  box-sizing: border-box;
 }
-.cv-filters input { min-width: 12em; }
 .cv-filters input:focus,
 .cv-filters select:focus { outline: none; }
 .cv-filters input::placeholder {
@@ -602,6 +582,12 @@ video {
   cursor: pointer;
   -webkit-appearance: none;
   appearance: none;
+  /* A long selected value (e.g. a long company name) truncates rather than
+     overflowing its narrow column track. The dropdown popup still shows full
+     names. */
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
 }
 
 .cv-head,
@@ -616,11 +602,10 @@ video {
   line-height: 1.3;
   table-layout: fixed;
 }
-.cv-col-where { width: 12.5%; }
+.cv-col-where { width: 15%; }
 .cv-col-when  { width: 12.5%; }
-.cv-col-what  { width: 25%; }
-.cv-col-how   { width: 25%; }
-.cv-col-tags  { width: 25%; }
+.cv-col-what  { width: 12.5%; }
+.cv-col-how   { width: 60%; }
 
 .cv-table thead th {
   background: var(--color-bg);
@@ -681,6 +666,16 @@ video {
 .cv-tag:hover { opacity: 1; }
 
 @media (max-width: 760px) {
+  /* No columns to align to here (table is single-column block) — let the
+     filters wrap as a simple row. */
+  .cv-filters {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--pad);
+  }
+  .cv-filters input,
+  .cv-filters select { width: auto; }
+
   .cv-table,
   .cv-table thead,
   .cv-table tbody,
@@ -698,9 +693,6 @@ video {
     padding: var(--pad-sm) 0;
   }
   .cv-row > td { padding: 0.15em 0; }
-
-  /* Tags hidden on mobile; everything else stacks in source order */
-  .cv-row > td:nth-child(5) { display: none; }
 
   .cv-section-row td { padding: var(--pad) 0 var(--pad-sm); }
 }
@@ -873,10 +865,37 @@ video {
   max-width: 60ch;
 }
 
+/* Site footer: a vertical stack of contact links (résumé + email/social) at the
+   bottom of every page, in normal flow. Mirrors the nav as bottom-chrome — same
+   body type scale (--fs-body) and link convention (foreground text, hover →
+   accent, no underline) via the global `a` rules. Horizontal padding matches
+   `.page` so the links align with page content; the rule spans full width as a
+   divider. */
+.site-footer {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--pad-sm);
+  margin-top: calc(var(--pad) * 2);
+  padding: var(--pad);
+  border-top: 1px solid var(--color-fg);
+  font-size: var(--fs-body);
+}
+
 .filmstrip {
   display: flex;
   flex-direction: column;
-  gap: var(--pad-sm);
+  /* Only two children in flow now — the nav bar and the stage (thumbs are
+     display:none). --pad separates the bar from the stage below it. */
+  gap: var(--pad);
+}
+
+/* Nav row: [← →] then caption, inline left-to-right. */
+.filmstrip-bar {
+  display: flex;
+  align-items: baseline;
+  flex-wrap: wrap;
+  gap: var(--pad);
 }
 
 .filmstrip-stage {
@@ -1063,153 +1082,173 @@ video {
   pointer-events: none;
 }
 
-/* ---- App documentation (auto-wrapped HTML docs; see src/lib/app-docs.ts) ----
-   The project page renders an app's standalone HTML docs inside portfolio
-   chrome. These rules re-skin the docs' own class vocabulary (.section, .flow,
-   .callout, .axis, code, …) onto portfolio tokens — all scoped under .appdoc so
-   they can't collide with the site's own .section / code rules. Documentation
-   is dense, so the whole block drops to --fs-base rather than the big --fs-body
-   the rest of the site uses for editorial type. */
+/* ---- Doc page shell ----
+   Wraps a project rendered as a markdown `layout: doc` page (see
+   src/lib/project-doc.ts) in portfolio chrome. The doc body itself is styled by
+   the .projectdoc rules at the end of this file. */
 .appdoc-page {
   display: flex;
   flex-direction: column;
   gap: var(--pad);
 }
 
-.appdoc,
-.appdoc-toc {
-  font-size: var(--fs-base);
-  line-height: 1.4;
-}
-
-/* Wikipedia-style table of contents: a doc link with its section list nested. */
-.appdoc-toc {
-  display: flex;
-  flex-direction: column;
-  gap: var(--pad-sm);  border-top: 1px solid var(--color-fg);
-  border-bottom: 1px solid var(--color-fg);
-  padding: var(--pad-sm) 0;
-}
-.appdoc-toc-doc {
-  color: var(--color-accent);
-}
-.appdoc-toc ul {
-  list-style: none;
-  margin: 0.25em 0 var(--pad-sm);
-  padding-left: 1.2em;
-  columns: 2;
-  column-gap: var(--pad);
-}
-.appdoc-toc li {
-  padding: 0.1em 0;
-  break-inside: avoid;
-}
-
-/* Each doc, stacked on the one long page. */
-.appdoc {
-  display: flex;
-  flex-direction: column;
-  gap: calc(var(--pad) * 1.5);
-}
-.appdoc-doc {
-  scroll-margin-top: calc(var(--pad) + 2em);
-}
-.appdoc-doc-title {
-  font-size: var(--fs-secondary);
-  color: var(--color-accent);
-  border-bottom: 1px solid var(--color-fg);
-  padding-bottom: var(--pad-sm);
-  margin-bottom: var(--pad-sm);
-}
-
-.appdoc .section {
-  scroll-margin-top: calc(var(--pad) + 2em);
-  padding: var(--pad-sm) 0;
-}
-.appdoc .section-title {
-  color: var(--color-accent);
-  padding-bottom: var(--pad-sm);
-}
-.appdoc .section-title .status {
-  color: var(--color-fg);
-  opacity: 0.5;
-}
-.appdoc .section-desc {
-  padding-bottom: var(--pad-sm);
-}
-.appdoc .subsection {
-  padding: var(--pad-sm) 0;
-}
-.appdoc .subsection-title {
-  padding-bottom: 0.4em;
-}
-.appdoc .command {
-  padding: 0.4em 0;
-}
-.appdoc code {
+/* ---- Shared doc vocabulary ----
+   The raw-HTML bits below (code, lists, .flow, .callout, .axis, color labels)
+   are authored the same way in the markdown project docs and in tool essays, so
+   they're scoped to both .projectdoc and .essay. Tool write-ups live on the essay
+   page type (writing/[...slug].astro renders the body in .essay > .prose) but keep
+   their flow/callout/axis diagram blocks — this is what lets those render styled
+   there too. The markdown-doc styling itself (.projectdoc, built on .prose) lives
+   at the end of this file. */
+:is(.projectdoc, .essay) code {
   background: var(--color-code-bg);
   padding: 2px 4px;
 }
-.appdoc ol,
-.appdoc ul {
+:is(.projectdoc, .essay) ol,
+:is(.projectdoc, .essay) ul {
   padding-left: 1.3em;
 }
-.appdoc li {
+:is(.projectdoc, .essay) li {
   padding: 0.2em 0;
 }
 
-/* Smaller, dimmed supporting text. */
-.appdoc .detail,
-.appdoc .command p,
-.appdoc .flow-step,
-.appdoc .flow-arrow,
-.appdoc .axis-weight {
+/* Smaller, dimmed supporting text within flow/axis diagram blocks. */
+:is(.projectdoc, .essay) :is(.flow-step, .flow-arrow, .axis-weight) {
   font-size: 0.85em;
 }
-.appdoc .detail,
-.appdoc .command p,
-.appdoc .flow-arrow,
-.appdoc .axis-weight {
-  opacity: 0.5;
-}
-.appdoc .section.deprecated .command code,
-.appdoc .section.deprecated .command p {
+:is(.projectdoc, .essay) :is(.flow-arrow, .axis-weight) {
   opacity: 0.5;
 }
 
 /* Flow diagrams: bordered steps joined by arrows. */
-.appdoc .flow {
+:is(.projectdoc, .essay) .flow {
   display: flex;
   flex-wrap: wrap;
   gap: 0.75rem;
   align-items: center;
   padding: var(--pad-sm) 0;
 }
-.appdoc .flow-step {
+:is(.projectdoc, .essay) .flow-step {
   padding: 0.5em 0.7em;
   border: 1px solid var(--color-fg);
   white-space: nowrap;
 }
 
 /* Callouts and scoring axes. */
-.appdoc .callout {
+:is(.projectdoc, .essay) .callout {
   border-left: 2px solid var(--color-accent);
   padding: 0.3em 0 0.3em 1em;
   margin: 0.5em 0 var(--pad-sm);
 }
-.appdoc .axis,
-.appdoc .outcome {
+:is(.projectdoc, .essay) .axis,
+:is(.projectdoc, .essay) .outcome {
   padding: 0.3em 0 0.3em 1.2em;
 }
 
+/* ---- Essay body rhythm (one owl, not a scatter of adjacencies) ----
+   The essay body (.essay > .essay-text > .prose) is a flat list of top-level
+   blocks: paragraphs, h2 section heads, and the raw .flow / .callout / .axis
+   diagram divs. Earlier this leaned on per-pair margins (.prose h2, h2 + p, p + p)
+   that compounded with each block's own margin/padding into unpredictable gaps
+   (the stray 55 / 13 / 48 values). Instead, ONE rule set owns the rhythm on the
+   direct children: every block takes a single TOP-margin step from the previous
+   one (the "lobotomized owl"). One direction only — so there are no bottom margins
+   to reason about, nothing collapses, and every gap is a named token. Each block's
+   own margin is zeroed first so it can't stack onto the step; .flow's padding (a
+   gap, not a box inset) is dropped so the step is the whole gap. Steps:
+     • between blocks ............. 1em         body rhythm (incl. heading → body)
+     • before a section heading ... var(--pad)  a clear section break
+     • within a run of .axis rows . 0           one scoring list (the rows' own
+                                                0.3em padding sets the density) */
+.essay .prose > * { margin: 0; }
+.essay .prose > * + * { margin-top: 1em; }
+.essay .prose > * + h2 { margin-top: var(--pad); }
+.essay .prose > .axis + .axis { margin-top: 0; }
+.essay .prose > .flow { padding: 0; }
+
+/* Section headings in tool essays — red for now. */
+.essay .prose h2 {
+  color: var(--color-accent);
+}
+
+/* Axis labels read in the signature color by default, so a scoring-axis label
+   needs no separate color class (a secondary color class below still overrides). */
+:is(.projectdoc, .essay) .axis-label { color: var(--color-orange); }
+
 /* Source color labels → portfolio Dick Bruna palette. */
-.appdoc .kept,
-.appdoc .tag { color: var(--color-green); }
-.appdoc .removed,
-.appdoc .keyphrase { color: var(--color-accent); }
-.appdoc .reworded,
-.appdoc .breadth { color: var(--color-yellow); }
-.appdoc .added,
-.appdoc .semantic { color: var(--color-blue); }
-.appdoc .signature { color: var(--color-orange); }
+:is(.projectdoc, .essay) :is(.kept, .tag) { color: var(--color-green); }
+:is(.projectdoc, .essay) .removed { color: var(--color-accent); }
+:is(.projectdoc, .essay) .keyphrase { color: var(--color-fg); }
+:is(.projectdoc, .essay) :is(.reworded, .breadth) { color: var(--color-yellow); }
+:is(.projectdoc, .essay) :is(.added, .semantic) { color: var(--color-blue); }
+:is(.projectdoc, .essay) .signature { color: var(--color-orange); }
+
+/* ---- Animated SVG diagrams (see src/components/diagrams/) ----
+   Built client-side by the diagram registry and mounted into a
+   `.diagram-mount` placeholder. These rules live here (rather than scoped in
+   Connectivity.astro) so they apply both at /diagrams/[slug] and inline inside
+   a markdown project doc, where the runtime-built DOM is out of any component's
+   style scope. Color tokens (--diagram-*) are defined in the :root blocks. */
+.diagram { margin: 0; }
+.diagram-pair {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: var(--pad);
+  align-items: start;
+}
+.diagram-cell {
+  display: flex;
+  flex-direction: column;
+  gap: var(--pad-sm);
+}
+.diagram-subtitle {
+  font-size: var(--fs-secondary);
+  font-weight: 400;
+}
+.diagram-caption {
+  font-size: var(--fs-secondary);
+  line-height: 1.3;
+  color: var(--color-fg);
+}
+.diagram svg {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+.diagram .edge        { stroke: var(--diagram-edge); stroke-width: 1; fill: none; }
+.diagram .edge-active { stroke: var(--diagram-edge-active); stroke-width: 2.5; fill: none; }
+.diagram .node        { fill: var(--diagram-node); }
+.diagram .node-mid    { fill: var(--diagram-node-mid); }
+.diagram .node-active { fill: var(--diagram-node-active); }
+
+/* ---- Markdown-authored project docs (.projectdoc; see src/lib/project-doc.ts)
+   Rendered as `<div class="prose projectdoc">`. The body reads as ordinary site
+   copy (--fs-body, weight 400) — these are short editorial docs, not dense
+   reference pages. The markdown is a flat list of siblings (paragraphs, headings,
+   and .flow/.callout/.axis blocks), so spacing is owned by a single flex gap
+   rather than .prose's per-adjacency margins (which only cover p+p / h2+p and so
+   collapse the div blocks together). The .prose top-margins are cancelled here so
+   they don't compound with the gap into doubled spacing. The shared doc
+   vocabulary above (.flow / .callout / .axis / color labels / code / lists) is
+   layered in via :is(.projectdoc, .essay); links and heading weight already
+   follow the site's defaults, so only the accent section heads and the no-bold
+   guard remain unique. */
+.projectdoc {
+  display: flex;
+  flex-direction: column;
+  gap: var(--pad);
+}
+/* Two classes (0,2,0) beats every `.prose X` rule, so the gap is the only
+   spacing; :where() keeps this from inflating specificity further. */
+.prose.projectdoc :where(h2, h3, p) {
+  margin: 0;
+}
+.projectdoc h2 {
+  color: var(--color-accent);
+  scroll-margin-top: calc(var(--pad) + 2em);
+}
+/* The site never bolds; a stray markdown ** shouldn't start. */
+.projectdoc strong {
+  font-weight: inherit;
+}
 

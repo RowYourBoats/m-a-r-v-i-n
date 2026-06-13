@@ -942,20 +942,6 @@
       "order": [],
       "snapshot_only": false
     },
-    "jullie": {
-      "title": "Jullie App",
-      "description": "Your career is stored as a pile of short text records, each one turned into a list of numbers (an embedding) that captures its meaning. A job description is turned into the same kind of numbers, plus a few other lenses. \"Matching\" is measuring which career records sit closest to the job description in that number-space -- then re-ranking with some non-vector signals on top. The career corpus never changes when you run a new job; only the question changes. Same subject, different viewer, different view.\n",
-      "client": "personal",
-      "year": 2013,
-      "credits": [
-        {
-          "role": "Design",
-          "name": "Marvin de Jong"
-        }
-      ],
-      "order": [],
-      "snapshot_only": false
-    },
     "kabk-posters": {
       "title": "KABK Posters",
       "description": "Posters exploring legibility, layering, and 'handschrift.'",
@@ -1115,20 +1101,6 @@
     "yale-posters": {
       "title": "posters",
       "description": "",
-      "client": "Yale",
-      "year": 2013,
-      "credits": [
-        {
-          "role": "Student",
-          "name": "Marvin de Jong"
-        }
-      ],
-      "order": [],
-      "snapshot_only": false
-    },
-    "yale-public-browsing": {
-      "title": "Public Browsing",
-      "description": "A Chrome add-on that would store your browsing in a json for you to share and compare with others.",
       "client": "Yale",
       "year": 2013,
       "credits": [
@@ -2391,14 +2363,15 @@
       "personal": true
     },
     {
-      "id": "practice-yale-public-browsing-publicbrowsing-01",
-      "src": "https://ws6i2dfuggcaavs2.public.blob.vercel-storage.com/images/practice/yale/public-browsing/publicBrowsing_01.png",
+      "id": "tools-public-browsing-publicbrowsing-01",
+      "src": "https://ws6i2dfuggcaavs2.public.blob.vercel-storage.com/images/tools/public-browsing/publicBrowsing_01.png",
       "type": "image",
       "title": "Public Browsing Data Visualization",
       "tags": [
         "web",
         "interactive",
-        "data-visualization"
+        "data-visualization",
+        "snapshot"
       ],
       "format": [
         "web"
@@ -2411,28 +2384,33 @@
       ],
       "project_tags": [
         "personal",
-        "education"
+        "personal",
+        "real-time"
       ],
       "medium": "digital",
-      "project": "yale-public-browsing",
+      "project": "snapshot",
       "description": "A digital data table presenting user connection times across multiple ID groups for public browsing analytics, organized with clear time entries.",
       "width": 1280,
       "height": 800,
       "style": "clean, text-based layout with minimalist data presentation",
-      "created": "2013-2015",
-      "date_range": "2013-2015",
-      "year": 2013,
-      "personal": true
+      "created": "2014-present",
+      "date_range": "2014-present",
+      "year": 2014,
+      "personal": true,
+      "staging": true,
+      "essay_of": "tools/public-browsing/public-browsing",
+      "hidden_from_feed": true
     },
     {
-      "id": "practice-yale-public-browsing-publicbrowsing-02",
-      "src": "https://ws6i2dfuggcaavs2.public.blob.vercel-storage.com/images/practice/yale/public-browsing/publicBrowsing_02.png",
+      "id": "tools-public-browsing-publicbrowsing-02",
+      "src": "https://ws6i2dfuggcaavs2.public.blob.vercel-storage.com/images/tools/public-browsing/publicBrowsing_02.png",
       "type": "image",
       "title": "Public Browsing Session Data Visualization",
       "tags": [
         "web",
         "interactive",
-        "data-visualization"
+        "data-visualization",
+        "snapshot"
       ],
       "format": [
         "web"
@@ -2445,28 +2423,33 @@
       ],
       "project_tags": [
         "personal",
-        "education"
+        "personal",
+        "real-time"
       ],
       "medium": "digital",
-      "project": "yale-public-browsing",
+      "project": "snapshot",
       "description": "A digital visualization of public browsing session data, presenting URL history and timestamps across multiple sessions to examine user navigation behavior.",
       "width": 1280,
       "height": 800,
       "style": "minimalist text-based browser interface visualization",
-      "created": "2013-2015",
-      "date_range": "2013-2015",
-      "year": 2013,
-      "personal": true
+      "created": "2014-present",
+      "date_range": "2014-present",
+      "year": 2014,
+      "personal": true,
+      "staging": true,
+      "essay_of": "tools/public-browsing/public-browsing",
+      "hidden_from_feed": true
     },
     {
-      "id": "practice-yale-public-browsing-publicbrowsing-03",
-      "src": "https://ws6i2dfuggcaavs2.public.blob.vercel-storage.com/images/practice/yale/public-browsing/publicBrowsing_03.png",
+      "id": "tools-public-browsing-publicbrowsing-03",
+      "src": "https://ws6i2dfuggcaavs2.public.blob.vercel-storage.com/images/tools/public-browsing/publicBrowsing_03.png",
       "type": "image",
       "title": "Public Browsing Connection Flow Visualization",
       "tags": [
         "web",
         "interactive",
-        "data-visualization"
+        "data-visualization",
+        "snapshot"
       ],
       "format": [
         "web"
@@ -2479,28 +2462,33 @@
       ],
       "project_tags": [
         "personal",
-        "education"
+        "personal",
+        "real-time"
       ],
       "medium": "digital",
-      "project": "yale-public-browsing",
+      "project": "snapshot",
       "description": "A data visualization illustrating user connections over time in public browsing sessions, represented by interconnected nodes with time annotations for each connection point.",
       "width": 1280,
       "height": 800,
       "style": "Network-based data visualization with time-stamped connection flows",
-      "created": "2013-2015",
-      "date_range": "2013-2015",
-      "year": 2013,
-      "personal": true
+      "created": "2014-present",
+      "date_range": "2014-present",
+      "year": 2014,
+      "personal": true,
+      "staging": true,
+      "essay_of": "tools/public-browsing/public-browsing",
+      "hidden_from_feed": true
     },
     {
-      "id": "practice-yale-public-browsing-publicbrowsing-04",
-      "src": "https://ws6i2dfuggcaavs2.public.blob.vercel-storage.com/images/practice/yale/public-browsing/publicBrowsing_04.png",
+      "id": "tools-public-browsing-publicbrowsing-04",
+      "src": "https://ws6i2dfuggcaavs2.public.blob.vercel-storage.com/images/tools/public-browsing/publicBrowsing_04.png",
       "type": "image",
       "title": "Public Browsing Data Visualization",
       "tags": [
         "web",
         "interactive",
-        "data-visualization"
+        "data-visualization",
+        "snapshot"
       ],
       "format": [
         "web"
@@ -2513,18 +2501,22 @@
       ],
       "project_tags": [
         "personal",
-        "education"
+        "personal",
+        "real-time"
       ],
       "medium": "digital",
-      "project": "yale-public-browsing",
+      "project": "snapshot",
       "description": "A time-series data visualization of public browsing activity, using multicolored lines to represent user connections and hourly interactions across multiple data sets.",
       "width": 1280,
       "height": 800,
       "style": "colorful line graph depicting time-based user connections in public browsing",
-      "created": "2013-2015",
-      "date_range": "2013-2015",
-      "year": 2013,
-      "personal": true
+      "created": "2014-present",
+      "date_range": "2014-present",
+      "year": 2014,
+      "personal": true,
+      "staging": true,
+      "essay_of": "tools/public-browsing/public-browsing",
+      "hidden_from_feed": true
     },
     {
       "id": "practice-comma-original-1563937c2fd0973c2779b0b3a164db2b",
@@ -5088,8 +5080,6 @@
       "medium": "digital",
       "project": "ionq-illustrations",
       "description": "An isometric illustration showcasing the development of brand guidelines for IonQ, integrating tech-themed assets like keys, fingerprint sensors, and data visualizations across sales decks and illustrations.",
-      "width": 2673,
-      "height": 1496,
       "style": "Isometric tech illustration with minimalist design, monochromatic color scheme (black, white, orange), and security-themed elements",
       "created": "2023-2025",
       "date_range": "2023-2025",
@@ -20851,64 +20841,6 @@
       "year": 2023
     },
     {
-      "id": "work-ionq-brand-ionq-brand-image-02",
-      "src": "https://ws6i2dfuggcaavs2.public.blob.vercel-storage.com/images/work/ionq/brand/IonQ-Brand-Image-02.png",
-      "type": "image",
-      "title": "IonQ Brand Image 02",
-      "tags": [
-        "deck",
-        "identity"
-      ],
-      "format": [
-        "deck"
-      ],
-      "characteristics": [],
-      "subject": [
-        "identity"
-      ],
-      "project_tags": [
-        "b2b",
-        "quantum-computing"
-      ],
-      "medium": "digital",
-      "project": "ionq-brand",
-      "description": "",
-      "width": 828,
-      "height": 807,
-      "created": "2023-2025",
-      "date_range": "2023-2025",
-      "year": 2023
-    },
-    {
-      "id": "work-ionq-brand-ionq-brand-image-03",
-      "src": "https://ws6i2dfuggcaavs2.public.blob.vercel-storage.com/images/work/ionq/brand/IonQ-Brand-Image-03.png",
-      "type": "image",
-      "title": "IonQ Brand Image 03",
-      "tags": [
-        "deck",
-        "identity"
-      ],
-      "format": [
-        "deck"
-      ],
-      "characteristics": [],
-      "subject": [
-        "identity"
-      ],
-      "project_tags": [
-        "b2b",
-        "quantum-computing"
-      ],
-      "medium": "digital",
-      "project": "ionq-brand",
-      "description": "",
-      "width": 2068,
-      "height": 2105,
-      "created": "2023-2025",
-      "date_range": "2023-2025",
-      "year": 2023
-    },
-    {
       "id": "work-ionq-brand-ionq-brand-image-04",
       "src": "https://ws6i2dfuggcaavs2.public.blob.vercel-storage.com/images/work/ionq/brand/IonQ-Brand-Image-04.png",
       "type": "image",
@@ -21020,64 +20952,6 @@
       "description": "",
       "width": 1416,
       "height": 2121,
-      "created": "2023-2025",
-      "date_range": "2023-2025",
-      "year": 2023
-    },
-    {
-      "id": "work-ionq-brand-ionq-brand-image-08",
-      "src": "https://ws6i2dfuggcaavs2.public.blob.vercel-storage.com/images/work/ionq/brand/IonQ-Brand-Image-08.png",
-      "type": "image",
-      "title": "IonQ Brand Image 08",
-      "tags": [
-        "deck",
-        "identity"
-      ],
-      "format": [
-        "deck"
-      ],
-      "characteristics": [],
-      "subject": [
-        "identity"
-      ],
-      "project_tags": [
-        "b2b",
-        "quantum-computing"
-      ],
-      "medium": "digital",
-      "project": "ionq-brand",
-      "description": "",
-      "width": 1920,
-      "height": 1080,
-      "created": "2023-2025",
-      "date_range": "2023-2025",
-      "year": 2023
-    },
-    {
-      "id": "work-ionq-brand-ionq-brand-image-09",
-      "src": "https://ws6i2dfuggcaavs2.public.blob.vercel-storage.com/images/work/ionq/brand/IonQ-Brand-Image-09.png",
-      "type": "image",
-      "title": "IonQ Brand Image 09",
-      "tags": [
-        "deck",
-        "identity"
-      ],
-      "format": [
-        "deck"
-      ],
-      "characteristics": [],
-      "subject": [
-        "identity"
-      ],
-      "project_tags": [
-        "b2b",
-        "quantum-computing"
-      ],
-      "medium": "digital",
-      "project": "ionq-brand",
-      "description": "",
-      "width": 1920,
-      "height": 1080,
       "created": "2023-2025",
       "date_range": "2023-2025",
       "year": 2023
@@ -21557,13 +21431,14 @@
       "hidden_from_feed": true
     },
     {
-      "id": "practice-jullie-app-jullie-resume-app",
-      "src": "https://ws6i2dfuggcaavs2.public.blob.vercel-storage.com/images/practice/jullie-app/jullie-resume-app.png",
+      "id": "tools-kept-app-jullie-resume-app",
+      "src": "https://ws6i2dfuggcaavs2.public.blob.vercel-storage.com/images/tools/kept-app/jullie-resume-app.png",
       "type": "image",
       "title": "jullie resume app",
       "tags": [
         "web",
-        "interactive"
+        "interactive",
+        "snapshot"
       ],
       "format": [
         "web"
@@ -21574,18 +21449,21 @@
       "subject": [],
       "project_tags": [
         "personal",
-        "publication-design",
-        "education"
+        "personal",
+        "real-time"
       ],
       "medium": "digital",
-      "project": "jullie",
+      "project": "snapshot",
       "description": "Image of the garden",
       "width": 3805,
       "height": 1984,
-      "created": "2013",
-      "date_range": "2013",
-      "year": 2013,
-      "personal": true
+      "created": "2014-present",
+      "date_range": "2014-present",
+      "year": 2014,
+      "personal": true,
+      "staging": true,
+      "essay_of": "tools/kept-app/kept",
+      "hidden_from_feed": true
     },
     {
       "id": "practice-architecture-fantasy-perdido-street-station-00-animal-architecture-arch-macrotermes-natalensis",
@@ -21834,6 +21712,721 @@
       "created": "April 4, 2026",
       "date_range": "April 4, 2026",
       "personal": true
+    },
+    {
+      "id": "work-ionq-brand-group-161268327",
+      "src": "https://ws6i2dfuggcaavs2.public.blob.vercel-storage.com/images/work/ionq/brand/Group%20161268327.png",
+      "type": "image",
+      "title": "Group 161268327",
+      "tags": [
+        "identity",
+        "product-render"
+      ],
+      "format": [],
+      "characteristics": [],
+      "subject": [
+        "identity",
+        "product-render"
+      ],
+      "project_tags": [
+        "b2b",
+        "quantum-computing"
+      ],
+      "medium": "digital",
+      "project": "ionq-brand",
+      "description": "",
+      "width": 2684,
+      "height": 1514,
+      "created": "2023-2025",
+      "date_range": "2023-2025",
+      "year": 2023
+    },
+    {
+      "id": "work-ionq-brand-ionq-brand-image-color-highres",
+      "src": "https://ws6i2dfuggcaavs2.public.blob.vercel-storage.com/images/work/ionq/brand/IonQ-Brand-Image-Color-highres.png",
+      "type": "image",
+      "title": "IonQ Brand Image Color highres",
+      "tags": [
+        "deck",
+        "identity"
+      ],
+      "format": [
+        "deck"
+      ],
+      "characteristics": [],
+      "subject": [
+        "identity"
+      ],
+      "project_tags": [
+        "b2b",
+        "quantum-computing"
+      ],
+      "medium": "digital",
+      "project": "ionq-brand",
+      "description": "",
+      "width": 2484,
+      "height": 2421,
+      "created": "2023-2025",
+      "date_range": "2023-2025",
+      "year": 2023
+    },
+    {
+      "id": "work-ionq-brand-ionq-brand-image-highres",
+      "src": "https://ws6i2dfuggcaavs2.public.blob.vercel-storage.com/images/work/ionq/brand/IonQ-Brand-Image-highres.png",
+      "type": "image",
+      "title": "IonQ Brand Image highres",
+      "tags": [
+        "deck",
+        "identity"
+      ],
+      "format": [
+        "deck"
+      ],
+      "characteristics": [],
+      "subject": [
+        "identity"
+      ],
+      "project_tags": [
+        "b2b",
+        "quantum-computing"
+      ],
+      "medium": "digital",
+      "project": "ionq-brand",
+      "description": "",
+      "width": 4136,
+      "height": 4210,
+      "created": "2023-2025",
+      "date_range": "2023-2025",
+      "year": 2023
+    },
+    {
+      "id": "work-ionq-brand-image-50",
+      "src": "https://ws6i2dfuggcaavs2.public.blob.vercel-storage.com/images/work/ionq/brand/image%2050.png",
+      "type": "image",
+      "title": "image 50",
+      "tags": [
+        "identity",
+        "product-render"
+      ],
+      "format": [],
+      "characteristics": [],
+      "subject": [
+        "identity",
+        "product-render"
+      ],
+      "project_tags": [
+        "b2b",
+        "quantum-computing"
+      ],
+      "medium": "digital",
+      "project": "ionq-brand",
+      "description": "",
+      "width": 2691,
+      "height": 1514,
+      "created": "2023-2025",
+      "date_range": "2023-2025",
+      "year": 2023
+    },
+    {
+      "id": "work-ionq-icons-frame-161268476",
+      "src": "https://ws6i2dfuggcaavs2.public.blob.vercel-storage.com/images/work/ionq/icons/Frame%20161268476.png",
+      "type": "image",
+      "title": "Frame 161268476",
+      "tags": [
+        "iconography",
+        "snapshot"
+      ],
+      "format": [],
+      "characteristics": [],
+      "subject": [
+        "iconography"
+      ],
+      "project_tags": [
+        "personal",
+        "personal",
+        "real-time"
+      ],
+      "medium": "digital",
+      "project": "snapshot",
+      "description": "",
+      "width": 800,
+      "height": 800,
+      "created": "2014-present",
+      "date_range": "2014-present",
+      "year": 2014,
+      "personal": true
+    },
+    {
+      "id": "work-ionq-icons-frame-161268477",
+      "src": "https://ws6i2dfuggcaavs2.public.blob.vercel-storage.com/images/work/ionq/icons/Frame%20161268477.png",
+      "type": "image",
+      "title": "Frame 161268477",
+      "tags": [
+        "iconography",
+        "snapshot"
+      ],
+      "format": [],
+      "characteristics": [],
+      "subject": [
+        "iconography"
+      ],
+      "project_tags": [
+        "personal",
+        "personal",
+        "real-time"
+      ],
+      "medium": "digital",
+      "project": "snapshot",
+      "description": "",
+      "width": 800,
+      "height": 800,
+      "created": "2014-present",
+      "date_range": "2014-present",
+      "year": 2014,
+      "personal": true
+    },
+    {
+      "id": "work-ionq-icons-frame-161268478",
+      "src": "https://ws6i2dfuggcaavs2.public.blob.vercel-storage.com/images/work/ionq/icons/Frame%20161268478.png",
+      "type": "image",
+      "title": "Frame 161268478",
+      "tags": [
+        "iconography",
+        "snapshot"
+      ],
+      "format": [],
+      "characteristics": [],
+      "subject": [
+        "iconography"
+      ],
+      "project_tags": [
+        "personal",
+        "personal",
+        "real-time"
+      ],
+      "medium": "digital",
+      "project": "snapshot",
+      "description": "",
+      "width": 800,
+      "height": 800,
+      "created": "2014-present",
+      "date_range": "2014-present",
+      "year": 2014,
+      "personal": true
+    },
+    {
+      "id": "work-ionq-icons-frame-161268479",
+      "src": "https://ws6i2dfuggcaavs2.public.blob.vercel-storage.com/images/work/ionq/icons/Frame%20161268479.png",
+      "type": "image",
+      "title": "Frame 161268479",
+      "tags": [
+        "iconography",
+        "snapshot"
+      ],
+      "format": [],
+      "characteristics": [],
+      "subject": [
+        "iconography"
+      ],
+      "project_tags": [
+        "personal",
+        "personal",
+        "real-time"
+      ],
+      "medium": "digital",
+      "project": "snapshot",
+      "description": "",
+      "width": 800,
+      "height": 800,
+      "created": "2014-present",
+      "date_range": "2014-present",
+      "year": 2014,
+      "personal": true
+    },
+    {
+      "id": "work-ionq-icons-frame-161268480",
+      "src": "https://ws6i2dfuggcaavs2.public.blob.vercel-storage.com/images/work/ionq/icons/Frame%20161268480.png",
+      "type": "image",
+      "title": "Frame 161268480",
+      "tags": [
+        "iconography",
+        "snapshot"
+      ],
+      "format": [],
+      "characteristics": [],
+      "subject": [
+        "iconography"
+      ],
+      "project_tags": [
+        "personal",
+        "personal",
+        "real-time"
+      ],
+      "medium": "digital",
+      "project": "snapshot",
+      "description": "",
+      "width": 800,
+      "height": 800,
+      "created": "2014-present",
+      "date_range": "2014-present",
+      "year": 2014,
+      "personal": true
+    },
+    {
+      "id": "work-ionq-icons-frame-161268481",
+      "src": "https://ws6i2dfuggcaavs2.public.blob.vercel-storage.com/images/work/ionq/icons/Frame%20161268481.png",
+      "type": "image",
+      "title": "Frame 161268481",
+      "tags": [
+        "iconography",
+        "snapshot"
+      ],
+      "format": [],
+      "characteristics": [],
+      "subject": [
+        "iconography"
+      ],
+      "project_tags": [
+        "personal",
+        "personal",
+        "real-time"
+      ],
+      "medium": "digital",
+      "project": "snapshot",
+      "description": "",
+      "width": 800,
+      "height": 800,
+      "created": "2014-present",
+      "date_range": "2014-present",
+      "year": 2014,
+      "personal": true
+    },
+    {
+      "id": "work-ionq-icons-frame-161268482",
+      "src": "https://ws6i2dfuggcaavs2.public.blob.vercel-storage.com/images/work/ionq/icons/Frame%20161268482.png",
+      "type": "image",
+      "title": "Frame 161268482",
+      "tags": [
+        "iconography",
+        "snapshot"
+      ],
+      "format": [],
+      "characteristics": [],
+      "subject": [
+        "iconography"
+      ],
+      "project_tags": [
+        "personal",
+        "personal",
+        "real-time"
+      ],
+      "medium": "digital",
+      "project": "snapshot",
+      "description": "",
+      "width": 800,
+      "height": 800,
+      "created": "2014-present",
+      "date_range": "2014-present",
+      "year": 2014,
+      "personal": true
+    },
+    {
+      "id": "work-ionq-icons-frame-161268483",
+      "src": "https://ws6i2dfuggcaavs2.public.blob.vercel-storage.com/images/work/ionq/icons/Frame%20161268483.png",
+      "type": "image",
+      "title": "Frame 161268483",
+      "tags": [
+        "iconography",
+        "snapshot"
+      ],
+      "format": [],
+      "characteristics": [],
+      "subject": [
+        "iconography"
+      ],
+      "project_tags": [
+        "personal",
+        "personal",
+        "real-time"
+      ],
+      "medium": "digital",
+      "project": "snapshot",
+      "description": "",
+      "width": 800,
+      "height": 800,
+      "created": "2014-present",
+      "date_range": "2014-present",
+      "year": 2014,
+      "personal": true
+    },
+    {
+      "id": "work-ionq-icons-frame-161268484",
+      "src": "https://ws6i2dfuggcaavs2.public.blob.vercel-storage.com/images/work/ionq/icons/Frame%20161268484.png",
+      "type": "image",
+      "title": "Frame 161268484",
+      "tags": [
+        "iconography",
+        "snapshot"
+      ],
+      "format": [],
+      "characteristics": [],
+      "subject": [
+        "iconography"
+      ],
+      "project_tags": [
+        "personal",
+        "personal",
+        "real-time"
+      ],
+      "medium": "digital",
+      "project": "snapshot",
+      "description": "",
+      "width": 800,
+      "height": 800,
+      "created": "2014-present",
+      "date_range": "2014-present",
+      "year": 2014,
+      "personal": true
+    },
+    {
+      "id": "work-ionq-icons-frame-161268485",
+      "src": "https://ws6i2dfuggcaavs2.public.blob.vercel-storage.com/images/work/ionq/icons/Frame%20161268485.png",
+      "type": "image",
+      "title": "Frame 161268485",
+      "tags": [
+        "iconography",
+        "snapshot"
+      ],
+      "format": [],
+      "characteristics": [],
+      "subject": [
+        "iconography"
+      ],
+      "project_tags": [
+        "personal",
+        "personal",
+        "real-time"
+      ],
+      "medium": "digital",
+      "project": "snapshot",
+      "description": "",
+      "width": 800,
+      "height": 800,
+      "created": "2014-present",
+      "date_range": "2014-present",
+      "year": 2014,
+      "personal": true
+    },
+    {
+      "id": "work-ionq-icons-frame-161268486",
+      "src": "https://ws6i2dfuggcaavs2.public.blob.vercel-storage.com/images/work/ionq/icons/Frame%20161268486.png",
+      "type": "image",
+      "title": "Frame 161268486",
+      "tags": [
+        "iconography",
+        "snapshot"
+      ],
+      "format": [],
+      "characteristics": [],
+      "subject": [
+        "iconography"
+      ],
+      "project_tags": [
+        "personal",
+        "personal",
+        "real-time"
+      ],
+      "medium": "digital",
+      "project": "snapshot",
+      "description": "",
+      "width": 800,
+      "height": 800,
+      "created": "2014-present",
+      "date_range": "2014-present",
+      "year": 2014,
+      "personal": true
+    },
+    {
+      "id": "work-ionq-icons-frame-161268487",
+      "src": "https://ws6i2dfuggcaavs2.public.blob.vercel-storage.com/images/work/ionq/icons/Frame%20161268487.png",
+      "type": "image",
+      "title": "Frame 161268487",
+      "tags": [
+        "iconography",
+        "snapshot"
+      ],
+      "format": [],
+      "characteristics": [],
+      "subject": [
+        "iconography"
+      ],
+      "project_tags": [
+        "personal",
+        "personal",
+        "real-time"
+      ],
+      "medium": "digital",
+      "project": "snapshot",
+      "description": "",
+      "width": 800,
+      "height": 800,
+      "created": "2014-present",
+      "date_range": "2014-present",
+      "year": 2014,
+      "personal": true
+    },
+    {
+      "id": "work-ionq-illustrations-elements",
+      "src": "https://ws6i2dfuggcaavs2.public.blob.vercel-storage.com/images/work/ionq/illustrations/Elements.png",
+      "type": "image",
+      "title": "Elements",
+      "tags": [
+        "illustration"
+      ],
+      "format": [],
+      "characteristics": [],
+      "subject": [
+        "illustration"
+      ],
+      "project_tags": [
+        "b2b",
+        "quantum-computing"
+      ],
+      "medium": "digital",
+      "project": "ionq-illustrations",
+      "description": "",
+      "width": 1478,
+      "height": 902,
+      "created": "2023-2025",
+      "date_range": "2023-2025",
+      "year": 2023
+    },
+    {
+      "id": "work-ionq-illustrations-frame-161268454",
+      "src": "https://ws6i2dfuggcaavs2.public.blob.vercel-storage.com/images/work/ionq/illustrations/Frame%20161268454.png",
+      "type": "image",
+      "title": "Frame 161268454",
+      "tags": [
+        "illustration"
+      ],
+      "format": [],
+      "characteristics": [],
+      "subject": [
+        "illustration"
+      ],
+      "project_tags": [
+        "b2b",
+        "quantum-computing"
+      ],
+      "medium": "digital",
+      "project": "ionq-illustrations",
+      "description": "",
+      "width": 1720,
+      "height": 883,
+      "created": "2023-2025",
+      "date_range": "2023-2025",
+      "year": 2023
+    },
+    {
+      "id": "work-ionq-illustrations-frame",
+      "src": "https://ws6i2dfuggcaavs2.public.blob.vercel-storage.com/images/work/ionq/illustrations/Frame.png",
+      "type": "image",
+      "title": "Frame",
+      "tags": [
+        "illustration"
+      ],
+      "format": [],
+      "characteristics": [],
+      "subject": [
+        "illustration"
+      ],
+      "project_tags": [
+        "b2b",
+        "quantum-computing"
+      ],
+      "medium": "digital",
+      "project": "ionq-illustrations",
+      "description": "",
+      "width": 1966,
+      "height": 1355,
+      "created": "2023-2025",
+      "date_range": "2023-2025",
+      "year": 2023
+    },
+    {
+      "id": "work-ionq-illustrations-illustration-3-white",
+      "src": "https://ws6i2dfuggcaavs2.public.blob.vercel-storage.com/images/work/ionq/illustrations/Illustration%203_White.png",
+      "type": "image",
+      "title": "Illustration 3 White",
+      "tags": [
+        "illustration"
+      ],
+      "format": [],
+      "characteristics": [],
+      "subject": [
+        "illustration"
+      ],
+      "project_tags": [
+        "b2b",
+        "quantum-computing"
+      ],
+      "medium": "digital",
+      "project": "ionq-illustrations",
+      "description": "",
+      "width": 3840,
+      "height": 2160,
+      "created": "2023-2025",
+      "date_range": "2023-2025",
+      "year": 2023
+    },
+    {
+      "id": "work-ionq-illustrations-iontrap",
+      "src": "https://ws6i2dfuggcaavs2.public.blob.vercel-storage.com/images/work/ionq/illustrations/IonTrap.png",
+      "type": "image",
+      "title": "IonTrap",
+      "tags": [
+        "illustration"
+      ],
+      "format": [],
+      "characteristics": [],
+      "subject": [
+        "illustration"
+      ],
+      "project_tags": [
+        "b2b",
+        "quantum-computing"
+      ],
+      "medium": "digital",
+      "project": "ionq-illustrations",
+      "description": "",
+      "width": 1080,
+      "height": 1080,
+      "created": "2023-2025",
+      "date_range": "2023-2025",
+      "year": 2023
+    },
+    {
+      "id": "work-ionq-illustrations-quantumcomputing-security",
+      "src": "https://ws6i2dfuggcaavs2.public.blob.vercel-storage.com/images/work/ionq/illustrations/QuantumComputing-Security.png",
+      "type": "image",
+      "title": "QuantumComputing Security",
+      "tags": [
+        "illustration"
+      ],
+      "format": [],
+      "characteristics": [],
+      "subject": [
+        "illustration"
+      ],
+      "project_tags": [
+        "b2b",
+        "quantum-computing"
+      ],
+      "medium": "digital",
+      "project": "ionq-illustrations",
+      "description": "",
+      "width": 1607,
+      "height": 1606,
+      "created": "2023-2025",
+      "date_range": "2023-2025",
+      "year": 2023
+    },
+    {
+      "id": "work-ionq-photography-video-2024-08-23-032319-1",
+      "src": "https://ws6i2dfuggcaavs2.public.blob.vercel-storage.com/images/work/ionq/photography-video/%EC%8A%A4%ED%81%AC%EB%A6%B0%EC%83%B7%202024-08-23%20032319%201.png",
+      "type": "image",
+      "title": "스크린샷 2024 08 23 032319 1",
+      "tags": [
+        "identity",
+        "photography",
+        "snapshot"
+      ],
+      "format": [],
+      "characteristics": [],
+      "subject": [
+        "identity",
+        "photography"
+      ],
+      "project_tags": [
+        "personal",
+        "personal",
+        "real-time"
+      ],
+      "medium": "digital",
+      "project": "snapshot",
+      "description": "",
+      "width": 1179,
+      "height": 614,
+      "created": "2014-present",
+      "date_range": "2014-present",
+      "year": 2014,
+      "personal": true
+    },
+    {
+      "id": "work-ionq-photography-video-2024-08-23-032319-2",
+      "src": "https://ws6i2dfuggcaavs2.public.blob.vercel-storage.com/images/work/ionq/photography-video/%EC%8A%A4%ED%81%AC%EB%A6%B0%EC%83%B7%202024-08-23%20032319%202.png",
+      "type": "image",
+      "title": "스크린샷 2024 08 23 032319 2",
+      "tags": [
+        "identity",
+        "photography",
+        "snapshot"
+      ],
+      "format": [],
+      "characteristics": [],
+      "subject": [
+        "identity",
+        "photography"
+      ],
+      "project_tags": [
+        "personal",
+        "personal",
+        "real-time"
+      ],
+      "medium": "digital",
+      "project": "snapshot",
+      "description": "",
+      "width": 1179,
+      "height": 614,
+      "created": "2014-present",
+      "date_range": "2014-present",
+      "year": 2014,
+      "personal": true
+    },
+    {
+      "id": "tools-until-until",
+      "src": "https://ws6i2dfuggcaavs2.public.blob.vercel-storage.com/images/tools/until/until.png",
+      "type": "image",
+      "title": "until",
+      "tags": [
+        "web",
+        "interactive",
+        "snapshot"
+      ],
+      "format": [
+        "web"
+      ],
+      "characteristics": [
+        "interactive"
+      ],
+      "subject": [],
+      "project_tags": [
+        "personal",
+        "personal",
+        "real-time"
+      ],
+      "medium": "digital",
+      "project": "snapshot",
+      "description": "",
+      "width": 2158,
+      "height": 2158,
+      "created": "2014-present",
+      "date_range": "2014-present",
+      "year": 2014,
+      "personal": true,
+      "staging": true,
+      "essay_of": "tools/until/until",
+      "hidden_from_feed": true
     },
     {
       "id": "reinforcement-learning-gyms",

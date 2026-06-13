@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<title>Connectivity — slide mockup</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --bg:           #000000;
+    --header-bg:    #0d1218;
+    --separator:    #FF5000;
+    --col-divider:  #1a1a1a;
+    --text:         #FFFFFF;
+    --text-muted:   #6a6a6a;
+    --accent:       #FF5000;
+
+    --edge:         #404043;
+    --node:         #404043;
+    --node-mid:     #BCBCBE;
+    --node-active:  #FFFFFF;
+  }
+
+  html, body {
+    width: 100%;
+    height: 100%;
+    background: var(--bg);
+    color: var(--text);
+    font-family: 'PP Neue Montreal', sans-serif;
+    overflow: hidden;
+  }
+
+  /* ─── SLIDE FRAME ──────────────────────────────────────────────────── */
+  /* Designed at 1920×1080 then scaled to fit the viewport */
+  .slide-wrapper {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .slide {
+    width: 1920px;
+    height: 1080px;
+    flex-shrink: 0;
+    background: var(--bg);
+    display: flex;
+    flex-direction: column;
+    transform-origin: center;
+    transform: scale(min(calc(100vw / 1920), calc(100vh / 1080)));
+  }
+
+  /* ─── HEADER ───────────────────────────────────────────────────────── */
+  .header {
+    background: var(--header-bg);
+    height: 80px;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    padding: 0 60px;
+    position: relative;
+  }
+  .header-title {
+    font-size: 36px;
+    font-weight: 600;
+    flex: 1;
+  }
+  .header-confidential {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 18px;
+    font-weight: 400;
+  }
+  .header-section {
+    font-size: 36px;
+    font-weight: 600;
+    color: var(--text-muted);
+  }
+  .separator {
+    height: 2px;
+    background: var(--separator);
+    flex-shrink: 0;
+  }
+
+  /* ─── CONTENT ──────────────────────────────────────────────────────── */
+  .content {
+    flex: 1;
+    display: flex;
+    min-height: 0;
+  }
+  .col {
+    padding: 80px 60px 60px;
+    display: flex;
+    flex-direction: column;
+    min-height: 0;
+  }
+  .col-narrative {
+    width: 480px;
+    border-right: 1px solid var(--col-divider);
+  }
+  .col-diagram {
+    flex: 1;
+    align-items: stretch;
+  }
+
+  .headline {
+    font-size: 52px;
+    font-weight: 600;
+    line-height: 1.1;
+    letter-spacing: -0.01em;
+  }
+  .placeholder {
+    font-size: 22px;
+    font-weight: 600;
+    color: var(--accent);
+    margin-top: auto;
+  }
+
+  .diagram-title {
+    font-size: 32px;
+    font-weight: 600;
+  }
+  .diagram-stage {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 20px 0;
+    min-height: 0;
+  }
+  .caption {
+    font-size: 22px;
+    font-weight: 400;
+    line-height: 1.3;
+    max-width: 600px;
+  }
+
+  /* ─── SVG STYLES ───────────────────────────────────────────────────── */
+  svg { display: block; }
+  #all-to-all { width: 100%; max-width: 540px; height: auto; }
+  #routing    { width: 100%; max-width: 640px; height: auto; }
+
+  .edge        { stroke: var(--edge); stroke-width: 1; }
+  .edge-active { stroke: var(--accent); stroke-width: 2.5; fill: none; }
+  .node        { fill: var(--node); }
+  .node-mid    { fill: var(--node-mid); }
+  .node-active { fill: var(--node-active); }
+</style>
+</head>
+<body>
+
+<div class="slide-wrapper">
+  <div class="slide">
+
+    <div class="header">
+      <div class="header-title">Connectivity</div>
+      <div class="header-confidential">Confidential and Proprietary.</div>
+      <div class="header-section">Strategy / Time to Solution</div>
+    </div>
+    <div class="separator"></div>
+
+    <div class="content">
+
+      <div class="col col-narrative">
+        <div class="headline">This is about time from the swap gates but also the quality impact of lower fidelity operations</div>
+        <div class="placeholder">Placeholder short paragraph</div>
+      </div>
+
+      <div class="col col-diagram">
+        <div class="diagram-title">All-to-all Connectivity</div>
+        <div class="diagram-stage">
+          <svg id="all-to-all" viewBox="-300 -300 600 600"></svg>
+        </div>
+        <div class="caption">Two qubit gates can be performed between any two qubits with no extra steps.</div>
+      </div>
+
+      <div class="col col-diagram">
+        <div class="diagram-title">Nearest Neighbor Connectivity</div>
+        <div class="diagram-stage">
+          <svg id="routing" viewBox="-280 -160 560 320"></svg>
+        </div>
+        <div class="caption">Two qubit gates between distant qubits require many extra gates to move information around.</div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<script>
+// ─── Rescale slide on resize so the design always fits the viewport ────
+(function fit() {
+  // Pure-CSS scale handles this, but listen for orientation changes anyway.
+  window.addEventListener('resize', () => { /* scale is responsive via CSS calc */ });
+})();
+
+// ─── ALL-TO-ALL ────────────────────────────────────────────────────────
+(function() {
+  const N        = 13;
+  const RADIUS   = 240;
+  const NODE_R   = 10;
+  const HOLD_MS  = 500;
+  const FADE_MS  = 80;
+
+  const nodes = Array.from({ length: N }, (_, i) => {
+    const a = (i / N) * Math.PI * 2 - Math.PI / 2;
+    return { x: Math.cos(a) * RADIUS, y: Math.sin(a) * RADIUS };
+  });
+
+  const NS  = 'http://www.w3.org/2000/svg';
+  const svg = document.getElementById('all-to-all');
+
+  const staticLayer = document.createElementNS(NS, 'g');
+  const activeLayer = document.createElementNS(NS, 'g');
+  const nodeLayer   = document.createElementNS(NS, 'g');
+  svg.append(staticLayer, activeLayer, nodeLayer);
+
+  for (let i = 0; i < N; i++) {
+    for (let j = i + 1; j < N; j++) {
+      const l = document.createElementNS(NS, 'line');
+      l.setAttribute('x1', nodes[i].x); l.setAttribute('y1', nodes[i].y);
+      l.setAttribute('x2', nodes[j].x); l.setAttribute('y2', nodes[j].y);
+      l.setAttribute('class', 'edge');
+      staticLayer.appendChild(l);
+    }
+  }
+
+  const activeLine = document.createElementNS(NS, 'line');
+  activeLine.setAttribute('class', 'edge-active');
+  activeLine.style.opacity = 0;
+  activeLine.style.transition = `opacity ${FADE_MS}ms linear`;
+  activeLayer.appendChild(activeLine);
+
+  const nodeEls = nodes.map(({ x, y }) => {
+    const c = document.createElementNS(NS, 'circle');
+    c.setAttribute('cx', x); c.setAttribute('cy', y);
+    c.setAttribute('r', NODE_R);
+    c.setAttribute('class', 'node');
+    c.style.transition = `fill ${FADE_MS}ms linear`;
+    nodeLayer.appendChild(c);
+    return c;
+  });
+
+  function pickPair(prev) {
+    let a, b;
+    do {
+      a = Math.floor(Math.random() * N);
+      b = Math.floor(Math.random() * N);
+    } while (
+      a === b ||
+      (prev && ((a === prev[0] && b === prev[1]) || (a === prev[1] && b === prev[0])))
+    );
+    return [a, b];
+  }
+
+  let prev = null;
+  function flash() {
+    const [a, b] = pickPair(prev);
+    prev = [a, b];
+
+    activeLine.setAttribute('x1', nodes[a].x);
+    activeLine.setAttribute('y1', nodes[a].y);
+    activeLine.setAttribute('x2', nodes[b].x);
+    activeLine.setAttribute('y2', nodes[b].y);
+    activeLine.style.opacity = 1;
+    nodeEls[a].setAttribute('class', 'node-active');
+    nodeEls[b].setAttribute('class', 'node-active');
+
+    setTimeout(() => {
+      activeLine.style.opacity = 0;
+      nodeEls[a].setAttribute('class', 'node');
+      nodeEls[b].setAttribute('class', 'node');
+      setTimeout(flash, FADE_MS);
+    }, HOLD_MS);
+  }
+  flash();
+})();
+
+// ─── ROUTING ───────────────────────────────────────────────────────────
+(function() {
+  const COLS     = 7;
+  const ROWS     = 4;
+  const SPACING  = 80;
+  const NODE_R   = 10;
+  const HOP_MS   = 320;
+  const HOLD_MS  = 700;
+  const FADE_MS  = 220;
+  const MIN_HOPS = 4;
+
+  const nodes = [];
+  for (let r = 0; r < ROWS; r++) {
+    for (let c = 0; c < COLS; c++) {
+      nodes.push({
+        x: c * SPACING - (COLS - 1) * SPACING / 2,
+        y: r * SPACING - (ROWS - 1) * SPACING / 2,
+        row: r, col: c
+      });
+    }
+  }
+
+  const adj = nodes.map(() => []);
+  const staticEdges = [];
+  for (let i = 0; i < nodes.length; i++) {
+    if (nodes[i].col < COLS - 1) {
+      const j = i + 1;
+      staticEdges.push([i, j]); adj[i].push(j); adj[j].push(i);
+    }
+    if (nodes[i].row < ROWS - 1) {
+      const j = i + COLS;
+      staticEdges.push([i, j]); adj[i].push(j); adj[j].push(i);
+    }
+  }
+
+  function shortestPath(src, dst) {
+    const prev = new Array(nodes.length).fill(-1);
+    const seen = new Array(nodes.length).fill(false);
+    const q = [src]; seen[src] = true;
+    while (q.length) {
+      const u = q.shift();
+      if (u === dst) break;
+      for (const v of adj[u]) if (!seen[v]) { seen[v] = true; prev[v] = u; q.push(v); }
+    }
+    const path = [];
+    for (let cur = dst; cur !== -1; cur = prev[cur]) path.push(cur);
+    return path.reverse();
+  }
+  function manhattan(a, b) {
+    return Math.abs(nodes[a].col - nodes[b].col) + Math.abs(nodes[a].row - nodes[b].row);
+  }
+
+  const NS  = 'http://www.w3.org/2000/svg';
+  const svg = document.getElementById('routing');
+
+  const staticLayer = document.createElementNS(NS, 'g');
+  const activeLayer = document.createElementNS(NS, 'g');
+  const nodeLayer   = document.createElementNS(NS, 'g');
+  svg.append(staticLayer, activeLayer, nodeLayer);
+
+  staticEdges.forEach(([a, b]) => {
+    const l = document.createElementNS(NS, 'line');
+    l.setAttribute('x1', nodes[a].x); l.setAttribute('y1', nodes[a].y);
+    l.setAttribute('x2', nodes[b].x); l.setAttribute('y2', nodes[b].y);
+    l.setAttribute('class', 'edge');
+    staticLayer.appendChild(l);
+  });
+
+  const nodeEls = nodes.map(({ x, y }) => {
+    const c = document.createElementNS(NS, 'circle');
+    c.setAttribute('cx', x); c.setAttribute('cy', y);
+    c.setAttribute('r', NODE_R);
+    c.setAttribute('class', 'node');
+    c.style.transition = `fill ${FADE_MS}ms linear`;
+    nodeLayer.appendChild(c);
+    return c;
+  });
+
+  const sleep = ms => new Promise(r => setTimeout(r, ms));
+
+  async function loop() {
+    while (true) {
+      let src, dst;
+      do {
+        src = Math.floor(Math.random() * nodes.length);
+        dst = Math.floor(Math.random() * nodes.length);
+      } while (src === dst || manhattan(src, dst) < MIN_HOPS);
+
+      const path = shortestPath(src, dst);
+      nodeEls[src].setAttribute('class', 'node-active');
+      nodeEls[dst].setAttribute('class', 'node-active');
+
+      const lines = [];
+      for (let i = 0; i < path.length - 1; i++) {
+        const a = nodes[path[i]], b = nodes[path[i + 1]];
+        const line = document.createElementNS(NS, 'line');
+        line.setAttribute('x1', a.x); line.setAttribute('y1', a.y);
+        line.setAttribute('x2', b.x); line.setAttribute('y2', b.y);
+        line.setAttribute('class', 'edge-active');
+        const len = Math.hypot(b.x - a.x, b.y - a.y);
+        line.style.strokeDasharray  = len;
+        line.style.strokeDashoffset = len;
+        line.style.transition = `stroke-dashoffset ${HOP_MS}ms linear`;
+        activeLayer.appendChild(line);
+        lines.push(line);
+      }
+
+      for (let i = 0; i < lines.length; i++) {
+        lines[i].getBoundingClientRect();
+        lines[i].style.strokeDashoffset = 0;
+        await sleep(HOP_MS);
+        if (i < lines.length - 1) {
+          nodeEls[path[i + 1]].setAttribute('class', 'node-mid');
+        }
+      }
+
+      await sleep(HOLD_MS);
+
+      lines.forEach(l => {
+        l.style.transition = `opacity ${FADE_MS}ms linear`;
+        l.style.opacity = 0;
+      });
+      path.forEach(i => nodeEls[i].setAttribute('class', 'node'));
+      await sleep(FADE_MS);
+
+      lines.forEach(l => l.remove());
+    }
+  }
+  loop();
+})();
+</script>
+</body>
+</html>

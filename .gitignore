@@ -11,7 +11,7 @@ dist/
 public/images/**/*
 !public/images/**/
 !public/images/**/*.md
-# App documentation (HTML rendered into project pages) ships in code, not Blob.
+# Standalone HTML artifacts (e.g. diagram slides) ship in code, not Blob.
 !public/images/**/*.html
 
 # Bullets template
@@ -32,9 +32,6 @@ _exclude/
 
 # Local-only archive of spent migrations / stale artifacts (see _DEPRECATED/README.md)
 _DEPRECATED/
-
-# Chroma database
-chroma/
 
 # Personal evaluations
 public/evaluations/

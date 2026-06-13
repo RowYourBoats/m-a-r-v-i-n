@@ -1,5 +1,5 @@
 #!/usr/bin/env node
-// Reads one _project.md per client folder under work/, practice/, teaching/.
+// Reads one _project.md per client folder under work/, practice/, tools/, teaching/.
 // Each file may have a `projects:` map of sub-projects; each map entry
 // becomes a project in projects.json, inheriting unspecified fields from the
 // client umbrella.
@@ -48,7 +48,7 @@ function parseFrontmatter(text) {
   return { data, body };
 }
 
-const TIERS = ["work", "practice", "teaching"];
+const TIERS = ["work", "practice", "tools", "teaching"];
 const projects = {};
 
 for (const tier of TIERS) {

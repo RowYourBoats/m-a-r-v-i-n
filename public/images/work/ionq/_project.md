@@ -37,6 +37,7 @@ projects:
     image_tags:
       - deck
       - identity
+      - product-render
     order:
       - IonQ Product Family
       - IonQ Ion Trap Technology Visual

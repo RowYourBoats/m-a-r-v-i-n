@@ -19,7 +19,8 @@ const writing = defineCollection({
   }),
 });
 
-// Sourced from Jullie-Resume via a directory junction at src/content/bullets.
+// Real files committed to the repo, mirrored from the Jullie-Resume gdrive
+// editing source via `npm run sync-bullets` (scripts/sync-bullets.mjs).
 // Each file is one atomic career/education/exhibition bullet.
 const bullets = defineCollection({
   loader: glob({
@@ -66,6 +67,10 @@ const pageSection = z.discriminatedUnion("kind", [
     kind: z.literal("filmstrip"),
     assets: z.array(filmstripAsset).min(1).max(5),
   }),
+  // A single outbound/in-site link rendered as a prose line (e.g. the landing
+  // page's "Résumé" link), so it's authored in the page's markdown rather than
+  // hardcoded in the route.
+  z.object({ kind: z.literal("link"), href: z.string(), label: z.string() }),
 ]);
 
 const pages = defineCollection({
