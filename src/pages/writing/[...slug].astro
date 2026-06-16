@@ -12,13 +12,30 @@ if (!entry) return Astro.redirect("/practice");
 
 const { Content } = await render(entry);
 
+// Images referenced inline in the body by bare filename — `![cap](file.png)`.
+// remark-essay-images.mjs swaps those filenames for Blob URLs at render time;
+// here we read the same references so an inline image isn't ALSO repeated in
+// the side rail. (Absolute/rooted/remote srcs are ignored — they're not
+// companion files.)
+const inlineNames = new Set(
+  [...(entry as any).body.matchAll(/!\[[^\]]*\]\(([^)\s]+)\)/g)]
+    .map((m: any) => m[1] as string)
+    .filter((u: string) => !/^(?:https?:|\/)/.test(u) && !u.includes("/")),
+);
+
 // Companion images flagged essay_of for this essay (built by build-manifest
-// for every image sharing the essay's folder). Two-column layout shows the
-// text alongside these figures; falls back to single-column when none.
+// for every image sharing the essay's folder), minus any pulled inline above.
+// The side rail is unchanged; an image referenced inline simply moves there
+// instead of duplicating, so the rail can hold its own (small) images while
+// wider ones run inline in the text column.
+// Two-column layout shows the text alongside these figures; falls back to
+// single-column when none.
 // Ordered like project media: optional `order` list in the essay frontmatter,
 // then alphabetical by filename (so numbered prefixes 00-, 01- … sort right).
 const figures = orderItems(
-  (manifest.items as any[]).filter((i) => i.essay_of === entry.id),
+  (manifest.items as any[]).filter(
+    (i) => i.essay_of === entry.id && !inlineNames.has(i.src.split("/").pop()),
+  ),
   entry.data.order || [],
 );
 ---

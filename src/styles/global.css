@@ -442,6 +442,14 @@ video {
   gap: var(--pad);
   min-width: 0;
 }
+/* Images named inline in an essay body (resolved to Blob URLs by
+   remark-essay-images.mjs) render as `<p><img></p>` and fill the full width of
+   the text column — wider than the side rail, which keeps its own images. */
+.essay .prose :where(p, figure) > img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
 .essay--with-figures {
   display: flex;
   flex-direction: row;
