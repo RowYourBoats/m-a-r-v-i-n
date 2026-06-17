@@ -29,6 +29,7 @@ projects:
       review, with final proposals prototyped in a mock-up store at HQ.
     image_tags:
       - campaign
+      - event
       - retail
     videos:
       - title: 5G Vinyl Roll Out
@@ -39,23 +40,15 @@ projects:
       - title: 5G Built Right for NYC
         url: >-
           https://player.vimeo.com/video/941507917?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479&amp;autoplay=1&amp;muted=1&amp;loop=1
-        characteristics:
-          - motion
       - title: 5G Built Right for You.
         url: >-
           https://player.vimeo.com/video/536011268?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479&amp;autoplay=1&amp;muted=1&amp;loop=1
-        characteristics:
-          - motion
       - title: 5G from America's most reliable network.
         url: >-
           https://player.vimeo.com/video/941507973?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479&amp;autoplay=1&amp;muted=1&amp;loop=1
-        characteristics:
-          - motion
       - title: 5G from America's most reliable network.
         url: >-
           https://player.vimeo.com/video/801037709?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479&amp;autoplay=1&amp;muted=1&amp;loop=1
-        characteristics:
-          - motion
     credits:
       - role: ACD / Design Lead
         name: Marvin de Jong
@@ -73,7 +66,6 @@ projects:
       - customer-experience
       - user-experience
       - digital
-      - motion
     videos:
       - title: 5G Home Simplified Menu
         url: >-
@@ -117,32 +109,23 @@ projects:
       - campaign
       - installation
       - interactive
-      - motion
     videos:
       - title: Chicago Entrance Screens
         featured: true
         video_mode: background
         url: >-
           https://player.vimeo.com/video/537126173?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479&amp;autoplay=1&amp;muted=1&amp;loop=1
-        characteristics:
-          - motion
       - title: Atrium Video
         featured: false
         video_mode: background
         url: >-
           https://player.vimeo.com/video/529211014?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479&amp;autoplay=1&amp;muted=1&amp;loop=1
-        characteristics:
-          - motion
       - title: "Screen 2: Changes Everything"
         url: >-
           https://player.vimeo.com/video/529210889?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479&amp;autoplay=1&amp;muted=1&amp;loop=1
-        characteristics:
-          - motion
       - title: Live Attract Loop
         url: >-
           https://player.vimeo.com/video/529213770?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479&amp;autoplay=1&amp;muted=1&amp;loop=1
-        characteristics:
-          - motion
       - title: "5G Live Video: A Short Teaser of Positive Societal Impact"
         featured: true
         video_mode: background
@@ -153,8 +136,6 @@ projects:
       - title: Play Attract Loop
         url: >-
           https://player.vimeo.com/video/529213865?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479&amp;autoplay=1&amp;muted=1&amp;loop=1
-        characteristics:
-          - motion
       - title: "5G Play Video: A Short Teaser of Personal Scale Use Cases"
         featured: true
         video_mode: background
@@ -256,8 +237,6 @@ projects:
       - title: Chicago Entrance Screens
         url: >-
           https://player.vimeo.com/video/537126173?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479&amp;autoplay=1&amp;muted=1&amp;loop=1
-        characteristics:
-          - motion
     credits:
       - role: ACD / Design Lead
         name: Marvin de Jong
@@ -277,7 +256,6 @@ projects:
       - design-system
       - experiential
       - interactive
-      - motion
       - product
       - retail
       - spatial
@@ -304,7 +282,6 @@ projects:
     name: Playlist Recommendation
     image_tags:
       - data-visualization
-      - motion
       - poster
       - proposal
     credits:
@@ -320,7 +297,6 @@ projects:
     image_tags:
       - deck
       - interactive
-      - motion
       - poster
       - product-render
       - proposal
@@ -342,7 +318,6 @@ projects:
       - interactive
       - letter-form
       - merch
-      - motion
       - photography
       - poster
       - proposal
@@ -360,7 +335,6 @@ projects:
       - data-visualization
       - installation
       - interactive
-      - motion
     credits:
       - role: ACD / Design Lead
         name: Marvin de Jong
@@ -372,7 +346,6 @@ projects:
       - data-visualization
       - installation
       - interactive
-      - motion
     credits:
       - role: ACD / Design Lead
         name: Marvin de Jong
@@ -393,6 +366,7 @@ projects:
     name: The Met
     image_tags:
       - campaign
+      - event
       - proposal
     credits:
       - role: ACD / Design Lead

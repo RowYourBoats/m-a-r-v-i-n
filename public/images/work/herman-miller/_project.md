@@ -43,6 +43,7 @@ projects:
       Exhibition graphics for **All Together Now** at Salone del Mobile. Herman Miller's Milan show bringing all
       subsidiaries under one roof for the first time. Posters, flyer, and merch under Emily C.M. Anderson.
     image_tags:
+      - event
       - exhibition
       - identity
       - typography
@@ -105,6 +106,7 @@ projects:
       photography by Daniel Dorsa with Herman Miller furniture brought into the set. The photos later promoted Ubiera's
       illustration workshop at the flagship store.
     image_tags:
+      - event
       - illustration
       - photography
       - stationery
@@ -124,6 +126,7 @@ projects:
       Industrial Facility — illustrations of HM products cut in matte vinyl and applied to acrylic, where the material
       contrast gave the outlines a sculptural dimension.
     image_tags:
+      - event
       - exhibition
       - illustration
       - installation
@@ -181,6 +184,7 @@ projects:
       Herman Miller presented furniture by designer Ward Bennett paired with objects, quotations, and archival
       photographs.
     image_tags:
+      - event
       - exhibition
       - typography
     credits:

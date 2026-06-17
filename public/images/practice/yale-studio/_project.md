@@ -19,6 +19,7 @@ credits:
     name: Marvin de Jong
 videos: []
 image_tags:
+  - event
   - exhibition
   - photography
   - poster

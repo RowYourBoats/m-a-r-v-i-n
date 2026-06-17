@@ -1221,7 +1221,7 @@
       "tags": [
         "installation",
         "letter-form",
-        "motion"
+        "moving-image"
       ],
       "format": [
         "installation"
@@ -1234,7 +1234,7 @@
         "personal",
         "personal"
       ],
-      "medium": "motion",
+      "medium": "moving-image",
       "project": "ambiguous-form",
       "description": "An interactive spatial installation featuring fluid, organic topographic forms rendered on a luminous surface, designed to evoke a meditative experience through dynamic ambient lighting and seamless spatial integration.",
       "width": 1200,
@@ -1558,7 +1558,7 @@
         "essay",
         "letter-form",
         "typography",
-        "motion"
+        "moving-image"
       ],
       "format": [
         "installation",
@@ -1575,7 +1575,7 @@
         "typography"
       ],
       "project_tags": [],
-      "medium": "motion",
+      "medium": "moving-image",
       "project": "__unrouted",
       "description": "A 3D-rendered Korean text design with fluid, glowing neon outlines illustrating controlled instability in typography. The luminous pink lines create an organic, dynamic visual effect.",
       "width": 1166,
@@ -1906,7 +1906,7 @@
         "real-time",
         "3d",
         "study",
-        "motion"
+        "moving-image"
       ],
       "format": [],
       "characteristics": [
@@ -1922,7 +1922,7 @@
         "real-time",
         "generative"
       ],
-      "medium": "motion",
+      "medium": "moving-image",
       "project": "smoke-systems",
       "description": "A blurred, abstract visualization of simulated smoke particles in warm red and orange gradients, demonstrating dynamic particle behavior within a digital environment.",
       "width": 1322,
@@ -2735,7 +2735,7 @@
       "tags": [
         "photography",
         "study",
-        "motion"
+        "moving-image"
       ],
       "format": [],
       "characteristics": [],
@@ -2747,7 +2747,7 @@
         "personal",
         "education"
       ],
-      "medium": "motion",
+      "medium": "moving-image",
       "project": "yale-thesis",
       "description": "A digital still life composition featuring textured objects arranged against a dramatic cloud-like background, exploring form, lighting, and environmental storytelling for a design thesis.",
       "width": 1920,
@@ -2767,7 +2767,7 @@
       "tags": [
         "photography",
         "study",
-        "motion"
+        "moving-image"
       ],
       "format": [],
       "characteristics": [],
@@ -2779,7 +2779,7 @@
         "personal",
         "education"
       ],
-      "medium": "motion",
+      "medium": "moving-image",
       "project": "yale-thesis",
       "description": "A photographic composition featuring a fork partially obscured by a bubble layer, juxtaposing transparency with vibrant background surfaces to explore material interactions in design.",
       "width": 1920,
@@ -2798,7 +2798,7 @@
       "title": "Minimalist Centered Square",
       "tags": [
         "illustration",
-        "motion"
+        "moving-image"
       ],
       "format": [],
       "characteristics": [],
@@ -2809,7 +2809,7 @@
         "personal",
         "education"
       ],
-      "medium": "motion",
+      "medium": "moving-image",
       "project": "yale-thesis",
       "description": "A monochromatic digital illustration with a single white square centered on a black background, demonstrating minimalist design through stark contrast and negative space.",
       "width": 1920,
@@ -2935,7 +2935,7 @@
       "title": "Placeholder Grid Test Page",
       "tags": [
         "study",
-        "motion"
+        "moving-image"
       ],
       "format": [],
       "characteristics": [],
@@ -2946,7 +2946,7 @@
         "personal",
         "education"
       ],
-      "medium": "motion",
+      "medium": "moving-image",
       "project": "yale-thesis",
       "description": "A digital test page featuring a repeating '1' character grid, developed for academic design practice to evaluate layout, spacing, and document preparation.",
       "width": 1440,
@@ -2967,7 +2967,7 @@
         "3d",
         "study",
         "letter-form",
-        "motion"
+        "moving-image"
       ],
       "format": [],
       "characteristics": [
@@ -2981,7 +2981,7 @@
         "personal",
         "education"
       ],
-      "medium": "motion",
+      "medium": "moving-image",
       "project": "yale-thesis",
       "description": "A close-up study of smooth, undulating sand formations, exploring texture, light, and shadow through a minimalist monochromatic composition.",
       "width": 1920,
@@ -4154,7 +4154,7 @@
       "title": "IonQ Video Filming Guidelines",
       "tags": [
         "deck",
-        "motion"
+        "moving-image"
       ],
       "format": [
         "deck"
@@ -4165,7 +4165,7 @@
         "b2b",
         "quantum-computing"
       ],
-      "medium": "motion",
+      "medium": "moving-image",
       "project": "ionq-brand-guidelines",
       "description": "A digital page from IonQ's brand guidelines outlining video production standards for interviews, emphasizing environments that foster trust and clarity while keeping technical content accessible.",
       "width": 1920,
@@ -4678,7 +4678,7 @@
       "title": "Trapped Ion Quantum Computing Benefits Overview",
       "tags": [
         "iconography",
-        "motion"
+        "moving-image"
       ],
       "format": [],
       "characteristics": [],
@@ -4689,7 +4689,7 @@
         "b2b",
         "quantum-computing"
       ],
-      "medium": "motion",
+      "medium": "moving-image",
       "project": "ionq-elevator-screen",
       "description": "A digital infographic presenting key benefits of IonQ's trapped ion quantum computing technology through clear visual elements and concise text, highlighting features such as all-to-all connectivity, software configurability, and longest coherence times.",
       "width": 3840,
@@ -4706,7 +4706,7 @@
       "title": "IonQ Elevator Screen: Quantum Advantages Visualization",
       "tags": [
         "iconography",
-        "motion"
+        "moving-image"
       ],
       "format": [],
       "characteristics": [],
@@ -4717,7 +4717,7 @@
         "b2b",
         "quantum-computing"
       ],
-      "medium": "motion",
+      "medium": "moving-image",
       "project": "ionq-elevator-screen",
       "description": "A digital layout for an elevator screen presenting IonQ’s quantum computing strengths through four key sections with geometric icons and concise technical text.",
       "width": 3840,
@@ -4734,7 +4734,7 @@
       "title": "IonQ Elevator Screen: Quantum Advantages",
       "tags": [
         "iconography",
-        "motion"
+        "moving-image"
       ],
       "format": [],
       "characteristics": [],
@@ -4745,7 +4745,7 @@
         "b2b",
         "quantum-computing"
       ],
-      "medium": "motion",
+      "medium": "moving-image",
       "project": "ionq-elevator-screen",
       "description": "A minimalist digital design for IonQ's elevator screen highlighting key quantum computing technical strengths through bold typography and geometric illustrations.",
       "width": 3840,
@@ -4762,7 +4762,7 @@
       "title": "IonQ Quantum Tech Elevator Screen",
       "tags": [
         "iconography",
-        "motion"
+        "moving-image"
       ],
       "format": [],
       "characteristics": [],
@@ -4773,7 +4773,7 @@
         "b2b",
         "quantum-computing"
       ],
-      "medium": "motion",
+      "medium": "moving-image",
       "project": "ionq-elevator-screen",
       "description": "A digital elevator screen design for IonQ showcasing four key quantum computing capabilities through minimalist illustrations and a dark theme. Features sections on optimizing performance, qubit number, compilation software, and error mitigation with technical graphics.",
       "width": 3840,
@@ -12713,7 +12713,7 @@
       "tags": [
         "poster",
         "proposal",
-        "motion"
+        "moving-image"
       ],
       "format": [
         "poster"
@@ -12727,7 +12727,7 @@
         "retail",
         "telecom"
       ],
-      "medium": "motion",
+      "medium": "moving-image",
       "project": "verizon-playlist-recommendation",
       "description": "A digital playlist presenting Verizon's marketing initiatives, including 5G brand refreshes, trade-in offers, and promotional campaigns with specified engagement durations for each visual.",
       "width": 2668,
@@ -12745,7 +12745,7 @@
       "tags": [
         "poster",
         "proposal",
-        "motion"
+        "moving-image"
       ],
       "format": [
         "poster"
@@ -12759,7 +12759,7 @@
         "retail",
         "telecom"
       ],
-      "medium": "motion",
+      "medium": "moving-image",
       "project": "verizon-playlist-recommendation",
       "description": "Curated digital video assets for Verizon's 5G and trade-in promotions, featuring bilingual (English/Spanish) designs to drive engagement.",
       "width": 2664,
@@ -12777,7 +12777,7 @@
       "tags": [
         "poster",
         "proposal",
-        "motion"
+        "moving-image"
       ],
       "format": [
         "poster"
@@ -12791,7 +12791,7 @@
         "retail",
         "telecom"
       ],
-      "medium": "motion",
+      "medium": "moving-image",
       "project": "verizon-playlist-recommendation",
       "description": "Print campaign materials for Samsung's Galaxy Z Fold3 and Flip3 5G series, featuring themes like 'Unfold,' '5G,' and Verizon promotions, presented in a minimalist black-and-white aesthetic with bold typography.",
       "width": 2676,
@@ -12809,7 +12809,7 @@
       "tags": [
         "poster",
         "proposal",
-        "motion"
+        "moving-image"
       ],
       "format": [
         "poster"
@@ -12823,7 +12823,7 @@
         "retail",
         "telecom"
       ],
-      "medium": "motion",
+      "medium": "moving-image",
       "project": "verizon-playlist-recommendation",
       "description": "Summary slide outlining content segments and timing for a Verizon playlist recommendation campaign, featuring printed promotional posters and layout templates with text/image space specifications.",
       "width": 2648,
@@ -12839,7 +12839,7 @@
       "type": "image",
       "title": "Verizon Lexington Avenue Galaxy Z Flip3 Window Display",
       "tags": [
-        "motion"
+        "moving-image"
       ],
       "format": [],
       "characteristics": [],
@@ -12849,7 +12849,7 @@
         "retail",
         "telecom"
       ],
-      "medium": "motion",
+      "medium": "moving-image",
       "project": "verizon-playlist-recommendation",
       "description": "Retail window installation for Verizon showcasing the Samsung Galaxy Z Flip3 at 770 Lexington Avenue, emphasizing brand partnership through bold typography and urban context.",
       "width": 1920,
@@ -12865,7 +12865,7 @@
       "type": "image",
       "title": "Samsung Galaxy Z Flip3 Retail Window Display",
       "tags": [
-        "motion"
+        "moving-image"
       ],
       "format": [],
       "characteristics": [],
@@ -12875,7 +12875,7 @@
         "retail",
         "telecom"
       ],
-      "medium": "motion",
+      "medium": "moving-image",
       "project": "verizon-playlist-recommendation",
       "description": "A promotional poster for the Samsung Galaxy Z Flip3 installed on a Verizon store window, combining product photography with bold typography to create an eye-catching urban advertisement.",
       "width": 1920,
@@ -12891,7 +12891,7 @@
       "type": "image",
       "title": "Verizon Store Window 5G Promotion Poster",
       "tags": [
-        "motion"
+        "moving-image"
       ],
       "format": [],
       "characteristics": [],
@@ -12901,7 +12901,7 @@
         "retail",
         "telecom"
       ],
-      "medium": "motion",
+      "medium": "moving-image",
       "project": "verizon-playlist-recommendation",
       "description": "Retail window poster design for Verizon promoting a 50% discount offer when combined with 5G Mobile, featuring minimalist typography and a vibrant gradient background with a geometric icon.",
       "width": 1920,
@@ -12917,7 +12917,7 @@
       "type": "image",
       "title": "Verizon Network Digital Display at 770 Lexington Ave",
       "tags": [
-        "motion"
+        "moving-image"
       ],
       "format": [],
       "characteristics": [],
@@ -12927,7 +12927,7 @@
         "retail",
         "telecom"
       ],
-      "medium": "motion",
+      "medium": "moving-image",
       "project": "verizon-playlist-recommendation",
       "description": "A digital advertisement for Verizon's 'Network' brand displayed in a retail storefront window, featuring the tagline 'built right' and reflecting an urban street scene as part of a playlist recommendation initiative.",
       "width": 8510,
@@ -12943,7 +12943,7 @@
       "type": "image",
       "title": "Verizon Unlimited Retail Digital Signage",
       "tags": [
-        "motion"
+        "moving-image"
       ],
       "format": [],
       "characteristics": [],
@@ -12953,7 +12953,7 @@
         "retail",
         "telecom"
       ],
-      "medium": "motion",
+      "medium": "moving-image",
       "project": "verizon-playlist-recommendation",
       "description": "A digital display for Verizon's 'Unlimited' plan showcases key service categories (Network, Plans, Entertainment, Rewards, Protection, Convenience) within a retail storefront, merging brand messaging with an urban street context.",
       "width": 8688,
@@ -12969,7 +12969,7 @@
       "type": "image",
       "title": "Verizon My Verizon App Digital Signage at 770 Lexington Ave",
       "tags": [
-        "motion"
+        "moving-image"
       ],
       "format": [],
       "characteristics": [],
@@ -12979,7 +12979,7 @@
         "retail",
         "telecom"
       ],
-      "medium": "motion",
+      "medium": "moving-image",
       "project": "verizon-playlist-recommendation",
       "description": "Digital signage in a retail setting promoting the My Verizon app's features, including account management, live chat support, and rewards, demonstrating brand-driven customer experience.",
       "width": 8688,
@@ -12995,7 +12995,7 @@
       "type": "image",
       "title": "Verizon Retail Display with Rewards Poster",
       "tags": [
-        "motion"
+        "moving-image"
       ],
       "format": [],
       "characteristics": [],
@@ -13005,7 +13005,7 @@
         "retail",
         "telecom"
       ],
-      "medium": "motion",
+      "medium": "moving-image",
       "project": "verizon-playlist-recommendation",
       "description": "A retail space featuring Verizon's 'Rewards' poster displayed within a modern urban storefront, showcasing the brand's integration into a high-rise city environment.",
       "width": 8432,
@@ -13021,7 +13021,7 @@
       "type": "image",
       "title": "Verizon 770 Lexington Ave Lobby Interior",
       "tags": [
-        "motion"
+        "moving-image"
       ],
       "format": [],
       "characteristics": [],
@@ -13031,7 +13031,7 @@
         "retail",
         "telecom"
       ],
-      "medium": "motion",
+      "medium": "moving-image",
       "project": "verizon-playlist-recommendation",
       "description": "An interior view of a corporate lobby showcasing large glass walls that frame a bustling urban street, demonstrating the spatial integration of interior design and cityscape.",
       "width": 8432,
@@ -13047,7 +13047,7 @@
       "type": "image",
       "title": "Verizon Convenience Branding in Urban Retail Window",
       "tags": [
-        "motion"
+        "moving-image"
       ],
       "format": [],
       "characteristics": [],
@@ -13057,7 +13057,7 @@
         "retail",
         "telecom"
       ],
-      "medium": "motion",
+      "medium": "moving-image",
       "project": "verizon-playlist-recommendation",
       "description": "This image captures a Verizon retail window installation featuring a branded poster that emphasizes 'Convenience' and 'built right', set against a city street backdrop.",
       "width": 8432,
@@ -18640,7 +18640,7 @@
       "tags": [
         "poster",
         "proposal",
-        "motion"
+        "moving-image"
       ],
       "format": [
         "poster"
@@ -18654,7 +18654,7 @@
         "retail",
         "telecom"
       ],
-      "medium": "motion",
+      "medium": "moving-image",
       "project": "verizon-retail-walkthrough",
       "description": "Slide 42 from Verizon's retail walkthrough presentation showcases 5G business internet offerings with key features like ultra-fast speed, simplicity, and a 10-year price guarantee, designed with bold typography and minimalist layout.",
       "width": 3000,
@@ -19598,7 +19598,7 @@
         "installation",
         "interactive",
         "data-visualization",
-        "motion"
+        "moving-image"
       ],
       "format": [
         "installation"
@@ -19613,7 +19613,7 @@
         "b2c",
         "telecom"
       ],
-      "medium": "motion",
+      "medium": "moving-image",
       "project": "verizon-speedtest",
       "description": "A photographic display showcasing Verizon's 5G download speed comparison with 4G using circular progress bars and percentage metrics to emphasize ultra-fast connectivity.",
       "width": 8495,
@@ -19632,7 +19632,7 @@
         "installation",
         "interactive",
         "data-visualization",
-        "motion"
+        "moving-image"
       ],
       "format": [
         "installation"
@@ -19647,7 +19647,7 @@
         "b2c",
         "telecom"
       ],
-      "medium": "motion",
+      "medium": "moving-image",
       "project": "verizon-speedtest",
       "description": "Real-time digital display showcasing Verizon's 5G capabilities for console-quality gaming with ultra-low lag, presented on a smartphone screen at a retail exhibition.",
       "width": 8495,
@@ -19666,7 +19666,7 @@
         "installation",
         "interactive",
         "data-visualization",
-        "motion"
+        "moving-image"
       ],
       "format": [
         "installation"
@@ -19681,7 +19681,7 @@
         "b2c",
         "telecom"
       ],
-      "medium": "motion",
+      "medium": "moving-image",
       "project": "verizon-speedtest",
       "description": "A retail display for Verizon featuring a smartphone interface showing real-time 5G speed test results (100%) with integrated FOX content, emphasizing high-speed connectivity through a dynamic visual experience.",
       "width": 8495,
@@ -19700,7 +19700,7 @@
         "installation",
         "interactive",
         "data-visualization",
-        "motion"
+        "moving-image"
       ],
       "format": [
         "installation"
@@ -19715,7 +19715,7 @@
         "b2c",
         "telecom"
       ],
-      "medium": "motion",
+      "medium": "moving-image",
       "project": "verizon-superbowl",
       "description": "A branded experiential retail space for Verizon's Super Bowl event, featuring interactive digital displays and modern spatial design with thematic wall installations.",
       "width": 1920,
@@ -19734,7 +19734,7 @@
         "installation",
         "interactive",
         "data-visualization",
-        "motion"
+        "moving-image"
       ],
       "format": [
         "installation"
@@ -19749,7 +19749,7 @@
         "b2c",
         "telecom"
       ],
-      "medium": "motion",
+      "medium": "moving-image",
       "project": "verizon-superbowl",
       "description": "A modern retail and experiential activation for Verizon featuring interactive digital kiosks, branded spatial design, and real-time engagement zones within an open-plan environment.",
       "width": 1920,
@@ -23306,7 +23306,7 @@
       "title": "Reinforcement Learning Gyms",
       "tags": [
         "video",
-        "motion",
+        "moving-image",
         "keynote"
       ],
       "project_tags": [
@@ -23315,7 +23315,7 @@
         "event",
         "tech"
       ],
-      "medium": "motion",
+      "medium": "moving-image",
       "project": "aws",
       "width": 1920,
       "height": 1080,
@@ -23330,7 +23330,7 @@
       "title": "Agent Core Comparison",
       "tags": [
         "video",
-        "motion",
+        "moving-image",
         "keynote"
       ],
       "project_tags": [
@@ -23339,7 +23339,7 @@
         "event",
         "tech"
       ],
-      "medium": "motion",
+      "medium": "moving-image",
       "project": "aws",
       "width": 1920,
       "height": 1080,
@@ -23353,7 +23353,7 @@
       "title": "Fine Tuning",
       "tags": [
         "video",
-        "motion",
+        "moving-image",
         "keynote"
       ],
       "project_tags": [
@@ -23362,7 +23362,7 @@
         "event",
         "tech"
       ],
-      "medium": "motion",
+      "medium": "moving-image",
       "project": "aws",
       "width": 1920,
       "height": 1080,
@@ -23376,7 +23376,7 @@
       "title": "Model Distillation",
       "tags": [
         "video",
-        "motion",
+        "moving-image",
         "keynote"
       ],
       "project_tags": [
@@ -23385,7 +23385,7 @@
         "event",
         "tech"
       ],
-      "medium": "motion",
+      "medium": "moving-image",
       "project": "aws",
       "width": 1920,
       "height": 1080,
@@ -23400,7 +23400,7 @@
       "title": "Transformation and Agility",
       "tags": [
         "video",
-        "motion",
+        "moving-image",
         "keynote"
       ],
       "project_tags": [
@@ -23409,7 +23409,7 @@
         "event",
         "tech"
       ],
-      "medium": "motion",
+      "medium": "moving-image",
       "project": "aws",
       "width": 1920,
       "height": 1080,
@@ -23424,7 +23424,7 @@
       "title": "Contact Center",
       "tags": [
         "video",
-        "motion",
+        "moving-image",
         "keynote"
       ],
       "project_tags": [
@@ -23433,7 +23433,7 @@
         "event",
         "tech"
       ],
-      "medium": "motion",
+      "medium": "moving-image",
       "project": "aws",
       "width": 1920,
       "height": 1080,
@@ -23447,7 +23447,7 @@
       "title": "Acceleration",
       "tags": [
         "video",
-        "motion",
+        "moving-image",
         "keynote"
       ],
       "project_tags": [
@@ -23456,7 +23456,7 @@
         "event",
         "tech"
       ],
-      "medium": "motion",
+      "medium": "moving-image",
       "project": "aws",
       "width": 1920,
       "height": 1080,
@@ -23470,7 +23470,7 @@
       "title": "LLM and Neuro Symbolic AI",
       "tags": [
         "video",
-        "motion",
+        "moving-image",
         "keynote"
       ],
       "project_tags": [
@@ -23479,7 +23479,7 @@
         "event",
         "tech"
       ],
-      "medium": "motion",
+      "medium": "moving-image",
       "project": "aws",
       "width": 1920,
       "height": 1080,
@@ -23494,7 +23494,7 @@
       "title": "Colleen Aubrey, Agent in the Loop",
       "tags": [
         "video",
-        "motion",
+        "moving-image",
         "keynote"
       ],
       "project_tags": [
@@ -23503,7 +23503,7 @@
         "event",
         "tech"
       ],
-      "medium": "motion",
+      "medium": "moving-image",
       "project": "aws",
       "width": 1920,
       "height": 1080,
@@ -23517,7 +23517,7 @@
       "title": "Neurosymbolic AI and Verification",
       "tags": [
         "video",
-        "motion",
+        "moving-image",
         "keynote"
       ],
       "project_tags": [
@@ -23526,7 +23526,7 @@
         "event",
         "tech"
       ],
-      "medium": "motion",
+      "medium": "moving-image",
       "project": "aws",
       "width": 1920,
       "height": 1080,
@@ -23540,7 +23540,7 @@
       "title": "IonQ Product Family",
       "tags": [
         "video",
-        "motion",
+        "moving-image",
         "3d",
         "product-render"
       ],
@@ -23548,7 +23548,7 @@
         "b2b",
         "quantum-computing"
       ],
-      "medium": "motion",
+      "medium": "moving-image",
       "project": "ionq-brand",
       "width": 1920,
       "height": 1080,
@@ -23563,7 +23563,7 @@
       "title": "IonQ Ion Trap Technology Visual",
       "tags": [
         "video",
-        "motion",
+        "moving-image",
         "3d",
         "product-render"
       ],
@@ -23571,7 +23571,7 @@
         "b2b",
         "quantum-computing"
       ],
-      "medium": "motion",
+      "medium": "moving-image",
       "project": "ionq-brand",
       "width": 1920,
       "height": 1080,
@@ -23585,14 +23585,14 @@
       "title": "IonQ Logo Animation",
       "tags": [
         "video",
-        "motion",
+        "moving-image",
         "logo"
       ],
       "project_tags": [
         "b2b",
         "quantum-computing"
       ],
-      "medium": "motion",
+      "medium": "moving-image",
       "project": "ionq-brand",
       "width": 1920,
       "height": 1080,
@@ -23606,13 +23606,13 @@
       "title": "IonQ Text Animation Treatment",
       "tags": [
         "video",
-        "motion"
+        "moving-image"
       ],
       "project_tags": [
         "b2b",
         "quantum-computing"
       ],
-      "medium": "motion",
+      "medium": "moving-image",
       "project": "ionq-brand",
       "width": 1920,
       "height": 1080,
@@ -23626,14 +23626,14 @@
       "title": "Guidelines Teaser",
       "tags": [
         "video",
-        "motion",
+        "moving-image",
         "identity"
       ],
       "project_tags": [
         "b2b",
         "quantum-computing"
       ],
-      "medium": "motion",
+      "medium": "moving-image",
       "project": "ionq-brand",
       "width": 1920,
       "height": 1080,
@@ -23647,7 +23647,7 @@
       "title": "Smart and Connected Devices",
       "tags": [
         "video",
-        "motion",
+        "moving-image",
         "keynote"
       ],
       "project_tags": [
@@ -23655,7 +23655,7 @@
         "retail",
         "tech"
       ],
-      "medium": "motion",
+      "medium": "moving-image",
       "project": "oppo-MWC-Barcelona",
       "width": 1920,
       "height": 1080,
@@ -23669,7 +23669,7 @@
       "title": "Market Share",
       "tags": [
         "video",
-        "motion",
+        "moving-image",
         "keynote"
       ],
       "project_tags": [
@@ -23677,7 +23677,7 @@
         "retail",
         "tech"
       ],
-      "medium": "motion",
+      "medium": "moving-image",
       "project": "oppo-MWC-Barcelona",
       "width": 1920,
       "height": 1080,
@@ -23691,7 +23691,7 @@
       "title": "Liquid Cooler",
       "tags": [
         "video",
-        "motion",
+        "moving-image",
         "keynote"
       ],
       "project_tags": [
@@ -23699,7 +23699,7 @@
         "retail",
         "tech"
       ],
-      "medium": "motion",
+      "medium": "moving-image",
       "project": "oppo-MWC-Barcelona",
       "width": 1920,
       "height": 1080,
@@ -23713,7 +23713,7 @@
       "title": "WiFi Router",
       "tags": [
         "video",
-        "motion",
+        "moving-image",
         "keynote"
       ],
       "project_tags": [
@@ -23721,7 +23721,7 @@
         "retail",
         "tech"
       ],
-      "medium": "motion",
+      "medium": "moving-image",
       "project": "oppo-MWC-Barcelona",
       "width": 1920,
       "height": 1080,
@@ -23735,7 +23735,7 @@
       "title": "Product Summary",
       "tags": [
         "video",
-        "motion",
+        "moving-image",
         "keynote"
       ],
       "project_tags": [
@@ -23743,7 +23743,7 @@
         "retail",
         "tech"
       ],
-      "medium": "motion",
+      "medium": "moving-image",
       "project": "oppo-MWC-Barcelona",
       "width": 1920,
       "height": 1080,
@@ -23757,7 +23757,7 @@
       "title": "Key Selling Points",
       "tags": [
         "video",
-        "motion",
+        "moving-image",
         "keynote"
       ],
       "project_tags": [
@@ -23765,7 +23765,7 @@
         "retail",
         "tech"
       ],
-      "medium": "motion",
+      "medium": "moving-image",
       "project": "oppo-MWC-Barcelona",
       "width": 1920,
       "height": 1080,
@@ -23879,7 +23879,7 @@
       "title": "5G Vinyl Roll Out",
       "tags": [
         "video",
-        "motion",
+        "moving-image",
         "making"
       ],
       "project_tags": [
@@ -23887,7 +23887,7 @@
         "retail",
         "telecom"
       ],
-      "medium": "motion",
+      "medium": "moving-image",
       "project": "verizon-5G-campaigns",
       "width": 640,
       "height": 360,
@@ -23901,14 +23901,14 @@
       "title": "5G Built Right for NYC",
       "tags": [
         "video",
-        "motion"
+        "moving-image"
       ],
       "project_tags": [
         "b2c",
         "retail",
         "telecom"
       ],
-      "medium": "motion",
+      "medium": "moving-image",
       "project": "verizon-5G-campaigns",
       "width": 1080,
       "height": 1920,
@@ -23922,14 +23922,14 @@
       "title": "5G Built Right for You.",
       "tags": [
         "video",
-        "motion"
+        "moving-image"
       ],
       "project_tags": [
         "b2c",
         "retail",
         "telecom"
       ],
-      "medium": "motion",
+      "medium": "moving-image",
       "project": "verizon-5G-campaigns",
       "width": 1920,
       "height": 1080,
@@ -23943,14 +23943,14 @@
       "title": "5G from America's most reliable network.",
       "tags": [
         "video",
-        "motion"
+        "moving-image"
       ],
       "project_tags": [
         "b2c",
         "retail",
         "telecom"
       ],
-      "medium": "motion",
+      "medium": "moving-image",
       "project": "verizon-5G-campaigns",
       "width": 1080,
       "height": 1920,
@@ -23964,14 +23964,14 @@
       "title": "5G from America's most reliable network.",
       "tags": [
         "video",
-        "motion"
+        "moving-image"
       ],
       "project_tags": [
         "b2c",
         "retail",
         "telecom"
       ],
-      "medium": "motion",
+      "medium": "moving-image",
       "project": "verizon-5G-campaigns",
       "width": 1920,
       "height": 1080,
@@ -23985,14 +23985,14 @@
       "title": "5G Home Simplified Menu",
       "tags": [
         "video",
-        "motion",
+        "moving-image",
         "interactive"
       ],
       "project_tags": [
         "b2c",
         "telecom"
       ],
-      "medium": "motion",
+      "medium": "moving-image",
       "project": "verizon-5G-home-vui",
       "width": 1920,
       "height": 1080,
@@ -24006,14 +24006,14 @@
       "title": "5G Home Overview",
       "tags": [
         "video",
-        "motion",
+        "moving-image",
         "storytelling"
       ],
       "project_tags": [
         "b2c",
         "telecom"
       ],
-      "medium": "motion",
+      "medium": "moving-image",
       "project": "verizon-5G-home-vui",
       "width": 1920,
       "height": 1080,
@@ -24027,14 +24027,14 @@
       "title": "5G Home Entertainment",
       "tags": [
         "video",
-        "motion",
+        "moving-image",
         "storytelling"
       ],
       "project_tags": [
         "b2c",
         "telecom"
       ],
-      "medium": "motion",
+      "medium": "moving-image",
       "project": "verizon-5G-home-vui",
       "width": 1920,
       "height": 1080,
@@ -24048,14 +24048,14 @@
       "title": "5G Home Plans",
       "tags": [
         "video",
-        "motion",
+        "moving-image",
         "storytelling"
       ],
       "project_tags": [
         "b2c",
         "telecom"
       ],
-      "medium": "motion",
+      "medium": "moving-image",
       "project": "verizon-5G-home-vui",
       "width": 1920,
       "height": 1080,
@@ -24069,14 +24069,14 @@
       "title": "5G Home Interaction in Store",
       "tags": [
         "video",
-        "motion",
+        "moving-image",
         "interactive"
       ],
       "project_tags": [
         "b2c",
         "telecom"
       ],
-      "medium": "motion",
+      "medium": "moving-image",
       "project": "verizon-5G-home-vui",
       "width": 1920,
       "height": 1080,
@@ -24090,14 +24090,14 @@
       "title": "Chicago Entrance Screens",
       "tags": [
         "video",
-        "motion"
+        "moving-image"
       ],
       "project_tags": [
         "b2c",
         "retail",
         "telecom"
       ],
-      "medium": "motion",
+      "medium": "moving-image",
       "project": "verizon-chicago",
       "width": 1920,
       "height": 1080,
@@ -24112,14 +24112,14 @@
       "title": "Atrium Video",
       "tags": [
         "video",
-        "motion"
+        "moving-image"
       ],
       "project_tags": [
         "b2c",
         "retail",
         "telecom"
       ],
-      "medium": "motion",
+      "medium": "moving-image",
       "project": "verizon-chicago",
       "width": 1024,
       "height": 3840,
@@ -24133,14 +24133,14 @@
       "title": "Screen 2: Changes Everything",
       "tags": [
         "video",
-        "motion"
+        "moving-image"
       ],
       "project_tags": [
         "b2c",
         "retail",
         "telecom"
       ],
-      "medium": "motion",
+      "medium": "moving-image",
       "project": "verizon-chicago",
       "width": 1920,
       "height": 480,
@@ -24154,14 +24154,14 @@
       "title": "Live Attract Loop",
       "tags": [
         "video",
-        "motion"
+        "moving-image"
       ],
       "project_tags": [
         "b2c",
         "retail",
         "telecom"
       ],
-      "medium": "motion",
+      "medium": "moving-image",
       "project": "verizon-chicago",
       "width": 1920,
       "height": 1080,
@@ -24175,7 +24175,7 @@
       "title": "5G Live Video: A Short Teaser of Positive Societal Impact",
       "tags": [
         "video",
-        "motion",
+        "moving-image",
         "storytelling"
       ],
       "project_tags": [
@@ -24183,7 +24183,7 @@
         "retail",
         "telecom"
       ],
-      "medium": "motion",
+      "medium": "moving-image",
       "project": "verizon-chicago",
       "width": 1920,
       "height": 1080,
@@ -24198,14 +24198,14 @@
       "title": "Play Attract Loop",
       "tags": [
         "video",
-        "motion"
+        "moving-image"
       ],
       "project_tags": [
         "b2c",
         "retail",
         "telecom"
       ],
-      "medium": "motion",
+      "medium": "moving-image",
       "project": "verizon-chicago",
       "width": 1920,
       "height": 1080,
@@ -24219,7 +24219,7 @@
       "title": "5G Play Video: A Short Teaser of Personal Scale Use Cases",
       "tags": [
         "video",
-        "motion",
+        "moving-image",
         "storytelling"
       ],
       "project_tags": [
@@ -24227,7 +24227,7 @@
         "retail",
         "telecom"
       ],
-      "medium": "motion",
+      "medium": "moving-image",
       "project": "verizon-chicago",
       "width": 1920,
       "height": 1080,
@@ -24242,7 +24242,7 @@
       "title": "Lifestyle Video Back of Store",
       "tags": [
         "video",
-        "motion",
+        "moving-image",
         "storytelling",
         "lifestyle"
       ],
@@ -24251,7 +24251,7 @@
         "retail",
         "telecom"
       ],
-      "medium": "motion",
+      "medium": "moving-image",
       "project": "verizon-chicago",
       "width": 1920,
       "height": 540,
@@ -24266,7 +24266,7 @@
       "title": "Chicago Store Summary",
       "tags": [
         "video",
-        "motion",
+        "moving-image",
         "interactive"
       ],
       "project_tags": [
@@ -24274,7 +24274,7 @@
         "retail",
         "telecom"
       ],
-      "medium": "motion",
+      "medium": "moving-image",
       "project": "verizon-chicago",
       "width": 1920,
       "height": 1080,
@@ -24288,14 +24288,14 @@
       "title": "Chicago Entrance Screens",
       "tags": [
         "video",
-        "motion"
+        "moving-image"
       ],
       "project_tags": [
         "b2c",
         "retail",
         "telecom"
       ],
-      "medium": "motion",
+      "medium": "moving-image",
       "project": "verizon-future-of-retail",
       "width": 1920,
       "height": 1080,
@@ -24310,7 +24310,7 @@
       "title": "a pixel monologue",
       "tags": [
         "video",
-        "motion",
+        "moving-image",
         "real-time",
         "3d",
         "essay",
@@ -24320,7 +24320,7 @@
         "personal",
         "personal"
       ],
-      "medium": "motion",
+      "medium": "moving-image",
       "project": "a-pixel-monologue",
       "width": 1440,
       "height": 1080,
@@ -24335,14 +24335,14 @@
       "title": "Pin Up",
       "tags": [
         "video",
-        "motion",
+        "moving-image",
         "making"
       ],
       "project_tags": [
         "personal",
         "personal"
       ],
-      "medium": "motion",
+      "medium": "moving-image",
       "project": "ambiguous-form",
       "width": 1280,
       "height": 720,
@@ -24357,7 +24357,7 @@
       "title": "Poster Cube",
       "tags": [
         "video",
-        "motion",
+        "moving-image",
         "real-time",
         "3d",
         "study"
@@ -24366,7 +24366,7 @@
         "personal",
         "personal"
       ],
-      "medium": "motion",
+      "medium": "moving-image",
       "project": "ambiguous-form",
       "width": 1920,
       "height": 1080,
@@ -24381,7 +24381,7 @@
       "title": "Cup",
       "tags": [
         "video",
-        "motion",
+        "moving-image",
         "essay",
         "study"
       ],
@@ -24389,7 +24389,7 @@
         "personal",
         "personal"
       ],
-      "medium": "motion",
+      "medium": "moving-image",
       "project": "Cup",
       "width": 1920,
       "height": 1080,
@@ -24404,7 +24404,7 @@
       "title": "Smoke Test 1",
       "tags": [
         "video",
-        "motion",
+        "moving-image",
         "real-time",
         "3d",
         "study"
@@ -24415,7 +24415,7 @@
         "real-time",
         "generative"
       ],
-      "medium": "motion",
+      "medium": "moving-image",
       "project": "smoke-systems",
       "width": 1920,
       "height": 1920,
@@ -24430,7 +24430,7 @@
       "title": "Smoke Test 2",
       "tags": [
         "video",
-        "motion",
+        "moving-image",
         "real-time",
         "3d",
         "study"
@@ -24441,7 +24441,7 @@
         "real-time",
         "generative"
       ],
-      "medium": "motion",
+      "medium": "moving-image",
       "project": "smoke-systems",
       "width": 1920,
       "height": 1920,
@@ -24456,7 +24456,7 @@
       "title": "Smoke Test 3",
       "tags": [
         "video",
-        "motion",
+        "moving-image",
         "real-time",
         "3d",
         "study"
@@ -24467,7 +24467,7 @@
         "real-time",
         "generative"
       ],
-      "medium": "motion",
+      "medium": "moving-image",
       "project": "smoke-systems",
       "width": 1920,
       "height": 3413,
@@ -24482,7 +24482,7 @@
       "title": "Smoke Test 4",
       "tags": [
         "video",
-        "motion",
+        "moving-image",
         "real-time",
         "3d",
         "study"
@@ -24493,7 +24493,7 @@
         "real-time",
         "generative"
       ],
-      "medium": "motion",
+      "medium": "moving-image",
       "project": "smoke-systems",
       "width": 1920,
       "height": 1920,

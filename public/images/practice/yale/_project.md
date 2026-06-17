@@ -40,7 +40,6 @@ projects:
       - interactive
       - letter-form
       - making
-      - motion
       - photography
       - poster
       - publication-design
@@ -52,7 +51,6 @@ projects:
     image_tags:
       - illustration
       - making
-      - print
   uppercase-soul:
     name: Uppercase Soul
     year: 2020

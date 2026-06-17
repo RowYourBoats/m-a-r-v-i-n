@@ -393,20 +393,20 @@ for (const [slug, proj] of Object.entries(registry)) {
         // Mirror image items: fold the video entry's medium + format +
         // characteristics + subject into the flat `tags` union so the data-tags
         // filter UI can match them (e.g. `keynote` on an AWS video → the keynote
-        // chip; `motion` medium → the motion chip). The literal `video` stays so
-        // the file-type stays distinct from the `motion` medium.
+        // chip; `moving-image` medium → the moving-image chip). The literal
+        // `video` stays so the file-type stays distinct from the medium.
         tags: [...new Set([
           "video",
-          vid.medium || "motion",
+          vid.medium || "moving-image",
           ...(Array.isArray(vid.format) ? vid.format : []),
           ...(Array.isArray(vid.characteristics) ? vid.characteristics : []),
           ...(Array.isArray(vid.subject) ? vid.subject : []),
         ])],
         project_tags: projectTagsFor(proj),
-        // Per-video `medium:` override. Default is `motion` (a video is
-        // time-based moving image); medium = practice/discipline, so a video
-        // documenting an event etc. can still declare another medium explicitly.
-        medium: vid.medium || "motion",
+        // Per-video `medium:` override. Default is `moving-image` (a video is
+        // time-based moving image); a video documenting spatial/event work etc.
+        // can still declare another medium explicitly.
+        medium: vid.medium || "moving-image",
         project: slug,
       };
       const dims = await probeVideoDims(baseUrl);

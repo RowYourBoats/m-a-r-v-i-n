@@ -10,7 +10,7 @@ Last reviewed: 2026-06-17.
 - Compare the audit output to this doc. Anything in the audit not listed here is unrecognized: either fold in (and add a row), or kick out (and add a migration entry).
 - This doc records *decisions*, not snapshots. When a tag changes status (added / dropped / consolidated), note it in the migration log.
 - The four image-level axes are orthogonal — values do not move across them. If a value seems to belong in two axes, one of them is wrong.
-- `medium` and `format` are independent. `medium` is the dimension the work is *encountered* in — print / motion / spatial / physical (screen/digital work has none); `format` is the artifact / output type (deck, poster, keynote, …). The same piece can carry both, in any combination. Don't infer one from the other.
+- `medium` and `format` are independent. `medium` is the dimension the work is *encountered* in — print / moving-image / spatial / physical (screen/digital work has none); `format` is the artifact / output type (deck, poster, keynote, …). The same piece can carry both, in any combination. Don't infer one from the other.
 
 ---
 
@@ -29,12 +29,12 @@ Per-image tags. Four axes, each answering one question. Counts go stale fast —
 
 ### `medium` — in what dimension is this encountered?
 
-Single per image, **may be empty**. The physical/temporal dimension the work lives in. Distinct from *file type* (image / video). **Screen / web / digital work carries no medium** — it's identified by format + characteristics instead.
+Single per image, **may be empty**. The physical/temporal dimension the work lives in — `print` · `moving-image` · `spatial` · `physical`. Distinct from *file type* (image / video). **Screen / web / digital work carries no medium** — it's identified by format + characteristics instead.
 
 | value | meaning |
 | --- | --- |
 | `print` | a flat printed surface: books, posters, packaging graphics |
-| `motion` | time-based moving image (video assets default here; also former motion stills) |
+| `moving-image` | time-based moving image — video assets, motion stills, anything that moves. **Broad and literal: does NOT mean "motion graphics."** A motion-graphics-specific tag is deferred (see working notes). |
 | `spatial` | encountered in an environment: installation, retail interior, booth, wayfinding |
 | `physical` | a designed object / material: merch, packaging-as-object, product graphics |
 
@@ -131,6 +131,7 @@ Decisions and the data work that follows. Pending rows are open until the data r
 | 2026-06-17 | **Reverse the 2026-05-25 `event` decision.** `medium: event` (22) cleared and `event` added back to `format`. Event is the occasion (an artifact shape/context), not a dimension; a poster for an event is `format: [poster, event]`. | done |
 | 2026-06-17 | **Dissolve cross-axis duplicates.** `characteristic: motion` (41) → `medium: motion` (28 moved; 13 kept their existing `spatial`/`print` medium, characteristic dropped, logged by the migration's conflict guard). `characteristic: print` (16) → `medium: print`. `characteristic: stationery` (5) → `format: stationery`. The characteristics axis no longer contains `print` / `motion` / `stationery`. | done |
 | 2026-06-17 | **`subject` is now the required floor (1+).** Soft-enforced: `/admin/images` shows a required marker, the "missing tags" filter keys on missing subject, and the audit lists the gap (109 published images lacked one at migration time). The build curation gate is unchanged, so nothing is unpublished — backfill via the admin portal over time. | done |
+| 2026-06-17 | **Rename `medium: motion` → `moving-image`** (32 entries, same set — no re-scope). "motion" read as if it meant *motion graphics*, but the medium is the broad dimension (any video / moving thing). "moving-image" is the honest label. Filter chips + `schema.mediums` + video defaults (build-manifest, image-tags.ts) renamed to match. | done |
 | 2026-06-17 | **Rename `subject: letter-design` → `letter-form`** (27 catalogue entries; practice `letter-form` filter chip; image_tags caches re-synced on build). "letter-form" is the typographic term for the artifact. | done |
 | 2026-06-17 | **Fold `medium` into the filterable tag union** (`build-manifest.mjs`) so medium values (print/motion/spatial/physical) work as filter chips like the other axes. Video assets now default to `medium: motion` (was `video`) in `build-manifest.mjs` + `image-tags.ts`. `schema.json` chips: `motion` now matched by the folded medium; the redundant `video` chip merged into `motion`; `spatial` chips extended to match the `spatial` medium; `print` chip added. | done |
 
@@ -138,6 +139,7 @@ Decisions and the data work that follows. Pending rows are open until the data r
 
 - ~~**15 entries flagged for medium review** (defaulted to `digital`)~~ — moot as of 2026-06-17: `digital` is no longer a medium, so all were cleared. If any were genuinely printed, set `medium: print` when they next pass through `/admin/images`.
 - **`subject` backfill:** 109 published images had no subject at the 2026-06-17 migration. Work through them in `/admin/images` (toggle "missing tags" — now keyed on subject).
+- **Motion graphics (deferred):** `medium: moving-image` is a broad dragnet (every video). A distinct *motion-graphics* tag — for designed animation (kinetic type, logo/identity animation, title sequences) vs. raw/documentary video — was scoped (likely `characteristic: motion-graphics`, filter chip pointing at it) but deferred. Revisit when surfacing the designed-motion work matters.
 - `project.characteristic: generative` (1 instance) still exists at project level. Image-level was dropped during migration; project-level was not touched. Decide later whether to also strip.
 - `characteristic: making` (1 instance) — **kept**, watching for volume.
 - `format: web` (4 instances) — **kept**, watching for volume.

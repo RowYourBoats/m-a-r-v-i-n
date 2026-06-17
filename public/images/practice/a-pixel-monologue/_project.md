@@ -43,6 +43,4 @@ videos:
       - 3d
       - essay
     description: The pixel speaks.
-image_tags:
-  - motion
 ---

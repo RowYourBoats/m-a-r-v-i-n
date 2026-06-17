@@ -35,7 +35,6 @@ image_tags:
   - editorial
   - installation
   - letter-form
-  - motion
   - publication-design
   - typography
 ---

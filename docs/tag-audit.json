@@ -1,5 +1,5 @@
 {
-  "generated": "2026-06-17T19:48:56.235Z",
+  "generated": "2026-06-17T20:10:54.628Z",
   "catalogue_total": 876,
   "image_axes": {
     "format": {
@@ -42,7 +42,7 @@
     },
     "medium": {
       "print": 120,
-      "motion": 32,
+      "moving-image": 32,
       "spatial": 30,
       "physical": 10
     }
@@ -92,11 +92,11 @@
       "identity": 15,
       "photography": 15,
       "typography": 15,
-      "motion": 14,
       "poster": 14,
       "deck": 13,
       "interactive": 12,
       "publication-design": 12,
+      "event": 10,
       "proposal": 10,
       "letter-form": 9,
       "3d": 8,
@@ -110,7 +110,6 @@
       "study": 5,
       "web": 5,
       "experiential": 4,
-      "print": 4,
       "design-system": 3,
       "making": 3,
       "merch": 3,
@@ -125,7 +124,6 @@
       "brand": 1,
       "customer-experience": 1,
       "essay": 1,
-      "event": 1,
       "process": 1,
       "product": 1,
       "product-marking": 1,
@@ -301,7 +299,7 @@
           {
             "axis": "image_tags",
             "scope": "project",
-            "count": 1
+            "count": 10
           }
         ]
       },
@@ -651,21 +649,6 @@
         ]
       },
       {
-        "value": "motion",
-        "hits": [
-          {
-            "axis": "medium",
-            "scope": "image",
-            "count": 32
-          },
-          {
-            "axis": "image_tags",
-            "scope": "project",
-            "count": 14
-          }
-        ]
-      },
-      {
         "value": "print",
         "hits": [
           {
@@ -677,11 +660,6 @@
             "axis": "characteristic",
             "scope": "project",
             "count": 1
-          },
-          {
-            "axis": "image_tags",
-            "scope": "project",
-            "count": 4
           }
         ]
       },
@@ -816,11 +794,6 @@
         "scope": "project",
         "axis": "image_tags",
         "value": "booth"
-      },
-      {
-        "scope": "project",
-        "axis": "image_tags",
-        "value": "event"
       },
       {
         "scope": "project",

@@ -48,7 +48,6 @@ videos:
       - study
 image_tags:
   - 3d
-  - motion
   - real-time
   - study
 ---

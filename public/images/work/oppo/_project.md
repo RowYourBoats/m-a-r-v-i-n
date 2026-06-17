@@ -30,43 +30,31 @@ projects:
       - title: Smart and Connected Devices
         url: >-
           https://player.vimeo.com/video/805393265?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479&amp;autoplay=1&amp;muted=1&amp;loop=1
-        characteristics:
-          - motion
         format:
           - keynote
       - title: Market Share
         url: >-
           https://player.vimeo.com/video/805306804?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479&amp;autoplay=1&amp;muted=1&amp;loop=1
-        characteristics:
-          - motion
         format:
           - keynote
       - title: Liquid Cooler
         url: >-
           https://player.vimeo.com/video/805404163?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479&amp;autoplay=1&amp;muted=1&amp;loop=1
-        characteristics:
-          - motion
         format:
           - keynote
       - title: WiFi Router
         url: >-
           https://player.vimeo.com/video/805404094?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479&amp;autoplay=1&amp;muted=1&amp;loop=1
-        characteristics:
-          - motion
         format:
           - keynote
       - title: Product Summary
         url: >-
           https://player.vimeo.com/video/805425458?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479&amp;autoplay=1&amp;muted=1&amp;loop=1
-        characteristics:
-          - motion
         format:
           - keynote
       - title: Key Selling Points
         url: >-
           https://player.vimeo.com/video/805413741?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479&amp;autoplay=1&amp;muted=1&amp;loop=1
-        characteristics:
-          - motion
         format:
           - keynote
     credits:

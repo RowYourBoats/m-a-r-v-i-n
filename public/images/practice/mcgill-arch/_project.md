@@ -20,6 +20,5 @@ videos: []
 image_tags:
   - letter-form
   - poster
-  - print
   - typography
 ---

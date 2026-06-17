@@ -3,7 +3,7 @@
     "retail",
     "data-visualization",
     "interactive",
-    "motion",
+    "moving-image",
     "essay"
   ],
   "work_filters": {
@@ -81,9 +81,9 @@
         ]
       },
       {
-        "label": "motion",
+        "label": "moving-image",
         "matches": [
-          "motion"
+          "moving-image"
         ]
       },
       {
@@ -127,9 +127,9 @@
         ]
       },
       {
-        "label": "motion",
+        "label": "moving-image",
         "matches": [
-          "motion"
+          "moving-image"
         ]
       },
       {
@@ -249,7 +249,7 @@
     "logo",
     "making",
     "merch",
-    "motion",
+    "moving-image",
     "personal",
     "photography",
     "physical",
@@ -274,7 +274,7 @@
     "writing"
   ],
   "mediums": [
-    "motion",
+    "moving-image",
     "physical",
     "print",
     "spatial"

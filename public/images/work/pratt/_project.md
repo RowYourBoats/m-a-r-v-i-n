@@ -27,6 +27,7 @@ projects:
       postcards, program brochures, and campus flags for the Manhattan location.
     image_tags:
       - editorial
+      - event
       - exhibition
       - poster
       - publication-design

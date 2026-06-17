@@ -22,6 +22,5 @@ credits:
     name: Marvin de Jong
 image_tags:
   - poster
-  - print
   - stationery
 ---
