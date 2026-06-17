@@ -282,12 +282,16 @@ const items = curatedCatalogue.map((raw) => {
   // Back-compat: very old catalogues may still carry a flat `tags` field if
   // the restructure script hasn't been run on them. Honor it.
   const legacyTags = Array.isArray(raw.tags) ? raw.tags : [];
+  // `medium` is folded into the flat `tags` union so it's filterable like the
+  // other axes (the data-tags filter UI matches against `tags`). It's still
+  // exposed as its own field below for facet-aware consumers.
+  const med = raw.medium ? [raw.medium] : [];
   const item = {
     id,
     src,
     type: "image",
     title: raw.title || "",
-    tags: [...new Set([...fmt, ...chr, ...sub, ...legacyTags])],
+    tags: [...new Set([...fmt, ...chr, ...sub, ...med, ...legacyTags])],
     format: fmt,
     characteristics: chr,
     subject: sub,
@@ -386,21 +390,23 @@ for (const [slug, proj] of Object.entries(registry)) {
         video: `${baseUrl}?${params}`,
         video_mode: vid.video_mode || "background",
         title: vid.title || "",
-        // Mirror image items: fold the video entry's format + characteristics +
-        // subject into the flat `tags` union so the data-tags filter UI can
-        // match them (e.g. `keynote` on an AWS video → the keynote chip;
-        // `essay` on a video essay → the Practice essay filter).
+        // Mirror image items: fold the video entry's medium + format +
+        // characteristics + subject into the flat `tags` union so the data-tags
+        // filter UI can match them (e.g. `keynote` on an AWS video → the keynote
+        // chip; `motion` medium → the motion chip). The literal `video` stays so
+        // the file-type stays distinct from the `motion` medium.
         tags: [...new Set([
           "video",
+          vid.medium || "motion",
           ...(Array.isArray(vid.format) ? vid.format : []),
           ...(Array.isArray(vid.characteristics) ? vid.characteristics : []),
           ...(Array.isArray(vid.subject) ? vid.subject : []),
         ])],
         project_tags: projectTagsFor(proj),
-        // Per-video `medium:` override (default still "video"). Per the
-        // post-2026-05-25 framing, medium = practice/discipline, so a video
-        // documenting an event can declare `medium: event` explicitly.
-        medium: vid.medium || "video",
+        // Per-video `medium:` override. Default is `motion` (a video is
+        // time-based moving image); medium = practice/discipline, so a video
+        // documenting an event etc. can still declare another medium explicitly.
+        medium: vid.medium || "motion",
         project: slug,
       };
       const dims = await probeVideoDims(baseUrl);

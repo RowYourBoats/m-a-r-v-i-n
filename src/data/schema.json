@@ -13,7 +13,8 @@
         "matches": [
           "exhibition",
           "installation",
-          "retail"
+          "retail",
+          "spatial"
         ]
       },
       {
@@ -86,9 +87,9 @@
         ]
       },
       {
-        "label": "video",
+        "label": "print",
         "matches": [
-          "video"
+          "print"
         ]
       },
       {
@@ -126,9 +127,9 @@
         ]
       },
       {
-        "label": "video",
+        "label": "motion",
         "matches": [
-          "video"
+          "motion"
         ]
       },
       {
@@ -172,9 +173,9 @@
         ]
       },
       {
-        "label": "motion",
+        "label": "print",
         "matches": [
-          "motion"
+          "print"
         ]
       },
       {
@@ -205,7 +206,8 @@
         "label": "spatial",
         "matches": [
           "installation",
-          "exhibition"
+          "exhibition",
+          "spatial"
         ]
       },
       {
@@ -250,6 +252,7 @@
     "motion",
     "personal",
     "photography",
+    "physical",
     "poster",
     "print",
     "product-marking",
@@ -260,6 +263,7 @@
     "real-time",
     "reference",
     "retail",
+    "spatial",
     "stationery",
     "study",
     "teaching",
@@ -270,11 +274,10 @@
     "writing"
   ],
   "mediums": [
-    "digital",
+    "motion",
+    "physical",
     "print",
-    "environments",
-    "product",
-    "video"
+    "spatial"
   ],
   "clients": [
     "AWS Re:Invent",

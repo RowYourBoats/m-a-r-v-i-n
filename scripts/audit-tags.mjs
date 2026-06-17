@@ -115,6 +115,14 @@ for (const axis of IMAGE_AXES) {
   coverage[axis] = { with: withVal, without: total - withVal, total };
 }
 
+// (3b) Subject is the required floor. The worklist that matters is *published*
+// images lacking one — mirrors the curation gate in build-manifest.mjs
+// (description OR any tag publishes). Stubs without a subject are hidden anyway.
+const isCurated = (e) =>
+  !!(e.description && String(e.description).trim()) ||
+  (e.format || []).length + (e.characteristics || []).length + (e.subject || []).length + (e.tags || []).length > 0;
+const subjectBacklog = catalogue.filter((e) => isCurated(e) && !(e.subject && e.subject.length)).map((e) => e.file_path);
+
 // ---- output ----
 const toObj = (m) =>
   Object.fromEntries([...m.entries()].sort((a, b) => b[1] - a[1] || a[0].localeCompare(b[0])));
@@ -128,6 +136,7 @@ const report = {
     singletons,
   },
   coverage,
+  subject_backlog: subjectBacklog,
 };
 
 fs.mkdirSync(path.dirname(outPath), { recursive: true });
@@ -151,6 +160,7 @@ for (const [a, c] of Object.entries(coverage)) {
   const pct = ((c.with / c.total) * 100).toFixed(1);
   console.log(`  ${pad(a, 16)} ${c.with}/${c.total}  (${pct}%)`);
 }
+console.log(`\nsubject backlog (published images with no subject — the required floor): ${subjectBacklog.length}`);
 
 console.log("\n=== image-level ===");
 for (const a of IMAGE_AXES) printAxis(a, imageCounts[a], "image");

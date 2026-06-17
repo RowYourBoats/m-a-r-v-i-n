@@ -2,7 +2,7 @@
 
 Canonical reference for tags on images (`public/images/image_catalogue.json`) and projects (`public/images/{tier}/{client}/_project.md`). Update as decisions are made.
 
-Last reviewed: 2026-05-25.
+Last reviewed: 2026-06-17.
 
 ## How this doc works
 
@@ -10,78 +10,68 @@ Last reviewed: 2026-05-25.
 - Compare the audit output to this doc. Anything in the audit not listed here is unrecognized: either fold in (and add a row), or kick out (and add a migration entry).
 - This doc records *decisions*, not snapshots. When a tag changes status (added / dropped / consolidated), note it in the migration log.
 - The four image-level axes are orthogonal — values do not move across them. If a value seems to belong in two axes, one of them is wrong.
-- `medium` and `format` in particular are independent. `medium` is the practice / discipline (event design, video, print design, digital design, …); `format` is the artifact / output type (deck, poster, keynote, …). The same project can — and usually does — carry both, in any combination. Don't infer one from the other; don't restrict one based on the other.
+- `medium` and `format` are independent. `medium` is the dimension the work is *encountered* in — print / motion / spatial / physical (screen/digital work has none); `format` is the artifact / output type (deck, poster, keynote, …). The same piece can carry both, in any combination. Don't infer one from the other.
 
 ---
 
 ## Image-level axes
 
-Per-image tags. Four axes, each doing distinct work.
+Per-image tags. Four axes, each answering one question. Counts go stale fast — run `audit-tags.mjs` for live numbers; this doc records meanings and decisions.
 
-### `medium` — practice / discipline
+### Cardinality
 
-What discipline of design work this is. Singular per image. Distinct from the asset's *file type* (image / video / audio) — `medium` is the conceptual practice, not the codec.
+| axis | count | rule |
+| --- | --- | --- |
+| `subject` | 1+ | **required — the floor.** Guarantees findability. Soft-enforced: the admin flags a missing subject and the audit lists them, but the publish gate stays `description-or-any-tag`, so a subjectless image isn't dropped — just nagged. |
+| `format` | 0+ | usually present; empty for process / detail / exploration shots |
+| `medium` | 0–1 | single-select; **empty is the default**. Folded into the filterable tag union (build-manifest) so it behaves like a filter chip. |
+| `characteristics` | 0+ | empty is the default; flags only what's remarkable |
+
+### `medium` — in what dimension is this encountered?
+
+Single per image, **may be empty**. The physical/temporal dimension the work lives in. Distinct from *file type* (image / video). **Screen / web / digital work carries no medium** — it's identified by format + characteristics instead.
 
 | value | meaning |
 | --- | --- |
-| `digital` | screen-bound static / interactive design: sites, decks, social, generative output, UI work |
-| `print` | print design: books, posters, packaging printed graphics |
-| `environments` | spatial / built design: installation, retail interior, wayfinding |
-| `product` | product design: merch, packaging-as-object, physical product graphics |
-| `video` | motion / video work as its own discipline (production language distinct from static design) |
-| `event` | event design: brand expression in the context of a moment / gathering, where the artifact's purpose is to inhabit that moment |
+| `print` | a flat printed surface: books, posters, packaging graphics |
+| `motion` | time-based moving image (video assets default here; also former motion stills) |
+| `spatial` | encountered in an environment: installation, retail interior, booth, wayfinding |
+| `physical` | a designed object / material: merch, packaging-as-object, product graphics |
 
-### `format` — artifact / output type
+### `format` — what kind of deliverable is it?
 
-What the asset *is* as an output. Multi-value allowed. Applies to images **and** videos (build-manifest threads per-video `format` into video item tags exactly as it does for images).
+What the asset *is* as an output. Multi-value. Applies to images **and** videos (build-manifest threads per-video `format` into video item tags).
 
-| value | n | meaning |
-| --- | --- | --- |
-| `deck` | 372 | slide from a presentation deck |
-| `poster` | 42 | poster artwork |
-| `editorial` | 38 | editorial layout (magazine, newspaper) |
-| `campaign` | 32 | campaign artwork (under review — see working notes) |
-| `publication-design` | 37 | book / publication page or spread (design of a publication) |
-| `installation` | 20 | installation photograph |
-| `exhibition` | 14 | exhibition view |
-| `keynote` | 0 | keynote slide, animation, or full presentation (image or video) — surfaces under the `keynote` chip |
-| `stationery` | 9 | letterhead, cards, invites |
-| `merch` | 6 | merch object |
-| `booth` | 4 | trade-show booth |
-| `web` | 4 | website / web artifact |
+`booth` · `campaign` · `deck` · `editorial` · `exhibition` · `installation` · `keynote` · `merch` · `poster` · `product-marking` · `publication-design` · `retail` · `web` · `stationery` · `event`
 
-`event` moved out of `format` on 2026-05-25 — it's a discipline (now `medium: event`), not an artifact shape. A poster *for* an event is `format: poster, medium: event`.
+- `stationery` lives **only** here (letterhead, cards, invites) — removed from characteristics.
+- `event`, if you want to tag the occasion, lives here — not on medium. A poster *for* an event is `format: [poster, event]`.
 
-### `characteristics` — qualities
+### `characteristics` — how it was made / how it behaves
 
 Multi-value. **Applies to images that EMBODY the quality, not images that document it.** A still photo of a real-time installation is NOT `real-time` — the project is.
 
 | value | meaning |
 | --- | --- |
 | `interactive` | the image itself is interactive (UI screenshots, demos, prototypes) |
-| `motion` | the image itself moves (gif, video, motion still frame) |
-| `3d` | the image is rendered |
 | `real-time` | the image is captured from / depicts a real-time system |
-| `making` | the image documents process / craft / fabrication |
+| `generative` | made by a generative / algorithmic process |
+| `3d` | the image is rendered |
+| `making` | documents process / craft / fabrication |
+| `storytelling` | narrative-driven sequence / treatment |
+| `essay` | written-essay companion image |
+| `reference` | reference / mood / research material |
 
-### `subject` — what the image is about
+- `print` and `motion` left this axis (both are now mediums); `stationery` moved to format.
+- Optional future: `material` (foil / emboss / vinyl / fold) if `making` proves too broad.
 
-Multi-value. What's depicted or treated.
+### `subject` — what is it about / what does it depict?
 
-| value | n | meaning |
-| --- | --- | --- |
-| `proposal` | 353 | speculative / proposal artwork (decks for unbuilt retail concepts etc. — won't typically surface on the front page) |
-| `photography` | 42 | photograph as final artwork |
-| `illustration` | 39 | illustration as final artwork |
-| `typography` | 38 | type IS the subject (not merely present) |
-| `data-visualization` | 30 | quantitative data made visible |
-| `letter-design` | 30 | individual letterform design |
-| `identity` | 21 | identity / brand mark / system documentation |
-| `logo` | 16 | logo presentation (kept while volume holds; could fold into `identity`) |
-| `study` | 15 | self-contained study / sketch |
-| `product-render` | 8 | rendered product imagery |
-| `diagram` | 6 | conceptual / structural diagrams (distinct from data-viz) |
-| `iconography` | 5 | icon / pictogram libraries |
+Multi-value, **required (1+)**.
+
+`data-visualization` · `diagram` · `iconography` · `identity` · `illustration` · `letter-design` · `lifestyle` · `logo` · `photography` · `product-render` · `proposal` · `study` · `typography`
+
+- `logo` / `letter-design` / `typography` / `identity` overlap, but subject is multi-select and fuzzy by design — overlap is cheap here.
 
 ---
 
@@ -137,10 +127,16 @@ Decisions and the data work that follows. Pending rows are open until the data r
 | 2026-05-25 | Add `event` to `medium` vocabulary, drop `event` from `format`. 23 catalogue entries migrated by `scripts/migrate-event-medium-2026-05-25.mjs`: format `event` removed, medium set to `event` (overwriting prior digital/print/environments classification). Reframes the axes: `medium` = practice/discipline, `format` = artifact/output type, orthogonal. | done |
 | 2026-05-25 | Add `keynote` to `format` vocabulary. Was previously only in `project_type`; the `/work` keynote chip had nothing to match per-item. Now applies to any keynote slide / deck / animation / video. AWS videos seeded with `format: [keynote]` in `_project.md`. Tag images via the admin portal as they're added. | done |
 | 2026-05-25 | Extend videos to carry `format` (and override `medium`) in their per-video `_project.md` entry. Previously only `characteristics` + `subject` threaded into the video item's tags; `format` is now in the union too. Enables `format: keynote` on AWS videos and any other per-video artifact tagging. | done |
+| 2026-06-17 | **Reframe `medium`** from practice/discipline to *dimension encountered*. Renames via `scripts/migrate-taxonomy-2026-06-17.mjs`: `environments`→`spatial` (30), `product`→`physical` (10), `video`→`motion` (8). `digital` (499) **cleared** — screen/digital work carries no medium. New vocab: `print`, `motion`, `spatial`, `physical`. `schema.mediums` reconciled to these 4. | done |
+| 2026-06-17 | **Reverse the 2026-05-25 `event` decision.** `medium: event` (22) cleared and `event` added back to `format`. Event is the occasion (an artifact shape/context), not a dimension; a poster for an event is `format: [poster, event]`. | done |
+| 2026-06-17 | **Dissolve cross-axis duplicates.** `characteristic: motion` (41) → `medium: motion` (28 moved; 13 kept their existing `spatial`/`print` medium, characteristic dropped, logged by the migration's conflict guard). `characteristic: print` (16) → `medium: print`. `characteristic: stationery` (5) → `format: stationery`. The characteristics axis no longer contains `print` / `motion` / `stationery`. | done |
+| 2026-06-17 | **`subject` is now the required floor (1+).** Soft-enforced: `/admin/images` shows a required marker, the "missing tags" filter keys on missing subject, and the audit lists the gap (109 published images lacked one at migration time). The build curation gate is unchanged, so nothing is unpublished — backfill via the admin portal over time. | done |
+| 2026-06-17 | **Fold `medium` into the filterable tag union** (`build-manifest.mjs`) so medium values (print/motion/spatial/physical) work as filter chips like the other axes. Video assets now default to `medium: motion` (was `video`) in `build-manifest.mjs` + `image-tags.ts`. `schema.json` chips: `motion` now matched by the folded medium; the redundant `video` chip merged into `motion`; `spatial` chips extended to match the `spatial` medium; `print` chip added. | done |
 
 ## Working notes / open questions
 
-- **15 entries flagged for medium review** in `docs/migration-2026-05-13-review.json`. Open them in `/admin/images` and change `medium` to `print` where the substrate is actually printed. Migration defaulted these to `digital`.
+- ~~**15 entries flagged for medium review** (defaulted to `digital`)~~ — moot as of 2026-06-17: `digital` is no longer a medium, so all were cleared. If any were genuinely printed, set `medium: print` when they next pass through `/admin/images`.
+- **`subject` backfill:** 109 published images had no subject at the 2026-06-17 migration. Work through them in `/admin/images` (toggle "missing tags" — now keyed on subject).
 - `project.characteristic: generative` (1 instance) still exists at project level. Image-level was dropped during migration; project-level was not touched. Decide later whether to also strip.
 - `characteristic: making` (1 instance) — **kept**, watching for volume.
 - `format: web` (4 instances) — **kept**, watching for volume.

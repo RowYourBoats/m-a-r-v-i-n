@@ -175,12 +175,14 @@ if (fs.existsSync(cataloguePath)) {
   try {
     const catalogue = JSON.parse(fs.readFileSync(cataloguePath, "utf8"));
     for (const entry of catalogue) {
-      // Post-restructure: three orthogonal arrays. Legacy `tags` still
+      // Post-restructure: three orthogonal arrays + the single `medium` (folded
+      // into the filterable tag union since 2026-06-17). Legacy `tags` still
       // honored so partially-migrated catalogues build cleanly.
       for (const t of entry.format || []) allTags.add(t);
       for (const t of entry.characteristics || []) allTags.add(t);
       for (const t of entry.subject || []) allTags.add(t);
       for (const t of entry.tags || []) allTags.add(t);
+      if (entry.medium) allTags.add(entry.medium);
     }
   } catch (err) {
     console.warn("schema: failed to read catalogue for tag union —", err.message);
