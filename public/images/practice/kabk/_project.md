@@ -18,9 +18,12 @@ credits:
 videos: []
 image_tags:
   - campaign
+  - data-visualization
   - illustration
   - letter-design
+  - making
   - poster
+  - print
   - typography
 ---
 

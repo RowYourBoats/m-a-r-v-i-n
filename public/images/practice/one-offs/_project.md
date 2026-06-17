@@ -1,11 +1,11 @@
 ---
-slug: snapshot
-name: Snapshots
+slug: one-offs
+name: One Off
 client: personal
 aliases:
   - personal
   - IndependentProjects
-date_range: 2014-present
+date_range: 2014-2015
 chronological: true
 roles: []
 category: experience
@@ -13,12 +13,15 @@ market: personal
 project_type: []
 sector: personal
 characteristic:
-  - real-time
+  - print
+  - stationery
 personal: true
 description: ""
 credits:
   - role: Design
     name: Marvin de Jong
 image_tags:
-  - 3d
+  - poster
+  - print
+  - stationery
 ---

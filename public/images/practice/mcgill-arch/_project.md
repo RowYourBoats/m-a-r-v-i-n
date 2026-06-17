@@ -20,5 +20,6 @@ videos: []
 image_tags:
   - letter-design
   - poster
+  - print
   - typography
 ---

@@ -2,6 +2,183 @@
 
 Newest run first. Appended automatically by `npm run ingest`.
 
+## 2026-06-17T18:56:41.871Z — ingest (applied)
+
+- **reconcile:** 0 remap(s), 3 quarantined (kept), 20 unregistered on disk
+  - quarantine: `practice/snapshot/Screenshot 2026-01-17 033644.png` (file missing — has caption, kept)
+  - quarantine: `work/ionq/brand/Screenshot 2026-04-13 231144.png` (file missing — has caption, kept)
+  - quarantine: `work/ionq/brand/Screenshot 2026-04-13 231205.png` (file missing — has caption, kept)
+- **stub:** +0 new image(s)
+- **mine-dates:** 749 stamped, 127 missing
+- **sync-image-tags:** 0 _project.md updated
+- **build-projects:** 80 projects, 51 tags, 19 clients
+- **build-manifest:** 742 items across 71 projects
+- **rehydrate:** 0 matched, 0 unmatched
+- **upload-blob:** uploaded 0, adopted 0, skipped 742, failed 0
+- **vimeo-posters:** 2 referenced, 0 fetched
+
+## 2026-06-17T18:56:30.884Z — ingest (applied)
+
+- **reconcile:** 0 remap(s), 3 dropped, 22 unregistered on disk
+  - quarantine: `practice/snapshot/Screenshot 2026-01-17 033644.png` (file missing — has caption, kept)
+  - quarantine: `work/ionq/brand/Screenshot 2026-04-13 231144.png` (file missing — has caption, kept)
+  - quarantine: `work/ionq/brand/Screenshot 2026-04-13 231205.png` (file missing — has caption, kept)
+- **stub:** +2 new image(s)
+  - `work/ionq/brand/IonQ-Brand-Typeface.jpg`
+  - `work/ionq/brand/IonQ-Brand-Videos.png`
+- **mine-dates:** 749 stamped, 127 missing
+- **sync-image-tags:** 0 _project.md updated
+- **build-projects:** 80 projects, 51 tags, 19 clients
+- **build-manifest:** 742 items across 71 projects
+- **rehydrate:** 0 matched, 0 unmatched
+- **upload-blob:** uploaded 0, adopted 0, skipped 742, failed 0
+- **vimeo-posters:** 2 referenced, 0 fetched
+
+## 2026-06-17T18:53:54.799Z — ingest (applied)
+
+- **reconcile:** 0 remap(s), 1 quarantined (kept), 20 unregistered on disk
+  - quarantine: `practice/snapshot/Screenshot 2026-01-17 033644.png` (file missing — has caption, kept)
+- **stub:** +0 new image(s)
+- **mine-dates:** 750 stamped, 125 missing
+- **sync-image-tags:** 1 _project.md updated
+- **build-projects:** 80 projects, 51 tags, 19 clients
+- **build-manifest:** 743 items across 71 projects
+- **rehydrate:** 0 matched, 1 unmatched
+- **upload-blob:** uploaded 0, adopted 1, skipped 742, failed 0
+- **vimeo-posters:** 2 referenced, 0 fetched
+
+## 2026-06-17T18:32:13.379Z — ingest (applied)
+
+- **reconcile:** 0 remap(s), 1 quarantined (kept), 20 unregistered on disk
+  - quarantine: `practice/snapshots/Screenshot 2026-01-17 033644.png` (file missing — has caption, kept)
+- **stub:** +0 new image(s)
+- **mine-dates:** 750 stamped, 125 missing
+- **sync-image-tags:** 0 _project.md updated
+- **build-projects:** 79 projects, 51 tags, 19 clients
+- **build-manifest:** 742 items across 70 projects
+- **rehydrate:** 0 matched, 0 unmatched
+- **upload-blob:** uploaded 0, adopted 0, skipped 742, failed 0
+- **vimeo-posters:** 2 referenced, 0 fetched
+
+## 2026-06-17T18:31:28.503Z — ingest (applied)
+
+- **reconcile:** 0 remap(s), 1 quarantined (kept), 20 unregistered on disk
+  - quarantine: `practice/snapshots/Screenshot 2026-01-17 033644.png` (file missing — has caption, kept)
+- **stub:** +0 new image(s)
+- **mine-dates:** 750 stamped, 125 missing
+- **sync-image-tags:** 0 _project.md updated
+- **build-projects:** 79 projects, 51 tags, 19 clients
+- **build-manifest:** 742 items across 70 projects
+- **rehydrate:** 0 matched, 0 unmatched
+- **upload-blob:** uploaded 0, adopted 0, skipped 742, failed 0
+- **vimeo-posters:** 2 referenced, 0 fetched
+
+## 2026-06-17T18:24:48.891Z — ingest (applied)
+
+- **reconcile:** 0 remap(s), 1 quarantined (kept), 20 unregistered on disk
+  - quarantine: `practice/snapshots/Screenshot 2026-01-17 033644.png` (file missing — has caption, kept)
+- **stub:** +0 new image(s)
+- **mine-dates:** 750 stamped, 125 missing
+- **sync-image-tags:** 0 _project.md updated
+- **build-projects:** 79 projects, 51 tags, 19 clients
+- **build-manifest:** 742 items across 70 projects
+- **rehydrate:** 0 matched, 4 unmatched
+- **upload-blob:** uploaded 3, adopted 1, skipped 738, failed 0
+- **vimeo-posters:** 2 referenced, 0 fetched
+
+## 2026-06-17T18:21:37.115Z — ingest (applied)
+
+- **reconcile:** 0 remap(s), 1 quarantined (kept), 20 unregistered on disk
+  - quarantine: `practice/snapshots/Screenshot 2026-01-17 033644.png` (file missing — has caption, kept)
+- **stub:** +0 new image(s)
+- **mine-dates:** 750 stamped, 125 missing
+- **sync-image-tags:** 0 _project.md updated
+- **build-projects:** 79 projects, 51 tags, 19 clients
+- **build-manifest:** 738 items across 70 projects
+- **rehydrate:** 0 matched, 0 unmatched
+- **upload-blob:** uploaded 0, adopted 0, skipped 738, failed 0
+- **vimeo-posters:** 2 referenced, 0 fetched
+
+## 2026-06-17T18:20:03.444Z — ingest (applied)
+
+- **reconcile:** 0 remap(s), 1 quarantined (kept), 20 unregistered on disk
+  - quarantine: `practice/snapshots/Screenshot 2026-01-17 033644.png` (file missing — has caption, kept)
+- **stub:** +0 new image(s)
+- **mine-dates:** 750 stamped, 125 missing
+- **sync-image-tags:** 0 _project.md updated
+- **build-projects:** 79 projects, 51 tags, 19 clients
+- **build-manifest:** 738 items across 70 projects
+- **rehydrate:** 0 matched, 54 unmatched
+- **upload-blob:** uploaded 37, adopted 17, skipped 684, failed 0
+- **vimeo-posters:** 2 referenced, 0 fetched
+
+## 2026-06-17T18:07:36.888Z — ingest (applied)
+
+- **reconcile:** 0 remap(s), 1 quarantined (kept), 20 unregistered on disk
+  - quarantine: `practice/snapshots/Screenshot 2026-01-17 033644.png` (file missing — has caption, kept)
+- **stub:** +0 new image(s)
+- **mine-dates:** 750 stamped, 125 missing
+- **sync-image-tags:** 0 _project.md updated
+- **build-projects:** 79 projects, 51 tags, 19 clients
+- **build-manifest:** 684 items across 67 projects
+- **rehydrate:** 0 matched, 0 unmatched
+- **upload-blob:** uploaded 0, adopted 0, skipped 684, failed 0
+- **vimeo-posters:** 2 referenced, 0 fetched
+
+## 2026-06-17T18:06:35.410Z — ingest (applied)
+
+- **reconcile:** 0 remap(s), 1 quarantined (kept), 20 unregistered on disk
+  - quarantine: `practice/snapshots/Screenshot 2026-01-17 033644.png` (file missing — has caption, kept)
+- **stub:** +0 new image(s)
+- **mine-dates:** 750 stamped, 125 missing
+- **sync-image-tags:** 1 _project.md updated
+- **build-projects:** 79 projects, 51 tags, 19 clients
+- **build-manifest:** 684 items across 67 projects
+- **rehydrate:** 0 matched, 0 unmatched
+- **upload-blob:** uploaded 0, adopted 0, skipped 684, failed 0
+- **vimeo-posters:** 2 referenced, 0 fetched
+
+## 2026-06-17T17:59:49.513Z — ingest (applied)
+
+- **reconcile:** 0 remap(s), 1 quarantined (kept), 20 unregistered on disk
+  - quarantine: `practice/snapshots/Screenshot 2026-01-17 033644.png` (file missing — has caption, kept)
+- **stub:** +0 new image(s)
+- **mine-dates:** 750 stamped, 125 missing
+- **sync-image-tags:** 0 _project.md updated
+- **build-projects:** 79 projects, 51 tags, 19 clients
+- **build-manifest:** 684 items across 67 projects
+- **rehydrate:** 0 matched, 0 unmatched
+- **upload-blob:** uploaded 0, adopted 0, skipped 684, failed 0
+- **vimeo-posters:** 2 referenced, 0 fetched
+
+## 2026-06-17T17:58:14.359Z — ingest (applied)
+
+- **reconcile:** 0 remap(s), 1 quarantined (kept), 20 unregistered on disk
+  - quarantine: `practice/snapshots/Screenshot 2026-01-17 033644.png` (file missing — has caption, kept)
+- **stub:** +0 new image(s)
+- **mine-dates:** 750 stamped, 125 missing
+- **sync-image-tags:** 1 _project.md updated
+- **build-projects:** 79 projects, 51 tags, 19 clients
+- **build-manifest:** 684 items across 67 projects
+- **rehydrate:** 0 matched, 0 unmatched
+- **upload-blob:** uploaded 0, adopted 0, skipped 684, failed 0
+- **vimeo-posters:** 2 referenced, 0 fetched
+
+## 2026-06-17T17:56:09.561Z — ingest (applied)
+
+- **reconcile:** 2 remap(s), 1 quarantined (kept), 20 unregistered on disk
+  - remap: `practice/snapshots/DSCN1476.jpg` → `practice/one-offs/DSCN1476.jpg`
+  - remap: `practice/snapshots/DSCN1480.jpg` → `practice/one-offs/DSCN1480.jpg`
+  - quarantine: `practice/snapshots/Screenshot 2026-01-17 033644.png` (file missing — has caption, kept)
+- **stub:** +0 new image(s)
+- **mine-dates:** 750 stamped, 125 missing
+- **sync-image-tags:** 0 _project.md updated
+- **build-projects:** 78 projects, 51 tags, 19 clients
+- **build-manifest:** 684 items across 66 projects
+- **rehydrate:** 0 matched, 0 unmatched
+- **upload-blob:** uploaded 0, adopted 0, skipped 684, failed 0
+- **vimeo-posters:** 2 referenced, 0 fetched
+
 ## 2026-06-17T08:00:37.693Z — ingest (applied)
 
 - **reconcile:** 0 remap(s), 0 quarantined (kept), 20 unregistered on disk

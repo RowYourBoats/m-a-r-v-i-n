@@ -5,7 +5,7 @@ client: Yale
 aliases:
   - Yale University
   - Yale
-date_range: 2013-2015
+date_range: 2013-2020
 roles:
   - MFA, Graphic Design
 category: education
@@ -21,24 +21,17 @@ credits:
 videos: []
 projects:
   posters:
-    year: 2014
+    year: 2015
     image_tags:
       - 3d
       - letter-design
       - poster
       - study
       - typography
-  public-browsing:
-    name: Public Browsing
-    year: 2014
-    description: A Chrome add-on that would store your browsing in a json for you to share and compare with others.
-    image_tags:
-      - data-visualization
-      - interactive
-      - web
   thesis:
     name: Thesis
-    year: 2015
+    year: 2013
+    unlisted: true
     image_tags:
       - 3d
       - data-visualization
@@ -53,9 +46,16 @@ projects:
       - publication-design
       - study
       - web
+  riso:
+    name: Riso
+    year: 2015
+    image_tags:
+      - illustration
+      - making
+      - print
   uppercase-soul:
     name: Uppercase Soul
-    year: 2015
+    year: 2020
     image_tags:
       - editorial
       - illustration

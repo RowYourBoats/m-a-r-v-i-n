@@ -36,6 +36,24 @@
       "order": [],
       "snapshot_only": false
     },
+    "herman-miller-for-you-everyone": {
+      "title": "For You Everyone",
+      "description": "Applications for **For Your Everyone** at Salone del Mobile. Herman Miller's Cosm chair launch. Posters, flyer, and merch under Emily C.M. Anderson.",
+      "client": "Herman Miller",
+      "year": 2017,
+      "credits": [
+        {
+          "role": "Brand Design",
+          "name": "Marvin de Jong"
+        },
+        {
+          "role": "Brand Creative Director",
+          "name": "Emily C M Anderson"
+        }
+      ],
+      "order": [],
+      "snapshot_only": false
+    },
     "herman-miller-all-together-now": {
       "title": "All Together Now",
       "description": "Exhibition graphics for **All Together Now** at Salone del Mobile. Herman Miller's Milan show bringing all subsidiaries under one roof for the first time. Posters, flyer, and merch under Emily C.M. Anderson.",
@@ -377,6 +395,34 @@
     "ionq-zoom-backgrounds": {
       "title": "Zoom Backgrounds",
       "description": "Zoom backgrounds for the IonQ team — photographic compositions extending the brand into everyday remote-work surfaces.",
+      "client": "IonQ",
+      "year": 2023,
+      "credits": [
+        {
+          "role": "Creative Director",
+          "name": "Marvin de Jong"
+        }
+      ],
+      "order": [],
+      "snapshot_only": false
+    },
+    "ionq-one-pagers": {
+      "title": "One Pagers",
+      "description": "Promotional and corporate one-pagers — campaign posters, annual report cover, executive profiles, product pages, and pricing sheets.",
+      "client": "IonQ",
+      "year": 2023,
+      "credits": [
+        {
+          "role": "Creative Director",
+          "name": "Marvin de Jong"
+        }
+      ],
+      "order": [],
+      "snapshot_only": false
+    },
+    "ionq-deck": {
+      "title": "Deck Templates",
+      "description": "A presentation template put together for the sales team.",
       "client": "IonQ",
       "year": 2023,
       "credits": [
@@ -942,6 +988,20 @@
       "order": [],
       "snapshot_only": false
     },
+    "one-offs": {
+      "title": "One Off",
+      "description": "",
+      "client": "personal",
+      "year": 2014,
+      "credits": [
+        {
+          "role": "Design",
+          "name": "Marvin de Jong"
+        }
+      ],
+      "order": [],
+      "snapshot_only": false
+    },
     "ouroboros": {
       "title": "Ouroboros",
       "description": "Article design for Celestial Bodies written by Kelsey Sucenca featuring work by Stephanie Hanes. The design was part of a Precog magazine's Ouroboros issue and combined folding and overlapping 3D geometry with modernist typography.",
@@ -1084,6 +1144,20 @@
       "order": [],
       "snapshot_only": false
     },
+    "yale-riso": {
+      "title": "Riso",
+      "description": "",
+      "client": "Yale",
+      "year": 2013,
+      "credits": [
+        {
+          "role": "Student",
+          "name": "Marvin de Jong"
+        }
+      ],
+      "order": [],
+      "snapshot_only": false
+    },
     "yale-uppercase-soul": {
       "title": "Uppercase Soul",
       "description": "",
@@ -1120,28 +1194,22 @@
       "type": "image",
       "title": "Wikipedia Success-Failure Flowchart",
       "tags": [
-        "data-visualization",
-        "snapshot"
+        "data-visualization"
       ],
       "format": [],
       "characteristics": [],
       "subject": [
         "data-visualization"
       ],
-      "project_tags": [
-        "personal",
-        "personal",
-        "real-time"
-      ],
+      "project_tags": [],
       "medium": "digital",
-      "project": "snapshot",
+      "project": "__unrouted",
       "description": "A conceptual diagram contrasting Wikipedia's operational outcomes: successful pathways (good edits → inform public, clarify policy with better editors) versus failure pathways (bad edits → misinform public, confuse policy with worse editors) via cause-and-effect relationships.",
       "width": 393,
       "height": 385,
       "style": "Minimalist flowchart with directional arrows, two-column structure, text-based labels, and clean typography to illustrate cause-effect relationships in Wikipedia's content ecosystem.",
-      "created": "2014-present",
-      "date_range": "2014-present",
-      "year": 2014,
+      "created": "2026-04-14T06:14:10.069Z",
+      "year": 2026,
       "personal": true,
       "staging": true
     },
@@ -1484,8 +1552,7 @@
         "interactive",
         "essay",
         "letter-design",
-        "typography",
-        "snapshot"
+        "typography"
       ],
       "format": [
         "installation",
@@ -1501,21 +1568,17 @@
         "letter-design",
         "typography"
       ],
-      "project_tags": [
-        "personal",
-        "personal",
-        "real-time"
-      ],
+      "project_tags": [],
       "medium": "video",
-      "project": "snapshot",
+      "project": "__unrouted",
       "description": "A 3D-rendered Korean text design with fluid, glowing neon outlines illustrating controlled instability in typography. The luminous pink lines create an organic, dynamic visual effect.",
       "width": 1166,
       "height": 1897,
       "style": "Fluid neon typography with controlled instability, featuring glowing pink lines and organic letter forms against a soft gradient background",
-      "created": "2014-present",
-      "date_range": "2014-present",
-      "year": 2014,
+      "created": "2026-04-19T07:07:35.530Z",
+      "year": 2026,
       "personal": true,
+      "staging": true,
       "essay_of": "practice/controlled-instability/controlled-instability",
       "hidden_from_feed": true
     },
@@ -1857,7 +1920,7 @@
       "personal": true
     },
     {
-      "id": "practice-snapshots-screenshot-2026-01-17-033644",
+      "id": "practice-snapshot-screenshot-2026-01-17-033644",
       "src": "https://ws6i2dfuggcaavs2.public.blob.vercel-storage.com/images/practice/snapshots/Screenshot%202026-01-17%20033644.png",
       "type": "image",
       "title": "Fragmented Cubic Text Installation",
@@ -1878,11 +1941,9 @@
       "medium": "digital",
       "project": "snapshot",
       "description": "This digital design presents the word 'QUANTUM' formed by fragmented checkered cubes in a dynamic 3D arrangement, showcasing spatial composition and geometric form against a minimalist coastal landscape.",
-      "width": 2766,
-      "height": 1356,
       "style": "Geometric abstraction with fragmented cubic construction and checkered pattern, set within a minimalist coastal environment",
       "created": "2026-01-17T03:36:44Z",
-      "date_range": "2014-present",
+      "date_range": "2025-present",
       "year": 2026,
       "personal": true
     },
@@ -2272,8 +2333,8 @@
       "width": 684,
       "height": 1020,
       "style": "bold typographic collage with vibrant color blocking and aggressive lettering",
-      "created": "2013-2015",
-      "date_range": "2013-2015",
+      "created": "2013-2020",
+      "date_range": "2013-2020",
       "year": 2013,
       "personal": true
     },
@@ -2307,8 +2368,8 @@
       "width": 961,
       "height": 1289,
       "style": "Bold typography with overlapping and distorted text elements",
-      "created": "2013-2015",
-      "date_range": "2013-2015",
+      "created": "2013-2020",
+      "date_range": "2013-2020",
       "year": 2013,
       "personal": true
     },
@@ -2320,8 +2381,7 @@
       "tags": [
         "web",
         "interactive",
-        "data-visualization",
-        "snapshot"
+        "data-visualization"
       ],
       "format": [
         "web"
@@ -2332,20 +2392,15 @@
       "subject": [
         "data-visualization"
       ],
-      "project_tags": [
-        "personal",
-        "personal",
-        "real-time"
-      ],
+      "project_tags": [],
       "medium": "digital",
-      "project": "snapshot",
+      "project": "__unrouted",
       "description": "A digital data table presenting user connection times across multiple ID groups for public browsing analytics, organized with clear time entries.",
       "width": 1280,
       "height": 800,
       "style": "clean, text-based layout with minimalist data presentation",
-      "created": "2014-present",
-      "date_range": "2014-present",
-      "year": 2014,
+      "created": "2026-04-19T07:07:35.519Z",
+      "year": 2026,
       "personal": true,
       "staging": true,
       "essay_of": "tools/public-browsing/public-browsing",
@@ -2359,8 +2414,7 @@
       "tags": [
         "web",
         "interactive",
-        "data-visualization",
-        "snapshot"
+        "data-visualization"
       ],
       "format": [
         "web"
@@ -2371,20 +2425,15 @@
       "subject": [
         "data-visualization"
       ],
-      "project_tags": [
-        "personal",
-        "personal",
-        "real-time"
-      ],
+      "project_tags": [],
       "medium": "digital",
-      "project": "snapshot",
+      "project": "__unrouted",
       "description": "A digital visualization of public browsing session data, presenting URL history and timestamps across multiple sessions to examine user navigation behavior.",
       "width": 1280,
       "height": 800,
       "style": "minimalist text-based browser interface visualization",
-      "created": "2014-present",
-      "date_range": "2014-present",
-      "year": 2014,
+      "created": "2026-04-19T07:07:35.519Z",
+      "year": 2026,
       "personal": true,
       "staging": true,
       "essay_of": "tools/public-browsing/public-browsing",
@@ -2398,8 +2447,7 @@
       "tags": [
         "web",
         "interactive",
-        "data-visualization",
-        "snapshot"
+        "data-visualization"
       ],
       "format": [
         "web"
@@ -2410,20 +2458,15 @@
       "subject": [
         "data-visualization"
       ],
-      "project_tags": [
-        "personal",
-        "personal",
-        "real-time"
-      ],
+      "project_tags": [],
       "medium": "digital",
-      "project": "snapshot",
+      "project": "__unrouted",
       "description": "A data visualization illustrating user connections over time in public browsing sessions, represented by interconnected nodes with time annotations for each connection point.",
       "width": 1280,
       "height": 800,
       "style": "Network-based data visualization with time-stamped connection flows",
-      "created": "2014-present",
-      "date_range": "2014-present",
-      "year": 2014,
+      "created": "2026-04-19T07:07:35.521Z",
+      "year": 2026,
       "personal": true,
       "staging": true,
       "essay_of": "tools/public-browsing/public-browsing",
@@ -2437,8 +2480,7 @@
       "tags": [
         "web",
         "interactive",
-        "data-visualization",
-        "snapshot"
+        "data-visualization"
       ],
       "format": [
         "web"
@@ -2449,20 +2491,15 @@
       "subject": [
         "data-visualization"
       ],
-      "project_tags": [
-        "personal",
-        "personal",
-        "real-time"
-      ],
+      "project_tags": [],
       "medium": "digital",
-      "project": "snapshot",
+      "project": "__unrouted",
       "description": "A time-series data visualization of public browsing activity, using multicolored lines to represent user connections and hourly interactions across multiple data sets.",
       "width": 1280,
       "height": 800,
       "style": "colorful line graph depicting time-based user connections in public browsing",
-      "created": "2014-present",
-      "date_range": "2014-present",
-      "year": 2014,
+      "created": "2026-04-19T07:07:35.522Z",
+      "year": 2026,
       "personal": true,
       "staging": true,
       "essay_of": "tools/public-browsing/public-browsing",
@@ -2526,10 +2563,11 @@
       "width": 1337,
       "height": 838,
       "style": "minimalist line-based data visualization",
-      "created": "2013-2015",
-      "date_range": "2013-2015",
+      "created": "2013-2020",
+      "date_range": "2013-2020",
       "year": 2013,
-      "personal": true
+      "personal": true,
+      "hidden_from_feed": true
     },
     {
       "id": "practice-yale-thesis-original-2553c28b14a8e088c0ad1de06674e2a7",
@@ -2560,10 +2598,11 @@
       "width": 2592,
       "height": 1936,
       "style": "Geometric abstraction using primary colors and contrasting black elements within a corner layout",
-      "created": "2013-2015",
-      "date_range": "2013-2015",
+      "created": "2013-2020",
+      "date_range": "2013-2020",
       "year": 2013,
-      "personal": true
+      "personal": true,
+      "hidden_from_feed": true
     },
     {
       "id": "practice-yale-thesis-original-40df324de378a5f92e1c6cdd802a9075",
@@ -2593,10 +2632,11 @@
       "width": 6600,
       "height": 9600,
       "style": "Vibrant neon gradient abstract composition with fragmented geometric forms and glitch aesthetics",
-      "created": "2013-2015",
-      "date_range": "2013-2015",
+      "created": "2013-2020",
+      "date_range": "2013-2020",
       "year": 2013,
-      "personal": true
+      "personal": true,
+      "hidden_from_feed": true
     },
     {
       "id": "practice-yale-thesis-original-4dc0bbcd1c25a212f6f99a3ca214a56a",
@@ -2626,10 +2666,11 @@
       "width": 3264,
       "height": 2448,
       "style": "Realistic photographic style emphasizing human anatomy and textile textures",
-      "created": "2013-2015",
-      "date_range": "2013-2015",
+      "created": "2013-2020",
+      "date_range": "2013-2020",
       "year": 2013,
-      "personal": true
+      "personal": true,
+      "hidden_from_feed": true
     },
     {
       "id": "practice-yale-thesis-original-950e3cd508e6707b9791804b161b2b76",
@@ -2657,10 +2698,11 @@
       "width": 2048,
       "height": 2048,
       "style": "Organic gradient typography with fluid, irregular forms and non-traditional letterform composition",
-      "created": "2013-2015",
-      "date_range": "2013-2015",
+      "created": "2013-2020",
+      "date_range": "2013-2020",
       "year": 2013,
-      "personal": true
+      "personal": true,
+      "hidden_from_feed": true
     },
     {
       "id": "practice-yale-thesis-original-a657d80917ef96fcfa08dbbc416bd6a2",
@@ -2687,10 +2729,11 @@
       "width": 1920,
       "height": 1080,
       "style": "Atmospheric digital rendering with textural details and cinematic lighting",
-      "created": "2013-2015",
-      "date_range": "2013-2015",
+      "created": "2013-2020",
+      "date_range": "2013-2020",
       "year": 2013,
-      "personal": true
+      "personal": true,
+      "hidden_from_feed": true
     },
     {
       "id": "practice-yale-thesis-original-ad4d1179c68233a936a838077805e408",
@@ -2717,10 +2760,11 @@
       "width": 1920,
       "height": 1080,
       "style": "Textural transparency with layered color and bubble effects",
-      "created": "2013-2015",
-      "date_range": "2013-2015",
+      "created": "2013-2020",
+      "date_range": "2013-2020",
       "year": 2013,
-      "personal": true
+      "personal": true,
+      "hidden_from_feed": true
     },
     {
       "id": "practice-yale-thesis-original-be506b3f4a7bfd74ad9ceff8d17be8c2",
@@ -2748,10 +2792,11 @@
       "width": 1920,
       "height": 1080,
       "style": "Minimalist",
-      "created": "2013-2015",
-      "date_range": "2013-2015",
+      "created": "2013-2020",
+      "date_range": "2013-2020",
       "year": 2013,
-      "personal": true
+      "personal": true,
+      "hidden_from_feed": true
     },
     {
       "id": "practice-yale-thesis-original-d3c634d13e90c2897b879f1df5955946",
@@ -2778,10 +2823,11 @@
       "width": 1348,
       "height": 749,
       "style": "intentional blur, abstract representation, experimental photographic study",
-      "created": "2013-2015",
-      "date_range": "2013-2015",
+      "created": "2013-2020",
+      "date_range": "2013-2020",
       "year": 2013,
-      "personal": true
+      "personal": true,
+      "hidden_from_feed": true
     },
     {
       "id": "practice-yale-thesis-original-d5aa1a072c76e44bfc17db31bf6abced",
@@ -2814,10 +2860,11 @@
       "width": 1920,
       "height": 1080,
       "style": "Vibrant gradient background with 3D letter-form typography and dynamic text elements",
-      "created": "2013-2015",
-      "date_range": "2013-2015",
+      "created": "2013-2020",
+      "date_range": "2013-2020",
       "year": 2013,
-      "personal": true
+      "personal": true,
+      "hidden_from_feed": true
     },
     {
       "id": "practice-yale-thesis-original-ded1c03c29d067634e5dc2a0be8972d1",
@@ -2852,10 +2899,11 @@
       "width": 1552,
       "height": 985,
       "style": "Vibrant graphic design with polka-dot pattern and geometric color blocking",
-      "created": "2013-2015",
-      "date_range": "2013-2015",
+      "created": "2013-2020",
+      "date_range": "2013-2020",
       "year": 2013,
-      "personal": true
+      "personal": true,
+      "hidden_from_feed": true
     },
     {
       "id": "practice-yale-thesis-original-e7df6d6698fb384872efa7c0f881b4b6",
@@ -2883,10 +2931,11 @@
       "width": 1440,
       "height": 900,
       "style": "Minimalist monochromatic grid pattern with strict repetition, used for design testing and layout evaluation",
-      "created": "2013-2015",
-      "date_range": "2013-2015",
+      "created": "2013-2020",
+      "date_range": "2013-2020",
       "year": 2013,
-      "personal": true
+      "personal": true,
+      "hidden_from_feed": true
     },
     {
       "id": "practice-yale-thesis-original-f8ac574d7c399c7637841b3afa72f996",
@@ -2918,10 +2967,11 @@
       "width": 1920,
       "height": 1080,
       "style": "organic texture, monochromatic, subtle lighting",
-      "created": "2013-2015",
-      "date_range": "2013-2015",
+      "created": "2013-2020",
+      "date_range": "2013-2020",
       "year": 2013,
-      "personal": true
+      "personal": true,
+      "hidden_from_feed": true
     },
     {
       "id": "practice-yale-uppercase-soul-screenshot-2026-04-14-092210",
@@ -2949,8 +2999,8 @@
       "width": 973,
       "height": 991,
       "style": "minimalist typographic design with gradient background and bold letterforms",
-      "created": "2013-2015",
-      "date_range": "2013-2015",
+      "created": "2013-2020",
+      "date_range": "2013-2020",
       "year": 2013,
       "personal": true
     },
@@ -2980,8 +3030,8 @@
       "width": 989,
       "height": 990,
       "style": "minimalist literary design with typographic emphasis",
-      "created": "2013-2015",
-      "date_range": "2013-2015",
+      "created": "2013-2020",
+      "date_range": "2013-2020",
       "year": 2013,
       "personal": true
     },
@@ -3013,8 +3063,8 @@
       "width": 4000,
       "height": 6000,
       "style": "Vibrant gradient typography with geometric form in a dimly lit interior setting",
-      "created": "2013-2015",
-      "date_range": "2013-2015",
+      "created": "2013-2020",
+      "date_range": "2013-2020",
       "year": 2013,
       "personal": true
     },
@@ -3046,8 +3096,8 @@
       "width": 3102,
       "height": 5004,
       "style": "vibrant geometric gradient typography",
-      "created": "2013-2015",
-      "date_range": "2013-2015",
+      "created": "2013-2020",
+      "date_range": "2013-2020",
       "year": 2013,
       "personal": true
     },
@@ -3079,8 +3129,8 @@
       "width": 3102,
       "height": 5004,
       "style": "Vibrant neon typography with 3D rendering and layered color gradients",
-      "created": "2013-2015",
-      "date_range": "2013-2015",
+      "created": "2013-2020",
+      "date_range": "2013-2020",
       "year": 2013,
       "personal": true
     },
@@ -3112,8 +3162,8 @@
       "width": 3102,
       "height": 5004,
       "style": "modern abstract geometric logo with gradient overlays and bold typography",
-      "created": "2013-2015",
-      "date_range": "2013-2015",
+      "created": "2013-2020",
+      "date_range": "2013-2020",
       "year": 2013,
       "personal": true
     },
@@ -3145,8 +3195,8 @@
       "width": 3102,
       "height": 5004,
       "style": "Vibrant gradient circular typography with bold uppercase lettering and layered gradient elements",
-      "created": "2013-2015",
-      "date_range": "2013-2015",
+      "created": "2013-2020",
+      "date_range": "2013-2020",
       "year": 2013,
       "personal": true
     },
@@ -3182,7 +3232,8 @@
       "created": "2013-2015",
       "date_range": "2013-2015",
       "year": 2013,
-      "personal": true
+      "personal": true,
+      "hidden_from_feed": true
     },
     {
       "id": "practice-yale-studio-screenshot-2026-04-16-154728",
@@ -3215,7 +3266,8 @@
       "created": "2013-2015",
       "date_range": "2013-2015",
       "year": 2013,
-      "personal": true
+      "personal": true,
+      "hidden_from_feed": true
     },
     {
       "id": "work-dsr-competition-materials-ds-r-spread",
@@ -19983,8 +20035,7 @@
         "editorial",
         "3d",
         "real-time",
-        "essay",
-        "snapshot"
+        "essay"
       ],
       "format": [
         "editorial"
@@ -19995,20 +20046,16 @@
         "essay"
       ],
       "subject": [],
-      "project_tags": [
-        "personal",
-        "personal",
-        "real-time"
-      ],
+      "project_tags": [],
       "medium": "digital",
-      "project": "snapshot",
+      "project": "__unrouted",
       "description": "Forms flicker in place, a screenshot of a real-time interaction. ",
       "width": 1133,
       "height": 2023,
-      "created": "2014-present",
-      "date_range": "2014-present",
-      "year": 2014,
+      "created": "2026-04-19T07:07:35.529Z",
+      "year": 2026,
       "personal": true,
+      "staging": true,
       "essay_of": "practice/controlled-instability/controlled-instability",
       "hidden_from_feed": true
     },
@@ -20211,8 +20258,7 @@
       "title": "forYouEveryone 01",
       "tags": [
         "exhibition",
-        "illustration",
-        "snapshot"
+        "illustration"
       ],
       "format": [
         "exhibition"
@@ -20222,19 +20268,20 @@
         "illustration"
       ],
       "project_tags": [
-        "personal",
-        "personal",
-        "real-time"
+        "b2b2c",
+        "campaign",
+        "publication-design",
+        "exhibition",
+        "furniture"
       ],
       "medium": "print",
-      "project": "snapshot",
+      "project": "herman-miller-for-you-everyone",
       "description": "",
       "width": 2070,
       "height": 2760,
-      "created": "2014-present",
-      "date_range": "2014-present",
-      "year": 2014,
-      "personal": true
+      "created": "2017-2019",
+      "date_range": "2017-2019",
+      "year": 2017
     },
     {
       "id": "work-herman-miller-for-you-everyone-foryoueveryone-02",
@@ -20243,8 +20290,7 @@
       "title": "forYouEveryone 02",
       "tags": [
         "exhibition",
-        "illustration",
-        "snapshot"
+        "illustration"
       ],
       "format": [
         "exhibition"
@@ -20254,19 +20300,20 @@
         "illustration"
       ],
       "project_tags": [
-        "personal",
-        "personal",
-        "real-time"
+        "b2b2c",
+        "campaign",
+        "publication-design",
+        "exhibition",
+        "furniture"
       ],
       "medium": "print",
-      "project": "snapshot",
+      "project": "herman-miller-for-you-everyone",
       "description": "",
       "width": 2456,
       "height": 3275,
-      "created": "2014-present",
-      "date_range": "2014-present",
-      "year": 2014,
-      "personal": true
+      "created": "2017-2019",
+      "date_range": "2017-2019",
+      "year": 2017
     },
     {
       "id": "work-herman-miller-for-you-everyone-foryoueveryone-03",
@@ -20275,8 +20322,7 @@
       "title": "forYouEveryone 03",
       "tags": [
         "exhibition",
-        "photography",
-        "snapshot"
+        "photography"
       ],
       "format": [
         "exhibition"
@@ -20286,19 +20332,20 @@
         "photography"
       ],
       "project_tags": [
-        "personal",
-        "personal",
-        "real-time"
+        "b2b2c",
+        "campaign",
+        "publication-design",
+        "exhibition",
+        "furniture"
       ],
       "medium": "print",
-      "project": "snapshot",
+      "project": "herman-miller-for-you-everyone",
       "description": "",
       "width": 2456,
       "height": 3275,
-      "created": "2014-present",
-      "date_range": "2014-present",
-      "year": 2014,
-      "personal": true
+      "created": "2017-2019",
+      "date_range": "2017-2019",
+      "year": 2017
     },
     {
       "id": "work-herman-miller-geiger-holiday-card-geiger-holidaycard",
@@ -20834,6 +20881,36 @@
       "year": 2017
     },
     {
+      "id": "practice-ambiguous-form-letterform",
+      "src": "https://ws6i2dfuggcaavs2.public.blob.vercel-storage.com/images/practice/ambiguous-form/LetterForm.jpeg",
+      "type": "image",
+      "title": "Letter Form",
+      "tags": [
+        "3d",
+        "letter-design"
+      ],
+      "format": [],
+      "characteristics": [
+        "3d"
+      ],
+      "subject": [
+        "letter-design"
+      ],
+      "project_tags": [
+        "personal",
+        "personal"
+      ],
+      "medium": "digital",
+      "project": "ambiguous-form",
+      "description": "",
+      "width": 1953,
+      "height": 1100,
+      "created": "2014-2016",
+      "date_range": "2014-2016",
+      "year": 2014,
+      "personal": true
+    },
+    {
       "id": "practice-architecture-fantasy-perdido-street-station-01-animal-architecture-nest-sociable-weaverbird",
       "src": "https://ws6i2dfuggcaavs2.public.blob.vercel-storage.com/images/practice/architecture-fantasy/perdido-street-station/01-animal-architecture-nest-sociable-weaverbird.png",
       "type": "image",
@@ -20842,8 +20919,7 @@
         "publication-design",
         "editorial",
         "reference",
-        "essay",
-        "snapshot"
+        "essay"
       ],
       "format": [
         "publication-design",
@@ -20854,20 +20930,16 @@
         "essay"
       ],
       "subject": [],
-      "project_tags": [
-        "personal",
-        "personal",
-        "real-time"
-      ],
+      "project_tags": [],
       "medium": "print",
-      "project": "snapshot",
+      "project": "__unrouted",
       "description": "Sociable weaverbird. A communal nest.",
       "width": 1991,
       "height": 2096,
-      "created": "2014-present",
-      "date_range": "2014-present",
-      "year": 2014,
+      "created": "2026-05-22T23:43:19.679Z",
+      "year": 2026,
       "personal": true,
+      "staging": true,
       "essay_of": "practice/architecture-fantasy/perdido-street-station/perdido-street-station",
       "hidden_from_feed": true
     },
@@ -20880,8 +20952,7 @@
         "publication-design",
         "editorial",
         "reference",
-        "essay",
-        "snapshot"
+        "essay"
       ],
       "format": [
         "publication-design",
@@ -20892,20 +20963,16 @@
         "essay"
       ],
       "subject": [],
-      "project_tags": [
-        "personal",
-        "personal",
-        "real-time"
-      ],
+      "project_tags": [],
       "medium": "print",
-      "project": "snapshot",
+      "project": "__unrouted",
       "description": "Osprey eyrie. Boughs and branches stacked into a perch.",
       "width": 2254,
       "height": 2427,
-      "created": "2014-present",
-      "date_range": "2014-present",
-      "year": 2014,
+      "created": "2026-05-18T20:23:37.497Z",
+      "year": 2026,
       "personal": true,
+      "staging": true,
       "essay_of": "practice/architecture-fantasy/perdido-street-station/perdido-street-station",
       "hidden_from_feed": true
     },
@@ -20918,8 +20985,7 @@
         "publication-design",
         "editorial",
         "reference",
-        "essay",
-        "snapshot"
+        "essay"
       ],
       "format": [
         "publication-design",
@@ -20930,20 +20996,16 @@
         "essay"
       ],
       "subject": [],
-      "project_tags": [
-        "personal",
-        "personal",
-        "real-time"
-      ],
+      "project_tags": [],
       "medium": "print",
-      "project": "snapshot",
+      "project": "__unrouted",
       "description": "Carpenter ant (Camponotus herculeanus). Galleries bored through a larch stem.",
       "width": 2253,
       "height": 3346,
-      "created": "2014-present",
-      "date_range": "2014-present",
-      "year": 2014,
+      "created": "2026-05-18T22:10:42.742Z",
+      "year": 2026,
       "personal": true,
+      "staging": true,
       "essay_of": "practice/architecture-fantasy/perdido-street-station/perdido-street-station",
       "hidden_from_feed": true
     },
@@ -20956,8 +21018,7 @@
         "publication-design",
         "editorial",
         "reference",
-        "essay",
-        "snapshot"
+        "essay"
       ],
       "format": [
         "publication-design",
@@ -20968,20 +21029,16 @@
         "essay"
       ],
       "subject": [],
-      "project_tags": [
-        "personal",
-        "personal",
-        "real-time"
-      ],
+      "project_tags": [],
       "medium": "print",
-      "project": "snapshot",
+      "project": "__unrouted",
       "description": "Jet ant (Lasius fuliginosus). A section of carton nest, its thin walls reinforced by a fungus grown into them.",
       "width": 2239,
       "height": 2260,
-      "created": "2014-present",
-      "date_range": "2014-present",
-      "year": 2014,
+      "created": "2026-05-18T20:12:50.840Z",
+      "year": 2026,
       "personal": true,
+      "staging": true,
       "essay_of": "practice/architecture-fantasy/perdido-street-station/perdido-street-station",
       "hidden_from_feed": true
     },
@@ -20994,8 +21051,7 @@
         "publication-design",
         "editorial",
         "reference",
-        "essay",
-        "snapshot"
+        "essay"
       ],
       "format": [
         "publication-design",
@@ -21006,20 +21062,16 @@
         "essay"
       ],
       "subject": [],
-      "project_tags": [
-        "personal",
-        "personal",
-        "real-time"
-      ],
+      "project_tags": [],
       "medium": "print",
-      "project": "snapshot",
+      "project": "__unrouted",
       "description": "Leafcutter ant (Atta texana). The fungus mass cultivated inside the nest. At right, magnified.",
       "width": 3308,
       "height": 1286,
-      "created": "2014-present",
-      "date_range": "2014-present",
-      "year": 2014,
+      "created": "2026-05-21T22:20:47.475Z",
+      "year": 2026,
       "personal": true,
+      "staging": true,
       "essay_of": "practice/architecture-fantasy/perdido-street-station/perdido-street-station",
       "hidden_from_feed": true
     },
@@ -21032,8 +21084,7 @@
         "publication-design",
         "editorial",
         "reference",
-        "essay",
-        "snapshot"
+        "essay"
       ],
       "format": [
         "publication-design",
@@ -21044,20 +21095,16 @@
         "essay"
       ],
       "subject": [],
-      "project_tags": [
-        "personal",
-        "personal",
-        "real-time"
-      ],
+      "project_tags": [],
       "medium": "print",
-      "project": "snapshot",
+      "project": "__unrouted",
       "description": "Cubitermes. Mushroom-capped termitaria. The cross-section reveals the internal chambers.",
       "width": 2244,
       "height": 1589,
-      "created": "2014-present",
-      "date_range": "2014-present",
-      "year": 2014,
+      "created": "2026-05-22T04:58:49.805Z",
+      "year": 2026,
       "personal": true,
+      "staging": true,
       "essay_of": "practice/architecture-fantasy/perdido-street-station/perdido-street-station",
       "hidden_from_feed": true
     },
@@ -21070,8 +21117,7 @@
         "publication-design",
         "editorial",
         "reference",
-        "essay",
-        "snapshot"
+        "essay"
       ],
       "format": [
         "publication-design",
@@ -21082,20 +21128,16 @@
         "essay"
       ],
       "subject": [],
-      "project_tags": [
-        "personal",
-        "personal",
-        "real-time"
-      ],
+      "project_tags": [],
       "medium": "print",
-      "project": "snapshot",
+      "project": "__unrouted",
       "description": "Harvest mouse (Micromys minutus). A nest woven into the standing stalks of an oat field.",
       "width": 2201,
       "height": 3249,
-      "created": "2014-present",
-      "date_range": "2014-present",
-      "year": 2014,
+      "created": "2026-05-22T16:48:43.035Z",
+      "year": 2026,
       "personal": true,
+      "staging": true,
       "essay_of": "practice/architecture-fantasy/perdido-street-station/perdido-street-station",
       "hidden_from_feed": true
     },
@@ -21108,8 +21150,7 @@
         "publication-design",
         "editorial",
         "reference",
-        "essay",
-        "snapshot"
+        "essay"
       ],
       "format": [
         "publication-design",
@@ -21120,22 +21161,292 @@
         "essay"
       ],
       "subject": [],
-      "project_tags": [
-        "personal",
-        "personal",
-        "real-time"
-      ],
+      "project_tags": [],
       "medium": "print",
-      "project": "snapshot",
+      "project": "__unrouted",
       "description": "Termite (Apicotermes gurgulifex). A clay nest suspended underground, separated from the surrounding soil by an air gap.",
       "width": 1088,
       "height": 1377,
-      "created": "2014-present",
-      "date_range": "2014-present",
-      "year": 2014,
+      "created": "2026-05-18T20:00:02.959Z",
+      "year": 2026,
       "personal": true,
+      "staging": true,
       "essay_of": "practice/architecture-fantasy/perdido-street-station/perdido-street-station",
       "hidden_from_feed": true
+    },
+    {
+      "id": "practice-kabk-dsc-0084",
+      "src": "https://ws6i2dfuggcaavs2.public.blob.vercel-storage.com/images/practice/kabk/DSC_0084.JPG",
+      "type": "image",
+      "title": "DSC 0084",
+      "tags": [
+        "print",
+        "data-visualization"
+      ],
+      "format": [],
+      "characteristics": [
+        "print"
+      ],
+      "subject": [
+        "data-visualization"
+      ],
+      "project_tags": [
+        "personal",
+        "personal"
+      ],
+      "medium": "print",
+      "project": "kabk-posters",
+      "description": "",
+      "width": 3216,
+      "height": 2136,
+      "created": "2011-2013",
+      "date_range": "2011-2013",
+      "year": 2011,
+      "personal": true
+    },
+    {
+      "id": "practice-kabk-dsc-0089",
+      "src": "https://ws6i2dfuggcaavs2.public.blob.vercel-storage.com/images/practice/kabk/DSC_0089.JPG",
+      "type": "image",
+      "title": "DSC 0089",
+      "tags": [
+        "print",
+        "data-visualization"
+      ],
+      "format": [],
+      "characteristics": [
+        "print"
+      ],
+      "subject": [
+        "data-visualization"
+      ],
+      "project_tags": [
+        "personal",
+        "personal"
+      ],
+      "medium": "print",
+      "project": "kabk-posters",
+      "description": "",
+      "width": 3216,
+      "height": 2136,
+      "created": "2011-2013",
+      "date_range": "2011-2013",
+      "year": 2011,
+      "personal": true
+    },
+    {
+      "id": "practice-kabk-dsc-0097",
+      "src": "https://ws6i2dfuggcaavs2.public.blob.vercel-storage.com/images/practice/kabk/DSC_0097.JPG",
+      "type": "image",
+      "title": "DSC 0097",
+      "tags": [
+        "print",
+        "data-visualization"
+      ],
+      "format": [],
+      "characteristics": [
+        "print"
+      ],
+      "subject": [
+        "data-visualization"
+      ],
+      "project_tags": [
+        "personal",
+        "personal"
+      ],
+      "medium": "print",
+      "project": "kabk-posters",
+      "description": "",
+      "width": 3216,
+      "height": 2136,
+      "created": "2011-2013",
+      "date_range": "2011-2013",
+      "year": 2011,
+      "personal": true
+    },
+    {
+      "id": "practice-kabk-dsc-0099",
+      "src": "https://ws6i2dfuggcaavs2.public.blob.vercel-storage.com/images/practice/kabk/DSC_0099.JPG",
+      "type": "image",
+      "title": "DSC 0099",
+      "tags": [
+        "print",
+        "data-visualization"
+      ],
+      "format": [],
+      "characteristics": [
+        "print"
+      ],
+      "subject": [
+        "data-visualization"
+      ],
+      "project_tags": [
+        "personal",
+        "personal"
+      ],
+      "medium": "print",
+      "project": "kabk-posters",
+      "description": "",
+      "width": 3216,
+      "height": 2136,
+      "created": "2011-2013",
+      "date_range": "2011-2013",
+      "year": 2011,
+      "personal": true
+    },
+    {
+      "id": "practice-kabk-dsc-0913",
+      "src": "https://ws6i2dfuggcaavs2.public.blob.vercel-storage.com/images/practice/kabk/DSC_0913.jpg",
+      "type": "image",
+      "title": "DSC 0913",
+      "tags": [
+        "print",
+        "making"
+      ],
+      "format": [],
+      "characteristics": [
+        "print",
+        "making"
+      ],
+      "subject": [],
+      "project_tags": [
+        "personal",
+        "personal"
+      ],
+      "medium": "print",
+      "project": "kabk-posters",
+      "description": "",
+      "width": 669,
+      "height": 1024,
+      "created": "2011-2013",
+      "date_range": "2011-2013",
+      "year": 2011,
+      "personal": true
+    },
+    {
+      "id": "practice-kabk-dsc-0934",
+      "src": "https://ws6i2dfuggcaavs2.public.blob.vercel-storage.com/images/practice/kabk/DSC_0934.jpg",
+      "type": "image",
+      "title": "DSC 0934",
+      "tags": [
+        "print",
+        "making"
+      ],
+      "format": [],
+      "characteristics": [
+        "print",
+        "making"
+      ],
+      "subject": [],
+      "project_tags": [
+        "personal",
+        "personal"
+      ],
+      "medium": "print",
+      "project": "kabk-posters",
+      "description": "",
+      "width": 658,
+      "height": 1024,
+      "created": "2011-2013",
+      "date_range": "2011-2013",
+      "year": 2011,
+      "personal": true
+    },
+    {
+      "id": "practice-mcgill-arch-big-poster",
+      "src": "https://ws6i2dfuggcaavs2.public.blob.vercel-storage.com/images/practice/mcgill-arch/big%20poster.jpg",
+      "type": "image",
+      "title": "Event Poster McGill University Architecture",
+      "tags": [
+        "poster",
+        "print"
+      ],
+      "format": [
+        "poster"
+      ],
+      "characteristics": [
+        "print"
+      ],
+      "subject": [],
+      "project_tags": [
+        "personal",
+        "publication-design",
+        "education"
+      ],
+      "medium": "print",
+      "project": "mcgill-arch",
+      "description": "",
+      "width": 5000,
+      "height": 3000,
+      "created": "2014",
+      "date_range": "2014",
+      "year": 2014,
+      "personal": true
+    },
+    {
+      "id": "practice-one-offs-dscn1476",
+      "src": "https://ws6i2dfuggcaavs2.public.blob.vercel-storage.com/images/practice/one-offs/DSCN1476.jpg",
+      "type": "image",
+      "title": "DSCN1476",
+      "tags": [
+        "stationery",
+        "print"
+      ],
+      "format": [
+        "stationery"
+      ],
+      "characteristics": [
+        "print",
+        "stationery"
+      ],
+      "subject": [],
+      "project_tags": [
+        "personal",
+        "personal",
+        "print",
+        "stationery"
+      ],
+      "medium": "print",
+      "project": "one-offs",
+      "description": "",
+      "width": 2554,
+      "height": 1916,
+      "created": "2014-2015",
+      "date_range": "2014-2015",
+      "year": 2014,
+      "personal": true
+    },
+    {
+      "id": "practice-one-offs-dscn1480",
+      "src": "https://ws6i2dfuggcaavs2.public.blob.vercel-storage.com/images/practice/one-offs/DSCN1480.jpg",
+      "type": "image",
+      "title": "DSCN1480",
+      "tags": [
+        "poster",
+        "print"
+      ],
+      "format": [
+        "poster"
+      ],
+      "characteristics": [
+        "print"
+      ],
+      "subject": [],
+      "project_tags": [
+        "personal",
+        "personal",
+        "print",
+        "stationery"
+      ],
+      "medium": "print",
+      "project": "one-offs",
+      "description": "",
+      "width": 2328,
+      "height": 3242,
+      "created": "2014-2015",
+      "date_range": "2014-2015",
+      "year": 2014,
+      "personal": true
     },
     {
       "id": "practice-stephanie-hanes-ndisplay-pathtracer-stephaniehanes-lightingonly-cinecameraactor-0018",
@@ -21170,14 +21481,348 @@
       "personal": true
     },
     {
+      "id": "practice-yale-riso-dscn1481",
+      "src": "https://ws6i2dfuggcaavs2.public.blob.vercel-storage.com/images/practice/yale/riso/DSCN1481.jpg",
+      "type": "image",
+      "title": "DSCN1481",
+      "tags": [
+        "making",
+        "print",
+        "illustration"
+      ],
+      "format": [],
+      "characteristics": [
+        "making",
+        "print"
+      ],
+      "subject": [
+        "illustration"
+      ],
+      "project_tags": [
+        "personal",
+        "education"
+      ],
+      "medium": "print",
+      "project": "yale-riso",
+      "description": "",
+      "width": 2614,
+      "height": 3654,
+      "created": "2013-2020",
+      "date_range": "2013-2020",
+      "year": 2013,
+      "personal": true
+    },
+    {
+      "id": "practice-yale-riso-dscn1482",
+      "src": "https://ws6i2dfuggcaavs2.public.blob.vercel-storage.com/images/practice/yale/riso/DSCN1482.jpg",
+      "type": "image",
+      "title": "DSCN1482",
+      "tags": [
+        "making",
+        "print",
+        "illustration"
+      ],
+      "format": [],
+      "characteristics": [
+        "making",
+        "print"
+      ],
+      "subject": [
+        "illustration"
+      ],
+      "project_tags": [
+        "personal",
+        "education"
+      ],
+      "medium": "print",
+      "project": "yale-riso",
+      "description": "",
+      "width": 2619,
+      "height": 3492,
+      "created": "2013-2020",
+      "date_range": "2013-2020",
+      "year": 2013,
+      "personal": true
+    },
+    {
+      "id": "practice-yale-riso-dscn1483",
+      "src": "https://ws6i2dfuggcaavs2.public.blob.vercel-storage.com/images/practice/yale/riso/DSCN1483.jpg",
+      "type": "image",
+      "title": "DSCN1483",
+      "tags": [
+        "making",
+        "print",
+        "illustration"
+      ],
+      "format": [],
+      "characteristics": [
+        "making",
+        "print"
+      ],
+      "subject": [
+        "illustration"
+      ],
+      "project_tags": [
+        "personal",
+        "education"
+      ],
+      "medium": "print",
+      "project": "yale-riso",
+      "description": "",
+      "width": 2504,
+      "height": 3554,
+      "created": "2013-2020",
+      "date_range": "2013-2020",
+      "year": 2013,
+      "personal": true
+    },
+    {
+      "id": "practice-yale-riso-dscn1484",
+      "src": "https://ws6i2dfuggcaavs2.public.blob.vercel-storage.com/images/practice/yale/riso/DSCN1484.jpg",
+      "type": "image",
+      "title": "DSCN1484",
+      "tags": [
+        "making",
+        "print",
+        "illustration"
+      ],
+      "format": [],
+      "characteristics": [
+        "making",
+        "print"
+      ],
+      "subject": [
+        "illustration"
+      ],
+      "project_tags": [
+        "personal",
+        "education"
+      ],
+      "medium": "print",
+      "project": "yale-riso",
+      "description": "",
+      "width": 2542,
+      "height": 3540,
+      "created": "2013-2020",
+      "date_range": "2013-2020",
+      "year": 2013,
+      "personal": true
+    },
+    {
+      "id": "practice-yale-riso-dscn1485",
+      "src": "https://ws6i2dfuggcaavs2.public.blob.vercel-storage.com/images/practice/yale/riso/DSCN1485.jpg",
+      "type": "image",
+      "title": "DSCN1485",
+      "tags": [
+        "making",
+        "print",
+        "illustration"
+      ],
+      "format": [],
+      "characteristics": [
+        "making",
+        "print"
+      ],
+      "subject": [
+        "illustration"
+      ],
+      "project_tags": [
+        "personal",
+        "education"
+      ],
+      "medium": "print",
+      "project": "yale-riso",
+      "description": "",
+      "width": 2614,
+      "height": 3654,
+      "created": "2013-2020",
+      "date_range": "2013-2020",
+      "year": 2013,
+      "personal": true
+    },
+    {
+      "id": "practice-yale-riso-dscn1486",
+      "src": "https://ws6i2dfuggcaavs2.public.blob.vercel-storage.com/images/practice/yale/riso/DSCN1486.jpg",
+      "type": "image",
+      "title": "DSCN1486",
+      "tags": [
+        "making",
+        "print",
+        "illustration"
+      ],
+      "format": [],
+      "characteristics": [
+        "making",
+        "print"
+      ],
+      "subject": [
+        "illustration"
+      ],
+      "project_tags": [
+        "personal",
+        "education"
+      ],
+      "medium": "print",
+      "project": "yale-riso",
+      "description": "",
+      "width": 2614,
+      "height": 3654,
+      "created": "2013-2020",
+      "date_range": "2013-2020",
+      "year": 2013,
+      "personal": true
+    },
+    {
+      "id": "practice-yale-riso-dscn1487",
+      "src": "https://ws6i2dfuggcaavs2.public.blob.vercel-storage.com/images/practice/yale/riso/DSCN1487.jpg",
+      "type": "image",
+      "title": "DSCN1487",
+      "tags": [
+        "print"
+      ],
+      "format": [],
+      "characteristics": [
+        "print"
+      ],
+      "subject": [],
+      "project_tags": [
+        "personal",
+        "education"
+      ],
+      "medium": "",
+      "project": "yale-riso",
+      "description": "",
+      "width": 2025,
+      "height": 3210,
+      "created": "2013-2020",
+      "date_range": "2013-2020",
+      "year": 2013,
+      "personal": true
+    },
+    {
+      "id": "work-herman-miller-all-together-now-image-3",
+      "src": "https://ws6i2dfuggcaavs2.public.blob.vercel-storage.com/images/work/herman-miller/all-together-now/Image_3.jpg",
+      "type": "image",
+      "title": "Herman Miller All Together Now",
+      "tags": [
+        "exhibition",
+        "identity"
+      ],
+      "format": [
+        "exhibition"
+      ],
+      "characteristics": [],
+      "subject": [
+        "identity"
+      ],
+      "project_tags": [
+        "b2b2c",
+        "campaign",
+        "publication-design",
+        "exhibition",
+        "furniture"
+      ],
+      "medium": "environments",
+      "project": "herman-miller-all-together-now",
+      "description": "",
+      "width": 8000,
+      "height": 4500,
+      "created": "2017-2019",
+      "date_range": "2017-2019",
+      "year": 2017
+    },
+    {
+      "id": "work-herman-miller-all-together-now-screenshot-2026-04-13-230926",
+      "src": "https://ws6i2dfuggcaavs2.public.blob.vercel-storage.com/images/work/herman-miller/all-together-now/Screenshot%202026-04-13%20230926.png",
+      "type": "image",
+      "title": "Herman Miller All Together Now - Close Up",
+      "tags": [
+        "exhibition",
+        "identity"
+      ],
+      "format": [
+        "exhibition"
+      ],
+      "characteristics": [],
+      "subject": [
+        "identity"
+      ],
+      "project_tags": [
+        "b2b2c",
+        "campaign",
+        "publication-design",
+        "exhibition",
+        "furniture"
+      ],
+      "medium": "environments",
+      "project": "herman-miller-all-together-now",
+      "description": "",
+      "width": 2676,
+      "height": 1417,
+      "created": "2017-2019",
+      "date_range": "2017-2019",
+      "year": 2017
+    },
+    {
+      "id": "work-ionq-data-visualization-keynote-copy",
+      "src": "https://ws6i2dfuggcaavs2.public.blob.vercel-storage.com/images/work/ionq/data-visualization/Keynote%20copy.png",
+      "type": "image",
+      "title": "Keynote copy",
+      "tags": [
+        "data-visualization"
+      ],
+      "format": [],
+      "characteristics": [],
+      "subject": [
+        "data-visualization"
+      ],
+      "project_tags": [
+        "b2b",
+        "quantum-computing"
+      ],
+      "medium": "digital",
+      "project": "ionq-data-visualization",
+      "description": "",
+      "width": 3840,
+      "height": 2160,
+      "created": "2023-2025",
+      "date_range": "2023-2025",
+      "year": 2023
+    },
+    {
+      "id": "work-ionq-zoom-backgrounds-zoom-room-02-optical",
+      "src": "https://ws6i2dfuggcaavs2.public.blob.vercel-storage.com/images/work/ionq/zoom-backgrounds/ZOOM-ROOM-02%20OPTICAL.png",
+      "type": "image",
+      "title": "ZOOM ROOM 02 OPTICAL",
+      "tags": [
+        "photography"
+      ],
+      "format": [],
+      "characteristics": [],
+      "subject": [
+        "photography"
+      ],
+      "project_tags": [
+        "b2b",
+        "quantum-computing"
+      ],
+      "medium": "digital",
+      "project": "ionq-zoom-backgrounds",
+      "description": "",
+      "width": 1920,
+      "height": 1080,
+      "created": "2023-2025",
+      "date_range": "2023-2025",
+      "year": 2023
+    },
+    {
       "id": "tools-kept-app-jullie-resume-app",
       "src": "https://ws6i2dfuggcaavs2.public.blob.vercel-storage.com/images/tools/kept-app/jullie-resume-app.png",
       "type": "image",
       "title": "jullie resume app",
       "tags": [
         "web",
-        "interactive",
-        "snapshot"
+        "interactive"
       ],
       "format": [
         "web"
@@ -21186,19 +21831,14 @@
         "interactive"
       ],
       "subject": [],
-      "project_tags": [
-        "personal",
-        "personal",
-        "real-time"
-      ],
+      "project_tags": [],
       "medium": "digital",
-      "project": "snapshot",
+      "project": "__unrouted",
       "description": "Image of the garden",
       "width": 3805,
       "height": 1984,
-      "created": "2014-present",
-      "date_range": "2014-present",
-      "year": 2014,
+      "created": "2026-05-29T18:01:36.327Z",
+      "year": 2026,
       "personal": true,
       "staging": true,
       "essay_of": "tools/kept-app/kept",
@@ -21213,8 +21853,7 @@
         "publication-design",
         "editorial",
         "reference",
-        "essay",
-        "snapshot"
+        "essay"
       ],
       "format": [
         "publication-design",
@@ -21225,20 +21864,16 @@
         "essay"
       ],
       "subject": [],
-      "project_tags": [
-        "personal",
-        "personal",
-        "real-time"
-      ],
+      "project_tags": [],
       "medium": "print",
-      "project": "snapshot",
+      "project": "__unrouted",
       "description": "Termites (Macrotermes natalensis) building an arch.",
       "width": 2169,
       "height": 1702,
-      "created": "2014-present",
-      "date_range": "2014-present",
-      "year": 2014,
+      "created": "2026-05-22T06:12:31.188Z",
+      "year": 2026,
       "personal": true,
+      "staging": true,
       "essay_of": "practice/architecture-fantasy/perdido-street-station/perdido-street-station",
       "hidden_from_feed": true
     },
@@ -21251,8 +21886,7 @@
         "publication-design",
         "editorial",
         "reference",
-        "essay",
-        "snapshot"
+        "essay"
       ],
       "format": [
         "publication-design",
@@ -21263,20 +21897,16 @@
         "essay"
       ],
       "subject": [],
-      "project_tags": [
-        "personal",
-        "personal",
-        "real-time"
-      ],
+      "project_tags": [],
       "medium": "print",
-      "project": "snapshot",
+      "project": "__unrouted",
       "description": "Difflugia pyriformis. An amoeba that builds its shell from swallowed sand.",
       "width": 2174,
       "height": 2072,
-      "created": "2014-present",
-      "date_range": "2014-present",
-      "year": 2014,
+      "created": "2026-05-30T06:23:55.335Z",
+      "year": 2026,
       "personal": true,
+      "staging": true,
       "essay_of": "practice/architecture-fantasy/perdido-street-station/perdido-street-station",
       "hidden_from_feed": true
     },
@@ -21289,8 +21919,7 @@
         "publication-design",
         "editorial",
         "reference",
-        "essay",
-        "snapshot"
+        "essay"
       ],
       "format": [
         "publication-design",
@@ -21301,20 +21930,16 @@
         "essay"
       ],
       "subject": [],
-      "project_tags": [
-        "personal",
-        "personal",
-        "real-time"
-      ],
+      "project_tags": [],
       "medium": "print",
-      "project": "snapshot",
+      "project": "__unrouted",
       "description": "Reticulitermes. A colony building a covered gallery from one bottle to the next.",
       "width": 2188,
       "height": 2362,
-      "created": "2014-present",
-      "date_range": "2014-present",
-      "year": 2014,
+      "created": "2026-05-18T20:15:41.160Z",
+      "year": 2026,
       "personal": true,
+      "staging": true,
       "essay_of": "practice/architecture-fantasy/perdido-street-station/perdido-street-station",
       "hidden_from_feed": true
     },
@@ -21327,8 +21952,7 @@
         "publication-design",
         "editorial",
         "reference",
-        "essay",
-        "snapshot"
+        "essay"
       ],
       "format": [
         "publication-design",
@@ -21339,20 +21963,16 @@
         "essay"
       ],
       "subject": [],
-      "project_tags": [
-        "personal",
-        "personal",
-        "real-time"
-      ],
+      "project_tags": [],
       "medium": "print",
-      "project": "snapshot",
+      "project": "__unrouted",
       "description": "Beaver dam. The structure holds back a pond..",
       "width": 3353,
       "height": 2642,
-      "created": "2014-present",
-      "date_range": "2014-present",
-      "year": 2014,
+      "created": "2026-05-22T16:31:36.435Z",
+      "year": 2026,
       "personal": true,
+      "staging": true,
       "essay_of": "practice/architecture-fantasy/perdido-street-station/perdido-street-station",
       "hidden_from_feed": true
     },
@@ -21482,6 +22102,267 @@
       "year": 2023
     },
     {
+      "id": "work-ionq-deck-ionq-presentation-template-2023-for-superside-page-01",
+      "src": "https://ws6i2dfuggcaavs2.public.blob.vercel-storage.com/images/work/ionq/deck/IonQ%20Presentation%20Template%202023_For%20Superside_Page_01.png",
+      "type": "image",
+      "title": "IonQ Presentation Template 2023 For Superside Page 01",
+      "tags": [
+        "deck",
+        "identity"
+      ],
+      "format": [
+        "deck"
+      ],
+      "characteristics": [],
+      "subject": [
+        "identity"
+      ],
+      "project_tags": [
+        "b2b",
+        "quantum-computing"
+      ],
+      "medium": "digital",
+      "project": "ionq-deck",
+      "description": "",
+      "width": 1515,
+      "height": 875,
+      "created": "2023-2025",
+      "date_range": "2023-2025",
+      "year": 2023
+    },
+    {
+      "id": "work-ionq-deck-ionq-presentation-template-2023-for-superside-page-02",
+      "src": "https://ws6i2dfuggcaavs2.public.blob.vercel-storage.com/images/work/ionq/deck/IonQ%20Presentation%20Template%202023_For%20Superside_Page_02.png",
+      "type": "image",
+      "title": "IonQ Presentation Template 2023 For Superside Page 02",
+      "tags": [
+        "deck",
+        "identity"
+      ],
+      "format": [
+        "deck"
+      ],
+      "characteristics": [],
+      "subject": [
+        "identity"
+      ],
+      "project_tags": [
+        "b2b",
+        "quantum-computing"
+      ],
+      "medium": "digital",
+      "project": "ionq-deck",
+      "description": "",
+      "width": 1515,
+      "height": 875,
+      "created": "2023-2025",
+      "date_range": "2023-2025",
+      "year": 2023
+    },
+    {
+      "id": "work-ionq-deck-ionq-presentation-template-2023-for-superside-page-03",
+      "src": "https://ws6i2dfuggcaavs2.public.blob.vercel-storage.com/images/work/ionq/deck/IonQ%20Presentation%20Template%202023_For%20Superside_Page_03.png",
+      "type": "image",
+      "title": "IonQ Presentation Template 2023 For Superside Page 03",
+      "tags": [
+        "deck",
+        "identity"
+      ],
+      "format": [
+        "deck"
+      ],
+      "characteristics": [],
+      "subject": [
+        "identity"
+      ],
+      "project_tags": [
+        "b2b",
+        "quantum-computing"
+      ],
+      "medium": "digital",
+      "project": "ionq-deck",
+      "description": "",
+      "width": 1515,
+      "height": 875,
+      "created": "2023-2025",
+      "date_range": "2023-2025",
+      "year": 2023
+    },
+    {
+      "id": "work-ionq-deck-ionq-presentation-template-2023-for-superside-page-05",
+      "src": "https://ws6i2dfuggcaavs2.public.blob.vercel-storage.com/images/work/ionq/deck/IonQ%20Presentation%20Template%202023_For%20Superside_Page_05.png",
+      "type": "image",
+      "title": "IonQ Presentation Template 2023 For Superside Page 05",
+      "tags": [
+        "deck",
+        "identity"
+      ],
+      "format": [
+        "deck"
+      ],
+      "characteristics": [],
+      "subject": [
+        "identity"
+      ],
+      "project_tags": [
+        "b2b",
+        "quantum-computing"
+      ],
+      "medium": "digital",
+      "project": "ionq-deck",
+      "description": "",
+      "width": 1515,
+      "height": 875,
+      "created": "2023-2025",
+      "date_range": "2023-2025",
+      "year": 2023
+    },
+    {
+      "id": "work-ionq-deck-ionq-presentation-template-2023-for-superside-page-06",
+      "src": "https://ws6i2dfuggcaavs2.public.blob.vercel-storage.com/images/work/ionq/deck/IonQ%20Presentation%20Template%202023_For%20Superside_Page_06.png",
+      "type": "image",
+      "title": "IonQ Presentation Template 2023 For Superside Page 06",
+      "tags": [
+        "deck",
+        "identity"
+      ],
+      "format": [
+        "deck"
+      ],
+      "characteristics": [],
+      "subject": [
+        "identity"
+      ],
+      "project_tags": [
+        "b2b",
+        "quantum-computing"
+      ],
+      "medium": "digital",
+      "project": "ionq-deck",
+      "description": "",
+      "width": 1515,
+      "height": 875,
+      "created": "2023-2025",
+      "date_range": "2023-2025",
+      "year": 2023
+    },
+    {
+      "id": "work-ionq-deck-ionq-presentation-template-2023-for-superside-page-08",
+      "src": "https://ws6i2dfuggcaavs2.public.blob.vercel-storage.com/images/work/ionq/deck/IonQ%20Presentation%20Template%202023_For%20Superside_Page_08.png",
+      "type": "image",
+      "title": "IonQ Presentation Template 2023 For Superside Page 08",
+      "tags": [
+        "deck",
+        "identity"
+      ],
+      "format": [
+        "deck"
+      ],
+      "characteristics": [],
+      "subject": [
+        "identity"
+      ],
+      "project_tags": [
+        "b2b",
+        "quantum-computing"
+      ],
+      "medium": "digital",
+      "project": "ionq-deck",
+      "description": "",
+      "width": 1515,
+      "height": 875,
+      "created": "2023-2025",
+      "date_range": "2023-2025",
+      "year": 2023
+    },
+    {
+      "id": "work-ionq-deck-ionq-presentation-template-2023-for-superside-page-09",
+      "src": "https://ws6i2dfuggcaavs2.public.blob.vercel-storage.com/images/work/ionq/deck/IonQ%20Presentation%20Template%202023_For%20Superside_Page_09.png",
+      "type": "image",
+      "title": "IonQ Presentation Template 2023 For Superside Page 09",
+      "tags": [
+        "deck",
+        "identity"
+      ],
+      "format": [
+        "deck"
+      ],
+      "characteristics": [],
+      "subject": [
+        "identity"
+      ],
+      "project_tags": [
+        "b2b",
+        "quantum-computing"
+      ],
+      "medium": "digital",
+      "project": "ionq-deck",
+      "description": "",
+      "width": 1515,
+      "height": 875,
+      "created": "2023-2025",
+      "date_range": "2023-2025",
+      "year": 2023
+    },
+    {
+      "id": "work-ionq-deck-ionq-presentation-template-2023-for-superside-page-12",
+      "src": "https://ws6i2dfuggcaavs2.public.blob.vercel-storage.com/images/work/ionq/deck/IonQ%20Presentation%20Template%202023_For%20Superside_Page_12.png",
+      "type": "image",
+      "title": "IonQ Presentation Template 2023 For Superside Page 12",
+      "tags": [
+        "deck",
+        "identity"
+      ],
+      "format": [
+        "deck"
+      ],
+      "characteristics": [],
+      "subject": [
+        "identity"
+      ],
+      "project_tags": [
+        "b2b",
+        "quantum-computing"
+      ],
+      "medium": "digital",
+      "project": "ionq-deck",
+      "description": "",
+      "width": 1515,
+      "height": 875,
+      "created": "2023-2025",
+      "date_range": "2023-2025",
+      "year": 2023
+    },
+    {
+      "id": "work-ionq-deck-ionq-presentation-template-2023-for-superside-page-14",
+      "src": "https://ws6i2dfuggcaavs2.public.blob.vercel-storage.com/images/work/ionq/deck/IonQ%20Presentation%20Template%202023_For%20Superside_Page_14.png",
+      "type": "image",
+      "title": "IonQ Presentation Template 2023 For Superside Page 14",
+      "tags": [
+        "deck",
+        "identity"
+      ],
+      "format": [
+        "deck"
+      ],
+      "characteristics": [],
+      "subject": [
+        "identity"
+      ],
+      "project_tags": [
+        "b2b",
+        "quantum-computing"
+      ],
+      "medium": "digital",
+      "project": "ionq-deck",
+      "description": "",
+      "width": 1515,
+      "height": 875,
+      "created": "2023-2025",
+      "date_range": "2023-2025",
+      "year": 2023
+    },
+    {
       "id": "work-ionq-brand-iontrap",
       "src": "https://ws6i2dfuggcaavs2.public.blob.vercel-storage.com/images/work/ionq/brand/IonTrap.png",
       "type": "image",
@@ -21534,14 +22415,42 @@
       "year": 2023
     },
     {
+      "id": "work-ionq-templates-socialpost-template",
+      "src": "https://ws6i2dfuggcaavs2.public.blob.vercel-storage.com/images/work/ionq/templates/SocialPost_Template.png",
+      "type": "image",
+      "title": "IonQ Social Post Template",
+      "tags": [
+        "web",
+        "identity"
+      ],
+      "format": [
+        "web"
+      ],
+      "characteristics": [],
+      "subject": [
+        "identity"
+      ],
+      "project_tags": [
+        "b2b",
+        "quantum-computing"
+      ],
+      "medium": "digital",
+      "project": "ionq-templates",
+      "description": "",
+      "width": 3840,
+      "height": 2160,
+      "created": "2023-2025",
+      "date_range": "2023-2025",
+      "year": 2023
+    },
+    {
       "id": "tools-until-until",
       "src": "https://ws6i2dfuggcaavs2.public.blob.vercel-storage.com/images/tools/until/until.png",
       "type": "image",
       "title": "until",
       "tags": [
         "web",
-        "interactive",
-        "snapshot"
+        "interactive"
       ],
       "format": [
         "web"
@@ -21550,23 +22459,780 @@
         "interactive"
       ],
       "subject": [],
-      "project_tags": [
-        "personal",
-        "personal",
-        "real-time"
-      ],
+      "project_tags": [],
       "medium": "digital",
-      "project": "snapshot",
+      "project": "__unrouted",
       "description": "",
       "width": 2158,
       "height": 2158,
-      "created": "2014-present",
-      "date_range": "2014-present",
-      "year": 2014,
+      "created": "2026-06-13T07:30:49.183Z",
+      "year": 2026,
       "personal": true,
       "staging": true,
       "essay_of": "tools/until/until",
       "hidden_from_feed": true
+    },
+    {
+      "id": "work-ionq-brand-forteenterprise-reveal",
+      "src": "https://ws6i2dfuggcaavs2.public.blob.vercel-storage.com/images/work/ionq/brand/ForteEnterprise-Reveal.png",
+      "type": "image",
+      "title": "ForteEnterprise Reveal",
+      "tags": [
+        "photography",
+        "identity"
+      ],
+      "format": [],
+      "characteristics": [],
+      "subject": [
+        "photography",
+        "identity"
+      ],
+      "project_tags": [
+        "b2b",
+        "quantum-computing"
+      ],
+      "medium": "digital",
+      "project": "ionq-brand",
+      "description": "",
+      "width": 2691,
+      "height": 1514,
+      "created": "2023-2025",
+      "date_range": "2023-2025",
+      "year": 2023
+    },
+    {
+      "id": "work-ionq-brand-forteenterprise",
+      "src": "https://ws6i2dfuggcaavs2.public.blob.vercel-storage.com/images/work/ionq/brand/ForteEnterprise.png",
+      "type": "image",
+      "title": "ForteEnterprise",
+      "tags": [
+        "photography",
+        "identity"
+      ],
+      "format": [],
+      "characteristics": [],
+      "subject": [
+        "photography",
+        "identity"
+      ],
+      "project_tags": [
+        "b2b",
+        "quantum-computing"
+      ],
+      "medium": "digital",
+      "project": "ionq-brand",
+      "description": "",
+      "width": 2684,
+      "height": 1514,
+      "created": "2023-2025",
+      "date_range": "2023-2025",
+      "year": 2023
+    },
+    {
+      "id": "work-ionq-brand-ionq-brand-guidelines-102",
+      "src": "https://ws6i2dfuggcaavs2.public.blob.vercel-storage.com/images/work/ionq/brand/IonQ%20Brand%20Guidelines%20-%20102.png",
+      "type": "image",
+      "title": "IonQ Brand Guidelines 102",
+      "tags": [
+        "deck",
+        "illustration",
+        "identity"
+      ],
+      "format": [
+        "deck"
+      ],
+      "characteristics": [],
+      "subject": [
+        "illustration",
+        "identity"
+      ],
+      "project_tags": [
+        "b2b",
+        "quantum-computing"
+      ],
+      "medium": "digital",
+      "project": "ionq-brand",
+      "description": "",
+      "width": 3840,
+      "height": 2160,
+      "created": "2023-2025",
+      "date_range": "2023-2025",
+      "year": 2023
+    },
+    {
+      "id": "work-ionq-brand-ionq-brand-illustration-collaboration-editorial",
+      "src": "https://ws6i2dfuggcaavs2.public.blob.vercel-storage.com/images/work/ionq/brand/IonQ-Brand-Illustration-Collaboration-Editorial.png",
+      "type": "image",
+      "title": "IonQ Brand Illustration Collaboration Editorial",
+      "tags": [
+        "illustration",
+        "identity"
+      ],
+      "format": [],
+      "characteristics": [],
+      "subject": [
+        "illustration",
+        "identity"
+      ],
+      "project_tags": [
+        "b2b",
+        "quantum-computing"
+      ],
+      "medium": "digital",
+      "project": "ionq-brand",
+      "description": "",
+      "width": 1720,
+      "height": 883,
+      "created": "2023-2025",
+      "date_range": "2023-2025",
+      "year": 2023
+    },
+    {
+      "id": "work-ionq-brand-ionq-brand-illustration-collaboration",
+      "src": "https://ws6i2dfuggcaavs2.public.blob.vercel-storage.com/images/work/ionq/brand/IonQ-Brand-Illustration-Collaboration.png",
+      "type": "image",
+      "title": "IonQ Brand Illustration Collaboration",
+      "tags": [
+        "illustration",
+        "identity"
+      ],
+      "format": [],
+      "characteristics": [],
+      "subject": [
+        "illustration",
+        "identity"
+      ],
+      "project_tags": [
+        "b2b",
+        "quantum-computing"
+      ],
+      "medium": "digital",
+      "project": "ionq-brand",
+      "description": "",
+      "width": 3840,
+      "height": 2160,
+      "created": "2023-2025",
+      "date_range": "2023-2025",
+      "year": 2023
+    },
+    {
+      "id": "work-ionq-brand-ionq-brand-illustration-easeofuse-darkmode",
+      "src": "https://ws6i2dfuggcaavs2.public.blob.vercel-storage.com/images/work/ionq/brand/IonQ-Brand-Illustration-EaseOfUse-DarkMode.png",
+      "type": "image",
+      "title": "IonQ Brand Illustration EaseOfUse DarkMode",
+      "tags": [
+        "illustration",
+        "identity"
+      ],
+      "format": [],
+      "characteristics": [],
+      "subject": [
+        "illustration",
+        "identity"
+      ],
+      "project_tags": [
+        "b2b",
+        "quantum-computing"
+      ],
+      "medium": "digital",
+      "project": "ionq-brand",
+      "description": "",
+      "width": 1478,
+      "height": 902,
+      "created": "2023-2025",
+      "date_range": "2023-2025",
+      "year": 2023
+    },
+    {
+      "id": "work-ionq-brand-ionq-brand-illustration-easeofuse",
+      "src": "https://ws6i2dfuggcaavs2.public.blob.vercel-storage.com/images/work/ionq/brand/IonQ-Brand-Illustration-EaseOfUse.png",
+      "type": "image",
+      "title": "IonQ Brand Illustration EaseOfUse",
+      "tags": [
+        "illustration",
+        "identity"
+      ],
+      "format": [],
+      "characteristics": [],
+      "subject": [
+        "illustration",
+        "identity"
+      ],
+      "project_tags": [
+        "b2b",
+        "quantum-computing"
+      ],
+      "medium": "digital",
+      "project": "ionq-brand",
+      "description": "",
+      "width": 1966,
+      "height": 1355,
+      "created": "2023-2025",
+      "date_range": "2023-2025",
+      "year": 2023
+    },
+    {
+      "id": "work-ionq-brand-ionq-brand-teamnames",
+      "src": "https://ws6i2dfuggcaavs2.public.blob.vercel-storage.com/images/work/ionq/brand/IonQ-Brand-TeamNames.png",
+      "type": "image",
+      "title": "IonQ Brand TeamNames",
+      "tags": [
+        "identity"
+      ],
+      "format": [],
+      "characteristics": [],
+      "subject": [
+        "identity"
+      ],
+      "project_tags": [
+        "b2b",
+        "quantum-computing"
+      ],
+      "medium": "digital",
+      "project": "ionq-brand",
+      "description": "",
+      "width": 4136,
+      "height": 3040,
+      "created": "2023-2025",
+      "date_range": "2023-2025",
+      "year": 2023
+    },
+    {
+      "id": "work-ionq-brand-ionq-icons-000",
+      "src": "https://ws6i2dfuggcaavs2.public.blob.vercel-storage.com/images/work/ionq/brand/IonQ-Icons-000.png",
+      "type": "image",
+      "title": "IonQ Icons 000",
+      "tags": [
+        "iconography",
+        "identity"
+      ],
+      "format": [],
+      "characteristics": [],
+      "subject": [
+        "iconography",
+        "identity"
+      ],
+      "project_tags": [
+        "b2b",
+        "quantum-computing"
+      ],
+      "medium": "digital",
+      "project": "ionq-brand",
+      "description": "",
+      "width": 800,
+      "height": 800,
+      "created": "2023-2025",
+      "date_range": "2023-2025",
+      "year": 2023
+    },
+    {
+      "id": "work-ionq-brand-ionq-icons-001",
+      "src": "https://ws6i2dfuggcaavs2.public.blob.vercel-storage.com/images/work/ionq/brand/IonQ-Icons-001.png",
+      "type": "image",
+      "title": "IonQ Icons 001",
+      "tags": [
+        "iconography",
+        "identity"
+      ],
+      "format": [],
+      "characteristics": [],
+      "subject": [
+        "iconography",
+        "identity"
+      ],
+      "project_tags": [
+        "b2b",
+        "quantum-computing"
+      ],
+      "medium": "digital",
+      "project": "ionq-brand",
+      "description": "",
+      "width": 800,
+      "height": 800,
+      "created": "2023-2025",
+      "date_range": "2023-2025",
+      "year": 2023
+    },
+    {
+      "id": "work-ionq-brand-ionq-icons-002",
+      "src": "https://ws6i2dfuggcaavs2.public.blob.vercel-storage.com/images/work/ionq/brand/IonQ-Icons-002.png",
+      "type": "image",
+      "title": "IonQ Icons 002",
+      "tags": [
+        "iconography",
+        "identity"
+      ],
+      "format": [],
+      "characteristics": [],
+      "subject": [
+        "iconography",
+        "identity"
+      ],
+      "project_tags": [
+        "b2b",
+        "quantum-computing"
+      ],
+      "medium": "digital",
+      "project": "ionq-brand",
+      "description": "",
+      "width": 800,
+      "height": 800,
+      "created": "2023-2025",
+      "date_range": "2023-2025",
+      "year": 2023
+    },
+    {
+      "id": "work-ionq-brand-ionq-icons-003",
+      "src": "https://ws6i2dfuggcaavs2.public.blob.vercel-storage.com/images/work/ionq/brand/IonQ-Icons-003.png",
+      "type": "image",
+      "title": "IonQ Icons 003",
+      "tags": [
+        "iconography",
+        "identity"
+      ],
+      "format": [],
+      "characteristics": [],
+      "subject": [
+        "iconography",
+        "identity"
+      ],
+      "project_tags": [
+        "b2b",
+        "quantum-computing"
+      ],
+      "medium": "digital",
+      "project": "ionq-brand",
+      "description": "",
+      "width": 800,
+      "height": 800,
+      "created": "2023-2025",
+      "date_range": "2023-2025",
+      "year": 2023
+    },
+    {
+      "id": "work-ionq-brand-ionq-icons-004",
+      "src": "https://ws6i2dfuggcaavs2.public.blob.vercel-storage.com/images/work/ionq/brand/IonQ-Icons-004.png",
+      "type": "image",
+      "title": "IonQ Icons 004",
+      "tags": [
+        "iconography",
+        "identity"
+      ],
+      "format": [],
+      "characteristics": [],
+      "subject": [
+        "iconography",
+        "identity"
+      ],
+      "project_tags": [
+        "b2b",
+        "quantum-computing"
+      ],
+      "medium": "digital",
+      "project": "ionq-brand",
+      "description": "",
+      "width": 800,
+      "height": 800,
+      "created": "2023-2025",
+      "date_range": "2023-2025",
+      "year": 2023
+    },
+    {
+      "id": "work-ionq-brand-ionq-icons-lowspam",
+      "src": "https://ws6i2dfuggcaavs2.public.blob.vercel-storage.com/images/work/ionq/brand/IonQ-Icons-LowSPAM.png",
+      "type": "image",
+      "title": "IonQ Icons LowSPAM",
+      "tags": [
+        "iconography",
+        "identity"
+      ],
+      "format": [],
+      "characteristics": [],
+      "subject": [
+        "iconography",
+        "identity"
+      ],
+      "project_tags": [
+        "b2b",
+        "quantum-computing"
+      ],
+      "medium": "digital",
+      "project": "ionq-brand",
+      "description": "",
+      "width": 800,
+      "height": 800,
+      "created": "2023-2025",
+      "date_range": "2023-2025",
+      "year": 2023
+    },
+    {
+      "id": "work-ionq-brand-ionq-icons-wirefree",
+      "src": "https://ws6i2dfuggcaavs2.public.blob.vercel-storage.com/images/work/ionq/brand/IonQ-Icons-WireFree.png",
+      "type": "image",
+      "title": "IonQ Icons WireFree",
+      "tags": [
+        "iconography",
+        "identity"
+      ],
+      "format": [],
+      "characteristics": [],
+      "subject": [
+        "iconography",
+        "identity"
+      ],
+      "project_tags": [
+        "b2b",
+        "quantum-computing"
+      ],
+      "medium": "digital",
+      "project": "ionq-brand",
+      "description": "",
+      "width": 800,
+      "height": 800,
+      "created": "2023-2025",
+      "date_range": "2023-2025",
+      "year": 2023
+    },
+    {
+      "id": "work-ionq-brand-ionq-icons-coherence",
+      "src": "https://ws6i2dfuggcaavs2.public.blob.vercel-storage.com/images/work/ionq/brand/IonQ-Icons-coherence.png",
+      "type": "image",
+      "title": "IonQ Icons coherence",
+      "tags": [
+        "iconography",
+        "identity"
+      ],
+      "format": [],
+      "characteristics": [],
+      "subject": [
+        "iconography",
+        "identity"
+      ],
+      "project_tags": [
+        "b2b",
+        "quantum-computing"
+      ],
+      "medium": "digital",
+      "project": "ionq-brand",
+      "description": "",
+      "width": 800,
+      "height": 800,
+      "created": "2023-2025",
+      "date_range": "2023-2025",
+      "year": 2023
+    },
+    {
+      "id": "work-ionq-brand-ionq-icons-gate-fidelity",
+      "src": "https://ws6i2dfuggcaavs2.public.blob.vercel-storage.com/images/work/ionq/brand/IonQ-Icons-gate-fidelity.png",
+      "type": "image",
+      "title": "IonQ Icons gate fidelity",
+      "tags": [
+        "iconography",
+        "identity"
+      ],
+      "format": [],
+      "characteristics": [],
+      "subject": [
+        "iconography",
+        "identity"
+      ],
+      "project_tags": [
+        "b2b",
+        "quantum-computing"
+      ],
+      "medium": "digital",
+      "project": "ionq-brand",
+      "description": "",
+      "width": 800,
+      "height": 800,
+      "created": "2023-2025",
+      "date_range": "2023-2025",
+      "year": 2023
+    },
+    {
+      "id": "work-ionq-brand-ionq-icons-modular-02",
+      "src": "https://ws6i2dfuggcaavs2.public.blob.vercel-storage.com/images/work/ionq/brand/IonQ-Icons-modular-02.png",
+      "type": "image",
+      "title": "IonQ Icons modular 02",
+      "tags": [
+        "iconography",
+        "identity"
+      ],
+      "format": [],
+      "characteristics": [],
+      "subject": [
+        "iconography",
+        "identity"
+      ],
+      "project_tags": [
+        "b2b",
+        "quantum-computing"
+      ],
+      "medium": "digital",
+      "project": "ionq-brand",
+      "description": "",
+      "width": 800,
+      "height": 800,
+      "created": "2023-2025",
+      "date_range": "2023-2025",
+      "year": 2023
+    },
+    {
+      "id": "work-ionq-brand-ionq-icons-modular",
+      "src": "https://ws6i2dfuggcaavs2.public.blob.vercel-storage.com/images/work/ionq/brand/IonQ-Icons-modular.png",
+      "type": "image",
+      "title": "IonQ Icons modular",
+      "tags": [
+        "iconography",
+        "identity"
+      ],
+      "format": [],
+      "characteristics": [],
+      "subject": [
+        "iconography",
+        "identity"
+      ],
+      "project_tags": [
+        "b2b",
+        "quantum-computing"
+      ],
+      "medium": "digital",
+      "project": "ionq-brand",
+      "description": "",
+      "width": 800,
+      "height": 800,
+      "created": "2023-2025",
+      "date_range": "2023-2025",
+      "year": 2023
+    },
+    {
+      "id": "work-ionq-brand-ionq-icons-perfect-cubits",
+      "src": "https://ws6i2dfuggcaavs2.public.blob.vercel-storage.com/images/work/ionq/brand/IonQ-Icons-perfect-cubits.png",
+      "type": "image",
+      "title": "IonQ Icons perfect cubits",
+      "tags": [
+        "iconography",
+        "identity"
+      ],
+      "format": [],
+      "characteristics": [],
+      "subject": [
+        "iconography",
+        "identity"
+      ],
+      "project_tags": [
+        "b2b",
+        "quantum-computing"
+      ],
+      "medium": "digital",
+      "project": "ionq-brand",
+      "description": "",
+      "width": 800,
+      "height": 800,
+      "created": "2023-2025",
+      "date_range": "2023-2025",
+      "year": 2023
+    },
+    {
+      "id": "work-ionq-brand-ionq-ion",
+      "src": "https://ws6i2dfuggcaavs2.public.blob.vercel-storage.com/images/work/ionq/brand/IonQ-Ion.png",
+      "type": "image",
+      "title": "IonQ Ion",
+      "tags": [
+        "deck",
+        "identity"
+      ],
+      "format": [
+        "deck"
+      ],
+      "characteristics": [],
+      "subject": [
+        "identity"
+      ],
+      "project_tags": [
+        "b2b",
+        "quantum-computing"
+      ],
+      "medium": "digital",
+      "project": "ionq-brand",
+      "description": "",
+      "width": 3840,
+      "height": 2160,
+      "created": "2023-2025",
+      "date_range": "2023-2025",
+      "year": 2023
+    },
+    {
+      "id": "work-ionq-brand-ionq-brand-videoguideline-02",
+      "src": "https://ws6i2dfuggcaavs2.public.blob.vercel-storage.com/images/work/ionq/brand/IonQ-Brand-VideoGuideline-02.png",
+      "type": "image",
+      "title": "IonQ Brand VideoGuideline 02",
+      "tags": [
+        "photography",
+        "identity"
+      ],
+      "format": [],
+      "characteristics": [],
+      "subject": [
+        "photography",
+        "identity"
+      ],
+      "project_tags": [
+        "b2b",
+        "quantum-computing"
+      ],
+      "medium": "digital",
+      "project": "ionq-brand",
+      "description": "",
+      "width": 1179,
+      "height": 614,
+      "created": "2023-2025",
+      "date_range": "2023-2025",
+      "year": 2023
+    },
+    {
+      "id": "work-ionq-brand-ionq-brand-videoguideline",
+      "src": "https://ws6i2dfuggcaavs2.public.blob.vercel-storage.com/images/work/ionq/brand/IonQ-Brand-VideoGuideline.png",
+      "type": "image",
+      "title": "IonQ Brand VideoGuideline",
+      "tags": [
+        "photography",
+        "identity"
+      ],
+      "format": [],
+      "characteristics": [],
+      "subject": [
+        "photography",
+        "identity"
+      ],
+      "project_tags": [
+        "b2b",
+        "quantum-computing"
+      ],
+      "medium": "digital",
+      "project": "ionq-brand",
+      "description": "",
+      "width": 1179,
+      "height": 614,
+      "created": "2023-2025",
+      "date_range": "2023-2025",
+      "year": 2023
+    },
+    {
+      "id": "work-ionq-one-pagers-ionq-cover-annualreport",
+      "src": "https://ws6i2dfuggcaavs2.public.blob.vercel-storage.com/images/work/ionq/one-pagers/IonQ-Cover-AnnualReport.png",
+      "type": "image",
+      "title": "IonQ Cover AnnualReport",
+      "tags": [
+        "stationery",
+        "identity"
+      ],
+      "format": [],
+      "characteristics": [
+        "stationery"
+      ],
+      "subject": [
+        "identity"
+      ],
+      "project_tags": [
+        "b2b",
+        "quantum-computing"
+      ],
+      "medium": "print",
+      "project": "ionq-one-pagers",
+      "description": "",
+      "width": 937,
+      "height": 1212,
+      "created": "2023-2025",
+      "date_range": "2023-2025",
+      "year": 2023
+    },
+    {
+      "id": "work-ionq-one-pagers-ionq-cover-pricing",
+      "src": "https://ws6i2dfuggcaavs2.public.blob.vercel-storage.com/images/work/ionq/one-pagers/IonQ-Cover-Pricing.png",
+      "type": "image",
+      "title": "IonQ Cover Pricing",
+      "tags": [
+        "stationery",
+        "identity"
+      ],
+      "format": [],
+      "characteristics": [
+        "stationery"
+      ],
+      "subject": [
+        "identity"
+      ],
+      "project_tags": [
+        "b2b",
+        "quantum-computing"
+      ],
+      "medium": "print",
+      "project": "ionq-one-pagers",
+      "description": "",
+      "width": 931,
+      "height": 1205,
+      "created": "2023-2025",
+      "date_range": "2023-2025",
+      "year": 2023
+    },
+    {
+      "id": "work-ionq-one-pagers-ionq-onepager-korean",
+      "src": "https://ws6i2dfuggcaavs2.public.blob.vercel-storage.com/images/work/ionq/one-pagers/IonQ-OnePager-Korean.png",
+      "type": "image",
+      "title": "IonQ OnePager Korean",
+      "tags": [
+        "stationery",
+        "identity"
+      ],
+      "format": [],
+      "characteristics": [
+        "stationery"
+      ],
+      "subject": [
+        "identity"
+      ],
+      "project_tags": [
+        "b2b",
+        "quantum-computing"
+      ],
+      "medium": "print",
+      "project": "ionq-one-pagers",
+      "description": "",
+      "width": 2144,
+      "height": 3024,
+      "created": "2023-2025",
+      "date_range": "2023-2025",
+      "year": 2023
+    },
+    {
+      "id": "work-ionq-one-pagers-ionq-onepager",
+      "src": "https://ws6i2dfuggcaavs2.public.blob.vercel-storage.com/images/work/ionq/one-pagers/IonQ-OnePager.png",
+      "type": "image",
+      "title": "IonQ OnePager",
+      "tags": [
+        "stationery",
+        "identity"
+      ],
+      "format": [],
+      "characteristics": [
+        "stationery"
+      ],
+      "subject": [
+        "identity"
+      ],
+      "project_tags": [
+        "b2b",
+        "quantum-computing"
+      ],
+      "medium": "print",
+      "project": "ionq-one-pagers",
+      "description": "",
+      "width": 2222,
+      "height": 3012,
+      "created": "2023-2025",
+      "date_range": "2023-2025",
+      "year": 2023
     },
     {
       "id": "reinforcement-learning-gyms",

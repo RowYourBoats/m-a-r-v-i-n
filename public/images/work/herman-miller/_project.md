@@ -23,6 +23,20 @@ credits:
     name: Marvin de Jong
 videos: []
 projects:
+  for-you-everyone:
+    name: For You Everyone
+    description: >-
+      Applications for **For Your Everyone** at Salone del Mobile. Herman Miller's Cosm chair launch. Posters, flyer,
+      and merch under Emily C.M. Anderson.
+    image_tags:
+      - exhibition
+      - illustration
+      - photography
+    credits:
+      - role: Brand Design
+        name: Marvin de Jong
+      - role: Brand Creative Director
+        name: Emily C M Anderson
   all-together-now:
     name: All Together Now
     description: >-
@@ -30,6 +44,7 @@ projects:
       subsidiaries under one roof for the first time. Posters, flyer, and merch under Emily C.M. Anderson.
     image_tags:
       - exhibition
+      - identity
       - typography
     credits:
       - role: Brand Design

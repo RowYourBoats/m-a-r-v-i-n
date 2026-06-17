@@ -12,6 +12,7 @@ project_type:
 sector: education
 characteristic: []
 personal: true
+unlisted: true
 description: ""
 credits:
   - role: Design

@@ -190,6 +190,57 @@
     "videos": [],
     "umbrella": "dsr"
   },
+  "herman-miller-for-you-everyone": {
+    "name": "For You Everyone",
+    "slug": "herman-miller-for-you-everyone",
+    "client": "Herman Miller",
+    "aliases": [
+      "Herman Miller",
+      "HermanMiller"
+    ],
+    "date_range": "2017-2019",
+    "roles": [
+      "Global Brand Designer"
+    ],
+    "category": "experience",
+    "image_folders": [
+      "work/herman-miller/for-you-everyone"
+    ],
+    "market": "b2b2c",
+    "project_type": [
+      "campaign",
+      "publication-design",
+      "exhibition"
+    ],
+    "sector": "furniture",
+    "characteristic": [],
+    "role": null,
+    "scale": null,
+    "image_tags": [
+      "exhibition",
+      "illustration",
+      "photography"
+    ],
+    "lead_images": [],
+    "order": [],
+    "personal": false,
+    "snapshot_only": false,
+    "chronological": false,
+    "unlisted": false,
+    "description": "Applications for **For Your Everyone** at Salone del Mobile. Herman Miller's Cosm chair launch. Posters, flyer, and merch under Emily C.M. Anderson.",
+    "credits": [
+      {
+        "role": "Brand Design",
+        "name": "Marvin de Jong"
+      },
+      {
+        "role": "Brand Creative Director",
+        "name": "Emily C M Anderson"
+      }
+    ],
+    "videos": [],
+    "umbrella": "herman-miller"
+  },
   "herman-miller-all-together-now": {
     "name": "All Together Now",
     "slug": "herman-miller-all-together-now",
@@ -218,6 +269,7 @@
     "scale": null,
     "image_tags": [
       "exhibition",
+      "identity",
       "typography"
     ],
     "lead_images": [],
@@ -825,6 +877,7 @@
     "scale": null,
     "image_tags": [
       "deck",
+      "iconography",
       "identity",
       "illustration",
       "photography",
@@ -1269,7 +1322,9 @@
     "role": null,
     "scale": null,
     "image_tags": [
-      "deck"
+      "deck",
+      "identity",
+      "web"
     ],
     "lead_images": [],
     "order": [],
@@ -1351,12 +1406,8 @@
     "role": null,
     "scale": null,
     "image_tags": [
-      "3d",
-      "booth",
-      "exhibition",
-      "illustration",
-      "publication-design",
-      "typography"
+      "identity",
+      "stationery"
     ],
     "lead_images": [],
     "order": [],
@@ -1365,6 +1416,47 @@
     "chronological": false,
     "unlisted": false,
     "description": "Promotional and corporate one-pagers — campaign posters, annual report cover, executive profiles, product pages, and pricing sheets.",
+    "credits": [
+      {
+        "role": "Creative Director",
+        "name": "Marvin de Jong"
+      }
+    ],
+    "videos": [],
+    "umbrella": "ionq"
+  },
+  "ionq-deck": {
+    "name": "Deck Templates",
+    "slug": "ionq-deck",
+    "client": "IonQ",
+    "aliases": [
+      "IonQ"
+    ],
+    "date_range": "2023-2025",
+    "roles": [
+      "Creative Director (Remote)"
+    ],
+    "category": "experience",
+    "image_folders": [
+      "work/ionq/deck"
+    ],
+    "market": "b2b",
+    "project_type": [],
+    "sector": "quantum-computing",
+    "characteristic": [],
+    "role": null,
+    "scale": null,
+    "image_tags": [
+      "deck",
+      "identity"
+    ],
+    "lead_images": [],
+    "order": [],
+    "personal": false,
+    "snapshot_only": false,
+    "chronological": false,
+    "unlisted": false,
+    "description": "A presentation template put together for the sales team.",
     "credits": [
       {
         "role": "Creative Director",
@@ -3357,9 +3449,12 @@
     "scale": null,
     "image_tags": [
       "campaign",
+      "data-visualization",
       "illustration",
       "letter-design",
+      "making",
       "poster",
+      "print",
       "typography"
     ],
     "lead_images": [],
@@ -3399,6 +3494,7 @@
     "image_tags": [
       "letter-design",
       "poster",
+      "print",
       "typography"
     ],
     "lead_images": [],
@@ -3447,6 +3543,49 @@
     "chronological": false,
     "unlisted": false,
     "description": "A small concept book based on overlapping thoughts and the wild jumps of a late night work session.",
+    "credits": [
+      {
+        "role": "Design",
+        "name": "Marvin de Jong"
+      }
+    ],
+    "videos": []
+  },
+  "one-offs": {
+    "name": "One Off",
+    "slug": "one-offs",
+    "client": "personal",
+    "aliases": [
+      "personal",
+      "IndependentProjects"
+    ],
+    "date_range": "2014-2015",
+    "roles": [],
+    "category": "experience",
+    "image_folders": [
+      "practice/one-offs"
+    ],
+    "market": "personal",
+    "project_type": [],
+    "sector": "personal",
+    "characteristic": [
+      "print",
+      "stationery"
+    ],
+    "role": null,
+    "scale": null,
+    "image_tags": [
+      "poster",
+      "print",
+      "stationery"
+    ],
+    "lead_images": [],
+    "order": [],
+    "personal": true,
+    "snapshot_only": false,
+    "chronological": true,
+    "unlisted": false,
+    "description": "",
     "credits": [
       {
         "role": "Design",
@@ -3593,11 +3732,11 @@
       "personal",
       "IndependentProjects"
     ],
-    "date_range": "2014-present",
+    "date_range": "2025-present",
     "roles": [],
     "category": "experience",
     "image_folders": [
-      "practice/snapshots"
+      "practice/snapshot"
     ],
     "market": "personal",
     "project_type": [],
@@ -3804,7 +3943,7 @@
       "Yale University",
       "Yale"
     ],
-    "date_range": "2013-2015",
+    "date_range": "2013-2020",
     "roles": [
       "MFA, Graphic Design"
     ],
@@ -3841,49 +3980,6 @@
     "videos": [],
     "umbrella": "yale"
   },
-  "yale-public-browsing": {
-    "name": "Public Browsing",
-    "slug": "yale-public-browsing",
-    "client": "Yale",
-    "aliases": [
-      "Yale University",
-      "Yale"
-    ],
-    "date_range": "2013-2015",
-    "roles": [
-      "MFA, Graphic Design"
-    ],
-    "category": "education",
-    "image_folders": [
-      "practice/yale/public-browsing"
-    ],
-    "market": "personal",
-    "project_type": [],
-    "sector": "education",
-    "characteristic": [],
-    "role": null,
-    "scale": null,
-    "image_tags": [
-      "data-visualization",
-      "interactive",
-      "web"
-    ],
-    "lead_images": [],
-    "order": [],
-    "personal": true,
-    "snapshot_only": false,
-    "chronological": false,
-    "unlisted": false,
-    "description": "A Chrome add-on that would store your browsing in a json for you to share and compare with others.",
-    "credits": [
-      {
-        "role": "Student",
-        "name": "Marvin de Jong"
-      }
-    ],
-    "videos": [],
-    "umbrella": "yale"
-  },
   "yale-thesis": {
     "name": "Thesis",
     "slug": "yale-thesis",
@@ -3892,7 +3988,7 @@
       "Yale University",
       "Yale"
     ],
-    "date_range": "2013-2015",
+    "date_range": "2013-2020",
     "roles": [
       "MFA, Graphic Design"
     ],
@@ -3926,6 +4022,49 @@
     "personal": true,
     "snapshot_only": false,
     "chronological": false,
+    "unlisted": true,
+    "description": "",
+    "credits": [
+      {
+        "role": "Student",
+        "name": "Marvin de Jong"
+      }
+    ],
+    "videos": [],
+    "umbrella": "yale"
+  },
+  "yale-riso": {
+    "name": "Riso",
+    "slug": "yale-riso",
+    "client": "Yale",
+    "aliases": [
+      "Yale University",
+      "Yale"
+    ],
+    "date_range": "2013-2020",
+    "roles": [
+      "MFA, Graphic Design"
+    ],
+    "category": "education",
+    "image_folders": [
+      "practice/yale/riso"
+    ],
+    "market": "personal",
+    "project_type": [],
+    "sector": "education",
+    "characteristic": [],
+    "role": null,
+    "scale": null,
+    "image_tags": [
+      "illustration",
+      "making",
+      "print"
+    ],
+    "lead_images": [],
+    "order": [],
+    "personal": true,
+    "snapshot_only": false,
+    "chronological": false,
     "unlisted": false,
     "description": "",
     "credits": [
@@ -3945,7 +4084,7 @@
       "Yale University",
       "Yale"
     ],
-    "date_range": "2013-2015",
+    "date_range": "2013-2020",
     "roles": [
       "MFA, Graphic Design"
     ],
@@ -4010,7 +4149,7 @@
     "personal": true,
     "snapshot_only": false,
     "chronological": false,
-    "unlisted": false,
+    "unlisted": true,
     "description": "",
     "credits": [
       {

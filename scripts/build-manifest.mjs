@@ -114,7 +114,13 @@ for (const [slug, proj] of Object.entries(registry)) {
   }
 }
 
-const FALLBACK_SLUG = "snapshot";
+// `snapshot` is a real, curated project (the chronological practice/snapshot
+// folder) — NOT a catch-all. Images whose folder matches no registered project
+// are "unrouted": parked under this sentinel slug (which has no project record,
+// so no page) and flagged staging so they stay catalogued but surface on
+// neither Work nor Practice until their folder is given a real home. This is
+// the deliberate move away from snapshot-as-dumping-ground.
+const UNROUTED_SLUG = "__unrouted";
 
 // Essay-companion folders: any folder containing a non-underscore .md file
 // is treated as an essay's image set. Images in that folder are flagged
@@ -164,7 +170,8 @@ const projectFromFile = (file_path) => {
     const key = parts.slice(0, n).join("/");
     if (folderToSlug[key]) return folderToSlug[key];
   }
-  return FALLBACK_SLUG;
+  // No registered folder matched — caller treats this as unrouted (hidden).
+  return null;
 };
 
 const projectYears = new Map();
@@ -205,8 +212,10 @@ console.log(
 // Build image items from catalogue (curated entries only).
 const items = curatedCatalogue.map((raw) => {
   const filePath = (raw.file_path || "").replace(/\\/g, "/");
-  const slug = projectFromFile(filePath);
-  const proj = registry[slug] || registry[FALLBACK_SLUG];
+  const matchedSlug = projectFromFile(filePath);
+  const unrouted = !matchedSlug;
+  const slug = matchedSlug || UNROUTED_SLUG;
+  const proj = registry[slug] || null;
   const id = mkId(slugify(filePath || raw.title || "item"));
   const localSrc = "/images/" + filePath.replace(/^\/+/, "");
   // Check Blob URLs: exact current path first (authoritative), then id (helps
@@ -312,6 +321,10 @@ const items = curatedCatalogue.map((raw) => {
     }
   }
   if (isStaging) item.staging = true;
+  // Unrouted: folder matches no registered project. Keep it catalogued but
+  // hidden everywhere (staging) — never dumped into a navigable page — until
+  // its folder is registered. Reported in the build summary below.
+  if (unrouted) item.staging = true;
   // Essay companion: mark + hide from feed if this image lives in a folder
   // that also holds an essay .md.
   const folderRel = filePath.split("/").slice(0, -1).join("/");
@@ -411,6 +424,23 @@ if (videoBuilders.length) {
   const probed = prevVideoDims.size - cachedBefore;
   const withDims = videoItems.filter(v => v.width && v.height).length;
   console.log(`videos: ${videoItems.length} total, ${withDims} with dims (${probed} freshly probed)`);
+}
+
+// Report unrouted images grouped by folder so a misfiled or unregistered
+// folder is loud, not silently swallowed. These are curated but hidden until
+// their folder is registered in a project's image_folders.
+const unroutedByFolder = new Map();
+for (const i of items) {
+  if (i.project !== UNROUTED_SLUG) continue;
+  const rel = decodeURIComponent((i.src || "").split("/images/")[1] || i.id || "");
+  const folder = rel.split("/").slice(0, -1).join("/") || "(root)";
+  unroutedByFolder.set(folder, (unroutedByFolder.get(folder) || 0) + 1);
+}
+if (unroutedByFolder.size) {
+  const total = [...unroutedByFolder.values()].reduce((a, b) => a + b, 0);
+  console.log(`\nunrouted (hidden — folder matches no registered project): ${total} image(s) across ${unroutedByFolder.size} folder(s):`);
+  for (const [folder, n] of [...unroutedByFolder].sort()) console.log(`  ${folder}  (${n})`);
+  console.log(`  → register each folder in a project's image_folders (via _project.md) to surface them.`);
 }
 
 // Build manifest project records from registry.

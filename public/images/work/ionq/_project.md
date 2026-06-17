@@ -36,6 +36,7 @@ projects:
       feel elusive, and giving the company a coherent, durable voice as the category continues to form.
     image_tags:
       - deck
+      - iconography
       - identity
       - illustration
       - photography
@@ -206,6 +207,8 @@ projects:
       posts, one-pager PDFs — reducing the design team's involvement in day-to-day output.
     image_tags:
       - deck
+      - identity
+      - web
     credits:
       - role: Creative Director
         name: Marvin de Jong
@@ -230,10 +233,15 @@ projects:
       - role: Creative Director
         name: Marvin de Jong
     image_tags:
-      - 3d
-      - booth
-      - exhibition
-      - illustration
-      - publication-design
-      - typography
+      - identity
+      - stationery
+  deck:
+    name: Deck Templates
+    description: A presentation template put together for the sales team.
+    image_tags:
+      - deck
+      - identity
+    credits:
+      - role: Creative Director
+        name: Marvin de Jong
 ---
