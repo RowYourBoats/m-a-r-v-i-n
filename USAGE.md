@@ -149,7 +149,7 @@ Each entry describes one image. Per-image tagging is stratified along four axes:
                                      //   merch, booth, product-marking
   "characteristics": [],             // qualities the image embodies: interactive, motion, 3d, real-time, making
   "subject": ["logo"],               // what it's about: proposal, photography, illustration, typography,
-                                     //   identity, data-visualization, letter-design, logo, study,
+                                     //   identity, data-visualization, letter-form, logo, study,
                                      //   product-render, diagram, iconography
   "client": "DFFPM",
   "style": "minimalist geometric typography",
@@ -313,7 +313,7 @@ Current sets (see `src/data/schema.json` for live values):
 
 - **Work pinned**: spatial, identity, keynote, interactive, editorial
 - **Work expanded**: poster, event, web, campaign, deck, merch, motion, video, data-visualization, photography, illustration, 3d
-- **Practice pinned**: real-time, letter-design, video
+- **Practice pinned**: real-time, letter-form, video
 - **Practice expanded**: essay, installation, exhibition
 
 `build-projects.mjs` preserves both filter sets across rebuilds (same pattern as `schema.pinned` and `schema.mediums`). To add or rename a filter, edit `schema.json` directly — it round-trips cleanly.

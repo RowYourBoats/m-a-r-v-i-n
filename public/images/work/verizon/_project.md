@@ -340,7 +340,7 @@ projects:
       - identity
       - illustration
       - interactive
-      - letter-design
+      - letter-form
       - merch
       - motion
       - photography

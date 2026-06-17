@@ -69,9 +69,9 @@ Multi-value. **Applies to images that EMBODY the quality, not images that docume
 
 Multi-value, **required (1+)**.
 
-`data-visualization` · `diagram` · `iconography` · `identity` · `illustration` · `letter-design` · `lifestyle` · `logo` · `photography` · `product-render` · `proposal` · `study` · `typography`
+`data-visualization` · `diagram` · `iconography` · `identity` · `illustration` · `letter-form` · `lifestyle` · `logo` · `photography` · `product-render` · `proposal` · `study` · `typography`
 
-- `logo` / `letter-design` / `typography` / `identity` overlap, but subject is multi-select and fuzzy by design — overlap is cheap here.
+- `logo` / `letter-form` / `typography` / `identity` overlap, but subject is multi-select and fuzzy by design — overlap is cheap here.
 
 ---
 
@@ -131,6 +131,7 @@ Decisions and the data work that follows. Pending rows are open until the data r
 | 2026-06-17 | **Reverse the 2026-05-25 `event` decision.** `medium: event` (22) cleared and `event` added back to `format`. Event is the occasion (an artifact shape/context), not a dimension; a poster for an event is `format: [poster, event]`. | done |
 | 2026-06-17 | **Dissolve cross-axis duplicates.** `characteristic: motion` (41) → `medium: motion` (28 moved; 13 kept their existing `spatial`/`print` medium, characteristic dropped, logged by the migration's conflict guard). `characteristic: print` (16) → `medium: print`. `characteristic: stationery` (5) → `format: stationery`. The characteristics axis no longer contains `print` / `motion` / `stationery`. | done |
 | 2026-06-17 | **`subject` is now the required floor (1+).** Soft-enforced: `/admin/images` shows a required marker, the "missing tags" filter keys on missing subject, and the audit lists the gap (109 published images lacked one at migration time). The build curation gate is unchanged, so nothing is unpublished — backfill via the admin portal over time. | done |
+| 2026-06-17 | **Rename `subject: letter-design` → `letter-form`** (27 catalogue entries; practice `letter-form` filter chip; image_tags caches re-synced on build). "letter-form" is the typographic term for the artifact. | done |
 | 2026-06-17 | **Fold `medium` into the filterable tag union** (`build-manifest.mjs`) so medium values (print/motion/spatial/physical) work as filter chips like the other axes. Video assets now default to `medium: motion` (was `video`) in `build-manifest.mjs` + `image-tags.ts`. `schema.json` chips: `motion` now matched by the folded medium; the redundant `video` chip merged into `motion`; `spatial` chips extended to match the `spatial` medium; `print` chip added. | done |
 
 ## Working notes / open questions

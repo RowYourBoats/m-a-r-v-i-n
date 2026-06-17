@@ -18,7 +18,7 @@ credits:
     name: Marvin de Jong
 videos: []
 image_tags:
-  - letter-design
+  - letter-form
   - poster
   - print
   - typography

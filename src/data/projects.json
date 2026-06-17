@@ -1810,7 +1810,7 @@
     "scale": null,
     "image_tags": [
       "identity",
-      "letter-design",
+      "letter-form",
       "logo",
       "merch",
       "poster"
@@ -1860,7 +1860,7 @@
     "image_tags": [
       "identity",
       "interactive",
-      "letter-design",
+      "letter-form",
       "logo",
       "photography",
       "poster",
@@ -2967,7 +2967,7 @@
       "identity",
       "illustration",
       "interactive",
-      "letter-design",
+      "letter-form",
       "merch",
       "motion",
       "photography",
@@ -3262,7 +3262,7 @@
       "3d",
       "editorial",
       "installation",
-      "letter-design",
+      "letter-form",
       "motion",
       "publication-design",
       "typography"
@@ -3451,7 +3451,7 @@
       "campaign",
       "data-visualization",
       "illustration",
-      "letter-design",
+      "letter-form",
       "making",
       "poster",
       "print",
@@ -3492,7 +3492,7 @@
     "role": null,
     "scale": null,
     "image_tags": [
-      "letter-design",
+      "letter-form",
       "poster",
       "print",
       "typography"
@@ -3959,7 +3959,7 @@
     "scale": null,
     "image_tags": [
       "3d",
-      "letter-design",
+      "letter-form",
       "poster",
       "study",
       "typography"
@@ -4008,7 +4008,7 @@
       "editorial",
       "illustration",
       "interactive",
-      "letter-design",
+      "letter-form",
       "making",
       "motion",
       "photography",
@@ -4101,7 +4101,7 @@
     "image_tags": [
       "editorial",
       "illustration",
-      "letter-design",
+      "letter-form",
       "poster"
     ],
     "lead_images": [],

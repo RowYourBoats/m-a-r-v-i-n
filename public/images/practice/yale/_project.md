@@ -24,7 +24,7 @@ projects:
     year: 2015
     image_tags:
       - 3d
-      - letter-design
+      - letter-form
       - poster
       - study
       - typography
@@ -38,7 +38,7 @@ projects:
       - editorial
       - illustration
       - interactive
-      - letter-design
+      - letter-form
       - making
       - motion
       - photography
@@ -59,7 +59,7 @@ projects:
     image_tags:
       - editorial
       - illustration
-      - letter-design
+      - letter-form
       - poster
     credits:
       - role: Design

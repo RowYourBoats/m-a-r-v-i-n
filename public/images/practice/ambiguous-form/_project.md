@@ -34,7 +34,7 @@ image_tags:
   - 3d
   - editorial
   - installation
-  - letter-design
+  - letter-form
   - motion
   - publication-design
   - typography

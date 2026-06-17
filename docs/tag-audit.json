@@ -1,5 +1,5 @@
 {
-  "generated": "2026-06-17T19:38:33.757Z",
+  "generated": "2026-06-17T19:48:56.235Z",
   "catalogue_total": 876,
   "image_axes": {
     "format": {
@@ -33,7 +33,7 @@
       "photography": 46,
       "typography": 35,
       "data-visualization": 34,
-      "letter-design": 27,
+      "letter-form": 27,
       "iconography": 16,
       "study": 15,
       "logo": 14,
@@ -98,7 +98,7 @@
       "interactive": 12,
       "publication-design": 12,
       "proposal": 10,
-      "letter-design": 9,
+      "letter-form": 9,
       "3d": 8,
       "exhibition": 8,
       "logo": 7,
@@ -486,7 +486,7 @@
         ]
       },
       {
-        "value": "letter-design",
+        "value": "letter-form",
         "hits": [
           {
             "axis": "subject",

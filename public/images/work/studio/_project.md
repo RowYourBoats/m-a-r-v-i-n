@@ -32,7 +32,7 @@ projects:
     sector: architecture
     image_tags:
       - identity
-      - letter-design
+      - letter-form
       - logo
       - merch
       - poster
@@ -46,7 +46,7 @@ projects:
     image_tags:
       - identity
       - interactive
-      - letter-design
+      - letter-form
       - logo
       - photography
       - poster

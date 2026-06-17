@@ -20,7 +20,7 @@ image_tags:
   - campaign
   - data-visualization
   - illustration
-  - letter-design
+  - letter-form
   - making
   - poster
   - print

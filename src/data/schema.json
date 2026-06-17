@@ -121,9 +121,9 @@
   "practice_filters": {
     "pinned": [
       {
-        "label": "letter-design",
+        "label": "letter-form",
         "matches": [
-          "letter-design"
+          "letter-form"
         ]
       },
       {
@@ -245,7 +245,7 @@
     "interactive",
     "internal",
     "keynote",
-    "letter-design",
+    "letter-form",
     "logo",
     "making",
     "merch",
