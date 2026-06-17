@@ -27,6 +27,6 @@ videos: []
 image_tags:
   - 3d
   - illustration
-  - letter-design
+  - product-render
   - study
 ---

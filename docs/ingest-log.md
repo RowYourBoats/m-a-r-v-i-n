@@ -2,6 +2,116 @@
 
 Newest run first. Appended automatically by `npm run ingest`.
 
+## 2026-06-17T08:00:37.693Z — ingest (applied)
+
+- **reconcile:** 0 remap(s), 0 quarantined (kept), 20 unregistered on disk
+- **stub:** +0 new image(s)
+- **mine-dates:** 751 stamped, 124 missing
+- **sync-image-tags:** 0 _project.md updated
+- **build-projects:** 77 projects, 50 tags, 19 clients
+- **build-manifest:** 684 items across 66 projects
+- **rehydrate:** 0 matched, 0 unmatched
+- **upload-blob:** uploaded 0, adopted 0, skipped 684, failed 0
+- **vimeo-posters:** 2 referenced, 0 fetched
+
+## 2026-06-17T06:41:35.606Z — ingest (applied)
+
+- **reconcile:** 0 remap(s), 0 quarantined (kept), 20 unregistered on disk
+- **stub:** +0 new image(s)
+- **mine-dates:** 751 stamped, 124 missing
+- **sync-image-tags:** 0 _project.md updated
+- **build-projects:** 77 projects, 50 tags, 19 clients
+- **build-manifest:** 684 items across 66 projects
+- **rehydrate:** 0 matched, 1 unmatched
+- **upload-blob:** uploaded 0, adopted 1, skipped 683, failed 0
+- **vimeo-posters:** 2 referenced, 0 fetched
+
+## 2026-06-17T06:33:41.833Z — ingest (applied)
+
+- **reconcile:** 0 remap(s), 7 dropped, 24 unregistered on disk
+  - quarantine: `work/ionq/one-pagers/Screenshot 2025-05-05 114813.png` (file missing — has caption, kept)
+  - quarantine: `work/ionq/one-pagers/Screenshot 2025-05-27 231845.png` (file missing — has caption, kept)
+  - quarantine: `work/ionq/one-pagers/Screenshot 2025-08-31 003353.png` (file missing — has caption, kept)
+  - quarantine: `work/ionq/one-pagers/Screenshot 2025-08-31 003421.png` (file missing — has caption, kept)
+  - quarantine: `work/ionq/one-pagers/Screenshot 2025-08-31 003520.png` (file missing — has caption, kept)
+  - quarantine: `work/ionq/illustrations/85.png` (file missing — has caption, kept)
+  - quarantine: `work/ionq/illustrations/Screenshot 2026-04-13 231155.png` (file missing — has caption, kept)
+- **stub:** +4 new image(s)
+  - `work/ionq/one-pagers/IonQ-Cover-AnnualReport.png`
+  - `work/ionq/one-pagers/IonQ-Cover-Pricing.png`
+  - `work/ionq/one-pagers/IonQ-OnePager-Korean.png`
+  - `work/ionq/one-pagers/IonQ-OnePager.png`
+- **mine-dates:** 751 stamped, 131 missing
+- **sync-image-tags:** 0 _project.md updated
+- **build-projects:** 77 projects, 50 tags, 19 clients
+- **build-manifest:** 690 items across 68 projects
+- **rehydrate:** 0 matched, 0 unmatched
+- **upload-blob:** uploaded 0, adopted 0, skipped 690, failed 0
+- **vimeo-posters:** 2 referenced, 0 fetched
+
+## 2026-06-17T06:29:46.969Z — ingest (applied)
+
+- **reconcile:** 0 remap(s), 4 dropped, 22 unregistered on disk
+  - quarantine: `work/ionq/one-pagers/Screenshot 2025-05-05 114813.png` (file missing — has caption, kept)
+  - quarantine: `work/ionq/one-pagers/Screenshot 2025-05-27 231845.png` (file missing — has caption, kept)
+  - quarantine: `work/ionq/illustrations/85.png` (file missing — has caption, kept)
+  - quarantine: `work/ionq/illustrations/Screenshot 2026-04-13 231155.png` (file missing — has caption, kept)
+- **stub:** +2 new image(s)
+  - `work/ionq/brand/IonQ-Brand-VideoGuideline-02.png`
+  - `work/ionq/brand/IonQ-Brand-VideoGuideline.png`
+- **mine-dates:** 752 stamped, 128 missing
+- **sync-image-tags:** 0 _project.md updated
+- **build-projects:** 77 projects, 50 tags, 19 clients
+- **build-manifest:** 690 items across 68 projects
+- **rehydrate:** 0 matched, 0 unmatched
+- **upload-blob:** uploaded 0, adopted 0, skipped 690, failed 0
+- **vimeo-posters:** 2 referenced, 0 fetched
+
+## 2026-06-17T06:27:40.219Z — ingest (applied)
+
+- **reconcile:** 8 remap(s), 4 dropped, 41 unregistered on disk
+  - remap: `work/ionq/product/IONQ_MGT_STRAIGHT_HIGHRES 1.png` → `work/ionq/brand/IONQ_MGT_STRAIGHT_HIGHRES 1.png`
+  - remap: `work/ionq/product/Screenshot 2026-04-13 231144.png` → `work/ionq/brand/Screenshot 2026-04-13 231144.png`
+  - remap: `work/ionq/product/Screenshot 2026-04-13 231205.png` → `work/ionq/brand/Screenshot 2026-04-13 231205.png`
+  - remap: `work/ionq/illustrations/IonTrap.png` → `work/ionq/brand/IonTrap.png`
+  - remap: `work/ionq/illustrations/QuantumComputing-Security.png` → `work/ionq/brand/QuantumComputing-Security.png`
+  - remap: `work/ionq/photography-video/스크린샷 2024-08-23 030829 1.png` → `work/ionq/brand/스크린샷 2024-08-23 030829 1.png`
+  - remap: `work/ionq/photography-video/스크린샷 2024-08-23 032319 1.png` → `work/ionq/brand/스크린샷 2024-08-23 032319 1.png`
+  - remap: `work/ionq/photography-video/스크린샷 2024-08-23 032319 2.png` → `work/ionq/brand/스크린샷 2024-08-23 032319 2.png`
+  - quarantine: `work/ionq/one-pagers/Screenshot 2025-05-05 114813.png` (file missing — has caption, kept)
+  - quarantine: `work/ionq/one-pagers/Screenshot 2025-05-27 231845.png` (file missing — has caption, kept)
+  - quarantine: `work/ionq/illustrations/85.png` (file missing — has caption, kept)
+  - quarantine: `work/ionq/illustrations/Screenshot 2026-04-13 231155.png` (file missing — has caption, kept)
+- **stub:** +21 new image(s)
+  - `work/ionq/brand/ForteEnterprise-Reveal.png`
+  - `work/ionq/brand/ForteEnterprise.png`
+  - `work/ionq/brand/IonQ Brand Guidelines - 102.png`
+  - `work/ionq/brand/IonQ-Brand-Illustration-Collaboration-Editorial.png`
+  - `work/ionq/brand/IonQ-Brand-Illustration-Collaboration.png`
+  - `work/ionq/brand/IonQ-Brand-Illustration-EaseOfUse-DarkMode.png`
+  - `work/ionq/brand/IonQ-Brand-Illustration-EaseOfUse.png`
+  - `work/ionq/brand/IonQ-Brand-TeamNames.png`
+  - `work/ionq/brand/IonQ-Icons-000.png`
+  - `work/ionq/brand/IonQ-Icons-001.png`
+  - `work/ionq/brand/IonQ-Icons-002.png`
+  - `work/ionq/brand/IonQ-Icons-003.png`
+  - `work/ionq/brand/IonQ-Icons-004.png`
+  - `work/ionq/brand/IonQ-Icons-LowSPAM.png`
+  - `work/ionq/brand/IonQ-Icons-WireFree.png`
+  - `work/ionq/brand/IonQ-Icons-coherence.png`
+  - `work/ionq/brand/IonQ-Icons-gate-fidelity.png`
+  - `work/ionq/brand/IonQ-Icons-modular-02.png`
+  - `work/ionq/brand/IonQ-Icons-modular.png`
+  - `work/ionq/brand/IonQ-Icons-perfect-cubits.png`
+  - `work/ionq/brand/IonQ-Ion.png`
+- **mine-dates:** 753 stamped, 128 missing
+- **sync-image-tags:** 1 _project.md updated
+- **build-projects:** 77 projects, 50 tags, 19 clients
+- **build-manifest:** 692 items across 68 projects
+- **rehydrate:** 0 matched, 7 unmatched
+- **upload-blob:** uploaded 7, adopted 0, skipped 685, failed 0
+- **vimeo-posters:** 2 referenced, 0 fetched
+
 ## 2026-06-13T07:35:06.984Z — ingest (applied)
 
 - **reconcile:** 0 remap(s), 2 dropped, 20 unregistered on disk

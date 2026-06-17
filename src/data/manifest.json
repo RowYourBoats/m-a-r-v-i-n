@@ -360,34 +360,6 @@
       "order": [],
       "snapshot_only": false
     },
-    "ionq-illustrations": {
-      "title": "Illustrations",
-      "description": "Definition of IonQ's illustration style — working with an illustrator to clean up and systematize the existing visual language, producing diagrammatic and editorial illustration for technical content.",
-      "client": "IonQ",
-      "year": 2023,
-      "credits": [
-        {
-          "role": "Design",
-          "name": "Marvin de Jong"
-        }
-      ],
-      "order": [],
-      "snapshot_only": false
-    },
-    "ionq-product": {
-      "title": "Product",
-      "description": "Product imaging for IonQ — extensive retouching of the main chip image until it became a primary asset across events, plus product renders directed with a 3D designer for keynotes and announcements.",
-      "client": "IonQ",
-      "year": 2023,
-      "credits": [
-        {
-          "role": "Creative Director",
-          "name": "Marvin de Jong"
-        }
-      ],
-      "order": [],
-      "snapshot_only": false
-    },
     "ionq-templates": {
       "title": "Templates",
       "description": "A Figma template system enabling IonQ's marketing team to self-serve routine production — online banners, social posts, one-pager PDFs — reducing the design team's involvement in day-to-day output.",
@@ -405,20 +377,6 @@
     "ionq-zoom-backgrounds": {
       "title": "Zoom Backgrounds",
       "description": "Zoom backgrounds for the IonQ team — photographic compositions extending the brand into everyday remote-work surfaces.",
-      "client": "IonQ",
-      "year": 2023,
-      "credits": [
-        {
-          "role": "Creative Director",
-          "name": "Marvin de Jong"
-        }
-      ],
-      "order": [],
-      "snapshot_only": false
-    },
-    "ionq-one-pagers": {
-      "title": "One Pagers",
-      "description": "Promotional and corporate one-pagers — campaign posters, annual report cover, executive profiles, product pages, and pricing sheets.",
       "client": "IonQ",
       "year": 2023,
       "credits": [
@@ -2075,7 +2033,6 @@
       "tags": [
         "3d",
         "illustration",
-        "letter-design",
         "study"
       ],
       "format": [],
@@ -2084,7 +2041,6 @@
       ],
       "subject": [
         "illustration",
-        "letter-design",
         "study"
       ],
       "project_tags": [
@@ -2112,7 +2068,6 @@
       "tags": [
         "3d",
         "illustration",
-        "letter-design",
         "study"
       ],
       "format": [],
@@ -2121,7 +2076,6 @@
       ],
       "subject": [
         "illustration",
-        "letter-design",
         "study"
       ],
       "project_tags": [
@@ -2148,7 +2102,6 @@
       "title": "Celestial Bodies Marble Embossing",
       "tags": [
         "3d",
-        "letter-design",
         "illustration",
         "study"
       ],
@@ -2157,7 +2110,6 @@
         "3d"
       ],
       "subject": [
-        "letter-design",
         "illustration",
         "study"
       ],
@@ -2185,7 +2137,6 @@
       "title": "Celestial Bodies Glass Distortion",
       "tags": [
         "3d",
-        "letter-design",
         "illustration",
         "study"
       ],
@@ -2194,7 +2145,6 @@
         "3d"
       ],
       "subject": [
-        "letter-design",
         "illustration",
         "study"
       ],
@@ -3548,128 +3498,6 @@
       "year": 2016
     },
     {
-      "id": "work-ionq-one-pagers-screenshot-2025-05-05-114813",
-      "src": "https://ws6i2dfuggcaavs2.public.blob.vercel-storage.com/images/work/ionq/one-pagers/Screenshot%202025-05-05%20114813.png",
-      "type": "image",
-      "title": "IonQ CFO Profile Page",
-      "tags": [
-        "typography"
-      ],
-      "format": [],
-      "characteristics": [],
-      "subject": [
-        "typography"
-      ],
-      "project_tags": [
-        "b2b",
-        "quantum-computing"
-      ],
-      "medium": "print",
-      "project": "ionq-one-pagers",
-      "description": "A digital corporate profile page for IonQ's CFO, featuring clean typography, professional photography, and integrated branding elements within a minimalist layout.",
-      "width": 1609,
-      "height": 2079,
-      "style": "Minimalist corporate design with professional portraiture and balanced typography",
-      "created": "2023-2025",
-      "date_range": "2023-2025",
-      "year": 2023
-    },
-    {
-      "id": "work-ionq-one-pagers-screenshot-2025-05-27-231845",
-      "src": "https://ws6i2dfuggcaavs2.public.blob.vercel-storage.com/images/work/ionq/one-pagers/Screenshot%202025-05-27%20231845.png",
-      "type": "image",
-      "title": "IonQ Forte Enterprise Promotional Poster",
-      "tags": [
-        "booth",
-        "exhibition",
-        "3d",
-        "typography"
-      ],
-      "format": [
-        "booth",
-        "exhibition"
-      ],
-      "characteristics": [
-        "3d"
-      ],
-      "subject": [
-        "typography"
-      ],
-      "project_tags": [
-        "b2b",
-        "quantum-computing"
-      ],
-      "medium": "event",
-      "project": "ionq-one-pagers",
-      "description": "A minimalist promotional poster for IonQ's quantum computing system, showcasing key technical specifications in a clean, high-contrast layout.",
-      "width": 3839,
-      "height": 2159,
-      "style": "Minimalist black-and-white design with high contrast, emphasizing technical details and modern aesthetics.",
-      "created": "2023-2025",
-      "date_range": "2023-2025",
-      "year": 2023
-    },
-    {
-      "id": "work-ionq-one-pagers-screenshot-2025-08-31-003353",
-      "src": "https://ws6i2dfuggcaavs2.public.blob.vercel-storage.com/images/work/ionq/one-pagers/Screenshot%202025-08-31%20003353.png",
-      "type": "image",
-      "title": "IonQ 2023 Annual Report Cover",
-      "tags": [
-        "publication-design",
-        "illustration"
-      ],
-      "format": [
-        "publication-design"
-      ],
-      "characteristics": [],
-      "subject": [
-        "illustration"
-      ],
-      "project_tags": [
-        "b2b",
-        "quantum-computing"
-      ],
-      "medium": "print",
-      "project": "ionq-one-pagers",
-      "description": "A minimalist annual report cover for IonQ features a dark background with white geometric wavy lines and subtle orange accent dots, emphasizing the brand's modern identity through abstract patterns and clean typography.",
-      "width": 937,
-      "height": 1212,
-      "style": "Minimalist geometric with dark theme and accent dots",
-      "created": "2023-2025",
-      "date_range": "2023-2025",
-      "year": 2023
-    },
-    {
-      "id": "work-ionq-one-pagers-screenshot-2025-08-31-003421",
-      "src": "https://ws6i2dfuggcaavs2.public.blob.vercel-storage.com/images/work/ionq/one-pagers/Screenshot%202025-08-31%20003421.png",
-      "type": "image",
-      "title": "IonQ Forte Quantum Computing Product Page",
-      "tags": [
-        "publication-design",
-        "typography"
-      ],
-      "format": [
-        "publication-design"
-      ],
-      "characteristics": [],
-      "subject": [
-        "typography"
-      ],
-      "project_tags": [
-        "b2b",
-        "quantum-computing"
-      ],
-      "medium": "print",
-      "project": "ionq-one-pagers",
-      "description": "A digital promotional page for IonQ's Forte quantum computer, detailing its technical specifications, quantum capabilities, and key partner integrations with Hyundai, Airbus, and Los Alamos National Laboratory.",
-      "width": 906,
-      "height": 1284,
-      "style": "Modern corporate design with structured technical specifications and partner branding",
-      "created": "2023-2025",
-      "date_range": "2023-2025",
-      "year": 2023
-    },
-    {
       "id": "work-dsr-competition-materials-timeline04",
       "src": "https://ws6i2dfuggcaavs2.public.blob.vercel-storage.com/images/DS+R/Timeline04.png",
       "type": "image",
@@ -3896,36 +3724,6 @@
       "created": "2017-2019",
       "date_range": "2017-2019",
       "year": 2017
-    },
-    {
-      "id": "work-ionq-one-pagers-screenshot-2025-08-31-003520",
-      "src": "https://ws6i2dfuggcaavs2.public.blob.vercel-storage.com/images/work/ionq/one-pagers/Screenshot%202025-08-31%20003520.png",
-      "type": "image",
-      "title": "IonQ Pricing Sheet",
-      "tags": [
-        "publication-design",
-        "typography"
-      ],
-      "format": [
-        "publication-design"
-      ],
-      "characteristics": [],
-      "subject": [
-        "typography"
-      ],
-      "project_tags": [
-        "b2b",
-        "quantum-computing"
-      ],
-      "medium": "print",
-      "project": "ionq-one-pagers",
-      "description": "Minimalist design for IonQ's quantum hardware pricing, featuring a dark background with abstract wave lines and a focal red dot, conveying world-class technology through clean typography and modern aesthetics.",
-      "width": 931,
-      "height": 1205,
-      "style": "Minimalist tech design with abstract wave patterns, bold typography, and strategic use of negative space on a dark background.",
-      "created": "2023-2025",
-      "date_range": "2023-2025",
-      "year": 2023
     },
     {
       "id": "work-herman-miller-herman-miller-group-screenshot-2026-04-18-225624",
@@ -5024,70 +4822,8 @@
       "year": 2023
     },
     {
-      "id": "work-ionq-illustrations-85",
-      "src": "https://ws6i2dfuggcaavs2.public.blob.vercel-storage.com/images/work/ionq/illustrations/85.png",
-      "type": "image",
-      "title": "IONQ Quantum Tech Illustration",
-      "tags": [
-        "editorial",
-        "illustration",
-        "diagram"
-      ],
-      "format": [
-        "editorial"
-      ],
-      "characteristics": [],
-      "subject": [
-        "illustration",
-        "diagram"
-      ],
-      "project_tags": [
-        "b2b",
-        "quantum-computing"
-      ],
-      "medium": "digital",
-      "project": "ionq-illustrations",
-      "description": "Isometric illustration for IonQ highlighting quantum computing components and the tagline 'The future is quantum', blending technical accuracy with modern branding.",
-      "width": 1920,
-      "height": 1080,
-      "style": "Minimalist isometric design with bold orange accents on a black background, merging technical quantum elements with contemporary branding aesthetics.",
-      "created": "2023-2025",
-      "date_range": "2023-2025",
-      "year": 2023
-    },
-    {
-      "id": "work-ionq-illustrations-screenshot-2026-04-13-231155",
-      "src": "https://ws6i2dfuggcaavs2.public.blob.vercel-storage.com/images/IonQ/Screenshot%202026-04-13%20231155.png",
-      "type": "image",
-      "title": "Brand Guidelines Tech Illustration",
-      "tags": [
-        "editorial",
-        "illustration",
-        "diagram"
-      ],
-      "format": [
-        "editorial"
-      ],
-      "characteristics": [],
-      "subject": [
-        "illustration",
-        "diagram"
-      ],
-      "project_tags": [
-        "b2b",
-        "quantum-computing"
-      ],
-      "medium": "digital",
-      "project": "ionq-illustrations",
-      "description": "An isometric illustration showcasing the development of brand guidelines for IonQ, integrating tech-themed assets like keys, fingerprint sensors, and data visualizations across sales decks and illustrations.",
-      "style": "Isometric tech illustration with minimalist design, monochromatic color scheme (black, white, orange), and security-themed elements",
-      "created": "2023-2025",
-      "date_range": "2023-2025",
-      "year": 2023
-    },
-    {
-      "id": "work-ionq-product-ionq-mgt-straight-highres-1",
-      "src": "https://ws6i2dfuggcaavs2.public.blob.vercel-storage.com/images/IonQ/IONQ_MGT_STRAIGHT_HIGHRES%201.png",
+      "id": "work-ionq-brand-ionq-mgt-straight-highres-1",
+      "src": "https://ws6i2dfuggcaavs2.public.blob.vercel-storage.com/images/work/ionq/brand/IONQ_MGT_STRAIGHT_HIGHRES%201.png",
       "type": "image",
       "title": "IonQ Quantum Processor Module Close-up",
       "tags": [
@@ -5103,7 +4839,7 @@
         "quantum-computing"
       ],
       "medium": "product",
-      "project": "ionq-product",
+      "project": "ionq-brand",
       "description": "High-resolution product photograph of IonQ's quantum computing component, showcasing intricate micro-circuitry and precision engineering through detailed branding and component layout.",
       "width": 1962,
       "height": 1298,
@@ -5113,8 +4849,8 @@
       "year": 2023
     },
     {
-      "id": "work-ionq-product-screenshot-2026-04-13-231144",
-      "src": "https://ws6i2dfuggcaavs2.public.blob.vercel-storage.com/images/IonQ/Screenshot%202026-04-13%20231144.png",
+      "id": "work-ionq-brand-screenshot-2026-04-13-231144",
+      "src": "https://ws6i2dfuggcaavs2.public.blob.vercel-storage.com/images/work/ionq/brand/Screenshot%202026-04-13%20231144.png",
       "type": "image",
       "title": "IonQ Brand Identity Visualization",
       "tags": [
@@ -5135,7 +4871,7 @@
         "quantum-computing"
       ],
       "medium": "digital",
-      "project": "ionq-product",
+      "project": "ionq-brand",
       "description": "Modular panels with cohesive geometric patterns demonstrate IonQ's brand guidelines, simplifying core messaging for a startup refining its brand identity.",
       "width": 2671,
       "height": 1497,
@@ -5145,8 +4881,8 @@
       "year": 2023
     },
     {
-      "id": "work-ionq-product-screenshot-2026-04-13-231205",
-      "src": "https://ws6i2dfuggcaavs2.public.blob.vercel-storage.com/images/IonQ/Screenshot%202026-04-13%20231205.png",
+      "id": "work-ionq-brand-screenshot-2026-04-13-231205",
+      "src": "https://ws6i2dfuggcaavs2.public.blob.vercel-storage.com/images/work/ionq/brand/Screenshot%202026-04-13%20231205.png",
       "type": "image",
       "title": "IonQ Laboratory Workflow Series",
       "tags": [
@@ -5162,7 +4898,7 @@
         "quantum-computing"
       ],
       "medium": "product",
-      "project": "ionq-product",
+      "project": "ionq-brand",
       "description": "Photographic documentation of IonQ's quantum research laboratory, highlighting precision instrumentation and technical workflows essential to quantum computing development.",
       "width": 2672,
       "height": 629,
@@ -20928,35 +20664,6 @@
       "year": 2023
     },
     {
-      "id": "work-ionq-brand-ionq-brand-image-07",
-      "src": "https://ws6i2dfuggcaavs2.public.blob.vercel-storage.com/images/work/ionq/brand/IonQ-Brand-Image-07.png",
-      "type": "image",
-      "title": "IonQ Brand Image 07",
-      "tags": [
-        "deck",
-        "identity"
-      ],
-      "format": [
-        "deck"
-      ],
-      "characteristics": [],
-      "subject": [
-        "identity"
-      ],
-      "project_tags": [
-        "b2b",
-        "quantum-computing"
-      ],
-      "medium": "digital",
-      "project": "ionq-brand",
-      "description": "",
-      "width": 1416,
-      "height": 2121,
-      "created": "2023-2025",
-      "date_range": "2023-2025",
-      "year": 2023
-    },
-    {
       "id": "work-herman-miller-hot-prospect-hotprospect-00",
       "src": "https://ws6i2dfuggcaavs2.public.blob.vercel-storage.com/images/work/herman-miller/hot-prospect/HotProspect-00.png",
       "type": "image",
@@ -21431,6 +21138,38 @@
       "hidden_from_feed": true
     },
     {
+      "id": "practice-stephanie-hanes-ndisplay-pathtracer-stephaniehanes-lightingonly-cinecameraactor-0018",
+      "src": "https://ws6i2dfuggcaavs2.public.blob.vercel-storage.com/images/practice/stephanie-hanes/nDisplay_PathTracer_StephanieHanes.LightingOnly.CineCameraActor.0018.png",
+      "type": "image",
+      "title": "nDisplay PathTracer StephanieHanes.LightingOnly.CineCameraActor.0018",
+      "tags": [
+        "3d",
+        "product-render"
+      ],
+      "format": [],
+      "characteristics": [
+        "3d"
+      ],
+      "subject": [
+        "product-render"
+      ],
+      "project_tags": [
+        "personal",
+        "editorial",
+        "publication-design",
+        "personal"
+      ],
+      "medium": "digital",
+      "project": "stephanie-hanes",
+      "description": "",
+      "width": 1920,
+      "height": 1080,
+      "created": "2025",
+      "date_range": "2025",
+      "year": 2025,
+      "personal": true
+    },
+    {
       "id": "tools-kept-app-jullie-resume-app",
       "src": "https://ws6i2dfuggcaavs2.public.blob.vercel-storage.com/images/tools/kept-app/jullie-resume-app.png",
       "type": "image",
@@ -21714,34 +21453,6 @@
       "personal": true
     },
     {
-      "id": "work-ionq-brand-group-161268327",
-      "src": "https://ws6i2dfuggcaavs2.public.blob.vercel-storage.com/images/work/ionq/brand/Group%20161268327.png",
-      "type": "image",
-      "title": "Group 161268327",
-      "tags": [
-        "identity",
-        "product-render"
-      ],
-      "format": [],
-      "characteristics": [],
-      "subject": [
-        "identity",
-        "product-render"
-      ],
-      "project_tags": [
-        "b2b",
-        "quantum-computing"
-      ],
-      "medium": "digital",
-      "project": "ionq-brand",
-      "description": "",
-      "width": 2684,
-      "height": 1514,
-      "created": "2023-2025",
-      "date_range": "2023-2025",
-      "year": 2023
-    },
-    {
       "id": "work-ionq-brand-ionq-brand-image-color-highres",
       "src": "https://ws6i2dfuggcaavs2.public.blob.vercel-storage.com/images/work/ionq/brand/IonQ-Brand-Image-Color-highres.png",
       "type": "image",
@@ -21771,517 +21482,8 @@
       "year": 2023
     },
     {
-      "id": "work-ionq-brand-ionq-brand-image-highres",
-      "src": "https://ws6i2dfuggcaavs2.public.blob.vercel-storage.com/images/work/ionq/brand/IonQ-Brand-Image-highres.png",
-      "type": "image",
-      "title": "IonQ Brand Image highres",
-      "tags": [
-        "deck",
-        "identity"
-      ],
-      "format": [
-        "deck"
-      ],
-      "characteristics": [],
-      "subject": [
-        "identity"
-      ],
-      "project_tags": [
-        "b2b",
-        "quantum-computing"
-      ],
-      "medium": "digital",
-      "project": "ionq-brand",
-      "description": "",
-      "width": 4136,
-      "height": 4210,
-      "created": "2023-2025",
-      "date_range": "2023-2025",
-      "year": 2023
-    },
-    {
-      "id": "work-ionq-brand-image-50",
-      "src": "https://ws6i2dfuggcaavs2.public.blob.vercel-storage.com/images/work/ionq/brand/image%2050.png",
-      "type": "image",
-      "title": "image 50",
-      "tags": [
-        "identity",
-        "product-render"
-      ],
-      "format": [],
-      "characteristics": [],
-      "subject": [
-        "identity",
-        "product-render"
-      ],
-      "project_tags": [
-        "b2b",
-        "quantum-computing"
-      ],
-      "medium": "digital",
-      "project": "ionq-brand",
-      "description": "",
-      "width": 2691,
-      "height": 1514,
-      "created": "2023-2025",
-      "date_range": "2023-2025",
-      "year": 2023
-    },
-    {
-      "id": "work-ionq-icons-frame-161268476",
-      "src": "https://ws6i2dfuggcaavs2.public.blob.vercel-storage.com/images/work/ionq/icons/Frame%20161268476.png",
-      "type": "image",
-      "title": "Frame 161268476",
-      "tags": [
-        "iconography",
-        "snapshot"
-      ],
-      "format": [],
-      "characteristics": [],
-      "subject": [
-        "iconography"
-      ],
-      "project_tags": [
-        "personal",
-        "personal",
-        "real-time"
-      ],
-      "medium": "digital",
-      "project": "snapshot",
-      "description": "",
-      "width": 800,
-      "height": 800,
-      "created": "2014-present",
-      "date_range": "2014-present",
-      "year": 2014,
-      "personal": true
-    },
-    {
-      "id": "work-ionq-icons-frame-161268477",
-      "src": "https://ws6i2dfuggcaavs2.public.blob.vercel-storage.com/images/work/ionq/icons/Frame%20161268477.png",
-      "type": "image",
-      "title": "Frame 161268477",
-      "tags": [
-        "iconography",
-        "snapshot"
-      ],
-      "format": [],
-      "characteristics": [],
-      "subject": [
-        "iconography"
-      ],
-      "project_tags": [
-        "personal",
-        "personal",
-        "real-time"
-      ],
-      "medium": "digital",
-      "project": "snapshot",
-      "description": "",
-      "width": 800,
-      "height": 800,
-      "created": "2014-present",
-      "date_range": "2014-present",
-      "year": 2014,
-      "personal": true
-    },
-    {
-      "id": "work-ionq-icons-frame-161268478",
-      "src": "https://ws6i2dfuggcaavs2.public.blob.vercel-storage.com/images/work/ionq/icons/Frame%20161268478.png",
-      "type": "image",
-      "title": "Frame 161268478",
-      "tags": [
-        "iconography",
-        "snapshot"
-      ],
-      "format": [],
-      "characteristics": [],
-      "subject": [
-        "iconography"
-      ],
-      "project_tags": [
-        "personal",
-        "personal",
-        "real-time"
-      ],
-      "medium": "digital",
-      "project": "snapshot",
-      "description": "",
-      "width": 800,
-      "height": 800,
-      "created": "2014-present",
-      "date_range": "2014-present",
-      "year": 2014,
-      "personal": true
-    },
-    {
-      "id": "work-ionq-icons-frame-161268479",
-      "src": "https://ws6i2dfuggcaavs2.public.blob.vercel-storage.com/images/work/ionq/icons/Frame%20161268479.png",
-      "type": "image",
-      "title": "Frame 161268479",
-      "tags": [
-        "iconography",
-        "snapshot"
-      ],
-      "format": [],
-      "characteristics": [],
-      "subject": [
-        "iconography"
-      ],
-      "project_tags": [
-        "personal",
-        "personal",
-        "real-time"
-      ],
-      "medium": "digital",
-      "project": "snapshot",
-      "description": "",
-      "width": 800,
-      "height": 800,
-      "created": "2014-present",
-      "date_range": "2014-present",
-      "year": 2014,
-      "personal": true
-    },
-    {
-      "id": "work-ionq-icons-frame-161268480",
-      "src": "https://ws6i2dfuggcaavs2.public.blob.vercel-storage.com/images/work/ionq/icons/Frame%20161268480.png",
-      "type": "image",
-      "title": "Frame 161268480",
-      "tags": [
-        "iconography",
-        "snapshot"
-      ],
-      "format": [],
-      "characteristics": [],
-      "subject": [
-        "iconography"
-      ],
-      "project_tags": [
-        "personal",
-        "personal",
-        "real-time"
-      ],
-      "medium": "digital",
-      "project": "snapshot",
-      "description": "",
-      "width": 800,
-      "height": 800,
-      "created": "2014-present",
-      "date_range": "2014-present",
-      "year": 2014,
-      "personal": true
-    },
-    {
-      "id": "work-ionq-icons-frame-161268481",
-      "src": "https://ws6i2dfuggcaavs2.public.blob.vercel-storage.com/images/work/ionq/icons/Frame%20161268481.png",
-      "type": "image",
-      "title": "Frame 161268481",
-      "tags": [
-        "iconography",
-        "snapshot"
-      ],
-      "format": [],
-      "characteristics": [],
-      "subject": [
-        "iconography"
-      ],
-      "project_tags": [
-        "personal",
-        "personal",
-        "real-time"
-      ],
-      "medium": "digital",
-      "project": "snapshot",
-      "description": "",
-      "width": 800,
-      "height": 800,
-      "created": "2014-present",
-      "date_range": "2014-present",
-      "year": 2014,
-      "personal": true
-    },
-    {
-      "id": "work-ionq-icons-frame-161268482",
-      "src": "https://ws6i2dfuggcaavs2.public.blob.vercel-storage.com/images/work/ionq/icons/Frame%20161268482.png",
-      "type": "image",
-      "title": "Frame 161268482",
-      "tags": [
-        "iconography",
-        "snapshot"
-      ],
-      "format": [],
-      "characteristics": [],
-      "subject": [
-        "iconography"
-      ],
-      "project_tags": [
-        "personal",
-        "personal",
-        "real-time"
-      ],
-      "medium": "digital",
-      "project": "snapshot",
-      "description": "",
-      "width": 800,
-      "height": 800,
-      "created": "2014-present",
-      "date_range": "2014-present",
-      "year": 2014,
-      "personal": true
-    },
-    {
-      "id": "work-ionq-icons-frame-161268483",
-      "src": "https://ws6i2dfuggcaavs2.public.blob.vercel-storage.com/images/work/ionq/icons/Frame%20161268483.png",
-      "type": "image",
-      "title": "Frame 161268483",
-      "tags": [
-        "iconography",
-        "snapshot"
-      ],
-      "format": [],
-      "characteristics": [],
-      "subject": [
-        "iconography"
-      ],
-      "project_tags": [
-        "personal",
-        "personal",
-        "real-time"
-      ],
-      "medium": "digital",
-      "project": "snapshot",
-      "description": "",
-      "width": 800,
-      "height": 800,
-      "created": "2014-present",
-      "date_range": "2014-present",
-      "year": 2014,
-      "personal": true
-    },
-    {
-      "id": "work-ionq-icons-frame-161268484",
-      "src": "https://ws6i2dfuggcaavs2.public.blob.vercel-storage.com/images/work/ionq/icons/Frame%20161268484.png",
-      "type": "image",
-      "title": "Frame 161268484",
-      "tags": [
-        "iconography",
-        "snapshot"
-      ],
-      "format": [],
-      "characteristics": [],
-      "subject": [
-        "iconography"
-      ],
-      "project_tags": [
-        "personal",
-        "personal",
-        "real-time"
-      ],
-      "medium": "digital",
-      "project": "snapshot",
-      "description": "",
-      "width": 800,
-      "height": 800,
-      "created": "2014-present",
-      "date_range": "2014-present",
-      "year": 2014,
-      "personal": true
-    },
-    {
-      "id": "work-ionq-icons-frame-161268485",
-      "src": "https://ws6i2dfuggcaavs2.public.blob.vercel-storage.com/images/work/ionq/icons/Frame%20161268485.png",
-      "type": "image",
-      "title": "Frame 161268485",
-      "tags": [
-        "iconography",
-        "snapshot"
-      ],
-      "format": [],
-      "characteristics": [],
-      "subject": [
-        "iconography"
-      ],
-      "project_tags": [
-        "personal",
-        "personal",
-        "real-time"
-      ],
-      "medium": "digital",
-      "project": "snapshot",
-      "description": "",
-      "width": 800,
-      "height": 800,
-      "created": "2014-present",
-      "date_range": "2014-present",
-      "year": 2014,
-      "personal": true
-    },
-    {
-      "id": "work-ionq-icons-frame-161268486",
-      "src": "https://ws6i2dfuggcaavs2.public.blob.vercel-storage.com/images/work/ionq/icons/Frame%20161268486.png",
-      "type": "image",
-      "title": "Frame 161268486",
-      "tags": [
-        "iconography",
-        "snapshot"
-      ],
-      "format": [],
-      "characteristics": [],
-      "subject": [
-        "iconography"
-      ],
-      "project_tags": [
-        "personal",
-        "personal",
-        "real-time"
-      ],
-      "medium": "digital",
-      "project": "snapshot",
-      "description": "",
-      "width": 800,
-      "height": 800,
-      "created": "2014-present",
-      "date_range": "2014-present",
-      "year": 2014,
-      "personal": true
-    },
-    {
-      "id": "work-ionq-icons-frame-161268487",
-      "src": "https://ws6i2dfuggcaavs2.public.blob.vercel-storage.com/images/work/ionq/icons/Frame%20161268487.png",
-      "type": "image",
-      "title": "Frame 161268487",
-      "tags": [
-        "iconography",
-        "snapshot"
-      ],
-      "format": [],
-      "characteristics": [],
-      "subject": [
-        "iconography"
-      ],
-      "project_tags": [
-        "personal",
-        "personal",
-        "real-time"
-      ],
-      "medium": "digital",
-      "project": "snapshot",
-      "description": "",
-      "width": 800,
-      "height": 800,
-      "created": "2014-present",
-      "date_range": "2014-present",
-      "year": 2014,
-      "personal": true
-    },
-    {
-      "id": "work-ionq-illustrations-elements",
-      "src": "https://ws6i2dfuggcaavs2.public.blob.vercel-storage.com/images/work/ionq/illustrations/Elements.png",
-      "type": "image",
-      "title": "Elements",
-      "tags": [
-        "illustration"
-      ],
-      "format": [],
-      "characteristics": [],
-      "subject": [
-        "illustration"
-      ],
-      "project_tags": [
-        "b2b",
-        "quantum-computing"
-      ],
-      "medium": "digital",
-      "project": "ionq-illustrations",
-      "description": "",
-      "width": 1478,
-      "height": 902,
-      "created": "2023-2025",
-      "date_range": "2023-2025",
-      "year": 2023
-    },
-    {
-      "id": "work-ionq-illustrations-frame-161268454",
-      "src": "https://ws6i2dfuggcaavs2.public.blob.vercel-storage.com/images/work/ionq/illustrations/Frame%20161268454.png",
-      "type": "image",
-      "title": "Frame 161268454",
-      "tags": [
-        "illustration"
-      ],
-      "format": [],
-      "characteristics": [],
-      "subject": [
-        "illustration"
-      ],
-      "project_tags": [
-        "b2b",
-        "quantum-computing"
-      ],
-      "medium": "digital",
-      "project": "ionq-illustrations",
-      "description": "",
-      "width": 1720,
-      "height": 883,
-      "created": "2023-2025",
-      "date_range": "2023-2025",
-      "year": 2023
-    },
-    {
-      "id": "work-ionq-illustrations-frame",
-      "src": "https://ws6i2dfuggcaavs2.public.blob.vercel-storage.com/images/work/ionq/illustrations/Frame.png",
-      "type": "image",
-      "title": "Frame",
-      "tags": [
-        "illustration"
-      ],
-      "format": [],
-      "characteristics": [],
-      "subject": [
-        "illustration"
-      ],
-      "project_tags": [
-        "b2b",
-        "quantum-computing"
-      ],
-      "medium": "digital",
-      "project": "ionq-illustrations",
-      "description": "",
-      "width": 1966,
-      "height": 1355,
-      "created": "2023-2025",
-      "date_range": "2023-2025",
-      "year": 2023
-    },
-    {
-      "id": "work-ionq-illustrations-illustration-3-white",
-      "src": "https://ws6i2dfuggcaavs2.public.blob.vercel-storage.com/images/work/ionq/illustrations/Illustration%203_White.png",
-      "type": "image",
-      "title": "Illustration 3 White",
-      "tags": [
-        "illustration"
-      ],
-      "format": [],
-      "characteristics": [],
-      "subject": [
-        "illustration"
-      ],
-      "project_tags": [
-        "b2b",
-        "quantum-computing"
-      ],
-      "medium": "digital",
-      "project": "ionq-illustrations",
-      "description": "",
-      "width": 3840,
-      "height": 2160,
-      "created": "2023-2025",
-      "date_range": "2023-2025",
-      "year": 2023
-    },
-    {
-      "id": "work-ionq-illustrations-iontrap",
-      "src": "https://ws6i2dfuggcaavs2.public.blob.vercel-storage.com/images/work/ionq/illustrations/IonTrap.png",
+      "id": "work-ionq-brand-iontrap",
+      "src": "https://ws6i2dfuggcaavs2.public.blob.vercel-storage.com/images/work/ionq/brand/IonTrap.png",
       "type": "image",
       "title": "IonTrap",
       "tags": [
@@ -22297,7 +21499,7 @@
         "quantum-computing"
       ],
       "medium": "digital",
-      "project": "ionq-illustrations",
+      "project": "ionq-brand",
       "description": "",
       "width": 1080,
       "height": 1080,
@@ -22306,8 +21508,8 @@
       "year": 2023
     },
     {
-      "id": "work-ionq-illustrations-quantumcomputing-security",
-      "src": "https://ws6i2dfuggcaavs2.public.blob.vercel-storage.com/images/work/ionq/illustrations/QuantumComputing-Security.png",
+      "id": "work-ionq-brand-quantumcomputing-security",
+      "src": "https://ws6i2dfuggcaavs2.public.blob.vercel-storage.com/images/work/ionq/brand/QuantumComputing-Security.png",
       "type": "image",
       "title": "QuantumComputing Security",
       "tags": [
@@ -22323,75 +21525,13 @@
         "quantum-computing"
       ],
       "medium": "digital",
-      "project": "ionq-illustrations",
+      "project": "ionq-brand",
       "description": "",
       "width": 1607,
       "height": 1606,
       "created": "2023-2025",
       "date_range": "2023-2025",
       "year": 2023
-    },
-    {
-      "id": "work-ionq-photography-video-2024-08-23-032319-1",
-      "src": "https://ws6i2dfuggcaavs2.public.blob.vercel-storage.com/images/work/ionq/photography-video/%EC%8A%A4%ED%81%AC%EB%A6%B0%EC%83%B7%202024-08-23%20032319%201.png",
-      "type": "image",
-      "title": "스크린샷 2024 08 23 032319 1",
-      "tags": [
-        "identity",
-        "photography",
-        "snapshot"
-      ],
-      "format": [],
-      "characteristics": [],
-      "subject": [
-        "identity",
-        "photography"
-      ],
-      "project_tags": [
-        "personal",
-        "personal",
-        "real-time"
-      ],
-      "medium": "digital",
-      "project": "snapshot",
-      "description": "",
-      "width": 1179,
-      "height": 614,
-      "created": "2014-present",
-      "date_range": "2014-present",
-      "year": 2014,
-      "personal": true
-    },
-    {
-      "id": "work-ionq-photography-video-2024-08-23-032319-2",
-      "src": "https://ws6i2dfuggcaavs2.public.blob.vercel-storage.com/images/work/ionq/photography-video/%EC%8A%A4%ED%81%AC%EB%A6%B0%EC%83%B7%202024-08-23%20032319%202.png",
-      "type": "image",
-      "title": "스크린샷 2024 08 23 032319 2",
-      "tags": [
-        "identity",
-        "photography",
-        "snapshot"
-      ],
-      "format": [],
-      "characteristics": [],
-      "subject": [
-        "identity",
-        "photography"
-      ],
-      "project_tags": [
-        "personal",
-        "personal",
-        "real-time"
-      ],
-      "medium": "digital",
-      "project": "snapshot",
-      "description": "",
-      "width": 1179,
-      "height": 614,
-      "created": "2014-present",
-      "date_range": "2014-present",
-      "year": 2014,
-      "personal": true
     },
     {
       "id": "tools-until-until",

@@ -2,11 +2,11 @@
 title: Marvin
 sections: 
    - kind: text
-     body: "Marvin de Jong is a Dutch graphic designer working across traditional, interactive, and emerging media, currently based in San Francisco."
+     body: "Marvin de Jong is a Dutch graphic designer working across traditional, interactive, and emerging media, based in San Francisco."
    - kind: text
-     body: "Currently he is exploring how real-time engines can help form stay open to change through inputs like movement tracking, MIDI keyboards, sound, and other data. In his work he often engages with the materiality of form and how motion can tell a story."
+     body: "He is exploring how real-time engines like TouchDesigner and Unreal can make form that moves without keyframes and stays open to input as it happens: gesture, sound, MIDI sliders and knobs. Not just for like-to-like interaction, but also for the parameters of the interaction."
    - kind: text
-     body: "Across these projects, the recurring question is how to make legible, the stories, data, and information that resist easy depiction — history, quantum systems, network infrastructure, AI processes."
+     body: "In the work section you'll find quantum systems, network infrastructure, AI, and American design classics. In the practice section, self-initiated explorations around letterform and perception."
    - kind: link
      href: /resume
      label: "Résumé"

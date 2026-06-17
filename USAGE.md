@@ -175,7 +175,7 @@ Date priority: `exif` > filesystem date within `project_date_range` > range star
 
 ### CV bullets (content collection)
 
-Sourced from Jullie-Resume via a directory junction (`src/content/bullets/` → `Jullie-Resume/input/bullets/`). Post-refactor (2026-04-20), each bullet is a single file with sizes as body sections. Filename pattern is `{slug}-{id}.md` where `{id}` is a 6-char hex.
+Bullets are **real committed files** in `src/content/bullets/*.md` — the old directory junction to Jullie-Resume is retired (it broke builds on machines without the junction). The gdrive editing source is still the source of truth; `npm run sync-bullets` mirrors it into the repo (`--apply` to write; dry-run by default). Each bullet is a single file with sizes as body sections. Filename pattern is `{slug}-{id}.md` where `{id}` is a 6-char hex.
 
 ```yaml
 ---
@@ -220,10 +220,12 @@ Prose narrative. May be multiple paragraphs. Used for long-form resume or portfo
 
 **Role-scope prefix strip:** some legacy role-scope bullets begin their Large body with `**Role scope** —` as an inline prefix. The render-time strip in `src/pages/resume.astro` removes it (redundant with the "Roles" section header). New bullets don't need the prefix; if they have it, the strip is idempotent.
 
-**Junction setup** (needed after fresh clone on Windows):
+**Updating bullets** (after editing them in the gdrive source):
 ```
-cmd /c "mklink /J src\content\bullets D:\ClaudeCoding\Jullie-Resume\input\bullets"
+npm run sync-bullets            # dry-run — prints the plan
+npm run sync-bullets -- --apply # mirror into src/content/bullets
 ```
+Mirror semantics: adds new bullets, overwrites changed ones, and deletes repo bullets no longer in the source (so renames propagate). Source resolves from `--src=<path>`, then `$BULLETS_SRC`, then the default `G:\My Drive\Claude Coding\Jullie-Resume-data\input\bullets` (Windows). On Mac, pass `--src` to the Google Drive equivalent. No junction or symlink needed.
 
 ### Bullet ↔ image-folder linking (via `id`)
 
@@ -331,16 +333,68 @@ Project-level facet vocabularies (also drawn from `schema.json` via the projects
 
 These appear in `schema.tags` (auto-unioned with image-axis vocabularies) and back the curated filter `matches` arrays.
 
+## Ingest — the one content-update command
+
+```
+npm run ingest
+```
+
+`npm run ingest` is the **single consolidated command** for any content update. Drop images in, edit `_project.md`, tag in `/admin/images` — then run ingest once and the whole tree is reconciled, rebuilt, and published. It's idempotent and safe to re-run; running it on a clean tree is a no-op beyond rewriting the generated JSON.
+
+It runs these stages in order (`scripts/ingest.mjs`):
+
+1. **reconcile** (`reconcile-catalogue-paths.mjs --apply`) — heals `file_path` entries after folder moves/renames. Runs **before** stub so a renamed image keeps its tags instead of being re-stubbed empty. Missing files are **quarantined, never auto-dropped** (a catalogue entry whose file is gone but which carries a caption is kept, not deleted).
+2. **stub** (`stub-catalogue.mjs --all --apply`) — registers genuinely-new images across the whole tree as empty stub entries (blank tag axes), getting them into the pipeline + `/admin/images` for hand-tagging.
+3. **mine-dates** — stamps created dates (including the fresh stubs).
+4. **sync-image-tags** — aggregates per-image tags into each `_project.md` before projects are built.
+5. **build-projects** → **build-manifest** — rebuild `projects.json` / `schema.json` / `manifest.json`.
+6. **rehydrate** (`rehydrate-blob-urls.mjs`, non-fatal) — recovers any Blob URLs the rebuild dropped by matching item `id` against `src/data/manifest.archive.json`. Guards against the silent-blob-wipe failure mode (see below). Skipped on the first run, before any archive exists.
+7. **upload-blob** (non-fatal) — publishes to Vercel Blob **only when `BLOB_READ_WRITE_TOKEN` is set** (read from the environment or a root `.env`). Without the token this step is skipped and local `/images/` paths are left in place — still visible under `astro dev`, just not on the deployed CDN.
+8. **vimeo-posters** (`sync-vimeo-posters.mjs --apply`, non-fatal) — refreshes the Vimeo poster cache.
+
+```
+npm run ingest -- --dry-run
+```
+
+Previews the **reconcile + stub** changes only (remaps, quarantines, new stubs) and writes nothing — the build/blob/poster stages are skipped. Use it to see what a run *would* do before committing.
+
+Every run appends a dated entry to **`docs/ingest-log.md`** (newest first) recording exactly what each stage changed — the audit trail for "what did that ingest touch?"
+
+**Curation gate:** `build-manifest` only publishes images a human has actually curated — ones carrying a **description and/or any tag**. Untagged stubs stay catalogued (and visible in `/admin/images` for gardening) but are held out of the manifest, so they don't appear on the site until someone tags them. The source of truth (the catalogue) is intentionally larger than the published set.
+
+**Blob redundancy:** rebuilds can otherwise silently wipe the `https://…blob…` URLs off manifest items, 404-ing them in production. `manifest.archive.json` is the safety net the rehydrate stage reads from; keep it around.
+
+### Removing deleted images (the `--drop` step)
+
+Deleting an image file from disk does **not** remove it from the site. A deleted-but-described image lingers because all three layers have to agree before it disappears: reconcile *quarantines* (keeps) the catalogue entry since it carries a description, the [curation gate](#ingest--the-one-content-update-command) *publishes* anything with a description, and Blob still serves the old upload. `npm run ingest` won't break this — it runs reconcile with plain `--apply` and **ignores `--drop`** (the only flag it reads is `--dry-run`).
+
+To actually purge captioned-but-missing entries, run reconcile directly with `--drop`, then rebuild:
+
+```
+node scripts/reconcile-catalogue-paths.mjs            # dry-run — lists what would be dropped
+node scripts/reconcile-catalogue-paths.mjs --apply --drop   # remove them from the catalogue
+npm run ingest                                        # rebuild manifest + restore blob URLs
+```
+
+Caveats:
+- **It's global** — `--drop` removes *every* quarantined entry, not a single folder. Eyeball the dry-run list first; anything that's just unsynced on this machine (file lives on Blob, not on local disk) would lose its caption.
+- **The catalogue is gitignored**, so this isn't reversible via git. Back it up first (`cp public/images/image_catalogue.json public/images/image_catalogue.backup.json`).
+- **Blob isn't pruned** — the orphaned file stays in Blob storage (harmless, just unreferenced). There's no auto-delete in the pipeline.
+- **Watch for a now-empty project.** If the dropped images were the only *curated* ones in a project, its `/projects/<slug>` page goes empty — the remaining on-disk files may be uncurated stubs the gate is hiding. Tag/describe them in `/admin/images`, then `npm run ingest`.
+
 ## Build pipeline
+
+For most content changes, prefer `npm run ingest` (above) — it wraps this pipeline plus reconcile/stub/blob/rehydrate. `npm run build-data` is the lower-level subset, useful when you only touched `_project.md` or the catalogue and don't need the blob/reconcile stages.
 
 ```
 npm run build-data
 ```
 
-Runs three scripts in sequence:
+Runs four scripts in sequence:
 1. `build-projects.mjs` — `_project.md` files → `projects.json` + `schema.json`
 2. `mine-dates.mjs` — stamps file birthtimes onto catalogue entries
 3. `build-manifest.mjs` — catalogue + `projects.json` → `manifest.json`
+4. `sync-vimeo-posters.mjs --apply` — refreshes the Vimeo poster cache
 
 Run this after adding/moving images, editing `_project.md`, or updating the catalogue.
 
@@ -357,6 +411,9 @@ Runs the heavier image-reconciliation cycle:
 
 | Script | Purpose |
 |---|---|
+| `scripts/ingest.mjs` (`npm run ingest`) | The consolidated content-update pipeline — reconcile → stub → build → rehydrate → blob → posters. `--dry-run` previews reconcile/stub only. See [Ingest](#ingest--the-one-content-update-command). |
+| `scripts/rehydrate-blob-urls.mjs` | Restore Blob URLs onto manifest items by matching `id` against `src/data/manifest.archive.json` (recovers URLs a rebuild dropped; never re-uploads). |
+| `scripts/sync-bullets.mjs` (`npm run sync-bullets`) | Mirror CV bullets from the Jullie-Resume gdrive source into `src/content/bullets/`. Dry-run by default; `--apply` writes. Mirror semantics (adds/overwrites/deletes to match source). Source via `--src=`, `$BULLETS_SRC`, or the default gdrive path. |
 | `scripts/build-projects.mjs` | `_project.md` → `projects.json` + `schema.json` |
 | `scripts/scatter-projects.mjs` | `projects.json` → `_project.md` (reverse sync) |
 | `scripts/mine-dates.mjs` | Stamp file dates on catalogue entries |
@@ -364,7 +421,7 @@ Runs the heavier image-reconciliation cycle:
 | `scripts/build-manifest.mjs` | Catalogue + projects → manifest |
 | `scripts/sync-image-tags.mjs` | Catalogue → per-project `image_tags:` cache in `_project.md` |
 | `scripts/reconcile-catalogue-paths.mjs` | Heal stale `file_path` entries after folder moves |
-| `scripts/stub-catalogue.mjs` | Register a folder's new images into the catalogue as stub entries (empty tag axes). `node scripts/stub-catalogue.mjs <folder> [--apply]`. Lightweight stand-in for the miner — gets images into the pipeline + `/admin/images` for hand-tagging |
+| `scripts/stub-catalogue.mjs` | Register new images into the catalogue as stub entries (empty tag axes). `node scripts/stub-catalogue.mjs <folder> [--apply]` for one folder, or `--all [--apply]` for the whole tree (what `npm run ingest` uses). Lightweight stand-in for the miner — gets images into the pipeline + `/admin/images` for hand-tagging |
 | `scripts/upload-blob.mjs` | Upload images to Vercel Blob, rewrite manifest URLs |
 | `scripts/sync-vimeo-posters.mjs` | Walks `src/content/pages/*.md`, finds Vimeo URLs in filmstrip assets, fetches canonical posters via oEmbed, writes `src/data/vimeo-posters.json`. Idempotent — only unknown IDs are fetched. Runs as the last step of `npm run build-data`. |
 | `scripts/audit-tags.mjs` | Read-only tag audit: per-value counts across all image + project axes, cross-axis duplicate flags, singletons. Writes `docs/tag-audit.json`. Run after every tagging pass. |
@@ -372,16 +429,18 @@ Runs the heavier image-reconciliation cycle:
 
 ### Adding new images
 
-Images only reach the site once they have a row in `image_catalogue.json` — `build-manifest` builds the manifest *from the catalogue*, and `upload-blob` only pushes what's in the manifest. Dropping files in a folder (and wiring the project) is not enough; they must be **ingested** first. Sequence:
+Images only reach the site once they have a row in `image_catalogue.json` — `build-manifest` builds the manifest *from the catalogue*, and `upload-blob` only pushes what's in the manifest. Dropping files in a folder (and wiring the project) is not enough; they must be **ingested** first.
+
+**The normal path is one command:**
 
 1. Add the image files under `public/images/<tier>/<client>/<folder>/`
 2. Make sure the project is wired (a `_project.md` or a `projects:` entry whose `image_folders` includes the folder)
-3. **Ingest** — either `node scripts/stub-catalogue.mjs <folder> --apply` (fast, blank tags) or run `public/images/miner.cjs` from `public/images/` (Ollama auto-tags)
-4. `npm run build-data`
-5. `node --env-file=.env scripts/upload-blob.mjs`
-6. (optional) tag/title them in `/admin/images`
+3. `npm run ingest` — stubs the new files, rebuilds, and (with a blob token) uploads them in one pass
+4. (optional) tag/title them in `/admin/images`, then `npm run ingest` again to publish — remember the [curation gate](#ingest--the-one-content-update-command): untagged stubs stay hidden until they carry a description and/or tag
 
-Skipping step 3 is the classic "I added images but `upload-blob` only pushed some" symptom — the un-ingested ones never enter the manifest. `node scripts/reconcile-catalogue-paths.mjs` (dry run) lists every on-disk image missing from the catalogue.
+Skipping the stub step is the classic "I added images but `upload-blob` only pushed some" symptom — the un-ingested ones never enter the manifest. `npm run ingest -- --dry-run` (or `node scripts/reconcile-catalogue-paths.mjs` dry-run) lists every on-disk image missing from the catalogue before you commit.
+
+The manual long-form (`stub-catalogue` → `build-data` → `upload-blob`, or the Ollama miner via `public/images/miner.cjs` instead of stub) still works if you need finer control over a single folder.
 
 One-shot migrations (already run) now live in the gitignored `_DEPRECATED/` archive — `_DEPRECATED/scripts/`. They are kept as reference only, not part of any pipeline. See `_DEPRECATED/README.md` for the full inventory.
 
@@ -398,13 +457,25 @@ Saves are immediate but downstream JSON is not — run `npm run build-data` afte
 
 ## Pages
 
-Nav order: **Marvin · Work · Practice · Resume**.
+Nav order: **Marvin · Work · Practice · Tools** (with **Résumé** linked separately).
 
 - `/` (Marvin) — editorial home: lead bio prose from `src/content/pages/marvin.md` body, then iterates the frontmatter `sections` array (short prose lines + filmstrip modules). See [Editorial home `/`](#editorial-home-) below.
 - `/work` — full work archive: non-personal items, masonry grid, curated tag filters (`work_filters` in `schema.json`), sorted newest first.
 - `/practice` — personal images + essays, curated tag filters (`practice_filters`).
+- `/tools` — tools tier. Tools are authored as essay-style `writing` entries under `public/images/tools/` (markdown + frontmatter, same treatment as Practice essays — title-first card, optional cover, a `/writing` page, an outbound `link`). Tool projects not yet migrated to an essay still render from the project pipeline at `/projects/<slug>`. Intro copy comes from `src/content/pages/tools.md`.
 - `/resume` — short intro + contact (from `src/content/pages/resume.md`), then the CV table: 5 columns (where/when/what/how/tags) with size slider on Projects, section collapse, sort, search, company/category filters.
-- `/projects/[slug]` — auto-generated per project from the manifest. Media renders single-column full-bleed. Highlights the **Work** nav item (or **Practice** for items under `practice/`).
+- `/projects/[slug]` — auto-generated per project from the manifest. Media renders single-column full-bleed. Highlights the **Work** nav item (or **Practice** for items under `practice/`). A project can instead author its detail page as a **markdown doc** (see below).
+- `/diagrams/[slug]` — animated SVG diagram pages from the diagram content collection + runtime registry.
+
+### Markdown-authored project pages (`layout: doc`)
+
+A project can render its detail page as the markdown **body** of its own `_project.md` instead of the default media grid. Opt in with `layout: doc` in the frontmatter (the frontmatter still feeds `projects.json` as usual). `src/lib/project-doc.ts` renders the body to HTML for the `/projects/[slug]` route to inject.
+
+- Loaded via Vite's `import.meta.glob` (not a content collection) because Astro's content-layer `glob` loader ignores `_`-prefixed files like `_project.md`.
+- Supports inline animated diagrams: a ```` ```diagram ```` fence is intercepted by `remark-diagram.mjs` and mounted from the client-side diagram registry. First instance is the Connectivity diagram; more planned.
+- Code fences render as plain `<pre><code>` (no Shiki) so they stay in the minimal one-font/one-weight palette, reskinned by `.projectdoc` CSS.
+
+Used by the tools tier (e.g. `tools/jullie-app`).
 
 ### Editorial home (`/`)
 

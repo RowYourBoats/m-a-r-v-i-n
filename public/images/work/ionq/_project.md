@@ -37,6 +37,8 @@ projects:
     image_tags:
       - deck
       - identity
+      - illustration
+      - photography
       - product-render
     order:
       - IonQ Product Family
