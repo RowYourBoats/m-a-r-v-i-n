@@ -32,11 +32,19 @@ projects:
           https://player.vimeo.com/video/805393265?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479&amp;autoplay=1&amp;muted=1&amp;loop=1
         format:
           - keynote
+        content:
+          - typography
+          - identity
+          - motion-graphics
       - title: Market Share
         url: >-
           https://player.vimeo.com/video/805306804?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479&amp;autoplay=1&amp;muted=1&amp;loop=1
         format:
           - keynote
+        content:
+          - typography
+          - identity
+          - motion-graphics
       - title: Liquid Cooler
         url: >-
           https://player.vimeo.com/video/805404163?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479&amp;autoplay=1&amp;muted=1&amp;loop=1

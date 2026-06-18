@@ -51,6 +51,7 @@ projects:
     image_tags:
       - illustration
       - making
+      - riso
   uppercase-soul:
     name: Uppercase Soul
     year: 2020

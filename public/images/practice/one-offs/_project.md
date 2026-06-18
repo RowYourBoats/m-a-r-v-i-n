@@ -21,6 +21,9 @@ credits:
   - role: Design
     name: Marvin de Jong
 image_tags:
+  - editorial
+  - letter-form
   - poster
   - stationery
+  - typography
 ---

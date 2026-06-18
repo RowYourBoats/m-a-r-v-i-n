@@ -32,6 +32,7 @@ projects:
       - exhibition
       - illustration
       - photography
+      - typography
     credits:
       - role: Brand Design
         name: Marvin de Jong
@@ -126,6 +127,7 @@ projects:
       Industrial Facility — illustrations of HM products cut in matte vinyl and applied to acrylic, where the material
       contrast gave the outlines a sculptural dimension.
     image_tags:
+      - editorial
       - event
       - exhibition
       - illustration
@@ -155,8 +157,10 @@ projects:
       embossed, engraved, or molded into the material. Including a special-edition Eames Eucalyptus table — one of the
       few pieces to carry both Vitra and Herman Miller branding.
     image_tags:
+      - editorial
       - identity
       - product-marking
+      - typography
     credits:
       - role: Brand Design
         name: Marvin de Jong

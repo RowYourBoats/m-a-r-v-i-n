@@ -29,9 +29,11 @@ projects:
       - editorial
       - event
       - exhibition
+      - identity
       - illustration
       - poster
       - publication-design
+      - typography
   credits:
     - role: Designer
       name: Marvin de Jong

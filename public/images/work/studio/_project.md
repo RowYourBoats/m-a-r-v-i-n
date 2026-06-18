@@ -125,6 +125,8 @@ projects:
       layered to produce a reflective dotted pattern that shifts under changing light angles.
     date_range: "2016"
     image_tags:
+      - editorial
+      - illustration
       - stationery
   marin-montessori:
     name: Marin Montessori Cookbook
@@ -135,5 +137,6 @@ projects:
       framed by the Montessori philosophy.
     date_range: "2026"
     image_tags:
+      - editorial
       - publication-design
 ---

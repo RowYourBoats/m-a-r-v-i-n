@@ -1038,20 +1038,6 @@
       "order": [],
       "snapshot_only": false
     },
-    "snapshot": {
-      "title": "Snapshots",
-      "description": "",
-      "client": "personal",
-      "year": 2026,
-      "credits": [
-        {
-          "role": "Design",
-          "name": "Marvin de Jong"
-        }
-      ],
-      "order": [],
-      "snapshot_only": false
-    },
     "snu": {
       "title": "SNU",
       "description": "",
@@ -1931,34 +1917,6 @@
       "created": "2025-present",
       "date_range": "2025-present",
       "year": 2025,
-      "personal": true
-    },
-    {
-      "id": "practice-snapshot-screenshot-2026-01-17-033644",
-      "src": "https://ws6i2dfuggcaavs2.public.blob.vercel-storage.com/images/practice/snapshots/Screenshot%202026-01-17%20033644.png",
-      "type": "image",
-      "title": "Fragmented Cubic Text Installation",
-      "tags": [
-        "3d",
-        "snapshot"
-      ],
-      "format": [],
-      "characteristics": [
-        "3d"
-      ],
-      "content": [],
-      "project_tags": [
-        "personal",
-        "personal",
-        "real-time"
-      ],
-      "medium": "",
-      "project": "snapshot",
-      "description": "This digital design presents the word 'QUANTUM' formed by fragmented checkered cubes in a dynamic 3D arrangement, showcasing spatial composition and geometric form against a minimalist coastal landscape.",
-      "style": "Geometric abstraction with fragmented cubic construction and checkered pattern, set within a minimalist coastal environment",
-      "created": "2026-01-17T03:36:44Z",
-      "date_range": "2025-present",
-      "year": 2026,
       "personal": true
     },
     {
@@ -3894,7 +3852,8 @@
       "tags": [
         "installation",
         "exhibition",
-        "event"
+        "event",
+        "editorial"
       ],
       "format": [
         "installation",
@@ -3902,7 +3861,9 @@
         "event"
       ],
       "characteristics": [],
-      "content": [],
+      "content": [
+        "editorial"
+      ],
       "project_tags": [
         "b2b2c",
         "campaign",
@@ -3960,13 +3921,20 @@
       "title": "Eames Eucalyptus LTR Product Marking Plaque",
       "tags": [
         "product-marking",
+        "editorial",
+        "typography",
+        "identity",
         "physical"
       ],
       "format": [
         "product-marking"
       ],
       "characteristics": [],
-      "content": [],
+      "content": [
+        "editorial",
+        "typography",
+        "identity"
+      ],
       "project_tags": [
         "b2b2c",
         "campaign",
@@ -5166,20 +5134,26 @@
       "type": "image",
       "title": "Picasso's Sculpture MoMA Digital Publication Cover",
       "tags": [
-        "publication-design"
+        "publication-design",
+        "editorial",
+        "interface",
+        "digital"
       ],
       "format": [
         "publication-design"
       ],
       "characteristics": [],
-      "content": [],
+      "content": [
+        "editorial",
+        "interface"
+      ],
       "project_tags": [
         "b2c",
         "editorial",
         "publication-design",
         "cultural-institution"
       ],
-      "medium": "",
+      "medium": "digital",
       "project": "moma-marron-dossiers",
       "description": "A digital publication cover for MoMA's 'MRC Dossier 2: Museum Research Consortium Study Session' on Picasso's sculpture, featuring minimalist typography, a historical black-and-white photograph of an atelier scene, and strategic brand integration.",
       "width": 906,
@@ -5195,20 +5169,26 @@
       "type": "image",
       "title": "Picasso's Sculpture Dossier Cover",
       "tags": [
-        "publication-design"
+        "publication-design",
+        "editorial",
+        "interface",
+        "digital"
       ],
       "format": [
         "publication-design"
       ],
       "characteristics": [],
-      "content": [],
+      "content": [
+        "editorial",
+        "interface"
+      ],
       "project_tags": [
         "b2c",
         "editorial",
         "publication-design",
         "cultural-institution"
       ],
-      "medium": "",
+      "medium": "digital",
       "project": "moma-marron-dossiers",
       "description": "Print cover for MoMA’s Museum Research Consortium Study Session, featuring a black-and-white photograph of Picasso’s studio and bold typographic elements.",
       "width": 906,
@@ -5224,20 +5204,26 @@
       "type": "image",
       "title": "MoMA Teens Program Dossier: Picasso Sculpture Analysis",
       "tags": [
-        "publication-design"
+        "publication-design",
+        "editorial",
+        "interface",
+        "digital"
       ],
       "format": [
         "publication-design"
       ],
       "characteristics": [],
-      "content": [],
+      "content": [
+        "editorial",
+        "interface"
+      ],
       "project_tags": [
         "b2c",
         "editorial",
         "publication-design",
         "cultural-institution"
       ],
-      "medium": "",
+      "medium": "digital",
       "project": "moma-marron-dossiers",
       "description": "A page from the MoMA Teens Program dossier analyzing Picasso's sculptural works, including comparative discussions of 'Head' and his iconic Guitar (1912) and Man (1958) sculptures, presented through academic text and image captions.",
       "width": 906,
@@ -5253,20 +5239,26 @@
       "type": "image",
       "title": "Picasso Sculpture Studies Dossier Page",
       "tags": [
-        "publication-design"
+        "publication-design",
+        "editorial",
+        "interface",
+        "digital"
       ],
       "format": [
         "publication-design"
       ],
       "characteristics": [],
-      "content": [],
+      "content": [
+        "editorial",
+        "interface"
+      ],
       "project_tags": [
         "b2c",
         "editorial",
         "publication-design",
         "cultural-institution"
       ],
-      "medium": "",
+      "medium": "digital",
       "project": "moma-marron-dossiers",
       "description": "A printed page showcasing four pencil sketches of Picasso's 1958 wooden sculpture studies, part of the Museum of Modern Art's MRC dossier for teens program.",
       "width": 906,
@@ -5282,20 +5274,26 @@
       "type": "image",
       "title": "MOMA Digital Publication Cover: Picasso's Sculpture Dossier",
       "tags": [
-        "publication-design"
+        "publication-design",
+        "editorial",
+        "interface",
+        "digital"
       ],
       "format": [
         "publication-design"
       ],
       "characteristics": [],
-      "content": [],
+      "content": [
+        "editorial",
+        "interface"
+      ],
       "project_tags": [
         "b2c",
         "editorial",
         "publication-design",
         "cultural-institution"
       ],
-      "medium": "",
+      "medium": "digital",
       "project": "moma-marron-dossiers",
       "description": "A digital publication cover for MoMA's Museum Research Consortium Dossier 2, featuring a monochrome photograph of Picasso's studio with sculptures and minimalist typography. The design emphasizes the integration of historical imagery with modern typographic layout.",
       "width": 715,
@@ -5312,14 +5310,19 @@
       "title": "Pratt Institute Design Event Poster: 'Designing with Diversity'",
       "tags": [
         "poster",
-        "event"
+        "event",
+        "identity",
+        "typography"
       ],
       "format": [
         "poster",
         "event"
       ],
       "characteristics": [],
-      "content": [],
+      "content": [
+        "identity",
+        "typography"
+      ],
       "project_tags": [
         "b2c",
         "education"
@@ -5341,13 +5344,18 @@
       "title": "Pratt Manhattan Center Signage",
       "tags": [
         "exhibition",
+        "identity",
+        "typography",
         "print"
       ],
       "format": [
         "exhibition"
       ],
       "characteristics": [],
-      "content": [],
+      "content": [
+        "identity",
+        "typography"
+      ],
       "project_tags": [
         "b2c",
         "education"
@@ -5427,13 +5435,18 @@
       "title": "Pratt Campus Event Promotion Posters",
       "tags": [
         "poster",
+        "identity",
+        "typography",
         "print"
       ],
       "format": [
         "poster"
       ],
       "characteristics": [],
-      "content": [],
+      "content": [
+        "identity",
+        "typography"
+      ],
       "project_tags": [
         "b2c",
         "education"
@@ -6175,7 +6188,9 @@
         "editorial"
       ],
       "characteristics": [],
-      "content": [],
+      "content": [
+        "editorial"
+      ],
       "project_tags": [
         "b2b",
         "publication-design",
@@ -6207,7 +6222,9 @@
         "editorial"
       ],
       "characteristics": [],
-      "content": [],
+      "content": [
+        "editorial"
+      ],
       "project_tags": [
         "b2b",
         "publication-design",
@@ -6239,7 +6256,9 @@
         "editorial"
       ],
       "characteristics": [],
-      "content": [],
+      "content": [
+        "editorial"
+      ],
       "project_tags": [
         "b2b",
         "publication-design",
@@ -6298,13 +6317,18 @@
       "title": "Minimalist Business Card for Tillotson Design Associates",
       "tags": [
         "stationery",
+        "editorial",
+        "illustration",
         "print"
       ],
       "format": [
         "stationery"
       ],
       "characteristics": [],
-      "content": [],
+      "content": [
+        "editorial",
+        "illustration"
+      ],
       "project_tags": [
         "b2b",
         "publication-design",
@@ -6328,14 +6352,17 @@
       "title": "Verizon 5G NYC Store Wrap",
       "tags": [
         "campaign",
-        "event"
+        "event",
+        "signage"
       ],
       "format": [
         "campaign",
         "event"
       ],
       "characteristics": [],
-      "content": [],
+      "content": [
+        "signage"
+      ],
       "project_tags": [
         "b2c",
         "retail",
@@ -6489,14 +6516,17 @@
       "title": "Verizon 5G Storefront Campaign",
       "tags": [
         "campaign",
-        "event"
+        "event",
+        "signage"
       ],
       "format": [
         "campaign",
         "event"
       ],
       "characteristics": [],
-      "content": [],
+      "content": [
+        "signage"
+      ],
       "project_tags": [
         "b2c",
         "retail",
@@ -6812,17 +6842,24 @@
       "tags": [
         "campaign",
         "installation",
+        "event",
         "interactive",
+        "signage",
+        "motion-graphics",
         "spatial"
       ],
       "format": [
         "campaign",
-        "installation"
+        "installation",
+        "event"
       ],
       "characteristics": [
         "interactive"
       ],
-      "content": [],
+      "content": [
+        "signage",
+        "motion-graphics"
+      ],
       "project_tags": [
         "b2c",
         "retail",
@@ -18247,14 +18284,21 @@
       "tags": [
         "poster",
         "campaign",
+        "deck",
+        "editorial",
+        "signage",
         "spatial"
       ],
       "format": [
         "poster",
-        "campaign"
+        "campaign",
+        "deck",
+        "editorial"
       ],
       "characteristics": [],
-      "content": [],
+      "content": [
+        "signage"
+      ],
       "project_tags": [
         "b2c",
         "retail",
@@ -18279,14 +18323,21 @@
       "tags": [
         "poster",
         "campaign",
+        "deck",
+        "editorial",
+        "signage",
         "spatial"
       ],
       "format": [
         "poster",
-        "campaign"
+        "campaign",
+        "deck",
+        "editorial"
       ],
       "characteristics": [],
-      "content": [],
+      "content": [
+        "signage"
+      ],
       "project_tags": [
         "b2c",
         "retail",
@@ -18310,19 +18361,28 @@
       "title": "Verizon 5G Home Internet Retail Display",
       "tags": [
         "poster",
-        "print"
+        "campaign",
+        "deck",
+        "editorial",
+        "signage",
+        "spatial"
       ],
       "format": [
-        "poster"
+        "poster",
+        "campaign",
+        "deck",
+        "editorial"
       ],
       "characteristics": [],
-      "content": [],
+      "content": [
+        "signage"
+      ],
       "project_tags": [
         "b2c",
         "retail",
         "telecom"
       ],
-      "medium": "print",
+      "medium": "spatial",
       "project": "verizon-retail-walkthrough",
       "description": "A retail environment featuring branded panels that highlight Verizon's 5G Home Internet service benefits, including easy setup, pricing, and device connectivity, designed for in-store customer engagement.",
       "width": 3000,
@@ -18340,19 +18400,28 @@
       "title": "Verizon Retail Wall Bay Display",
       "tags": [
         "campaign",
-        "print"
+        "deck",
+        "editorial",
+        "poster",
+        "signage",
+        "spatial"
       ],
       "format": [
-        "campaign"
+        "campaign",
+        "deck",
+        "editorial",
+        "poster"
       ],
       "characteristics": [],
-      "content": [],
+      "content": [
+        "signage"
+      ],
       "project_tags": [
         "b2c",
         "retail",
         "telecom"
       ],
-      "medium": "print",
+      "medium": "spatial",
       "project": "verizon-retail-walkthrough",
       "description": "A digital retail display promoting Verizon's 'Ultra' entertainment bundle, showcasing partner services like Disney+, Hulu, and Apple Arcade in a wall bay installation for in-store customer engagement.",
       "width": 3000,
@@ -18370,19 +18439,28 @@
       "title": "Verizon BAU Promo Page - 5G & Entertainment Offers",
       "tags": [
         "editorial",
-        "print"
+        "campaign",
+        "deck",
+        "poster",
+        "signage",
+        "spatial"
       ],
       "format": [
-        "editorial"
+        "editorial",
+        "campaign",
+        "deck",
+        "poster"
       ],
       "characteristics": [],
-      "content": [],
+      "content": [
+        "signage"
+      ],
       "project_tags": [
         "b2c",
         "retail",
         "telecom"
       ],
-      "medium": "print",
+      "medium": "spatial",
       "project": "verizon-retail-walkthrough",
       "description": "A multi-section print promotional page for Verizon's business-as-usual campaign, showcasing 5G plan options and entertainment bundles with bold typography and pricing highlights.",
       "width": 3000,
@@ -18740,20 +18818,27 @@
       "tags": [
         "poster",
         "deck",
-        "print"
+        "campaign",
+        "editorial",
+        "signage",
+        "spatial"
       ],
       "format": [
         "poster",
-        "deck"
+        "deck",
+        "campaign",
+        "editorial"
       ],
       "characteristics": [],
-      "content": [],
+      "content": [
+        "signage"
+      ],
       "project_tags": [
         "b2c",
         "retail",
         "telecom"
       ],
-      "medium": "print",
+      "medium": "spatial",
       "project": "verizon-retail-walkthrough",
       "description": "A minimalist print advertisement promoting Verizon's 5G Ultra Wideband-powered internet for business offices, featuring a sleek product image against a vibrant gradient background and bold typography.",
       "width": 3000,
@@ -20026,13 +20111,16 @@
       "title": "Cover for Gather at the Table",
       "tags": [
         "publication-design",
+        "editorial",
         "print"
       ],
       "format": [
         "publication-design"
       ],
       "characteristics": [],
-      "content": [],
+      "content": [
+        "editorial"
+      ],
       "project_tags": [
         "b2b",
         "publication-design",
@@ -20055,13 +20143,16 @@
       "title": "Introduction spread for gather at the table",
       "tags": [
         "publication-design",
+        "editorial",
         "print"
       ],
       "format": [
         "publication-design"
       ],
       "characteristics": [],
-      "content": [],
+      "content": [
+        "editorial"
+      ],
       "project_tags": [
         "b2b",
         "publication-design",
@@ -20084,13 +20175,16 @@
       "title": "Bread index spread",
       "tags": [
         "publication-design",
+        "editorial",
         "print"
       ],
       "format": [
         "publication-design"
       ],
       "characteristics": [],
-      "content": [],
+      "content": [
+        "editorial"
+      ],
       "project_tags": [
         "b2b",
         "publication-design",
@@ -20113,13 +20207,16 @@
       "title": "Recipe spread",
       "tags": [
         "publication-design",
+        "editorial",
         "print"
       ],
       "format": [
         "publication-design"
       ],
       "characteristics": [],
-      "content": [],
+      "content": [
+        "editorial"
+      ],
       "project_tags": [
         "b2b",
         "publication-design",
@@ -20142,13 +20239,16 @@
       "title": "Endpapers for Gather at the table",
       "tags": [
         "publication-design",
+        "editorial",
         "print"
       ],
       "format": [
         "publication-design"
       ],
       "characteristics": [],
-      "content": [],
+      "content": [
+        "editorial"
+      ],
       "project_tags": [
         "b2b",
         "publication-design",
@@ -20171,21 +20271,27 @@
       "title": "Screenshot 2026 01 17 114909",
       "tags": [
         "editorial",
+        "poster",
         "3d",
         "real-time",
-        "essay"
+        "essay",
+        "letter-form",
+        "moving-image"
       ],
       "format": [
-        "editorial"
+        "editorial",
+        "poster"
       ],
       "characteristics": [
         "3d",
         "real-time",
         "essay"
       ],
-      "content": [],
+      "content": [
+        "letter-form"
+      ],
       "project_tags": [],
-      "medium": "",
+      "medium": "moving-image",
       "project": "__unrouted",
       "description": "Forms flicker in place, a screenshot of a real-time interaction. ",
       "width": 1133,
@@ -20205,6 +20311,7 @@
       "tags": [
         "publication-design",
         "illustration",
+        "typography",
         "print"
       ],
       "format": [
@@ -20212,7 +20319,8 @@
       ],
       "characteristics": [],
       "content": [
-        "illustration"
+        "illustration",
+        "typography"
       ],
       "project_tags": [
         "b2c",
@@ -20237,6 +20345,7 @@
       "tags": [
         "publication-design",
         "illustration",
+        "typography",
         "print"
       ],
       "format": [
@@ -20244,7 +20353,8 @@
       ],
       "characteristics": [],
       "content": [
-        "illustration"
+        "illustration",
+        "typography"
       ],
       "project_tags": [
         "b2c",
@@ -20269,6 +20379,7 @@
       "tags": [
         "publication-design",
         "illustration",
+        "typography",
         "print"
       ],
       "format": [
@@ -20276,7 +20387,8 @@
       ],
       "characteristics": [],
       "content": [
-        "illustration"
+        "illustration",
+        "typography"
       ],
       "project_tags": [
         "b2c",
@@ -20301,6 +20413,7 @@
       "tags": [
         "publication-design",
         "illustration",
+        "typography",
         "print"
       ],
       "format": [
@@ -20308,7 +20421,8 @@
       ],
       "characteristics": [],
       "content": [
-        "illustration"
+        "illustration",
+        "typography"
       ],
       "project_tags": [
         "b2c",
@@ -20333,6 +20447,7 @@
       "tags": [
         "publication-design",
         "illustration",
+        "typography",
         "print"
       ],
       "format": [
@@ -20340,7 +20455,8 @@
       ],
       "characteristics": [],
       "content": [
-        "illustration"
+        "illustration",
+        "typography"
       ],
       "project_tags": [
         "b2c",
@@ -20365,6 +20481,7 @@
       "tags": [
         "exhibition",
         "illustration",
+        "typography",
         "print"
       ],
       "format": [
@@ -20372,7 +20489,8 @@
       ],
       "characteristics": [],
       "content": [
-        "illustration"
+        "illustration",
+        "typography"
       ],
       "project_tags": [
         "b2c",
@@ -20395,6 +20513,7 @@
       "tags": [
         "exhibition",
         "illustration",
+        "typography",
         "print"
       ],
       "format": [
@@ -20402,7 +20521,8 @@
       ],
       "characteristics": [],
       "content": [
-        "illustration"
+        "illustration",
+        "typography"
       ],
       "project_tags": [
         "b2c",
@@ -20424,6 +20544,7 @@
       "title": "forYouEveryone 01",
       "tags": [
         "exhibition",
+        "typography",
         "illustration",
         "print"
       ],
@@ -20432,6 +20553,7 @@
       ],
       "characteristics": [],
       "content": [
+        "typography",
         "illustration"
       ],
       "project_tags": [
@@ -20457,6 +20579,7 @@
       "title": "forYouEveryone 02",
       "tags": [
         "exhibition",
+        "typography",
         "illustration",
         "print"
       ],
@@ -20465,6 +20588,7 @@
       ],
       "characteristics": [],
       "content": [
+        "typography",
         "illustration"
       ],
       "project_tags": [
@@ -20491,6 +20615,8 @@
       "tags": [
         "exhibition",
         "photography",
+        "illustration",
+        "typography",
         "print"
       ],
       "format": [
@@ -20498,7 +20624,9 @@
       ],
       "characteristics": [],
       "content": [
-        "photography"
+        "photography",
+        "illustration",
+        "typography"
       ],
       "project_tags": [
         "b2b2c",
@@ -21485,13 +21613,16 @@
       "title": "DSC 0913",
       "tags": [
         "making",
+        "silkscreen",
         "print"
       ],
       "format": [],
       "characteristics": [
         "making"
       ],
-      "content": [],
+      "content": [
+        "silkscreen"
+      ],
       "project_tags": [
         "personal",
         "personal"
@@ -21507,19 +21638,50 @@
       "personal": true
     },
     {
+      "id": "practice-kabk-dsc-0923",
+      "src": "/images/practice/kabk/DSC_0923.jpg",
+      "type": "image",
+      "title": "DSC 0923",
+      "tags": [
+        "silkscreen",
+        "print"
+      ],
+      "format": [],
+      "characteristics": [],
+      "content": [
+        "silkscreen"
+      ],
+      "project_tags": [
+        "personal",
+        "personal"
+      ],
+      "medium": "print",
+      "project": "kabk-posters",
+      "description": "",
+      "width": 681,
+      "height": 1024,
+      "created": "2011-2013",
+      "date_range": "2011-2013",
+      "year": 2011,
+      "personal": true
+    },
+    {
       "id": "practice-kabk-dsc-0934",
       "src": "https://ws6i2dfuggcaavs2.public.blob.vercel-storage.com/images/practice/kabk/DSC_0934.jpg",
       "type": "image",
       "title": "DSC 0934",
       "tags": [
         "making",
+        "silkscreen",
         "print"
       ],
       "format": [],
       "characteristics": [
         "making"
       ],
-      "content": [],
+      "content": [
+        "silkscreen"
+      ],
       "project_tags": [
         "personal",
         "personal"
@@ -21535,19 +21697,190 @@
       "personal": true
     },
     {
+      "id": "practice-kabk-dsc-0936",
+      "src": "/images/practice/kabk/DSC_0936.jpg",
+      "type": "image",
+      "title": "DSC 0936",
+      "tags": [
+        "silkscreen",
+        "print"
+      ],
+      "format": [],
+      "characteristics": [],
+      "content": [
+        "silkscreen"
+      ],
+      "project_tags": [
+        "personal",
+        "personal"
+      ],
+      "medium": "print",
+      "project": "kabk-posters",
+      "description": "",
+      "width": 683,
+      "height": 1024,
+      "created": "2011-2013",
+      "date_range": "2011-2013",
+      "year": 2011,
+      "personal": true
+    },
+    {
+      "id": "practice-kabk-dsc-0937",
+      "src": "/images/practice/kabk/DSC_0937.jpg",
+      "type": "image",
+      "title": "DSC 0937",
+      "tags": [
+        "silkscreen",
+        "print"
+      ],
+      "format": [],
+      "characteristics": [],
+      "content": [
+        "silkscreen"
+      ],
+      "project_tags": [
+        "personal",
+        "personal"
+      ],
+      "medium": "print",
+      "project": "kabk-posters",
+      "description": "",
+      "width": 289,
+      "height": 1024,
+      "created": "2011-2013",
+      "date_range": "2011-2013",
+      "year": 2011,
+      "personal": true
+    },
+    {
+      "id": "practice-kabk-dsc-0938",
+      "src": "/images/practice/kabk/DSC_0938.jpg",
+      "type": "image",
+      "title": "DSC 0938",
+      "tags": [
+        "silkscreen",
+        "print"
+      ],
+      "format": [],
+      "characteristics": [],
+      "content": [
+        "silkscreen"
+      ],
+      "project_tags": [
+        "personal",
+        "personal"
+      ],
+      "medium": "print",
+      "project": "kabk-posters",
+      "description": "",
+      "width": 368,
+      "height": 1024,
+      "created": "2011-2013",
+      "date_range": "2011-2013",
+      "year": 2011,
+      "personal": true
+    },
+    {
+      "id": "practice-kabk-dsc-0939",
+      "src": "/images/practice/kabk/DSC_0939.jpg",
+      "type": "image",
+      "title": "DSC 0939",
+      "tags": [
+        "silkscreen",
+        "print"
+      ],
+      "format": [],
+      "characteristics": [],
+      "content": [
+        "silkscreen"
+      ],
+      "project_tags": [
+        "personal",
+        "personal"
+      ],
+      "medium": "print",
+      "project": "kabk-posters",
+      "description": "",
+      "width": 449,
+      "height": 1024,
+      "created": "2011-2013",
+      "date_range": "2011-2013",
+      "year": 2011,
+      "personal": true
+    },
+    {
+      "id": "practice-kabk-dsc-0945",
+      "src": "/images/practice/kabk/DSC_0945.jpg",
+      "type": "image",
+      "title": "DSC 0945",
+      "tags": [
+        "silkscreen",
+        "print"
+      ],
+      "format": [],
+      "characteristics": [],
+      "content": [
+        "silkscreen"
+      ],
+      "project_tags": [
+        "personal",
+        "personal"
+      ],
+      "medium": "print",
+      "project": "kabk-posters",
+      "description": "",
+      "width": 681,
+      "height": 1024,
+      "created": "2011-2013",
+      "date_range": "2011-2013",
+      "year": 2011,
+      "personal": true
+    },
+    {
+      "id": "practice-kabk-dsc-0946",
+      "src": "/images/practice/kabk/DSC_0946.jpg",
+      "type": "image",
+      "title": "DSC 0946",
+      "tags": [
+        "silkscreen",
+        "print"
+      ],
+      "format": [],
+      "characteristics": [],
+      "content": [
+        "silkscreen"
+      ],
+      "project_tags": [
+        "personal",
+        "personal"
+      ],
+      "medium": "print",
+      "project": "kabk-posters",
+      "description": "",
+      "width": 681,
+      "height": 1024,
+      "created": "2011-2013",
+      "date_range": "2011-2013",
+      "year": 2011,
+      "personal": true
+    },
+    {
       "id": "practice-mcgill-arch-big-poster",
       "src": "https://ws6i2dfuggcaavs2.public.blob.vercel-storage.com/images/practice/mcgill-arch/big%20poster.jpg",
       "type": "image",
       "title": "Event Poster McGill University Architecture",
       "tags": [
         "poster",
+        "typography",
         "print"
       ],
       "format": [
         "poster"
       ],
       "characteristics": [],
-      "content": [],
+      "content": [
+        "typography"
+      ],
       "project_tags": [
         "personal",
         "publication-design",
@@ -21567,16 +21900,19 @@
       "id": "practice-one-offs-dscn1476",
       "src": "https://ws6i2dfuggcaavs2.public.blob.vercel-storage.com/images/practice/one-offs/DSCN1476.jpg",
       "type": "image",
-      "title": "DSCN1476",
+      "title": "Someone You Never Met",
       "tags": [
         "stationery",
+        "editorial",
         "print"
       ],
       "format": [
         "stationery"
       ],
       "characteristics": [],
-      "content": [],
+      "content": [
+        "editorial"
+      ],
       "project_tags": [
         "personal",
         "personal",
@@ -21597,16 +21933,23 @@
       "id": "practice-one-offs-dscn1480",
       "src": "https://ws6i2dfuggcaavs2.public.blob.vercel-storage.com/images/practice/one-offs/DSCN1480.jpg",
       "type": "image",
-      "title": "내 똥은 냄새 안나고 ",
+      "title": "내 똥은 냄새 안나고 남의 똥은 냄새난다",
       "tags": [
         "poster",
+        "editorial",
+        "typography",
+        "letter-form",
         "print"
       ],
       "format": [
         "poster"
       ],
       "characteristics": [],
-      "content": [],
+      "content": [
+        "editorial",
+        "typography",
+        "letter-form"
+      ],
       "project_tags": [
         "personal",
         "personal",
@@ -21630,14 +21973,16 @@
       "title": "nDisplay PathTracer StephanieHanes.LightingOnly.CineCameraActor.0018",
       "tags": [
         "3d",
-        "product-render"
+        "product-render",
+        "letter-form"
       ],
       "format": [],
       "characteristics": [
         "3d"
       ],
       "content": [
-        "product-render"
+        "product-render",
+        "letter-form"
       ],
       "project_tags": [
         "personal",
@@ -21663,6 +22008,7 @@
       "tags": [
         "making",
         "illustration",
+        "riso",
         "print"
       ],
       "format": [],
@@ -21670,7 +22016,8 @@
         "making"
       ],
       "content": [
-        "illustration"
+        "illustration",
+        "riso"
       ],
       "project_tags": [
         "personal",
@@ -21694,6 +22041,7 @@
       "tags": [
         "making",
         "illustration",
+        "riso",
         "print"
       ],
       "format": [],
@@ -21701,7 +22049,8 @@
         "making"
       ],
       "content": [
-        "illustration"
+        "illustration",
+        "riso"
       ],
       "project_tags": [
         "personal",
@@ -21725,6 +22074,7 @@
       "tags": [
         "making",
         "illustration",
+        "riso",
         "print"
       ],
       "format": [],
@@ -21732,7 +22082,8 @@
         "making"
       ],
       "content": [
-        "illustration"
+        "illustration",
+        "riso"
       ],
       "project_tags": [
         "personal",
@@ -21756,6 +22107,7 @@
       "tags": [
         "making",
         "illustration",
+        "riso",
         "print"
       ],
       "format": [],
@@ -21763,7 +22115,8 @@
         "making"
       ],
       "content": [
-        "illustration"
+        "illustration",
+        "riso"
       ],
       "project_tags": [
         "personal",
@@ -21787,6 +22140,7 @@
       "tags": [
         "making",
         "illustration",
+        "riso",
         "print"
       ],
       "format": [],
@@ -21794,7 +22148,8 @@
         "making"
       ],
       "content": [
-        "illustration"
+        "illustration",
+        "riso"
       ],
       "project_tags": [
         "personal",
@@ -21818,6 +22173,7 @@
       "tags": [
         "making",
         "illustration",
+        "riso",
         "print"
       ],
       "format": [],
@@ -21825,7 +22181,8 @@
         "making"
       ],
       "content": [
-        "illustration"
+        "illustration",
+        "riso"
       ],
       "project_tags": [
         "personal",
@@ -21836,6 +22193,34 @@
       "description": "",
       "width": 2614,
       "height": 3654,
+      "created": "2013-2020",
+      "date_range": "2013-2020",
+      "year": 2013,
+      "personal": true
+    },
+    {
+      "id": "practice-yale-riso-dscn1487",
+      "src": "/images/practice/yale/riso/DSCN1487.jpg",
+      "type": "image",
+      "title": "DSCN1487",
+      "tags": [
+        "riso",
+        "print"
+      ],
+      "format": [],
+      "characteristics": [],
+      "content": [
+        "riso"
+      ],
+      "project_tags": [
+        "personal",
+        "education"
+      ],
+      "medium": "print",
+      "project": "yale-riso",
+      "description": "",
+      "width": 2025,
+      "height": 3210,
       "created": "2013-2020",
       "date_range": "2013-2020",
       "year": 2013,
@@ -23390,6 +23775,34 @@
       "year": 2023
     },
     {
+      "id": "work-ionq-brand-ionq-brand-videos",
+      "src": "/images/work/ionq/brand/IonQ-Brand-Videos.png",
+      "type": "image",
+      "title": "IonQ Brand Videos",
+      "tags": [
+        "photography",
+        "identity"
+      ],
+      "format": [],
+      "characteristics": [],
+      "content": [
+        "photography",
+        "identity"
+      ],
+      "project_tags": [
+        "b2b",
+        "quantum-computing"
+      ],
+      "medium": "",
+      "project": "ionq-brand",
+      "description": "",
+      "width": 2672,
+      "height": 629,
+      "created": "2023-2025",
+      "date_range": "2023-2025",
+      "year": 2023
+    },
+    {
       "id": "reinforcement-learning-gyms",
       "type": "video",
       "video": "https://player.vimeo.com/video/1187652525?background=1&autoplay=1&muted=1&loop=1&playsinline=1",
@@ -23398,7 +23811,10 @@
       "tags": [
         "video",
         "moving-image",
-        "keynote"
+        "keynote",
+        "diagram",
+        "motion-graphics",
+        "illustration"
       ],
       "project_tags": [
         "b2b",
@@ -23422,7 +23838,9 @@
       "tags": [
         "video",
         "moving-image",
-        "keynote"
+        "keynote",
+        "diagram",
+        "motion-graphics"
       ],
       "project_tags": [
         "b2b",
@@ -23445,7 +23863,9 @@
       "tags": [
         "video",
         "moving-image",
-        "keynote"
+        "keynote",
+        "diagram",
+        "motion-graphics"
       ],
       "project_tags": [
         "b2b",
@@ -23468,7 +23888,9 @@
       "tags": [
         "video",
         "moving-image",
-        "keynote"
+        "keynote",
+        "diagram",
+        "motion-graphics"
       ],
       "project_tags": [
         "b2b",
@@ -23492,7 +23914,9 @@
       "tags": [
         "video",
         "moving-image",
-        "keynote"
+        "keynote",
+        "diagram",
+        "motion-graphics"
       ],
       "project_tags": [
         "b2b",
@@ -23516,7 +23940,9 @@
       "tags": [
         "video",
         "moving-image",
-        "keynote"
+        "keynote",
+        "diagram",
+        "motion-graphics"
       ],
       "project_tags": [
         "b2b",
@@ -23539,7 +23965,9 @@
       "tags": [
         "video",
         "moving-image",
-        "keynote"
+        "keynote",
+        "diagram",
+        "motion-graphics"
       ],
       "project_tags": [
         "b2b",
@@ -23562,7 +23990,9 @@
       "tags": [
         "video",
         "moving-image",
-        "keynote"
+        "keynote",
+        "diagram",
+        "motion-graphics"
       ],
       "project_tags": [
         "b2b",
@@ -23586,7 +24016,9 @@
       "tags": [
         "video",
         "moving-image",
-        "keynote"
+        "keynote",
+        "diagram",
+        "motion-graphics"
       ],
       "project_tags": [
         "b2b",
@@ -23609,7 +24041,9 @@
       "tags": [
         "video",
         "moving-image",
-        "keynote"
+        "keynote",
+        "diagram",
+        "motion-graphics"
       ],
       "project_tags": [
         "b2b",
@@ -23697,7 +24131,10 @@
       "title": "IonQ Text Animation Treatment",
       "tags": [
         "video",
-        "moving-image"
+        "moving-image",
+        "motion-graphics",
+        "typography",
+        "identity"
       ],
       "project_tags": [
         "b2b",
@@ -23739,7 +24176,10 @@
       "tags": [
         "video",
         "moving-image",
-        "keynote"
+        "keynote",
+        "typography",
+        "identity",
+        "motion-graphics"
       ],
       "project_tags": [
         "b2b",
@@ -23761,7 +24201,10 @@
       "tags": [
         "video",
         "moving-image",
-        "keynote"
+        "keynote",
+        "typography",
+        "identity",
+        "motion-graphics"
       ],
       "project_tags": [
         "b2b",
@@ -23977,7 +24420,10 @@
       "tags": [
         "video",
         "moving-image",
-        "making"
+        "installation",
+        "retail",
+        "making",
+        "documentation"
       ],
       "project_tags": [
         "b2c",
@@ -23998,7 +24444,9 @@
       "title": "5G Built Right for NYC",
       "tags": [
         "video",
-        "moving-image"
+        "moving-image",
+        "motion-graphics",
+        "identity"
       ],
       "project_tags": [
         "b2c",
@@ -24019,7 +24467,9 @@
       "title": "5G Built Right for You.",
       "tags": [
         "video",
-        "moving-image"
+        "moving-image",
+        "motion-graphics",
+        "identity"
       ],
       "project_tags": [
         "b2c",
@@ -24040,7 +24490,9 @@
       "title": "5G from America's most reliable network.",
       "tags": [
         "video",
-        "moving-image"
+        "moving-image",
+        "motion-graphics",
+        "identity"
       ],
       "project_tags": [
         "b2c",
@@ -24061,7 +24513,9 @@
       "title": "5G from America's most reliable network.",
       "tags": [
         "video",
-        "moving-image"
+        "moving-image",
+        "motion-graphics",
+        "identity"
       ],
       "project_tags": [
         "b2c",
@@ -24083,7 +24537,8 @@
       "tags": [
         "video",
         "moving-image",
-        "interactive"
+        "interactive",
+        "interface"
       ],
       "project_tags": [
         "b2c",
@@ -24104,7 +24559,8 @@
       "tags": [
         "video",
         "moving-image",
-        "storytelling"
+        "storytelling",
+        "product-render"
       ],
       "project_tags": [
         "b2c",
@@ -24125,7 +24581,8 @@
       "tags": [
         "video",
         "moving-image",
-        "storytelling"
+        "storytelling",
+        "product-render"
       ],
       "project_tags": [
         "b2c",
@@ -24146,7 +24603,8 @@
       "tags": [
         "video",
         "moving-image",
-        "storytelling"
+        "storytelling",
+        "product-render"
       ],
       "project_tags": [
         "b2c",
@@ -24167,7 +24625,8 @@
       "tags": [
         "video",
         "moving-image",
-        "interactive"
+        "interactive",
+        "documentation"
       ],
       "project_tags": [
         "b2c",
@@ -24187,7 +24646,8 @@
       "title": "Chicago Entrance Screens",
       "tags": [
         "video",
-        "moving-image"
+        "moving-image",
+        "motion-graphics"
       ],
       "project_tags": [
         "b2c",
@@ -24209,7 +24669,8 @@
       "title": "Atrium Video",
       "tags": [
         "video",
-        "moving-image"
+        "moving-image",
+        "motion-graphics"
       ],
       "project_tags": [
         "b2c",
@@ -24230,7 +24691,8 @@
       "title": "Screen 2: Changes Everything",
       "tags": [
         "video",
-        "moving-image"
+        "moving-image",
+        "motion-graphics"
       ],
       "project_tags": [
         "b2c",
@@ -24251,7 +24713,8 @@
       "title": "Live Attract Loop",
       "tags": [
         "video",
-        "moving-image"
+        "moving-image",
+        "motion-graphics"
       ],
       "project_tags": [
         "b2c",
@@ -24295,7 +24758,8 @@
       "title": "Play Attract Loop",
       "tags": [
         "video",
-        "moving-image"
+        "moving-image",
+        "motion-graphics"
       ],
       "project_tags": [
         "b2c",
@@ -24317,7 +24781,11 @@
       "tags": [
         "video",
         "moving-image",
-        "storytelling"
+        "storytelling",
+        "music",
+        "editing",
+        "motion-graphics",
+        "videography"
       ],
       "project_tags": [
         "b2c",
@@ -24364,7 +24832,8 @@
       "tags": [
         "video",
         "moving-image",
-        "interactive"
+        "interactive",
+        "documentation"
       ],
       "project_tags": [
         "b2c",
@@ -24385,7 +24854,8 @@
       "title": "Chicago Entrance Screens",
       "tags": [
         "video",
-        "moving-image"
+        "moving-image",
+        "motion-graphics"
       ],
       "project_tags": [
         "b2c",

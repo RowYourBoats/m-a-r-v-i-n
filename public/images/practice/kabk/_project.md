@@ -23,6 +23,7 @@ image_tags:
   - letter-form
   - making
   - poster
+  - silkscreen
   - typography
 ---
 

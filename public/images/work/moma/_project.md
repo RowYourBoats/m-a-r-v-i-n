@@ -29,12 +29,15 @@ projects:
     image_tags:
       - illustration
       - publication-design
+      - typography
   marron-dossiers:
     name: Marron Research Committee Dossiers
     description: >-
       An ebook templating framework for MoMA's Marron Research Committee Dossiers — a then-new series of scholarly
       digital publications produced with Yale, Princeton, Columbia, IFA, and NYU.
     image_tags:
+      - editorial
+      - interface
       - publication-design
   picasso-sculpture:
     name: Picasso Sculpture

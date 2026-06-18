@@ -38,18 +38,35 @@ projects:
           https://player.vimeo.com/video/689101413?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479&amp;autoplay=1&amp;muted=1&amp;loop=1
         characteristics:
           - making
+        content:
+          - documentation
+        format:
+          - installation
+          - retail
       - title: 5G Built Right for NYC
         url: >-
           https://player.vimeo.com/video/941507917?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479&amp;autoplay=1&amp;muted=1&amp;loop=1
+        content:
+          - motion-graphics
+          - identity
       - title: 5G Built Right for You.
         url: >-
           https://player.vimeo.com/video/536011268?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479&amp;autoplay=1&amp;muted=1&amp;loop=1
+        content:
+          - motion-graphics
+          - identity
       - title: 5G from America's most reliable network.
         url: >-
           https://player.vimeo.com/video/941507973?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479&amp;autoplay=1&amp;muted=1&amp;loop=1
+        content:
+          - motion-graphics
+          - identity
       - title: 5G from America's most reliable network.
         url: >-
           https://player.vimeo.com/video/801037709?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479&amp;autoplay=1&amp;muted=1&amp;loop=1
+        content:
+          - motion-graphics
+          - identity
     credits:
       - role: ACD / Design Lead
         name: Marvin de Jong
@@ -73,26 +90,36 @@ projects:
           https://player.vimeo.com/video/801038561?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479&amp;autoplay=1&amp;muted=1&amp;loop=1
         characteristics:
           - interactive
+        content:
+          - interface
       - title: 5G Home Overview
         url: >-
           https://player.vimeo.com/video/537128023?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479&amp;autoplay=1&amp;muted=1&amp;loop=1
         characteristics:
           - storytelling
+        content:
+          - product-render
       - title: 5G Home Entertainment
         url: >-
           https://player.vimeo.com/video/537127443?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479&amp;autoplay=1&amp;muted=1&amp;loop=1
         characteristics:
           - storytelling
+        content:
+          - product-render
       - title: 5G Home Plans
         url: >-
           https://player.vimeo.com/video/537127763?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479&amp;autoplay=1&amp;muted=1&amp;loop=1
         characteristics:
           - storytelling
+        content:
+          - product-render
       - title: 5G Home Interaction in Store
         url: >-
           https://player.vimeo.com/video/539663371?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479&amp;autoplay=1&amp;muted=1&amp;loop=1
         characteristics:
           - interactive
+        content:
+          - documentation
     credits:
       - role: ACD / Design Lead
         name: Marvin de Jong
@@ -108,27 +135,37 @@ projects:
     name: Chicago
     image_tags:
       - campaign
+      - event
       - installation
       - interactive
       - interface
       - motion-graphics
+      - signage
     videos:
       - title: Chicago Entrance Screens
         featured: true
         video_mode: background
         url: >-
           https://player.vimeo.com/video/537126173?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479&amp;autoplay=1&amp;muted=1&amp;loop=1
+        content:
+          - motion-graphics
       - title: Atrium Video
         featured: false
         video_mode: background
         url: >-
           https://player.vimeo.com/video/529211014?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479&amp;autoplay=1&amp;muted=1&amp;loop=1
+        content:
+          - motion-graphics
       - title: "Screen 2: Changes Everything"
         url: >-
           https://player.vimeo.com/video/529210889?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479&amp;autoplay=1&amp;muted=1&amp;loop=1
+        content:
+          - motion-graphics
       - title: Live Attract Loop
         url: >-
           https://player.vimeo.com/video/529213770?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479&amp;autoplay=1&amp;muted=1&amp;loop=1
+        content:
+          - motion-graphics
       - title: "5G Live Video: A Short Teaser of Positive Societal Impact"
         featured: true
         video_mode: background
@@ -139,6 +176,8 @@ projects:
       - title: Play Attract Loop
         url: >-
           https://player.vimeo.com/video/529213865?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479&amp;autoplay=1&amp;muted=1&amp;loop=1
+        content:
+          - motion-graphics
       - title: "5G Play Video: A Short Teaser of Personal Scale Use Cases"
         featured: true
         video_mode: background
@@ -146,6 +185,11 @@ projects:
           https://player.vimeo.com/video/529213125?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479&amp;autoplay=1&amp;muted=1&amp;loop=1
         characteristics:
           - storytelling
+        content:
+          - music
+          - editing
+          - motion-graphics
+          - videography
       - title: Lifestyle Video Back of Store
         featured: true
         video_mode: background
@@ -159,6 +203,8 @@ projects:
           https://player.vimeo.com/video/939231024?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479&amp;autoplay=1&amp;muted=1&amp;loop=1
         characteristics:
           - interactive
+        content:
+          - documentation
     credits:
       - role: ACD / Design Lead
         name: Marvin de Jong
@@ -240,6 +286,8 @@ projects:
       - title: Chicago Entrance Screens
         url: >-
           https://player.vimeo.com/video/537126173?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479&amp;autoplay=1&amp;muted=1&amp;loop=1
+        content:
+          - motion-graphics
     credits:
       - role: ACD / Design Lead
         name: Marvin de Jong
@@ -326,6 +374,7 @@ projects:
       - poster
       - proposal
       - retail
+      - signage
     credits:
       - role: ACD / Design Lead
         name: Marvin de Jong
