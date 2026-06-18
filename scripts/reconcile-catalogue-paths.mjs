@@ -194,7 +194,7 @@ if (apply) {
   for (const m of migrated) {
     if (hasCaption(m.entry) && !hasCaption(m.target)) {
       m.target.description = m.entry.description;
-      for (const k of ["format", "characteristics", "subject", "tags"]) {
+      for (const k of ["format", "characteristics", "content", "tags"]) {
         if ((!m.target[k] || !m.target[k].length) && Array.isArray(m.entry[k]) && m.entry[k].length) {
           m.target[k] = m.entry[k];
         }

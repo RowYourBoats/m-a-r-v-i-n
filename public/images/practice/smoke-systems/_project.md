@@ -23,28 +23,28 @@ videos:
     characteristics:
       - real-time
       - 3d
-    subject:
+    content:
       - study
   - title: Smoke Test 2
     url: https://player.vimeo.com/video/1185305534
     characteristics:
       - real-time
       - 3d
-    subject:
+    content:
       - study
   - title: Smoke Test 3
     url: https://player.vimeo.com/video/1185305119
     characteristics:
       - real-time
       - 3d
-    subject:
+    content:
       - study
   - title: Smoke Test 4
     url: https://player.vimeo.com/video/1185305661
     characteristics:
       - real-time
       - 3d
-    subject:
+    content:
       - study
 image_tags:
   - 3d

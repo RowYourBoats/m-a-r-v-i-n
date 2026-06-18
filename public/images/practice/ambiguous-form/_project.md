@@ -24,7 +24,7 @@ videos:
   - title: Poster Cube
     year: 2025
     url: https://player.vimeo.com/video/1182859090
-    subject:
+    content:
       - study
     characteristics:
       - real-time

@@ -29,6 +29,7 @@ projects:
       - editorial
       - event
       - exhibition
+      - illustration
       - poster
       - publication-design
   credits:

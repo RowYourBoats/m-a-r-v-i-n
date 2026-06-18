@@ -31,6 +31,7 @@ projects:
       - campaign
       - event
       - retail
+      - signage
     videos:
       - title: 5G Vinyl Roll Out
         url: >-
@@ -109,6 +110,8 @@ projects:
       - campaign
       - installation
       - interactive
+      - interface
+      - motion-graphics
     videos:
       - title: Chicago Entrance Screens
         featured: true
@@ -149,7 +152,7 @@ projects:
         url: https://player.vimeo.com/video/529211063
         characteristics:
           - storytelling
-        subject:
+        content:
           - lifestyle
       - title: Chicago Store Summary
         url: >-
@@ -282,6 +285,7 @@ projects:
     name: Playlist Recommendation
     image_tags:
       - data-visualization
+      - interface
       - poster
       - proposal
     credits:

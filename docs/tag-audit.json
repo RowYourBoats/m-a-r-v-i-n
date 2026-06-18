@@ -1,5 +1,5 @@
 {
-  "generated": "2026-06-17T20:10:54.628Z",
+  "generated": "2026-06-18T00:20:10.706Z",
   "catalogue_total": 876,
   "image_axes": {
     "format": {
@@ -26,10 +26,10 @@
       "making": 9,
       "real-time": 6
     },
-    "subject": {
+    "content": {
       "proposal": 353,
       "identity": 72,
-      "illustration": 53,
+      "illustration": 61,
       "photography": 46,
       "typography": 35,
       "data-visualization": 34,
@@ -37,8 +37,11 @@
       "iconography": 16,
       "study": 15,
       "logo": 14,
+      "interface": 12,
       "product-render": 11,
-      "diagram": 4
+      "diagram": 6,
+      "motion-graphics": 6,
+      "signage": 4
     },
     "medium": {
       "print": 120,
@@ -86,7 +89,7 @@
       "b2b2c": 1
     },
     "image_tags": {
-      "illustration": 18,
+      "illustration": 20,
       "editorial": 16,
       "data-visualization": 15,
       "identity": 15,
@@ -111,11 +114,12 @@
       "web": 5,
       "experiential": 4,
       "design-system": 3,
+      "diagram": 3,
       "making": 3,
       "merch": 3,
-      "diagram": 2,
       "digital": 2,
       "iconography": 2,
+      "interface": 2,
       "real-time": 2,
       "spatial": 2,
       "architecture": 1,
@@ -124,9 +128,11 @@
       "brand": 1,
       "customer-experience": 1,
       "essay": 1,
+      "motion-graphics": 1,
       "process": 1,
       "product": 1,
       "product-marking": 1,
+      "signage": 1,
       "user interface": 1,
       "user-experience": 1
     }
@@ -472,7 +478,7 @@
         "value": "data-visualization",
         "hits": [
           {
-            "axis": "subject",
+            "axis": "content",
             "scope": "image",
             "count": 34
           },
@@ -487,7 +493,7 @@
         "value": "letter-form",
         "hits": [
           {
-            "axis": "subject",
+            "axis": "content",
             "scope": "image",
             "count": 27
           },
@@ -502,7 +508,7 @@
         "value": "typography",
         "hits": [
           {
-            "axis": "subject",
+            "axis": "content",
             "scope": "image",
             "count": 35
           },
@@ -517,14 +523,14 @@
         "value": "illustration",
         "hits": [
           {
-            "axis": "subject",
+            "axis": "content",
             "scope": "image",
-            "count": 53
+            "count": 61
           },
           {
             "axis": "image_tags",
             "scope": "project",
-            "count": 18
+            "count": 20
           }
         ]
       },
@@ -532,7 +538,7 @@
         "value": "study",
         "hits": [
           {
-            "axis": "subject",
+            "axis": "content",
             "scope": "image",
             "count": 15
           },
@@ -547,7 +553,7 @@
         "value": "photography",
         "hits": [
           {
-            "axis": "subject",
+            "axis": "content",
             "scope": "image",
             "count": 46
           },
@@ -562,7 +568,7 @@
         "value": "logo",
         "hits": [
           {
-            "axis": "subject",
+            "axis": "content",
             "scope": "image",
             "count": 14
           },
@@ -577,7 +583,7 @@
         "value": "identity",
         "hits": [
           {
-            "axis": "subject",
+            "axis": "content",
             "scope": "image",
             "count": 72
           },
@@ -592,14 +598,14 @@
         "value": "diagram",
         "hits": [
           {
-            "axis": "subject",
+            "axis": "content",
             "scope": "image",
-            "count": 4
+            "count": 6
           },
           {
             "axis": "image_tags",
             "scope": "project",
-            "count": 2
+            "count": 3
           }
         ]
       },
@@ -607,7 +613,7 @@
         "value": "iconography",
         "hits": [
           {
-            "axis": "subject",
+            "axis": "content",
             "scope": "image",
             "count": 16
           },
@@ -622,7 +628,7 @@
         "value": "product-render",
         "hits": [
           {
-            "axis": "subject",
+            "axis": "content",
             "scope": "image",
             "count": 11
           },
@@ -634,10 +640,55 @@
         ]
       },
       {
+        "value": "signage",
+        "hits": [
+          {
+            "axis": "content",
+            "scope": "image",
+            "count": 4
+          },
+          {
+            "axis": "image_tags",
+            "scope": "project",
+            "count": 1
+          }
+        ]
+      },
+      {
+        "value": "motion-graphics",
+        "hits": [
+          {
+            "axis": "content",
+            "scope": "image",
+            "count": 6
+          },
+          {
+            "axis": "image_tags",
+            "scope": "project",
+            "count": 1
+          }
+        ]
+      },
+      {
+        "value": "interface",
+        "hits": [
+          {
+            "axis": "content",
+            "scope": "image",
+            "count": 12
+          },
+          {
+            "axis": "image_tags",
+            "scope": "project",
+            "count": 2
+          }
+        ]
+      },
+      {
         "value": "proposal",
         "hits": [
           {
-            "axis": "subject",
+            "axis": "content",
             "scope": "image",
             "count": 353
           },
@@ -798,6 +849,11 @@
       {
         "scope": "project",
         "axis": "image_tags",
+        "value": "signage"
+      },
+      {
+        "scope": "project",
+        "axis": "image_tags",
         "value": "user interface"
       },
       {
@@ -809,6 +865,11 @@
         "scope": "project",
         "axis": "image_tags",
         "value": "user-experience"
+      },
+      {
+        "scope": "project",
+        "axis": "image_tags",
+        "value": "motion-graphics"
       },
       {
         "scope": "project",
@@ -848,9 +909,9 @@
       "without": 589,
       "total": 876
     },
-    "subject": {
-      "with": 580,
-      "without": 296,
+    "content": {
+      "with": 607,
+      "without": 269,
       "total": 876
     },
     "medium": {
@@ -859,7 +920,7 @@
       "total": 876
     }
   },
-  "subject_backlog": [
+  "content_backlog": [
     "practice/snapshot/Screenshot 2026-01-17 033644.png",
     "practice/comma/original_1563937c2fd0973c2779b0b3a164db2b.jpg",
     "work/herman-miller/industrial-facility/Image_8.jpg",
@@ -881,29 +942,10 @@
     "work/studio/paprika/Paprika_Issue1-page2.jpeg",
     "work/studio/tillotson-associates/Realistic-business-card-mockup.jpg",
     "work/verizon/5G-campaigns/277736_NYC_Launch_2019_09_12.jpg",
-    "work/verizon/5G-campaigns/IMG-0009.JPG",
-    "work/verizon/5G-campaigns/Index_VZ_Brand.jpg",
-    "work/verizon/5G-campaigns/Screenshot 2026-04-13 232548.png",
-    "work/verizon/5G-campaigns/Verizon 770 Lexington Ave 23 June 20210112.jpg",
     "work/verizon/5G-campaigns/Verizon 770 Lexington Ave 23 June 20210142.jpg",
     "work/verizon/5G-campaigns/Verizon 770 Lexington Ave 23 June 20210144.jpg",
-    "work/verizon/chicago/5G Chicago Pop-up_99.jpg",
-    "work/verizon/chicago/Chicago-1.png",
-    "work/verizon/chicago/Chicago-2.png",
-    "work/verizon/chicago/ChicagoImage.jpeg",
-    "work/verizon/chicago/IMG-6944.JPG",
-    "work/verizon/chicago/IMG-6958.jpg",
     "work/verizon/chicago/verizon-02.png",
     "work/verizon/chicago/verizon-cover.png",
-    "work/verizon/playlist-recommendation/Verizon 770 Lexington Ave 23 June 20210064 copy.png",
-    "work/verizon/playlist-recommendation/Verizon 770 Lexington Ave 23 June 20210064 copyB.png",
-    "work/verizon/playlist-recommendation/Verizon 770 Lexington Ave 23 June 20210064 copyc.png",
-    "work/verizon/playlist-recommendation/Verizon 770 Lexington Ave 23 June 20210071.jpg",
-    "work/verizon/playlist-recommendation/Verizon 770 Lexington Ave 23 June 20212680.jpg",
-    "work/verizon/playlist-recommendation/Verizon 770 Lexington Ave 23 June 20212689.jpg",
-    "work/verizon/playlist-recommendation/Verizon 770 Lexington Ave 23 June 20212849.jpg",
-    "work/verizon/playlist-recommendation/Verizon 770 Lexington Ave 23 June 20212857.jpg",
-    "work/verizon/playlist-recommendation/Verizon 770 Lexington Ave 23 June 20212879.jpg",
     "work/verizon/retail-walkthrough/Slide20.JPG",
     "work/verizon/retail-walkthrough/Slide21.JPG",
     "work/verizon/retail-walkthrough/Slide22.JPG",
@@ -941,14 +983,6 @@
     "work/studio/marin-montessori/003_Recipe-001.jpg",
     "work/studio/marin-montessori/004_Endpapers.jpg",
     "practice/controlled-instability/Screenshot 2026-01-17 114909.png",
-    "work/moma/teens-program/MoMA_teensProgram_01.jpg",
-    "work/moma/teens-program/MoMA_teensProgram_03.jpg",
-    "work/moma/teens-program/MoMA_teensProgram_04.jpg",
-    "work/moma/teens-program/MoMA_teensProgram_05.jpg",
-    "work/moma/teens-program/MoMA_teensProgram_06.jpg",
-    "work/pratt/design-system/DSCN1457.jpg",
-    "work/pratt/design-system/DSCN1458.jpg",
-    "work/herman-miller/herman-miller-cares/HermanMillerCare_03.jpg",
     "practice/architecture-fantasy/perdido-street-station/01-animal-architecture-nest-sociable-weaverbird.png",
     "practice/architecture-fantasy/perdido-street-station/03-animal-architecture-eyrie-osprey.png",
     "practice/architecture-fantasy/perdido-street-station/04-animal-architecture-larch-stem-carpenter-ants.png",

@@ -180,7 +180,7 @@ if (fs.existsSync(cataloguePath)) {
       // honored so partially-migrated catalogues build cleanly.
       for (const t of entry.format || []) allTags.add(t);
       for (const t of entry.characteristics || []) allTags.add(t);
-      for (const t of entry.subject || []) allTags.add(t);
+      for (const t of entry.content || []) allTags.add(t);
       for (const t of entry.tags || []) allTags.add(t);
       if (entry.medium) allTags.add(entry.medium);
     }

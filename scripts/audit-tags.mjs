@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 // Tag audit. Read-only. Counts every tag value across:
 //   - image-level axes in public/images/image_catalogue.json
-//     (format, characteristics, subject, medium)
+//     (format, characteristics, content, medium)
 //   - project-level axes in every public/images/{tier}/{client}/_project.md
 //     (project_type, characteristic, sector, market, image_tags)
 //
@@ -26,7 +26,7 @@ const imagesDir = path.join(root, "public/images");
 const outPath = path.join(root, "docs/tag-audit.json");
 
 const TIERS = ["work", "practice", "tools", "teaching"];
-const IMAGE_AXES = ["format", "characteristics", "subject", "medium"];
+const IMAGE_AXES = ["format", "characteristics", "content", "medium"];
 const PROJECT_AXES = ["project_type", "characteristic", "sector", "market", "image_tags"];
 
 const catalogue = JSON.parse(fs.readFileSync(cataloguePath, "utf8"));
@@ -115,13 +115,13 @@ for (const axis of IMAGE_AXES) {
   coverage[axis] = { with: withVal, without: total - withVal, total };
 }
 
-// (3b) Subject is the required floor. The worklist that matters is *published*
+// (3b) Content is the required floor. The worklist that matters is *published*
 // images lacking one — mirrors the curation gate in build-manifest.mjs
-// (description OR any tag publishes). Stubs without a subject are hidden anyway.
+// (description OR any tag publishes). Stubs without content are hidden anyway.
 const isCurated = (e) =>
   !!(e.description && String(e.description).trim()) ||
-  (e.format || []).length + (e.characteristics || []).length + (e.subject || []).length + (e.tags || []).length > 0;
-const subjectBacklog = catalogue.filter((e) => isCurated(e) && !(e.subject && e.subject.length)).map((e) => e.file_path);
+  (e.format || []).length + (e.characteristics || []).length + (e.content || []).length + (e.tags || []).length > 0;
+const contentBacklog = catalogue.filter((e) => isCurated(e) && !(e.content && e.content.length)).map((e) => e.file_path);
 
 // ---- output ----
 const toObj = (m) =>
@@ -136,7 +136,7 @@ const report = {
     singletons,
   },
   coverage,
-  subject_backlog: subjectBacklog,
+  content_backlog: contentBacklog,
 };
 
 fs.mkdirSync(path.dirname(outPath), { recursive: true });
@@ -160,7 +160,7 @@ for (const [a, c] of Object.entries(coverage)) {
   const pct = ((c.with / c.total) * 100).toFixed(1);
   console.log(`  ${pad(a, 16)} ${c.with}/${c.total}  (${pct}%)`);
 }
-console.log(`\nsubject backlog (published images with no subject — the required floor): ${subjectBacklog.length}`);
+console.log(`\ncontent backlog (published images with no content tag — the required floor): ${contentBacklog.length}`);
 
 console.log("\n=== image-level ===");
 for (const a of IMAGE_AXES) printAxis(a, imageCounts[a], "image");

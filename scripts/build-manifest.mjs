@@ -198,7 +198,7 @@ const isCurated = (raw) => {
   const tagCount =
     (raw.format || []).length +
     (raw.characteristics || []).length +
-    (raw.subject || []).length +
+    (raw.content || []).length +
     (raw.tags || []).length;
   return hasDesc || tagCount > 0;
 };
@@ -272,13 +272,13 @@ const items = curatedCatalogue.map((raw) => {
     projectYears.set(slug, Math.max(projectYears.get(slug) || 0, year));
   }
 
-  // Per-image tags are now stratified into format/characteristics/subject in
+  // Per-image tags are now stratified into format/characteristics/content in
   // the catalogue (see _DEPRECATED/scripts/restructure-catalogue-tags.mjs). Manifest items
   // expose both: the raw three-axis arrays (for future facet-aware consumers)
   // and a flat `tags` union (for the existing data-tags filter UI).
   const fmt = Array.isArray(raw.format) ? raw.format : [];
   const chr = Array.isArray(raw.characteristics) ? raw.characteristics : [];
-  const sub = Array.isArray(raw.subject) ? raw.subject : [];
+  const con = Array.isArray(raw.content) ? raw.content : [];
   // Back-compat: very old catalogues may still carry a flat `tags` field if
   // the restructure script hasn't been run on them. Honor it.
   const legacyTags = Array.isArray(raw.tags) ? raw.tags : [];
@@ -291,10 +291,10 @@ const items = curatedCatalogue.map((raw) => {
     src,
     type: "image",
     title: raw.title || "",
-    tags: [...new Set([...fmt, ...chr, ...sub, ...med, ...legacyTags])],
+    tags: [...new Set([...fmt, ...chr, ...con, ...med, ...legacyTags])],
     format: fmt,
     characteristics: chr,
-    subject: sub,
+    content: con,
     project_tags: projectTagsFor(proj),
     medium: raw.medium || "",
     project: slug,
@@ -391,7 +391,7 @@ for (const [slug, proj] of Object.entries(registry)) {
         video_mode: vid.video_mode || "background",
         title: vid.title || "",
         // Mirror image items: fold the video entry's medium + format +
-        // characteristics + subject into the flat `tags` union so the data-tags
+        // characteristics + content into the flat `tags` union so the data-tags
         // filter UI can match them (e.g. `keynote` on an AWS video → the keynote
         // chip; `moving-image` medium → the moving-image chip). The literal
         // `video` stays so the file-type stays distinct from the medium.
@@ -400,7 +400,7 @@ for (const [slug, proj] of Object.entries(registry)) {
           vid.medium || "moving-image",
           ...(Array.isArray(vid.format) ? vid.format : []),
           ...(Array.isArray(vid.characteristics) ? vid.characteristics : []),
-          ...(Array.isArray(vid.subject) ? vid.subject : []),
+          ...(Array.isArray(vid.content) ? vid.content : []),
         ])],
         project_tags: projectTagsFor(proj),
         // Per-video `medium:` override. Default is `moving-image` (a video is

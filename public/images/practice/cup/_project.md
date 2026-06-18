@@ -22,7 +22,7 @@ videos:
     year: 2015
     video_mode: ui
     url: https://player.vimeo.com/video/130357433
-    subject:
+    content:
       - study
     characteristics:
       - essay

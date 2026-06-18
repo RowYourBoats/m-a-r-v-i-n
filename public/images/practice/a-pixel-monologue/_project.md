@@ -36,7 +36,7 @@ videos:
     year: 2015
     video_mode: ui
     url: https://player.vimeo.com/video/114141500
-    subject:
+    content:
       - study
     characteristics:
       - real-time

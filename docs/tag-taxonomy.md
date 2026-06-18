@@ -22,7 +22,7 @@ Per-image tags. Four axes, each answering one question. Counts go stale fast —
 
 | axis | count | rule |
 | --- | --- | --- |
-| `subject` | 1+ | **required — the floor.** Guarantees findability. Soft-enforced: the admin flags a missing subject and the audit lists them, but the publish gate stays `description-or-any-tag`, so a subjectless image isn't dropped — just nagged. |
+| `content` | 1+ | **required — the floor.** Guarantees findability. Soft-enforced: the admin flags a missing content tag and the audit lists them, but the publish gate stays `description-or-any-tag`, so a content-less image isn't dropped — just nagged. |
 | `format` | 0+ | usually present; empty for process / detail / exploration shots |
 | `medium` | 0–1 | single-select; **empty is the default**. Folded into the filterable tag union (build-manifest) so it behaves like a filter chip. |
 | `characteristics` | 0+ | empty is the default; flags only what's remarkable |
@@ -65,13 +65,13 @@ Multi-value. **Applies to images that EMBODY the quality, not images that docume
 - `print` and `motion` left this axis (both are now mediums); `stationery` moved to format.
 - Optional future: `material` (foil / emboss / vinyl / fold) if `making` proves too broad.
 
-### `subject` — what is it about / what does it depict?
+### `content` — what is it about / what does it depict?
 
-Multi-value, **required (1+)**.
+Multi-value, **required (1+)**. (Renamed from `subject` on 2026-06-17.)
 
 `data-visualization` · `diagram` · `iconography` · `identity` · `illustration` · `letter-form` · `lifestyle` · `logo` · `photography` · `product-render` · `proposal` · `study` · `typography`
 
-- `logo` / `letter-form` / `typography` / `identity` overlap, but subject is multi-select and fuzzy by design — overlap is cheap here.
+- `logo` / `letter-form` / `typography` / `identity` overlap, but content is multi-select and fuzzy by design — overlap is cheap here.
 
 ---
 
@@ -133,19 +133,20 @@ Decisions and the data work that follows. Pending rows are open until the data r
 | 2026-06-17 | **`subject` is now the required floor (1+).** Soft-enforced: `/admin/images` shows a required marker, the "missing tags" filter keys on missing subject, and the audit lists the gap (109 published images lacked one at migration time). The build curation gate is unchanged, so nothing is unpublished — backfill via the admin portal over time. | done |
 | 2026-06-17 | **Rename `medium: motion` → `moving-image`** (32 entries, same set — no re-scope). "motion" read as if it meant *motion graphics*, but the medium is the broad dimension (any video / moving thing). "moving-image" is the honest label. Filter chips + `schema.mediums` + video defaults (build-manifest, image-tags.ts) renamed to match. | done |
 | 2026-06-17 | **Rename `subject: letter-design` → `letter-form`** (27 catalogue entries; practice `letter-form` filter chip; image_tags caches re-synced on build). "letter-form" is the typographic term for the artifact. | done |
+| 2026-06-17 | **Rename the axis `subject` → `content`** (key rename, no value changes) via `scripts/migrate-subject-to-content-2026-06-17.mjs`: 876 catalogue entries + 20 per-video keys across 8 `_project.md`. Build scripts, audit, admin portal, and docs updated; the manifest item field is now `content`. Filters are unaffected (they match tag *values*, not the axis name). "content" reads more naturally than "subject" for what the image depicts. | done |
 | 2026-06-17 | **Fold `medium` into the filterable tag union** (`build-manifest.mjs`) so medium values (print/motion/spatial/physical) work as filter chips like the other axes. Video assets now default to `medium: motion` (was `video`) in `build-manifest.mjs` + `image-tags.ts`. `schema.json` chips: `motion` now matched by the folded medium; the redundant `video` chip merged into `motion`; `spatial` chips extended to match the `spatial` medium; `print` chip added. | done |
 
 ## Working notes / open questions
 
 - ~~**15 entries flagged for medium review** (defaulted to `digital`)~~ — moot as of 2026-06-17: `digital` is no longer a medium, so all were cleared. If any were genuinely printed, set `medium: print` when they next pass through `/admin/images`.
-- **`subject` backfill:** 109 published images had no subject at the 2026-06-17 migration. Work through them in `/admin/images` (toggle "missing tags" — now keyed on subject).
+- **`content` backfill:** 109 published images had no content tag at the 2026-06-17 migration. Work through them in `/admin/images` (toggle "missing tags" — now keyed on content).
 - **Motion graphics (deferred):** `medium: moving-image` is a broad dragnet (every video). A distinct *motion-graphics* tag — for designed animation (kinetic type, logo/identity animation, title sequences) vs. raw/documentary video — was scoped (likely `characteristic: motion-graphics`, filter chip pointing at it) but deferred. Revisit when surfacing the designed-motion work matters.
 - `project.characteristic: generative` (1 instance) still exists at project level. Image-level was dropped during migration; project-level was not touched. Decide later whether to also strip.
 - `characteristic: making` (1 instance) — **kept**, watching for volume.
 - `format: web` (4 instances) — **kept**, watching for volume.
 - `format: campaign` (32 instances) — **kept for now**. Original refactor plan called for drop, but volume is real; revisit if it doesn't accumulate further use or if better-fitting tags exist (`poster`, `deck`).
 - `format: product-marking` (2 instances) — **kept for now**. Revisit at next audit.
-- `subject: logo` (16) vs `subject: identity` (21) — currently separate. Fold `logo` into `identity` if logo-only images stop accumulating.
+- `content: logo` (16) vs `content: identity` (21) — currently separate. Fold `logo` into `identity` if logo-only images stop accumulating.
 - Project-level stale `image_tags` singletons (`art-direction`, `brand`, `customer-experience`, `user interface`, `user-experience`, `process`) — leftover from old vocab. Will clear next time the admin portal re-aggregates or `sync-image-tags.mjs` runs against the updated catalogue.
 
 ## Recurring process

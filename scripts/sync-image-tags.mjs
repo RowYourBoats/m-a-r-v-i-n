@@ -22,12 +22,12 @@ const catalogue = JSON.parse(fs.readFileSync(catalogPath, "utf8"));
 
 // Group catalogue tags by {clientPath, subKey}. Sub-key is null for simple
 // practice projects (one folder deep under tier). Post-restructure, per-image
-// tags live in three arrays (format/characteristics/subject); union them for
+// tags live in three arrays (format/characteristics/content); union them for
 // the human-readable cache. Legacy `tags` still honored.
 const collectTags = (entry) => [
   ...(entry.format || []),
   ...(entry.characteristics || []),
-  ...(entry.subject || []),
+  ...(entry.content || []),
   ...(entry.tags || []),
 ];
 

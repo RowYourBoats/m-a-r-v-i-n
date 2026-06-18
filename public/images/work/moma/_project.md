@@ -27,6 +27,7 @@ projects:
       The 2015 MoMA Teens brochure — communicating the museum's free programming to high-school audiences across New
       York.
     image_tags:
+      - illustration
       - publication-design
   marron-dossiers:
     name: Marron Research Committee Dossiers

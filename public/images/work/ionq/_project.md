@@ -65,7 +65,7 @@ projects:
           https://player.vimeo.com/video/1188244621?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479&amp;autoplay=1&amp;muted=1&amp;loop=1
         characteristics:
           - 3d
-        subject:
+        content:
           - product-render
       - title: IonQ Ion Trap Technology Visual
         featured: false
@@ -74,12 +74,12 @@ projects:
           https://player.vimeo.com/video/925961564?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479&amp;autoplay=1&amp;muted=1&amp;loop=1
         characteristics:
           - 3d
-        subject:
+        content:
           - product-render
       - title: IonQ Logo Animation
         url: >-
           https://player.vimeo.com/video/1009063662?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479&amp;autoplay=1&amp;muted=1&amp;loop=1
-        subject:
+        content:
           - logo
       - title: IonQ Text Animation Treatment
         url: >-
@@ -87,7 +87,7 @@ projects:
       - title: Guidelines Teaser
         url: >-
           https://player.vimeo.com/video/925210328?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479&amp;autoplay=1&amp;muted=1&amp;loop=1
-        subject:
+        content:
           - identity
     credits:
       - role: Creative Director
@@ -116,6 +116,7 @@ projects:
     image_tags:
       - data-visualization
       - deck
+      - diagram
     credits:
       - role: Design
         name: Marvin de Jong

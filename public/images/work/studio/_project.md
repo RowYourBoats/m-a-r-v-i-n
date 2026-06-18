@@ -59,7 +59,7 @@ projects:
         medium: digital
         format:
           - web
-        subject:
+        content:
           - lifestyle
           - photography
       - title: Selection
@@ -68,7 +68,7 @@ projects:
         medium: digital
         format:
           - web
-        subject:
+        content:
           - lifestyle
           - photography
       - title: Gallery
@@ -77,7 +77,7 @@ projects:
         medium: digital
         format:
           - web
-        subject:
+        content:
           - lifestyle
           - photography
       - title: Menu
@@ -86,7 +86,7 @@ projects:
         medium: digital
         format:
           - web
-        subject:
+        content:
           - lifestyle
           - photography
   miller-atre:

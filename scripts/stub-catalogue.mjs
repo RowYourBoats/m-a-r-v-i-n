@@ -92,7 +92,7 @@ const stubs = found.map((fp) => ({
   file_path: fp,
   format: [],
   characteristics: [],
-  subject: [],
+  content: [],
 }));
 
 console.log(`${found.length} new image(s) under ${scope}:`);

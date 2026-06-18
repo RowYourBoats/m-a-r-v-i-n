@@ -111,7 +111,7 @@ Key fields:
 - `aliases` — all name variants (resolves naming mismatches between systems)
 - `image_folders` — derived from which folder the `_project.md` lives in
 - `market` / `project_type` / `sector` / `characteristic` — the four project-level facets used for filtering and recruiter-context. Replaced the older `portfolio_tags:` field — see "Filter architecture" below for vocabularies and how the `/work` filter buttons translate to these values.
-- `role` / `scale` — optional. Plumbed for the future art-direction cross-logic (subject = photography/illustration AND project.role contains "Art Direction") and recruiter-mode filtering.
+- `role` / `scale` — optional. Plumbed for the future art-direction cross-logic (content = photography/illustration AND project.role contains "Art Direction") and recruiter-mode filtering.
 - `videos` — Vimeo embed URLs, generated as video items in the manifest. Each entry may set `video_mode` and `featured` (see below)
 - `lead_images` — list of image filenames in this folder that should be flagged `featured` in the manifest (the homepage hero feed reads from here)
 - `personal` — `true` → shows on Practice; `false` → shows on Work
@@ -143,14 +143,16 @@ Each entry describes one image. Per-image tagging is stratified along four axes:
 {
   "title": "DFFPM Logo Design",
   "description": "A minimalist logo…",
-  "medium": "print",                 // substrate (one): digital, print, environments, product, video
+  "medium": "print",                 // dimension encountered (0-1): print, moving-image, spatial,
+                                     //   physical — empty for screen/digital work
   "format": [],                      // artifact shape: deck, poster, editorial, publication-design,
                                      //   campaign, event, installation, exhibition, web, stationery,
-                                     //   merch, booth, product-marking
-  "characteristics": [],             // qualities the image embodies: interactive, motion, 3d, real-time, making
-  "subject": ["logo"],               // what it's about: proposal, photography, illustration, typography,
-                                     //   identity, data-visualization, letter-form, logo, study,
-                                     //   product-render, diagram, iconography
+                                     //   merch, booth, product-marking, keynote, retail
+  "characteristics": [],             // qualities the image embodies: interactive, real-time, generative,
+                                     //   3d, making, storytelling, essay, reference
+  "content": ["logo"],               // what it's about (required, 1+): proposal, photography, illustration,
+                                     //   typography, identity, data-visualization, letter-form, logo, study,
+                                     //   product-render, diagram, iconography, lifestyle
   "client": "DFFPM",
   "style": "minimalist geometric typography",
   "file_path": "work/studio/dffpm/Screenshot 2026-04-13 231222.png",
@@ -305,7 +307,7 @@ Each filter entry is a `{ label, matches[] }` pair:
 { "label": "spatial", "matches": ["exhibition", "installation", "retail"] }
 ```
 
-`label` is the button text. `matches` is the list of underlying values that count as a hit — they're checked against each item's `data-tags`, which is **only `item.tags`** (the per-image axes: format, characteristics, subject). `item.project_tags` is intentionally *not* in this set — project-level facets like `retail` or `exhibition` no longer leak into the per-item filter, so a motion video in a retail-themed project doesn't surface under `spatial`. `project_tags` is still emitted on every item for future page-assembler use (e.g. "pull all items from `retail` projects").
+`label` is the button text. `matches` is the list of underlying values that count as a hit — they're checked against each item's `data-tags`, which is **only `item.tags`** (the per-image axes: format, characteristics, content, medium). `item.project_tags` is intentionally *not* in this set — project-level facets like `retail` or `exhibition` no longer leak into the per-item filter, so a motion video in a retail-themed project doesn't surface under `spatial`. `project_tags` is still emitted on every item for future page-assembler use (e.g. "pull all items from `retail` projects").
 
 This `label`/`matches` separation lets one button cover several underlying values: `spatial` matches `exhibition` OR `installation` OR `retail`; `editorial` matches both `editorial` and `publication-design`. A `label` need not be a real tag value — it's just a display label over its `matches` set.
 
@@ -425,7 +427,7 @@ Runs the heavier image-reconciliation cycle:
 | `scripts/upload-blob.mjs` | Upload images to Vercel Blob, rewrite manifest URLs |
 | `scripts/sync-vimeo-posters.mjs` | Walks `src/content/pages/*.md`, finds Vimeo URLs in filmstrip assets, fetches canonical posters via oEmbed, writes `src/data/vimeo-posters.json`. Idempotent — only unknown IDs are fetched. Runs as the last step of `npm run build-data`. |
 | `scripts/audit-tags.mjs` | Read-only tag audit: per-value counts across all image + project axes, cross-axis duplicate flags, singletons. Writes `docs/tag-audit.json`. Run after every tagging pass. |
-| `public/images/miner.cjs` | Ollama-based vision tagger; run from `public/images/` to populate catalogue entries (format/characteristics/subject) for newly-added images |
+| `public/images/miner.cjs` | Ollama-based vision tagger; run from `public/images/` to populate catalogue entries (format/characteristics/content) for newly-added images |
 
 ### Adding new images
 
@@ -449,7 +451,7 @@ One-shot migrations (already run) now live in the gitignored `_DEPRECATED/` arch
 A dev-only portal for tagging images and videos visually. **Not in version control** — `src/pages/admin/` and `src/pages/api/admin/` are gitignored and 404 outside `import.meta.env.DEV`, so they only exist locally and only run under `astro dev`. If you `git clone` fresh, they won't be there.
 
 - **`/admin/images`** — grid of all media (601 images + 46 videos). Side panel edits title, description, and tag chips. Filters: type (image/video), tier, client, missing-tags, text search. Multi-select (⌘/Ctrl-click, Shift-range, ⌘A, Esc) with tri-state tag chips for bulk editing. ← / → keyboard nav.
-- **`/api/admin/image-tags`** — GET returns merged image + video rows + tag vocabularies; POST writes back. Image patches → `image_catalogue.json` + re-synced `_project.md image_tags`. Video patches → the matching `_project.md videos:` block (adds `description` / `characteristics` / `subject` fields inline).
+- **`/api/admin/image-tags`** — GET returns merged image + video rows + tag vocabularies; POST writes back. Image patches → `image_catalogue.json` + re-synced `_project.md image_tags`. Video patches → the matching `_project.md videos:` block (adds `description` / `characteristics` / `content` fields inline).
 - **`/api/admin/thumb`** — Sharp-resized thumbnails (120/280/600px webp), in-memory LRU cache.
 - **`/api/admin/vimeo-poster`** — resolves a Vimeo ID to its CDN poster via oEmbed, caches to `_exclude/vimeo-thumbs.json`, 302-redirects.
 
