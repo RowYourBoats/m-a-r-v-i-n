@@ -1176,7 +1176,7 @@
   "items": [
     {
       "id": "m-a-r-v-i-n-01-wikipediaimage",
-      "src": "/images/m-a-r-v-i-n/01_WikipediaImage.jpeg",
+      "src": "https://ws6i2dfuggcaavs2.public.blob.vercel-storage.com/images/m-a-r-v-i-n/01_WikipediaImage.jpeg",
       "type": "image",
       "title": "Wikipedia Success-Failure Flowchart",
       "tags": [
@@ -21498,7 +21498,7 @@
       "id": "practice-kabk-dsc-0084",
       "src": "https://ws6i2dfuggcaavs2.public.blob.vercel-storage.com/images/practice/kabk/DSC_0084.JPG",
       "type": "image",
-      "title": "DSC 0084",
+      "title": "Architectural History Timeline",
       "tags": [
         "data-visualization",
         "print"
@@ -21514,35 +21514,7 @@
       ],
       "medium": "print",
       "project": "kabk-posters",
-      "description": "",
-      "width": 3216,
-      "height": 2136,
-      "created": "2011-2013",
-      "date_range": "2011-2013",
-      "year": 2011,
-      "personal": true
-    },
-    {
-      "id": "practice-kabk-dsc-0089",
-      "src": "https://ws6i2dfuggcaavs2.public.blob.vercel-storage.com/images/practice/kabk/DSC_0089.JPG",
-      "type": "image",
-      "title": "DSC 0089",
-      "tags": [
-        "data-visualization",
-        "print"
-      ],
-      "format": [],
-      "characteristics": [],
-      "content": [
-        "data-visualization"
-      ],
-      "project_tags": [
-        "personal",
-        "personal"
-      ],
-      "medium": "print",
-      "project": "kabk-posters",
-      "description": "",
+      "description": "An architectural history book that can be organized into separate geographically distinct timelines.",
       "width": 3216,
       "height": 2136,
       "created": "2011-2013",
@@ -21554,7 +21526,7 @@
       "id": "practice-kabk-dsc-0097",
       "src": "https://ws6i2dfuggcaavs2.public.blob.vercel-storage.com/images/practice/kabk/DSC_0097.JPG",
       "type": "image",
-      "title": "DSC 0097",
+      "title": "Architectural History Timeline",
       "tags": [
         "data-visualization",
         "print"
@@ -21570,7 +21542,7 @@
       ],
       "medium": "print",
       "project": "kabk-posters",
-      "description": "",
+      "description": "An architectural history book that can be organized into separate geographically distinct timelines.",
       "width": 3216,
       "height": 2136,
       "created": "2011-2013",
@@ -21579,26 +21551,21 @@
       "personal": true
     },
     {
-      "id": "practice-kabk-dsc-0099",
-      "src": "https://ws6i2dfuggcaavs2.public.blob.vercel-storage.com/images/practice/kabk/DSC_0099.JPG",
+      "id": "practice-kabk-dsc-0112",
+      "src": "https://ws6i2dfuggcaavs2.public.blob.vercel-storage.com/images/practice/kabk/DSC_0112.JPG",
       "type": "image",
-      "title": "DSC 0099",
-      "tags": [
-        "data-visualization",
-        "print"
-      ],
+      "title": "Architectural History Timeline",
+      "tags": [],
       "format": [],
       "characteristics": [],
-      "content": [
-        "data-visualization"
-      ],
+      "content": [],
       "project_tags": [
         "personal",
         "personal"
       ],
-      "medium": "print",
+      "medium": "",
       "project": "kabk-posters",
-      "description": "",
+      "description": "An architectural history book that can be organized into separate geographically distinct timelines.",
       "width": 3216,
       "height": 2136,
       "created": "2011-2013",
@@ -21610,7 +21577,7 @@
       "id": "practice-kabk-dsc-0913",
       "src": "https://ws6i2dfuggcaavs2.public.blob.vercel-storage.com/images/practice/kabk/DSC_0913.jpg",
       "type": "image",
-      "title": "DSC 0913",
+      "title": "Silkscreen Network",
       "tags": [
         "making",
         "silkscreen",
@@ -21638,38 +21605,10 @@
       "personal": true
     },
     {
-      "id": "practice-kabk-dsc-0923",
-      "src": "https://ws6i2dfuggcaavs2.public.blob.vercel-storage.com/images/practice/kabk/DSC_0923.jpg",
-      "type": "image",
-      "title": "DSC 0923",
-      "tags": [
-        "silkscreen",
-        "print"
-      ],
-      "format": [],
-      "characteristics": [],
-      "content": [
-        "silkscreen"
-      ],
-      "project_tags": [
-        "personal",
-        "personal"
-      ],
-      "medium": "print",
-      "project": "kabk-posters",
-      "description": "",
-      "width": 681,
-      "height": 1024,
-      "created": "2011-2013",
-      "date_range": "2011-2013",
-      "year": 2011,
-      "personal": true
-    },
-    {
       "id": "practice-kabk-dsc-0934",
       "src": "https://ws6i2dfuggcaavs2.public.blob.vercel-storage.com/images/practice/kabk/DSC_0934.jpg",
       "type": "image",
-      "title": "DSC 0934",
+      "title": "Silkscreen Network",
       "tags": [
         "making",
         "silkscreen",
@@ -21697,94 +21636,10 @@
       "personal": true
     },
     {
-      "id": "practice-kabk-dsc-0936",
-      "src": "https://ws6i2dfuggcaavs2.public.blob.vercel-storage.com/images/practice/kabk/DSC_0936.jpg",
-      "type": "image",
-      "title": "DSC 0936",
-      "tags": [
-        "silkscreen",
-        "print"
-      ],
-      "format": [],
-      "characteristics": [],
-      "content": [
-        "silkscreen"
-      ],
-      "project_tags": [
-        "personal",
-        "personal"
-      ],
-      "medium": "print",
-      "project": "kabk-posters",
-      "description": "",
-      "width": 683,
-      "height": 1024,
-      "created": "2011-2013",
-      "date_range": "2011-2013",
-      "year": 2011,
-      "personal": true
-    },
-    {
-      "id": "practice-kabk-dsc-0937",
-      "src": "https://ws6i2dfuggcaavs2.public.blob.vercel-storage.com/images/practice/kabk/DSC_0937.jpg",
-      "type": "image",
-      "title": "DSC 0937",
-      "tags": [
-        "silkscreen",
-        "print"
-      ],
-      "format": [],
-      "characteristics": [],
-      "content": [
-        "silkscreen"
-      ],
-      "project_tags": [
-        "personal",
-        "personal"
-      ],
-      "medium": "print",
-      "project": "kabk-posters",
-      "description": "",
-      "width": 289,
-      "height": 1024,
-      "created": "2011-2013",
-      "date_range": "2011-2013",
-      "year": 2011,
-      "personal": true
-    },
-    {
-      "id": "practice-kabk-dsc-0938",
-      "src": "https://ws6i2dfuggcaavs2.public.blob.vercel-storage.com/images/practice/kabk/DSC_0938.jpg",
-      "type": "image",
-      "title": "DSC 0938",
-      "tags": [
-        "silkscreen",
-        "print"
-      ],
-      "format": [],
-      "characteristics": [],
-      "content": [
-        "silkscreen"
-      ],
-      "project_tags": [
-        "personal",
-        "personal"
-      ],
-      "medium": "print",
-      "project": "kabk-posters",
-      "description": "",
-      "width": 368,
-      "height": 1024,
-      "created": "2011-2013",
-      "date_range": "2011-2013",
-      "year": 2011,
-      "personal": true
-    },
-    {
       "id": "practice-kabk-dsc-0939",
       "src": "https://ws6i2dfuggcaavs2.public.blob.vercel-storage.com/images/practice/kabk/DSC_0939.jpg",
       "type": "image",
-      "title": "DSC 0939",
+      "title": "Silkscreen Network",
       "tags": [
         "silkscreen",
         "print"
@@ -21802,62 +21657,6 @@
       "project": "kabk-posters",
       "description": "",
       "width": 449,
-      "height": 1024,
-      "created": "2011-2013",
-      "date_range": "2011-2013",
-      "year": 2011,
-      "personal": true
-    },
-    {
-      "id": "practice-kabk-dsc-0945",
-      "src": "https://ws6i2dfuggcaavs2.public.blob.vercel-storage.com/images/practice/kabk/DSC_0945.jpg",
-      "type": "image",
-      "title": "DSC 0945",
-      "tags": [
-        "silkscreen",
-        "print"
-      ],
-      "format": [],
-      "characteristics": [],
-      "content": [
-        "silkscreen"
-      ],
-      "project_tags": [
-        "personal",
-        "personal"
-      ],
-      "medium": "print",
-      "project": "kabk-posters",
-      "description": "",
-      "width": 681,
-      "height": 1024,
-      "created": "2011-2013",
-      "date_range": "2011-2013",
-      "year": 2011,
-      "personal": true
-    },
-    {
-      "id": "practice-kabk-dsc-0946",
-      "src": "https://ws6i2dfuggcaavs2.public.blob.vercel-storage.com/images/practice/kabk/DSC_0946.jpg",
-      "type": "image",
-      "title": "DSC 0946",
-      "tags": [
-        "silkscreen",
-        "print"
-      ],
-      "format": [],
-      "characteristics": [],
-      "content": [
-        "silkscreen"
-      ],
-      "project_tags": [
-        "personal",
-        "personal"
-      ],
-      "medium": "print",
-      "project": "kabk-posters",
-      "description": "",
-      "width": 681,
       "height": 1024,
       "created": "2011-2013",
       "date_range": "2011-2013",
