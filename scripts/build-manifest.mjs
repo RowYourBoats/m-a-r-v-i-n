@@ -202,11 +202,19 @@ const isCurated = (raw) => {
     (raw.tags || []).length;
   return hasDesc || tagCount > 0;
 };
-const curatedCatalogue = catalogue.filter(isCurated);
-const hiddenStubCount = catalogue.length - curatedCatalogue.length;
+// Archive-only: a deliberate per-image flag (set via the /admin/images toggle)
+// that keeps the image in the catalogue + Blob + local drives for archival but
+// NEVER publishes it to the site, no matter how it's tagged. Distinct from the
+// curation gate (which auto-hides untagged stubs); this is a manual "keep but
+// never show" decision. Filtered out first so it's a hard exclusion. The image
+// stays fully visible in /admin/images so it can be found and un-archived.
+const liveCatalogue = catalogue.filter((e) => e.archived !== true);
+const archivedCount = catalogue.length - liveCatalogue.length;
+const curatedCatalogue = liveCatalogue.filter(isCurated);
+const hiddenStubCount = liveCatalogue.length - curatedCatalogue.length;
 console.log(
   `curation gate: publishing ${curatedCatalogue.length} curated image(s), ` +
-    `hiding ${hiddenStubCount} uncurated stub(s) (no description or tags — garden them in /admin/images)`,
+    `hiding ${hiddenStubCount} uncurated stub(s) + ${archivedCount} archive-only image(s)`,
 );
 
 // Build image items from catalogue (curated entries only).
@@ -356,6 +364,7 @@ const videoBuilders = [];
 for (const [slug, proj] of Object.entries(registry)) {
   for (const vid of proj.videos || []) {
     if (!vid.url) continue;
+    if (vid.archived === true) continue; // archive-only (see image gate above)
     const id = mkId(slugify(vid.title || `${slug}-video`));
 
     let vidYear = vid.year ? parseInt(String(vid.year), 10) : null;

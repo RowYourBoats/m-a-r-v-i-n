@@ -2,6 +2,20 @@
 
 Newest run first. Appended automatically by `npm run ingest`.
 
+## 2026-06-18T08:42:20.284Z — ingest (applied)
+
+- **reconcile:** 0 remap(s), 2 quarantined (kept), 20 unregistered on disk
+  - quarantine: `work/ionq/brand/Screenshot 2026-04-13 231144.png` (file missing — has caption, kept)
+  - quarantine: `work/ionq/brand/Screenshot 2026-04-13 231205.png` (file missing — has caption, kept)
+- **stub:** +0 new image(s)
+- **mine-dates:** 749 stamped, 126 missing
+- **sync-image-tags:** 0 _project.md updated
+- **build-projects:** 80 projects, 59 tags, 19 clients
+- **build-manifest:** 749 items across 70 projects
+- **rehydrate:** 0 matched, 9 unmatched
+- **upload-blob:** uploaded 1, adopted 8, skipped 740, failed 0
+- **vimeo-posters:** 2 referenced, 0 fetched
+
 ## 2026-06-17T18:56:41.871Z — ingest (applied)
 
 - **reconcile:** 0 remap(s), 3 quarantined (kept), 20 unregistered on disk

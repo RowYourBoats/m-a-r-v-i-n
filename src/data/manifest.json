@@ -1176,7 +1176,7 @@
   "items": [
     {
       "id": "m-a-r-v-i-n-01-wikipediaimage",
-      "src": "https://ws6i2dfuggcaavs2.public.blob.vercel-storage.com/images/m-a-r-v-i-n/01_WikipediaImage.jpeg",
+      "src": "/images/m-a-r-v-i-n/01_WikipediaImage.jpeg",
       "type": "image",
       "title": "Wikipedia Success-Failure Flowchart",
       "tags": [
@@ -21639,7 +21639,7 @@
     },
     {
       "id": "practice-kabk-dsc-0923",
-      "src": "/images/practice/kabk/DSC_0923.jpg",
+      "src": "https://ws6i2dfuggcaavs2.public.blob.vercel-storage.com/images/practice/kabk/DSC_0923.jpg",
       "type": "image",
       "title": "DSC 0923",
       "tags": [
@@ -21698,7 +21698,7 @@
     },
     {
       "id": "practice-kabk-dsc-0936",
-      "src": "/images/practice/kabk/DSC_0936.jpg",
+      "src": "https://ws6i2dfuggcaavs2.public.blob.vercel-storage.com/images/practice/kabk/DSC_0936.jpg",
       "type": "image",
       "title": "DSC 0936",
       "tags": [
@@ -21726,7 +21726,7 @@
     },
     {
       "id": "practice-kabk-dsc-0937",
-      "src": "/images/practice/kabk/DSC_0937.jpg",
+      "src": "https://ws6i2dfuggcaavs2.public.blob.vercel-storage.com/images/practice/kabk/DSC_0937.jpg",
       "type": "image",
       "title": "DSC 0937",
       "tags": [
@@ -21754,7 +21754,7 @@
     },
     {
       "id": "practice-kabk-dsc-0938",
-      "src": "/images/practice/kabk/DSC_0938.jpg",
+      "src": "https://ws6i2dfuggcaavs2.public.blob.vercel-storage.com/images/practice/kabk/DSC_0938.jpg",
       "type": "image",
       "title": "DSC 0938",
       "tags": [
@@ -21782,7 +21782,7 @@
     },
     {
       "id": "practice-kabk-dsc-0939",
-      "src": "/images/practice/kabk/DSC_0939.jpg",
+      "src": "https://ws6i2dfuggcaavs2.public.blob.vercel-storage.com/images/practice/kabk/DSC_0939.jpg",
       "type": "image",
       "title": "DSC 0939",
       "tags": [
@@ -21810,7 +21810,7 @@
     },
     {
       "id": "practice-kabk-dsc-0945",
-      "src": "/images/practice/kabk/DSC_0945.jpg",
+      "src": "https://ws6i2dfuggcaavs2.public.blob.vercel-storage.com/images/practice/kabk/DSC_0945.jpg",
       "type": "image",
       "title": "DSC 0945",
       "tags": [
@@ -21838,7 +21838,7 @@
     },
     {
       "id": "practice-kabk-dsc-0946",
-      "src": "/images/practice/kabk/DSC_0946.jpg",
+      "src": "https://ws6i2dfuggcaavs2.public.blob.vercel-storage.com/images/practice/kabk/DSC_0946.jpg",
       "type": "image",
       "title": "DSC 0946",
       "tags": [
@@ -22200,7 +22200,7 @@
     },
     {
       "id": "practice-yale-riso-dscn1487",
-      "src": "/images/practice/yale/riso/DSCN1487.jpg",
+      "src": "https://ws6i2dfuggcaavs2.public.blob.vercel-storage.com/images/practice/yale/riso/DSCN1487.jpg",
       "type": "image",
       "title": "DSCN1487",
       "tags": [
@@ -23776,7 +23776,7 @@
     },
     {
       "id": "work-ionq-brand-ionq-brand-videos",
-      "src": "/images/work/ionq/brand/IonQ-Brand-Videos.png",
+      "src": "https://ws6i2dfuggcaavs2.public.blob.vercel-storage.com/images/work/ionq/brand/IonQ-Brand-Videos.png",
       "type": "image",
       "title": "IonQ Brand Videos",
       "tags": [
