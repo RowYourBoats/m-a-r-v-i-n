@@ -397,6 +397,10 @@ const hasSizes = bullets.some((b) => b.size);
       if (!table) return;
       var tbody = table.querySelector("tbody");
 
+      // Snapshot the server-rendered row order (section headers + rows) so the
+      // sort cycle's third click can restore it.
+      var originalOrder = Array.prototype.slice.call(tbody.rows);
+
       // ---- Collapse ----
       function toggleSection(secRow) {
         var sec = secRow.dataset.section;
@@ -415,13 +419,25 @@ const hasSizes = bullets.some((b) => b.size);
       });
 
       // ---- Sort ----
-      var sortCol = -1, sortAsc = true;
+      // Three-state cycle per column: asc → desc → unsorted. The third click
+      // restores the original render order rather than looping back to asc.
+      var sortCol = -1, sortState = 0; // 0 none, 1 asc, 2 desc
       table.querySelectorAll("thead th[data-col]").forEach(function (th) {
         th.addEventListener("click", function () {
           var col = parseInt(th.dataset.col);
-          if (sortCol === col) sortAsc = !sortAsc;
-          else { sortCol = col; sortAsc = true; }
+          if (sortCol === col) {
+            sortState += 1;
+            if (sortState > 2) { sortState = 0; sortCol = -1; }
+          } else { sortCol = col; sortState = 1; }
 
+          table.querySelectorAll(".cv-sort-arrow").forEach(function (s) { s.textContent = ""; });
+
+          if (sortState === 0) {
+            originalOrder.forEach(function (r) { tbody.appendChild(r); });
+            return;
+          }
+
+          var sortAsc = sortState === 1;
           var blocks = [];
           var current = null;
           Array.from(tbody.rows).forEach(function (row) {
@@ -445,7 +461,6 @@ const hasSizes = bullets.some((b) => b.size);
             sec.rows.forEach(function (r) { tbody.appendChild(r); });
           });
 
-          table.querySelectorAll(".cv-sort-arrow").forEach(function (s) { s.textContent = ""; });
           var arrow = th.querySelector(".cv-sort-arrow");
           if (arrow) arrow.textContent = sortAsc ? " \u25B2" : " \u25BC";
         });
@@ -525,9 +540,18 @@ const hasSizes = bullets.some((b) => b.size);
         });
       }
 
+      // Company and category address overlapping axes — a company only lives
+      // in the experience sections, so pairing it with another category yields
+      // an empty table. Picking one clears the other so results never blank out.
       searchBox?.addEventListener("input", applyFilters);
-      companySel?.addEventListener("change", applyFilters);
-      categorySel?.addEventListener("change", applyFilters);
+      companySel?.addEventListener("change", function () {
+        if (companySel.value) categorySel.value = "";
+        applyFilters();
+      });
+      categorySel?.addEventListener("change", function () {
+        if (categorySel.value) companySel.value = "";
+        applyFilters();
+      });
 
       applySize();
       applyFilters();

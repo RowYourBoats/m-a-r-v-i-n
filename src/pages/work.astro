@@ -4,6 +4,7 @@ import Base from "@/layouts/Base.astro";
 import PortfolioPageScript from "@/components/PortfolioPageScript.astro";
 import manifest from "@/data/manifest.json";
 import schema from "@/data/schema.json";
+import { pinnedFirst } from "@/lib/feed-sort";
 import { getEntry, render } from "astro:content";
 
 const intro = await getEntry("pages", "work");
@@ -15,11 +16,15 @@ const { items, projects } = manifest;
 // Within a year, group by project so each project's videos sit adjacent to
 // its images (videos are appended to the manifest at the end, so without a
 // project-level secondary key they'd dump at the tail of every year group).
-const workItems = items.filter((item) => !item.personal && !item.hidden_from_feed)
-  .sort((a, b) =>
+// Pinned projects float to the top as clusters (same year/project order
+// applied within the pinned group) — see src/lib/feed-sort.ts.
+const workItems = pinnedFirst(
+  items.filter((item) => !item.personal && !item.hidden_from_feed),
+  (item: any) => !!item.pinned,
+  (a: any, b: any) =>
     (b.year || 0) - (a.year || 0) ||
-    (a.project || "").localeCompare(b.project || "")
-  );
+    (a.project || "").localeCompare(b.project || ""),
+);
 
 // Curated Work-page filters per the filter architecture directive.
 // Each entry is { label, matches[] }: `label` is the button text, `matches` is

@@ -68,6 +68,11 @@ function isCurrent(href: string) {
       <a href="/work" aria-current={isCurrent("/work") ? "page" : undefined}>Work</a>
       <a href="/practice" aria-current={isCurrent("/practice") ? "page" : undefined}>Practice</a>
       <a href="/tools" aria-current={isCurrent("/tools") ? "page" : undefined}>Tools</a>
+      {/* Dev-only link to the internal wiki. The /wiki route 404s in production,
+          so this link only renders under `astro dev` to avoid a dead nav item. */}
+      {import.meta.env.DEV && (
+        <a href="/wiki" aria-current={path.startsWith("/wiki") ? "page" : undefined}>Wiki</a>
+      )}
       <button class="theme-toggle" id="theme-toggle" aria-label="Toggle theme"></button>
     </nav>
     <main class="page">

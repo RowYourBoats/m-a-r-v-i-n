@@ -2,6 +2,125 @@
 
 Newest run first. Appended automatically by `npm run ingest`.
 
+## 2026-06-23T20:33:26.328Z — ingest (applied, --drop)
+
+- **reconcile:** 0 remap(s), 4 dropped, 20 unregistered on disk
+  - quarantine: `practice/controlled-instability/Screenshot 2026-03-04 113113.png` (file missing — has caption, kept)
+  - quarantine: `work/ionq/brand/Screenshot 2026-04-13 231144.png` (file missing — has caption, kept)
+  - quarantine: `work/ionq/brand/Screenshot 2026-04-13 231205.png` (file missing — has caption, kept)
+  - quarantine: `practice/controlled-instability/Screenshot 2026-01-17 114909.png` (file missing — has caption, kept)
+- **stub:** +0 new image(s)
+- **mine-dates:** 754 stamped, 124 missing
+- **sync-image-tags:** 1 _project.md updated
+- **build-projects:** 80 projects, 59 tags, 19 clients
+- **build-manifest:** 745 items across 70 projects
+- **rehydrate:** 0 matched, 0 unmatched
+- **upload-blob:** uploaded 0, adopted 0, skipped 745, failed 0
+- **vimeo-posters:** 2 referenced, 0 fetched
+
+## 2026-06-23T20:33:04.717Z — ingest (dry-run, no writes)
+
+- **reconcile:** 0 remap(s), 4 quarantined (kept), 20 unregistered on disk
+  - quarantine: `practice/controlled-instability/Screenshot 2026-03-04 113113.png` (file missing — has caption, kept)
+  - quarantine: `work/ionq/brand/Screenshot 2026-04-13 231144.png` (file missing — has caption, kept)
+  - quarantine: `work/ionq/brand/Screenshot 2026-04-13 231205.png` (file missing — has caption, kept)
+  - quarantine: `practice/controlled-instability/Screenshot 2026-01-17 114909.png` (file missing — has caption, kept)
+- **stub:** +0 new image(s)
+
+## 2026-06-23T20:29:20.004Z — ingest (dry-run, no writes, --drop)
+
+- **reconcile:** 0 remap(s), 4 dropped, 20 unregistered on disk
+  - quarantine: `practice/controlled-instability/Screenshot 2026-03-04 113113.png` (file missing — has caption, kept)
+  - quarantine: `work/ionq/brand/Screenshot 2026-04-13 231144.png` (file missing — has caption, kept)
+  - quarantine: `work/ionq/brand/Screenshot 2026-04-13 231205.png` (file missing — has caption, kept)
+  - quarantine: `practice/controlled-instability/Screenshot 2026-01-17 114909.png` (file missing — has caption, kept)
+- **stub:** +0 new image(s)
+
+## 2026-06-23T20:26:52.366Z — ingest (applied)
+
+- **reconcile:** 0 remap(s), 4 quarantined (kept), 20 unregistered on disk
+  - quarantine: `practice/controlled-instability/Screenshot 2026-03-04 113113.png` (file missing — has caption, kept)
+  - quarantine: `work/ionq/brand/Screenshot 2026-04-13 231144.png` (file missing — has caption, kept)
+  - quarantine: `work/ionq/brand/Screenshot 2026-04-13 231205.png` (file missing — has caption, kept)
+  - quarantine: `practice/controlled-instability/Screenshot 2026-01-17 114909.png` (file missing — has caption, kept)
+- **stub:** +0 new image(s)
+- **mine-dates:** 754 stamped, 128 missing
+- **sync-image-tags:** 0 _project.md updated
+- **build-projects:** 80 projects, 59 tags, 19 clients
+- **build-manifest:** 749 items across 70 projects
+- **rehydrate:** 0 matched, 0 unmatched
+- **upload-blob:** uploaded 0, adopted 0, skipped 749, failed 0
+- **vimeo-posters:** 2 referenced, 0 fetched
+
+## 2026-06-23T20:26:27.667Z — ingest (applied)
+
+- **reconcile:** 0 remap(s), 4 quarantined (kept), 20 unregistered on disk
+  - quarantine: `practice/controlled-instability/Screenshot 2026-03-04 113113.png` (file missing — has caption, kept)
+  - quarantine: `work/ionq/brand/Screenshot 2026-04-13 231144.png` (file missing — has caption, kept)
+  - quarantine: `work/ionq/brand/Screenshot 2026-04-13 231205.png` (file missing — has caption, kept)
+  - quarantine: `practice/controlled-instability/Screenshot 2026-01-17 114909.png` (file missing — has caption, kept)
+- **stub:** +0 new image(s)
+- **mine-dates:** 754 stamped, 128 missing
+- **sync-image-tags:** 0 _project.md updated
+- **build-projects:** 80 projects, 59 tags, 19 clients
+- **build-manifest:** 749 items across 70 projects
+- **rehydrate:** 0 matched, 0 unmatched
+- **upload-blob:** uploaded 0, adopted 0, skipped 749, failed 0
+- **vimeo-posters:** 2 referenced, 0 fetched
+
+## 2026-06-23T20:22:05.698Z — ingest (applied)
+
+- **reconcile:** 0 remap(s), 4 quarantined (kept), 20 unregistered on disk
+  - quarantine: `practice/controlled-instability/Screenshot 2026-03-04 113113.png` (file missing — has caption, kept)
+  - quarantine: `work/ionq/brand/Screenshot 2026-04-13 231144.png` (file missing — has caption, kept)
+  - quarantine: `work/ionq/brand/Screenshot 2026-04-13 231205.png` (file missing — has caption, kept)
+  - quarantine: `practice/controlled-instability/Screenshot 2026-01-17 114909.png` (file missing — has caption, kept)
+- **stub:** +0 new image(s)
+- **mine-dates:** 754 stamped, 128 missing
+- **sync-image-tags:** 0 _project.md updated
+- **build-projects:** 80 projects, 59 tags, 19 clients
+- **build-manifest:** 749 items across 70 projects
+- **rehydrate:** 0 matched, 7 unmatched
+- **upload-blob:** uploaded 7, adopted 0, skipped 742, failed 0
+- **vimeo-posters:** 2 referenced, 0 fetched
+
+## 2026-06-23T18:46:17.251Z — ingest (applied)
+
+- **reconcile:** 0 remap(s), 4 quarantined (kept), 27 unregistered on disk
+  - quarantine: `practice/controlled-instability/Screenshot 2026-03-04 113113.png` (file missing — has caption, kept)
+  - quarantine: `work/ionq/brand/Screenshot 2026-04-13 231144.png` (file missing — has caption, kept)
+  - quarantine: `work/ionq/brand/Screenshot 2026-04-13 231205.png` (file missing — has caption, kept)
+  - quarantine: `practice/controlled-instability/Screenshot 2026-01-17 114909.png` (file missing — has caption, kept)
+- **stub:** +7 new image(s)
+  - `practice/controlled-instability/BreathingPoem.jpeg`
+  - `practice/controlled-instability/Comma.png`
+  - `practice/controlled-instability/FormFlickersInPlace.png`
+  - `practice/controlled-instability/LetterForm.jpeg`
+  - `practice/controlled-instability/NotTooClose.png`
+  - `practice/controlled-instability/breathingPoem.png`
+  - `practice/controlled-instability/whoWillYouBe.png`
+- **mine-dates:** 754 stamped, 128 missing
+- **sync-image-tags:** 0 _project.md updated
+- **build-projects:** 80 projects, 59 tags, 19 clients
+- **build-manifest:** 742 items across 70 projects
+- **rehydrate:** 0 matched, 0 unmatched
+- **upload-blob:** uploaded 0, adopted 0, skipped 742, failed 0
+- **vimeo-posters:** 2 referenced, 0 fetched
+
+## 2026-06-22T21:07:56.569Z — ingest (applied)
+
+- **reconcile:** 0 remap(s), 2 quarantined (kept), 20 unregistered on disk
+  - quarantine: `work/ionq/brand/Screenshot 2026-04-13 231144.png` (file missing — has caption, kept)
+  - quarantine: `work/ionq/brand/Screenshot 2026-04-13 231205.png` (file missing — has caption, kept)
+- **stub:** +0 new image(s)
+- **mine-dates:** 749 stamped, 126 missing
+- **sync-image-tags:** 0 _project.md updated
+- **build-projects:** 80 projects, 59 tags, 19 clients
+- **build-manifest:** 742 items across 70 projects
+- **rehydrate:** 0 matched, 0 unmatched
+- **upload-blob:** uploaded 0, adopted 0, skipped 742, failed 0
+- **vimeo-posters:** 2 referenced, 0 fetched
+
 ## 2026-06-18T09:05:54.018Z — ingest (applied)
 
 - **reconcile:** 0 remap(s), 2 quarantined (kept), 20 unregistered on disk

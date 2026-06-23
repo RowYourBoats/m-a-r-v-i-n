@@ -40,7 +40,6 @@ projects:
       - identity
       - illustration
       - photography
-      - product-render
     order:
       - IonQ Product Family
       - IonQ Ion Trap Technology Visual

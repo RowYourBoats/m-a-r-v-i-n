@@ -278,9 +278,7 @@ projects:
     unlisted: true
     image_tags:
       - deck
-      - identity
       - interactive
-      - logo
       - proposal
     videos:
       - title: Chicago Entrance Screens

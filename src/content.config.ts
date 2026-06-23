@@ -16,6 +16,11 @@ const writing = defineCollection({
     // in order; the rest fall through to alphabetical filename. Same rule as a
     // project's `order:` — usually unnecessary if files are numbered.
     order: z.array(z.string()).optional(),
+    // Pin this essay to the top of its index feed (Practice/Tools), above the
+    // chronological order. The date stays truthful; among multiple pins the
+    // newest sorts first. Projects pin the same way via `pinned` on _project.md.
+    // See src/lib/feed-sort.ts.
+    pinned: z.boolean().optional(),
   }),
 });
 
@@ -94,4 +99,19 @@ const diagrams = defineCollection({
   }),
 });
 
-export const collections = { writing, bullets, pages, diagrams };
+// Internal operations wiki. Rendered by the dev-only /wiki route (404 in
+// production) — see src/pages/wiki/. One file per topic; `section` groups them
+// in the sidebar, `order` sorts within a section. `summary` is a one-line
+// blurb kept as metadata (the /wiki landing renders the Overview topic, not a
+// table of contents — the sidebar is the index).
+const wiki = defineCollection({
+  loader: glob({ pattern: "*.md", base: "./src/content/wiki" }),
+  schema: z.object({
+    title: z.string(),
+    section: z.string(),
+    order: z.number().default(0),
+    summary: z.string().optional(),
+  }),
+});
+
+export const collections = { writing, bullets, pages, diagrams, wiki };

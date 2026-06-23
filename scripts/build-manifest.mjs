@@ -348,6 +348,10 @@ const items = curatedCatalogue.map((raw) => {
   // Project-level unlisted: hide all items from the Work/Practice index but
   // keep /projects/[slug] reachable (e.g. for share links).
   if (proj?.unlisted) item.hidden_from_feed = true;
+  // Project-level pin: float all of this project's items to the top of the
+  // index feed, as one cluster. The page-level sort handles ordering — see
+  // src/lib/feed-sort.ts.
+  if (proj?.pinned) item.pinned = true;
   // Featured: surfaces this item on the homepage hero feed. Authored as
   // `lead_images: [filename, ...]` on the project's _project.md (already
   // plumbed through projects.json by build-projects.mjs).
@@ -427,6 +431,7 @@ for (const [slug, proj] of Object.entries(registry)) {
       if (vidYear) item.year = vidYear;
       if (proj.personal) item.personal = true;
       if (proj.unlisted) item.hidden_from_feed = true;
+      if (proj.pinned) item.pinned = true;
       if (vid.featured) item.featured = true;
       return item;
     })());

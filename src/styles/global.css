@@ -1260,3 +1260,116 @@ video {
   font-weight: inherit;
 }
 
+/* ---- Internal wiki (/wiki; dev-only) ----
+   A reference tool, not editorial copy, so — like the /resume CV table — it
+   drops to --fs-secondary for density and uses a left contents rail beside the
+   body. Built on .prose (not .projectdoc) to avoid that block's flex-gap; the
+   rhythm here is the essay "lobotomized owl" instead. Self-contained .wiki-*
+   namespace; reuses the design tokens and the no-bold / accent-heading rules. */
+.wiki {
+  display: grid;
+  grid-template-columns: minmax(12em, 18%) 1fr;
+  gap: var(--pad);
+  align-items: start;
+  font-size: var(--fs-secondary);
+}
+
+.wiki-sidebar {
+  position: sticky;
+  top: var(--pad);
+  display: flex;
+  flex-direction: column;
+  gap: var(--pad-sm);
+  min-width: 0;
+}
+.wiki-sidebar-home[aria-current="page"],
+.wiki-sidebar a[aria-current="page"] {
+  color: var(--color-accent);
+}
+.wiki-sidebar-group ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.15em;
+}
+.wiki-sidebar-label {
+  color: var(--color-accent);
+  margin-top: 0.6em;
+  margin-bottom: 0.1em;
+}
+
+.wiki-main {
+  min-width: 0;
+}
+.wiki-eyebrow {
+  color: var(--color-accent);
+}
+.wiki-title {
+  margin-bottom: var(--pad);
+}
+
+/* Body rhythm: one top-margin step between blocks; a bigger step before a
+   section head; tight runs inside lists/tables. */
+.wiki-body > * { margin: 0; }
+.wiki-body > * + * { margin-top: 0.8em; }
+.wiki-body > * + :is(h2, h3) { margin-top: var(--pad); }
+.wiki-body h2 {
+  color: var(--color-accent);
+  scroll-margin-top: calc(var(--pad) + 2em);
+}
+.wiki-body h3 { color: var(--color-fg); }
+.wiki-body strong { font-weight: inherit; }
+.wiki-body a { text-decoration: underline; text-underline-offset: 0.15em; }
+
+.wiki-body :is(ul, ol) {
+  padding-left: 1.3em;
+  display: flex;
+  flex-direction: column;
+  gap: 0.2em;
+}
+.wiki-body li > :is(ul, ol) { margin-top: 0.2em; }
+
+.wiki-body code {
+  background: var(--color-code-bg);
+  padding: 2px 4px;
+}
+.wiki-body pre {
+  background: var(--color-code-bg);
+  padding: var(--pad-sm);
+  overflow-x: auto;
+  font-size: 0.85em;
+  line-height: 1.4;
+}
+.wiki-body pre code { background: none; padding: 0; }
+
+.wiki-body table {
+  border-collapse: collapse;
+  width: 100%;
+  font-size: 0.85em;
+  display: block;
+  overflow-x: auto;
+}
+.wiki-body :is(th, td) {
+  border: 1px solid var(--color-code-bg);
+  padding: 0.35em 0.6em;
+  text-align: left;
+  vertical-align: top;
+}
+.wiki-body th { color: var(--color-accent); }
+
+/* Stack the rail above the body on narrow viewports; flatten type like the
+   rest of the site does at this breakpoint. */
+@media (max-width: 760px) {
+  .wiki {
+    grid-template-columns: 1fr;
+    font-size: var(--fs-base);
+  }
+  .wiki-sidebar {
+    position: static;
+    flex-direction: row;
+    flex-wrap: wrap;
+    column-gap: var(--pad);
+  }
+  .wiki-sidebar-group { min-width: 0; }
+}
+

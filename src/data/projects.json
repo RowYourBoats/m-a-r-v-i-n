@@ -37,6 +37,7 @@
     "snapshot_only": false,
     "chronological": false,
     "unlisted": false,
+    "pinned": false,
     "description": "Freelance Designer for Amazon AWS: Reinvent Keynote for Dr. Swami Sivasubramanian focusing on motion and data visualization. Working across the full deck, with a concentration on data visualization and technical diagram work. \n\nThe keynote reached a live audience of 10,000+ and has been viewed over 4.7 million times on YouTube. Visualizing the stories of Dr. Swami Sivasubramanian — VP of AWS Agentic AI; Byron Cook — Vice President and Distinguished Scientist, Automated Reasoning Group; and Colleen Aubrey — AWS SVP Applied AI Solutions.\n",
     "credits": [
       {
@@ -221,6 +222,7 @@
     "snapshot_only": false,
     "chronological": false,
     "unlisted": false,
+    "pinned": false,
     "description": "",
     "credits": [
       {
@@ -269,6 +271,7 @@
     "snapshot_only": false,
     "chronological": false,
     "unlisted": false,
+    "pinned": false,
     "description": "Applications for **For Your Everyone** at Salone del Mobile. Herman Miller's Cosm chair launch. Posters, flyer, and merch under Emily C.M. Anderson.",
     "credits": [
       {
@@ -321,6 +324,7 @@
     "snapshot_only": false,
     "chronological": false,
     "unlisted": false,
+    "pinned": false,
     "description": "Exhibition graphics for **All Together Now** at Salone del Mobile. Herman Miller's Milan show bringing all subsidiaries under one roof for the first time. Posters, flyer, and merch under Emily C.M. Anderson.",
     "credits": [
       {
@@ -371,6 +375,7 @@
     "snapshot_only": false,
     "chronological": false,
     "unlisted": false,
+    "pinned": false,
     "description": "A redesign of Herman Miller's annual sustainability publication, restructuring its data visualizations so y-axis direction reads consistently (up means good), chart types match narrative intent, and inflection points carry context — not just coordinates.",
     "credits": [
       {
@@ -420,6 +425,7 @@
     "snapshot_only": false,
     "chronological": false,
     "unlisted": false,
+    "pinned": false,
     "description": "Herman Miller brand guidelines documentation, with photography standards governing how product and lifestyle imagery sits alongside the wider system.",
     "credits": [
       {
@@ -468,6 +474,7 @@
     "snapshot_only": false,
     "chronological": false,
     "unlisted": false,
+    "pinned": false,
     "description": "Picnic — Herman Miller's design system, organized into front-end, product, and brand pillars. Co-owned the brand pillar with Emily C.M. Anderson, consolidating fragmented PDF guidelines and standardizing asset production across Herman Miller, Geiger, Nemschoff, and the wider group.",
     "credits": [
       {
@@ -514,6 +521,7 @@
     "snapshot_only": false,
     "chronological": false,
     "unlisted": false,
+    "pinned": false,
     "description": "A Geiger holiday card on the theme of collaboration, illustrated by Charlotte Trounce — produced for Herman Miller's executive office furniture subsidiary.",
     "credits": [
       {
@@ -570,6 +578,7 @@
     "snapshot_only": false,
     "chronological": false,
     "unlisted": false,
+    "pinned": false,
     "description": "Holiday card and campaign for Herman Miller's Childhood Literacy initiative — illustration by Edward Ubiera, photography by Daniel Dorsa with Herman Miller furniture brought into the set. The photos later promoted Ubiera's illustration workshop at the flagship store.",
     "credits": [
       {
@@ -631,6 +640,7 @@
     "snapshot_only": false,
     "chronological": false,
     "unlisted": false,
+    "pinned": false,
     "description": "Exhibition graphics for the NYC flagship show celebrating Herman Miller's partnership with product design duo Industrial Facility — illustrations of HM products cut in matte vinyl and applied to acrylic, where the material contrast gave the outlines a sculptural dimension.",
     "credits": [
       {
@@ -681,6 +691,7 @@
     "snapshot_only": false,
     "chronological": false,
     "unlisted": false,
+    "pinned": false,
     "description": "Employee merchandise for Herman Miller — sweaters, hats, water bottles — balancing the robustness needed for a manufacturing workforce with the company's design legacy.",
     "credits": [
       {
@@ -733,6 +744,7 @@
     "snapshot_only": false,
     "chronological": false,
     "unlisted": false,
+    "pinned": false,
     "description": "Product marking guidelines for Herman Miller and Geiger, rooted in materiality — marks that belong to the surface, embossed, engraved, or molded into the material. Including a special-edition Eames Eucalyptus table — one of the few pieces to carry both Vitra and Herman Miller branding.",
     "credits": [
       {
@@ -784,6 +796,7 @@
     "snapshot_only": false,
     "chronological": false,
     "unlisted": false,
+    "pinned": false,
     "description": "Art direction for a WHY magazine article on Richard Holbrook's workplace research, paired with illustrations commissioned from Tanawat Sakdawisarak — chosen for his whimsical, slightly surreal hand.",
     "credits": [
       {
@@ -839,6 +852,7 @@
     "snapshot_only": false,
     "chronological": false,
     "unlisted": false,
+    "pinned": false,
     "description": "Herman Miller presented furniture by designer Ward Bennett paired with objects, quotations, and archival photographs.",
     "credits": [
       {
@@ -889,6 +903,7 @@
     "snapshot_only": false,
     "chronological": false,
     "unlisted": false,
+    "pinned": false,
     "description": "Asset alignment across the Herman Miller Group — establishing shared production standards across Herman Miller, Geiger, Nemschoff, and other subsidiaries: icons constructed to the same spec, photography white-balanced consistently, planning drawings following common conventions.",
     "credits": [
       {
@@ -929,8 +944,7 @@
       "iconography",
       "identity",
       "illustration",
-      "photography",
-      "product-render"
+      "photography"
     ],
     "lead_images": [],
     "order": [
@@ -954,6 +968,7 @@
     "snapshot_only": false,
     "chronological": false,
     "unlisted": false,
+    "pinned": false,
     "description": "IonQ is a leader in quantum computing — a field that, by its nature, resists easy depiction. The brand challenge was to make something abstract feel material: to give audiences a sense that what they were engaging with is solid, present, and real. \nThe visual system is organized around three pillars — Scientific, Optimistic, Confident — translated into a language built to communicate concepts and open conversation rather than decorate them. Scientific reads as evidence, curiosity, and rigor. Optimistic as the belief that this work matters and that the future it points toward is worth describing carefully. Confident as the willingness to make clear decisions and stand behind them.\nThe guidelines codify how IonQ shows up across surfaces, anchoring the audience inside a field that can otherwise feel elusive, and giving the company a coherent, durable voice as the category continues to form.\n",
     "credits": [
       {
@@ -1045,6 +1060,7 @@
     "snapshot_only": false,
     "chronological": false,
     "unlisted": true,
+    "pinned": false,
     "description": "The full brand toolkit, built from a single logo-and-typeface sheet into a comprehensive guidelines document — palette pared to orange to differentiate from IBM Quantum, type simplified to one face and one weight, decisions documented incrementally as the design work demanded them.",
     "credits": [
       {
@@ -1087,6 +1103,7 @@
     "snapshot_only": false,
     "chronological": false,
     "unlisted": false,
+    "pinned": false,
     "description": "IonQ's data visualization language for technical content. #AQ benchmarks, roadmap timelines, error correction overheads, and quantum network architectures developed across investor presentations, partner marketing, and scientific narratives.",
     "credits": [
       {
@@ -1128,6 +1145,7 @@
     "snapshot_only": false,
     "chronological": false,
     "unlisted": false,
+    "pinned": false,
     "description": "A systematic approach to diagrams across IonQ's communications — giving shape to ion trap mechanics, quantum architectures, and system relationships that resist easy depiction, deployed across decks and technical documentation.",
     "credits": [
       {
@@ -1168,6 +1186,7 @@
     "snapshot_only": false,
     "chronological": false,
     "unlisted": false,
+    "pinned": false,
     "description": "Motion content for IonQ's HQ elevator screen — a small-format daily touchpoint cycling iconography and IonQ's key differentiators.",
     "credits": [
       {
@@ -1214,6 +1233,7 @@
     "snapshot_only": false,
     "chronological": false,
     "unlisted": false,
+    "pinned": false,
     "description": "End-to-end creative for IonQ's major event presences — SuperCompute, Quantum Korea, and Quantum World Congress — spanning booth and stage design, keynote storytelling, microsites, and product reveals including Forte Enterprise and Tempo.",
     "credits": [
       {
@@ -1254,6 +1274,7 @@
     "snapshot_only": false,
     "chronological": false,
     "unlisted": false,
+    "pinned": false,
     "description": "Logo and exterior signage treatment for IonQ's HQ facade — extending the rebuilt brand from screen to street.",
     "credits": [
       {
@@ -1296,6 +1317,7 @@
     "snapshot_only": false,
     "chronological": false,
     "unlisted": false,
+    "pinned": false,
     "description": "Definition of IonQ's illustration style — working with an illustrator to clean up and systematize the existing visual language, producing diagrammatic and editorial illustration for technical content.",
     "credits": [
       {
@@ -1339,6 +1361,7 @@
     "snapshot_only": false,
     "chronological": false,
     "unlisted": false,
+    "pinned": false,
     "description": "Product imaging for IonQ — extensive retouching of the main chip image until it became a primary asset across events, plus product renders directed with a 3D designer for keynotes and announcements.",
     "credits": [
       {
@@ -1381,6 +1404,7 @@
     "snapshot_only": false,
     "chronological": false,
     "unlisted": false,
+    "pinned": false,
     "description": "A Figma template system enabling IonQ's marketing team to self-serve routine production — online banners, social posts, one-pager PDFs — reducing the design team's involvement in day-to-day output.",
     "credits": [
       {
@@ -1423,6 +1447,7 @@
     "snapshot_only": false,
     "chronological": false,
     "unlisted": false,
+    "pinned": false,
     "description": "Zoom backgrounds for the IonQ team — photographic compositions extending the brand into everyday remote-work surfaces.",
     "credits": [
       {
@@ -1464,6 +1489,7 @@
     "snapshot_only": false,
     "chronological": false,
     "unlisted": false,
+    "pinned": false,
     "description": "Promotional and corporate one-pagers — campaign posters, annual report cover, executive profiles, product pages, and pricing sheets.",
     "credits": [
       {
@@ -1505,6 +1531,7 @@
     "snapshot_only": false,
     "chronological": false,
     "unlisted": false,
+    "pinned": false,
     "description": "A presentation template put together for the sales team.",
     "credits": [
       {
@@ -1550,6 +1577,7 @@
     "snapshot_only": false,
     "chronological": false,
     "unlisted": false,
+    "pinned": false,
     "description": "The 2015 MoMA Teens brochure — communicating the museum's free programming to high-school audiences across New York.",
     "credits": [
       {
@@ -1595,6 +1623,7 @@
     "snapshot_only": false,
     "chronological": false,
     "unlisted": false,
+    "pinned": false,
     "description": "An ebook templating framework for MoMA's Marron Research Committee Dossiers — a then-new series of scholarly digital publications produced with Yale, Princeton, Columbia, IFA, and NYU.",
     "credits": [
       {
@@ -1639,6 +1668,7 @@
     "snapshot_only": false,
     "chronological": false,
     "unlisted": false,
+    "pinned": false,
     "description": "Setting the wall text for MoMA's Picasso Sculpture — the first US survey of Picasso's sculptural work in nearly half a century, installed across the entire fourth floor of the museum (September 2015 – February 2016).",
     "credits": [
       {
@@ -1681,6 +1711,7 @@
     "snapshot_only": false,
     "chronological": false,
     "unlisted": false,
+    "pinned": false,
     "description": "Designed the keynote for OPPO's Mobile World Congress keynote — a hardware launch presentation pairing motion graphics, bold typography, and product showcases into a single stage narrative.",
     "credits": [
       {
@@ -1796,6 +1827,7 @@
     "snapshot_only": false,
     "chronological": false,
     "unlisted": false,
+    "pinned": false,
     "description": "Lecture posters (Jiri Pelcl, the Green Week series), thesis show graphics for BFA Photography's Babylone — U.S.A., postcards, program brochures, and campus flags for the Manhattan location.",
     "credits": [
       {
@@ -1835,6 +1867,7 @@
     "snapshot_only": false,
     "chronological": false,
     "unlisted": false,
+    "pinned": false,
     "description": "",
     "credits": [
       {
@@ -1884,6 +1917,7 @@
     "snapshot_only": false,
     "chronological": false,
     "unlisted": false,
+    "pinned": false,
     "description": "Naming and rebrand for architecture studio Differential Permanence — launched as DFFPM, with a new logo, typographic system, and brand identity at rollout.",
     "credits": [
       {
@@ -1936,6 +1970,7 @@
     "snapshot_only": false,
     "chronological": false,
     "unlisted": false,
+    "pinned": false,
     "description": "Creative direction for Korean fashion brand Gahi (formerly Hagahi) — identity, catalogues, photoshoots, and a trend-forward e-commerce site using conversation bubbles and emoji as interface elements.",
     "credits": [
       {
@@ -2033,6 +2068,7 @@
     "snapshot_only": false,
     "chronological": false,
     "unlisted": false,
+    "pinned": false,
     "description": "",
     "credits": [
       {
@@ -2079,6 +2115,7 @@
     "snapshot_only": false,
     "chronological": false,
     "unlisted": false,
+    "pinned": false,
     "description": "Editorial design for the first broadsheet issue of Paprika!, the Yale School of Architecture's student-run publication — produced during the MFA at the Yale School of Art, when the publication shifted from a smaller newspaper format into the broadsheet that became its signature.",
     "credits": [
       {
@@ -2126,6 +2163,7 @@
     "snapshot_only": false,
     "chronological": false,
     "unlisted": false,
+    "pinned": false,
     "description": "",
     "credits": [
       {
@@ -2173,6 +2211,7 @@
     "snapshot_only": false,
     "chronological": false,
     "unlisted": false,
+    "pinned": false,
     "description": "An announcement card for lighting firm Tillotson Design Associates marking a new partnership — two foil printings layered to produce a reflective dotted pattern that shifts under changing light angles.",
     "credits": [
       {
@@ -2219,6 +2258,7 @@
     "snapshot_only": false,
     "chronological": false,
     "unlisted": false,
+    "pinned": false,
     "description": "Gather at the Table — a community cookbook for Marin Montessori School. Casebound, cloth cover, set in Neue Montreal and printed by Pureprint on Fedrigoni Arena — recipes and images from families across the community, framed by the Montessori philosophy.",
     "credits": [
       {
@@ -2266,6 +2306,7 @@
     "snapshot_only": false,
     "chronological": false,
     "unlisted": false,
+    "pinned": false,
     "description": "5G campaign retail lead at 140, Verizon's internal agency, under Senior Creative Director Derek Love. Led a small team across creative for 5G campaigns in Verizon's 6,800+ retail locations — from concept through executive review, with final proposals prototyped in a mock-up store at HQ.",
     "credits": [
       {
@@ -2362,6 +2403,7 @@
     "snapshot_only": false,
     "chronological": false,
     "unlisted": false,
+    "pinned": false,
     "description": "Voice User Interface for Verizon 5G in-store experience. Rolled out across 5G Home markets and at events like the SuperBowl.",
     "credits": [
       {
@@ -2479,6 +2521,7 @@
     "snapshot_only": false,
     "chronological": false,
     "unlisted": false,
+    "pinned": false,
     "description": "",
     "credits": [
       {
@@ -2620,6 +2663,7 @@
     "snapshot_only": false,
     "chronological": false,
     "unlisted": true,
+    "pinned": false,
     "description": "",
     "credits": [
       {
@@ -2685,6 +2729,7 @@
     "snapshot_only": false,
     "chronological": false,
     "unlisted": true,
+    "pinned": false,
     "description": "",
     "credits": [
       {
@@ -2743,6 +2788,7 @@
     "snapshot_only": false,
     "chronological": false,
     "unlisted": false,
+    "pinned": false,
     "description": "",
     "credits": [
       {
@@ -2788,9 +2834,7 @@
     "scale": null,
     "image_tags": [
       "deck",
-      "identity",
       "interactive",
-      "logo",
       "proposal"
     ],
     "lead_images": [],
@@ -2799,6 +2843,7 @@
     "snapshot_only": false,
     "chronological": false,
     "unlisted": true,
+    "pinned": false,
     "description": "",
     "credits": [
       {
@@ -2868,6 +2913,7 @@
     "snapshot_only": false,
     "chronological": false,
     "unlisted": true,
+    "pinned": false,
     "description": "",
     "credits": [
       {
@@ -2922,6 +2968,7 @@
     "snapshot_only": false,
     "chronological": false,
     "unlisted": false,
+    "pinned": false,
     "description": "",
     "credits": [
       {
@@ -2973,6 +3020,7 @@
     "snapshot_only": false,
     "chronological": false,
     "unlisted": false,
+    "pinned": false,
     "description": "",
     "credits": [
       {
@@ -3023,6 +3071,7 @@
     "snapshot_only": false,
     "chronological": false,
     "unlisted": true,
+    "pinned": false,
     "description": "",
     "credits": [
       {
@@ -3084,6 +3133,7 @@
     "snapshot_only": false,
     "chronological": false,
     "unlisted": true,
+    "pinned": false,
     "description": "",
     "credits": [
       {
@@ -3132,6 +3182,7 @@
     "snapshot_only": false,
     "chronological": false,
     "unlisted": false,
+    "pinned": false,
     "description": "",
     "credits": [
       {
@@ -3180,6 +3231,7 @@
     "snapshot_only": false,
     "chronological": false,
     "unlisted": false,
+    "pinned": false,
     "description": "",
     "credits": [
       {
@@ -3232,6 +3284,7 @@
     "snapshot_only": false,
     "chronological": false,
     "unlisted": false,
+    "pinned": false,
     "description": "",
     "credits": [
       {
@@ -3278,6 +3331,7 @@
     "snapshot_only": false,
     "chronological": false,
     "unlisted": false,
+    "pinned": false,
     "description": "",
     "credits": [
       {
@@ -3316,6 +3370,7 @@
     "snapshot_only": false,
     "chronological": false,
     "unlisted": false,
+    "pinned": false,
     "description": "The pixel speaks. A white square grows and shrinks against black while a single voice counts its way from 786,432 to 33,177,600 — VGA to 8K — narrating its own dissolution into the smooth surface of the contemporary screen.\n\n\"Try to see the I. The object's boundary that I am. / 1024 by 768, we are 786,432. / People are born today that will never know me. People are born today that will never see me. / We grew up together. Matured together. We were the true accomplishment of a generation. A square. An array of squares. / Unfortunately, you have come to realize that the less you see, the better. To want nothing but yourself. Everything that is other than you is a distraction. A distraction from the spectacle that is your life. / 1920 by 1080, we are 2,073,600. HD. / As gods of the screen, you've slowly been unlocking the secrets of your eyes. And soon we will pay the price. We will move from the seen to the overseen. / You are thrilled. Retina displays, 4K, 8K, Ultra HD, Ultra Mega Super HD. You want to see the world without me. A world where the remainder is erased. / I shall become a trace. An artifact of an ancient world. Wisps of 8-bit. The threads of a world of squares. / Erase me. So that you become everything. Erase me. So that there is only you. / 4096 by 2160. We are 8,847,003. / We have become almost indistinguishable. 7680 by 4320. We are invisible. We have lost meaning. You will never see us again. / Awareness and caring will fade. The spectacle will remain. / I will fade into a blur. The nothingness you desire of me.\"\n",
     "credits": [
       {
@@ -3372,6 +3427,7 @@
     "snapshot_only": false,
     "chronological": false,
     "unlisted": false,
+    "pinned": false,
     "description": "",
     "credits": [
       {
@@ -3435,6 +3491,7 @@
     "snapshot_only": false,
     "chronological": false,
     "unlisted": false,
+    "pinned": false,
     "description": "A book collecting a series of essays on illusion and ambiguity. The comma is scaled up to become an ambiguous shape, the text is classically set while the images are treated like a scroll forming one column that breaks and interrupts.",
     "credits": [
       {
@@ -3468,6 +3525,7 @@
     "snapshot_only": false,
     "chronological": false,
     "unlisted": false,
+    "pinned": false,
     "description": "A video essay on the small window between waking and comprehension — when objects haven't yet been organized into meaning.\n",
     "credits": [
       {
@@ -3518,6 +3576,7 @@
     "snapshot_only": false,
     "chronological": false,
     "unlisted": false,
+    "pinned": false,
     "description": "A business card that captures its ephemeral nature in a message.",
     "credits": [
       {
@@ -3560,6 +3619,7 @@
     "snapshot_only": false,
     "chronological": false,
     "unlisted": false,
+    "pinned": false,
     "description": "Posters exploring legibility, layering, and 'handschrift.'",
     "credits": [
       {
@@ -3599,6 +3659,7 @@
     "snapshot_only": false,
     "chronological": false,
     "unlisted": false,
+    "pinned": false,
     "description": "A poster for the 2014 History and Theory of Architecture Lecture Series at McGill University.",
     "credits": [
       {
@@ -3638,6 +3699,7 @@
     "snapshot_only": false,
     "chronological": false,
     "unlisted": false,
+    "pinned": false,
     "description": "A small concept book based on overlapping thoughts and the wild jumps of a late night work session.",
     "credits": [
       {
@@ -3683,6 +3745,7 @@
     "snapshot_only": false,
     "chronological": true,
     "unlisted": false,
+    "pinned": false,
     "description": "",
     "credits": [
       {
@@ -3719,6 +3782,7 @@
     "snapshot_only": false,
     "chronological": false,
     "unlisted": false,
+    "pinned": false,
     "description": "Article design for Celestial Bodies written by Kelsey Sucenca featuring work by Stephanie Hanes. The design was part of a Precog magazine's Ouroboros issue and combined folding and overlapping 3D geometry with modernist typography.",
     "credits": [
       {
@@ -3767,6 +3831,7 @@
     "snapshot_only": false,
     "chronological": false,
     "unlisted": false,
+    "pinned": false,
     "description": "Continuing exploration of smoke and particle systems, both real-time and rendered, in Unreal Engine.",
     "credits": [
       {
@@ -3852,6 +3917,7 @@
     "snapshot_only": false,
     "chronological": true,
     "unlisted": false,
+    "pinned": false,
     "description": "",
     "credits": [
       {
@@ -3891,6 +3957,7 @@
     "snapshot_only": false,
     "chronological": false,
     "unlisted": false,
+    "pinned": false,
     "description": "",
     "credits": [
       {
@@ -3932,6 +3999,7 @@
     "snapshot_only": false,
     "chronological": false,
     "unlisted": false,
+    "pinned": false,
     "description": "",
     "credits": [
       {
@@ -3974,6 +4042,7 @@
     "snapshot_only": false,
     "chronological": false,
     "unlisted": false,
+    "pinned": false,
     "description": "Layout design for the 'Ouroboros' issue of PreCog magazine featuring the work of Stephanie Hanes and writing of Kelsey Sucena. Using Unreal Engine to design a distorting folding form.",
     "credits": [
       {
@@ -4023,6 +4092,7 @@
     "snapshot_only": false,
     "chronological": false,
     "unlisted": false,
+    "pinned": false,
     "description": "",
     "credits": [
       {
@@ -4068,6 +4138,7 @@
     "snapshot_only": false,
     "chronological": false,
     "unlisted": false,
+    "pinned": false,
     "description": "",
     "credits": [
       {
@@ -4120,6 +4191,7 @@
     "snapshot_only": false,
     "chronological": false,
     "unlisted": true,
+    "pinned": false,
     "description": "",
     "credits": [
       {
@@ -4163,6 +4235,7 @@
     "snapshot_only": false,
     "chronological": false,
     "unlisted": false,
+    "pinned": false,
     "description": "",
     "credits": [
       {
@@ -4207,6 +4280,7 @@
     "snapshot_only": false,
     "chronological": false,
     "unlisted": false,
+    "pinned": false,
     "description": "",
     "credits": [
       {
@@ -4248,6 +4322,7 @@
     "snapshot_only": false,
     "chronological": false,
     "unlisted": true,
+    "pinned": false,
     "description": "",
     "credits": [
       {
@@ -4288,6 +4363,7 @@
     "snapshot_only": false,
     "chronological": false,
     "unlisted": false,
+    "pinned": false,
     "description": "",
     "credits": [
       {
@@ -4331,6 +4407,7 @@
     "snapshot_only": false,
     "chronological": false,
     "unlisted": false,
+    "pinned": false,
     "description": "",
     "credits": [
       {

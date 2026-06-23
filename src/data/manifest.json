@@ -1531,50 +1531,6 @@
       "personal": true
     },
     {
-      "id": "practice-controlled-instability-screenshot-2026-03-04-113113",
-      "src": "https://ws6i2dfuggcaavs2.public.blob.vercel-storage.com/images/practice/controlled-instability/Screenshot%202026-03-04%20113113.png",
-      "type": "image",
-      "title": "Neon Korean Typography Experiment",
-      "tags": [
-        "installation",
-        "editorial",
-        "real-time",
-        "3d",
-        "interactive",
-        "essay",
-        "letter-form",
-        "typography",
-        "moving-image"
-      ],
-      "format": [
-        "installation",
-        "editorial"
-      ],
-      "characteristics": [
-        "real-time",
-        "3d",
-        "interactive",
-        "essay"
-      ],
-      "content": [
-        "letter-form",
-        "typography"
-      ],
-      "project_tags": [],
-      "medium": "moving-image",
-      "project": "__unrouted",
-      "description": "A 3D-rendered Korean text design with fluid, glowing neon outlines illustrating controlled instability in typography. The luminous pink lines create an organic, dynamic visual effect.",
-      "width": 1166,
-      "height": 1897,
-      "style": "Fluid neon typography with controlled instability, featuring glowing pink lines and organic letter forms against a soft gradient background",
-      "created": "2026-04-19T07:07:35.530Z",
-      "year": 2026,
-      "personal": true,
-      "staging": true,
-      "essay_of": "practice/controlled-instability/controlled-instability",
-      "hidden_from_feed": true
-    },
-    {
       "id": "practice-ephemerality-screenshot-2026-04-13-231052",
       "src": "https://ws6i2dfuggcaavs2.public.blob.vercel-storage.com/images/IndependentProjects/Screenshot%202026-04-13%20231052.png",
       "type": "image",
@@ -4059,17 +4015,11 @@
       "id": "work-verizon-future-of-retail-frame-7",
       "src": "https://ws6i2dfuggcaavs2.public.blob.vercel-storage.com/images/work/verizon/future-of-retail/Frame%207.png",
       "type": "image",
-      "title": "IonQ & Busan Metropolitan City Brand Collab",
-      "tags": [
-        "logo",
-        "identity"
-      ],
+      "title": "Vibrant Album Cover Retail Display",
+      "tags": [],
       "format": [],
       "characteristics": [],
-      "content": [
-        "logo",
-        "identity"
-      ],
+      "content": [],
       "project_tags": [
         "b2c",
         "retail",
@@ -4077,7 +4027,7 @@
       ],
       "medium": "",
       "project": "verizon-future-of-retail",
-      "description": "A clean, minimalist presentation showcasing the brand identities of IonQ and Busan Metropolitan City side-by-side on a black background, highlighting collaborative partnership branding",
+      "description": "A retail-focused design showcasing three album covers with bold solid-color backgrounds (red, yellow, green) and minimalist typography, presented as printed display panels for Verizon's Future of Retail initiative.",
       "width": 3840,
       "height": 2160,
       "style": "Minimalist brand partnership with distinct logo presentation on a black background, emphasizing corporate identity and design simplicity",
@@ -4919,66 +4869,6 @@
       "width": 1962,
       "height": 1298,
       "style": "Technical product photography emphasizing microscopic detail and brand integration",
-      "created": "2023-2025",
-      "date_range": "2023-2025",
-      "year": 2023
-    },
-    {
-      "id": "work-ionq-brand-screenshot-2026-04-13-231144",
-      "src": "https://ws6i2dfuggcaavs2.public.blob.vercel-storage.com/images/work/ionq/brand/Screenshot%202026-04-13%20231144.png",
-      "type": "image",
-      "title": "IonQ Brand Identity Visualization",
-      "tags": [
-        "deck",
-        "product-render",
-        "identity"
-      ],
-      "format": [
-        "deck"
-      ],
-      "characteristics": [],
-      "content": [
-        "product-render",
-        "identity"
-      ],
-      "project_tags": [
-        "b2b",
-        "quantum-computing"
-      ],
-      "medium": "",
-      "project": "ionq-brand",
-      "description": "Modular panels with cohesive geometric patterns demonstrate IonQ's brand guidelines, simplifying core messaging for a startup refining its brand identity.",
-      "width": 2671,
-      "height": 1497,
-      "style": "Minimalist monochromatic geometric pattern with spatial arrangement",
-      "created": "2023-2025",
-      "date_range": "2023-2025",
-      "year": 2023
-    },
-    {
-      "id": "work-ionq-brand-screenshot-2026-04-13-231205",
-      "src": "https://ws6i2dfuggcaavs2.public.blob.vercel-storage.com/images/work/ionq/brand/Screenshot%202026-04-13%20231205.png",
-      "type": "image",
-      "title": "IonQ Laboratory Workflow Series",
-      "tags": [
-        "photography",
-        "physical"
-      ],
-      "format": [],
-      "characteristics": [],
-      "content": [
-        "photography"
-      ],
-      "project_tags": [
-        "b2b",
-        "quantum-computing"
-      ],
-      "medium": "physical",
-      "project": "ionq-brand",
-      "description": "Photographic documentation of IonQ's quantum research laboratory, highlighting precision instrumentation and technical workflows essential to quantum computing development.",
-      "width": 2672,
-      "height": 629,
-      "style": "Technical scientific photography emphasizing precision instrumentation and laboratory processes",
       "created": "2023-2025",
       "date_range": "2023-2025",
       "year": 2023
@@ -20265,45 +20155,6 @@
       "year": 2026
     },
     {
-      "id": "practice-controlled-instability-screenshot-2026-01-17-114909",
-      "src": "https://ws6i2dfuggcaavs2.public.blob.vercel-storage.com/images/practice/controlled-instability/Screenshot%202026-01-17%20114909.png",
-      "type": "image",
-      "title": "Screenshot 2026 01 17 114909",
-      "tags": [
-        "editorial",
-        "poster",
-        "3d",
-        "real-time",
-        "essay",
-        "letter-form",
-        "moving-image"
-      ],
-      "format": [
-        "editorial",
-        "poster"
-      ],
-      "characteristics": [
-        "3d",
-        "real-time",
-        "essay"
-      ],
-      "content": [
-        "letter-form"
-      ],
-      "project_tags": [],
-      "medium": "moving-image",
-      "project": "__unrouted",
-      "description": "Forms flicker in place, a screenshot of a real-time interaction. ",
-      "width": 1133,
-      "height": 2023,
-      "created": "2026-04-19T07:07:35.529Z",
-      "year": 2026,
-      "personal": true,
-      "staging": true,
-      "essay_of": "practice/controlled-instability/controlled-instability",
-      "hidden_from_feed": true
-    },
-    {
       "id": "work-moma-teens-program-moma-teensprogram-01",
       "src": "https://ws6i2dfuggcaavs2.public.blob.vercel-storage.com/images/work/moma/teens-program/MoMA_teensProgram_01.jpg",
       "type": "image",
@@ -23600,6 +23451,223 @@
       "created": "2023-2025",
       "date_range": "2023-2025",
       "year": 2023
+    },
+    {
+      "id": "practice-controlled-instability-breathingpoem",
+      "src": "https://ws6i2dfuggcaavs2.public.blob.vercel-storage.com/images/practice/controlled-instability/BreathingPoem.jpeg",
+      "type": "image",
+      "title": "BreathingPoem",
+      "tags": [],
+      "format": [],
+      "characteristics": [],
+      "content": [],
+      "project_tags": [],
+      "medium": "",
+      "project": "__unrouted",
+      "description": "Breathing poem, shown during 2015 thesis show, animated letter-forms looping between extrusions and flattening.",
+      "width": 1200,
+      "height": 752,
+      "created": "2026-06-23T07:47:40.026Z",
+      "year": 2026,
+      "personal": true,
+      "staging": true,
+      "essay_of": "practice/controlled-instability/controlled-instability",
+      "hidden_from_feed": true
+    },
+    {
+      "id": "practice-controlled-instability-comma",
+      "src": "https://ws6i2dfuggcaavs2.public.blob.vercel-storage.com/images/practice/controlled-instability/Comma.png",
+      "type": "image",
+      "title": "Comma",
+      "tags": [
+        "letter-form"
+      ],
+      "format": [],
+      "characteristics": [],
+      "content": [
+        "letter-form"
+      ],
+      "project_tags": [],
+      "medium": "",
+      "project": "__unrouted",
+      "description": "Comma Anthology, 2014, essays about perceptual instability. ",
+      "width": 920,
+      "height": 1314,
+      "created": "2026-06-23T07:48:04.673Z",
+      "year": 2026,
+      "personal": true,
+      "staging": true,
+      "essay_of": "practice/controlled-instability/controlled-instability",
+      "hidden_from_feed": true
+    },
+    {
+      "id": "practice-controlled-instability-formflickersinplace",
+      "src": "https://ws6i2dfuggcaavs2.public.blob.vercel-storage.com/images/practice/controlled-instability/FormFlickersInPlace.png",
+      "type": "image",
+      "title": "FormFlickersInPlace",
+      "tags": [
+        "poster",
+        "3d",
+        "real-time",
+        "letter-form",
+        "motion-graphics",
+        "moving-image"
+      ],
+      "format": [
+        "poster"
+      ],
+      "characteristics": [
+        "3d",
+        "real-time"
+      ],
+      "content": [
+        "letter-form",
+        "motion-graphics"
+      ],
+      "project_tags": [],
+      "medium": "moving-image",
+      "project": "__unrouted",
+      "description": "",
+      "width": 1133,
+      "height": 2023,
+      "created": "2026-04-19T07:07:35.529Z",
+      "year": 2026,
+      "personal": true,
+      "staging": true,
+      "essay_of": "practice/controlled-instability/controlled-instability",
+      "hidden_from_feed": true
+    },
+    {
+      "id": "practice-controlled-instability-letterform",
+      "src": "https://ws6i2dfuggcaavs2.public.blob.vercel-storage.com/images/practice/controlled-instability/LetterForm.jpeg",
+      "type": "image",
+      "title": "LetterForm",
+      "tags": [
+        "poster",
+        "3d",
+        "letter-form",
+        "digital"
+      ],
+      "format": [
+        "poster"
+      ],
+      "characteristics": [
+        "3d"
+      ],
+      "content": [
+        "letter-form"
+      ],
+      "project_tags": [],
+      "medium": "digital",
+      "project": "__unrouted",
+      "description": "Who Am I, 2014, a graphic of extruded letter-forms part of a poster series. ",
+      "width": 1953,
+      "height": 1100,
+      "created": "2026-06-23T07:47:40.028Z",
+      "year": 2026,
+      "personal": true,
+      "staging": true,
+      "essay_of": "practice/controlled-instability/controlled-instability",
+      "hidden_from_feed": true
+    },
+    {
+      "id": "practice-controlled-instability-nottooclose",
+      "src": "https://ws6i2dfuggcaavs2.public.blob.vercel-storage.com/images/practice/controlled-instability/NotTooClose.png",
+      "type": "image",
+      "title": "NotTooClose",
+      "tags": [
+        "3d",
+        "real-time",
+        "letter-form",
+        "motion-graphics",
+        "moving-image"
+      ],
+      "format": [],
+      "characteristics": [
+        "3d",
+        "real-time"
+      ],
+      "content": [
+        "letter-form",
+        "motion-graphics"
+      ],
+      "project_tags": [],
+      "medium": "moving-image",
+      "project": "__unrouted",
+      "description": "너무 가까이 말고, not too close, still from a 2025 real-time system, letter-forms and the camera responding to music.  ",
+      "width": 1166,
+      "height": 1897,
+      "created": "2026-04-19T07:07:35.530Z",
+      "year": 2026,
+      "personal": true,
+      "staging": true,
+      "essay_of": "practice/controlled-instability/controlled-instability",
+      "hidden_from_feed": true
+    },
+    {
+      "id": "practice-controlled-instability-breathingpoem-2",
+      "src": "https://ws6i2dfuggcaavs2.public.blob.vercel-storage.com/images/practice/controlled-instability/breathingPoem.png",
+      "type": "image",
+      "title": "breathingPoem",
+      "tags": [
+        "3d",
+        "letter-form",
+        "motion-graphics",
+        "moving-image"
+      ],
+      "format": [],
+      "characteristics": [
+        "3d"
+      ],
+      "content": [
+        "letter-form",
+        "motion-graphics"
+      ],
+      "project_tags": [],
+      "medium": "moving-image",
+      "project": "__unrouted",
+      "description": "Breathing poem, 2015, screenshot. Animated letter-forms looping between extrusions and flattening.",
+      "width": 1920,
+      "height": 1080,
+      "created": "2026-06-23T07:50:23.886Z",
+      "year": 2026,
+      "personal": true,
+      "staging": true,
+      "essay_of": "practice/controlled-instability/controlled-instability",
+      "hidden_from_feed": true
+    },
+    {
+      "id": "practice-controlled-instability-whowillyoube",
+      "src": "https://ws6i2dfuggcaavs2.public.blob.vercel-storage.com/images/practice/controlled-instability/whoWillYouBe.png",
+      "type": "image",
+      "title": "whoWillYouBe",
+      "tags": [
+        "poster",
+        "3d",
+        "letter-form",
+        "digital"
+      ],
+      "format": [
+        "poster"
+      ],
+      "characteristics": [
+        "3d"
+      ],
+      "content": [
+        "letter-form"
+      ],
+      "project_tags": [],
+      "medium": "digital",
+      "project": "__unrouted",
+      "description": "Who Will You Be, 2014, a graphic of extruded letter-forms part of a poster series. ",
+      "width": 1993,
+      "height": 1668,
+      "created": "2026-06-23T07:47:40.023Z",
+      "year": 2026,
+      "personal": true,
+      "staging": true,
+      "essay_of": "practice/controlled-instability/controlled-instability",
+      "hidden_from_feed": true
     },
     {
       "id": "reinforcement-learning-gyms",

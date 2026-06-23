@@ -10,6 +10,8 @@
 // Usage:
 //   npm run ingest            full pipeline (reconcile → stub → build → blob)
 //   npm run ingest -- --dry-run   preview stub/remap/quarantine only, no writes
+//   npm run ingest -- --drop      also remove captioned-but-missing entries
+//                                 (deleted-from-disk files reconcile would keep)
 //
 // Blob upload runs only when BLOB_READ_WRITE_TOKEN is set (read from the
 // environment or a root .env); otherwise it's skipped and local /images/
@@ -26,6 +28,10 @@ const scriptsDir = __dirname;
 const logPath = path.join(root, "docs/ingest-log.md");
 
 const dryRun = process.argv.includes("--dry-run");
+// Forwarded to the reconcile step: remove catalogue entries whose file is gone
+// from disk even when they carry a caption (otherwise those are quarantined,
+// i.e. kept, to survive an unsynced file on the other machine).
+const drop = process.argv.includes("--drop");
 
 // Load BLOB_READ_WRITE_TOKEN from a root .env if present (these scripts don't
 // pull in dotenv on their own). Never clobber a value already in the env.
@@ -93,12 +99,13 @@ const get = (name) => summaries.find((s) => s.step === name);
 try {
   if (dryRun) {
     console.log("DRY RUN — previewing catalogue changes only; nothing is written.\n");
-    await step("reconcile-catalogue-paths.mjs", []); // dry (no --apply)
+    await step("reconcile-catalogue-paths.mjs", drop ? ["--drop"] : []); // dry (no --apply)
     await step("stub-catalogue.mjs", ["--all"]); // dry (no --apply)
     console.log("\n(dry-run: build/blob/poster steps skipped — re-run without --dry-run to apply)");
   } else {
-    // 1. Heal renames + quarantine missing (never auto-drop). Before stub.
-    await step("reconcile-catalogue-paths.mjs", ["--apply"]);
+    // 1. Heal renames + quarantine missing. With --drop, also remove
+    //    captioned-but-missing entries (deleted from disk). Before stub.
+    await step("reconcile-catalogue-paths.mjs", drop ? ["--apply", "--drop"] : ["--apply"]);
     // 2. Add genuinely-new images as empty stubs (whole tree).
     await step("stub-catalogue.mjs", ["--all", "--apply"]);
     // 3. Stamp created dates (incl. fresh stubs).
@@ -149,7 +156,7 @@ function printTally() {
 
 function writeLog({ failed }) {
   const ts = new Date().toISOString();
-  const mode = dryRun ? "dry-run, no writes" : "applied";
+  const mode = (dryRun ? "dry-run, no writes" : "applied") + (drop ? ", --drop" : "");
   const lines = [`## ${ts} — ingest (${mode})`, ""];
 
   if (failed) lines.push(`- **FAILED:** ${failed}`, "");

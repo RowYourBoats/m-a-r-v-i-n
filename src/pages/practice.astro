@@ -4,6 +4,7 @@ import Base from "@/layouts/Base.astro";
 import PortfolioPageScript from "@/components/PortfolioPageScript.astro";
 import manifest from "@/data/manifest.json";
 import schema from "@/data/schema.json";
+import { pinnedFirst } from "@/lib/feed-sort";
 import { getCollection, getEntry, render } from "astro:content";
 
 const intro = await getEntry("pages", "practice");
@@ -47,21 +48,29 @@ const sortKey = (iso: string | null | undefined, year: number | null | undefined
   if (year) return Date.UTC(year, 11, 31);
   return 0;
 };
+// Pinned essays/projects float to the top, then the rest in date order — the
+// pin holds the position regardless of date. See src/lib/feed-sort.ts.
 type Feed =
-  | { kind: "writing"; entry: (typeof writingEntries)[number]; sort: number }
-  | { kind: "item"; item: any; sort: number };
-const feed: Feed[] = [
-  ...writingEntries.map((entry): Feed => ({
-    kind: "writing",
-    entry,
-    sort: sortKey(entry.data.date, null),
-  })),
-  ...personalItems.map((item: any): Feed => ({
-    kind: "item",
-    item,
-    sort: sortKey(item.created, item.year),
-  })),
-].sort((a, b) => b.sort - a.sort);
+  | { kind: "writing"; entry: (typeof writingEntries)[number]; sort: number; pinned: boolean }
+  | { kind: "item"; item: any; sort: number; pinned: boolean };
+const feed = pinnedFirst<Feed>(
+  [
+    ...writingEntries.map((entry): Feed => ({
+      kind: "writing",
+      entry,
+      sort: sortKey(entry.data.date, null),
+      pinned: !!entry.data.pinned,
+    })),
+    ...personalItems.map((item: any): Feed => ({
+      kind: "item",
+      item,
+      sort: sortKey(item.created, item.year),
+      pinned: !!item.pinned,
+    })),
+  ],
+  (f) => f.pinned,
+  (a, b) => b.sort - a.sort,
+);
 
 // Curated Practice-page filters per the filter architecture directive.
 // Same { label, matches[] } shape as Work.

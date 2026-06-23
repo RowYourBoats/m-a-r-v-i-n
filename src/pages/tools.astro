@@ -4,6 +4,7 @@ import Base from "@/layouts/Base.astro";
 import PortfolioPageScript from "@/components/PortfolioPageScript.astro";
 import manifest from "@/data/manifest.json";
 import projectsData from "@/data/projects.json";
+import { pinnedFirst } from "@/lib/feed-sort";
 import { getCollection, getEntry, render } from "astro:content";
 
 const intro = await getEntry("pages", "tools");
@@ -71,23 +72,31 @@ const coverForProject = (slug: string) => {
 
 // Unified reverse-chronological card list across essay-tools and legacy
 // project-tools.
-type Card = { id: string; href: string; title: string; cover: any; year: number };
-const cards: Card[] = [
-  ...toolEssays.map((e): Card => ({
-    id: e.id,
-    href: `/writing/${e.id}`,
-    title: e.data.title,
-    cover: essayCover.get(e.id) || null,
-    year: startYear(e.data.date),
-  })),
-  ...toolProjects.map((p): Card => ({
-    id: p.slug,
-    href: `/projects/${p.slug}`,
-    title: p.name,
-    cover: coverForProject(p.slug),
-    year: startYear(p.date_range),
-  })),
-].sort((a, b) => b.year - a.year || a.title.localeCompare(b.title));
+// Pinned tools float to the top (newest first among pins), then the rest by
+// year — see src/lib/feed-sort.ts.
+type Card = { id: string; href: string; title: string; cover: any; year: number; pinned: boolean };
+const cards = pinnedFirst<Card>(
+  [
+    ...toolEssays.map((e): Card => ({
+      id: e.id,
+      href: `/writing/${e.id}`,
+      title: e.data.title,
+      cover: essayCover.get(e.id) || null,
+      year: startYear(e.data.date),
+      pinned: !!e.data.pinned,
+    })),
+    ...toolProjects.map((p): Card => ({
+      id: p.slug,
+      href: `/projects/${p.slug}`,
+      title: p.name,
+      cover: coverForProject(p.slug),
+      year: startYear(p.date_range),
+      pinned: !!p.pinned,
+    })),
+  ],
+  (c) => c.pinned,
+  (a, b) => b.year - a.year || a.title.localeCompare(b.title),
+);
 
 // SSR-seed masonry spans so the layout is roughly distributed before
 // PortfolioPageScript refines it on load.
