@@ -1,0 +1,64 @@
+---
+import { getCollection } from "astro:content";
+
+interface Props {
+  // Slug of the topic currently shown, or "index" on the landing page.
+  current: string;
+}
+
+const { current } = Astro.props;
+
+// Explicit section order for the sidebar. Any section not listed falls to the
+// end, alphabetically — so a new section appears without editing this, but the
+// curated spine stays put.
+const SECTION_ORDER = [
+  "Start",
+  "Authoring",
+  "Content",
+  "Pipeline",
+  "Frontend",
+  "Ops",
+  "Status",
+];
+
+// "overview" is the landing page (the "Overview" home link below), so it's not
+// listed again as a topic.
+const entries = (await getCollection("wiki")).filter((e) => e.id !== "overview");
+
+const groups = new Map<string, { id: string; title: string; order: number }[]>();
+for (const e of entries) {
+  const list = groups.get(e.data.section) ?? [];
+  list.push({ id: e.id, title: e.data.title, order: e.data.order });
+  groups.set(e.data.section, list);
+}
+
+const sections = [...groups.entries()]
+  .map(([name, items]) => ({
+    name,
+    items: items.sort((a, b) => a.order - b.order || a.title.localeCompare(b.title)),
+  }))
+  .sort((a, b) => {
+    const ai = SECTION_ORDER.indexOf(a.name);
+    const bi = SECTION_ORDER.indexOf(b.name);
+    return (ai === -1 ? Infinity : ai) - (bi === -1 ? Infinity : bi) || a.name.localeCompare(b.name);
+  });
+---
+
+<nav class="wiki-sidebar" aria-label="Wiki contents">
+  <a href="/wiki" class="wiki-sidebar-home" aria-current={current === "index" ? "page" : undefined}>Overview</a>
+  {sections.map((section) => (
+    <div class="wiki-sidebar-group">
+      <p class="wiki-sidebar-label">{section.name}</p>
+      <ul>
+        {section.items.map((item) => (
+          <li>
+            <a
+              href={`/wiki/${item.id}`}
+              aria-current={current === item.id ? "page" : undefined}
+            >{item.title}</a>
+          </li>
+        ))}
+      </ul>
+    </div>
+  ))}
+</nav>

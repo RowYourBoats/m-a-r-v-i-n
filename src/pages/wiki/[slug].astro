@@ -1,0 +1,34 @@
+---
+export const prerender = false;
+
+import Base from "@/layouts/Base.astro";
+import WikiSidebar from "@/components/WikiSidebar.astro";
+import { getEntry, render } from "astro:content";
+
+// Dev-only — the wiki is an internal operations reference, never served in
+// production (same gate as /admin/images). prerender:false keeps this an
+// on-demand route so the DEV check runs per request and the build never tries
+// to statically render it (which would also require the gitignored content).
+if (!import.meta.env.DEV) return new Response("not found", { status: 404 });
+
+const { slug } = Astro.params;
+const entry = await getEntry("wiki", slug!);
+if (!entry) return Astro.redirect("/wiki");
+
+const { Content } = await render(entry);
+---
+
+<Base title={`${entry.data.title} — Wiki`}>
+  <div class="wiki">
+    <WikiSidebar current={entry.id} />
+    <article class="wiki-main">
+      <header class="wiki-header">
+        <p class="wiki-eyebrow">{entry.data.section}</p>
+        <h1 class="wiki-title">{entry.data.title}</h1>
+      </header>
+      <div class="prose wiki-body">
+        <Content />
+      </div>
+    </article>
+  </div>
+</Base>

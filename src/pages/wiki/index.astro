@@ -1,0 +1,29 @@
+---
+export const prerender = false;
+
+import Base from "@/layouts/Base.astro";
+import WikiSidebar from "@/components/WikiSidebar.astro";
+import { getEntry, render } from "astro:content";
+
+// Dev-only — see [slug].astro. The landing page is the Overview topic itself;
+// the sidebar is the index, so there's no separate table of contents here.
+if (!import.meta.env.DEV) return new Response("not found", { status: 404 });
+
+const entry = await getEntry("wiki", "overview");
+const { Content } = await render(entry!);
+---
+
+<Base title="Wiki — Marvin de Jong">
+  <div class="wiki">
+    <WikiSidebar current="index" />
+    <article class="wiki-main">
+      <header class="wiki-header">
+        <p class="wiki-eyebrow">Internal reference</p>
+        <h1 class="wiki-title">{entry!.data.title}</h1>
+      </header>
+      <div class="prose wiki-body">
+        <Content />
+      </div>
+    </article>
+  </div>
+</Base>
