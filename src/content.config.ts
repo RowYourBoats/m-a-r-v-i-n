@@ -21,6 +21,11 @@ const writing = defineCollection({
     // newest sorts first. Projects pin the same way via `pinned` on _project.md.
     // See src/lib/feed-sort.ts.
     pinned: z.boolean().optional(),
+    // Essay figure layout. "standard" (default) = text 2/3 + a single 1/3
+    // image rail. "gallery" = text 1/3 + a two-column image grid (1/3 each),
+    // for image-dominant essays. Only takes effect when the essay has
+    // companion images (essay_of). Opt in per essay.
+    layout: z.enum(["standard", "gallery"]).optional(),
   }),
 });
 

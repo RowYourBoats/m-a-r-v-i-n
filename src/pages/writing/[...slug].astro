@@ -38,10 +38,19 @@ const figures = orderItems(
   ),
   entry.data.order || [],
 );
+
+// gallery figures are ~1/3 vw on desktop; the standard rail keeps its 50vw
+// hint. Narrow the hint only for gallery so srcset picks a right-sized source.
+const figureSizes =
+  entry.data.layout === "gallery"
+    ? "(max-width: 680px) 50vw, 33vw"
+    : "(max-width: 760px) 100vw, 50vw";
 ---
 
 <Base title={`${entry.data.title} — Marvin de Jong`}>
-  <article class={`essay${figures.length ? " essay--with-figures" : ""}`}>
+  <article class={`essay${figures.length ? " essay--with-figures" : ""}${
+    figures.length && entry.data.layout === "gallery" ? " essay--gallery" : ""
+  }`}>
     <div class="essay-text">
       <header class="essay-header">
         <h1 class="essay-title">{entry.data.title}</h1>
@@ -61,7 +70,7 @@ const figures = orderItems(
                 width={f.width}
                 height={f.height}
                 widths={[480, 768, 1200]}
-                sizes="(max-width: 760px) 100vw, 50vw"
+                sizes={figureSizes}
                 alt={f.description || f.title || ""}
                 loading="lazy"
                 decoding="async"

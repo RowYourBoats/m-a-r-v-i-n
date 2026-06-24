@@ -3,14 +3,15 @@ title: "Controlled Instability: Real-time Systems"
 date: "2026-02-06"
 tags: [essay, real-time, process]
 pinned: true
+layout: gallery
 excerpt: The form stays anchored but never settles.
 cover: "NotTooClose.png"
 order:
-  - LetterForm.jpeg      # these come first, in this order
-  - whoWillYouBe.png
-  - BreathingPoem.jpeg
+  - NotTooClose.png      # these come first, in this order
   - FormFlickersInPlace.png
-  - NotTooClose.png
+  - BreathingPoem.jpeg
+  - whoWillYouBe.png
+  - LetterForm.jpeg
 ---
 
 These works follow an interest in handwriting carrying traces of my thoughts, habits, and the moment in which they're written. Early explorations and texts were a self-reflection on how my thinking was malleable and might gain contexts, change based on learning new things, or just be completely dependent on the context in which they were born. How can written thoughts carry the same subjectivity but not just be artefacts of the moment they live in? How can they continue to carry that malleability in their expression and how can it grow to be more than just a momentary reflection? How can a viewer engage with this form?
