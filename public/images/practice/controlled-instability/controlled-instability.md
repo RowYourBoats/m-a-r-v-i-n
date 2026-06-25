@@ -18,4 +18,4 @@ These works follow an interest in handwriting carrying traces of my thoughts, ha
 
 My current practice follows this interest in making my subjectivity tangible. Past work was always forced closed in some way. A recording is fixed in time, a loop has a built-in repetition, a print is a static artefact. Real-time systems are the first medium where that tension can be kept unresolved. The form stays anchored but never settles. A form that is alive and unstable through real-time rendering and live input.
 
-The exploration now is about how to keep the form alive in the encounter with a viewer rather than predefined. A gesture evokes a response; a step closer might cause friction. The manipulation can be sensed, and the gesture itself becomes a tangible expression of form, made in the moment of engagement.
+The exploration is now about how to keep the form alive in the encounter with a viewer. What gesture evokes what response; could a move not only create but also cause friction. How can the manipulation be sensed, and how can the gesture itself become tangible as a form.
