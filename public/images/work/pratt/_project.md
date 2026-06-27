@@ -33,6 +33,7 @@ projects:
       - illustration
       - poster
       - publication-design
+      - stationery
       - typography
   credits:
     - role: Designer

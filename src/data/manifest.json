@@ -4711,17 +4711,13 @@
       "type": "image",
       "title": "IonQ Quantum Computing -  Quantum Korea",
       "tags": [
-        "booth",
-        "exhibition",
-        "event",
+        "poster",
         "typography",
         "photography",
         "product-render"
       ],
       "format": [
-        "booth",
-        "exhibition",
-        "event"
+        "poster"
       ],
       "characteristics": [],
       "content": [
@@ -4739,44 +4735,6 @@
       "width": 12488,
       "height": 4096,
       "style": "Modern, tech-focused design with dark backgrounds, orange accent colors, and high-quality product photography.",
-      "created": "2023-2025",
-      "date_range": "2023-2025",
-      "year": 2023
-    },
-    {
-      "id": "work-ionq-expo-ionq-commercializingquantum-3x2-3-2024-05-17-enterprise-grade-2-1",
-      "src": "https://ws6i2dfuggcaavs2.public.blob.vercel-storage.com/images/work/ionq/expo/IONQ%20-%20CommercializingQuantum%20-%203x2%203%20-%202024%2005%2017%20-%20Enterprise-Grade%202%201.png",
-      "type": "image",
-      "title": "IonQ Quantum Enterprise System Visual",
-      "tags": [
-        "poster",
-        "booth",
-        "exhibition",
-        "event",
-        "product-render",
-        "typography"
-      ],
-      "format": [
-        "poster",
-        "booth",
-        "exhibition",
-        "event"
-      ],
-      "characteristics": [],
-      "content": [
-        "product-render",
-        "typography"
-      ],
-      "project_tags": [
-        "b2b",
-        "quantum-computing"
-      ],
-      "medium": "",
-      "project": "ionq-expo",
-      "description": "A digital promotional design for IonQ showcasing their enterprise-grade quantum computing hardware with minimalist aesthetics and geometric patterns, emphasizing brand identity and technological advancement.",
-      "width": 1982,
-      "height": 1519,
-      "style": "Minimalist, futuristic tech aesthetic with geometric patterns on hardware units against a dark background",
       "created": "2023-2025",
       "date_range": "2023-2025",
       "year": 2023
@@ -5228,39 +5186,6 @@
       "year": 2015
     },
     {
-      "id": "work-pratt-design-system-marvindejong-designportfolio",
-      "src": "https://ws6i2dfuggcaavs2.public.blob.vercel-storage.com/images/work/pratt/design-system/MarvinDeJong-DesignPortfolio.jpeg",
-      "type": "image",
-      "title": "Pratt Manhattan Center Signage",
-      "tags": [
-        "exhibition",
-        "identity",
-        "typography",
-        "print"
-      ],
-      "format": [
-        "exhibition"
-      ],
-      "characteristics": [],
-      "content": [
-        "identity",
-        "typography"
-      ],
-      "project_tags": [
-        "b2c",
-        "education"
-      ],
-      "medium": "print",
-      "project": "pratt-design-system",
-      "description": "Exterior signage for the Sondra and David S. Mack Pratt Manhattan Center and Pratt Manhattan Gallery, showcasing branded banners on a historic building facade.",
-      "width": 1805,
-      "height": 2256,
-      "style": "Ornate architectural facade with minimalist brand signage",
-      "created": "2015-2016",
-      "date_range": "2015-2016",
-      "year": 2015
-    },
-    {
       "id": "work-pratt-design-system-prattbrochure",
       "src": "https://ws6i2dfuggcaavs2.public.blob.vercel-storage.com/images/work/pratt/design-system/PrattBrochure.jpeg",
       "type": "image",
@@ -5275,7 +5200,9 @@
         "editorial"
       ],
       "characteristics": [],
-      "content": [],
+      "content": [
+        "editorial"
+      ],
       "project_tags": [
         "b2c",
         "education"
@@ -20328,15 +20255,17 @@
       "id": "work-pratt-design-system-dscn1457",
       "src": "https://ws6i2dfuggcaavs2.public.blob.vercel-storage.com/images/work/pratt/design-system/DSCN1457.jpg",
       "type": "image",
-      "title": "DSCN1457",
+      "title": "Pratt: Havana Through the Lens",
       "tags": [
-        "exhibition",
+        "stationery",
+        "poster",
         "illustration",
         "typography",
         "print"
       ],
       "format": [
-        "exhibition"
+        "stationery",
+        "poster"
       ],
       "characteristics": [],
       "content": [
@@ -20360,15 +20289,17 @@
       "id": "work-pratt-design-system-dscn1458",
       "src": "https://ws6i2dfuggcaavs2.public.blob.vercel-storage.com/images/work/pratt/design-system/DSCN1458.jpg",
       "type": "image",
-      "title": "DSCN1458",
+      "title": "Pratt: Grant Brooker",
       "tags": [
-        "exhibition",
+        "stationery",
+        "poster",
         "illustration",
         "typography",
         "print"
       ],
       "format": [
-        "exhibition"
+        "stationery",
+        "poster"
       ],
       "characteristics": [],
       "content": [
@@ -20394,13 +20325,13 @@
       "type": "image",
       "title": "forYouEveryone 01",
       "tags": [
-        "exhibition",
+        "publication-design",
         "typography",
         "illustration",
         "print"
       ],
       "format": [
-        "exhibition"
+        "publication-design"
       ],
       "characteristics": [],
       "content": [
@@ -20429,13 +20360,13 @@
       "type": "image",
       "title": "forYouEveryone 02",
       "tags": [
-        "exhibition",
+        "publication-design",
         "typography",
         "illustration",
         "print"
       ],
       "format": [
-        "exhibition"
+        "publication-design"
       ],
       "characteristics": [],
       "content": [
@@ -20464,18 +20395,16 @@
       "type": "image",
       "title": "forYouEveryone 03",
       "tags": [
-        "exhibition",
-        "photography",
+        "publication-design",
         "illustration",
         "typography",
         "print"
       ],
       "format": [
-        "exhibition"
+        "publication-design"
       ],
       "characteristics": [],
       "content": [
-        "photography",
         "illustration",
         "typography"
       ],

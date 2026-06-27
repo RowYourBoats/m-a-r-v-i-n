@@ -29,9 +29,8 @@ projects:
       Applications for **For Your Everyone** at Salone del Mobile. Herman Miller's Cosm chair launch. Posters, flyer,
       and merch under Emily C.M. Anderson.
     image_tags:
-      - exhibition
       - illustration
-      - photography
+      - publication-design
       - typography
     credits:
       - role: Brand Design

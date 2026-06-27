@@ -260,9 +260,8 @@
     "role": null,
     "scale": null,
     "image_tags": [
-      "exhibition",
       "illustration",
-      "photography",
+      "publication-design",
       "typography"
     ],
     "lead_images": [],
@@ -1819,6 +1818,7 @@
       "illustration",
       "poster",
       "publication-design",
+      "stationery",
       "typography"
     ],
     "lead_images": [],
