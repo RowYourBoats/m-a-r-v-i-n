@@ -7,7 +7,23 @@ summary: Flagged-but-undecided items and deferred work.
 
 Things flagged during work but not yet decided or addressed.
 
+## Verify (unified doc model — 2026-06-30)
+
+The essay/project convergence (shared schema + render path; essays gained
+videos/credits/publication/diagrams; `project-doc.ts` retired) is implemented but
+**not yet pushed** — verification pending. Full checklist in `verify.md` at the repo
+root. The must-do before push: run `npm run build-data` locally so the Controlled
+Instability essay videos get their oEmbed dimensions (the sandbox build had no network,
+so they're dimensionless in `manifest.json` right now).
+
 ## Data hygiene
+
+- **`pratt` credits mis-indented.** In `public/images/work/pratt/_project.md` a
+  sub-project's `credits:` is under-indented, so it became a key in the `projects:` map —
+  `build-projects` emits a junk `pratt-credits` project (0 images, doesn't render, but it's
+  in `projects.json`). Fix the indentation to remove it.
+- **`smoke-systems` null role.** `public/images/practice/smoke-systems/_project.md` has
+  `role: null` under credits (a bare `role:`); validates, but likely a typo.
 
 - Some project descriptions still empty. A subset of `_project.md` files still have `description: ""`, needed for project detail pages. Herman Miller and MoMA umbrellas now have sub-project descriptions; gaps remain in projects without sub-project structure.
 - `content` backfill. At the 2026-06-17 axis migration, 109 published images had no `content` tag (the required floor). Work through them in `/admin/images` (toggle "missing tags"). See [Tag taxonomy](/wiki/tag-taxonomy).

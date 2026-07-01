@@ -483,7 +483,7 @@
       "year": 2015,
       "credits": [
         {
-          "role": "Design",
+          "role": "Designer",
           "name": "Marvin de Jong"
         }
       ],
@@ -988,6 +988,20 @@
       "order": [],
       "snapshot_only": false
     },
+    "NotTooClose": {
+      "title": "너무 가까이 말고 / Not Too Close",
+      "description": "*Not Too Close* is a real-time typographic system that responds to music composed by Joyul for *Gridshift,* the Korea Society of Typography’s 19th exhibition.\nThe system distorts letterforms and the composition in response to the music. A black-and-white still from the system was presented as a poster in the exhibition.\n",
+      "client": "personal",
+      "year": 2015,
+      "credits": [
+        {
+          "role": "Design",
+          "name": "Marvin de Jong"
+        }
+      ],
+      "order": [],
+      "snapshot_only": false
+    },
     "one-offs": {
       "title": "One Off",
       "description": "",
@@ -1206,11 +1220,13 @@
       "title": "Breathing Poem: Interactive Topographical Installation",
       "tags": [
         "installation",
+        "exhibition",
         "letter-form",
         "moving-image"
       ],
       "format": [
-        "installation"
+        "installation",
+        "exhibition"
       ],
       "characteristics": [],
       "content": [
@@ -6366,20 +6382,24 @@
       "title": "Verizon 5G Campaign Window Display",
       "tags": [
         "campaign",
-        "event"
+        "event",
+        "signage",
+        "print"
       ],
       "format": [
         "campaign",
         "event"
       ],
       "characteristics": [],
-      "content": [],
+      "content": [
+        "signage"
+      ],
       "project_tags": [
         "b2c",
         "retail",
         "telecom"
       ],
-      "medium": "",
+      "medium": "print",
       "project": "verizon-5G-campaigns",
       "description": "A retail window installation for Verizon's 5G campaign at 770 Lexington Ave, showcasing large-scale typography and the brand's iconic red 'V' logo against a reflective urban backdrop.",
       "width": 8223,
@@ -6625,23 +6645,32 @@
       "tags": [
         "campaign",
         "installation",
+        "poster",
         "interactive",
-        "spatial"
+        "signage",
+        "typography",
+        "motion-graphics",
+        "moving-image"
       ],
       "format": [
         "campaign",
-        "installation"
+        "installation",
+        "poster"
       ],
       "characteristics": [
         "interactive"
       ],
-      "content": [],
+      "content": [
+        "signage",
+        "typography",
+        "motion-graphics"
+      ],
       "project_tags": [
         "b2c",
         "retail",
         "telecom"
       ],
-      "medium": "spatial",
+      "medium": "moving-image",
       "project": "verizon-chicago",
       "description": "A modern retail environment for Verizon's Chicago location featuring strategic displays of 5G home internet products, integrated branded signage, and an open layout designed to enhance customer experience and showcase technology.",
       "width": 2054,
@@ -8774,11 +8803,13 @@
       "title": "Verizon 5G Retail Experience",
       "tags": [
         "deck",
+        "installation",
         "interactive",
         "proposal"
       ],
       "format": [
-        "deck"
+        "deck",
+        "installation"
       ],
       "characteristics": [
         "interactive"
@@ -8808,11 +8839,13 @@
       "title": "Verizon Digital Lifestyle Support Retail Space",
       "tags": [
         "deck",
+        "installation",
         "interactive",
         "proposal"
       ],
       "format": [
-        "deck"
+        "deck",
+        "installation"
       ],
       "characteristics": [
         "interactive"
@@ -8842,11 +8875,13 @@
       "title": "Verizon Modern Retail Interior",
       "tags": [
         "deck",
+        "installation",
         "interactive",
         "proposal"
       ],
       "format": [
-        "deck"
+        "deck",
+        "installation"
       ],
       "characteristics": [
         "interactive"
@@ -8876,11 +8911,13 @@
       "title": "Verizon Tech Experience Retail Wall",
       "tags": [
         "deck",
+        "installation",
         "interactive",
         "proposal"
       ],
       "format": [
-        "deck"
+        "deck",
+        "installation"
       ],
       "characteristics": [
         "interactive"
@@ -20973,6 +21010,42 @@
       "year": 2017
     },
     {
+      "id": "practice-snu-02-snu-datavis",
+      "src": "https://ws6i2dfuggcaavs2.public.blob.vercel-storage.com/images/practice/SNU/02_SNU_dataVis.jpeg",
+      "type": "image",
+      "title": "SNU Data Vis",
+      "tags": [
+        "publication-design",
+        "print",
+        "typography",
+        "data-visualization"
+      ],
+      "format": [
+        "publication-design"
+      ],
+      "characteristics": [
+        "print"
+      ],
+      "content": [
+        "typography",
+        "data-visualization"
+      ],
+      "project_tags": [
+        "personal",
+        "publication-design",
+        "education"
+      ],
+      "medium": "print",
+      "project": "snu",
+      "description": "",
+      "width": 970,
+      "height": 1338,
+      "created": "2013",
+      "date_range": "2013",
+      "year": 2013,
+      "personal": true
+    },
+    {
       "id": "practice-ambiguous-form-letterform",
       "src": "https://ws6i2dfuggcaavs2.public.blob.vercel-storage.com/images/practice/ambiguous-form/LetterForm.jpeg",
       "type": "image",
@@ -21922,6 +21995,40 @@
       "created": "2023-2025",
       "date_range": "2023-2025",
       "year": 2023
+    },
+    {
+      "id": "work-verizon-network-reliability-verizon-770-lexington-ave-23-june-20213125",
+      "src": "https://ws6i2dfuggcaavs2.public.blob.vercel-storage.com/images/work/verizon/network-reliability/Verizon%20770%20Lexington%20Ave%2023%20June%2020213125.jpg",
+      "type": "image",
+      "title": "Verizon 770 Lexington Ave 23 June 20213125",
+      "tags": [
+        "retail",
+        "print",
+        "lifestyle",
+        "photography"
+      ],
+      "format": [
+        "retail"
+      ],
+      "characteristics": [
+        "print"
+      ],
+      "content": [
+        "lifestyle",
+        "photography"
+      ],
+      "project_tags": [
+        "b2c",
+        "telecom"
+      ],
+      "medium": "print",
+      "project": "verizon-network-reliability",
+      "description": "",
+      "width": 8599,
+      "height": 5733,
+      "created": "2019-2022",
+      "date_range": "2019-2022",
+      "year": 2019
     },
     {
       "id": "tools-kept-app-jullie-resume-app",
@@ -23386,12 +23493,23 @@
       "src": "https://ws6i2dfuggcaavs2.public.blob.vercel-storage.com/images/practice/controlled-instability/BreathingPoem.jpeg",
       "type": "image",
       "title": "BreathingPoem",
-      "tags": [],
-      "format": [],
-      "characteristics": [],
-      "content": [],
+      "tags": [
+        "installation",
+        "3d",
+        "letter-form",
+        "moving-image"
+      ],
+      "format": [
+        "installation"
+      ],
+      "characteristics": [
+        "3d"
+      ],
+      "content": [
+        "letter-form"
+      ],
       "project_tags": [],
-      "medium": "",
+      "medium": "moving-image",
       "project": "__unrouted",
       "description": "Breathing poem, shown during 2015 thesis show, animated letter-forms looping between extrusions and flattening.",
       "width": 1200,
@@ -23409,17 +23527,23 @@
       "type": "image",
       "title": "Comma",
       "tags": [
-        "letter-form"
+        "publication-design",
+        "letter-form",
+        "typography",
+        "print"
       ],
-      "format": [],
+      "format": [
+        "publication-design"
+      ],
       "characteristics": [],
       "content": [
-        "letter-form"
+        "letter-form",
+        "typography"
       ],
       "project_tags": [],
-      "medium": "",
+      "medium": "print",
       "project": "__unrouted",
-      "description": "Comma Anthology, 2014, essays about perceptual instability. ",
+      "description": "*Comma Anthology,* 2014, essays about perceptual instability. ",
       "width": 920,
       "height": 1314,
       "created": "2026-06-23T07:48:04.673Z",
@@ -24688,7 +24812,8 @@
       "width": 1440,
       "height": 1080,
       "year": 2015,
-      "personal": true
+      "personal": true,
+      "description": "The pixel speaks."
     },
     {
       "id": "pin-up",
@@ -24734,7 +24859,8 @@
       "width": 1920,
       "height": 1080,
       "year": 2025,
-      "personal": true
+      "personal": true,
+      "description": "Exploring materials and motion in Unreal Engine."
     },
     {
       "id": "cup",
@@ -24757,7 +24883,34 @@
       "width": 1920,
       "height": 1080,
       "year": 2015,
-      "personal": true
+      "personal": true,
+      "description": "The pixel speaks."
+    },
+    {
+      "id": "not-too-close",
+      "type": "video",
+      "video": "https://player.vimeo.com/video/1122071930?autoplay=1&muted=1&loop=1&playsinline=1",
+      "video_mode": "ui",
+      "title": "Not Too Close",
+      "tags": [
+        "video",
+        "moving-image",
+        "real-time",
+        "3d",
+        "study"
+      ],
+      "project_tags": [
+        "personal",
+        "personal"
+      ],
+      "medium": "moving-image",
+      "project": "NotTooClose",
+      "width": 1920,
+      "height": 3413,
+      "year": 2015,
+      "personal": true,
+      "pinned": true,
+      "description": "너무 가까이 말고"
     },
     {
       "id": "smoke-test-1",
@@ -24862,6 +25015,47 @@
       "height": 1920,
       "year": 2025,
       "personal": true
+    },
+    {
+      "id": "smoke-system-and-gesture-based-camera",
+      "type": "video",
+      "video": "https://player.vimeo.com/video/1204275192?autoplay=1&muted=1&loop=1&playsinline=1",
+      "video_mode": "ui",
+      "title": "Smoke system  and gesture based camera",
+      "tags": [
+        "video",
+        "moving-image",
+        "3d",
+        "motion-graphics",
+        "study"
+      ],
+      "project_tags": [],
+      "medium": "moving-image",
+      "essay_of": "practice/controlled-instability/controlled-instability",
+      "width": 720,
+      "height": 1280,
+      "year": 2026,
+      "hidden_from_feed": true,
+      "description": "An experiment in real-time particle-based smoke simulation and gesture based camera control. "
+    },
+    {
+      "id": "handwritten-letterforms-and-gesture-based-distortion",
+      "type": "video",
+      "video": "https://player.vimeo.com/video/1204275355?autoplay=1&muted=1&loop=1&playsinline=1",
+      "video_mode": "ui",
+      "title": "Handwritten letterforms and gesture-based distortion.",
+      "tags": [
+        "video",
+        "moving-image"
+      ],
+      "project_tags": [],
+      "medium": "moving-image",
+      "essay_of": "practice/controlled-instability/controlled-instability",
+      "width": 720,
+      "height": 1280,
+      "year": 2026,
+      "hidden_from_feed": true,
+      "description": "*Not just yet, * an experiment in gesture based distortion of letter forms. "
     }
   ]
 }

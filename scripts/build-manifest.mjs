@@ -5,7 +5,11 @@
 import fs from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
+import { createRequire } from "node:module";
 import { imageSize } from "image-size";
+
+const require = createRequire(import.meta.url);
+const yaml = require("js-yaml");
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const root = path.resolve(__dirname, "..");
@@ -128,6 +132,7 @@ const UNROUTED_SLUG = "__unrouted";
 // points to the writing-collection id (path relative to public/images, no ext).
 // Convention matches content.config.ts writing loader: `**/[!_]*.md`.
 const essayByFolder = new Map();
+const essayFiles = []; // { id, abs } per essay .md, for the essay-video pass
 const walkForEssays = (dir) => {
   for (const entry of fs.readdirSync(dir, { withFileTypes: true })) {
     if (entry.name.startsWith(".") || entry.name.startsWith("_")) continue;
@@ -145,6 +150,7 @@ const walkForEssays = (dir) => {
         .join("/")
         .replace(/\.md$/, "");
       essayByFolder.set(folderRel, essayId);
+      essayFiles.push({ id: essayId, abs });
     }
   }
 };
@@ -362,6 +368,70 @@ const items = curatedCatalogue.map((raw) => {
   return item;
 });
 
+// Build one manifest video item from a `videos[]` frontmatter entry. Shared by
+// the project pass and the essay pass — the only difference is placement context
+// (`owner`): a project video carries `project: slug`; an essay video carries
+// `essay_of: id` and is hidden from the feed (matching that essay's images).
+// Async because it probes Vimeo oEmbed for dimensions.
+// Field insertion order is preserved exactly so the project-video output stays
+// byte-identical (manifest is order-sensitive).
+async function buildVideoItem(vid, id, owner) {
+  // video_mode: "background" (default) → no controls, autoplay-muted-loop.
+  // video_mode: "ui" → controls visible, autoplay muted, looped.
+  // URL params are rebuilt from the flag, not authored, so flipping the flag in
+  // the source frontmatter is the single source of truth on rebuild.
+  // background=1 alone sometimes fails to autoplay when there are several
+  // iframes on a page (browser throttling); pair it with explicit
+  // autoplay/muted/loop/playsinline for reliability across browsers.
+  const baseUrl = vid.url.split("?")[0];
+  const params = vid.video_mode === "ui"
+    ? "autoplay=1&muted=1&loop=1&playsinline=1"
+    : "background=1&autoplay=1&muted=1&loop=1&playsinline=1";
+  const item = {
+    id,
+    type: "video",
+    video: `${baseUrl}?${params}`,
+    video_mode: vid.video_mode || "background",
+    title: vid.title || "",
+    // Mirror image items: fold the video entry's medium + format +
+    // characteristics + content into the flat `tags` union so the data-tags
+    // filter UI can match them (e.g. `keynote` on an AWS video → the keynote
+    // chip; `moving-image` medium → the moving-image chip). The literal
+    // `video` stays so the file-type stays distinct from the medium.
+    tags: [...new Set([
+      "video",
+      vid.medium || "moving-image",
+      ...(Array.isArray(vid.format) ? vid.format : []),
+      ...(Array.isArray(vid.characteristics) ? vid.characteristics : []),
+      ...(Array.isArray(vid.content) ? vid.content : []),
+    ])],
+    project_tags: owner.projectTags || [],
+    // Per-video `medium:` override. Default is `moving-image` (a video is
+    // time-based moving image); a video documenting spatial/event work etc.
+    // can still declare another medium explicitly.
+    medium: vid.medium || "moving-image",
+  };
+  // Placement key — `project` for projects, `essay_of` for essays. Inserted here
+  // (after `medium`) so project items keep their exact historical key order.
+  if (owner.kind === "essay") item.essay_of = owner.key;
+  else item.project = owner.key;
+  const dims = await probeVideoDims(baseUrl);
+  if (dims) {
+    item.width = dims.width;
+    item.height = dims.height;
+  }
+  if (vid.date) item.created = vid.date;
+  if (owner.year) item.year = owner.year;
+  if (owner.personal) item.personal = true;
+  if (owner.hidden_from_feed) item.hidden_from_feed = true;
+  if (owner.pinned) item.pinned = true;
+  if (vid.featured) item.featured = true;
+  // Caption. Rendered as the essay <figcaption> (and available to project docs).
+  // Conditional so description-less videos stay byte-identical in the manifest.
+  if (vid.description) item.description = vid.description;
+  return item;
+}
+
 // Generate video items from projects that have videos defined.
 // Year priority: vid.year > vid.date's 4-digit year > project-derived year > date_range start.
 const videoBuilders = [];
@@ -385,58 +455,56 @@ for (const [slug, proj] of Object.entries(registry)) {
       projectYears.set(slug, Math.max(projectYears.get(slug) || 0, vidYear));
     }
 
-    videoBuilders.push((async () => {
-      // video_mode: "background" (default) → no controls, autoplay-muted-loop.
-      // video_mode: "ui" → controls visible, autoplay muted, looped.
-      // URL params are rebuilt from the flag, not authored, so flipping the
-      // flag in _project.md is the single source of truth on rebuild.
-      // background=1 alone sometimes fails to autoplay when there are several
-      // iframes on a page (browser throttling); pair it with explicit
-      // autoplay/muted/loop/playsinline for reliability across browsers.
-      const baseUrl = vid.url.split("?")[0];
-      const params = vid.video_mode === "ui"
-        ? "autoplay=1&muted=1&loop=1&playsinline=1"
-        : "background=1&autoplay=1&muted=1&loop=1&playsinline=1";
-      const item = {
-        id,
-        type: "video",
-        video: `${baseUrl}?${params}`,
-        video_mode: vid.video_mode || "background",
-        title: vid.title || "",
-        // Mirror image items: fold the video entry's medium + format +
-        // characteristics + content into the flat `tags` union so the data-tags
-        // filter UI can match them (e.g. `keynote` on an AWS video → the keynote
-        // chip; `moving-image` medium → the moving-image chip). The literal
-        // `video` stays so the file-type stays distinct from the medium.
-        tags: [...new Set([
-          "video",
-          vid.medium || "moving-image",
-          ...(Array.isArray(vid.format) ? vid.format : []),
-          ...(Array.isArray(vid.characteristics) ? vid.characteristics : []),
-          ...(Array.isArray(vid.content) ? vid.content : []),
-        ])],
-        project_tags: projectTagsFor(proj),
-        // Per-video `medium:` override. Default is `moving-image` (a video is
-        // time-based moving image); a video documenting spatial/event work etc.
-        // can still declare another medium explicitly.
-        medium: vid.medium || "moving-image",
-        project: slug,
-      };
-      const dims = await probeVideoDims(baseUrl);
-      if (dims) {
-        item.width = dims.width;
-        item.height = dims.height;
-      }
-      if (vid.date) item.created = vid.date;
-      if (vidYear) item.year = vidYear;
-      if (proj.personal) item.personal = true;
-      if (proj.unlisted) item.hidden_from_feed = true;
-      if (proj.pinned) item.pinned = true;
-      if (vid.featured) item.featured = true;
-      return item;
-    })());
+    videoBuilders.push(buildVideoItem(vid, id, {
+      kind: "project",
+      key: slug,
+      projectTags: projectTagsFor(proj),
+      year: vidYear,
+      personal: !!proj.personal,
+      hidden_from_feed: !!proj.unlisted,
+      pinned: !!proj.pinned,
+    }));
   }
 }
+
+// Generate video items from essays that declare `videos:` in their frontmatter.
+// Essay videos mirror essay images: flagged `essay_of` and hidden from the
+// Work/Practice feed (they surface only on the essay's own page). Appended after
+// project videos, so existing manifest items keep their positions.
+// Year priority: vid.year > vid.date's 4-digit year > the essay's own `date`.
+for (const { id: essayId, abs } of essayFiles) {
+  let fm;
+  try {
+    const raw = fs.readFileSync(abs, "utf8");
+    const m = raw.match(/^---\r?\n([\s\S]*?)\r?\n---/);
+    fm = m ? yaml.load(m[1]) || {} : {};
+  } catch {
+    continue;
+  }
+  const essayYear = (() => {
+    const m = String(fm.date || "").match(/\d{4}/);
+    return m ? parseInt(m[0], 10) : null;
+  })();
+  for (const vid of fm.videos || []) {
+    if (!vid.url) continue;
+    if (vid.archived === true) continue;
+    const vidId = mkId(slugify(vid.title || `${essayId}-video`));
+    let vidYear = vid.year ? parseInt(String(vid.year), 10) : null;
+    if (!vidYear && vid.date) {
+      const m = String(vid.date).match(/\d{4}/);
+      if (m) vidYear = parseInt(m[0], 10);
+    }
+    if (!vidYear) vidYear = essayYear;
+    videoBuilders.push(buildVideoItem(vid, vidId, {
+      kind: "essay",
+      key: essayId,
+      projectTags: [],
+      year: vidYear,
+      hidden_from_feed: true, // essay companion media is feed-hidden
+    }));
+  }
+}
+
 const cachedBefore = prevVideoDims.size;
 const videoItems = await Promise.all(videoBuilders);
 for (const v of videoItems) items.push(v);

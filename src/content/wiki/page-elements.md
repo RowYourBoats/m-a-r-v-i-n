@@ -17,19 +17,21 @@ Almost everything you author lands in one of three places, and they don't share 
 | Project doc | A project page authored as markdown | `_project.md` body with `layout: doc` |
 | Home sections | The editorial home modules | `src/content/pages/marvin.md` frontmatter |
 
-The two markdown contexts run through different processors, so a feature wired into one is not available in the other:
+The two markdown contexts now run through the **same** global markdown pipeline (essays and `layout: doc` project bodies both render as content-collection entries), so inline images and diagram fences work in both. Only the home sections differ — they're authored as YAML modules, not markdown:
 
 | Element | Essay body | Project doc | Home sections |
 |---|---|---|---|
-| Inline image (bare filename) | yes | no | — |
-| Diagram / flowchart fence | no | yes | — |
+| Inline image (bare filename) | yes | yes | — |
+| Diagram / flowchart fence | yes | yes | — |
+| Video (`videos:` frontmatter) | yes | yes | — |
+| Credits / publication (`credits:`, `client:`) | yes | yes | — |
 | Filmstrip | — | — | yes |
 | Text / link module | — | — | yes |
 | Standard markdown (headings, lists, tables, links) | yes | yes | — |
 
-Inline images and diagrams are mutually exclusive by context — see the note under each below. Standalone diagram pages (`/diagrams/[slug]`) are a fourth, separate thing.
+Standalone diagram pages (`/diagrams/[slug]`) are a separate thing.
 
-## Inline image (essay body)
+## Inline image (essay or project doc)
 
 Reference a companion image by its bare filename — no path, no URL:
 
@@ -43,9 +45,9 @@ The image must be a file in the same essay folder, already in the catalogue and 
 
 - Bare filename only. Anything with a `/`, or an `http(s):` / root-anchored URL, passes through untouched.
 - A filename that doesn't resolve in the manifest passes through too — and then 404s. If an inline image is missing, it's almost always not yet catalogued/uploaded.
-- Essay bodies only. This plugin is in the global markdown config; the project-doc processor does not inherit it, so a bare filename in a `layout: doc` body will 404. Put image-led narrative work in an essay.
+- Works in essay bodies and `layout: doc` project bodies alike — the plugin is in the global markdown config, and both render through it. The filename resolves against the document's own folder.
 
-## Diagram / flowchart (project doc)
+## Diagram / flowchart (essay or project doc)
 
 Drop a fenced block whose language is `diagram` and whose first word is a registered diagram slug:
 
@@ -58,7 +60,7 @@ Connectivity is the through-line of the work:
 
 `remark-diagram.mjs` replaces the fence with a mount point; `/projects/[slug].astro` hydrates every placeholder from the client diagram registry on load. The animation respects the viewport and `prefers-reduced-motion`.
 
-- Project docs only (and standalone `/diagrams/[slug]` pages). The fence is wired into the project-doc processor, not the global markdown config, so it does not render in essay bodies.
+- Works in project docs, essay bodies, and standalone `/diagrams/[slug]` pages — the fence is in the global markdown config, so any content-collection render picks it up. (Essay pages mount placeholders too; `/writing/[...slug]` shares the same client registry.)
 - The slug must already exist in `src/components/diagrams/registry.ts`. Building a *new* diagram type (writing the SVG + mount function) is an engineering task — see [Diagrams](/wiki/diagrams).
 
 ## Filmstrip (home sections)
@@ -96,19 +98,41 @@ sections:
 
 `text` is a single prose line (no headings — sections stack, they don't nest). `link` is an in-site or outbound link authored in markdown rather than hardcoded. Adding or reordering sections hot-reloads in dev.
 
-## Video (project pages)
+## Video (essays & projects)
 
-Videos are declared per project in `_project.md` under `videos:`, with a mode that controls playback:
+Videos are declared under `videos:` — in a project's `_project.md`, or in an essay's frontmatter (same shape, same pipeline). A mode controls playback:
 
 ```yaml
 videos:
   - title: Walkthrough
     url: https://player.vimeo.com/video/123456
     video_mode: background   # default — autoplay, muted, looped, no controls
-    featured: true           # optional — surface in the home feed
+    featured: true           # optional — see below
 ```
 
-`video_mode: ui` keeps autoplay/muted/loop but shows controls. The flag is the single source of truth — URL params are stripped and rebuilt from it on every rebuild. See [Editorial home & filmstrip](/wiki/editorial-home-and-filmstrip) for the modes and how project pages expose Vimeo chrome.
+`video_mode: ui` keeps autoplay/muted/loop but shows controls. The flag is the single source of truth — URL params are stripped and rebuilt from it on every rebuild, so the **bare Vimeo URL is enough** (you don't author the query string).
+
+`build-manifest` turns each entry into a manifest video item: a project video carries `project: <slug>`; an essay video carries `essay_of: <id>` and is hidden from the feed (it shows only on the essay's own page). Placement of `featured: true`:
+
+- **On an essay** — a featured background video renders full-bleed at the top; the rest sit in the figure rail/gallery.
+- **On a project** — it surfaces in the home feed.
+
+Dimensions are probed from Vimeo oEmbed at build (16:9 fallback if the probe is skipped), so **run `npm run build-data` after adding a video** to populate width/height and avoid letterboxing. See [Editorial home & filmstrip](/wiki/editorial-home-and-filmstrip) for how project pages expose Vimeo chrome.
+
+## Credits & publication (essays & projects)
+
+Both essays and projects can attribute collaborators and an external source:
+
+```yaml
+credits:
+  - role: Design
+    name: Marvin de Jong
+  - role: Photography
+    name: A. Collaborator
+client: The Politic     # a project's client, or an essay's publication
+```
+
+`credits` renders as a small role/name list at the foot of the page. `client` is one field with two labels — the *client* on a project, the *publication* an essay appeared in. Both are optional: pages stay lean by default, carrying these only when a piece needs them.
 
 ## A markdown project page (`layout: doc`)
 
@@ -124,10 +148,10 @@ layout: doc
 
 ## How it works
 
-Body prose here. Diagram fences render; bare-filename images do not.
+Body prose here. Diagram fences and bare-filename images both render.
 ```
 
-Supported in the body: standard markdown, diagram fences (above), and code fences — rendered as plain `<pre><code>` (no syntax-highlight colors) to stay in the one-font palette. Not supported: bare-filename inline images (essay-only). Details and the why in [Essays & tools](/wiki/essays-and-tools).
+Supported in the body: standard markdown, diagram fences (above), bare-filename inline images (above), and code fences — rendered as plain `<pre><code>` (no syntax-highlight colors) to stay in the one-font palette. A doc project body runs through the same content-collection pipeline as an essay. Details and the why in [Essays & tools](/wiki/essays-and-tools).
 
 ## Ordering & pinning
 

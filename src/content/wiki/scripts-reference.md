@@ -12,9 +12,9 @@ Convention: most scripts default to dry-run and write only with `--apply`. Folde
 | Script | Flags | Purpose / notes |
 |---|---|---|
 | `ingest.mjs` (`npm run ingest`) | `--dry-run` | The consolidated content pipeline — reconcile → stub → build → rehydrate → blob → posters. See [Ingest & build](/wiki/ingest-and-build). |
-| `build-projects.mjs` | — | `_project.md` → `projects.json` + `schema.json`. Validates `date_range` is a string; fails loudly with the project named. Preserves filter sets across rebuilds. |
+| `build-projects.mjs` | — | `_project.md` → `projects.json` + `schema.json` (umbrella → sub-project fan-out). Validates frontmatter against the shared schema (`src/lib/content-schema.mjs`); fails loudly with the file + field named (e.g. a non-string `date_range`). Preserves filter sets across rebuilds. |
 | `mine-dates.mjs` | — | Stamps file birthtime/mtime onto catalogue entries as `created`. |
-| `build-manifest.mjs` | — | Catalogue + `projects.json` → `manifest.json` (+ archives the previous). Applies the curation gate; preserves blob URLs by path/id; probes Vimeo dims (cached). |
+| `build-manifest.mjs` | — | Catalogue + `projects.json` → `manifest.json` (+ archives the previous). Applies the curation gate; preserves blob URLs by path/id; probes Vimeo dims (cached). Builds video items from both project `videos:` and essay `videos:` frontmatter (shared `buildVideoItem`); essay videos are flagged `essay_of` + `hidden_from_feed`. |
 | `sync-vimeo-posters.mjs` | `--apply` | Walks `src/content/pages/*.md`, fetches Vimeo posters via oEmbed → `vimeo-posters.json`. Idempotent — only unknown IDs fetched. |
 | `reconcile-catalogue-paths.mjs` | `--apply`, `--drop` | Heals `file_path` after moves; quarantines (keeps) missing-but-captioned entries. `--drop` purges them (global — see [Ingest & build](/wiki/ingest-and-build)). |
 | `stub-catalogue.mjs` | `<folder>` or `--all`, `--apply` | Registers new images as empty stub entries. `--all` (whole tree) is what `ingest` uses. Only adds; never overwrites. |

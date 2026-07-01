@@ -1,14 +1,33 @@
 ---
 title: "Controlled Instability: Real-time Systems"
 date: "2026-02-06"
-tags: [essay, real-time, process]
+tags:
+  - essay
+  - real-time
+  - process
 pinned: true
 layout: gallery
 excerpt: The form stays anchored but never settles.
-cover: "NotTooClose.png"
+cover: NotTooClose.png
+videos:
+  - title: Smoke system  and gesture based camera
+    video_mode: ui
+    url: https://player.vimeo.com/video/1204275192
+    content:
+      - motion-graphics
+      - study
+    characteristics:
+      - 3d
+    description: "An experiment in real-time particle-based smoke simulation and gesture based camera control. "
+  - title: Handwritten letterforms and gesture-based distortion.
+    video_mode: ui
+    url: https://player.vimeo.com/video/1204275355
+    description: "*Not just yet, * an experiment in gesture based distortion of letter forms. "
 order:
-  - NotTooClose.png      # these come first, in this order
+  - NotTooClose.png
   - FormFlickersInPlace.png
+  - Handwritten letterforms and gesture-based distortion.
+  - Smoke system  and gesture based camera
   - BreathingPoem.jpeg
   - whoWillYouBe.png
   - LetterForm.jpeg

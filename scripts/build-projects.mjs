@@ -26,9 +26,29 @@ import fs from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 import { createRequire } from "node:module";
+import { z } from "zod";
+import { projectFrontmatterSchema } from "../src/lib/content-schema.mjs";
 
 const require = createRequire(import.meta.url);
 const yaml = require("js-yaml");
+
+// Validate _project.md frontmatter against the shared shape (content-schema.mjs)
+// — the same module the Astro `projects`/`writing` collections use, so the two
+// can't drift. This replaces the old hand-rolled date_range guard: a number
+// date_range (unquoted single year) is now one schema error among others, named
+// with its file. Validation is permissive by design (unknown keys ignored, most
+// fields optional) — the target is the date_range-class bug, not strict linting.
+const projectSchema = projectFrontmatterSchema(z);
+const fmErrors = [];
+const isPlainObject = (v) => v != null && typeof v === "object" && !Array.isArray(v);
+const validateFm = (data, label) => {
+  if (!isPlainObject(data)) return; // non-object sub-entries are build-handled as-is
+  const res = projectSchema.safeParse(data);
+  if (res.success) return;
+  for (const issue of res.error.issues) {
+    fmErrors.push(`  ${label}: ${issue.path.join(".") || "(root)"} — ${issue.message}`);
+  }
+};
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const root = path.resolve(__dirname, "..");
@@ -62,6 +82,7 @@ for (const tier of TIERS) {
     if (!fs.existsSync(clientFile)) continue;
 
     const { data: umbrella, body } = parseFrontmatter(fs.readFileSync(clientFile, "utf8"));
+    validateFm(umbrella, `${tier}/${clientEntry.name}`);
     const umbrellaSlug = umbrella.slug || clientEntry.name;
     const umbrellaFolder = `${tier}/${clientEntry.name}`;
     const personalDefault = tier === "practice";
@@ -87,6 +108,7 @@ for (const tier of TIERS) {
       // Umbrella + sub-projects: each sub becomes its own project record.
       // Umbrella itself is not a navigable project (no image folder of its own).
       for (const [subKey, subEntry] of Object.entries(umbrella.projects)) {
+        validateFm(subEntry, `${tier}/${clientEntry.name} > ${subKey}`);
         const slug = subEntry.slug
           || (subKey === umbrellaSlug || subKey.startsWith(`${umbrellaSlug}-`)
                 ? subKey
@@ -143,17 +165,12 @@ for (const tier of TIERS) {
   }
 }
 
-// Validate before writing: date_range must be a string. An unquoted single
-// year (`date_range: 2026`) parses as a YAML number, which then crashes
-// downstream (`.split("-")` in build-manifest). Fail loudly here — naming the
-// project and the one-line fix — instead of a cryptic stack trace later.
-const badDateRanges = Object.entries(projects)
-  .filter(([, p]) => p.date_range !== "" && typeof p.date_range !== "string")
-  .map(([slug, p]) =>
-    `  ${slug}: date_range is a ${typeof p.date_range} (${JSON.stringify(p.date_range)}) — quote it in _project.md, e.g. date_range: "${p.date_range}"`);
-if (badDateRanges.length) {
-  console.error(`\n✖ ${badDateRanges.length} project(s) have a non-string date_range:`);
-  console.error(badDateRanges.join("\n"));
+// Fail loudly on any frontmatter that violates the shared schema (collected
+// above), naming the file and field — instead of a cryptic stack trace later
+// (e.g. a number date_range crashing `.split("-")` in build-manifest).
+if (fmErrors.length) {
+  console.error(`\n✖ ${fmErrors.length} _project.md frontmatter issue(s):`);
+  console.error(fmErrors.join("\n"));
   process.exit(1);
 }
 

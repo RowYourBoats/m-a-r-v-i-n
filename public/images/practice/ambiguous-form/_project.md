@@ -33,6 +33,7 @@ videos:
 image_tags:
   - 3d
   - editorial
+  - exhibition
   - installation
   - letter-form
   - publication-design

@@ -3,8 +3,9 @@ import { Image } from "astro:assets";
 import Base from "@/layouts/Base.astro";
 import manifest from "@/data/manifest.json";
 import projectsData from "@/data/projects.json";
-import { getProjectDoc } from "@/lib/project-doc";
+import { getCollection, render } from "astro:content";
 import { orderItems } from "@/lib/order-items";
+import { formatInline } from "@/lib/format-inline";
 
 const { slug } = Astro.params;
 const { projects, items: allManifestItems } = manifest as any;
@@ -15,12 +16,24 @@ const { projects, items: allManifestItems } = manifest as any;
 const projectFull = (projectsData as any)[slug!];
 
 // Two render modes, in precedence order:
-//   1. Markdown doc — _project.md body with `layout: doc` (see project-doc.ts)
+//   1. Markdown doc — a `_project.md` with `layout: doc`, rendered via the
+//      `projects` content collection (src/lib/projects-loader.ts) through the
+//      same Astro markdown pipeline as essays.
 //   2. Media grid   — the default
-const mdDoc = await getProjectDoc(projectFull?.image_folders);
+// Collection entry ids are the `_project.md` folder; map a slug → entry via
+// projects.json's image_folders. A simple project's image_folders[0] IS that
+// folder; an umbrella sub's is a child, so also try the parent.
+const folderCandidates = ((projectFull?.image_folders as string[]) || []).flatMap((f) => {
+  const norm = f.replace(/\\/g, "/");
+  return [norm, norm.split("/").slice(0, -1).join("/")];
+});
+const docEntry = (await getCollection("projects")).find(
+  (e) => e.data.layout === "doc" && folderCandidates.includes(e.id),
+);
+const DocContent = docEntry ? (await render(docEntry)).Content : null;
 
 const project = projects[slug!];
-if (!mdDoc && (!project || project.snapshot_only)) return Astro.redirect("/work");
+if (!docEntry && (!project || project.snapshot_only)) return Astro.redirect("/work");
 
 // manifest.projects drops `image_folders`, so the tier (work / practice /
 // tools / teaching) comes from projects.json. Each tier lights up its own nav
@@ -28,7 +41,7 @@ if (!mdDoc && (!project || project.snapshot_only)) return Astro.redirect("/work"
 const tier = projectFull?.image_folders?.[0]?.split("/")[0] ?? "work";
 const navSection = tier === "practice" ? "practice" : tier === "tools" ? "tools" : "work";
 
-const pageTitle = `${mdDoc ? projectFull.name : project.title} — Marvin de Jong`;
+const pageTitle = `${docEntry ? projectFull.name : project.title} — Marvin de Jong`;
 
 // Order media by the explicit `order` list from _project.md (surfaced through
 // projects.json by build-projects.mjs), then alphabetically by filename/title.
@@ -69,20 +82,20 @@ if (mainTag) {
 ---
 
 <Base title={pageTitle} section={navSection}>
-  {mdDoc ? (
+  {docEntry && DocContent ? (
     <article class="appdoc-page">
       <header class="project-header">
         <h1>{projectFull.name}</h1>
         {projectFull.description && (
           <div class="description">
             {projectFull.description.split(/\n\s*\n/).map((para: string) => (
-              <p>{para.trim()}</p>
+              <p set:html={formatInline(para.trim())} />
             ))}
           </div>
         )}
       </header>
 
-      <div class="prose projectdoc" set:html={mdDoc.html} />
+      <div class="prose projectdoc"><DocContent /></div>
 
       {projectFull.credits && projectFull.credits.length > 0 && (
         <div class="detail-credits">
@@ -99,7 +112,7 @@ if (mainTag) {
         {project.description && (
           <div class="description">
             {project.description.split(/\n\s*\n/).map((para: string) => (
-              <p>{para.trim()}</p>
+              <p set:html={formatInline(para.trim())} />
             ))}
           </div>
         )}
@@ -129,7 +142,7 @@ if (mainTag) {
             ) : (
               <img src={item.src} alt={item.description || item.title} loading="lazy" />
             )}
-            {item.title && <figcaption class="label">{item.title}</figcaption>}
+            {item.title && <figcaption class="label" set:html={formatInline(item.title)} />}
           </figure>
         ))}
       </div>

@@ -19,7 +19,7 @@ Diagram CSS (`.diagram*`, `--diagram-*` tokens) lives in `global.css` so it appl
 
 ## Inline in a project doc
 
-A ` ```diagram ` fence with the diagram key inside becomes a mount placeholder; `/projects/[slug].astro` calls `mountAll()` on load to hydrate every placeholder from the registry. Note the fence is handled by `remark-diagram.mjs`, which is wired into the `project-doc.ts` processor — not the global markdown config.
+A ` ```diagram ` fence with the diagram key inside becomes a mount placeholder; `/projects/[slug].astro` calls `mountAll()` on load to hydrate every placeholder from the registry. The fence is handled by `remark-diagram.mjs`, which is in the global markdown config — so it works in both project docs and essay bodies (any content-collection render).
 
 ## Adding a new diagram
 

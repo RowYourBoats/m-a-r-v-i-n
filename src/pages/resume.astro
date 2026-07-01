@@ -1,6 +1,7 @@
 ---
 import Base from "@/layouts/Base.astro";
 import { getCollection, getEntry, render } from "astro:content";
+import { formatInline } from "@/lib/format-inline";
 
 const raw = await getCollection("bullets", ({ id }) => !id.startsWith("_template"));
 const intro = await getEntry("pages", "resume");
@@ -10,29 +11,8 @@ const cleanTag = (t: string) => t.replace(/^~/, "");
 
 const stripBold = (s: string) => (s || "").replace(/\*\*/g, "");
 
-// Render-time inline formatter for the text cells. The site has no bold, so
-// `**x**`/`__x__` collapse to plain text (legacy markers), while single
-// `*x*`/`_x_` render as italics — the site's emphasis mechanism. Straight
-// quotes and apostrophes are upgraded to typographer's marks. Output is HTML
-// (used via set:html), so the raw text is escaped first.
-const escHtml = (s: string) =>
-  s.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
-
-const typographize = (s: string) =>
-  s
-    .replace(/(^|[\s([])"/g, "$1“") // opening double quote
-    .replace(/"/g, "”") // closing double quote
-    .replace(/(^|[\s([“])'/g, "$1‘") // opening single quote (rare)
-    .replace(/'/g, "’"); // apostrophe / closing single
-
-const emphasize = (s: string) =>
-  s
-    .replace(/\*\*(.+?)\*\*/g, "$1") // drop bold markers (no bold on the site)
-    .replace(/__(.+?)__/g, "$1")
-    .replace(/\*(.+?)\*/g, "<em>$1</em>") // single * → italic
-    .replace(/_(.+?)_/g, "<em>$1</em>"); // single _ → italic
-
-const formatInline = (s: string) => emphasize(typographize(escHtml((s || "").toString())));
+// Inline formatter (escape → typographer's quotes → *…* italics) lives in a
+// shared lib so captions and résumé cells stay in sync. See src/lib/format-inline.ts.
 
 const MONTH: Record<string, string> = {
   january: "01", february: "02", march: "03", april: "04",

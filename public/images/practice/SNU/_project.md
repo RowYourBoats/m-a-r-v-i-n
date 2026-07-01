@@ -22,4 +22,7 @@ image_tags:
   - data-visualization
   - editorial
   - illustration
+  - print
+  - publication-design
+  - typography
 ---

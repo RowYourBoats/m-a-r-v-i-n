@@ -64,6 +64,8 @@ Sub-projects (a `projects:` map nested in an umbrella `_project.md`) inherit the
 
 A project can render its detail page from the markdown body instead of a media grid via `layout: doc` — see [Essays & tools](/wiki/essays-and-tools).
 
+`_project.md` has two consumers: `build-projects.mjs` reads it for the registry (the umbrella → sub-project fan-out into `projects.json`), and a `projects` content collection (`src/lib/projects-loader.ts`) reads it to render doc bodies through Astro's markdown pipeline. Both validate the frontmatter against one shared schema fragment (`src/lib/content-schema.mjs`) — the same module the essay (`writing`) collection uses, so projects and essays carry the same field shape and can't drift. Essays are the lean end of that shape; projects add the facets/sub-project map above.
+
 ## Adding a new project
 
 Create a folder in `public/images/`, add a `_project.md`, drop images in, then run `npm run ingest` (or `npm run build-data` if no new images to upload).
@@ -81,4 +83,4 @@ Quote any title/description containing `:` `#` `[` `]` `{` `}`:
 title: "Perdido Street Station: Architectural Crevices"
 ```
 
-Always quote `date_range`, even a single year — `date_range: "2026"`. Unquoted, YAML parses a bare year as a number and the build needs a string (it splits on `-` for ranges). `build-projects.mjs` validates this and fails loudly with the offending project named.
+Always quote `date_range`, even a single year — `date_range: "2026"`. Unquoted, YAML parses a bare year as a number and the build needs a string (it splits on `-` for ranges). The shared schema (`content-schema.mjs`) enforces this: `build-projects.mjs` fails loudly with the offending file and field named.

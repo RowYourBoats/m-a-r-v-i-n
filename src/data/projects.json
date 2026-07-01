@@ -1831,47 +1831,7 @@
     "description": "Lecture posters (Jiri Pelcl, the Green Week series), thesis show graphics for BFA Photography's Babylone — U.S.A., postcards, program brochures, and campus flags for the Manhattan location.",
     "credits": [
       {
-        "role": "Design",
-        "name": "Marvin de Jong"
-      }
-    ],
-    "videos": [],
-    "umbrella": "pratt"
-  },
-  "pratt-credits": {
-    "name": "credits",
-    "slug": "pratt-credits",
-    "client": "Pratt",
-    "aliases": [
-      "Pratt Institute",
-      "Pratt"
-    ],
-    "date_range": "2015-2016",
-    "roles": [
-      "Freelance Designer"
-    ],
-    "category": "experience",
-    "image_folders": [
-      "work/pratt/credits"
-    ],
-    "market": "b2c",
-    "project_type": [],
-    "sector": "education",
-    "characteristic": [],
-    "role": null,
-    "scale": null,
-    "image_tags": [],
-    "lead_images": [],
-    "order": [],
-    "personal": false,
-    "snapshot_only": false,
-    "chronological": false,
-    "unlisted": false,
-    "pinned": false,
-    "description": "",
-    "credits": [
-      {
-        "role": "Design",
+        "role": "Designer",
         "name": "Marvin de Jong"
       }
     ],
@@ -2513,7 +2473,9 @@
       "interactive",
       "interface",
       "motion-graphics",
-      "signage"
+      "poster",
+      "signage",
+      "typography"
     ],
     "lead_images": [],
     "order": [],
@@ -2779,6 +2741,7 @@
     "scale": null,
     "image_tags": [
       "deck",
+      "installation",
       "interactive",
       "proposal"
     ],
@@ -2960,7 +2923,10 @@
     "role": null,
     "scale": null,
     "image_tags": [
-      "photography"
+      "lifestyle",
+      "photography",
+      "print",
+      "retail"
     ],
     "lead_images": [],
     "order": [],
@@ -3416,6 +3382,7 @@
     "image_tags": [
       "3d",
       "editorial",
+      "exhibition",
       "installation",
       "letter-form",
       "publication-design",
@@ -3709,6 +3676,55 @@
     ],
     "videos": []
   },
+  "NotTooClose": {
+    "name": "너무 가까이 말고 / Not Too Close",
+    "slug": "NotTooClose",
+    "client": "personal",
+    "aliases": [],
+    "date_range": "2025",
+    "roles": [],
+    "category": "experience",
+    "image_folders": [
+      "practice/NotTooClose"
+    ],
+    "market": "personal",
+    "project_type": [],
+    "sector": "personal",
+    "characteristic": [],
+    "role": null,
+    "scale": null,
+    "image_tags": [],
+    "lead_images": [],
+    "order": [],
+    "personal": true,
+    "snapshot_only": false,
+    "chronological": false,
+    "unlisted": false,
+    "pinned": true,
+    "description": "*Not Too Close* is a real-time typographic system that responds to music composed by Joyul for *Gridshift,* the Korea Society of Typography’s 19th exhibition.\nThe system distorts letterforms and the composition in response to the music. A black-and-white still from the system was presented as a poster in the exhibition.\n",
+    "credits": [
+      {
+        "role": "Design",
+        "name": "Marvin de Jong"
+      }
+    ],
+    "videos": [
+      {
+        "title": "Not Too Close",
+        "year": 2015,
+        "video_mode": "ui",
+        "url": "https://player.vimeo.com/video/1122071930",
+        "content": [
+          "study"
+        ],
+        "characteristics": [
+          "real-time",
+          "3d"
+        ],
+        "description": "너무 가까이 말고"
+      }
+    ]
+  },
   "one-offs": {
     "name": "One Off",
     "slug": "one-offs",
@@ -3949,7 +3965,10 @@
     "image_tags": [
       "data-visualization",
       "editorial",
-      "illustration"
+      "illustration",
+      "print",
+      "publication-design",
+      "typography"
     ],
     "lead_images": [],
     "order": [],

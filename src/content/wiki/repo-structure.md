@@ -13,7 +13,7 @@ src/
   content/         content collections: bullets/, diagrams/, pages/, wiki/
   data/            generated + authored JSON (see below)
   layouts/         Base.astro (the site shell)
-  lib/             helpers (project-doc, order-items, remark-*, atomicWrite)
+  lib/             helpers (content-schema, projects-loader, order-items, remark-*, atomicWrite)
   pages/           routes, incl. api/ and the dev-only admin/
   styles/          global.css (all styling)
   middleware.ts    password gate

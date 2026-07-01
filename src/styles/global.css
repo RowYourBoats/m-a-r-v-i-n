@@ -488,10 +488,29 @@ video {
   height: auto;
   display: block;
 }
+/* Companion videos (essay_of) render like figures. The wrapper holds the
+   oEmbed-derived aspect-ratio (16/9 fallback when dims are missing) so the
+   iframe doesn't letterbox. */
+.essay-video {
+  position: relative;
+  width: 100%;
+}
+.essay-video iframe {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+  display: block;
+}
+/* A `featured` background video spans the full figure area — both columns in
+   gallery mode. In the single-column (standard) rail it's already full width. */
+.essay--gallery > .essay-figures > .essay-figure--featured {
+  grid-column: 1 / -1;
+}
 .essay-figure figcaption {
   font-size: var(--fs-secondary);
   margin-top: var(--pad-sm);
-  opacity: 0.7;
 }
 
 @media (max-width: 760px) {
@@ -1102,9 +1121,9 @@ video {
 }
 
 /* ---- Doc page shell ----
-   Wraps a project rendered as a markdown `layout: doc` page (see
-   src/lib/project-doc.ts) in portfolio chrome. The doc body itself is styled by
-   the .projectdoc rules at the end of this file. */
+   Wraps a project rendered as a markdown `layout: doc` page (the `projects`
+   content collection, src/lib/projects-loader.ts) in portfolio chrome. The doc
+   body itself is styled by the .projectdoc rules at the end of this file. */
 .appdoc-page {
   display: flex;
   flex-direction: column;
@@ -1240,7 +1259,7 @@ video {
 .diagram .node-mid    { fill: var(--diagram-node-mid); }
 .diagram .node-active { fill: var(--diagram-node-active); }
 
-/* ---- Markdown-authored project docs (.projectdoc; see src/lib/project-doc.ts)
+/* ---- Markdown-authored project docs (.projectdoc; see src/lib/projects-loader.ts)
    Rendered as `<div class="prose projectdoc">`. The body reads as ordinary site
    copy (--fs-body, weight 400) — these are short editorial docs, not dense
    reference pages. The markdown is a flat list of siblings (paragraphs, headings,

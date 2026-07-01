@@ -140,7 +140,9 @@ projects:
       - interactive
       - interface
       - motion-graphics
+      - poster
       - signage
+      - typography
     videos:
       - title: Chicago Entrance Screens
         featured: true
@@ -262,6 +264,7 @@ projects:
     name: Discovery
     image_tags:
       - deck
+      - installation
       - interactive
       - proposal
     credits:
@@ -321,7 +324,10 @@ projects:
   network-reliability:
     name: Network Reliability
     image_tags:
+      - lifestyle
       - photography
+      - print
+      - retail
     credits:
       - role: ACD / Design Lead
         name: Marvin de Jong

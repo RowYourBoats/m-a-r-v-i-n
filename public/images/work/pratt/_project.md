@@ -35,7 +35,7 @@ projects:
       - publication-design
       - stationery
       - typography
-  credits:
-    - role: Designer
-      name: Marvin de Jong
+    credits:
+      - role: Designer
+        name: Marvin de Jong
 ---

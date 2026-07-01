@@ -1,32 +1,32 @@
 import { defineCollection, z } from "astro:content";
 import { glob } from "astro/loaders";
+import { sharedDocFields, projectFrontmatterSchema } from "./lib/content-schema.mjs";
+import { projectsLoader } from "./lib/projects-loader";
 
+// Essays. The shared field fragment (content-schema.mjs) is the single source of
+// truth for the shape essays and project docs have in common — title, tags,
+// cover, order, pinned, layout, and now `credits` (collaborators), `client`
+// (here meaning the publication), and `videos` (background/UI Vimeo). `date` is
+// required for essays (they sort chronologically), so it's overridden on top of
+// the spread, which leaves it optional.
 const writing = defineCollection({
   loader: glob({ pattern: "**/[!_]*.md", base: "./public/images" }),
   schema: z.object({
-    title: z.string(),
+    ...sharedDocFields(z),
+    // Essays must be dated (the Practice/Tools feeds sort on it).
     date: z.string(),
-    tags: z.array(z.string()).optional(),
-    excerpt: z.string().optional(),
-    // Optional filename of a companion image (an `essay_of` image in this
-    // essay's folder) to show on the Practice card. Falls back to the first
-    // uploaded companion image when omitted.
-    cover: z.string().optional(),
-    // Optional explicit order for companion figures (filenames). Listed first
-    // in order; the rest fall through to alphabetical filename. Same rule as a
-    // project's `order:` — usually unnecessary if files are numbered.
-    order: z.array(z.string()).optional(),
-    // Pin this essay to the top of its index feed (Practice/Tools), above the
-    // chronological order. The date stays truthful; among multiple pins the
-    // newest sorts first. Projects pin the same way via `pinned` on _project.md.
-    // See src/lib/feed-sort.ts.
-    pinned: z.boolean().optional(),
-    // Essay figure layout. "standard" (default) = text 2/3 + a single 1/3
-    // image rail. "gallery" = text 1/3 + a two-column image grid (1/3 each),
-    // for image-dominant essays. Only takes effect when the essay has
-    // companion images (essay_of). Opt in per essay.
-    layout: z.enum(["standard", "gallery"]).optional(),
   }),
+});
+
+// Project docs. Backed by a custom loader (src/lib/projects-loader.ts) that reads
+// the `_project.md` files Astro's glob() can't — so project bodies render through
+// the same Astro pipeline as essays, validated by the same shared schema. The
+// registry fan-out (umbrella → sub-projects) stays in build-projects.mjs; this
+// collection is only the document/render half (consulted by /projects/[slug] for
+// `layout: doc` pages).
+const projects = defineCollection({
+  loader: projectsLoader(),
+  schema: projectFrontmatterSchema(z),
 });
 
 // Real files committed to the repo, mirrored from the Jullie-Resume gdrive
@@ -119,4 +119,4 @@ const wiki = defineCollection({
   }),
 });
 
-export const collections = { writing, bullets, pages, diagrams, wiki };
+export const collections = { writing, projects, bullets, pages, diagrams, wiki };

@@ -4,6 +4,7 @@ import { Image } from "astro:assets";
 import { getEntry, render } from "astro:content";
 import manifest from "@/data/manifest.json";
 import { orderItems } from "@/lib/order-items";
+import { formatInline } from "@/lib/format-inline";
 
 const { slug } = Astro.params;
 const entry = await getEntry("writing", slug!);
@@ -32,9 +33,16 @@ const inlineNames = new Set(
 // single-column when none.
 // Ordered like project media: optional `order` list in the essay frontmatter,
 // then alphabetical by filename (so numbered prefixes 00-, 01- … sort right).
+// Companion media for this essay: images AND videos flagged essay_of (built by
+// build-manifest — images from the folder, videos from `videos:` frontmatter).
+// Inline-image dedup applies only to images (videos have no `src`/filename, so
+// they always pass). Featured background videos are pulled out to render
+// full-bleed; the rest flow through the rail/gallery in `order`.
 const figures = orderItems(
   (manifest.items as any[]).filter(
-    (i) => i.essay_of === entry.id && !inlineNames.has(i.src.split("/").pop()),
+    (i) =>
+      i.essay_of === entry.id &&
+      (i.type === "video" || !inlineNames.has((i.src || "").split("/").pop())),
   ),
   entry.data.order || [],
 );
@@ -55,16 +63,37 @@ const figureSizes =
       <header class="essay-header">
         <h1 class="essay-title">{entry.data.title}</h1>
         {entry.data.date && <p class="essay-date">{entry.data.date}</p>}
+        {entry.data.client && <p class="essay-date essay-publication">{entry.data.client}</p>}
       </header>
       <div class="prose">
         <Content />
       </div>
+      {entry.data.credits && entry.data.credits.length > 0 && (
+        <div class="detail-credits">
+          {entry.data.credits.map((c: any) => (
+            <div><span class="detail-credit-role">{c.role}</span> {c.name}</div>
+          ))}
+        </div>
+      )}
     </div>
     {figures.length > 0 && (
       <div class="essay-figures">
         {figures.map((f: any) => (
-          <figure class="essay-figure">
-            {f.width && f.height ? (
+          <figure class={`essay-figure${f.type === "video" && f.featured ? " essay-figure--featured" : ""}`}>
+            {f.type === "video" ? (
+              <div
+                class="essay-video"
+                style={f.width && f.height ? `aspect-ratio: ${f.width} / ${f.height}` : "aspect-ratio: 16 / 9"}
+              >
+                <iframe
+                  src={f.video}
+                  loading="lazy"
+                  allow="autoplay; fullscreen; picture-in-picture"
+                  allowfullscreen
+                  title={f.title || ""}
+                ></iframe>
+              </div>
+            ) : f.width && f.height ? (
               <Image
                 src={f.src}
                 width={f.width}
@@ -83,10 +112,21 @@ const figureSizes =
                 decoding="async"
               />
             )}
-            {f.description && <figcaption>{f.description}</figcaption>}
+            {f.description && (
+              <figcaption set:html={formatInline(f.description)} />
+            )}
           </figure>
         ))}
       </div>
     )}
   </article>
 </Base>
+
+<script>
+  // Mount any inline animated diagrams (```diagram fences). Now that
+  // remark-diagram is in the global markdown config, essay bodies can carry them
+  // too — same client registry the project doc pages use. No-op when there are
+  // no [data-diagram] placeholders.
+  import { mountAll } from "@/components/diagrams/registry";
+  mountAll();
+</script>
