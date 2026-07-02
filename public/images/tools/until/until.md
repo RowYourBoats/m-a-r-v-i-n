@@ -6,55 +6,41 @@ excerpt: A simple task tracker, scratchpad, and project organizer organized by h
 cover: "until.png"
 ---
 
-Time isn't experienced as a grid. Things come over the horizon alongside the loose tasks of the day and the practices I intend to keep up.
+Time isn't experienced as a grid. Things come over the horizon, alongside the loose tasks of the day and the practices I intend to keep up.
 
 ## What it is
 
-Until is a task tracker, scratchpad, and project organizer. It organizes tasks by how many days are left. The near ones visible, the far ones categorized in horizon, long horizon, watching (recurring events with a tentative date), and an over the horizon for those that got pushed out too far. A daily surface of loose tasks and repeating practices is what's used to keep track of my daily tasks. Then a small pomodoro tracker at the top helps with pushing through the tasks that linger. Time isn't experienced as a grid. Things come over the horizon alongside the loose tasks of the day and the practices I intend to keep up.
+Until is a task tracker, scratchpad, and project organizer. Instead of a calendar, it sorts everything by how many days are left: the near things stay visible, the far things fold away into horizons. Each horizon is also a real folder on disk, so the tracker and the working files are the same structure.
 
-A dummy project is on vercel. The code and a longer write-up are on GitHub. 
+## The folder is the project
 
-[Vercel](https://until-ashy.vercel.app/) <span class="axis-weight">resize the window to match the white canvas</span>  
-[GitHub](https://github.com/RowYourBoats/Jullie)
+Creating a horizon creates a folder; the Blender files, PDFs, and drafts for that project live in it. Rename the horizon and the folder renames. Complete it, and the folder moves to the archive. Even deleting is a move, into trash, so nothing vanishes. The tracker can't drift from the actual work because they're the same thing.
 
-## Scratchpad
+## The record
 
-Yesterday, today, tomorrow — a scratchpad of loose tasks. Type and enter to add, tap to complete, link a task to the horizon it belongs to. Whatever I leave unchecked at day's end can be carried forward, so undone work follows me instead of vanishing.
-
-Repeating. Recurring practices can't be failed, only skipped or kept. Tap to engage. A short undo window absorbs a fat-finger tap before it's written, so the record stays honest instead of cluttered.
+Underneath the surfaces, Until keeps one record: what I did. The tool is built to make honesty cheap. Not every unfinished thing is a failure — some I set down on purpose, and the difference is kept. A wrecked day gets named as force majeure: sick, traveling, no electricity. And the record is mine, in flat JSON files and real folders on disk.
 
 ## How projects are organized
 
-<div class="axis"><span class="axis-label">Over The Horizon</span> — overdue <span class="axis-weight">always visible</span></div>
-<div class="axis"><span class="axis-label">Short Horizon</span> — 0–15 days <span class="axis-weight">always visible</span></div>
-<div class="axis"><span class="axis-label">Horizon</span> — 16–180 days <span class="axis-weight">folds away</span></div>
-<div class="axis"><span class="axis-label">Long Horizon</span> — 180+ days <span class="axis-weight">folds away</span></div>
-<div class="axis"><span class="axis-label">Watching</span> — recurring events with a tentative date <span class="axis-weight">folds away</span></div>
+<div class="axis"><span class="axis-label">Over The Horizon</span> overdue <span class="axis-weight">always visible</span></div>
+<div class="axis"><span class="axis-label">Short Horizon</span> 0–15 days <span class="axis-weight">always visible</span></div>
+<div class="axis"><span class="axis-label">Horizon</span> 16–180 days <span class="axis-weight">folds away</span></div>
+<div class="axis"><span class="axis-label">Long Horizon</span> 180+ days <span class="axis-weight">folds away</span></div>
+<div class="axis"><span class="axis-label">Watching</span> recurring events with a tentative date <span class="axis-weight">folds away</span></div>
 
+## Other ways of writing to the record
 
+Every surface is a ritual for writing to it, none of them mandatory, each one honest about what happened.
 
-## Pomodoro
+<div class="axis"><span class="axis-label">The scratchpad</span> Yesterday, today, tomorrow. Type and enter to add, tap to complete. What's left unchecked carries forward: the original stays as a dimmed record of what moved, and a fresh copy lands on today.</div>
+<div class="axis"><span class="axis-label">Repeating</span> ractices can't be failed, only skipped or kept. Tap to engage; a 2.5-second undo window absorbs a fat-finger tap before anything is written.</div>
+<div class="axis"><span class="axis-label">Pomodoro</span> 35 minutes tied to one task, ending in a true outcome: completed, fresh (distracted — the partial gets logged), postponed, or aborted (under a minute; kept out of the stats).</div>
+<div class="axis"><span class="axis-label">Gardening</span> I can walk every active horizon — read it, update its next action, tend its todos, save or skip. Work that hasn't been visited in two weeks is marked. Projects don't fail silently in a corner.</div>
 
-A 35-minute timer tied to one task — a tracker to force focus on a single thing, not a clock that runs all day.
+## How
 
-<div class="flow">
-<span class="flow-step">pick a task</span>
-<span class="flow-arrow">→</span>
-<span class="flow-step">35 min</span>
-<span class="flow-arrow">→</span>
-<span class="flow-step">honest outcome</span>
-</div>
+The main app is local-first: it runs in the browser, in flat JSON files, with no database and no account. A small update put the same app on my phone, and one small file on Drive syncs the two, turn-based, on click.
 
-Each session ends with a true outcome, including the ones that admit failure:
+The code and a longer write-up are on GitHub. 
 
-<div class="axis"><span class="axis-label">completed</span> — full session; marks the task done</div>
-<div class="axis"><span class="axis-label">fresh</span> — distracted; logs the partial and resets</div>
-<div class="axis"><span class="axis-label">postponed</span> — paused, nothing logged</div>
-<div class="axis"><span class="axis-label">force majeure</span> — a day named as disrupted, not silently missed</div>
-<div class="axis"><span class="axis-label">aborted</span> — under 60 seconds; auto-applied, keeps stray taps out of the stats</div>
-
-Repeating is a daily choice, not a schedule I'm failing against; a session ends with what actually happened; a wrecked day gets named rather than hidden; undone work carries forward instead of disappearing.
-
-A true record beats a flattering one, including an honest record of what didn't happen. Not every unfinished thing is a failure. Some I set down on purpose, and the difference is worth keeping. Repeating is a daily choice, not a schedule I'm failing against. A session ends with what actually happened. A wrecked day gets named rather than hidden, and undone work carries forward instead of disappearing. The tool tracks what I did, not what I meant to. And that's data and a taxonomy I own instead of a graph somewhere in a company owned tool.
-
-Local-first: runs in the browser, but needs no internet and talks to none. Flat JSON files, no database, no account.
+[GitHub](https://github.com/RowYourBoats/Until)
