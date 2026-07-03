@@ -3,8 +3,13 @@ title: Until
 date: "2026"
 tags: [tool, interactive, web]
 excerpt: A simple task tracker, scratchpad, and project organizer organized by horizons instead of calendars.
-cover: "until.png"
+cover: "until-macbook.png"
+order:
+  - until-macbook.png
+  - until-mobile.png
 ---
+
+Until is a local-first task and project tracker.
 
 Time isn't experienced as a grid. Things come over the horizon, alongside the loose tasks of the day and the practices I intend to keep up.
 

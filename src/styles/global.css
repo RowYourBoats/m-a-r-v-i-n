@@ -903,6 +903,17 @@ video {
   max-width: 60ch;
 }
 
+/* The footer's link list inlined in the editorial flow (`kind: contact`):
+   one flex child, so the links stack at the footer's tight --pad-sm rhythm
+   instead of inheriting the --pad gap between editorial sections. */
+.contact-lines {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--pad-sm);
+  font-size: var(--fs-body);
+}
+
 /* Site footer: a vertical stack of contact links (résumé + email/social) at the
    bottom of every page, in normal flow. Mirrors the nav as bottom-chrome — same
    body type scale (--fs-body) and link convention (foreground text, hover →

@@ -81,6 +81,9 @@ const pageSection = z.discriminatedUnion("kind", [
   // page's "Résumé" link), so it's authored in the page's markdown rather than
   // hardcoded in the route.
   z.object({ kind: z.literal("link"), href: z.string(), label: z.string() }),
+  // The footer's link list (src/lib/site-links.ts) rendered inline as prose
+  // lines, so the contacts can sit in the body text as well as the footer.
+  z.object({ kind: z.literal("contact") }),
 ]);
 
 const pages = defineCollection({

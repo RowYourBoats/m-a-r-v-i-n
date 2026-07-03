@@ -2,6 +2,131 @@
 
 Newest run first. Appended automatically by `npm run ingest`.
 
+## 2026-07-03T08:16:25.893Z — ingest (applied)
+
+- **reconcile:** 0 remap(s), 0 quarantined (kept), 21 unregistered on disk
+- **stub:** +0 new image(s)
+- **mine-dates:** 755 stamped, 124 missing
+- **sync-image-tags:** 0 _project.md updated
+- **build-projects:** 80 projects, 60 tags, 19 clients
+- **build-manifest:** 749 items across 71 projects
+- **rehydrate:** 0 matched, 0 unmatched
+- **upload-blob:** uploaded 0, adopted 0, skipped 749, failed 0
+- **vimeo-posters:** 2 referenced, 0 fetched
+
+## 2026-07-03T08:07:35.465Z — ingest (applied)
+
+- **reconcile:** 0 remap(s), 0 quarantined (kept), 21 unregistered on disk
+- **stub:** +0 new image(s)
+- **mine-dates:** 755 stamped, 124 missing
+- **sync-image-tags:** 0 _project.md updated
+- **build-projects:** 80 projects, 60 tags, 19 clients
+- **build-manifest:** 749 items across 71 projects
+- **rehydrate:** 0 matched, 0 unmatched
+- **upload-blob:** uploaded 0, adopted 0, skipped 749, failed 0
+- **vimeo-posters:** 2 referenced, 0 fetched
+
+## 2026-07-03T08:00:59.569Z — ingest (applied)
+
+- **reconcile:** 0 remap(s), 0 quarantined (kept), 21 unregistered on disk
+- **stub:** +0 new image(s)
+- **mine-dates:** 755 stamped, 124 missing
+- **sync-image-tags:** 0 _project.md updated
+- **build-projects:** 80 projects, 60 tags, 19 clients
+- **build-manifest:** 749 items across 71 projects
+- **rehydrate:** 0 matched, 1 unmatched
+- **upload-blob:** uploaded 1, adopted 0, skipped 748, failed 0
+- **vimeo-posters:** 2 referenced, 0 fetched
+
+## 2026-07-03T07:56:57.671Z — ingest (applied)
+
+- **reconcile:** 0 remap(s), 1 quarantined (kept), 21 unregistered on disk
+  - quarantine: `tools/kept-app/jullie-resume-app.png` (file missing — has caption, kept)
+- **stub:** +0 new image(s)
+- **mine-dates:** 755 stamped, 125 missing
+- **sync-image-tags:** 0 _project.md updated
+- **build-projects:** 80 projects, 60 tags, 19 clients
+- **build-manifest:** 749 items across 71 projects
+- **rehydrate:** 0 matched, 0 unmatched
+- **upload-blob:** uploaded 0, adopted 0, skipped 749, failed 0
+- **vimeo-posters:** 2 referenced, 0 fetched
+
+## 2026-07-03T07:56:04.417Z — ingest (applied)
+
+- **reconcile:** 0 remap(s), 0 quarantined (kept), 22 unregistered on disk
+- **stub:** +1 new image(s)
+  - `tools/kept-app/kept-dashboard.png`
+- **mine-dates:** 756 stamped, 124 missing
+- **sync-image-tags:** 0 _project.md updated
+- **build-projects:** 80 projects, 60 tags, 19 clients
+- **build-manifest:** 749 items across 71 projects
+- **rehydrate:** 0 matched, 0 unmatched
+- **upload-blob:** uploaded 0, adopted 0, skipped 749, failed 0
+- **vimeo-posters:** 2 referenced, 0 fetched
+
+## 2026-07-03T07:27:09.734Z — ingest (applied)
+
+- **reconcile:** 0 remap(s), 0 quarantined (kept), 21 unregistered on disk
+- **stub:** +0 new image(s)
+- **mine-dates:** 755 stamped, 124 missing
+- **sync-image-tags:** 0 _project.md updated
+- **build-projects:** 80 projects, 60 tags, 19 clients
+- **build-manifest:** 749 items across 71 projects
+- **rehydrate:** 0 matched, 0 unmatched
+- **upload-blob:** uploaded 0, adopted 0, skipped 749, failed 0
+- **vimeo-posters:** 2 referenced, 0 fetched
+
+## 2026-07-03T07:25:09.449Z — ingest (applied)
+
+- **reconcile:** 0 remap(s), 0 quarantined (kept), 21 unregistered on disk
+- **stub:** +0 new image(s)
+- **mine-dates:** 755 stamped, 124 missing
+- **sync-image-tags:** 0 _project.md updated
+- **build-projects:** 80 projects, 60 tags, 19 clients
+- **build-manifest:** 749 items across 71 projects
+- **rehydrate:** 0 matched, 1 unmatched
+- **upload-blob:** uploaded 1, adopted 0, skipped 748, failed 0
+- **vimeo-posters:** 2 referenced, 0 fetched
+
+## 2026-07-03T07:21:46.793Z — ingest (applied)
+
+- **reconcile:** 0 remap(s), 1 quarantined (kept), 22 unregistered on disk
+  - quarantine: `tools/until/until.png` (file missing — has caption, kept)
+- **stub:** +1 new image(s)
+  - `tools/until/until-mobile.png`
+- **mine-dates:** 755 stamped, 125 missing
+- **sync-image-tags:** 0 _project.md updated
+- **build-projects:** 80 projects, 60 tags, 19 clients
+- **build-manifest:** 749 items across 71 projects
+- **rehydrate:** 0 matched, 0 unmatched
+- **upload-blob:** uploaded 0, adopted 0, skipped 749, failed 0
+- **vimeo-posters:** 2 referenced, 0 fetched
+
+## 2026-07-03T07:20:44.028Z — ingest (applied)
+
+- **reconcile:** 0 remap(s), 0 quarantined (kept), 21 unregistered on disk
+- **stub:** +0 new image(s)
+- **mine-dates:** 755 stamped, 124 missing
+- **sync-image-tags:** 0 _project.md updated
+- **build-projects:** 80 projects, 60 tags, 19 clients
+- **build-manifest:** 749 items across 71 projects
+- **rehydrate:** 0 matched, 1 unmatched
+- **upload-blob:** uploaded 1, adopted 0, skipped 748, failed 0
+- **vimeo-posters:** 2 referenced, 0 fetched
+
+## 2026-07-03T07:12:34.050Z — ingest (applied)
+
+- **reconcile:** 0 remap(s), 0 quarantined (kept), 22 unregistered on disk
+- **stub:** +1 new image(s)
+  - `tools/until/until-macbook.png`
+- **mine-dates:** 755 stamped, 124 missing
+- **sync-image-tags:** 0 _project.md updated
+- **build-projects:** 80 projects, 60 tags, 19 clients
+- **build-manifest:** 748 items across 71 projects
+- **rehydrate:** 0 matched, 0 unmatched
+- **upload-blob:** uploaded 0, adopted 0, skipped 748, failed 0
+- **vimeo-posters:** 2 referenced, 0 fetched
+
 ## 2026-07-01T07:18:25.009Z — ingest (applied)
 
 - **reconcile:** 0 remap(s), 0 quarantined (kept), 20 unregistered on disk

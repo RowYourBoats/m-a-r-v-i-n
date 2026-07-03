@@ -1,5 +1,6 @@
 ---
 import Analytics from "@vercel/analytics/astro";
+import { SITE_LINKS } from "@/lib/site-links";
 
 interface Props {
   title?: string;
@@ -80,11 +81,13 @@ function isCurrent(href: string) {
     </main>
 
     <footer class="site-footer">
-      <a href="/resume">Résumé</a>
-      <a href="mailto:marvin@m-a-r-v-i-n.com">mail: marvin@m-a-r-v-i-n.com</a>
-      <a href="https://github.com/RowYourBoats" target="_blank" rel="noopener">Github: @RowYourBoats</a>
-      <a href="https://www.instagram.com/specifically_marvin/" target="_blank" rel="noopener">Instagram: @specifically_marvin</a>
-      <a href="https://www.linkedin.com/in/marvin-de-jong/" target="_blank" rel="noopener">LinkedIn: marvin-de-jong</a>
+      {SITE_LINKS.map((link) => (
+        <a
+          href={link.href}
+          target={link.external ? "_blank" : undefined}
+          rel={link.external ? "noopener" : undefined}
+        >{link.label}</a>
+      ))}
     </footer>
 
     <script is:inline>

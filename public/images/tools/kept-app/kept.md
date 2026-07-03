@@ -3,10 +3,10 @@ title: Kept
 date: "2026"
 tags: [tool, interactive, web]
 excerpt: A local-first career garden — my career as a pile of plain-text files.
-cover: "jullie-resume-app.png"
+cover: "kept-dashboard.png"
 ---
 
-## What it is
+Kept is a local-first archive of my career.
 
 My career history was scattered across résumés, decks, LinkedIn, and files that once handed off were lost. *Kept* collects it in one place: plain markdown files, one bullet per piece of work. Because it's just text, it can be reread, rearranged, and reused either by me, or by a local LLM.
 

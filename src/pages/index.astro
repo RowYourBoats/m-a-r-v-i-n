@@ -1,6 +1,7 @@
 ---
 import Base from "@/layouts/Base.astro";
 import Filmstrip from "@/components/Filmstrip.astro";
+import { SITE_LINKS } from "@/lib/site-links";
 import { getEntry, render } from "astro:content";
 
 const entry = await getEntry("pages", "marvin");
@@ -29,6 +30,19 @@ const hasLead = !!entry?.body && entry.body.trim().length > 0;
       }
       if (section.kind === "link") {
         return <p class="prose-line"><a href={section.href}>{section.label}</a></p>;
+      }
+      if (section.kind === "contact") {
+        return (
+          <div class="contact-lines">
+            {SITE_LINKS.map((link) => (
+              <a
+                href={link.href}
+                target={link.external ? "_blank" : undefined}
+                rel={link.external ? "noopener" : undefined}
+              >{link.label}</a>
+            ))}
+          </div>
+        );
       }
       return null;
     })}
