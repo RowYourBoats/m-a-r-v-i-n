@@ -28,6 +28,5 @@ image_tags:
   - 3d
   - illustration
   - letter-form
-  - product-render
   - study
 ---

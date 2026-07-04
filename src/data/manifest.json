@@ -1856,42 +1856,6 @@
       "personal": true
     },
     {
-      "id": "practice-smoke-systems-screenshot-2026-01-14-004828",
-      "src": "https://ws6i2dfuggcaavs2.public.blob.vercel-storage.com/images/practice/smoke-systems/Screenshot%202026-01-14%20004828.png",
-      "type": "image",
-      "title": "Smoke Simulation Test",
-      "tags": [
-        "real-time",
-        "3d",
-        "study",
-        "moving-image"
-      ],
-      "format": [],
-      "characteristics": [
-        "real-time",
-        "3d"
-      ],
-      "content": [
-        "study"
-      ],
-      "project_tags": [
-        "personal",
-        "personal",
-        "real-time",
-        "generative"
-      ],
-      "medium": "moving-image",
-      "project": "smoke-systems",
-      "description": "A blurred, abstract visualization of simulated smoke particles in warm red and orange gradients, demonstrating dynamic particle behavior within a digital environment.",
-      "width": 1322,
-      "height": 782,
-      "style": "Abstract particle simulation with blurred motion and warm gradient tones",
-      "created": "2025-present",
-      "date_range": "2025-present",
-      "year": 2025,
-      "personal": true
-    },
-    {
       "id": "practice-snu-01-snu-datavis",
       "src": "https://ws6i2dfuggcaavs2.public.blob.vercel-storage.com/images/practice/SNU/01_SNU_dataVis.jpeg",
       "type": "image",
@@ -1962,41 +1926,6 @@
       "personal": true
     },
     {
-      "id": "practice-space-mucking-06",
-      "src": "https://ws6i2dfuggcaavs2.public.blob.vercel-storage.com/images/IndependentProjects/Mucking-06.png",
-      "type": "image",
-      "title": "Futuristic Glacier Passage",
-      "tags": [
-        "3d",
-        "real-time",
-        "study"
-      ],
-      "format": [],
-      "characteristics": [
-        "3d",
-        "real-time"
-      ],
-      "content": [
-        "study"
-      ],
-      "project_tags": [
-        "personal",
-        "installation",
-        "personal",
-        "real-time"
-      ],
-      "medium": "",
-      "project": "space",
-      "description": "Real-time rendered environment of a glacial canyon featuring icy rock formations, industrial structures, and a humanoid figure for spatial scale, demonstrating texture streaming implementation.",
-      "width": 1920,
-      "height": 1920,
-      "style": "Futuristic sci-fi landscape with icy terrain and industrial architectural elements",
-      "created": "2025",
-      "date_range": "2025",
-      "year": 2025,
-      "personal": true
-    },
-    {
       "id": "practice-space-mucking-12",
       "src": "https://ws6i2dfuggcaavs2.public.blob.vercel-storage.com/images/IndependentProjects/Mucking-12.png",
       "type": "image",
@@ -2032,41 +1961,6 @@
       "personal": true
     },
     {
-      "id": "practice-stephanie-hanes-stephaniehanes-detaillightingonly-0002",
-      "src": "https://ws6i2dfuggcaavs2.public.blob.vercel-storage.com/images/practice/stephanie-hanes/StephanieHanes.DetailLightingOnly.0002.png",
-      "type": "image",
-      "title": "Celestial Bodies with Glowing Ice Elements",
-      "tags": [
-        "3d",
-        "illustration",
-        "study"
-      ],
-      "format": [],
-      "characteristics": [
-        "3d"
-      ],
-      "content": [
-        "illustration",
-        "study"
-      ],
-      "project_tags": [
-        "personal",
-        "editorial",
-        "publication-design",
-        "personal"
-      ],
-      "medium": "",
-      "project": "stephanie-hanes",
-      "description": "A digital composition showcasing the phrase 'Celestial Bodies' in a glowing, semi-transparent typeface, accompanied by floating ice-like forms that emphasize detailed lighting and motion.",
-      "width": 3840,
-      "height": 2160,
-      "style": "minimalist, glowing ice-texture, detailed lighting",
-      "created": "2025",
-      "date_range": "2025",
-      "year": 2025,
-      "personal": true
-    },
-    {
       "id": "practice-stephanie-hanes-stephaniehanes-lightingonly-0001",
       "src": "https://ws6i2dfuggcaavs2.public.blob.vercel-storage.com/images/IndependentProjects/StephanieHanes.LightingOnly.0001.png",
       "type": "image",
@@ -2096,41 +1990,6 @@
       "width": 3840,
       "height": 2160,
       "style": "Minimalist abstract 3D rendering with soft lighting and fluid white forms",
-      "created": "2025",
-      "date_range": "2025",
-      "year": 2025,
-      "personal": true
-    },
-    {
-      "id": "practice-stephanie-hanes-stephaniehanes-lightingonly-0014-1",
-      "src": "https://ws6i2dfuggcaavs2.public.blob.vercel-storage.com/images/IndependentProjects/StephanieHanes.LightingOnly.0014%201.png",
-      "type": "image",
-      "title": "Celestial Bodies Marble Embossing",
-      "tags": [
-        "3d",
-        "illustration",
-        "study"
-      ],
-      "format": [],
-      "characteristics": [
-        "3d"
-      ],
-      "content": [
-        "illustration",
-        "study"
-      ],
-      "project_tags": [
-        "personal",
-        "editorial",
-        "publication-design",
-        "personal"
-      ],
-      "medium": "",
-      "project": "stephanie-hanes",
-      "description": "A marble-textured design featuring embossed 'Celestial Bodies' text, utilizing focused lighting to accentuate the three-dimensional embossing in a minimalist composition.",
-      "width": 1920,
-      "height": 1080,
-      "style": "Minimalist marble texture with embossed typography, highlighting light and shadow for 3D text effect.",
       "created": "2025",
       "date_range": "2025",
       "year": 2025,
@@ -2559,7 +2418,7 @@
       "id": "practice-yale-thesis-original-40df324de378a5f92e1c6cdd802a9075",
       "src": "https://ws6i2dfuggcaavs2.public.blob.vercel-storage.com/images/practice/yale/thesis/original_40df324de378a5f92e1c6cdd802a9075.jpg",
       "type": "image",
-      "title": "Neon Geometric Abstraction",
+      "title": "What do I miss?",
       "tags": [
         "poster",
         "illustration",
@@ -2580,7 +2439,7 @@
       ],
       "medium": "print",
       "project": "yale-thesis",
-      "description": "A dynamic digital illustration merging neon gradients, fragmented typography, and 3D geometric forms to create a glitch-inspired visual experience exploring spatial depth and color theory.",
+      "description": "An expression of the feelings surrounding learning. Perhaps the wrong thing? The poster was ultimately submerged in a sink to form the backdrop of a video involving dirty dishes.",
       "width": 6600,
       "height": 9600,
       "style": "Vibrant neon gradient abstract composition with fragmented geometric forms and glitch aesthetics",
@@ -2927,7 +2786,7 @@
       "id": "practice-yale-uppercase-soul-screenshot-2026-04-14-092210",
       "src": "https://ws6i2dfuggcaavs2.public.blob.vercel-storage.com/images/practice/yale/uppercase-soul/Screenshot%202026-04-14%20092210.png",
       "type": "image",
-      "title": "Canada Book Cover Typographic Design",
+      "title": "One of many covers captured with all caps lettering.",
       "tags": [
         "editorial",
         "letter-form"
@@ -2958,7 +2817,7 @@
       "id": "practice-yale-uppercase-soul-screenshot-2026-04-14-092223",
       "src": "https://ws6i2dfuggcaavs2.public.blob.vercel-storage.com/images/practice/yale/uppercase-soul/Screenshot%202026-04-14%20092223.png",
       "type": "image",
-      "title": "Defending Jacob Book Cover",
+      "title": "One of many covers captured with all caps lettering.",
       "tags": [
         "editorial",
         "letter-form"
@@ -21610,7 +21469,7 @@
       ],
       "medium": "print",
       "project": "one-offs",
-      "description": "",
+      "description": "Poster created for the exhibition ",
       "width": 2328,
       "height": 3242,
       "created": "2014-2015",
@@ -21622,10 +21481,9 @@
       "id": "practice-stephanie-hanes-ndisplay-pathtracer-stephaniehanes-lightingonly-cinecameraactor-0018",
       "src": "https://ws6i2dfuggcaavs2.public.blob.vercel-storage.com/images/practice/stephanie-hanes/nDisplay_PathTracer_StephanieHanes.LightingOnly.CineCameraActor.0018.png",
       "type": "image",
-      "title": "nDisplay PathTracer StephanieHanes.LightingOnly.CineCameraActor.0018",
+      "title": "Celestial Bodies raised type experiment",
       "tags": [
         "3d",
-        "product-render",
         "letter-form"
       ],
       "format": [],
@@ -21633,7 +21491,6 @@
         "3d"
       ],
       "content": [
-        "product-render",
         "letter-form"
       ],
       "project_tags": [
