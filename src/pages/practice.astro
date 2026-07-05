@@ -5,6 +5,7 @@ import PortfolioPageScript from "@/components/PortfolioPageScript.astro";
 import manifest from "@/data/manifest.json";
 import schema from "@/data/schema.json";
 import { pinnedFirst } from "@/lib/feed-sort";
+import { visibleFilters } from "@/lib/filter-counts";
 import { getCollection, getEntry, render } from "astro:content";
 
 const intro = await getEntry("pages", "practice");
@@ -73,10 +74,16 @@ const feed = pinnedFirst<Feed>(
 );
 
 // Curated Practice-page filters per the filter architecture directive.
-// Same { label, matches[] } shape as Work.
+// Same { label, matches[] } shape as Work. Chips under MIN_FILTER_COUNT
+// matches in the current feed don't render (src/lib/filter-counts.ts) —
+// counting spans both card kinds: image items' tags and essays' frontmatter
+// tags, same as the data-tags the client filter matches against.
 const practiceFilters = schema.practice_filters || { pinned: [], expanded: [] };
-const pinnedFilters = practiceFilters.pinned;
-const expandedFilters = practiceFilters.expanded;
+const { pinned: pinnedFilters, expanded: expandedFilters } = visibleFilters(
+  practiceFilters,
+  feed.map((f) => (f.kind === "writing" ? f.entry.data.tags || [] : f.item.tags || [])),
+);
+const showFilterBar = pinnedFilters.length + expandedFilters.length >= 2;
 
 // SSR-seed `grid-row: span N` so masonry is roughly distributed before the
 // JS layout pass in Base.astro runs. Without it, every grid item starts as
@@ -97,19 +104,21 @@ function seedSpan(item: { width?: number; height?: number }) {
     <IntroContent />
   </div>
 
-  <div class="filter-bar" id="filters">
-    <button class="filter-trigger" id="filter-trigger">Filter</button>
-    <button data-filter="all" aria-pressed="true">All</button>
-    {pinnedFilters.map((f) => (
-      <button data-tag={f.label} data-matches={f.matches.join(",")} aria-pressed="false">{f.label}</button>
-    ))}
-    {expandedFilters.map((f) => (
-      <button data-tag={f.label} data-matches={f.matches.join(",")} aria-pressed="false" class="filter-extra">{f.label}</button>
-    ))}
-    {expandedFilters.length > 0 && (
-      <button class="filter-more" id="filter-more">+</button>
-    )}
-  </div>
+  {showFilterBar && (
+    <div class="filter-bar" id="filters">
+      <button class="filter-trigger" id="filter-trigger">Filter</button>
+      <button data-filter="all" aria-pressed="true">All</button>
+      {pinnedFilters.map((f) => (
+        <button data-tag={f.label} data-matches={f.matches.join(",")} aria-pressed="false">{f.label}</button>
+      ))}
+      {expandedFilters.map((f) => (
+        <button data-tag={f.label} data-matches={f.matches.join(",")} aria-pressed="false" class="filter-extra">{f.label}</button>
+      ))}
+      {expandedFilters.length > 0 && (
+        <button class="filter-more" id="filter-more">+</button>
+      )}
+    </div>
+  )}
 
   <div class="grid" id="grid">
     {feed.map((f) => f.kind === "writing" ? (

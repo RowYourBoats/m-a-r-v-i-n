@@ -21,14 +21,15 @@ The separation lets one button cover several values: `spatial` matches exhibitio
 
 ## Current sets
 
-See `src/data/schema.json` for live values.
+`src/data/schema.json` is the source of truth for both sets — don't trust prose listings of chip names, they go stale. `build-projects.mjs` preserves both filter sets across rebuilds. To add or rename a filter, edit `schema.json` directly — it round-trips cleanly.
 
-- Work pinned: spatial, identity, keynote, interactive, editorial
-- Work expanded: poster, event, web, campaign, deck, merch, motion, video, data-visualization, photography, illustration, 3d
-- Practice pinned: real-time, letter-form, video
-- Practice expanded: essay, installation, exhibition
+## Minimum-count threshold
 
-`build-projects.mjs` preserves both filter sets across rebuilds. To add or rename a filter, edit `schema.json` directly — it round-trips cleanly.
+The schema is a statement of intent; what renders is gated by real counts. At build time each page counts how many of its cards each chip would match (`src/lib/filter-counts.ts`, same match rule as the client JS) and skips chips under `MIN_FILTER_COUNT` (5). Practice counts both image items and essay cards. Dead chips — which would blank the grid when clicked — never render, and thin chips (e.g. `merch` on Work) reappear on their own once enough hidden work publishes. If fewer than 2 chips survive, the whole filter bar is omitted. A `?tag=X` deep link to a hidden chip still filters via the synthetic-fallback path on Work.
+
+## Admin facet
+
+`/admin/images` (dev only) has a "site filters" select that mirrors this system: for each row it derives which public chip(s) the image would light up (flat union of format/characteristics/content/medium against the schema `matches`), shows live counts per chip in the option labels, and offers `no chip (n)` to surface images invisible to every public filter. Read-only reflection — the facet never edits `schema.json`.
 
 ## Behavior
 
