@@ -13,7 +13,7 @@ sector: personal
 characteristic:
   - real-time
 personal: true
-snapshot-only: true
+snapshot_only: true
 description: ""
 credits:
   - role: Design

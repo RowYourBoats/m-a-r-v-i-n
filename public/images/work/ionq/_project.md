@@ -162,11 +162,6 @@ projects:
     credits:
       - role: Creative Director
         name: Marvin de Jong
-    one-pager:
-      name: One Pager
-      image_tags:
-        - brand
-        - marketing
   facade:
     name: Facade
     description: Logo and exterior signage treatment for IonQ's HQ facade — extending the rebuilt brand from screen to street.

@@ -12,7 +12,7 @@ project_type:
 sector: education
 characteristic: []
 personal: true
-snapshot-only: true
+snapshot_only: true
 description: ""
 credits:
   - role: Design
