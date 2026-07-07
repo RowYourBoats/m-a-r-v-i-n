@@ -2,6 +2,60 @@
 
 Newest run first. Appended automatically by `npm run ingest`.
 
+## 2026-07-06T06:29:43.731Z — ingest (applied)
+
+- **reconcile:** 0 remap(s), 0 quarantined (kept), 21 unregistered on disk
+- **stub:** +0 new image(s)
+- **mine-dates:** 755 stamped, 124 missing
+- **sync-image-tags:** 0 _project.md updated
+- **build-projects:** 81 projects, 60 tags, 19 clients
+- **build-manifest:** 747 items across 72 projects
+- **rehydrate:** 0 matched, 0 unmatched
+- **upload-blob:** uploaded 0, adopted 0, skipped 747, failed 0
+- **vimeo-posters:** 2 referenced, 0 fetched
+
+## 2026-07-05T08:57:47.098Z — ingest (applied)
+
+- **reconcile:** 0 remap(s), 0 quarantined (kept), 21 unregistered on disk
+- **stub:** +0 new image(s)
+- **mine-dates:** 755 stamped, 124 missing
+- **sync-image-tags:** 0 _project.md updated
+- **build-projects:** 81 projects, 60 tags, 19 clients
+- **build-manifest:** 747 items across 72 projects
+- **rehydrate:** 0 matched, 0 unmatched
+- **upload-blob:** uploaded 0, adopted 0, skipped 747, failed 0
+- **vimeo-posters:** 2 referenced, 0 fetched
+
+## 2026-07-05T08:54:03.592Z — ingest (applied)
+
+- **reconcile:** 0 remap(s), 0 quarantined (kept), 21 unregistered on disk
+- **stub:** +0 new image(s)
+- **mine-dates:** 755 stamped, 124 missing
+- **sync-image-tags:** 0 _project.md updated
+- **build-projects:** 81 projects, 60 tags, 19 clients
+- **build-manifest:** 747 items across 72 projects
+- **rehydrate:** 0 matched, 0 unmatched
+- **upload-blob:** uploaded 0, adopted 0, skipped 747, failed 0
+- **vimeo-posters:** 2 referenced, 0 fetched
+
+## 2026-07-05T08:46:12.120Z — ingest (applied)
+
+- **FAILED:** build-projects exited with code 1
+
+- **reconcile:** 0 remap(s), 0 quarantined (kept), 21 unregistered on disk
+- **stub:** +0 new image(s)
+- **mine-dates:** 755 stamped, 124 missing
+- **sync-image-tags:** 0 _project.md updated
+
+## 2026-07-05T08:44:52.467Z — ingest (applied)
+
+- **FAILED:** build-projects exited with code 1
+
+- **reconcile:** 0 remap(s), 0 quarantined (kept), 21 unregistered on disk
+- **stub:** +0 new image(s)
+- **mine-dates:** 755 stamped, 124 missing
+- **sync-image-tags:** 0 _project.md updated
+
 ## 2026-07-04T08:27:06.765Z — ingest (applied)
 
 - **reconcile:** 0 remap(s), 0 quarantined (kept), 21 unregistered on disk

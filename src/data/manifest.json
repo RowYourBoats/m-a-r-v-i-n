@@ -918,6 +918,20 @@
       "order": [],
       "snapshot_only": false
     },
+    "controlled-instability-studies": {
+      "title": "Controlled Instability Studies",
+      "description": "A series of explorations in form and interaction.",
+      "client": "personal",
+      "year": 2026,
+      "credits": [
+        {
+          "role": "Design",
+          "name": "Marvin de Jong"
+        }
+      ],
+      "order": [],
+      "snapshot_only": false
+    },
     "Cup": {
       "title": "Cup",
       "description": "A video essay on the small window between waking and comprehension — when objects haven't yet been organized into meaning.\n",
@@ -1064,7 +1078,7 @@
         }
       ],
       "order": [],
-      "snapshot_only": false
+      "snapshot_only": true
     },
     "space": {
       "title": "Space",
@@ -1078,7 +1092,7 @@
         }
       ],
       "order": [],
-      "snapshot_only": false
+      "snapshot_only": true
     },
     "stephanie-hanes": {
       "title": "Layout design for PreCog magazine.",
@@ -24767,6 +24781,64 @@
       "description": "Exploring materials and motion in Unreal Engine."
     },
     {
+      "id": "smoke-system-and-gesture-based-camera",
+      "type": "video",
+      "video": "https://player.vimeo.com/video/1204275192?autoplay=1&muted=1&loop=1&playsinline=1",
+      "video_mode": "ui",
+      "title": "Smoke system and gesture based camera",
+      "tags": [
+        "video",
+        "moving-image",
+        "3d",
+        "real-time",
+        "interactive",
+        "motion-graphics",
+        "study"
+      ],
+      "project_tags": [
+        "personal",
+        "personal",
+        "print",
+        "stationery"
+      ],
+      "medium": "moving-image",
+      "project": "controlled-instability-studies",
+      "width": 720,
+      "height": 1280,
+      "year": 2026,
+      "personal": true,
+      "description": "An experiment in real-time particle-based smoke simulation and gesture based camera control. "
+    },
+    {
+      "id": "handwritten-letterforms-and-gesture-based-distortion",
+      "type": "video",
+      "video": "https://player.vimeo.com/video/1204275355?autoplay=1&muted=1&loop=1&playsinline=1",
+      "video_mode": "ui",
+      "title": "Handwritten letterforms and gesture-based distortion.",
+      "tags": [
+        "video",
+        "moving-image",
+        "3d",
+        "real-time",
+        "interactive",
+        "motion-graphics",
+        "study"
+      ],
+      "project_tags": [
+        "personal",
+        "personal",
+        "print",
+        "stationery"
+      ],
+      "medium": "moving-image",
+      "project": "controlled-instability-studies",
+      "width": 720,
+      "height": 1280,
+      "year": 2026,
+      "personal": true,
+      "description": "*Not just yet, * an experiment in gesture based distortion of letter forms. "
+    },
+    {
       "id": "cup",
       "type": "video",
       "video": "https://player.vimeo.com/video/130357433?autoplay=1&muted=1&loop=1&playsinline=1",
@@ -24921,7 +24993,7 @@
       "personal": true
     },
     {
-      "id": "smoke-system-and-gesture-based-camera",
+      "id": "smoke-system-and-gesture-based-camera-2",
       "type": "video",
       "video": "https://player.vimeo.com/video/1204275192?autoplay=1&muted=1&loop=1&playsinline=1",
       "video_mode": "ui",
@@ -24943,7 +25015,7 @@
       "description": "An experiment in real-time particle-based smoke simulation and gesture based camera control. "
     },
     {
-      "id": "handwritten-letterforms-and-gesture-based-distortion",
+      "id": "handwritten-letterforms-and-gesture-based-distortion-2",
       "type": "video",
       "video": "https://player.vimeo.com/video/1204275355?autoplay=1&muted=1&loop=1&playsinline=1",
       "video_mode": "ui",

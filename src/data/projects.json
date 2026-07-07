@@ -3468,6 +3468,77 @@
     ],
     "videos": []
   },
+  "controlled-instability-studies": {
+    "name": "Controlled Instability Studies",
+    "slug": "controlled-instability-studies",
+    "client": "personal",
+    "aliases": [
+      "personal",
+      "IndependentProjects"
+    ],
+    "date_range": "2026-present",
+    "roles": [],
+    "category": "experience",
+    "image_folders": [
+      "practice/controlled-instability-studies"
+    ],
+    "market": "personal",
+    "project_type": [],
+    "sector": "personal",
+    "characteristic": [
+      "print",
+      "stationery"
+    ],
+    "role": null,
+    "scale": null,
+    "image_tags": [],
+    "lead_images": [],
+    "order": [],
+    "personal": true,
+    "snapshot_only": false,
+    "chronological": true,
+    "unlisted": false,
+    "pinned": false,
+    "description": "A series of explorations in form and interaction.",
+    "credits": [
+      {
+        "role": "Design",
+        "name": "Marvin de Jong"
+      }
+    ],
+    "videos": [
+      {
+        "title": "Smoke system and gesture based camera",
+        "video_mode": "ui",
+        "url": "https://player.vimeo.com/video/1204275192",
+        "content": [
+          "motion-graphics",
+          "study"
+        ],
+        "characteristics": [
+          "3d",
+          "real-time",
+          "interactive"
+        ],
+        "description": "An experiment in real-time particle-based smoke simulation and gesture based camera control. "
+      },
+      {
+        "title": "Handwritten letterforms and gesture-based distortion.",
+        "video_mode": "ui",
+        "url": "https://player.vimeo.com/video/1204275355",
+        "description": "*Not just yet, * an experiment in gesture based distortion of letter forms. ",
+        "content": [
+          "motion-graphics",
+          "study"
+        ],
+        "characteristics": [
+          "3d",
+          "real-time",
+          "interactive"
+        ]
+      }
+    ]
+  },
   "Cup": {
     "name": "Cup",
     "slug": "Cup",
@@ -3973,7 +4044,7 @@
     "lead_images": [],
     "order": [],
     "personal": true,
-    "snapshot_only": false,
+    "snapshot_only": true,
     "chronological": false,
     "unlisted": false,
     "pinned": false,
@@ -4015,7 +4086,7 @@
     "lead_images": [],
     "order": [],
     "personal": true,
-    "snapshot_only": false,
+    "snapshot_only": true,
     "chronological": false,
     "unlisted": false,
     "pinned": false,

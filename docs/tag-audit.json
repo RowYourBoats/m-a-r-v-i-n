@@ -1,53 +1,59 @@
 {
-  "generated": "2026-06-18T00:20:10.706Z",
-  "catalogue_total": 876,
+  "generated": "2026-07-05T08:54:19.921Z",
+  "catalogue_total": 879,
   "image_axes": {
     "format": {
-      "deck": 388,
-      "publication-design": 58,
-      "editorial": 56,
-      "poster": 43,
-      "campaign": 30,
+      "deck": 392,
+      "publication-design": 63,
+      "editorial": 59,
+      "poster": 52,
+      "campaign": 33,
       "event": 22,
-      "exhibition": 19,
-      "web": 19,
-      "installation": 17,
-      "stationery": 15,
-      "retail": 5,
-      "booth": 3,
+      "installation": 21,
+      "web": 20,
+      "stationery": 17,
+      "exhibition": 14,
+      "retail": 6,
       "merch": 3,
+      "booth": 2,
       "product-marking": 2
     },
     "characteristics": {
       "interactive": 242,
-      "3d": 23,
-      "essay": 16,
+      "3d": 26,
+      "essay": 14,
       "reference": 12,
       "making": 9,
-      "real-time": 6
+      "real-time": 6,
+      "print": 2
     },
     "content": {
       "proposal": 353,
-      "identity": 72,
-      "illustration": 61,
+      "identity": 75,
+      "illustration": 63,
+      "typography": 56,
       "photography": 46,
-      "typography": 35,
-      "data-visualization": 34,
-      "letter-form": 27,
+      "data-visualization": 35,
+      "letter-form": 35,
+      "interface": 20,
+      "editorial": 19,
       "iconography": 16,
+      "signage": 15,
       "study": 15,
-      "logo": 14,
-      "interface": 12,
-      "product-render": 11,
+      "logo": 13,
+      "motion-graphics": 11,
+      "product-render": 9,
+      "silkscreen": 9,
+      "riso": 7,
       "diagram": 6,
-      "motion-graphics": 6,
-      "signage": 4
+      "lifestyle": 1
     },
     "medium": {
-      "print": 120,
-      "moving-image": 32,
-      "spatial": 30,
-      "physical": 10
+      "print": 127,
+      "moving-image": 36,
+      "spatial": 33,
+      "digital": 10,
+      "physical": 9
     }
   },
   "project_axes": {
@@ -65,13 +71,13 @@
     },
     "characteristic": {
       "real-time": 4,
+      "print": 2,
+      "stationery": 2,
       "generative": 1,
-      "interactive": 1,
-      "print": 1,
-      "stationery": 1
+      "interactive": 1
     },
     "sector": {
-      "personal": 13,
+      "personal": 15,
       "education": 7,
       "architecture": 2,
       "design-studio": 2,
@@ -82,44 +88,46 @@
       "telecom": 1
     },
     "market": {
-      "personal": 17,
+      "personal": 19,
       "b2b": 6,
       "b2c": 3,
       "internal": 2,
       "b2b2c": 1
     },
     "image_tags": {
-      "illustration": 20,
-      "editorial": 16,
+      "editorial": 22,
+      "typography": 22,
+      "illustration": 21,
       "data-visualization": 15,
       "identity": 15,
-      "photography": 15,
-      "typography": 15,
-      "poster": 14,
+      "poster": 15,
+      "photography": 14,
+      "publication-design": 14,
       "deck": 13,
       "interactive": 12,
-      "publication-design": 12,
-      "event": 10,
+      "event": 11,
+      "letter-form": 11,
       "proposal": 10,
-      "letter-form": 9,
       "3d": 8,
       "exhibition": 8,
-      "logo": 7,
-      "retail": 7,
-      "stationery": 7,
+      "retail": 8,
+      "stationery": 8,
+      "installation": 7,
       "campaign": 6,
-      "installation": 6,
-      "product-render": 6,
+      "logo": 6,
       "study": 5,
       "web": 5,
       "experiential": 4,
+      "product-render": 4,
       "design-system": 3,
       "diagram": 3,
+      "interface": 3,
       "making": 3,
       "merch": 3,
+      "signage": 3,
       "digital": 2,
       "iconography": 2,
-      "interface": 2,
+      "print": 2,
       "real-time": 2,
       "spatial": 2,
       "architecture": 1,
@@ -128,11 +136,13 @@
       "brand": 1,
       "customer-experience": 1,
       "essay": 1,
+      "lifestyle": 1,
       "motion-graphics": 1,
       "process": 1,
       "product": 1,
       "product-marking": 1,
-      "signage": 1,
+      "riso": 1,
+      "silkscreen": 1,
       "user interface": 1,
       "user-experience": 1
     }
@@ -145,70 +155,10 @@
           {
             "axis": "format",
             "scope": "image",
-            "count": 17
+            "count": 21
           },
           {
             "axis": "project_type",
-            "scope": "project",
-            "count": 1
-          },
-          {
-            "axis": "image_tags",
-            "scope": "project",
-            "count": 6
-          }
-        ]
-      },
-      {
-        "value": "editorial",
-        "hits": [
-          {
-            "axis": "format",
-            "scope": "image",
-            "count": 56
-          },
-          {
-            "axis": "project_type",
-            "scope": "project",
-            "count": 3
-          },
-          {
-            "axis": "image_tags",
-            "scope": "project",
-            "count": 16
-          }
-        ]
-      },
-      {
-        "value": "publication-design",
-        "hits": [
-          {
-            "axis": "format",
-            "scope": "image",
-            "count": 58
-          },
-          {
-            "axis": "project_type",
-            "scope": "project",
-            "count": 9
-          },
-          {
-            "axis": "image_tags",
-            "scope": "project",
-            "count": 12
-          }
-        ]
-      },
-      {
-        "value": "stationery",
-        "hits": [
-          {
-            "axis": "format",
-            "scope": "image",
-            "count": 15
-          },
-          {
-            "axis": "characteristic",
             "scope": "project",
             "count": 1
           },
@@ -220,12 +170,62 @@
         ]
       },
       {
-        "value": "poster",
+        "value": "exhibition",
         "hits": [
           {
             "axis": "format",
             "scope": "image",
-            "count": 43
+            "count": 14
+          },
+          {
+            "axis": "project_type",
+            "scope": "project",
+            "count": 2
+          },
+          {
+            "axis": "image_tags",
+            "scope": "project",
+            "count": 8
+          }
+        ]
+      },
+      {
+        "value": "editorial",
+        "hits": [
+          {
+            "axis": "format",
+            "scope": "image",
+            "count": 59
+          },
+          {
+            "axis": "content",
+            "scope": "image",
+            "count": 19
+          },
+          {
+            "axis": "project_type",
+            "scope": "project",
+            "count": 3
+          },
+          {
+            "axis": "image_tags",
+            "scope": "project",
+            "count": 22
+          }
+        ]
+      },
+      {
+        "value": "publication-design",
+        "hits": [
+          {
+            "axis": "format",
+            "scope": "image",
+            "count": 63
+          },
+          {
+            "axis": "project_type",
+            "scope": "project",
+            "count": 9
           },
           {
             "axis": "image_tags",
@@ -235,12 +235,47 @@
         ]
       },
       {
+        "value": "stationery",
+        "hits": [
+          {
+            "axis": "format",
+            "scope": "image",
+            "count": 17
+          },
+          {
+            "axis": "characteristic",
+            "scope": "project",
+            "count": 2
+          },
+          {
+            "axis": "image_tags",
+            "scope": "project",
+            "count": 8
+          }
+        ]
+      },
+      {
+        "value": "poster",
+        "hits": [
+          {
+            "axis": "format",
+            "scope": "image",
+            "count": 52
+          },
+          {
+            "axis": "image_tags",
+            "scope": "project",
+            "count": 15
+          }
+        ]
+      },
+      {
         "value": "campaign",
         "hits": [
           {
             "axis": "format",
             "scope": "image",
-            "count": 30
+            "count": 33
           },
           {
             "axis": "project_type",
@@ -260,32 +295,12 @@
           {
             "axis": "format",
             "scope": "image",
-            "count": 19
+            "count": 20
           },
           {
             "axis": "image_tags",
             "scope": "project",
             "count": 5
-          }
-        ]
-      },
-      {
-        "value": "exhibition",
-        "hits": [
-          {
-            "axis": "format",
-            "scope": "image",
-            "count": 19
-          },
-          {
-            "axis": "project_type",
-            "scope": "project",
-            "count": 2
-          },
-          {
-            "axis": "image_tags",
-            "scope": "project",
-            "count": 8
           }
         ]
       },
@@ -305,7 +320,7 @@
           {
             "axis": "image_tags",
             "scope": "project",
-            "count": 10
+            "count": 11
           }
         ]
       },
@@ -345,7 +360,7 @@
           {
             "axis": "format",
             "scope": "image",
-            "count": 388
+            "count": 392
           },
           {
             "axis": "image_tags",
@@ -360,7 +375,7 @@
           {
             "axis": "format",
             "scope": "image",
-            "count": 3
+            "count": 2
           },
           {
             "axis": "image_tags",
@@ -375,7 +390,7 @@
           {
             "axis": "format",
             "scope": "image",
-            "count": 5
+            "count": 6
           },
           {
             "axis": "project_type",
@@ -385,7 +400,7 @@
           {
             "axis": "image_tags",
             "scope": "project",
-            "count": 7
+            "count": 8
           }
         ]
       },
@@ -395,7 +410,7 @@
           {
             "axis": "characteristics",
             "scope": "image",
-            "count": 23
+            "count": 26
           },
           {
             "axis": "image_tags",
@@ -425,6 +440,21 @@
         ]
       },
       {
+        "value": "essay",
+        "hits": [
+          {
+            "axis": "characteristics",
+            "scope": "image",
+            "count": 14
+          },
+          {
+            "axis": "image_tags",
+            "scope": "project",
+            "count": 1
+          }
+        ]
+      },
+      {
         "value": "interactive",
         "hits": [
           {
@@ -445,21 +475,6 @@
         ]
       },
       {
-        "value": "essay",
-        "hits": [
-          {
-            "axis": "characteristics",
-            "scope": "image",
-            "count": 16
-          },
-          {
-            "axis": "image_tags",
-            "scope": "project",
-            "count": 1
-          }
-        ]
-      },
-      {
         "value": "making",
         "hits": [
           {
@@ -475,37 +490,32 @@
         ]
       },
       {
+        "value": "print",
+        "hits": [
+          {
+            "axis": "characteristics",
+            "scope": "image",
+            "count": 2
+          },
+          {
+            "axis": "medium",
+            "scope": "image",
+            "count": 127
+          },
+          {
+            "axis": "characteristic",
+            "scope": "project",
+            "count": 2
+          },
+          {
+            "axis": "image_tags",
+            "scope": "project",
+            "count": 2
+          }
+        ]
+      },
+      {
         "value": "data-visualization",
-        "hits": [
-          {
-            "axis": "content",
-            "scope": "image",
-            "count": 34
-          },
-          {
-            "axis": "image_tags",
-            "scope": "project",
-            "count": 15
-          }
-        ]
-      },
-      {
-        "value": "letter-form",
-        "hits": [
-          {
-            "axis": "content",
-            "scope": "image",
-            "count": 27
-          },
-          {
-            "axis": "image_tags",
-            "scope": "project",
-            "count": 9
-          }
-        ]
-      },
-      {
-        "value": "typography",
         "hits": [
           {
             "axis": "content",
@@ -520,17 +530,47 @@
         ]
       },
       {
+        "value": "letter-form",
+        "hits": [
+          {
+            "axis": "content",
+            "scope": "image",
+            "count": 35
+          },
+          {
+            "axis": "image_tags",
+            "scope": "project",
+            "count": 11
+          }
+        ]
+      },
+      {
+        "value": "typography",
+        "hits": [
+          {
+            "axis": "content",
+            "scope": "image",
+            "count": 56
+          },
+          {
+            "axis": "image_tags",
+            "scope": "project",
+            "count": 22
+          }
+        ]
+      },
+      {
         "value": "illustration",
         "hits": [
           {
             "axis": "content",
             "scope": "image",
-            "count": 61
+            "count": 63
           },
           {
             "axis": "image_tags",
             "scope": "project",
-            "count": 20
+            "count": 21
           }
         ]
       },
@@ -560,7 +600,7 @@
           {
             "axis": "image_tags",
             "scope": "project",
-            "count": 15
+            "count": 14
           }
         ]
       },
@@ -570,12 +610,12 @@
           {
             "axis": "content",
             "scope": "image",
-            "count": 14
+            "count": 13
           },
           {
             "axis": "image_tags",
             "scope": "project",
-            "count": 7
+            "count": 6
           }
         ]
       },
@@ -585,7 +625,7 @@
           {
             "axis": "content",
             "scope": "image",
-            "count": 72
+            "count": 75
           },
           {
             "axis": "image_tags",
@@ -630,42 +670,12 @@
           {
             "axis": "content",
             "scope": "image",
-            "count": 11
+            "count": 9
           },
           {
             "axis": "image_tags",
             "scope": "project",
-            "count": 6
-          }
-        ]
-      },
-      {
-        "value": "signage",
-        "hits": [
-          {
-            "axis": "content",
-            "scope": "image",
             "count": 4
-          },
-          {
-            "axis": "image_tags",
-            "scope": "project",
-            "count": 1
-          }
-        ]
-      },
-      {
-        "value": "motion-graphics",
-        "hits": [
-          {
-            "axis": "content",
-            "scope": "image",
-            "count": 6
-          },
-          {
-            "axis": "image_tags",
-            "scope": "project",
-            "count": 1
           }
         ]
       },
@@ -675,12 +685,42 @@
           {
             "axis": "content",
             "scope": "image",
-            "count": 12
+            "count": 20
           },
           {
             "axis": "image_tags",
             "scope": "project",
-            "count": 2
+            "count": 3
+          }
+        ]
+      },
+      {
+        "value": "signage",
+        "hits": [
+          {
+            "axis": "content",
+            "scope": "image",
+            "count": 15
+          },
+          {
+            "axis": "image_tags",
+            "scope": "project",
+            "count": 3
+          }
+        ]
+      },
+      {
+        "value": "motion-graphics",
+        "hits": [
+          {
+            "axis": "content",
+            "scope": "image",
+            "count": 11
+          },
+          {
+            "axis": "image_tags",
+            "scope": "project",
+            "count": 1
           }
         ]
       },
@@ -700,15 +740,45 @@
         ]
       },
       {
-        "value": "print",
+        "value": "silkscreen",
         "hits": [
           {
-            "axis": "medium",
+            "axis": "content",
             "scope": "image",
-            "count": 120
+            "count": 9
           },
           {
-            "axis": "characteristic",
+            "axis": "image_tags",
+            "scope": "project",
+            "count": 1
+          }
+        ]
+      },
+      {
+        "value": "riso",
+        "hits": [
+          {
+            "axis": "content",
+            "scope": "image",
+            "count": 7
+          },
+          {
+            "axis": "image_tags",
+            "scope": "project",
+            "count": 1
+          }
+        ]
+      },
+      {
+        "value": "lifestyle",
+        "hits": [
+          {
+            "axis": "content",
+            "scope": "image",
+            "count": 1
+          },
+          {
+            "axis": "image_tags",
             "scope": "project",
             "count": 1
           }
@@ -720,7 +790,22 @@
           {
             "axis": "medium",
             "scope": "image",
-            "count": 30
+            "count": 33
+          },
+          {
+            "axis": "image_tags",
+            "scope": "project",
+            "count": 2
+          }
+        ]
+      },
+      {
+        "value": "digital",
+        "hits": [
+          {
+            "axis": "medium",
+            "scope": "image",
+            "count": 10
           },
           {
             "axis": "image_tags",
@@ -750,17 +835,22 @@
           {
             "axis": "sector",
             "scope": "project",
-            "count": 13
+            "count": 15
           },
           {
             "axis": "market",
             "scope": "project",
-            "count": 17
+            "count": 19
           }
         ]
       }
     ],
     "singletons": [
+      {
+        "scope": "image",
+        "axis": "content",
+        "value": "lifestyle"
+      },
       {
         "scope": "project",
         "axis": "project_type",
@@ -785,16 +875,6 @@
         "scope": "project",
         "axis": "project_type",
         "value": "writing"
-      },
-      {
-        "scope": "project",
-        "axis": "characteristic",
-        "value": "print"
-      },
-      {
-        "scope": "project",
-        "axis": "characteristic",
-        "value": "stationery"
       },
       {
         "scope": "project",
@@ -849,11 +929,6 @@
       {
         "scope": "project",
         "axis": "image_tags",
-        "value": "signage"
-      },
-      {
-        "scope": "project",
-        "axis": "image_tags",
         "value": "user interface"
       },
       {
@@ -894,70 +969,59 @@
       {
         "scope": "project",
         "axis": "image_tags",
+        "value": "lifestyle"
+      },
+      {
+        "scope": "project",
+        "axis": "image_tags",
+        "value": "silkscreen"
+      },
+      {
+        "scope": "project",
+        "axis": "image_tags",
         "value": "essay"
+      },
+      {
+        "scope": "project",
+        "axis": "image_tags",
+        "value": "riso"
       }
     ]
   },
   "coverage": {
     "format": {
-      "with": 585,
-      "without": 291,
-      "total": 876
+      "with": 590,
+      "without": 289,
+      "total": 879
     },
     "characteristics": {
-      "with": 287,
-      "without": 589,
-      "total": 876
+      "with": 293,
+      "without": 586,
+      "total": 879
     },
     "content": {
-      "with": 607,
-      "without": 269,
-      "total": 876
+      "with": 660,
+      "without": 219,
+      "total": 879
     },
     "medium": {
-      "with": 192,
-      "without": 684,
-      "total": 876
+      "with": 215,
+      "without": 664,
+      "total": 879
     }
   },
   "content_backlog": [
-    "practice/snapshot/Screenshot 2026-01-17 033644.png",
     "practice/comma/original_1563937c2fd0973c2779b0b3a164db2b.jpg",
-    "work/herman-miller/industrial-facility/Image_8.jpg",
-    "work/herman-miller/product-marking/EamesEucalyptus.png",
+    "work/verizon/future-of-retail/Frame 7.png",
     "work/ionq/brand-guidelines/IonQ Brand Guidelines - 114.png",
     "work/ionq/templates/Slide 16_9 - 4.png",
-    "work/moma/marron-dossiers/PicassoSculptureMoMA.jpeg",
-    "work/moma/marron-dossiers/PicassoSculptureMoMA_MRC Dossier1.jpeg",
-    "work/moma/marron-dossiers/PicassoSculptureMoMA_MRC Dossier2.jpeg",
-    "work/moma/marron-dossiers/PicassoSculptureMoMA_MRC Dossier3.jpeg",
-    "work/moma/marron-dossiers/portfolio_Marvin_deJong_eMail.jpeg",
-    "work/pratt/design-system/1117 JIRI_email_R1.jpg",
-    "work/pratt/design-system/MarvinDeJong-DesignPortfolio.jpeg",
-    "work/pratt/design-system/PrattBrochure.jpeg",
     "work/pratt/design-system/PrattFlags.jpeg",
-    "work/pratt/design-system/Timeline02.png",
-    "work/studio/paprika/PaprikaOpeningSheet.jpeg",
-    "work/studio/paprika/PaprikaOpeningSpread.jpeg",
-    "work/studio/paprika/Paprika_Issue1-page2.jpeg",
-    "work/studio/tillotson-associates/Realistic-business-card-mockup.jpg",
-    "work/verizon/5G-campaigns/277736_NYC_Launch_2019_09_12.jpg",
-    "work/verizon/5G-campaigns/Verizon 770 Lexington Ave 23 June 20210142.jpg",
-    "work/verizon/5G-campaigns/Verizon 770 Lexington Ave 23 June 20210144.jpg",
-    "work/verizon/chicago/verizon-02.png",
-    "work/verizon/chicago/verizon-cover.png",
     "work/verizon/retail-walkthrough/Slide20.JPG",
     "work/verizon/retail-walkthrough/Slide21.JPG",
     "work/verizon/retail-walkthrough/Slide22.JPG",
     "work/verizon/retail-walkthrough/Slide23.JPG",
     "work/verizon/retail-walkthrough/Slide24.JPG",
     "work/verizon/retail-walkthrough/Slide27.JPG",
-    "work/verizon/retail-walkthrough/Slide29.JPG",
-    "work/verizon/retail-walkthrough/Slide30.JPG",
-    "work/verizon/retail-walkthrough/Slide31.JPG",
-    "work/verizon/retail-walkthrough/Slide32.JPG",
-    "work/verizon/retail-walkthrough/Slide33.JPG",
-    "work/verizon/retail-walkthrough/Slide43.JPG",
     "work/verizon/retail-walkthrough/Slide49.JPG",
     "work/verizon/retail-walkthrough/Slide5.JPG",
     "work/verizon/retail-walkthrough/Slide50.JPG",
@@ -977,12 +1041,6 @@
     "work/verizon/retail-walkthrough/Slide66.JPG",
     "work/verizon/retail-walkthrough/Slide67.JPG",
     "work/verizon/retail-3-sem/Slide41.JPG",
-    "work/studio/marin-montessori/000_Cover-Spread.jpg",
-    "work/studio/marin-montessori/001_Intro.jpg",
-    "work/studio/marin-montessori/002_Index-Spread.jpg",
-    "work/studio/marin-montessori/003_Recipe-001.jpg",
-    "work/studio/marin-montessori/004_Endpapers.jpg",
-    "practice/controlled-instability/Screenshot 2026-01-17 114909.png",
     "practice/architecture-fantasy/perdido-street-station/01-animal-architecture-nest-sociable-weaverbird.png",
     "practice/architecture-fantasy/perdido-street-station/03-animal-architecture-eyrie-osprey.png",
     "practice/architecture-fantasy/perdido-street-station/04-animal-architecture-larch-stem-carpenter-ants.png",
@@ -991,16 +1049,10 @@
     "practice/architecture-fantasy/perdido-street-station/08-animal-architecture-rain-roofs-termite-cubitermes.png",
     "practice/architecture-fantasy/perdido-street-station/09-animal-architecture-nest-harvest-mouse.png",
     "practice/architecture-fantasy/perdido-street-station/10-animal-architecture-underground-nest-termites-apicotermes-gurgulifex.png",
-    "practice/kabk/DSC_0913.jpg",
-    "practice/kabk/DSC_0934.jpg",
-    "practice/mcgill-arch/big poster.jpg",
-    "practice/one-offs/DSCN1476.jpg",
-    "practice/one-offs/DSCN1480.jpg",
-    "tools/kept-app/jullie-resume-app.png",
+    "practice/kabk/DSC_0112.JPG",
     "practice/architecture-fantasy/perdido-street-station/00-animal-architecture-arch-macrotermes-natalensis.png",
     "practice/architecture-fantasy/perdido-street-station/02-animal-architecture-sandshell-difflugia-pyriformis-updated.png",
     "practice/architecture-fantasy/perdido-street-station/05-animal-architecture-galleries-built-termites-reticulitermes.png",
-    "practice/architecture-fantasy/perdido-street-station/11-animal-architecture-dam-beaver.png",
-    "tools/until/until.png"
+    "practice/architecture-fantasy/perdido-street-station/11-animal-architecture-dam-beaver.png"
   ]
 }
