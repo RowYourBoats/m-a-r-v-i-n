@@ -133,14 +133,18 @@ projects:
         name: Derek Love
   chicago:
     name: Chicago
+    description: >-
+      Ground-up creative for Verizon's Chicago 5G flagship: journey mapping, on-device UI, motion design and storytelling. Driving a spatial narrative through passive displays, motion-activated moments, directional audio, hands-on devices, and textural slow-motion lifestyle footage at the end of the store. 
     image_tags:
       - campaign
+      - documentation
       - event
       - installation
       - interactive
       - interface
       - motion-graphics
       - poster
+      - retail
       - signage
       - typography
     videos:
@@ -151,36 +155,41 @@ projects:
           https://player.vimeo.com/video/537126173?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479&amp;autoplay=1&amp;muted=1&amp;loop=1
         content:
           - motion-graphics
-      - title: Atrium Video
+      - title: "Screen 1: Atrium Video"
         featured: false
         video_mode: background
         url: >-
           https://player.vimeo.com/video/529211014?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479&amp;autoplay=1&amp;muted=1&amp;loop=1
         content:
           - motion-graphics
-      - title: "Screen 2: Changes Everything"
+      - title: "Screen 2: 5G Changes Everything"
         url: >-
           https://player.vimeo.com/video/529210889?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479&amp;autoplay=1&amp;muted=1&amp;loop=1
         content:
           - motion-graphics
-      - title: Live Attract Loop
+      - title: "Screen 4: Live (Attract Loop)"
         url: >-
           https://player.vimeo.com/video/529213770?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479&amp;autoplay=1&amp;muted=1&amp;loop=1
         content:
           - motion-graphics
-      - title: "5G Live Video: A Short Teaser of Positive Societal Impact"
+      - title: "Screen 4: Live (A video centered around positive societal impact)"
         featured: true
         video_mode: background
         url: >-
           https://player.vimeo.com/video/529212438?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479&amp;autoplay=1&amp;muted=1&amp;loop=1
         characteristics:
           - storytelling
-      - title: Play Attract Loop
+        content:
+          - videography
+          - motion-graphics
+        format:
+          - video
+      - title: "Screen 3: Play (Attract Loop)"
         url: >-
           https://player.vimeo.com/video/529213865?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479&amp;autoplay=1&amp;muted=1&amp;loop=1
         content:
           - motion-graphics
-      - title: "5G Play Video: A Short Teaser of Personal Scale Use Cases"
+      - title: "Screen 3: Play (A video centered around personal use cases)"
         featured: true
         video_mode: background
         url: >-
@@ -192,7 +201,9 @@ projects:
           - editing
           - motion-graphics
           - videography
-      - title: Lifestyle Video Back of Store
+        format:
+          - video
+      - title: "Screen 6: Lifestyle Videos"
         featured: true
         video_mode: background
         url: https://player.vimeo.com/video/529211063
@@ -200,6 +211,9 @@ projects:
           - storytelling
         content:
           - lifestyle
+          - videography
+        format:
+          - video
       - title: Chicago Store Summary
         url: >-
           https://player.vimeo.com/video/939231024?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479&amp;autoplay=1&amp;muted=1&amp;loop=1
@@ -207,6 +221,17 @@ projects:
           - interactive
         content:
           - documentation
+    order:
+      - verizon-cover.png
+      - ChicagoEntrance.jpg
+      - Chicago Entrance Screens
+      - "Screen 1: Atrium Video"
+      - "Screen 2: 5G Changes Everything"
+      - "Screen 3: Play (Attract Loop)"
+      - "Screen 3: Play (A video centered around personal use cases)"
+      - "Screen 4: Live (Attract Loop)"
+      - "Screen 4: Live (A video centered around positive societal impact)"
+      - "Screen 6: Lifestyle Videos"
     credits:
       - role: ACD / Design Lead
         name: Marvin de Jong
@@ -289,6 +314,7 @@ projects:
           https://player.vimeo.com/video/537126173?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479&amp;autoplay=1&amp;muted=1&amp;loop=1
         content:
           - motion-graphics
+          - documentation
     credits:
       - role: ACD / Design Lead
         name: Marvin de Jong

@@ -11,56 +11,109 @@ Four sources of content (see [Overview](/wiki/overview)), unified by the project
 
 Each image folder has a `_project.md` defining the project — the source of truth for project identity.
 
+The corpus has two shapes. Everything else is a boolean modifier on one of these
+(see [Modifier flags](#modifier-flags)).
+
+### Template 1 — work umbrella with sub-projects
+
+For client work under `work/`: one umbrella file, sub-projects in a `projects:` map.
+
 ```yaml
 ---
-slug: herman-miller
-name: Herman Miller
-client: Herman Miller
+slug: example-agency
+name: Example Agency
+client: Example Agency
 aliases:
-  - Herman Miller
-  - HermanMiller
-date_range: 2017-2019
+  - ExampleCo               # name variants, to resolve mismatches between systems
+date_range: 2020-2023
 roles:
-  - Global Brand Designer
-category: experience
-market: b2b2c              # b2b, b2c, b2b2c, internal, personal
-project_type:             # zero or more — what kind of work it is
-  - retail                # retail, exhibition, event, campaign, internal-tools,
-  - exhibition            # editorial, keynote, installation, publication-design, teaching, writing
-sector: furniture         # tech, telecom, furniture, fashion, cultural-institution,
-                          # education, architecture, design-studio, quantum-computing, personal
-characteristic: []        # interactive, real-time, generative
-role: Lead                # optional
-scale: enterprise         # optional — enterprise, sme, individual
-personal: false
-description: ""
+  - Senior Designer
+market: b2b                 # b2b, b2c, b2b2c, internal, personal
+project_type:               # zero or more — what kind of work it is
+  - identity-system
+  - retail
+sector: fashion
+characteristic: []          # interactive, real-time, generative, 3d, print
+description: "Three-year run covering rebrand and retail rollout."
 credits:
   - role: Design
     name: Marvin de Jong
-videos:
-  - title: Walkthrough
-    url: https://player.vimeo.com/video/...
-    video_mode: background   # "background" (default) or "ui" — see Video modes
-    featured: true           # optional — surface on homepage hero feed
-lead_images:
-  - hero-shot.jpg            # filenames here get featured: true in the manifest
+projects:
+  rebrand-2021:
+    name: 2021 Rebrand
+    description: >-
+      Sub-project prose. Slug defaults to {client-slug}-{key}; override
+      with slug: on the entry.
+    project_type:           # overrides the umbrella facet; omit to inherit
+      - identity-system
+    image_tags: []          # auto-generated — don't hand-edit
+    credits:
+      - role: Design
+        name: Marvin de Jong
+    videos:
+      - title: Launch Film
+        url: https://player.vimeo.com/video/111111111
+        video_mode: background   # "background" (default) or "ui" — see Video modes
+        featured: true           # optional — surface on homepage hero feed
+        content:                 # optional per-video content tags
+          - motion-graphics
+        characteristics:         # optional per-video characteristic tags
+          - 3d
+  milan-exhibition:
+    name: Milan Exhibition
+    snapshot_only: true     # in data, but no page of its own
 ---
-
-Optional prose description (rendered on the project page).
 ```
 
-Key fields:
+### Template 2 — flat practice piece
 
-- `slug` — canonical project key, used in URLs and manifest.
-- `aliases` — name variants, to resolve naming mismatches between systems.
-- `image_folders` — derived from where the `_project.md` lives.
-- `market` / `project_type` / `sector` / `characteristic` — the four project-level facets for filtering and recruiter context. See [Tag taxonomy](/wiki/tag-taxonomy) for vocabularies.
-- `role` / `scale` — optional, plumbed for future art-direction cross-logic.
-- `videos` — Vimeo embeds, generated as video items; each can set `video_mode` + `featured`. See [Editorial home & filmstrip](/wiki/editorial-home-and-filmstrip).
-- `lead_images` — filenames flagged `featured` in the manifest.
-- `personal` — `true` shows on Practice, `false` on Work.
+For self-initiated work under `practice/`: no `projects:` map, `personal: true`.
 
-Sub-projects (a `projects:` map nested in an umbrella `_project.md`) inherit the four facets from the umbrella unless they override.
+```yaml
+---
+slug: example-solo
+name: Example Solo Project
+client: personal
+aliases: []
+date_range: "2024"          # always quoted, even single years — see gotcha below
+market: personal
+project_type: []
+sector: personal
+characteristic:
+  - generative
+personal: true              # routes to Practice
+description: "Self-initiated exploration in generative typography."
+credits:
+  - role: Design
+    name: Marvin de Jong
+image_tags: []              # auto-generated — don't hand-edit
+videos: []                  # same video shape as template 1, when present
+---
+```
+
+Field notes:
+
+- `slug` — canonical project key, used in URLs and the manifest. It may
+  legitimately differ from the folder name (`practice/SNU/` → `snu`,
+  `work/article-group/` → `aws`): slugs are canonical, folders are storage.
+- `image_folders` — derived from where the `_project.md` lives; never written by hand.
+- `market` / `project_type` / `sector` / `characteristic` — the four project-level facets for filtering and recruiter context. See [Tag taxonomy](/wiki/tag-taxonomy) for vocabularies. Sub-projects inherit from the umbrella unless they override.
+- `image_tags` — auto-generated union of the folder's image tags; scripts own it.
+- `videos` — Vimeo embeds, generated as video items; each can set `video_mode`, `featured`, and per-video `content` / `characteristics` tags. See [Editorial home & filmstrip](/wiki/editorial-home-and-filmstrip).
+- `personal` — `true` routes to Practice; omit on work (defaults false).
+- `lead_images` — optional list of filenames to flag `featured` in the manifest. Functional but currently unused; omit unless you need it.
+- Omit empty boilerplate: `roles: []`, `videos: []`, `personal: false` add nothing.
+
+### Modifier flags
+
+Booleans on the umbrella (inherited by sub-projects) or on a single sub-project entry:
+
+- `snapshot_only: true` — the project exists in data (filterable, searchable) but has no dedicated page; its URL redirects to the feed. Per-entry only, not inherited.
+- `chronological: true` — order the folder's items by per-item date (`date_source`) instead of cluster-by-project. First user: `practice/snapshots/`.
+- `unlisted: true` — items hidden from the Work/Practice/Tools feeds and `/projects/<slug>` gated by middleware (404 in prod).
+- `pinned: true` — float the project's card to the top of its feed (see [feed sorting](/wiki/page-elements)).
+
+Note the underscore in `snapshot_only` — the schema silently ignores unknown keys, so a typo like `snapshot-only:` fails without an error.
 
 A project can render its detail page from the markdown body instead of a media grid via `layout: doc` — see [Essays & tools](/wiki/essays-and-tools).
 

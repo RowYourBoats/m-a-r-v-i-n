@@ -638,7 +638,7 @@
     },
     "verizon-chicago": {
       "title": "Chicago",
-      "description": "",
+      "description": "Ground-up creative for Verizon's Chicago 5G flagship: journey mapping, on-device UI, motion design and storytelling. Driving a spatial narrative through passive displays, motion-activated moments, directional audio, hands-on devices, and textural slow-motion lifestyle footage at the end of the store. ",
       "client": "Verizon",
       "year": 2019,
       "credits": [
@@ -655,7 +655,18 @@
           "name": "Derek Love"
         }
       ],
-      "order": [],
+      "order": [
+        "verizon-cover.png",
+        "ChicagoEntrance.jpg",
+        "Chicago Entrance Screens",
+        "Screen 1: Atrium Video",
+        "Screen 2: 5G Changes Everything",
+        "Screen 3: Play (Attract Loop)",
+        "Screen 3: Play (A video centered around personal use cases)",
+        "Screen 4: Live (Attract Loop)",
+        "Screen 4: Live (A video centered around positive societal impact)",
+        "Screen 6: Lifestyle Videos"
+      ],
       "snapshot_only": false
     },
     "verizon-digital-3": {
@@ -1078,7 +1089,7 @@
         }
       ],
       "order": [],
-      "snapshot_only": true
+      "snapshot_only": false
     },
     "space": {
       "title": "Space",
@@ -1092,7 +1103,7 @@
         }
       ],
       "order": [],
-      "snapshot_only": true
+      "snapshot_only": false
     },
     "stephanie-hanes": {
       "title": "Layout design for PreCog magazine.",
@@ -6314,8 +6325,6 @@
       "medium": "spatial",
       "project": "verizon-chicago",
       "description": "A modern, tech-driven spatial installation for Verizon's 5G pop-up, featuring sleek black-and-white architecture, immersive LED displays, and strategic typography to convey brand identity and futuristic technology through experiential design.",
-      "width": 2400,
-      "height": 1599,
       "style": "minimalist tech-driven spatial design with integrated digital signage and monochromatic lighting",
       "created": "2019-2022",
       "date_range": "2019-2022",
@@ -6390,8 +6399,6 @@
       "medium": "spatial",
       "project": "verizon-chicago",
       "description": "A photograph showcasing Verizon's urban retail experience in Chicago, emphasizing the brand's 5G integration through modern glass architecture and nighttime cityscape.",
-      "width": 2914,
-      "height": 1944,
       "style": "Modern architectural photography highlighting urban retail design with prominent brand identity",
       "created": "2019-2022",
       "date_range": "2019-2022",
@@ -6587,8 +6594,6 @@
       "medium": "spatial",
       "project": "verizon-chicago",
       "description": "Photograph of Verizon's 5G retail space in Chicago, featuring modern glass architecture and prominent brand signage within an urban cityscape at dusk.",
-      "width": 2914,
-      "height": 1944,
       "created": "2019-2022",
       "date_range": "2019-2022",
       "year": 2019
@@ -23641,6 +23646,76 @@
       "hidden_from_feed": true
     },
     {
+      "id": "work-verizon-chicago-chicagoentrance",
+      "src": "https://ws6i2dfuggcaavs2.public.blob.vercel-storage.com/images/work/verizon/chicago/ChicagoEntrance.jpg",
+      "type": "image",
+      "title": "ChicagoEntrance",
+      "tags": [
+        "retail",
+        "installation",
+        "documentation",
+        "motion-graphics",
+        "spatial"
+      ],
+      "format": [
+        "retail",
+        "installation"
+      ],
+      "characteristics": [],
+      "content": [
+        "documentation",
+        "motion-graphics"
+      ],
+      "project_tags": [
+        "b2c",
+        "retail",
+        "telecom"
+      ],
+      "medium": "spatial",
+      "project": "verizon-chicago",
+      "description": "",
+      "width": 2400,
+      "height": 1599,
+      "created": "2019-2022",
+      "date_range": "2019-2022",
+      "year": 2019
+    },
+    {
+      "id": "work-verizon-chicago-chicago-cover",
+      "src": "https://ws6i2dfuggcaavs2.public.blob.vercel-storage.com/images/work/verizon/chicago/chicago-cover.png",
+      "type": "image",
+      "title": "chicago cover",
+      "tags": [
+        "retail",
+        "installation",
+        "documentation",
+        "motion-graphics",
+        "spatial"
+      ],
+      "format": [
+        "retail",
+        "installation"
+      ],
+      "characteristics": [],
+      "content": [
+        "documentation",
+        "motion-graphics"
+      ],
+      "project_tags": [
+        "b2c",
+        "retail",
+        "telecom"
+      ],
+      "medium": "spatial",
+      "project": "verizon-chicago",
+      "description": "",
+      "width": 2914,
+      "height": 1944,
+      "created": "2019-2022",
+      "date_range": "2019-2022",
+      "year": 2019
+    },
+    {
       "id": "reinforcement-learning-gyms",
       "type": "video",
       "video": "https://player.vimeo.com/video/1187652525?background=1&autoplay=1&muted=1&loop=1&playsinline=1",
@@ -24500,11 +24575,11 @@
       "featured": true
     },
     {
-      "id": "atrium-video",
+      "id": "screen-1-atrium-video",
       "type": "video",
       "video": "https://player.vimeo.com/video/529211014?background=1&autoplay=1&muted=1&loop=1&playsinline=1",
       "video_mode": "background",
-      "title": "Atrium Video",
+      "title": "Screen 1: Atrium Video",
       "tags": [
         "video",
         "moving-image",
@@ -24522,11 +24597,11 @@
       "year": 2019
     },
     {
-      "id": "screen-2-changes-everything",
+      "id": "screen-2-5g-changes-everything",
       "type": "video",
       "video": "https://player.vimeo.com/video/529210889?background=1&autoplay=1&muted=1&loop=1&playsinline=1",
       "video_mode": "background",
-      "title": "Screen 2: Changes Everything",
+      "title": "Screen 2: 5G Changes Everything",
       "tags": [
         "video",
         "moving-image",
@@ -24544,11 +24619,11 @@
       "year": 2019
     },
     {
-      "id": "live-attract-loop",
+      "id": "screen-4-live-attract-loop",
       "type": "video",
       "video": "https://player.vimeo.com/video/529213770?background=1&autoplay=1&muted=1&loop=1&playsinline=1",
       "video_mode": "background",
-      "title": "Live Attract Loop",
+      "title": "Screen 4: Live (Attract Loop)",
       "tags": [
         "video",
         "moving-image",
@@ -24566,15 +24641,17 @@
       "year": 2019
     },
     {
-      "id": "5g-live-video-a-short-teaser-of-positive-societal-impact",
+      "id": "screen-4-live-a-video-centered-around-positive-societal-impact",
       "type": "video",
       "video": "https://player.vimeo.com/video/529212438?background=1&autoplay=1&muted=1&loop=1&playsinline=1",
       "video_mode": "background",
-      "title": "5G Live Video: A Short Teaser of Positive Societal Impact",
+      "title": "Screen 4: Live (A video centered around positive societal impact)",
       "tags": [
         "video",
         "moving-image",
-        "storytelling"
+        "storytelling",
+        "videography",
+        "motion-graphics"
       ],
       "project_tags": [
         "b2c",
@@ -24589,11 +24666,11 @@
       "featured": true
     },
     {
-      "id": "play-attract-loop",
+      "id": "screen-3-play-attract-loop",
       "type": "video",
       "video": "https://player.vimeo.com/video/529213865?background=1&autoplay=1&muted=1&loop=1&playsinline=1",
       "video_mode": "background",
-      "title": "Play Attract Loop",
+      "title": "Screen 3: Play (Attract Loop)",
       "tags": [
         "video",
         "moving-image",
@@ -24611,11 +24688,11 @@
       "year": 2019
     },
     {
-      "id": "5g-play-video-a-short-teaser-of-personal-scale-use-cases",
+      "id": "screen-3-play-a-video-centered-around-personal-use-cases",
       "type": "video",
       "video": "https://player.vimeo.com/video/529213125?background=1&autoplay=1&muted=1&loop=1&playsinline=1",
       "video_mode": "background",
-      "title": "5G Play Video: A Short Teaser of Personal Scale Use Cases",
+      "title": "Screen 3: Play (A video centered around personal use cases)",
       "tags": [
         "video",
         "moving-image",
@@ -24638,16 +24715,17 @@
       "featured": true
     },
     {
-      "id": "lifestyle-video-back-of-store",
+      "id": "screen-6-lifestyle-videos",
       "type": "video",
       "video": "https://player.vimeo.com/video/529211063?background=1&autoplay=1&muted=1&loop=1&playsinline=1",
       "video_mode": "background",
-      "title": "Lifestyle Video Back of Store",
+      "title": "Screen 6: Lifestyle Videos",
       "tags": [
         "video",
         "moving-image",
         "storytelling",
-        "lifestyle"
+        "lifestyle",
+        "videography"
       ],
       "project_tags": [
         "b2c",
@@ -24693,7 +24771,8 @@
       "tags": [
         "video",
         "moving-image",
-        "motion-graphics"
+        "motion-graphics",
+        "documentation"
       ],
       "project_tags": [
         "b2c",

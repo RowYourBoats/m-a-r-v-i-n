@@ -2,6 +2,38 @@
 
 Newest run first. Appended automatically by `npm run ingest`.
 
+## 2026-07-07T08:34:09.818Z — ingest (applied)
+
+- **reconcile:** 0 remap(s), 3 quarantined (kept), 21 unregistered on disk
+  - quarantine: `work/verizon/chicago/5G Chicago Pop-up_99.jpg` (file missing — has caption, kept)
+  - quarantine: `work/verizon/chicago/Chicago-2.png` (file missing — has caption, kept)
+  - quarantine: `work/verizon/chicago/verizon-cover.png` (file missing — has caption, kept)
+- **stub:** +0 new image(s)
+- **mine-dates:** 754 stamped, 127 missing
+- **sync-image-tags:** 0 _project.md updated
+- **build-projects:** 81 projects, 61 tags, 19 clients
+- **build-manifest:** 749 items across 72 projects
+- **rehydrate:** 0 matched, 2 unmatched
+- **upload-blob:** uploaded 2, adopted 0, skipped 747, failed 0
+- **vimeo-posters:** 2 referenced, 0 fetched
+
+## 2026-07-07T08:17:40.536Z — ingest (applied)
+
+- **reconcile:** 0 remap(s), 3 quarantined (kept), 23 unregistered on disk
+  - quarantine: `work/verizon/chicago/5G Chicago Pop-up_99.jpg` (file missing — has caption, kept)
+  - quarantine: `work/verizon/chicago/Chicago-2.png` (file missing — has caption, kept)
+  - quarantine: `work/verizon/chicago/verizon-cover.png` (file missing — has caption, kept)
+- **stub:** +2 new image(s)
+  - `work/verizon/chicago/ChicagoEntrance.jpg`
+  - `work/verizon/chicago/chicago-cover.png`
+- **mine-dates:** 754 stamped, 127 missing
+- **sync-image-tags:** 4 _project.md updated
+- **build-projects:** 81 projects, 60 tags, 19 clients
+- **build-manifest:** 747 items across 72 projects
+- **rehydrate:** 0 matched, 0 unmatched
+- **upload-blob:** uploaded 0, adopted 0, skipped 747, failed 0
+- **vimeo-posters:** 2 referenced, 0 fetched
+
 ## 2026-07-06T06:29:43.731Z — ingest (applied)
 
 - **reconcile:** 0 remap(s), 0 quarantined (kept), 21 unregistered on disk
