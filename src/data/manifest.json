@@ -1089,7 +1089,7 @@
         }
       ],
       "order": [],
-      "snapshot_only": false
+      "snapshot_only": true
     },
     "space": {
       "title": "Space",
@@ -1103,7 +1103,7 @@
         }
       ],
       "order": [],
-      "snapshot_only": false
+      "snapshot_only": true
     },
     "stephanie-hanes": {
       "title": "Layout design for PreCog magazine.",
