@@ -3,7 +3,7 @@ import { Image } from "astro:assets";
 import Base from "@/layouts/Base.astro";
 import PortfolioPageScript from "@/components/PortfolioPageScript.astro";
 import manifest from "@/data/manifest.json";
-import schema from "@/data/schema.json";
+import filters from "@/data/filters.json";
 import { pinnedFirst } from "@/lib/feed-sort";
 import { visibleFilters } from "@/lib/filter-counts";
 import { getEntry, render } from "astro:content";
@@ -34,7 +34,7 @@ const workItems = pinnedFirst(
 // Chips under MIN_FILTER_COUNT matches in the current feed are not rendered
 // (see src/lib/filter-counts.ts); a bar with fewer than 2 chips is pointless,
 // so it disappears entirely below that.
-const workFilters = schema.work_filters || { pinned: [], expanded: [] };
+const workFilters = filters.work_filters || { pinned: [], expanded: [] };
 const { pinned: pinnedFilters, expanded: expandedFilters } = visibleFilters(
   workFilters,
   workItems.map((item: any) => item.tags || []),

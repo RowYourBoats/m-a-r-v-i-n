@@ -217,22 +217,13 @@ try {
   process.exit(1);
 }
 
-let existingSchema = { pinned: [], mediums: [] };
-if (fs.existsSync(schemaPath)) {
-  try {
-    existingSchema = JSON.parse(fs.readFileSync(schemaPath, "utf8"));
-  } catch {}
-}
-
-// `tags` is the auto-derived union (catalogue ∪ facet values) used for tooling
-// and any non-curated UIs. `work_filters` / `practice_filters` are
-// hand-curated per the filter architecture spec — preserved across rebuilds.
+// schema.json is purely generated — a function of the catalogue + registry
+// only. The hand-curated chip config (work_filters / practice_filters /
+// pinned / mediums) lives in src/data/filters.json, which no build script
+// writes; it used to round-trip through this file, which meant one rebuild
+// against a bad read could destroy curation.
 const schema = {
-  pinned: existingSchema.pinned || [],
-  work_filters: existingSchema.work_filters || { pinned: [], expanded: [] },
-  practice_filters: existingSchema.practice_filters || { pinned: [], expanded: [] },
   tags: [...allTags].sort(),
-  mediums: existingSchema.mediums || [],
   clients: [...allClients].sort(),
 };
 fs.writeFileSync(schemaPath, JSON.stringify(schema, null, 2) + "\n");

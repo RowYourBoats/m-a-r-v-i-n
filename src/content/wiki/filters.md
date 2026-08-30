@@ -5,7 +5,7 @@ order: 1
 summary: Curated filter bars, label/matches, ?tag deep links.
 ---
 
-The `/work` and `/practice` filter bars are curated, not derived from a tag union. The two sets live in `src/data/schema.json` under `work_filters` and `practice_filters`, each with `pinned` and `expanded` arrays.
+The `/work` and `/practice` filter bars are curated, not derived from a tag union. The two sets live in `src/data/filters.json` under `work_filters` and `practice_filters`, each with `pinned` and `expanded` arrays.
 
 ## `label` / `matches`
 
@@ -21,7 +21,7 @@ The separation lets one button cover several values: `spatial` matches exhibitio
 
 ## Current sets
 
-`src/data/schema.json` is the source of truth for both sets — don't trust prose listings of chip names, they go stale. `build-projects.mjs` preserves both filter sets across rebuilds. To add or rename a filter, edit `schema.json` directly — it round-trips cleanly.
+`src/data/filters.json` is the source of truth for both sets — don't trust prose listings of chip names, they go stale. It is hand-edited only: no build script writes it, so a rebuild can never destroy curation. (These sets used to round-trip through the generated `schema.json`; that hazard is gone.) To add or rename a filter, edit `filters.json` directly.
 
 ## Minimum-count threshold
 
@@ -29,7 +29,7 @@ The schema is a statement of intent; what renders is gated by real counts. At bu
 
 ## Admin facet
 
-`/admin/images` (dev only) has a "site filters" select that mirrors this system: for each row it derives which public chip(s) the image would light up (flat union of format/characteristics/content/medium against the schema `matches`), shows live counts per chip in the option labels, and offers `no chip (n)` to surface images invisible to every public filter. Read-only reflection — the facet never edits `schema.json`.
+`/admin/images` (dev only) has a "site filters" select that mirrors this system: for each row it derives which public chip(s) the image would light up (flat union of format/characteristics/content/medium against the curated `matches`), shows live counts per chip in the option labels, and offers `no chip (n)` to surface images invisible to every public filter. Read-only reflection — the facet never edits `filters.json`.
 
 ## Behavior
 
@@ -39,7 +39,7 @@ The schema is a statement of intent; what renders is gated by real counts. At bu
 
 ## Project-level facet vocabularies
 
-Drawn from `schema.json` via the projects' authored values; back the curated `matches` arrays:
+Drawn from `schema.json`'s generated tag union via the projects' authored values; back the curated `matches` arrays:
 
 - `market`: b2b, b2c, b2b2c, internal, personal
 - `project_type`: retail, exhibition, event, campaign, internal-tools, editorial, keynote, installation, publication-design, teaching, writing

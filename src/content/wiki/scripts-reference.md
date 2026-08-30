@@ -7,12 +7,14 @@ summary: Every script in scripts/ — flags, what it reads/writes, when it runs.
 
 Convention: most scripts default to dry-run and write only with `--apply`. Folder-scoped scripts take a `<folder>` argument and never bulk-process the whole tree unless told to.
 
+Two entry points, same stage order: `npm run ingest` is for when images changed on disk (adds reconcile/stub/rehydrate/blob around the core build); `npm run build-data` is for when only metadata or `_project.md` frontmatter changed (mine-dates → sync-image-tags → build-projects → build-manifest → posters).
+
 ## In the pipelines
 
 | Script | Flags | Purpose / notes |
 |---|---|---|
 | `ingest.mjs` (`npm run ingest`) | `--dry-run` | The consolidated content pipeline — reconcile → stub → build → rehydrate → blob → posters. See [Ingest & build](/wiki/ingest-and-build). |
-| `build-projects.mjs` | — | `_project.md` → `projects.json` + `schema.json` (umbrella → sub-project fan-out). Validates frontmatter against the shared schema (`src/lib/content-schema.mjs`); fails loudly with the file + field named (e.g. a non-string `date_range`). Preserves filter sets across rebuilds. |
+| `build-projects.mjs` | — | `_project.md` → `projects.json` + `schema.json` (umbrella → sub-project fan-out). Validates frontmatter against the shared strict schema (`src/lib/content-schema.mjs`); fails loudly with the file + field named — unknown keys included. Fails hard if the catalogue is missing. `schema.json` is purely generated (`tags` + `clients`); the curated chips live in `src/data/filters.json`, which nothing writes. |
 | `mine-dates.mjs` | — | Stamps file birthtime/mtime onto catalogue entries as `created`. |
 | `build-manifest.mjs` | — | Catalogue + `projects.json` → `manifest.json` (+ archives the previous). Applies the curation gate; preserves blob URLs by path/id; probes Vimeo dims (cached). Builds video items from both project `videos:` and essay `videos:` frontmatter (shared `buildVideoItem`); essay videos are flagged `essay_of` + `hidden_from_feed`. |
 | `sync-vimeo-posters.mjs` | `--apply` | Walks `src/content/pages/*.md`, fetches Vimeo posters via oEmbed → `vimeo-posters.json`. Idempotent — only unknown IDs fetched. |

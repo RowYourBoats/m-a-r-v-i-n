@@ -20,7 +20,7 @@ Generated files (never hand-edited):
 
 - `src/data/projects.json` — from `_project.md` files
 - `src/data/manifest.json` — from catalogue + projects.json
-- `src/data/schema.json` — from projects.json (filter sets are preserved across rebuilds)
+- `src/data/schema.json` — tag union + clients from catalogue + projects.json (the curated filter chips live in the hand-edited `src/data/filters.json`)
 
 See [Content model](/wiki/content-model) for the full pipeline.
 

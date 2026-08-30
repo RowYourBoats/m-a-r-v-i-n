@@ -1,7 +1,7 @@
 // Build-time chip visibility + ordering for the index feed filter bars
 // (Work, Practice).
 //
-// The chip taxonomy in schema.json (work_filters / practice_filters) is a
+// The chip taxonomy in filters.json (work_filters / practice_filters) is a
 // curated statement of intent — it stays intact across content shifts. What
 // actually *renders* is decided here:
 //

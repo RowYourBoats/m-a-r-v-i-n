@@ -51,7 +51,8 @@ New file types under `public/images/` need a gitignore negation or they won't de
 | `projects.json` | Generated | `build-projects.mjs` from `_project.md` |
 | `manifest.json` | Generated | `build-manifest.mjs` from catalogue + projects |
 | `manifest.archive.json` | Generated | Previous manifest; `rehydrate` reads it to restore blob URLs |
-| `schema.json` | Generated + curated | Built by `build-projects.mjs`, but `work_filters`/`practice_filters`/`pinned`/`mediums` round-trip across rebuilds and are edited directly |
+| `schema.json` | Generated | Built by `build-projects.mjs`: the `tags` union + `clients` list only |
+| `filters.json` | Curated | Hand-edited chip config (`work_filters`/`practice_filters`/`pinned`/`mediums`); no script writes it |
 | `vimeo-posters.json` | Generated | `sync-vimeo-posters.mjs` poster cache |
 
 `docs/tag-taxonomy.md` is the one authored doc that scripts point at — kept editable, not generated.

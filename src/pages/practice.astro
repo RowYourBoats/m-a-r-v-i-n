@@ -3,7 +3,7 @@ import { Image } from "astro:assets";
 import Base from "@/layouts/Base.astro";
 import PortfolioPageScript from "@/components/PortfolioPageScript.astro";
 import manifest from "@/data/manifest.json";
-import schema from "@/data/schema.json";
+import filters from "@/data/filters.json";
 import { pinnedFirst } from "@/lib/feed-sort";
 import { visibleFilters } from "@/lib/filter-counts";
 import { getCollection, getEntry, render } from "astro:content";
@@ -78,7 +78,7 @@ const feed = pinnedFirst<Feed>(
 // matches in the current feed don't render (src/lib/filter-counts.ts) —
 // counting spans both card kinds: image items' tags and essays' frontmatter
 // tags, same as the data-tags the client filter matches against.
-const practiceFilters = schema.practice_filters || { pinned: [], expanded: [] };
+const practiceFilters = filters.practice_filters || { pinned: [], expanded: [] };
 const { pinned: pinnedFilters, expanded: expandedFilters } = visibleFilters(
   practiceFilters,
   feed.map((f) => (f.kind === "writing" ? f.entry.data.tags || [] : f.item.tags || [])),

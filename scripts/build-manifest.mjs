@@ -531,11 +531,18 @@ if (unroutedByFolder.size) {
   console.log(`  → register each folder in a project's image_folders (via _project.md) to surface them.`);
 }
 
-// Build manifest project records from registry.
+// Build manifest project records from registry. A registry project with no
+// published items gets no manifest record (so no page and no feed card) —
+// report those like the unrouted images above, so the registry→manifest gap
+// is loud instead of a silent count mismatch.
+const slugsWithItems = new Set(items.map((i) => i.project));
 const projects = {};
+const droppedSlugs = [];
 for (const [slug, proj] of Object.entries(registry)) {
-  const hasItems = items.some((i) => i.project === slug);
-  if (!hasItems) continue;
+  if (!slugsWithItems.has(slug)) {
+    droppedSlugs.push(slug);
+    continue;
+  }
   projects[slug] = {
     title: proj.name,
     description: proj.description || "",
@@ -545,6 +552,12 @@ for (const [slug, proj] of Object.entries(registry)) {
     order: proj.order || [],
     snapshot_only: proj.snapshot_only === true,
   };
+}
+
+if (droppedSlugs.length) {
+  console.log(`\ndropped (no published items — uncurated, archived, or unrouted): ${droppedSlugs.length} project(s):`);
+  console.log(`  ${droppedSlugs.sort().join(", ")}`);
+  console.log(`  → these render no page and no feed card until at least one image publishes.`);
 }
 
 const manifest = { projects, items };
