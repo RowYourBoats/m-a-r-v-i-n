@@ -116,9 +116,15 @@ export function projectOnlyFields(z) {
 
 /** Full project-frontmatter schema (shared + project-only). Used to validate. */
 export function projectFrontmatterSchema(z) {
-  return z.object({
-    ...sharedDocFields(z),
-    title: z.string().optional(), // projects identify by `name`, not `title`
-    ...projectOnlyFields(z),
-  });
+  return z
+    .object({
+      ...sharedDocFields(z),
+      title: z.string().optional(), // projects identify by `name`, not `title`
+      ...projectOnlyFields(z),
+    })
+    // Unknown keys are a silent-data-loss class (`snapshot-only:` lived in prod
+    // for months because the schema stripped it without a word), so reject them.
+    // Applies to umbrella sub-entries too — build-projects.mjs validates each
+    // through this same schema.
+    .strict();
 }

@@ -32,8 +32,12 @@ const docEntry = (await getCollection("projects")).find(
 );
 const DocContent = docEntry ? (await render(docEntry)).Content : null;
 
+// snapshot_only comes from the registry (projects.json), not the manifest: it
+// must win even for `layout: doc` projects, and it stays correct even when the
+// manifest is stale. Anything else without a doc body or manifest record
+// (unknown slug, no published images) redirects too.
 const project = projects[slug!];
-if (!docEntry && (!project || project.snapshot_only)) return Astro.redirect("/work");
+if (projectFull?.snapshot_only || (!docEntry && !project)) return Astro.redirect("/work");
 
 // manifest.projects drops `image_folders`, so the tier (work / practice /
 // tools / teaching) comes from projects.json. Each tier lights up its own nav

@@ -123,10 +123,10 @@ A project can render its detail page from the markdown body instead of a media g
 
 Create a folder in `public/images/`, add a `_project.md`, drop images in, then run `npm run ingest` (or `npm run build-data` if no new images to upload).
 
-## Bidirectional sync
+## One direction only
 
 - Edit `_project.md` → `node scripts/build-projects.mjs` → regenerates `projects.json`.
-- Edit `projects.json` → `node scripts/scatter-projects.mjs` → writes back to `_project.md` files.
+- `projects.json` is generated output — never edit it by hand. There is no reverse path: the umbrella fan-out (31 files → 81 records) is lossy in reverse, so a write-back script cannot exist without destroying frontmatter and markdown bodies. (`scatter-projects.mjs` used to claim this role and was deleted for exactly that reason.)
 
 ## Frontmatter gotcha
 

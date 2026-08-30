@@ -21,7 +21,7 @@ credits:
 videos: []
 projects:
   posters:
-    year: 2015
+    date_range: "2015"
     image_tags:
       - 3d
       - letter-form
@@ -30,7 +30,7 @@ projects:
       - typography
   thesis:
     name: Thesis
-    year: 2013
+    date_range: "2013"
     unlisted: true
     image_tags:
       - 3d
@@ -47,14 +47,14 @@ projects:
       - web
   riso:
     name: Riso
-    year: 2015
+    date_range: "2015"
     image_tags:
       - illustration
       - making
       - riso
   uppercase-soul:
     name: Uppercase Soul
-    year: 2020
+    date_range: "2020"
     image_tags:
       - editorial
       - illustration

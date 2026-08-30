@@ -27,7 +27,6 @@ Convention: most scripts default to dry-run and write only with `--apply`. Folde
 | Script | Flags | Purpose / notes |
 |---|---|---|
 | `sync-bullets.mjs` (`npm run sync-bullets`) | `--apply`, `--src=` | Mirror CV bullets from the Jullie-Resume gdrive source. Mirror semantics (add/overwrite/delete). See [CV bullets](/wiki/cv-bullets). |
-| `scatter-projects.mjs` | — | Reverse of build-projects: `projects.json` → `_project.md`. |
 | `mine-shot-dates.mjs` | `<folder>`, `--apply` | Mines real capture dates (EXIF + filename patterns) → `date_source` + `created_date`. Only honored when the project is `chronological: true`. Idempotent; needs `exifr`. |
 | `audit-tags.mjs` | — | Read-only tag audit: per-value counts, cross-axis duplicate flags, singletons → `docs/tag-audit.json`. Run after every tagging pass. |
 

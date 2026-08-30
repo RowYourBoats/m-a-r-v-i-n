@@ -36,8 +36,9 @@ const yaml = require("js-yaml");
 // — the same module the Astro `projects`/`writing` collections use, so the two
 // can't drift. This replaces the old hand-rolled date_range guard: a number
 // date_range (unquoted single year) is now one schema error among others, named
-// with its file. Validation is permissive by design (unknown keys ignored, most
-// fields optional) — the target is the date_range-class bug, not strict linting.
+// with its file. The schema is strict: an unknown key (e.g. the `snapshot-only:`
+// typo class) fails the build instead of being silently stripped. Most fields
+// stay optional — strictness is about key names, not required content.
 const projectSchema = projectFrontmatterSchema(z);
 const fmErrors = [];
 const isPlainObject = (v) => v != null && typeof v === "object" && !Array.isArray(v);
@@ -190,22 +191,30 @@ for (const p of Object.values(projects)) {
   if (p.client && p.client !== "personal") allClients.add(p.client);
 }
 
-if (fs.existsSync(cataloguePath)) {
-  try {
-    const catalogue = JSON.parse(fs.readFileSync(cataloguePath, "utf8"));
-    for (const entry of catalogue) {
-      // Post-restructure: three orthogonal arrays + the single `medium` (folded
-      // into the filterable tag union since 2026-06-17). Legacy `tags` still
-      // honored so partially-migrated catalogues build cleanly.
-      for (const t of entry.format || []) allTags.add(t);
-      for (const t of entry.characteristics || []) allTags.add(t);
-      for (const t of entry.content || []) allTags.add(t);
-      for (const t of entry.tags || []) allTags.add(t);
-      if (entry.medium) allTags.add(entry.medium);
-    }
-  } catch (err) {
-    console.warn("schema: failed to read catalogue for tag union —", err.message);
+// The catalogue is required: without it the tag union silently collapses and a
+// plausible-looking but gutted schema.json gets written with exit 0. It lives
+// only on Marvin's machines (gitignored) — a fresh clone cannot run this build.
+if (!fs.existsSync(cataloguePath)) {
+  console.error(
+    `schema: ${path.relative(root, cataloguePath)} not found — it is gitignored and lives only on the owner's machines; refusing to write a gutted schema.json.`,
+  );
+  process.exit(1);
+}
+try {
+  const catalogue = JSON.parse(fs.readFileSync(cataloguePath, "utf8"));
+  for (const entry of catalogue) {
+    // Post-restructure: three orthogonal arrays + the single `medium` (folded
+    // into the filterable tag union since 2026-06-17). Legacy `tags` still
+    // honored so partially-migrated catalogues build cleanly.
+    for (const t of entry.format || []) allTags.add(t);
+    for (const t of entry.characteristics || []) allTags.add(t);
+    for (const t of entry.content || []) allTags.add(t);
+    for (const t of entry.tags || []) allTags.add(t);
+    if (entry.medium) allTags.add(entry.medium);
   }
+} catch (err) {
+  console.error("schema: failed to read catalogue for tag union —", err.message);
+  process.exit(1);
 }
 
 let existingSchema = { pinned: [], mediums: [] };

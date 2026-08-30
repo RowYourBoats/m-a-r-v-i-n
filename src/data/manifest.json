@@ -1070,7 +1070,7 @@
       "year": 2025,
       "credits": [
         {
-          "role": null,
+          "role": "Design",
           "name": "Marvin de Jong"
         }
       ],
@@ -1145,7 +1145,7 @@
       "title": "posters",
       "description": "",
       "client": "Yale",
-      "year": 2013,
+      "year": 2015,
       "credits": [
         {
           "role": "Student",
@@ -1173,7 +1173,7 @@
       "title": "Riso",
       "description": "",
       "client": "Yale",
-      "year": 2013,
+      "year": 2015,
       "credits": [
         {
           "role": "Student",
@@ -1187,7 +1187,7 @@
       "title": "Uppercase Soul",
       "description": "",
       "client": "Yale",
-      "year": 2013,
+      "year": 2020,
       "credits": [
         {
           "role": "Design",
@@ -2165,9 +2165,9 @@
       "width": 684,
       "height": 1020,
       "style": "bold typographic collage with vibrant color blocking and aggressive lettering",
-      "created": "2013-2020",
-      "date_range": "2013-2020",
-      "year": 2013,
+      "created": "2015",
+      "date_range": "2015",
+      "year": 2015,
       "personal": true
     },
     {
@@ -2201,9 +2201,9 @@
       "width": 961,
       "height": 1289,
       "style": "Bold typography with overlapping and distorted text elements",
-      "created": "2013-2020",
-      "date_range": "2013-2020",
-      "year": 2013,
+      "created": "2015",
+      "date_range": "2015",
+      "year": 2015,
       "personal": true
     },
     {
@@ -2397,8 +2397,8 @@
       "width": 1337,
       "height": 838,
       "style": "minimalist line-based data visualization",
-      "created": "2013-2020",
-      "date_range": "2013-2020",
+      "created": "2013",
+      "date_range": "2013",
       "year": 2013,
       "personal": true,
       "hidden_from_feed": true
@@ -2433,8 +2433,8 @@
       "width": 2592,
       "height": 1936,
       "style": "Geometric abstraction using primary colors and contrasting black elements within a corner layout",
-      "created": "2013-2020",
-      "date_range": "2013-2020",
+      "created": "2013",
+      "date_range": "2013",
       "year": 2013,
       "personal": true,
       "hidden_from_feed": true
@@ -2468,8 +2468,8 @@
       "width": 6600,
       "height": 9600,
       "style": "Vibrant neon gradient abstract composition with fragmented geometric forms and glitch aesthetics",
-      "created": "2013-2020",
-      "date_range": "2013-2020",
+      "created": "2013",
+      "date_range": "2013",
       "year": 2013,
       "personal": true,
       "hidden_from_feed": true
@@ -2503,8 +2503,8 @@
       "width": 3264,
       "height": 2448,
       "style": "Realistic photographic style emphasizing human anatomy and textile textures",
-      "created": "2013-2020",
-      "date_range": "2013-2020",
+      "created": "2013",
+      "date_range": "2013",
       "year": 2013,
       "personal": true,
       "hidden_from_feed": true
@@ -2535,8 +2535,8 @@
       "width": 2048,
       "height": 2048,
       "style": "Organic gradient typography with fluid, irregular forms and non-traditional letterform composition",
-      "created": "2013-2020",
-      "date_range": "2013-2020",
+      "created": "2013",
+      "date_range": "2013",
       "year": 2013,
       "personal": true,
       "hidden_from_feed": true
@@ -2567,8 +2567,8 @@
       "width": 1920,
       "height": 1080,
       "style": "Atmospheric digital rendering with textural details and cinematic lighting",
-      "created": "2013-2020",
-      "date_range": "2013-2020",
+      "created": "2013",
+      "date_range": "2013",
       "year": 2013,
       "personal": true,
       "hidden_from_feed": true
@@ -2599,8 +2599,8 @@
       "width": 1920,
       "height": 1080,
       "style": "Textural transparency with layered color and bubble effects",
-      "created": "2013-2020",
-      "date_range": "2013-2020",
+      "created": "2013",
+      "date_range": "2013",
       "year": 2013,
       "personal": true,
       "hidden_from_feed": true
@@ -2629,8 +2629,8 @@
       "width": 1920,
       "height": 1080,
       "style": "Minimalist",
-      "created": "2013-2020",
-      "date_range": "2013-2020",
+      "created": "2013",
+      "date_range": "2013",
       "year": 2013,
       "personal": true,
       "hidden_from_feed": true
@@ -2660,8 +2660,8 @@
       "width": 1348,
       "height": 749,
       "style": "intentional blur, abstract representation, experimental photographic study",
-      "created": "2013-2020",
-      "date_range": "2013-2020",
+      "created": "2013",
+      "date_range": "2013",
       "year": 2013,
       "personal": true,
       "hidden_from_feed": true
@@ -2697,8 +2697,8 @@
       "width": 1920,
       "height": 1080,
       "style": "Vibrant gradient background with 3D letter-form typography and dynamic text elements",
-      "created": "2013-2020",
-      "date_range": "2013-2020",
+      "created": "2013",
+      "date_range": "2013",
       "year": 2013,
       "personal": true,
       "hidden_from_feed": true
@@ -2736,8 +2736,8 @@
       "width": 1552,
       "height": 985,
       "style": "Vibrant graphic design with polka-dot pattern and geometric color blocking",
-      "created": "2013-2020",
-      "date_range": "2013-2020",
+      "created": "2013",
+      "date_range": "2013",
       "year": 2013,
       "personal": true,
       "hidden_from_feed": true
@@ -2766,8 +2766,8 @@
       "width": 1440,
       "height": 900,
       "style": "Minimalist monochromatic grid pattern with strict repetition, used for design testing and layout evaluation",
-      "created": "2013-2020",
-      "date_range": "2013-2020",
+      "created": "2013",
+      "date_range": "2013",
       "year": 2013,
       "personal": true,
       "hidden_from_feed": true
@@ -2801,8 +2801,8 @@
       "width": 1920,
       "height": 1080,
       "style": "organic texture, monochromatic, subtle lighting",
-      "created": "2013-2020",
-      "date_range": "2013-2020",
+      "created": "2013",
+      "date_range": "2013",
       "year": 2013,
       "personal": true,
       "hidden_from_feed": true
@@ -2833,9 +2833,9 @@
       "width": 973,
       "height": 991,
       "style": "minimalist typographic design with gradient background and bold letterforms",
-      "created": "2013-2020",
-      "date_range": "2013-2020",
-      "year": 2013,
+      "created": "2020",
+      "date_range": "2020",
+      "year": 2020,
       "personal": true
     },
     {
@@ -2864,9 +2864,9 @@
       "width": 989,
       "height": 990,
       "style": "minimalist literary design with typographic emphasis",
-      "created": "2013-2020",
-      "date_range": "2013-2020",
-      "year": 2013,
+      "created": "2020",
+      "date_range": "2020",
+      "year": 2020,
       "personal": true
     },
     {
@@ -2898,9 +2898,9 @@
       "width": 4000,
       "height": 6000,
       "style": "Vibrant gradient typography with geometric form in a dimly lit interior setting",
-      "created": "2013-2020",
-      "date_range": "2013-2020",
-      "year": 2013,
+      "created": "2020",
+      "date_range": "2020",
+      "year": 2020,
       "personal": true
     },
     {
@@ -2932,9 +2932,9 @@
       "width": 3102,
       "height": 5004,
       "style": "vibrant geometric gradient typography",
-      "created": "2013-2020",
-      "date_range": "2013-2020",
-      "year": 2013,
+      "created": "2020",
+      "date_range": "2020",
+      "year": 2020,
       "personal": true
     },
     {
@@ -2966,9 +2966,9 @@
       "width": 3102,
       "height": 5004,
       "style": "Vibrant neon typography with 3D rendering and layered color gradients",
-      "created": "2013-2020",
-      "date_range": "2013-2020",
-      "year": 2013,
+      "created": "2020",
+      "date_range": "2020",
+      "year": 2020,
       "personal": true
     },
     {
@@ -3000,9 +3000,9 @@
       "width": 3102,
       "height": 5004,
       "style": "modern abstract geometric logo with gradient overlays and bold typography",
-      "created": "2013-2020",
-      "date_range": "2013-2020",
-      "year": 2013,
+      "created": "2020",
+      "date_range": "2020",
+      "year": 2020,
       "personal": true
     },
     {
@@ -3034,9 +3034,9 @@
       "width": 3102,
       "height": 5004,
       "style": "Vibrant gradient circular typography with bold uppercase lettering and layered gradient elements",
-      "created": "2013-2020",
-      "date_range": "2013-2020",
-      "year": 2013,
+      "created": "2020",
+      "date_range": "2020",
+      "year": 2020,
       "personal": true
     },
     {
@@ -21556,9 +21556,9 @@
       "description": "",
       "width": 2614,
       "height": 3654,
-      "created": "2013-2020",
-      "date_range": "2013-2020",
-      "year": 2013,
+      "created": "2015",
+      "date_range": "2015",
+      "year": 2015,
       "personal": true
     },
     {
@@ -21589,9 +21589,9 @@
       "description": "",
       "width": 2619,
       "height": 3492,
-      "created": "2013-2020",
-      "date_range": "2013-2020",
-      "year": 2013,
+      "created": "2015",
+      "date_range": "2015",
+      "year": 2015,
       "personal": true
     },
     {
@@ -21622,9 +21622,9 @@
       "description": "",
       "width": 2504,
       "height": 3554,
-      "created": "2013-2020",
-      "date_range": "2013-2020",
-      "year": 2013,
+      "created": "2015",
+      "date_range": "2015",
+      "year": 2015,
       "personal": true
     },
     {
@@ -21655,9 +21655,9 @@
       "description": "",
       "width": 2542,
       "height": 3540,
-      "created": "2013-2020",
-      "date_range": "2013-2020",
-      "year": 2013,
+      "created": "2015",
+      "date_range": "2015",
+      "year": 2015,
       "personal": true
     },
     {
@@ -21688,9 +21688,9 @@
       "description": "",
       "width": 2614,
       "height": 3654,
-      "created": "2013-2020",
-      "date_range": "2013-2020",
-      "year": 2013,
+      "created": "2015",
+      "date_range": "2015",
+      "year": 2015,
       "personal": true
     },
     {
@@ -21721,9 +21721,9 @@
       "description": "",
       "width": 2614,
       "height": 3654,
-      "created": "2013-2020",
-      "date_range": "2013-2020",
-      "year": 2013,
+      "created": "2015",
+      "date_range": "2015",
+      "year": 2015,
       "personal": true
     },
     {
@@ -21749,9 +21749,9 @@
       "description": "",
       "width": 2025,
       "height": 3210,
-      "created": "2013-2020",
-      "date_range": "2013-2020",
-      "year": 2013,
+      "created": "2015",
+      "date_range": "2015",
+      "year": 2015,
       "personal": true
     },
     {

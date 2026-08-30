@@ -15,7 +15,7 @@ characteristic:
 personal: true
 description: Continuing exploration of smoke and particle systems, both real-time and rendered, in Unreal Engine.
 credits:
-  - role: null
+  - role: Design
     name: Marvin de Jong
 videos:
   - title: Smoke Test 1
