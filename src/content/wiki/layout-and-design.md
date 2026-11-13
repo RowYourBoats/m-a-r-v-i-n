@@ -31,6 +31,8 @@ Mobile (≤760px) flattens both `--fs-body` and `--fs-secondary` back to `--fs-b
 
 ## Layout classes
 
+- `.grid` — shared masonry feed: two columns by default, one at ≤680px. Cards retain their natural media proportions.
+- `.media-frame--portrait` — opt-in frame used only for Practice videos with known dimensions where height exceeds width. Equal `--pad` space on all four sides uses the page background (white in light mode). Centers in its card and caps the frame, including padding, at 110svh. Set `--media-ratio` from the video's width/height. Captions sit outside the frame. Images, square/landscape videos, and other pages retain their original styling.
 - `.page` — the page shell: flex column, `--pad` gap and padding.
 - `.page-intro` — page-intro copy on `/work`, `/practice`, `/resume`. `max-width: 66.6667%` on desktop, full-width below 760px.
 - `.editorial` — editorial home column. Vertical flex, `--pad` gap. No max-width — filmstrips are intentionally full-bleed.

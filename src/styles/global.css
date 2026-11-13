@@ -222,7 +222,7 @@ video {
   display: flex;
 }
 
-/* ---- Grid (masonry via CSS columns) ---- */
+/* ---- Grid (masonry via measured CSS grid row spans) ---- */
 .grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -261,6 +261,20 @@ video {
 .grid-item .thumb {
   width: 100%;
   height: auto;
+}
+
+/* Equal padding belongs to the frame, not the iframe: its native ratio stays
+   intact. Opted in only by portrait videos on Practice. */
+.media-frame--portrait {
+  --media-max-height: 110svh;
+  width: min(100%, calc((var(--media-max-height) - 2 * var(--pad)) * var(--media-ratio) + 2 * var(--pad)));
+  padding: var(--pad);
+  align-self: center;
+  background: var(--color-bg);
+}
+
+.media-frame--portrait iframe {
+  display: block;
 }
 
 /* ---- Project detail ---- */

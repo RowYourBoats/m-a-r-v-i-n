@@ -151,6 +151,7 @@ function seedSpan(item: { width?: number; height?: number }) {
       const proj = (manifest.projects as any)[f.item.project];
       const linked = proj && !proj.snapshot_only;
       const Element: any = linked ? "a" : "div";
+      const isPortraitVideo = f.item.type === "video" && f.item.width > 0 && f.item.height > f.item.width;
       return (
       <Element
         class="grid-item"
@@ -158,7 +159,24 @@ function seedSpan(item: { width?: number; height?: number }) {
         data-tags={(f.item.tags || []).join(",")}
         style={seedSpan(f.item) ? `grid-row-end: span ${seedSpan(f.item)}` : undefined}
       >
-        {f.item.type === "video" ? (
+        {isPortraitVideo ? (
+          <div
+            class="media-frame--portrait"
+            style={`--media-ratio: ${f.item.width / f.item.height}`}
+          >
+            <div
+              class="thumb-video"
+              style={f.item.width && f.item.height ? `aspect-ratio: ${f.item.width} / ${f.item.height}` : undefined}
+            >
+              <iframe
+                src={f.item.video}
+                loading="lazy"
+                allow="autoplay; fullscreen; picture-in-picture"
+                allowfullscreen
+              ></iframe>
+            </div>
+          </div>
+        ) : f.item.type === "video" ? (
           <div
             class="thumb-video"
             style={f.item.width && f.item.height ? `aspect-ratio: ${f.item.width} / ${f.item.height}` : undefined}
